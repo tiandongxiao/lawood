@@ -41,33 +41,33 @@ Route::get('reset/email/{token}', 'Auth\PasswordController@getEmailReset');
 Route::post('reset/email/confirmed', 'Auth\PasswordController@postEmailReset');
 
 Route::group(['prefix' => 'bind'], function(){
-    Route::get('chose','BindController@getChoseRole');
-    Route::post('chose','BindController@postChoseRole');
+    Route::get('chose','Auth\BindController@getChoseRole');
+    Route::post('chose','Auth\BindController@postChoseRole');
 
-    Route::get('select','BindController@getBindUser');
-    Route::post('select','BindController@postBindUser');
+    Route::get('select','Auth\BindController@getBindUser');
+    Route::post('select','Auth\BindController@postBindUser');
 
-    Route::get('exist','BindController@getBindExistUser');
-    Route::post('exist','BindController@postBindExistUser');
+    Route::get('exist','Auth\BindController@getBindExistUser');
+    Route::post('exist','Auth\BindController@postBindExistUser');
 
-    Route::get('new','BindController@getBindNewUser');
-    Route::post('new','BindController@postBindNewUser');
+    Route::get('new','Auth\BindController@getBindNewUser');
+    Route::post('new','Auth\BindController@postBindNewUser');
 
-    Route::get('email', 'BindController@getBindEmail');
-    Route::post('email', 'BindController@postBindEmail');
+    Route::get('email', 'Auth\BindController@getBindEmail');
+    Route::post('email', 'Auth\BindController@postBindEmail');
 });
 
 Route::group(['prefix' => 'wx'], function() {
     # 微信 <开放平台> 服务接口
-    Route::get('login','AuthWeChatController@wxLogin');
-    Route::any('callback','AuthWeChatController@wxCallback');
-    Route::get('check','AuthWeChatController@wxCheck');
+    Route::get('login','WeChat\AuthWeChatController@wxLogin');
+    Route::any('callback','WeChat\AuthWeChatController@wxCallback');
+    Route::get('check','WeChat\AuthWeChatController@wxCheck');
 
-    Route::get('bind','AuthWeChatController@wxBind');
-    Route::get('unbind','AuthWeChatController@wxUnBind');
+    Route::get('bind','WeChat\AuthWeChatController@wxBind');
+    Route::get('unbind','WeChat\AuthWeChatController@wxUnBind');
 
     # 微信 <公众平台> 服务接口
-    Route::any('serve','AuthWeChatController@serve');
+    Route::any('serve','WeChat\AuthWeChatController@serve');
 });
 
 Route::group(['prefix' => 'tool'], function(){
@@ -128,9 +128,9 @@ Route::group(['prefix' => 'client'], function(){
 Route::resource('post','PostController');
 
 Route::group(['prefix' => 'wxpay'], function(){
-    Route::post('callback', 'WxPayController@payCallback');
-    Route::get('native/{id}', 'WxPayController@nativePay');
+    Route::post('callback', 'WeChat\WxPayController@payCallback');
+    Route::get('native/{id}', 'WeChat\WxPayController@nativePay');
     # 微信浏览器内部支付方式
-    Route::get('jsapi/{id}', 'WxPayController@JSPay')->middleware(['wechat.oauth']);
+    Route::get('jsapi/{id}', 'WeChat\WxPayController@JSPay')->middleware(['wechat.oauth']);
 });
 

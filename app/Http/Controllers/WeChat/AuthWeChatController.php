@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\WeChat;
 
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
@@ -82,7 +82,7 @@ class AuthWeChatController extends Controller
     private function bindWxAccountToUser($info)
     {
         $user = Auth::user();
-        //1.1 如果用户不是用微信登陆的，那就为其绑定微信号
+        # 用户不是用微信登陆的，那就为其绑定微信号
         if(!$user->wx_id){
             $result = User::where('wx_id',$info['id'])->first();
             if($result){
@@ -92,7 +92,7 @@ class AuthWeChatController extends Controller
             $user->save();
             return redirect('/')->withErrors('完成微信账号绑定');
         }
-        //1.2 用户之前已经用微信扫码登录
+        # 用户之前已经用微信扫码登录
         return redirect('/')->withErrors('您已登录，无需重新扫码');
     }
 
@@ -104,10 +104,9 @@ class AuthWeChatController extends Controller
      */
     private function createOrLoginWxAccount($info)
     {
-        //2 如果用户没有登录
         $user = User::where('wx_id',$info['id'])->first();
 
-        // 如果用户是不是已注册用户，需要创建新用户
+        # 如果用户是不是已注册用户，需要创建新用户
         if(is_null($user)){
             $user = User::create([
                 'wx_id' => $info['id'],

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\WeChat;
 
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Payment\Order;
@@ -103,7 +103,7 @@ class WxPayController extends Controller
         $price = $order->total_fee;
         $url = $result->code_url;
 
-        return view('payment.native',compact('url','price'));
+        return view('payment.wx.native',compact('url','price'));
     }
 
     /**
@@ -115,7 +115,7 @@ class WxPayController extends Controller
     public function JSPay($product_id)
     {
         $user = session('wechat.oauth_user'); // 拿到授权用户资料
-        $open_id = $user->getId();        
+        $open_id = $user->getId();
 
         $order = new Order([
             'body'             => '服务费',
@@ -130,6 +130,6 @@ class WxPayController extends Controller
         $params = $this->payment->configForPayment($result->prepay_id);
         $price  = $order->total_fee;
 
-        return view('payment.jsapi',compact('params','price'));
+        return view('payment.wx.jsapi',compact('params','price'));
     }
 }

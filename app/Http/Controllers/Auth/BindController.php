@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 
@@ -147,6 +147,7 @@ class BindController extends Controller
         $user = $request->user();
         $user->phone = $request->get('phone');
         $user->password = bcrypt($request->get('password'));
+
         switch ($user->role){
             case 'lawyer':
                 $user->save();
@@ -160,6 +161,7 @@ class BindController extends Controller
         }
 
         Auth::login($user);
+
         return redirect('/')->withErrors('恭喜您已经完成了注册');
     }
 
@@ -216,7 +218,8 @@ class BindController extends Controller
         if($token){
             $info = DB::table('email_actives')->where('token',$token)->first();
 
-            if(is_null($info)){ //已过绑定失效期，是否重新发送绑定邮件
+            if(is_null($info)){
+                # 已过绑定失效期，是否重新发送绑定邮件
                 return redirect('/')->withErrors('验证信息已过期');
             }
 
