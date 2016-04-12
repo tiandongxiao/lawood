@@ -115,8 +115,7 @@ class WxPayController extends Controller
     public function JSPay($product_id)
     {
         $user = session('wechat.oauth_user'); // 拿到授权用户资料
-        $open_id = $user->getId();
-        $info = $this->user->get($open_id);
+        $open_id = $user->getId();        
 
         $order = new Order([
             'body'             => '服务费',
