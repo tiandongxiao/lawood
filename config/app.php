@@ -158,6 +158,7 @@ return [
         Amsgames\LaravelShop\LaravelShopProvider::class,
         Nvd\Crud\Providers\NvdCrudServiceProvider::class,
         VergilLai\NodeCategories\NodeCategoriesProvider::class,//分类辅助
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class, //二维码服务
     ],
 
     /*
@@ -218,5 +219,6 @@ return [
         'Wechat'    => Overtrue\LaravelWechat\Facade::class, //微信开发包
         'Tracker'   => PragmaRX\Tracker\Vendor\Laravel\Facade::class,//Boss级数据跟踪系统
         'Shop'      => Amsgames\LaravelShop\LaravelShopFacade::class,
+        'QrCode'    => SimpleSoftwareIO\QrCode\Facades\QrCode::class, //二维码服务
     ],
 ];
