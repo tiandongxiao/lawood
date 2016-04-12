@@ -1,4 +1,4 @@
-@extends('base.map')
+@extends('tpl.base.map')
 @section('css')
     body{padding:10px;}
     #iCenter{width:100%;height:400px;border:1px solid #F6F6F6;margin:10px 0 0;}

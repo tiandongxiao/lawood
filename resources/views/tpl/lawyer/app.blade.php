@@ -12,7 +12,7 @@
     <!-- Ionicons -->
     <link href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
     @yield('css')
-    <!-- Theme style -->
+            <!-- Theme style -->
     <link rel="stylesheet" href="{{URL::asset('/')}}css/AdminLTE.min.css">
     <link rel="stylesheet" href="{{URL::asset('/')}}css/skins/skin-green.min.css">
     <!--[if lt IE 9]>
@@ -23,11 +23,11 @@
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
     <!-- Header -->
-    @include('admin.area.header')
-    <!-- Sidebar -->
-    @include('admin.area.sidebar')
+    @include('tpl.lawyer.area.header')
+            <!-- Sidebar -->
+    @include('tpl.lawyer.area.sidebar')
 
-    <!-- Content Wrapper. Contains page content -->
+            <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -50,11 +50,12 @@
     </div><!-- /.content-wrapper -->
 
     <!-- Footer -->
-    @include('admin.area.footer')
+    @include('tpl.lawyer.area.footer')
 </div><!-- ./wrapper -->
 
 <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="{{URL::asset('/')}}js/app.min.js"></script>
 @yield('script')
 </body>
 </html>

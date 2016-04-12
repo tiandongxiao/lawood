@@ -1,4 +1,4 @@
-@extends('base.map')
+@extends('tpl.base.map')
 @section('content')
 <div style="position:absolute;top:15%;left: 0px;width:15%;z-index: 1000;">
 <div class="nav-tabs-custom">

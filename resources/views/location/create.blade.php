@@ -1,4 +1,4 @@
-@extends('base.master')
+@extends('tpl.lawyer.app')
 @section('content')
     <div class="box box-info">
         <div class="box-header">

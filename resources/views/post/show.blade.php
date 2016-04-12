@@ -1,4 +1,4 @@
-@extends('vendor.crud.single-page-templates.common.app')
+@extends('tpl.lawyer.app')
 
 @section('content')
 

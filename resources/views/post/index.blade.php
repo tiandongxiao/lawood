@@ -1,11 +1,8 @@
-@extends('vendor.crud.single-page-templates.common.app')
+@extends('tpl.lawyer.app')
 
 @section('content')
 
 	<h2>Posts</h2>
-
-	@include('post.create')
-
 	<table class="table table-striped grid-view-tbl">
 	    
 	    <thead>

@@ -1,4 +1,4 @@
-@extends('base.map')
+@extends('tpl.base.map')
 @section('content')
     <div id="map" style="width:100%;height:850px;">
     </div>

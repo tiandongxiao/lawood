@@ -12,7 +12,7 @@
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 @if(Auth::check())
-                <!-- Notifications Menu -->
+                        <!-- Notifications Menu -->
                 <li class="dropdown notifications-menu">
                     <!-- Menu toggle button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -56,9 +56,9 @@
                         <!-- Menu Body -->
                         <li class="user-body">
                             @if(is_null(Auth::user()->wx_id))
-                            <div class="col-xs-4">
-                                <a class="btn btn-warning" href="{{url('wx/bind')}}">绑定微信</a>
-                            </div>
+                                <div class="col-xs-4">
+                                    <a class="btn btn-warning" href="{{url('wxpay')}}">绑定微信</a>
+                                </div>
                             @endif
                             @if(!Auth::user()->email_active))
                             <div class="col-xs-4 col-xs-offset-3">
@@ -66,15 +66,19 @@
                             </div>
                             @endif
                             @if(is_null(Auth::user()->phone))
-                            <div class="col-xs-4 text-center col-xs-offset-3">
-                                <a class="btn btn-warning" href="{{url('bind/select')}}">绑定手机</a>
-                            </div>
+                                <div class="col-xs-4 text-center col-xs-offset-3">
+                                    <a class="btn btn-warning" href="{{url('bind/select')}}">绑定手机</a>
+                                </div>
                             @endif
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">档案</a>
+                                @if(Auth::user()->profile)
+                                    <a href="{{url('profile/'.Auth::user()->profile->id)}}" class="btn btn-default btn-flat">档案</a>
+                                @else
+                                    <a href="{{url('profile/create')}}" class="btn btn-default btn-flat">创建档案</a>
+                                @endif
                             </div>
                             <div class="pull-right">
                                 <a href="{{URL('logout')}}" class="btn btn-default btn-flat">登出</a>

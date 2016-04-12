@@ -30,7 +30,7 @@ class AuthWeChatController extends Controller
      */
     public function wxBind()
     {
-        echo 'I am going to bind a wx account to a user';
+        echo 'I am going to bind a wxpay account to a user';
         return  Socialite::driver('wechat')->redirect();
     }
 
@@ -140,7 +140,7 @@ class AuthWeChatController extends Controller
                     # 事件消息...
                     break;
                 case 'text':
-                    //return '你好! '.$userApi->get($message->FromUserName)->nickname;
+                    # return '你好! '.$userApi->get($message->FromUserName)->nickname;
                     break;
                 case 'image':
                     # 图片消息...
@@ -157,9 +157,8 @@ class AuthWeChatController extends Controller
                 case 'link':
                     # 链接消息...
                     break;
-                // ... 其它消息
                 default:
-                    # code...
+                    # 其它消息...
                     break;
             }
         });

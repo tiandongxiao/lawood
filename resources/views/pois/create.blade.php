@@ -1,4 +1,4 @@
-@extends('base.master')
+@extends('tpl.lawyer.app')
 @section('content')
 <div class="panel-group col-md-6 col-sm-12" id="accordion" style="padding-left: 0">
     <div class="panel panel-primary">

@@ -1,4 +1,4 @@
-@extends('base.master')
+@extends('tpl.base.app')
 @section('content')
     <div class="text-center">
         <h3>{{$price/100}} 元</h3>

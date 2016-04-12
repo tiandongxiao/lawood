@@ -1,4 +1,4 @@
-@extends('base.master')
+@extends('tpl.lawyer.app')
 @section('content')
     <ul class="nav-stacked">
     @foreach($categories as $category)

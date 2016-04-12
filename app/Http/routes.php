@@ -5,7 +5,6 @@ Route::get('/', function () {
 });
 
 Route::get('map', function () {
-
     return view('index');
 });
 
@@ -13,14 +12,14 @@ Route::get('yun',function(){
     return view('map');
 });
 
-/***************	Begin 用户认证系统自带控制器处理		**************/
+# 用户认证系统自带控制器处理
 Route::get('login', 'Auth\AuthController@getPhoneLogin');
 Route::post('login', 'Auth\AuthController@postPhoneLogin');
 Route::get('login/email', 'Auth\AuthController@getEmailLogin');
 Route::post('login/email', 'Auth\AuthController@postEmailLogin');
 Route::get('logout', 'Auth\AuthController@getLogout');
 
-/***************	Begin 用户注册及密码重置	**************/
+# 用户注册及密码重置
 Route::get('chose', 'Auth\AuthController@getChoseRegRole');
 Route::post('chose', 'Auth\AuthController@postChoseRegRole');
 Route::get('register/{role}', 'Auth\AuthController@getPhoneRegister');
@@ -41,6 +40,7 @@ Route::get('reset/email/{token}', 'Auth\PasswordController@getEmailReset');
 Route::post('reset/email/confirmed', 'Auth\PasswordController@postEmailReset');
 
 Route::group(['prefix' => 'bind'], function(){
+
     Route::get('chose','Auth\BindController@getChoseRole');
     Route::post('chose','Auth\BindController@postChoseRole');
 
@@ -57,6 +57,7 @@ Route::group(['prefix' => 'bind'], function(){
     Route::post('email', 'Auth\BindController@postBindEmail');
 });
 
+# 微信相关服务接口
 Route::group(['prefix' => 'wx'], function() {
     # 微信 <开放平台> 服务接口
     Route::get('login','WeChat\AuthWeChatController@wxLogin');
@@ -71,17 +72,20 @@ Route::group(['prefix' => 'wx'], function() {
 });
 
 Route::group(['prefix' => 'tool'], function(){
+
     Route::post('cpt_check','ToolsController@captchaCheck');
     Route::get('cpt','ToolsController@getCaptcha');
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 });
 
 Route::group(['prefix' => 'communicate'], function(){
+
     Route::get('phone_code','CommunicationController@sendPhoneCode');
     Route::post('message','CommunicationController@sendMessageByRequest');
 });
 
 Route::group(['prefix' => 'test'], function(){
+
     Route::get('put/{key}-{value}','TestController@putValue');
     Route::get('get/{key}','TestController@getValue');
     Route::get('uri','TestController@getUri');
@@ -106,6 +110,7 @@ Route::resource('location','LocationController');
 Route::resource('pois','PoisController');
 
 Route::group(['prefix' => 'lawyer'], function(){
+
     Route::get('consults','LawyerController@getConsults');
     Route::get('consult/{consult}','LawyerController@displayConsultDetail');
     Route::get('categories','LawyerController@getCategory');
@@ -116,6 +121,7 @@ Route::group(['prefix' => 'lawyer'], function(){
 });
 
 Route::group(['prefix' => 'client'], function(){
+
     Route::get('consults','ClientController@getConsults');
     Route::get('consult/{consult}','ClientController@displayConsultDetail');
     Route::get('categories','ClientController@getCategory');
@@ -128,7 +134,9 @@ Route::group(['prefix' => 'client'], function(){
 Route::resource('post','PostController');
 
 Route::group(['prefix' => 'wxpay'], function(){
+
     Route::post('callback', 'WeChat\WxPayController@payCallback');
+    # 微信扫码支付方式
     Route::get('native/{id}', 'WeChat\WxPayController@nativePay');
     # 微信浏览器内部支付方式
     Route::get('jsapi/{id}', 'WeChat\WxPayController@JSPay')->middleware(['wechat.oauth']);

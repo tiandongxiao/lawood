@@ -28,7 +28,7 @@ class BindController extends Controller
      */
     public function getBindExistUser()
     {
-        return view('bind.bind_exist_user');
+        return view('auth.bind.bind_exist_user');
     }
 
     /**
@@ -67,7 +67,7 @@ class BindController extends Controller
      */
     public function getChoseRole()
     {
-        return view('bind.chose_user_role');
+        return view('auth.bind.chose_user_role');
     }
 
     /**
@@ -104,7 +104,7 @@ class BindController extends Controller
      */
     public function getBindUser()
     {
-        return view('bind.chose_bind_user');
+        return view('auth.bind.chose_bind_user');
     }
 
     /**
@@ -133,7 +133,7 @@ class BindController extends Controller
      */
     public function getBindNewUser()
     {
-        return view('bind.bind_new_user');
+        return view('auth.bind.bind_new_user');
     }
 
     /**

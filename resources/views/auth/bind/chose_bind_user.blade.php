@@ -1,4 +1,4 @@
-@extends('base.master')
+@extends('tpl.base.app')
 @section('content')
     <div class="box box-info" style="border:solid #cccccc 1px;">
         <div class="box box-widget widget-user" style="margin-bottom:30px;">

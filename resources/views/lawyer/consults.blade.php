@@ -1,4 +1,4 @@
-@extends('base.master')
+@extends('tpl.lawyer.app')
 @section('content')
     <ul>
     @foreach($consults as $consult)

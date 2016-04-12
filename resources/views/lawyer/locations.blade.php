@@ -1,4 +1,4 @@
-@extends('base.master')
+@extends('tpl.lawyer.app')
 @section('content')
     <h3>您已绑定的服务地址</h3>
     <ul class="nav">

@@ -1,4 +1,4 @@
-@extends('base.master')
+@extends('tpl.lawyer.app')
 @section('content')
     <h2>Pois: {{$pois->poi_id}}</h2>
     <ul class="list-group">

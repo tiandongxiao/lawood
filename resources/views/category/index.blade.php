@@ -1,4 +1,4 @@
-@extends('base.master')
+@extends('tpl.base.master')
 @section('content')
     <div class="nav-tabs-custom">
         <ul class="nav nav-tabs">
