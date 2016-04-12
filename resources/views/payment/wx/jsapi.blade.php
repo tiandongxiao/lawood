@@ -1,6 +1,6 @@
 @extends('base.master')
 @section('content')
-    <div class="text-center"><p style="color:#c1e2b3;font-size:50px">{{$price/100}} 元</p></div>
+    <div class="text-center"><p style="color:#3c3c3c;font-size:50px">{{$price/100}} 元</p></div>
     <br/>
     <div align="center">
         <button style="width:210px; height:50px; border-radius: 15px;background-color:#FE6714; border:0px #FE6714 solid; cursor: pointer;  color:white;  font-size:16px;" type="button" onclick="callpay()" >立即支付</button>
