@@ -103,7 +103,7 @@ class WxPayController extends Controller
         $price = $order->total_fee;
         $url = $result->code_url;
 
-        return view('payment.pay',compact('url','price'));
+        return view('payment.native',compact('url','price'));
     }
 
     /**
@@ -131,6 +131,6 @@ class WxPayController extends Controller
         $params = $this->payment->configForPayment($result->prepay_id);
         $price  = $order->total_fee;
 
-        return view('payment.js',compact('params','price'));
+        return view('payment.jsapi',compact('params','price'));
     }
 }
