@@ -145,20 +145,20 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        //Roger added
-        Illuminate\Html\HtmlServiceProvider::class,//HTML FORM
-        Intervention\Image\ImageServiceProvider::class,//Intervention 图像处理库
-        Mews\Captcha\CaptchaServiceProvider::class, //图像验证码生成器
-        Toplan\PhpSms\PhpSmsServiceProvider::class, //短信服务
-        Toplan\Sms\SmsManagerServiceProvider::class, //短信服务
-        Overtrue\LaravelSocialite\ServiceProvider::class,//第三方登录
-        Overtrue\LaravelWechat\ServiceProvider::class, //微信开发包
-        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,//Log服务
-        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,//Boss级数据跟踪系统
-        Amsgames\LaravelShop\LaravelShopProvider::class,
-        Nvd\Crud\Providers\NvdCrudServiceProvider::class,
-        VergilLai\NodeCategories\NodeCategoriesProvider::class,//分类辅助
-        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class, //二维码服务
+        # 项目新加服务
+        Illuminate\Html\HtmlServiceProvider::class,      # HTML FORM
+        Intervention\Image\ImageServiceProvider::class,  # Intervention 图像处理库
+        Mews\Captcha\CaptchaServiceProvider::class,      # 图像验证码生成器
+        Toplan\PhpSms\PhpSmsServiceProvider::class,      # 短信服务
+        Toplan\Sms\SmsManagerServiceProvider::class,     # 短信服务
+        Overtrue\LaravelSocialite\ServiceProvider::class,# 第三方登录
+        Overtrue\LaravelWechat\ServiceProvider::class,   # 微信开发
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,  #Log服务
+        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class, # Boss级数据跟踪系统
+        Amsgames\LaravelShop\LaravelShopProvider::class,        # 电商服务
+        Nvd\Crud\Providers\NvdCrudServiceProvider::class,       # CRUD服务
+        VergilLai\NodeCategories\NodeCategoriesProvider::class, # 分类服务
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,   # 二维码服务
     ],
 
     /*
@@ -208,17 +208,17 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
-        //Roger added
-        'HTML'      => Illuminate\Html\HtmlFacade::class,
-        'Form'      => Illuminate\Html\FormFacade::class,
-        'Image'     => Intervention\Image\Facades\Image::class, //图片服务
-        'Captcha'   => Mews\Captcha\Facades\Captcha::class, //图形验证码生成器
-        'PhpSms'    => Toplan\PhpSms\Facades\Sms::class, //短信发送服务
-        'SmsManager' => Toplan\Sms\Facades\SmsManager::class, //短信管理服务
-        'Socialite' => Overtrue\LaravelSocialite\Socialite::class,//第三方登录
-        'Wechat'    => Overtrue\LaravelWechat\Facade::class, //微信开发包
-        'Tracker'   => PragmaRX\Tracker\Vendor\Laravel\Facade::class,//Boss级数据跟踪系统
-        'Shop'      => Amsgames\LaravelShop\LaravelShopFacade::class,
-        'QrCode'    => SimpleSoftwareIO\QrCode\Facades\QrCode::class, //二维码服务
+        # 项目新加服务
+        'HTML'      => Illuminate\Html\HtmlFacade::class,             # HTML HTML
+        'Form'      => Illuminate\Html\FormFacade::class,             # HTML FORM
+        'Image'     => Intervention\Image\Facades\Image::class,       # 图片服务
+        'Captcha'   => Mews\Captcha\Facades\Captcha::class,           # 图形验证码生成器
+        'PhpSms'    => Toplan\PhpSms\Facades\Sms::class,              # 短信发送服务
+        'SmsManager' => Toplan\Sms\Facades\SmsManager::class,         # 短信管理服务
+        'Socialite' => Overtrue\LaravelSocialite\Socialite::class,    # 第三方登录
+        'Wechat'    => Overtrue\LaravelWechat\Facade::class,          # 微信开发包
+        'Tracker'   => PragmaRX\Tracker\Vendor\Laravel\Facade::class, # Boss级数据跟踪系统
+        'Shop'      => Amsgames\LaravelShop\LaravelShopFacade::class, # 电商服务
+        'QrCode'    => SimpleSoftwareIO\QrCode\Facades\QrCode::class, # 二维码服务
     ],
 ];
