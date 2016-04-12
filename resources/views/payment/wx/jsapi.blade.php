@@ -3,7 +3,7 @@
     <div class="text-center"><p style="color:#3c3c3c;font-size:50px">{{$price/100}} 元</p></div>
     <br/>
     <div align="center">
-        <button style="width:210px; height:50px; border-radius: 15px;background-color:#FE6714; border:0px #FE6714 solid; cursor: pointer;  color:white;  font-size:16px;" type="button" onclick="callpay()" >立即支付</button>
+        <button style="width:210px; height:50px; border-radius: 10px;background-color:#FE6714; border:0px #FE6714 solid; cursor: pointer;  color:white;  font-size:16px;" type="button" onclick="callpay()" >立即支付</button>
     </div>
 @endsection
 @section('script')
@@ -12,12 +12,12 @@
         function jsApiCall()
         {
             WeixinJSBridge.invoke(
-                    'getBrandWCPayRequest',
-                    {!! $params !!},
-                    function(res){
-                        WeixinJSBridge.log(res.err_msg);
-                        alert(res.err_code+res.err_desc+res.err_msg);
-                    }
+                'getBrandWCPayRequest',
+                {!! $params !!},
+                function(res){
+                    WeixinJSBridge.log(res.err_msg);
+                    alert(res.err_code+res.err_desc+res.err_msg);
+                }
             );
         }
 

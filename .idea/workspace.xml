@@ -42,9 +42,10 @@
       <file leaf-file-name="jsapi.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/payment/wx/jsapi.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0519774">
-              <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.5717514">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
+                <element signature="e#76#112#0#HTML" expanded="true" />
                 <element signature="e#191#344#0#HTML" expanded="true" />
               </folding>
             </state>
@@ -1055,9 +1056,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/payment/wx/jsapi.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0519774">
-          <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.5717514">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
+            <element signature="e#76#112#0#HTML" expanded="true" />
             <element signature="e#191#344#0#HTML" expanded="true" />
           </folding>
         </state>
