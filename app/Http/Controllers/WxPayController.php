@@ -103,7 +103,7 @@ class WxPayController extends Controller
         $price = $order->total_fee;
         $url = $result->code_url;
 
-        return view('payment.good',compact('url','price'));
+        return view('payment.pay',compact('url','price'));
     }
 
     /**
