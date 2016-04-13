@@ -110,7 +110,7 @@ Route::group(['prefix' => 'lawyer'], function(){
 
     Route::get('consults','LawyerController@getConsults');
     Route::get('consult/{consult}','LawyerController@displayConsultDetail');
-    Route::get('categories','LawyerController@getCategory');
+    Route::get('categories','LawyerController@getCategories');
     Route::get('category/add','LawyerController@addCategory');
     Route::get('category/rm/{id}','LawyerController@deleteCategory');
     Route::get('category/new','LawyerController@getUnbindCategories');
@@ -130,8 +130,8 @@ Route::group(['prefix' => 'client'], function(){
 
 Route::group(['prefix' => 'wxpay'], function(){
 
-    Route::post('callback', 'WeChat\WxPayController@payCallback');
-    Route::get('native/{id}', 'WeChat\WxPayController@nativePay'); # 微信扫码支付方式
+    Route::post('callback', 'WeChat\WxPayController@callback');                          # 微信支付回调处理逻辑
+    Route::get('native/{id}', 'WeChat\WxPayController@nativePay');                          # 微信扫码支付方式
     Route::get('jsapi/{id}', 'WeChat\WxPayController@JSPay')->middleware(['wechat.oauth']); # 微信浏览器内部支付方式
 });
 

@@ -17,22 +17,13 @@ class PoisController extends Controller
         return $this->view( "index", ['records' => $records] );
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return  \Illuminate\Http\Response
-     */
+    # 创建本地POI兴趣点
     public function create()
     {
         return $this->view("create");
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param    \Illuminate\Http\Request  $request
-     * @return  \Illuminate\Http\Response
-     */
+    # 保存本地POI逻辑
     public function store( Request $request )
     {
         $this->validate($request, Pois::validationRules());
@@ -42,32 +33,19 @@ class PoisController extends Controller
         return redirect('/pois');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @return  \Illuminate\Http\Response
-     */
+    # 显示本地POI兴趣点信息
     public function show(Request $request, Pois $pois)
     {
         return $this->view("show",['pois' => $pois]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @return  \Illuminate\Http\Response
-     */
+    # 编辑本地POI兴趣点
     public function edit(Request $request, Pois $pois)
     {
         return $this->view( "edit", ['pois' => $pois] );
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param    \Illuminate\Http\Request  $request
-     * @return  \Illuminate\Http\Response
-     */
+    # 更新本地POI兴趣点
     public function update(Request $request, Pois $pois)
     {
         if( $request->isXmlHttpRequest() )
@@ -87,11 +65,7 @@ class PoisController extends Controller
         return redirect('/pois');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @return  \Illuminate\Http\Response
-     */
+    #删除本地POI兴趣点
     public function destroy(Request $request, Pois $pois)
     {
         $pois->delete();

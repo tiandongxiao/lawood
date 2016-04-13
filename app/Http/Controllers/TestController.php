@@ -58,91 +58,6 @@ class TestController extends Controller
         dd($cart);
     }
 
-    public function createItem()
-    {
-
-        $category =  Category::find(random_int(5,16));
-
-        $location =  Location::find(random_int(1,5));
-
-        $poi = new Pois();
-        $poi->build($location,$category);
-
-        $item = Item::create([
-            'user_id'           => Auth::user()->id,
-            'price' 			=> random_int(100,200),
-            'sku'				=> str_random(15),
-            'description'		=> str_random(500),
-            'category_id'       => $category->id,
-            'location_id'       => $location->id
-        ]);
-
-        $item->poi()->save($poi);
-
-        dd($item->poi);
-    }
-
-    public function deleteItem()
-    {
-        $item =  Auth::user()->items()->first();
-        $item->poi->delete();
-        $item->delete();
-    }
-
-    public function getUpdateItem()
-    {
-        $item =  Auth::user()->items()->first();
-        return view('consult.update',compact($item));
-    }
-
-    public function postUpdateItem(Request $request,Item $item)
-    {
-
-    }
-
-
-
-
-    public function getItems()
-    {
-       dd(Auth::user()->items);
-    }
-
-    public function addItemIntoCart()
-    {
-
-        $products = [];
-
-        while (count($products) < 3) {
-            $products[] = Item::create([
-                'price' 			=> count($products) + 0.99,
-                'sku'				=> str_random(15),
-                'name'				=> str_random(64),
-                'description'		=> str_random(500),
-            ]);
-        }
-
-        $cart = Cart::current();
-        // Adds unexistent item model PROD0001
-        $cart->add($products[0]);
-        $cart->add($products[1]);
-        $cart->add($products[2]);
-        $cart->add(['sku' => 'PROD0001', 'price' => 9.99]);
-        dd(Auth::user()->items);
-        dd($cart->items);
-    }
-
-    public function removeItemFromCart($id)
-    {
-        $item  = Item::find($id);
-        if($item){
-            $cart = Cart::current();
-            $cart->remove($item);
-            dd($cart->count);
-        }
-        dd('查无此货');
-    }
-
     public function getPlaceOrder()
     {
         $cart = Cart::current();
@@ -184,25 +99,5 @@ class TestController extends Controller
             'filter' => '_name:王国营+category:家庭'
         ];
         dd($this->searchByFilter($condition));
-    }
-
-    public function allCates()
-    {
-        $cates = Category::all()->lists('name');
-
-
-        $categories = Auth::user()->categories;
-
-        foreach($cates as $category){
-
-        }
-
-
-
-    }
-
-    public function inCategories($name)
-    {
-
     }
 }

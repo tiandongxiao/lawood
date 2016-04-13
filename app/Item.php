@@ -32,4 +32,9 @@ class Item extends ShopItemModel
     {
         return $this->hasOne(Pois::class);
     }
+
+    static public function build()
+    {
+
+    }
 }

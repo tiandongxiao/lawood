@@ -24,12 +24,7 @@ class WxPayController extends Controller
     # 用户服务句柄
     private $user;
 
-
-    /**
-     * 绑定相关微信服务
-     *
-     * @param Application $app
-     */
+    # 绑定相关微信服务
     public function __construct(Application $app)
     {
         $this->app = $app;
@@ -37,13 +32,8 @@ class WxPayController extends Controller
         $this->user = $this->app->user;
     }
 
-    /**
-     * 微信支付回调函数（Native和JS-API使用同一个回调函数）
-     *
-     * @return Response
-     * @throws \EasyWeChat\Core\Exceptions\FaultException
-     */
-    public function Callback()
+    # 微信支付回调函数（Native和JS-API使用同一个回调函数）
+    public function callback()
     {
         $response = $this->payment->handleNotify(function($notify, $successful){
             #返回值中不包含transaction_id时，此时用户尚未生成支付订单
@@ -51,9 +41,10 @@ class WxPayController extends Controller
             return true;
 
             # 使用通知里的 "微信支付订单号" 或者 "商户订单号" 去自己的数据库找到订单
-            $order = 查询订单($notify->transaction_id);
+             $order = null; #查询订单($notify->transaction_id);
 
-            if (!$order) { // 如果订单不存在
+            # 如果订单不存在
+            if (!$order) {
                 return 'Order not exist.'; // 告诉微信，我已经处理完了，订单没找到，别再通知我了
             }
 

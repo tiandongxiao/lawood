@@ -17,14 +17,14 @@ class LawyerController extends Controller
     # 律师主页
     public function index()
     {
-
+        return view('lawyer.main');
     }
 
     # 列举出所有的业务咨询服务
     public function getConsults()
     {
         $consults = Auth::user()->items;
-        return view('lawyer.consults',compact('consults'));
+        return view('consult.index',compact('consults'));
     }
 
     # 查看一个具体业务咨询信息
@@ -37,21 +37,22 @@ class LawyerController extends Controller
     # 显示当前律师的业务类别
     public function getCategories()
     {
-        $categories = Auth::user()->categories;
+        $binds = Auth::user()->categories;
         $unbinds = $this->getUnbindCategories();
-        return view('lawyer.categories',compact('categories','unbinds'));
+        return view('lawyer.categories',compact('binds','unbinds'));
     }
 
     # 增加一个新的业务类别
     public function addCategory($id)
     {
-        $category = Category::find(random_int(5,15));
-        echo $category->name;
-        if($this->hasCategory($category->id)){
-            dd('您已填加此分类，不能重复添加');
+        $category = Category::find($id);
+
+        if(!$this->hasCategory($category->id)){
+            Auth::user()->categories()->attach($category->id);
+            return redirect('lawyer/categories');
         }
-        Auth::user()->categories()->attach($category->id);
-        dd(Auth::user()->categories);
+
+        return back()->withErrors('您已填加此分类，不能重复添加');
     }
 
     # 判断是否有某个业务类别
@@ -69,6 +70,7 @@ class LawyerController extends Controller
     {
         if($this->hasCategory($id)){
             Auth::user()->categories()->detach($id);
+            return redirect('lawyer/categories');
         }
     }
 
