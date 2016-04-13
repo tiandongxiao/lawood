@@ -10,43 +10,25 @@ use App\Http\Controllers\Controller;
 
 class ConsultController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    # 律师所有私有咨询业务
     public function index()
     {
-        //
+        return view('lawyer.consults');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    # 创建新的咨询业务
     public function create()
     {
-        //
+        return view('lawyer.consult_create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    # 保存逻辑
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    # 显示一条consult详细信息
     public function show($id)
     {
         $consult = Item::find($id);

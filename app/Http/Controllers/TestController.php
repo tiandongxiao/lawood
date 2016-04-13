@@ -9,14 +9,11 @@ use App\Category;
 use App\Location;
 use App\Pois;
 use App\Traits\GdYunMapTrait;
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Uri;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
-use Efriandika\LaravelSettings\Facades\Settings;
 use Shop;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,6 +21,7 @@ use Illuminate\Support\Facades\Auth;
 class TestController extends Controller
 {
     use GdYunMapTrait;
+
     public function putValue($key,$value)
     {
         Cache::add($key,$value,2);        
@@ -80,6 +78,7 @@ class TestController extends Controller
         ]);
 
         $item->poi()->save($poi);
+
         dd($item->poi);
     }
 

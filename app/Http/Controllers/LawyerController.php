@@ -14,42 +14,27 @@ use Illuminate\Support\Str;
 
 class LawyerController extends Controller
 {
-    /**
-     *
-     */
+    # 律师主页
     public function index()
     {
 
     }
 
-    /**
-     * 列举出所有的业务咨询服务
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+    # 列举出所有的业务咨询服务
     public function getConsults()
     {
         $consults = Auth::user()->items;
         return view('lawyer.consults',compact('consults'));
     }
 
-    /**
-     * 查看一个具体业务咨询信息
-     *
-     * @param $id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+    # 查看一个具体业务咨询信息
     public function displayConsultDetail($id)
     {
         $consult = Item::find($id);
         return view('lawyer.consult',compact('consult'));
     }
 
-    /**
-     * 显示当前律师的业务范围
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+    # 显示当前律师的业务类别
     public function getCategories()
     {
         $categories = Auth::user()->categories;
@@ -57,11 +42,7 @@ class LawyerController extends Controller
         return view('lawyer.categories',compact('categories','unbinds'));
     }
 
-    /**
-     * 增加一个业务范围
-     *
-     * @param $id
-     */
+    # 增加一个新的业务类别
     public function addCategory($id)
     {
         $category = Category::find(random_int(5,15));
@@ -73,12 +54,7 @@ class LawyerController extends Controller
         dd(Auth::user()->categories);
     }
 
-    /**
-     * 判断是否有某个业务范围
-     *
-     * @param $cate_id
-     * @return bool
-     */
+    # 判断是否有某个业务类别
     public function hasCategory($cate_id)
     {
         foreach(Auth::user()->categories as $category){
@@ -88,11 +64,7 @@ class LawyerController extends Controller
         return false;
     }
 
-    /**
-     * 删除某个业务范围
-     *
-     * @param $id
-     */
+    # 删除某个业务类别
     public function deleteCategory($id)
     {
         if($this->hasCategory($id)){
@@ -100,11 +72,7 @@ class LawyerController extends Controller
         }
     }
 
-    /**
-     * 获取当前律师没有提供的业务范围
-     *
-     * @return array
-     */
+    # 获取当前律师没有提供的业务范围
     public function getUnbindCategories()
     {
         $unbinds = [];
@@ -118,24 +86,10 @@ class LawyerController extends Controller
         return $unbinds;
     }
 
-    /**
-     * 获得当前律师提供的业务范围
-     *
-     * @return mixed
-     */
-    public function getBindCategories()
-    {
-        return Auth::user()->categories;
-    }
-
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+    # 获得当前律师所有接单地点
     public function getBindLocations()
     {
         $locations = Auth::user()->locations;
         return view('lawyer.locations',compact('locations'));
     }
-
-
 }

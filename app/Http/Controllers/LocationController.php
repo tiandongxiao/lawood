@@ -3,8 +3,6 @@ namespace App\Http\Controllers;
 
 use App\Location;
 use Illuminate\Http\Request;
-use App\Item;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -19,22 +17,13 @@ class LocationController extends Controller
         return $this->view( "index", ['records' => $records] );
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return  \Illuminate\Http\Response
-     */
+    # 创建一个新的执业地址
     public function create()
     {
         return $this->view("create");
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param    \Illuminate\Http\Request  $request
-     * @return  \Illuminate\Http\Response
-     */
+    # 地址保存逻辑
     public function store( Request $request )
     {
         $this->validate($request, Location::validationRules());
@@ -49,32 +38,19 @@ class LocationController extends Controller
         return redirect('/location');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @return  \Illuminate\Http\Response
-     */
+    # 显示一个地址的详细信息
     public function show(Request $request, Location $location)
     {
         return $this->view("show",['location' => $location]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @return  \Illuminate\Http\Response
-     */
+    # 编辑一个地址信息
     public function edit(Request $request, Location $location)
     {
         return $this->view( "edit", ['location' => $location] );
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param    \Illuminate\Http\Request  $request
-     * @return  \Illuminate\Http\Response
-     */
+    # 更新地址信息的逻辑
     public function update(Request $request, Location $location)
     {
         if( $request->isXmlHttpRequest() )
@@ -104,11 +80,7 @@ class LocationController extends Controller
         return redirect('/location');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @return  \Illuminate\Http\Response
-     */
+    # 删除一个地址信息
     public function destroy(Request $request, Location $location)
     {
         $location->delete();
@@ -119,5 +91,4 @@ class LocationController extends Controller
     {
         return view($this->viewDir.".".$view, $data);
     }
-
 }

@@ -58,11 +58,5 @@ class User extends Model implements AuthenticatableContract,
         return $this->belongsToMany(Category::class,'user_category');
     }
 
-    # 一个律师拥有多个post文章
-    public function posts()
-    {
-        return $this->belongsToMany(Post::class,'user_post');
-    }
-
     # 一个律师拥有多个Item项，这个关系在ShopUserTrait中已经绑定 #
 }
