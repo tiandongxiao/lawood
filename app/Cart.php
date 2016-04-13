@@ -6,5 +6,5 @@ use Amsgames\LaravelShop\Models\ShopCartModel;
 
 class Cart extends ShopCartModel
 {
-    # 用户购物车模型
+    # 用户购物车
 }
