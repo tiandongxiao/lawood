@@ -27,13 +27,6 @@ class LawyerController extends Controller
         return view('consult.index',compact('consults'));
     }
 
-    # 查看一个具体业务咨询信息
-    public function displayConsultDetail($id)
-    {
-        $consult = Item::find($id);
-        return view('lawyer.consult',compact('consult'));
-    }
-
     # 显示当前律师的业务类别
     public function getCategories()
     {
@@ -86,12 +79,5 @@ class LawyerController extends Controller
             }
         }
         return $unbinds;
-    }
-
-    # 获得当前律师所有接单地点
-    public function getBindLocations()
-    {
-        $locations = Auth::user()->locations;
-        return view('lawyer.locations',compact('locations'));
     }
 }

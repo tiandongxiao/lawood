@@ -79,6 +79,7 @@ class ConsultController extends Controller
         $item->delete();
     }
 
+    # 根据用户的选择的分类和地址信息创建所有咨询业务
     public function generateConsults()
     {
         $user  = Auth::user();
@@ -110,6 +111,7 @@ class ConsultController extends Controller
         }
     }
 
+    # 判断律师是否提供了此项咨询业务
     public function isExist($category_id,$location_id)
     {
         #在当前律师所有服务项中查找有没有提供此项服务
