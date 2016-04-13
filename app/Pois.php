@@ -51,13 +51,6 @@ class Pois extends Model
         return $newRules;
     }
 
-
-    # 一个POI数据项只代表一个咨询业务
-    public function consult()
-    {
-        return $this->belongsTo('App\Item');
-    }
-
     # 创建一个新云图POI并与本地POI对象绑定
     public function build(Location $location, Category $category)
     {
@@ -88,5 +81,11 @@ class Pois extends Model
         ],$data);
 
         $this->updatePOI($info);
+    }
+
+    # 一个POI数据项只代表一个咨询业务
+    public function consult()
+    {
+        return $this->belongsTo(Item::class);
     }
 }

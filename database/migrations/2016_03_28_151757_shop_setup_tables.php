@@ -30,7 +30,7 @@ class ShopSetupTables extends Migration
             $table->bigInteger('cart_id')->unsigned()->nullable();
             $table->bigInteger('order_id')->unsigned()->nullable();
             $table->string('sku');
-            $table->decimal('price', 20, 2);
+            $table->smallInteger('price');
             $table->decimal('tax', 20, 2)->default(0);
             $table->decimal('shipping', 20, 2)->default(0);
             $table->string('currency')->nullable();

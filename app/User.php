@@ -49,7 +49,7 @@ class User extends Model implements AuthenticatableContract,
     # 一个律师可以拥有多个地址，以便于其扩展业务，地址信息独有不共享
     public function locations()
     {
-        return $this->hasMany('App\Location');
+        return $this->hasMany(Location::class);
     }
 
     # 一个律师可以拥有多个执业范围

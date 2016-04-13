@@ -18,18 +18,18 @@ class Item extends ShopItemModel
     # 一个咨询服务项只属于一个分类
     public function category()
     {
-        return $this->belongsTo('App\Category');
+        return $this->belongsTo(Category::class);
     }
 
     # 一个咨询签到只拥有一个地址
     public function location()
     {
-        return $this->belongsTo('App\Location');
+        return $this->belongsTo(Location::class);
     }
 
     # 一个咨询项拥有一个POI数据项
     public function poi()
     {
-        return $this->hasOne('App\Pois');
+        return $this->hasOne(Pois::class);
     }
 }

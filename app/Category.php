@@ -12,7 +12,7 @@ class Category extends Model
     # 一个分类拥有多条咨询项
     public function consults()
     {
-        return $this->hasMany('App\Item');
+        return $this->hasMany(Item::class);
     }
 
     # 一个分类属于多个律师执业范围

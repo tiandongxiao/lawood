@@ -56,13 +56,13 @@ class Location extends Model {
     # 地址是私有概念，一个地址只属于一个用户
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class);
     }
 
     # 一个地址可以做多种咨询业务
     public function consults()
     {
-        return $this->hasMany('App\Item');
+        return $this->hasMany(Item::class);
     }
 
 }

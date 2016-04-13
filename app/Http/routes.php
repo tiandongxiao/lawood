@@ -63,7 +63,6 @@ Route::group(['prefix' => 'wx'], function() {
     Route::get('login','WeChat\AuthWeChatController@wxLogin');
     Route::any('callback','WeChat\AuthWeChatController@wxCallback');
     Route::get('check','WeChat\AuthWeChatController@wxCheck');
-
     Route::get('bind','WeChat\AuthWeChatController@wxBind');
     Route::get('unbind','WeChat\AuthWeChatController@wxUnBind');
 
@@ -104,8 +103,6 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('cates','TestController@allCates');
 });
 
-Route::resource('gdmap','GdmapController');
-#
 Route::resource('location','LocationController');
 Route::resource('pois','PoisController');
 
@@ -131,14 +128,12 @@ Route::group(['prefix' => 'client'], function(){
     Route::get('locations','ClientController@getBindLocations');
 });
 
-Route::resource('post','PostController');
-
 Route::group(['prefix' => 'wxpay'], function(){
 
     Route::post('callback', 'WeChat\WxPayController@payCallback');
-    # 微信扫码支付方式
-    Route::get('native/{id}', 'WeChat\WxPayController@nativePay');
-    # 微信浏览器内部支付方式
-    Route::get('jsapi/{id}', 'WeChat\WxPayController@JSPay')->middleware(['wechat.oauth']);
+    Route::get('native/{id}', 'WeChat\WxPayController@nativePay'); # 微信扫码支付方式
+    Route::get('jsapi/{id}', 'WeChat\WxPayController@JSPay')->middleware(['wechat.oauth']); # 微信浏览器内部支付方式
 });
+
+Route::resource('post','PostController');
 
