@@ -26,7 +26,7 @@ class ShopSetupTables extends Migration
         // Create table for storing items
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('user_id')->unsigned()->nullable(); # 关联user,一个执业项目只属于一个律师
             $table->bigInteger('cart_id')->unsigned()->nullable();
             $table->bigInteger('order_id')->unsigned()->nullable();
             $table->string('sku');
@@ -39,8 +39,8 @@ class ShopSetupTables extends Migration
             $table->string('reference_id')->nullable();
 
             # 为商品添加分类项和地址项，以实现更好的解耦和生成云地图时获取相关信息
-            $table->unsignedInteger('category_id')->nullable();//关联category，一个商品单只属于一个category
-            $table->unsignedInteger('location_id')->nullable();//关联category，一个商品单只属于一个location
+            $table->unsignedInteger('category_id')->nullable();  # 关联category，一个商品单只属于一个category
+            $table->unsignedInteger('location_id')->nullable();  # 关联location，一个商品单只属于一个location
 
             $table->timestamps();
 

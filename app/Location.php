@@ -52,19 +52,14 @@ class Location extends Model {
         return $newRules;
     }
 
-    /**
-     * 一个地址只属于一个用户，这里并没有做成地址与用户的多对多，是为了便于用户对
-     * 地址的修改和管理
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
+
+    # 地址是私有概念，一个地址只属于一个用户
     public function user()
     {
         return $this->belongsTo('App\User');
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
+    # 一个地址可以做多种咨询业务
     public function consults()
     {
         return $this->hasMany('App\Item');

@@ -15,7 +15,7 @@ class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract
 {
-    use Authenticatable, Authorizable, CanResetPassword,ShopUserTrait;
+    use Authenticatable, Authorizable, CanResetPassword, ShopUserTrait;
 
     /**
      * The database table used by the model.
@@ -46,23 +46,23 @@ class User extends Model implements AuthenticatableContract,
         return true;
     }
 
-    /**
-     * 一个律师可以拥有多个地址，以便于其扩展业务，地址信息独有不共享，哪怕其他人也是这个地址
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
+    # 一个律师可以拥有多个地址，以便于其扩展业务，地址信息独有不共享
     public function locations()
     {
         return $this->hasMany('App\Location');
     }
 
+    # 一个律师可以拥有多个执业范围
     public function categories()
     {
         return $this->belongsToMany(Category::class,'user_category');
     }
 
+    # 一个律师拥有多个post文章
     public function posts()
     {
         return $this->belongsToMany(Post::class,'user_post');
     }
+
+    # 一个律师拥有多个Item项，这个关系在ShopUserTrait中已经绑定 #
 }

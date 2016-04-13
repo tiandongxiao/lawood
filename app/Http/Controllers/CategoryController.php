@@ -85,9 +85,4 @@ class CategoryController extends Controller
     {
         //
     }
-
-    public function gen()
-    {
-        
-    }
 }
