@@ -64,22 +64,15 @@ class AuthController extends Controller
         ]);
     }
 
-    /**
-     * 返回用户注册类型选择页面
-     *
-     * @return mixed
-     */
+
+    # 返回用户注册类型选择页面
     public function getChoseRegRole()
     {
         return view('auth.chose_role');
     }
 
-    /**
-     * 用户选择注册类型处理逻辑
-     *
-     * @param ChoseUserRoleRequest $request
-     * @return mixed
-     */
+
+    # 用户选择注册类型处理逻辑
     public function postChoseRegRole(ChoseUserRoleRequest $request)
     {
         $role = $request->get('role');
@@ -92,22 +85,15 @@ class AuthController extends Controller
         }
     }
 
-    /**
-     * 返回手机注册页面
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+
+    # 返回手机注册页面
     public function getPhoneRegister($role)
     {
         return view('auth.phone_reg')->with('role',$role);
     }
 
-    /**
-     * 手机注册逻辑处理
-     *
-     * @param PhoneRegRequest $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
+
+    # 手机注册逻辑处理
     public function postPhoneRegister(PhoneRegRequest $request)
     {
         $role = $request->get('role');
@@ -131,40 +117,29 @@ class AuthController extends Controller
 
         $user = $this->create($request->all());
 
-        if($user){
-            Auth::login($user);
-            switch ($user->role){
-                case 'lawyer':
-                    return redirect('/')->withErrors('律师用户注册完成，您需要提交您的执业资质进行审核');
-                case 'client':
-                    $user->active = true;
-                    $user->save();
-                    return redirect('/')->withErrors('咨询用户注册完成！您可以搜索您需要的律师了');
-                default:
-                    return redirect('/')->withErrors('我去，外星人啊');
-            }
-
-            return redirect('/')->withErrors('恭喜您已经完成了注册');
+        Auth::login($user);
+        switch ($user->role){
+            case 'lawyer':
+                return redirect('/')->withErrors('律师用户注册完成，您需要提交您的执业资质进行审核');
+            case 'client':
+                $user->active = true;
+                $user->save();
+                return redirect('/')->withErrors('咨询用户注册完成！您可以搜索您需要的律师了');
+            default:
+                return redirect('/')->withErrors('我去，外星人啊');
         }
+        return redirect('/')->withErrors('恭喜您已经完成了注册');
     }
 
-    /**
-     * 返回手机登录页面
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+
+    # 返回手机登录页面
     public function getPhoneLogin()
     {
         return view('auth.phone_login');
     }
 
 
-    /**
-     * 手机登录逻辑处理
-     *
-     * @param PhoneLoginRequest $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
+    # 手机登录逻辑处理
     public function postPhoneLogin(PhoneLoginRequest $request)
     {
         $phone = $request->get('phone');
@@ -177,22 +152,14 @@ class AuthController extends Controller
     }
 
 
-    /**
-     * 返回邮件登录页面
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+    # 返回邮件登录页面
     public function getEmailLogin()
     {
         return view('auth.email_login');
     }
 
-    /**
-     * 邮件登录逻辑处理
-     *
-     * @param EmailLoginRequest $request
-     * @return $this|\Illuminate\Http\RedirectResponse
-     */
+
+    # 邮件登录逻辑处理
     public function postEmailLogin(EmailLoginRequest $request)
     {
         $email = $request->get('email');
@@ -205,28 +172,20 @@ class AuthController extends Controller
     }
 
 
-    /**
-     * 返回邮件注册页面
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+    # 返回邮件注册页面
     public function getEmailRegister()
     {
         return view('auth.email_reg');
     }
 
-    /**
-     * 邮件注册逻辑处理
-     *
-     * @param EmailRegRequest $request
-     * @return $this
-     */
+
+    # 邮件注册逻辑处理
     public function postEmailRegister(EmailRegRequest $request)
     {
         $info = array_merge($request->all(),['active'=>false]);
         $user = $this->create($info);
 
-        if(is_object($user)){
+        if($user){
             $this->sendActivatedMail($user);
             return redirect('/')->withErrors('恭喜您注册成功!请到您邮箱进行激活');
         }
@@ -234,11 +193,7 @@ class AuthController extends Controller
     }
 
 
-    /**
-     * 发送邮箱激活邮件
-     *
-     * @param $user
-     */
+    # 发送邮箱激活邮件
     private function sendActivatedMail($user)
     {
         $data = array(
@@ -251,24 +206,29 @@ class AuthController extends Controller
         $result = DB::table('email_actives')->insert($data);
         if($result){
             $info = $data[0];
-            Mail::send('emails.active', ['token' => $info['token'] ], function ($m) use ($user) {
+            Mail::send('auth.emails.active', ['token' => $info['token'] ], function ($m) use ($user) {
                 $m->to($user->email)->subject('律屋邮箱绑定');
             });
         }
     }
 
+
+    # 邮箱激活账户逻辑
     public function getActiveEmail($token = null)
     {
         if($token){
-            $info = DB::table('email_actives')->where('token',$token)->first();
-            if(is_object($info)){
+            $info = DB::table('auth.email_actives')->where('token',$token)->first();
+            if($info){
                 return redirect('/')->withErrors('邮件激活已过激活失效期');
             }
+
             $user = User::where('email',$info->email)->first();
             $user->email_active = true;
             $user->save();
-            DB::table('email_actives')->where('token',$token)->delete(); // 删除此条存储记录
+
+            DB::table('email_actives')->where('token',$token)->delete(); # 删除此条存储记录
             Auth::login($user);
+
             return redirect('/')->withErrors('邮箱已激活并为您登录');
         }
     }
