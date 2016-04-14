@@ -25,7 +25,7 @@
                 </div>
                 <br/>
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-info pull-right">提交</button>
+                    <button type="submit" class="btn btn-info pull-right">下一步</button>
                 </div><!-- /.box-footer -->
             </div>
         </form>
