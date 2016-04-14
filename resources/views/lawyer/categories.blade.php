@@ -1,21 +1,23 @@
 @extends('tpl.lawyer.app')
 @section('content')
-    <ul class="nav-stacked">
-    @foreach($categories as $category)
-        <li><a href="#">{{$category->name}}</a>  <a href="{{url('lawyer/category/rm/'.$category->id)}}">X</a></li>
-    @endforeach
-    </ul>
     <div>
-        <a class="btn btn-lg btn-warning" href="{{url('lawyer/category/add')}}">
-            添加新的咨询业务
-        </a>
+        <h3 class="page-header">目前提供的咨询业务</h3>
+        @if(!is_null($binds))
+            <ul class="nav-stacked">
+                @foreach($binds as $bind)
+                    <li><a href="#">{{$bind->name}}</a>  <a class="btn btn-danger" href="{{url('category/unbind/'.$bind->id)}}">X</a></li>
+                @endforeach
+            </ul>
+        @endif
     </div>
     <div>
-        <h3>您未提供的咨询业务</h3>
-        <ul>
-        @foreach($unbinds as $unbind)
-            <li>{{$unbind->name}}</li>
-        @endforeach
-        </ul>
+        <h3 class="page-header">您未提供的咨询业务</h3>
+        @if(!is_null($unbinds))
+            <ul>
+                @foreach($unbinds as $unbind)
+                    <li>{{$unbind->name}} <a class="btn btn-danger" href="{{url('category/bind/'.$unbind->id)}}">+</a></li>
+                @endforeach
+            </ul>
+        @endif
     </div>
 @endsection
