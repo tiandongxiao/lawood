@@ -30,7 +30,7 @@ Route::get('reset/confirm', 'Auth\PasswordController@getPhoneResetConfirm');
 Route::post('reset/confirmed', 'Auth\PasswordController@postPhoneResetConfirm');
 
 Route::get('email/active/{token}','Auth\AuthController@getActiveEmail');
-Route::get('email/bind/{token}','BindController@getBindEmailHandler');
+Route::get('email/bind/{token}','Auth\BindController@getBindEmailHandler');
 
 Route::get('reg/email', 'Auth\AuthController@getEmailRegister');
 Route::post('reg/email', 'Auth\AuthController@postEmailRegister');
@@ -40,7 +40,6 @@ Route::get('reset/email/{token}', 'Auth\PasswordController@getEmailReset');
 Route::post('reset/email/confirmed', 'Auth\PasswordController@postEmailReset');
 
 Route::group(['prefix' => 'bind'], function(){
-
     Route::get('chose','Auth\BindController@getChoseRole');
     Route::post('chose','Auth\BindController@postChoseRole');
 
@@ -71,20 +70,47 @@ Route::group(['prefix' => 'wx'], function() {
 });
 
 Route::group(['prefix' => 'tool'], function(){
-
     Route::post('cpt_check','ToolsController@captchaCheck');
     Route::get('cpt','ToolsController@getCaptcha');
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 });
 
 Route::group(['prefix' => 'communicate'], function(){
-
     Route::get('phone_code','CommunicationController@sendPhoneCode');
     Route::post('message','CommunicationController@sendMessageByRequest');
 });
 
-Route::group(['prefix' => 'test'], function(){
+# 执业地址相关路由
+Route::resource('location','LocationController');
+Route::group(['prefix' => 'address'], function(){
+    Route::get('bind','LocationController@getBindLocation')->middleware(['auth']);
+    Route::post('bind','LocationController@postBindLocation');
+});
 
+# 地图业务服务兴趣点
+Route::resource('pois','PoisController');
+
+Route::group(['prefix' => 'lawyer'], function(){
+    Route::get('consults','LawyerController@getConsults');
+    Route::get('consult/{consult}','LawyerController@displayConsultDetail');
+    Route::get('categories','LawyerController@getCategories');
+    Route::get('category/add','LawyerController@addCategory');
+    Route::get('category/rm/{id}','LawyerController@deleteCategory');
+    Route::get('category/new','LawyerController@getUnbindCategories');
+    Route::get('locations','LawyerController@getBindLocations');
+});
+
+Route::group(['prefix' => 'client'], function(){
+    Route::get('consults','ClientController@getConsults');
+});
+
+Route::group(['prefix' => 'wxpay'], function(){
+    Route::post('callback', 'WeChat\WxPayController@callback');                             # 微信支付回调处理逻辑
+    Route::get('native/{id}', 'WeChat\WxPayController@nativePay');                          # 微信扫码支付方式
+    Route::get('jsapi/{id}', 'WeChat\WxPayController@JSPay')->middleware(['wechat.oauth']); # 微信浏览器内部支付方式
+});
+
+Route::group(['prefix' => 'test'], function(){
     Route::get('put/{key}-{value}','TestController@putValue');
     Route::get('get/{key}','TestController@getValue');
     Route::get('uri','TestController@getUri');
@@ -101,37 +127,5 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('myi','TestController@getItems');
     Route::get('rm','TestController@deleteItem');
     Route::get('cates','TestController@allCates');
+    Route::get('loca','TestController@getLocations');
 });
-
-Route::resource('location','LocationController');
-Route::resource('pois','PoisController');
-
-Route::group(['prefix' => 'lawyer'], function(){
-
-    Route::get('consults','LawyerController@getConsults');
-    Route::get('consult/{consult}','LawyerController@displayConsultDetail');
-    Route::get('categories','LawyerController@getCategories');
-    Route::get('category/add','LawyerController@addCategory');
-    Route::get('category/rm/{id}','LawyerController@deleteCategory');
-    Route::get('category/new','LawyerController@getUnbindCategories');
-    Route::get('locations','LawyerController@getBindLocations');
-});
-
-Route::group(['prefix' => 'client'], function(){
-
-    Route::get('consults','ClientController@getConsults');
-    Route::get('consult/{consult}','ClientController@displayConsultDetail');
-    Route::get('categories','ClientController@getCategory');
-    Route::get('category/add','ClientController@addCategory');
-    Route::get('category/rm/{id}','ClientController@deleteCategory');
-    Route::get('category/new','ClientController@getUnbindCategories');
-    Route::get('locations','ClientController@getBindLocations');
-});
-
-Route::group(['prefix' => 'wxpay'], function(){
-
-    Route::post('callback', 'WeChat\WxPayController@callback');                          # 微信支付回调处理逻辑
-    Route::get('native/{id}', 'WeChat\WxPayController@nativePay');                          # 微信扫码支付方式
-    Route::get('jsapi/{id}', 'WeChat\WxPayController@JSPay')->middleware(['wechat.oauth']); # 微信浏览器内部支付方式
-});
-

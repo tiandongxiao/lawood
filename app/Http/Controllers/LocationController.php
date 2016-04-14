@@ -91,4 +91,29 @@ class LocationController extends Controller
     {
         return view($this->viewDir.".".$view, $data);
     }
+
+    public function getBindLocation()
+    {
+        return view('location.bind');
+    }
+
+    public function postBindLocation(Request $request)
+    {
+        $home = $request->get('home');
+        $work = $request->get('work');
+
+        $home_location = new Location();
+        $home_location->type = 'home';
+        $home_location->address = $home;
+        $home_location->save();
+
+        $work_location = new Location();
+        $work_location->type = 'work';
+        $work_location->address = $work;
+        $work_location->save();
+
+        Auth::user()->locations()->saveMany([$home_location,$work_location]);
+
+        return redirect('cate.bind');
+    }
 }

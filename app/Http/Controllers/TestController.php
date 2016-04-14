@@ -100,4 +100,9 @@ class TestController extends Controller
         ];
         dd($this->searchByFilter($condition));
     }
+
+    public function getLocations()
+    {
+        dd(Auth::user()->locations);
+    }
 }

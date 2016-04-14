@@ -100,6 +100,7 @@ class ConsultController extends Controller
                     ]);
 
                     $poi = new Pois();
+
                     $poi->build($location,$category,$item);
 
                     $item->poi()->save($poi);
@@ -122,5 +123,21 @@ class ConsultController extends Controller
             return true;
         }
         return false;
+    }
+
+    public function isWished($category_id,$location_id)
+    {
+        $wishes = $this->getWishes();
+        foreach($wishes as $wish){
+            if($wish->category_id == $category_id && $wish->location_id == $location_id){
+                return true;
+            }
+            return false;
+        }
+    }
+
+    public function getWishes()
+    {
+
     }
 }

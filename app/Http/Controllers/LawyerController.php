@@ -20,13 +20,6 @@ class LawyerController extends Controller
         return view('lawyer.main');
     }
 
-    # 列举出所有的业务咨询服务
-    public function getConsults()
-    {
-        $consults = Auth::user()->items;
-        return view('consult.index',compact('consults'));
-    }
-
     # 显示当前律师的业务类别
     public function getCategories()
     {

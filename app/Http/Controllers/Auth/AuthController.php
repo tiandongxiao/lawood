@@ -94,7 +94,7 @@ class AuthController extends Controller
 
 
     # 手机注册逻辑处理
-    public function postPhoneRegister(PhoneRegRequest $request)
+    public function postPhoneRegister(Request $request)
     {
         $role = $request->get('role');
 
@@ -102,25 +102,26 @@ class AuthController extends Controller
             return redirect('/')->withErrors('抱歉,我们没有这样的角色类型供用户注册');
         }
 
-        $key = 'reg_'.$request->get('phone');
-
-        if(!Cache::has($key)){
-            return back()->withErrors('抱歉，验证码已过期');
-        }
-
-        $value = Cache::get($key);
-        Cache::forget($key);
-
-        if($request->get('code') != $value){
-            return back()->withErrors('验证码不正确');
-        }
+//        $key = 'reg_'.$request->get('phone');
+//
+//        if(!Cache::has($key)){
+//            return back()->withErrors('抱歉，验证码已过期');
+//        }
+//
+//        $value = Cache::get($key);
+//        Cache::forget($key);
+//
+//        if($request->get('code') != $value){
+//            return back()->withErrors('验证码不正确');
+//        }
 
         $user = $this->create($request->all());
 
         Auth::login($user);
         switch ($user->role){
             case 'lawyer':
-                return redirect('/')->withErrors('律师用户注册完成，您需要提交您的执业资质进行审核');
+                //return redirect('/')->withErrors('律师用户注册完成，您需要提交您的执业资质进行审核');
+                return redirect('address/bind');
             case 'client':
                 $user->active = true;
                 $user->save();
@@ -128,6 +129,7 @@ class AuthController extends Controller
             default:
                 return redirect('/')->withErrors('我去，外星人啊');
         }
+
         return redirect('/')->withErrors('恭喜您已经完成了注册');
     }
 

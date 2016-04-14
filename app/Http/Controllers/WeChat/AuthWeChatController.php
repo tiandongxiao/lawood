@@ -16,8 +16,15 @@ use Illuminate\Support\Facades\Log;
 class AuthWeChatController extends Controller
 {
 
+    # 微信实例
     private $wx;
 
+    /**
+     * 绑定微信实例
+     *
+     * AuthWeChatController constructor.
+     * @param Application $app
+     */
     public function __construct(Application $app)
     {
         $this->wx = $app;
@@ -129,6 +136,12 @@ class AuthWeChatController extends Controller
         }
     }
 
+    /**
+     * 微信信息处理中心
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \EasyWeChat\Core\Exceptions\InvalidArgumentException
+     */
     public function serve()
     {
         $userApi = $this->wx->user;
