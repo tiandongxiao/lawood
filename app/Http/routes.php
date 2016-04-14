@@ -82,6 +82,7 @@ Route::group(['prefix' => 'communicate'], function(){
 
 # 执业地址相关路由
 Route::resource('location','LocationController');
+
 Route::group(['prefix' => 'address'], function(){
     Route::get('bind','LocationController@getBindLocation')->middleware(['auth']);
     Route::post('bind','LocationController@postBindLocation');
@@ -99,6 +100,21 @@ Route::group(['prefix' => 'lawyer'], function(){
     Route::get('category/new','LawyerController@getUnbindCategories');
     Route::get('locations','LawyerController@getBindLocations');
 });
+
+//Route::resource('category','CategoryController');
+
+Route::group(['prefix' => 'category'], function(){
+    # 律师相关
+    Route::get('/','LawyerController@getCategories');
+    Route::get('bind/{id}','LawyerController@bindCategory');
+    Route::get('unbind/{id}','LawyerController@unbindCategory');
+});
+
+Route::group(['prefix' => 'consult'], function(){
+    Route::get('list','ConsultController@index');
+    Route::get('build','ConsultController@building');
+});
+
 
 Route::group(['prefix' => 'client'], function(){
     Route::get('consults','ClientController@getConsults');
