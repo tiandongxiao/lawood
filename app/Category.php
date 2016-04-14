@@ -20,4 +20,13 @@ class Category extends Model
     {
         return $this->hasMany(User::class);
     }
+
+    public function delete()
+    {
+        $consults = $this->consults;
+        foreach($consults as $consult){
+            $consult->delete();
+        }
+        parent::delete();
+    }
 }

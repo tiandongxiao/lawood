@@ -33,8 +33,10 @@ class Item extends ShopItemModel
         return $this->hasOne(Pois::class);
     }
 
-    static public function build()
+    public function delete()
     {
-
+        #删除地图与本地POI信息
+        $this->poi->delete();
+        parent::delete();
     }
 }

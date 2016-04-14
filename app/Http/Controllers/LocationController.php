@@ -114,6 +114,6 @@ class LocationController extends Controller
 
         Auth::user()->locations()->saveMany([$home_location,$work_location]);
 
-        return redirect('cate.bind');
+        return redirect('category');
     }
 }

@@ -25,20 +25,39 @@ class LawyerController extends Controller
     {
         $binds = Auth::user()->categories;
         $unbinds = $this->getUnbindCategories();
-        return view('lawyer.categories',compact('binds','unbinds'));
+        return view('category.list',compact('binds','unbinds'));
     }
 
     # 增加一个新的业务类别
-    public function addCategory($id)
+    public function bindCategory($id)
     {
         $category = Category::find($id);
 
         if(!$this->hasCategory($category->id)){
             Auth::user()->categories()->attach($category->id);
-            return redirect('lawyer/categories');
+            return redirect('category/list');
         }
 
         return back()->withErrors('您已填加此分类，不能重复添加');
+    }
+
+    # 删除某个业务类别
+    public function unbindCategory($id)
+    {
+        if($this->hasCategory($id)){
+
+            # 当律师删除一个业务门类时，将相关的业务咨询服务都删除
+            $category = Category::find($id);
+            $consults = Auth::user()->items;
+            foreach($consults as $consult){
+                if($consult->category_id == $id){
+                    $consult->delete();
+                }
+            }
+
+            Auth::user()->categories()->detach($id);
+            return redirect('category');
+        }
     }
 
     # 判断是否有某个业务类别
@@ -49,15 +68,6 @@ class LawyerController extends Controller
                 return true;
         }
         return false;
-    }
-
-    # 删除某个业务类别
-    public function deleteCategory($id)
-    {
-        if($this->hasCategory($id)){
-            Auth::user()->categories()->detach($id);
-            return redirect('lawyer/categories');
-        }
     }
 
     # 获取当前律师没有提供的业务范围

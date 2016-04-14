@@ -10,6 +10,8 @@ use App\Http\Controllers\Controller;
 use App\Category;
 use App\Location;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use App\Pois;
 
 class ConsultController extends Controller
 {
@@ -17,6 +19,7 @@ class ConsultController extends Controller
     public function index()
     {
         $items = Auth::user()->items;
+        dd($items);
         return view('consult.index',compact('items'));
     }
 
@@ -74,13 +77,11 @@ class ConsultController extends Controller
     public function destroy($id)
     {
         $item = Item::find($id);
-        #删除地图与本地POI信息
-        $item->poi->delete();
         $item->delete();
     }
 
     # 根据用户的选择的分类和地址信息创建所有咨询业务
-    public function generateConsults()
+    public function building()
     {
         $user  = Auth::user();
         $locations = $user->locations;
@@ -110,18 +111,22 @@ class ConsultController extends Controller
                 }
             }
         }
+        return redirect('test/dc');
     }
 
     # 判断律师是否提供了此项咨询业务
     public function isExist($category_id,$location_id)
     {
         #在当前律师所有服务项中查找有没有提供此项服务
-        $result = Item::where('user_id',Auth::user()->id)
-            ->where('category_id',$category_id)
-            ->where('location_id',$location_id)->get();
-        if($result){
-            return true;
+        Log::info($category_id.' --- '.$location_id);
+        $items = Auth::user()->items;
+        foreach($items as $item){
+            if($item->category_id == $category_id && $item->location_id == $location_id){
+                Log::info('This item is EXIST ');
+                return true;
+            }
         }
+        Log::info('This item is NOT-EXIST ');
         return false;
     }
 

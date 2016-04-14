@@ -2,6 +2,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 
 class Location extends Model {
 
@@ -63,6 +64,15 @@ class Location extends Model {
     public function consults()
     {
         return $this->hasMany(Item::class);
+    }
+
+    public function delete()
+    {
+        $consults = $this->consults;
+        foreach($consults as $consult){
+            $consult->delete();
+        }
+        parent::delete();
     }
 
 }

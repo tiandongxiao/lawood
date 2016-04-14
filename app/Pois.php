@@ -4,6 +4,7 @@ namespace App;
 use App\Traits\GdYunMapTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 
 class Pois extends Model
@@ -67,6 +68,7 @@ class Pois extends Model
     # 删除本地和云图上的POI对象
     public function delete()
     {
+        Log::info('POI删除中'.$this->id);
         # 删除云图中的数据条目
         $this->deletePOI($this->poi_id);
         # 删除系统中本地POI对象
