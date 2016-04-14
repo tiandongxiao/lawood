@@ -9,18 +9,19 @@ class Category extends Model
 {
     use NodeCategoryTrait;
 
-    # 一个分类拥有多条咨询项
+    # 一个分类拥有多条咨询项, 系统级别
     public function consults()
     {
         return $this->hasMany(Item::class);
     }
 
-    # 一个分类属于多个律师执业范围
+    # 一个分类属于多个律师执业范围，系统级别
     public function users()
     {
         return $this->hasMany(User::class);
     }
 
+    # !! 系统级别的删除，所有律师的相关咨询服务项都会删除
     public function delete()
     {
         $consults = $this->consults;

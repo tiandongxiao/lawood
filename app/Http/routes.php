@@ -126,6 +126,10 @@ Route::group(['prefix' => 'wxpay'], function(){
     Route::get('jsapi/{id}', 'WeChat\WxPayController@JSPay')->middleware(['wechat.oauth']); # 微信浏览器内部支付方式
 });
 
+Route::group(['prefix' => 'payment'], function(){
+    Route::get('chose/{item_id}', 'ClientController@chosePayMethod');  # 微信扫码支付方式
+});
+
 Route::group(['prefix' => 'test'], function(){
     Route::get('put/{key}-{value}','TestController@putValue');
     Route::get('get/{key}','TestController@getValue');

@@ -101,13 +101,11 @@ class ConsultController extends Controller
                     ]);
 
                     $poi = new Pois();
-
                     $poi->build($location,$category,$item);
-
                     $item->poi()->save($poi);
 
                     # 为避免高德云图请求太快出现问题，故让其延迟一些
-                    usleep(100);
+                    usleep(50);
                 }
             }
         }

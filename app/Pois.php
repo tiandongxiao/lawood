@@ -56,10 +56,11 @@ class Pois extends Model
     public function build(Location $location, Category $category, Item $item)
     {
         $poi_id = $this->addPOI([
-            '_name'    => str_random(6),
-            '_address' => $location->address,
-            'category' => $category->name,
-            'url'      => url('consult/'.$item->id)
+            '_name'        => str_random(6),
+            '_address'     => $location->address,
+            'category'     => $category->name,
+            'pay_url'      => url('payment/chose/'.$item->id),
+            'detail_url'   => url('consult/'.$item->id)
         ]);
 
         $this->poi_id = $poi_id;
