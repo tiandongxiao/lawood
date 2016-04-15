@@ -118,6 +118,7 @@ Route::group(['prefix' => 'consult'], function(){
 
 Route::group(['prefix' => 'client'], function(){
     Route::get('consults','ClientController@getConsults');
+    Route::get('buy/{id}','ClientController@getPlaceOrder');
 });
 
 Route::group(['prefix' => 'wxpay'], function(){

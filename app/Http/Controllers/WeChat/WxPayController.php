@@ -80,7 +80,7 @@ class WxPayController extends Controller
      * @param $product_id
      * @return 返回扫码支付界面
      */
-    public function nativePay($item_id)
+    public function nativePay($product_id)
     {
         $order = new Order([
             'body'             => '服务费',
@@ -103,17 +103,17 @@ class WxPayController extends Controller
      * @param $product_id
      * @return 返回用户在线支付商品信息显示界面
      */
-    public function JSPay($item_id)
+    public function JSPay($product_id)
     {
         $user = session('wechat.oauth_user'); // 拿到授权用户资料
         $open_id = $user->getId();
 
         $order = new Order([
-            'body'             => '服务费',
-            'detail'           => Str::random(16),
-            'out_trade_no'     => Str::random(16),
-            'total_fee'        => random_int(10,1000),
-            'trade_type'       =>  'JSAPI',
+            'body'            => '服务费',
+            'detail'          => Str::random(16),
+            'out_trade_no'    => Str::random(16),
+            'total_fee'       => random_int(10,1000),
+            'trade_type'      => 'JSAPI',
             'openid'          => $open_id
         ]);
 

@@ -256,8 +256,8 @@ return [
     |
     */
     'gateways' => [
-        'paypal'            =>  Amsgames\LaravelShopGatewayPaypal\GatewayPayPal::class,
-        'paypalExpress'     =>  Amsgames\LaravelShopGatewayPaypal\GatewayPayPalExpress::class,
+        'wx_native'     =>  App\Self\Payment\WxNativePay::class,
+        'wx_js'         =>  App\Self\Payment\WxJsPay::class
     ],
 
     /*
@@ -279,5 +279,4 @@ return [
     |
     */
     'callback_redirect_route' => '/',
-
 ];

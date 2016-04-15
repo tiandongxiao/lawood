@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Shop;
 
 class ClientController extends Controller
 {
@@ -56,20 +57,26 @@ class ClientController extends Controller
      */
     public function getPlaceOrder($id)
     {
+        $cart =  Cart::current();
+        $cart->clear();
+
         $this->addItemIntoCart($id);
-        return view('payment/chose');
-        # On checkout
+
+        # 执行Shop的其他操作之前，必须先选择支付方式
+        Shop::setGateway('wx_native');
+
+        # On checkout 准备结账
         if (!Shop::checkout()) {
             $exception = Shop::exception();
-            echo $exception->getMessage(); // echos: error
+            echo $exception->getMessage();
         }
 
-        # Placing order
+        # 下单
         $order = Shop::placeOrder();
-
+        dd(Auth::user()->orders);
         if ($order->hasFailed) {
             $exception = Shop::exception();
-            echo $exception->getMessage(); // echos: error
+            echo $exception->getMessage();
         }
     }
 
@@ -82,5 +89,13 @@ class ClientController extends Controller
             }
         }
         return redirect('register/client')->withErrors('您需要先注册为咨询客户');
+    }
+
+    public function closeOrders()
+    {
+        $orders = Auth::user()->orders();
+        foreach($orders as $order){
+            $order->close();
+        }
     }
 }
