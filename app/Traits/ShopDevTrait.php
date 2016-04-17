@@ -10,6 +10,7 @@ namespace App\Traits;
 
 use App\Item;
 use App\Cart;
+use App\Transaction;
 use Illuminate\Support\Facades\Auth;
 
 trait ShopDevTrait
@@ -71,6 +72,14 @@ trait ShopDevTrait
                     return $transaction->order;
             }
         }
+        return null;
+    }
+
+    public function globalSearchTransaction($order_id)
+    {
+        $transaction  = Transaction::where('transaction_id',$order_id)->first();
+        if($transaction)
+            return $transaction;
         return null;
     }
 }

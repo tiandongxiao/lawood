@@ -108,7 +108,7 @@ class TestController extends Controller
     }
 
     public function node(){
-        dd(Transaction::all());
+        dd(Auth::user()->orders);
 
     }
 }
