@@ -35,7 +35,7 @@ class LawyerController extends Controller
 
         if(!$this->hasCategory($category->id)){
             Auth::user()->categories()->attach($category->id);
-            return redirect('category/list');
+            return redirect('category');
         }
 
         return back()->withErrors('您已填加此分类，不能重复添加');

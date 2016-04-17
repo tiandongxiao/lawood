@@ -93,8 +93,8 @@ class ConsultController extends Controller
                 {
                     $item = Item::create([
                         'user_id'           => $user->id,
-                        'price' 			=> $category,
-                        'sku'				=> 'PRD'.time(),
+                        'price' 			=> random_int(10,1000),
+                        'sku'				=> uniqid('ITEM_',true),
                         'description'		=> str_random(500),
                         'category_id'       => $category->id,
                         'location_id'       => $location->id

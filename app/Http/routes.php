@@ -123,12 +123,13 @@ Route::group(['prefix' => 'client'], function(){
 
 Route::group(['prefix' => 'wxpay'], function(){
     Route::post('callback', 'WeChat\WxPayController@callback');                             # 微信支付回调处理逻辑
-    Route::get('native/{id}', 'WeChat\WxPayController@nativePay');                          # 微信扫码支付方式
-    Route::get('jsapi/{id}', 'WeChat\WxPayController@JSPay')->middleware(['wechat.oauth']); # 微信浏览器内部支付方式
+    Route::get('native/{id}', 'WeChat\WxPayController@nativePay');
+    Route::get('jsapi/{id}', 'WeChat\WxPayController@JSPay')
+        ->middleware(['wechat.oauth']); # 微信浏览器内部支付方式
 });
 
 Route::group(['prefix' => 'payment'], function(){
-    Route::get('chose/{item_id}', 'ClientController@chosePayMethod');  # 微信扫码支付方式
+    Route::get('chose/{item_id}', 'ClientController@buy');  # 微信扫码支付方式
 });
 
 Route::group(['prefix' => 'test'], function(){
