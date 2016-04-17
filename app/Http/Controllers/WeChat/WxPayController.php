@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\WeChat;
 
 use App\Traits\ShopDevTrait;
+use App\Transaction;
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Payment\Order;
 use Illuminate\Http\Request;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 use Shop;
 use App\Cart;
 
@@ -49,6 +51,8 @@ class WxPayController extends Controller
                 //$notify->out_trade_no;
                 Log::info('商户支付订单号 --'.$notify->out_trade_no);
                 $order = Auth::user()->orders; #查询订单($notify->transaction_id);
+                $result = Order::where('transaction_id',$notify->out_trade_no)->first();
+                Log::info('LLLLL'.$result->transaction_id);
 
                 # 如果订单不存在
                 if (!$order) {
