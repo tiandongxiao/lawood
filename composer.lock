@@ -441,16 +441,16 @@
         },
         {
             "name": "geoip2/geoip2",
-            "version": "v2.3.3",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maxmind/GeoIP2-php.git",
-                "reference": "ee15b2e466dd09fd2246cf64efa1aa9eca988b86"
+                "reference": "2edce6957126399039124459174d5dce24edfdae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maxmind/GeoIP2-php/zipball/ee15b2e466dd09fd2246cf64efa1aa9eca988b86",
-                "reference": "ee15b2e466dd09fd2246cf64efa1aa9eca988b86",
+                "url": "https://packagist.phpcomposer.com/files/maxmind/GeoIP2-php/2edce6957126399039124459174d5dce24edfdae.zip",
+                "reference": "2edce6957126399039124459174d5dce24edfdae",
                 "shasum": ""
             },
             "require": {
@@ -459,7 +459,8 @@
                 "php": ">=5.3.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.2.*"
+                "phpunit/phpunit": "4.2.*",
+                "squizlabs/php_codesniffer": "2.*"
             },
             "type": "library",
             "autoload": {
@@ -487,7 +488,7 @@
                 "geolocation",
                 "maxmind"
             ],
-            "time": "2015-09-24 17:29:28"
+            "time": "2016-04-15 19:49:51"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -604,16 +605,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.2.3",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b"
+                "reference": "31382fef2889136415751badebbd1cb022a4ed72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/2e89629ff057ebb49492ba08e6995d3a6a80021b",
-                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b",
+                "url": "https://packagist.phpcomposer.com/files/guzzle/psr7/31382fef2889136415751badebbd1cb022a4ed72.zip",
+                "reference": "31382fef2889136415751badebbd1cb022a4ed72",
                 "shasum": ""
             },
             "require": {
@@ -658,7 +659,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2016-02-18 21:54:00"
+            "time": "2016-04-13 19:56:01"
         },
         {
             "name": "illuminate/html",
@@ -857,16 +858,16 @@
         },
         {
             "name": "jaybizzle/crawler-detect",
-            "version": "v1.1.13",
+            "version": "v1.1.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JayBizzle/Crawler-Detect.git",
-                "reference": "c42c47d78d1a3a9ed8e1d44720eb9275572f8636"
+                "reference": "859b3295b572648003f7c3545266b29f11d9cf8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/JayBizzle/Crawler-Detect/c42c47d78d1a3a9ed8e1d44720eb9275572f8636.zip",
-                "reference": "c42c47d78d1a3a9ed8e1d44720eb9275572f8636",
+                "url": "https://packagist.phpcomposer.com/files/JayBizzle/Crawler-Detect/859b3295b572648003f7c3545266b29f11d9cf8b.zip",
+                "reference": "859b3295b572648003f7c3545266b29f11d9cf8b",
                 "shasum": ""
             },
             "require": {
@@ -901,7 +902,7 @@
                 "crawlerdetect",
                 "php crawler detect"
             ],
-            "time": "2016-04-05 13:17:54"
+            "time": "2016-04-12 21:33:23"
         },
         {
             "name": "jenssegers/agent",
@@ -1434,16 +1435,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.18.2",
+            "version": "1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "064b38c16790249488e7a8b987acf1c9d7383c09"
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/Seldaek/monolog/064b38c16790249488e7a8b987acf1c9d7383c09.zip",
-                "reference": "064b38c16790249488e7a8b987acf1c9d7383c09",
+                "url": "https://packagist.phpcomposer.com/files/Seldaek/monolog/5f56ed5212dc509c8dc8caeba2715732abb32dbf.zip",
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf",
                 "shasum": ""
             },
             "require": {
@@ -1508,7 +1509,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-04-02 13:12:58"
+            "time": "2016-04-12 18:29:35"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -1820,16 +1821,16 @@
         },
         {
             "name": "overtrue/wechat",
-            "version": "3.0.10",
+            "version": "3.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/wechat.git",
-                "reference": "69a03d9349150f03e11531be43d791b4d37c2e96"
+                "reference": "ce90da394ef72b3d750f6e2a8046b60af78a59dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/overtrue/wechat/69a03d9349150f03e11531be43d791b4d37c2e96.zip",
-                "reference": "69a03d9349150f03e11531be43d791b4d37c2e96",
+                "url": "https://packagist.phpcomposer.com/files/overtrue/wechat/ce90da394ef72b3d750f6e2a8046b60af78a59dc.zip",
+                "reference": "ce90da394ef72b3d750f6e2a8046b60af78a59dc",
                 "shasum": ""
             },
             "require": {
@@ -1873,7 +1874,7 @@
                 "weixin",
                 "weixin-sdk"
             ],
-            "time": "2016-03-26 11:49:01"
+            "time": "2016-04-16 05:00:42"
         },
         {
             "name": "paragonie/random_compat",
@@ -2517,16 +2518,16 @@
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleSoftwareIO/simple-qrcode.git",
-                "reference": "638ff40a24db392dd7c98b74d6c057b3dccaffaf"
+                "reference": "eb10ff69a8f30a05c81107db35a48bb04de00021"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/SimpleSoftwareIO/simple-qrcode/638ff40a24db392dd7c98b74d6c057b3dccaffaf.zip",
-                "reference": "638ff40a24db392dd7c98b74d6c057b3dccaffaf",
+                "url": "https://packagist.phpcomposer.com/files/SimpleSoftwareIO/simple-qrcode/eb10ff69a8f30a05c81107db35a48bb04de00021.zip",
+                "reference": "eb10ff69a8f30a05c81107db35a48bb04de00021",
                 "shasum": ""
             },
             "require": {
@@ -2564,7 +2565,7 @@
                 "qrcode",
                 "wrapper"
             ],
-            "time": "2016-03-17 01:49:02"
+            "time": "2016-04-15 23:58:05"
         },
         {
             "name": "snowplow/referer-parser",
@@ -3741,21 +3742,21 @@
         },
         {
             "name": "toplan/phpsms",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/toplan/phpsms.git",
-                "reference": "dc67f2917f073ad15a1ee3f2c34cfaa30d7c97b4"
+                "reference": "566dae7d50f761a4b098333615d4c3a4c5e8440f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toplan/phpsms/zipball/dc67f2917f073ad15a1ee3f2c34cfaa30d7c97b4",
-                "reference": "dc67f2917f073ad15a1ee3f2c34cfaa30d7c97b4",
+                "url": "https://packagist.phpcomposer.com/files/toplan/phpsms/566dae7d50f761a4b098333615d4c3a4c5e8440f.zip",
+                "reference": "566dae7d50f761a4b098333615d4c3a4c5e8440f",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0",
-                "toplan/task-balancer": "~0.3.0"
+                "toplan/task-balancer": "~0.4.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -3765,7 +3766,9 @@
                 "psr-4": {
                     "Toplan\\PhpSms\\": [
                         "src/phpsms/",
-                        "src/phpsms/agents/",
+                        "src/phpsms/agents/"
+                    ],
+                    "Toplan\\PhpSms\\Facades\\": [
                         "src/phpsms/facades/"
                     ]
                 },
@@ -3790,20 +3793,20 @@
                 "sms",
                 "sms library for php"
             ],
-            "time": "2016-01-12 03:01:58"
+            "time": "2016-04-12 10:17:04"
         },
         {
             "name": "toplan/task-balancer",
-            "version": "0.3.0",
+            "version": "0.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/toplan/task-balancer.git",
-                "reference": "3320dc9e132d76c62caba4fa903fe3e8e1ca49cf"
+                "reference": "32914c1162fd566d811315f3e015039870642150"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toplan/task-balancer/zipball/3320dc9e132d76c62caba4fa903fe3e8e1ca49cf",
-                "reference": "3320dc9e132d76c62caba4fa903fe3e8e1ca49cf",
+                "url": "https://packagist.phpcomposer.com/files/toplan/task-balancer/32914c1162fd566d811315f3e015039870642150.zip",
+                "reference": "32914c1162fd566d811315f3e015039870642150",
                 "shasum": ""
             },
             "require": {
@@ -3832,7 +3835,7 @@
                 "load balancing",
                 "task"
             ],
-            "time": "2015-12-31 05:25:17"
+            "time": "2016-04-14 09:24:31"
         },
         {
             "name": "ua-parser/uap-php",
