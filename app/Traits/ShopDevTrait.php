@@ -10,6 +10,7 @@ namespace App\Traits;
 
 use App\Item;
 use App\Cart;
+use Illuminate\Support\Facades\Auth;
 
 trait ShopDevTrait
 {
