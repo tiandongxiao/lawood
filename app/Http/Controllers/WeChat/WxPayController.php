@@ -115,7 +115,6 @@ class WxPayController extends Controller
         }
 
         $transaction = $order->transactions[0];
-        dd($transaction->order);
 
         $info = explode('||',$transaction->detail);
 
