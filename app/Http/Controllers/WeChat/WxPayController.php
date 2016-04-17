@@ -50,8 +50,13 @@ class WxPayController extends Controller
                 # 使用通知里的 "微信支付订单号" 或者 "商户订单号" 去自己的数据库找到订单
                 Log::info('商户支付订单号 --'.$notify->out_trade_no);
                 $transaction = $this->globalSearchTransaction($notify->out_trade_no);
+                $order =$transaction->order;
+                $order->statusCode = 'payed';
 
+                # 将真正的transaction_id赋予transaction对象
+                $transaction->transaction_id = $notify->transaction_id;
                 Log::info('LLLLL'.$transaction->transaction_id);
+                
 
 //                # 如果订单不存在
 //                if (!$order) {
