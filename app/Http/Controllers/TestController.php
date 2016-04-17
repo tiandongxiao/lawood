@@ -9,6 +9,7 @@ use App\Category;
 use App\Location;
 use App\Pois;
 use App\Traits\GdYunMapTrait;
+use App\Transaction;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -104,5 +105,10 @@ class TestController extends Controller
     public function getLocations()
     {
         dd(Auth::user()->locations);
+    }
+
+    public function node(){
+        dd(Transaction::all());
+
     }
 }

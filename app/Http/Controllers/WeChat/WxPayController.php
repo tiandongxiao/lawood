@@ -48,23 +48,22 @@ class WxPayController extends Controller
             if ($successful) {
                 # 不是已经支付状态则修改为已经支付状态
                 # 使用通知里的 "微信支付订单号" 或者 "商户订单号" 去自己的数据库找到订单
-                //$notify->out_trade_no;
                 Log::info('商户支付订单号 --'.$notify->out_trade_no);
-                $order = Auth::user()->orders; #查询订单($notify->transaction_id);
-                $result = Order::where('transaction_id',$notify->out_trade_no)->first();
-                Log::info('LLLLL'.$result->transaction_id);
+                $transaction = $this->searchTransaction($notify->out_trade_no);
 
-                # 如果订单不存在
-                if (!$order) {
-                    return 'Order not exist.'; // 告诉微信，我已经处理完了，订单没找到，别再通知我了
-                }
+                Log::info('LLLLL'.$transaction->transaction_id);
 
-                # 检查订单是否已经更新过支付状态
-                if ($order->paid_at) { # 假设订单字段“支付时间”不为空代表已经支付
-                    return true; # 已经支付成功了就不再更新了
-                }
-                $order->paid_at = time(); # 更新支付时间为当前时间
-                $order->status = 'paid';
+//                # 如果订单不存在
+//                if (!$order) {
+//                    return 'Order not exist.'; // 告诉微信，我已经处理完了，订单没找到，别再通知我了
+//                }
+//
+//                # 检查订单是否已经更新过支付状态
+//                if ($order->paid_at) { # 假设订单字段“支付时间”不为空代表已经支付
+//                    return true; # 已经支付成功了就不再更新了
+//                }
+//                $order->paid_at = time(); # 更新支付时间为当前时间
+//                $order->status = 'paid';
             } else {
                 # 用户支付失败
                 //$order->status = 'paid_fail';
@@ -111,6 +110,7 @@ class WxPayController extends Controller
         }
 
         $transaction = $order->transactions[0];
+        dd($transaction);
         $info = explode('||',$transaction->detail);
 
         $url = $info[0];

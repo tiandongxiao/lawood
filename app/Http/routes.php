@@ -145,9 +145,5 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('cate','TestController@getMakeCategories');
     Route::get('dc','TestController@drawCategory');
     Route::get('http','TestController@getHttpLocation');
-    Route::get('item','TestController@createItem');
-    Route::get('myi','TestController@getItems');
-    Route::get('rm','TestController@deleteItem');
-    Route::get('cates','TestController@allCates');
-    Route::get('loca','TestController@getLocations');
+    Route::get('tran','TestController@node');
 });

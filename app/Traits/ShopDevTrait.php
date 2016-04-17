@@ -46,4 +46,30 @@ trait ShopDevTrait
             $order->close();
         }
     }
+
+    public function searchTransaction($order_id)
+    {
+        $orders = Auth::user()->orders; #查询订单($notify->transaction_id);
+        foreach($orders as $order){
+            $transactions = $order->transations;
+            foreach($transactions as $transaction){
+                if($transaction->transaction_id == $order_id)
+                    return $transaction;
+            }
+        }
+        return null;
+    }
+
+    public function searchOrderById($order_id)
+    {
+        $orders = Auth::user()->orders; #查询订单($notify->transaction_id);
+        foreach($orders as $order){
+            $transactions = $order->transations;
+            foreach($transactions as $transaction){
+                if($transaction->transaction_id == $order_id)
+                    return $transaction->order;
+            }
+        }
+        return null;
+    }
 }
