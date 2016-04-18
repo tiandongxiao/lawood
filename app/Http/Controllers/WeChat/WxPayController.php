@@ -161,4 +161,30 @@ class WxPayController extends Controller
 
         return view('payment.wxpay.jsapi',compact('params','price'));
     }
+
+    public function refundByTransaction($id)
+    {
+        $order = $this->queryOrderByTransactionId($id);
+        dd($order);
+
+    }
+
+    public function refundByOrderNo($orderNo)
+    {
+        $sum =
+        $result = $this->payment->refund($orderNo, $refundNo, 100); // 总金额 100 退款 100，操作员：商户号
+    }
+
+    public function queryOrder($out_trade_no)
+    {
+        $order = $this->payment->query($out_trade_no);
+        if($order)
+            return $order;
+        return null;
+    }
+
+    public function queryOrderByTransactionId($id)
+    {
+        $this->payment->queryByTransactionId($id);
+    }
 }
