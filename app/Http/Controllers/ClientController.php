@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use App\Item;
+use App\Traits\ShopDevTrait;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,6 +14,8 @@ use Shop;
 
 class ClientController extends Controller
 {
+    use ShopDevTrait;
+
     public function buy($item_id)
     {
         return view('payment.chose',compact('item_id'));
@@ -65,5 +68,38 @@ class ClientController extends Controller
             }
         }
         return redirect('register/client')->withErrors('您需要先注册为咨询客户');
+    }
+
+    public function pendingOrders()
+    {
+        $user = Auth::user();
+        $user->role = 'client';
+        $user->save();
+
+        $orders = $this->getPendingOrders($user);
+        dd($orders);
+        return view('lawyer.pending');
+    }
+
+    public function completeOrders()
+    {
+        $user = Auth::user();
+        $user->role = 'client';
+        $user->save();
+
+        $orders = $this->getCompleteOrders($user);
+        dd($orders);
+        return view('lawyer.complete');
+    }
+
+    public function payedOrders()
+    {
+        $user = Auth::user();
+        $user->role = 'client';
+        $user->save();
+
+        $orders = $this->getPayedOrders($user);
+        dd($orders);
+        return view('lawyer.payed');
     }
 }

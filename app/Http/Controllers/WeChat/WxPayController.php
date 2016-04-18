@@ -79,6 +79,7 @@ class WxPayController extends Controller
 //                }
 //                $order->paid_at = time(); # 更新支付时间为当前时间
 //                $order->status = 'paid';
+
             } else {
                 # 用户支付失败
                 //$order->status = 'paid_fail';

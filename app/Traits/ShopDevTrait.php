@@ -65,7 +65,7 @@ trait ShopDevTrait
 
     public function searchOrderById($order_id)
     {
-        $orders = Auth::user()->orders; #查询订单($notify->transaction_id);
+        $orders = Auth::user()->orders; # 查询订单($notify->transaction_id);
         foreach($orders as $order){
             $transactions = $order->transations;
             foreach($transactions as $transaction){
@@ -85,7 +85,7 @@ trait ShopDevTrait
         return null;
     }
 
-    # 通过shop order对象来获取下单顾客信息
+    # 通过Shop Order对象来获取下单顾客信息
     public function client(Order $order)
     {
         return $order->user;
@@ -95,5 +95,67 @@ trait ShopDevTrait
     public function seller(Order $order)
     {
         return Item::find($order->items[0]->reference_id)->user;
+    }
+
+    # 修改订单的状态
+    public function changeOrderStatus(Order $order,$status_code)
+    {
+        #检查status_code是否存在
+        if($this->isValidStatus($status_code)){
+            $order->status = $status_code;
+        }
+    }
+
+    # 判断状态码是不是有效状态值
+    public function isValidStatus($status_code)
+    {
+        return true;
+    }
+
+    # 获取待付款的用户订单
+    public function getPendingOrders($user)
+    {
+        return $this->getOrdersByStatus($user,'pending');
+    }
+
+    # 获取已完成的用户订单
+    public function getCompleteOrders($user)
+    {
+        return $this->getOrdersByStatus($user,'complete');
+    }
+
+    # 获取已付款的用户订单
+    public function getPayedOrders($user)
+    {
+        return $this->getOrdersByStatus($user,'payed');
+    }
+
+    # 根据用户类型和状态码来获取订单列表
+    public function getOrdersByStatus($user,$status)
+    {
+        switch($user->role){
+            case 'lawyer':
+                # 定义存储容器
+                $orders = [];
+                # 获取律师所有服务项
+                $items = $user->items;
+                # 搜索Item数据库中所有购买了律师服务的条目
+                foreach($items as $item){
+                    $services = Item::where('reference_id',$item->id)->get();
+                    foreach($services as $service){
+                        # 每一个条目对应一个Order订单
+                        $order = $service->order;
+                        if($order->statusCode == $status)
+                            $orders[] = $order;
+                    }
+                }
+                return $orders;
+            case 'client':
+                #Shop开发包的这个函数不怎么好用，故而采用下面的方式
+                //return Order::findByUser($user->id,$status);
+
+                return Order::whereUser($user->id)
+                    ->whereStatus($status)->get();
+        }
     }
 }

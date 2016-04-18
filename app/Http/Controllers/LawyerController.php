@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Item;
 use App\Post;
+use App\Traits\ShopDevTrait;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -14,6 +15,8 @@ use Illuminate\Support\Str;
 
 class LawyerController extends Controller
 {
+    use ShopDevTrait;
+
     # 律师主页
     public function index()
     {
@@ -82,5 +85,38 @@ class LawyerController extends Controller
             }
         }
         return $unbinds;
+    }
+
+    public function pendingOrders()
+    {
+        $user = Auth::user();
+        $user->role = 'lawyer';
+        $user->save();
+
+        $orders = $this->getPendingOrders($user);
+        dd($orders);
+        return view('lawyer.pending');
+    }
+
+    public function completeOrders()
+    {
+        $user = Auth::user();
+        $user->role = 'lawyer';
+        $user->save();
+
+        $orders = $this->getCompleteOrders($user);
+        dd($orders);
+        return view('lawyer.complete');
+    }
+
+    public function payedOrders()
+    {
+        $user = Auth::user();
+        $user->role = 'lawyer';
+        $user->save();
+
+        $orders = $this->getPayedOrders($user);
+        dd($orders);
+        return view('lawyer.payed');
     }
 }

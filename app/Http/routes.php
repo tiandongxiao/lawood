@@ -99,6 +99,10 @@ Route::group(['prefix' => 'lawyer'], function(){
     Route::get('category/rm/{id}','LawyerController@deleteCategory');
     Route::get('category/new','LawyerController@getUnbindCategories');
     Route::get('locations','LawyerController@getBindLocations');
+
+    Route::get('pending','LawyerController@pendingOrders');
+    Route::get('payed','LawyerController@payedOrders');
+    Route::get('complete','LawyerController@completeOrders');
 });
 
 //Route::resource('category','CategoryController');
@@ -119,6 +123,10 @@ Route::group(['prefix' => 'consult'], function(){
 Route::group(['prefix' => 'client'], function(){
     Route::get('consults','ClientController@getConsults');
     Route::get('buy/{id}','ClientController@getPlaceOrder');
+
+    Route::get('pending','ClientController@pendingOrders');
+    Route::get('payed','ClientController@payedOrders');
+    Route::get('complete','ClientController@completeOrders');
 });
 
 Route::group(['prefix' => 'wxpay'], function(){
