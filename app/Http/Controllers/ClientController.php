@@ -87,7 +87,7 @@ class ClientController extends Controller
         $user->role = 'client';
         $user->save();
 
-        $orders = $this->getCompleteOrders($user);
+        $orders = $this->getCompletedOrders($user);
         dd($orders);
         return view('lawyer.completed');
     }
