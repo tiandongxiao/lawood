@@ -56,6 +56,15 @@ class WxPayController extends Controller
                 # 将真正的transaction_id赋予transaction对象
                 $transaction->transaction_id = $notify->transaction_id;
                 Log::info('LLLLL'.$transaction->transaction_id);
+
+                $client = $order->user;
+                Log::info('客户邮件为--'.$client->email);
+
+                $lawyer = $order->items[0]->user;
+                Log::info('律师邮件为--'.$lawyer->email);
+
+
+
                 
 
 //                # 如果订单不存在

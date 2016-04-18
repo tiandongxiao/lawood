@@ -75,9 +75,9 @@ trait ShopDevTrait
         return null;
     }
 
-    public function globalSearchTransaction($order_id)
+    public function globalSearchTransaction($id)
     {
-        $transaction  = Transaction::where('transaction_id',$order_id)->first();
+        $transaction  = Transaction::where('transaction_id',$id)->first();
         if($transaction)
             return $transaction;
         return null;
