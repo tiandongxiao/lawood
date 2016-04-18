@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\WeChat;
 
+use App\Item;
 use App\Traits\ShopDevTrait;
 use App\Transaction;
 use EasyWeChat\Foundation\Application;
@@ -60,12 +61,8 @@ class WxPayController extends Controller
                 $client = $order->user;
                 Log::info('客户邮件为--'.$client->email);
 
-                $lawyer = $order->items[0]->user;
+                $lawyer = Item::find($order->items[0]->reference_id)->user;
                 Log::info('律师邮件为--'.$lawyer->email);
-
-
-
-                
 
 //                # 如果订单不存在
 //                if (!$order) {

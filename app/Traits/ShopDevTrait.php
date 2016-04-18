@@ -82,4 +82,9 @@ trait ShopDevTrait
             return $transaction;
         return null;
     }
+
+    public function getProviderUser()
+    {
+        
+    }
 }
