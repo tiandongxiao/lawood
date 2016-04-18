@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Traits/ShopDevTrait.php" afterPath="$PROJECT_DIR$/app/Traits/ShopDevTrait.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +45,7 @@
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="-27.84375">
-                  <caret line="115" column="36" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
+                  <caret line="116" column="36" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -141,8 +140,8 @@
           <file leaf-file-name="WxPayController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.594438">
-                  <caret line="63" column="75" selection-start-line="63" selection-start-column="75" selection-end-line="63" selection-end-column="75" />
+                <state vertical-scroll-proportion="0.6257242">
+                  <caret line="64" column="48" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
                   <folding>
                     <element signature="e#47#60#0#PHP" expanded="true" />
                   </folding>
@@ -971,8 +970,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.594438">
-          <caret line="63" column="75" selection-start-line="63" selection-start-column="75" selection-end-line="63" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.6257242">
+          <caret line="64" column="48" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
           <folding>
             <element signature="e#47#60#0#PHP" expanded="true" />
           </folding>

@@ -62,6 +62,7 @@ class WxPayController extends Controller
                 Log::info('客户邮件为--'.$client->email);
 
                 $lawyer = Item::find($order->items[0]->reference_id)->user;
+                Log::info(count($order->items));
                 Log::info('律师邮件为--'.$lawyer->email);
 
 //                # 如果订单不存在
