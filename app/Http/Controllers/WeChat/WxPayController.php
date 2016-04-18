@@ -53,7 +53,7 @@ class WxPayController extends Controller
                 $transaction = $this->globalSearchTransaction($notify->out_trade_no);
                 $order =$transaction->order;
                 Log::info($order->statusCode);
-                $order->statusCode='payed';
+                $order->statusCode='complete';
                 $order->save();
                 Log::info($order->statusCode);
 
