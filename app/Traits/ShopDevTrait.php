@@ -10,6 +10,7 @@ namespace App\Traits;
 
 use App\Item;
 use App\Cart;
+use App\Order;
 use App\Transaction;
 use Illuminate\Support\Facades\Auth;
 
@@ -75,6 +76,7 @@ trait ShopDevTrait
         return null;
     }
 
+    # 通过ID来获取交易记录
     public function globalSearchTransaction($id)
     {
         $transaction  = Transaction::where('transaction_id',$id)->first();
@@ -83,8 +85,15 @@ trait ShopDevTrait
         return null;
     }
 
-    public function getProviderUser()
+    # 通过shop order对象来获取下单顾客信息
+    public function client(Order $order)
     {
-        
+        return $order->user;
+    }
+
+    # 通过Shop Order对象来获取服务卖家
+    public function seller(Order $order)
+    {
+        return Item::find($order->items[0]->reference_id)->user;
     }
 }
