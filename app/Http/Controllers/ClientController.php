@@ -77,8 +77,9 @@ class ClientController extends Controller
         $user->save();
 
         $orders = $this->getPendingOrders($user);
-        dd($orders);
-        return view('lawyer.pending');
+        
+        //dd($orders);
+        return view('client.pending','orders');
     }
 
     public function completedOrders()
@@ -88,8 +89,9 @@ class ClientController extends Controller
         $user->save();
 
         $orders = $this->getCompletedOrders($user);
-        dd($orders);
-        return view('lawyer.completed');
+        
+        //dd($orders);
+        return view('client.completed',compact('orders'));
     }
 
     public function payedOrders()
@@ -99,7 +101,8 @@ class ClientController extends Controller
         $user->save();
 
         $orders = $this->getPayedOrders($user);
-        dd($orders);
-        return view('lawyer.payed');
+        
+        //dd($orders);
+        return view('client.payed',compact('orders'));
     }
 }
