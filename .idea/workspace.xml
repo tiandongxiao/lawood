@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/Traits/GdYunMapTrait.php" line="101" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/lawyer/completed.blade.php" afterPath="$PROJECT_DIR$/resources/views/lawyer/completed.blade.php" />
-    </list>
+    <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="" />
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -102,8 +100,8 @@
       <file leaf-file-name="completed.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/lawyer/completed.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="4" column="149" selection-start-line="4" selection-start-column="149" selection-end-line="4" selection-end-column="149" />
+            <state relative-caret-position="196">
+              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -205,8 +203,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="35" />
-    <option name="y" value="134" />
+    <option name="x" value="3" />
+    <option name="y" value="42" />
     <option name="width" value="1903" />
     <option name="height" value="989" />
   </component>
@@ -497,7 +495,7 @@
       <workItem from="1458715296356" duration="21880000" />
       <workItem from="1458869560992" duration="339000" />
       <workItem from="1460908803877" duration="3744000" />
-      <workItem from="1460982514122" duration="9115000" />
+      <workItem from="1460982514122" duration="9209000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -622,7 +620,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155696000" />
+    <option name="totallyTimeSpent" value="155790000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -634,7 +632,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="35" y="134" width="1903" height="989" extended-state="0" />
+    <frame x="3" y="42" width="1903" height="989" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1081,8 +1079,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/lawyer/completed.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="4" column="149" selection-start-line="4" selection-start-column="149" selection-end-line="4" selection-end-column="149" />
+        <state relative-caret-position="196">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
           <folding />
         </state>
       </provider>
