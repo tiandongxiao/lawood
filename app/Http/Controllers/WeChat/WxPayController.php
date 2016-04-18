@@ -54,6 +54,7 @@ class WxPayController extends Controller
                 $order =$transaction->order;
                 Log::info($order->statusCode);
                 $order->statusCode='payed';
+                $order->save();
                 Log::info($order->statusCode);
 
                 # 将真正的transaction_id赋予transaction对象
