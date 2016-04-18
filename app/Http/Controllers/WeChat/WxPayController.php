@@ -185,6 +185,6 @@ class WxPayController extends Controller
 
     public function queryOrderByTransactionId($id)
     {
-        $this->payment->queryByTransactionId($id);
+        return $this->payment->queryByTransactionId($id);
     }
 }
