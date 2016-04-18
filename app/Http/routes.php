@@ -102,7 +102,7 @@ Route::group(['prefix' => 'lawyer'], function(){
 
     Route::get('pending','LawyerController@pendingOrders');
     Route::get('payed','LawyerController@payedOrders');
-    Route::get('complete','LawyerController@completeOrders');
+    Route::get('completed','LawyerController@completedOrders');
 });
 
 //Route::resource('category','CategoryController');

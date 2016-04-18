@@ -119,9 +119,9 @@ trait ShopDevTrait
     }
 
     # 获取已完成的用户订单
-    public function getCompleteOrders($user)
+    public function getCompletedOrders($user)
     {
-        return $this->getOrdersByStatus($user,'complete');
+        return $this->getOrdersByStatus($user,'completed');
     }
 
     # 获取已付款的用户订单

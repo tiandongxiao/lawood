@@ -98,13 +98,13 @@ class LawyerController extends Controller
         return view('lawyer.pending');
     }
 
-    public function completeOrders()
+    public function completedOrders()
     {
         $user = Auth::user();
         $user->role = 'lawyer';
         $user->save();
 
-        $orders = $this->getCompleteOrders($user);
+        $orders = $this->getCompletedOrders($user);
         dd($orders);
         return view('lawyer.complete');
     }

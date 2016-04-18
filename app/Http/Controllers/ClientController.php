@@ -81,7 +81,7 @@ class ClientController extends Controller
         return view('lawyer.pending');
     }
 
-    public function completeOrders()
+    public function completedOrders()
     {
         $user = Auth::user();
         $user->role = 'client';
@@ -89,7 +89,7 @@ class ClientController extends Controller
 
         $orders = $this->getCompleteOrders($user);
         dd($orders);
-        return view('lawyer.complete');
+        return view('lawyer.completed');
     }
 
     public function payedOrders()
