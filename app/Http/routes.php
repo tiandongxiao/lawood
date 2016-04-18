@@ -126,7 +126,7 @@ Route::group(['prefix' => 'client'], function(){
 
     Route::get('pending','ClientController@pendingOrders');
     Route::get('payed','ClientController@payedOrders');
-    Route::get('complete','ClientController@completedOrders');
+    Route::get('completed','ClientController@completedOrders');
 });
 
 Route::group(['prefix' => 'wxpay'], function(){
