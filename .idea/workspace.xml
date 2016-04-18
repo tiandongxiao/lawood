@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/Traits/GdYunMapTrait.php" line="101" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" />
-    </list>
+    <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="" />
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -81,20 +79,20 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="WxNativePay.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="WxNativePay.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Self/Payment/WxNativePay.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-29.5">
-                  <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.37427577">
+                  <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ShopDevTrait.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ShopDevTrait.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Traits/ShopDevTrait.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.90614134">
+                <state vertical-scroll-proportion="-24.4375">
                   <caret line="87" column="8" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
                   <folding>
                     <element signature="e#119#132#0#PHP" expanded="true" />
@@ -140,7 +138,7 @@
           <file leaf-file-name="WxPayController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6257242">
+                <state vertical-scroll-proportion="0.43800697">
                   <caret line="64" column="48" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
                   <folding>
                     <element signature="e#47#60#0#PHP" expanded="true" />
@@ -894,14 +892,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Self/Payment/WxNativePay.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.5">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.0625">
@@ -960,7 +950,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Traits/ShopDevTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.90614134">
+        <state vertical-scroll-proportion="-24.4375">
           <caret line="87" column="8" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
           <folding>
             <element signature="e#119#132#0#PHP" expanded="true" />
@@ -970,11 +960,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6257242">
-          <caret line="64" column="48" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
-          <folding>
-            <element signature="e#47#60#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-27.84375">
+          <caret line="116" column="36" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Self/Payment/WxNativePay.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37427577">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
