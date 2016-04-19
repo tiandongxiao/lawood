@@ -177,7 +177,7 @@ class WxPayController extends Controller
 
     public function queryOrder($out_trade_no)
     {
-        $result = $payment->queryRefund($out_trade_no);
+        $result = $this->payment->queryRefund($out_trade_no);
         dd($result);
         $order = $this->payment->query($out_trade_no);
 
