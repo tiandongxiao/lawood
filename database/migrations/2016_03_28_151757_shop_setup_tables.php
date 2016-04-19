@@ -92,6 +92,7 @@ class ShopSetupTables extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->string('statusCode', 32);
+            $table->boolean('refunded')->default(false); # 是否已退款标志位
             $table->timestamps();
             $table->foreign('user_id')
                 ->references('id')
