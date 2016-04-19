@@ -10,6 +10,8 @@ class Order extends ShopOrderModel
 
     public function isRefunded()
     {
+        $this->refunded = true;
+        $this->save();
        return $this->refunded;
     }
 
