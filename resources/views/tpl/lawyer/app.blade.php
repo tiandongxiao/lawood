@@ -44,6 +44,11 @@
 
         <!-- Main content -->
         <section class="content">
+            @if($errors->any())
+                @foreach($errors->all() as $error)
+                    <p class="alert alert-warning">{{ $error }}</p>
+                @endforeach
+            @endif
             <!-- Your Page Content Here -->
             @yield('content')
         </section><!-- /.content -->
