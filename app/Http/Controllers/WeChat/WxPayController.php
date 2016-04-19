@@ -166,13 +166,12 @@ class WxPayController extends Controller
     {
         $order = $this->queryOrderByTransactionId($id);
         dd($order);
-
     }
 
     public function refundByOrderNo($orderNo)
     {
-        $sum =
-        $result = $this->payment->refund($orderNo, $refundNo, 100); // 总金额 100 退款 100，操作员：商户号
+        //$sum =
+        //$result = $this->payment->refund($orderNo, $refundNo, 100); // 总金额 100 退款 100，操作员：商户号
     }
 
     public function queryOrder($out_trade_no)
