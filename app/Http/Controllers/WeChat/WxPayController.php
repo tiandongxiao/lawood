@@ -164,6 +164,7 @@ class WxPayController extends Controller
 
     public function refundByTransaction($id)
     {
+        dd($id);
         $order = $this->queryOrderByTransactionId($id);
         dd($order);
     }
