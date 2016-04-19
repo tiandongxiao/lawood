@@ -177,10 +177,13 @@ class WxPayController extends Controller
 
     public function queryOrder($out_trade_no)
     {
+        $result = $payment->queryRefund($out_trade_no);
+        dd($result);
         $order = $this->payment->query($out_trade_no);
+
         $refund_code = uniqid('REFUND');
         Log::info('退款流程：订单号'.$out_trade_no.' --- 退款金额：'.$order->total_fee);
-        
+
         $result = $this->payment->refund($out_trade_no,$refund_code, $order->total_fee); // 总金额 100 退款 100，操作员：商户号
         dd($result);
 //        if($order)
