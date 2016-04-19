@@ -162,37 +162,51 @@ class WxPayController extends Controller
         return view('payment.wxpay.jsapi',compact('params','price'));
     }
 
+
     public function refundByTransaction($id)
     {
-        dd($id);
         $order = $this->queryOrderByTransactionId($id);
-        dd($order);
     }
 
-    public function refundByOrderNo($orderNo)
+    # 根据传入的微信订单号进行退款
+    public function refundByOrderNo($out_trade_no)
     {
-        //$sum =
-        //$result = $this->payment->refund($orderNo, $refundNo, 100); // 总金额 100 退款 100，操作员：商户号
+        if($this->isOrderRefunded($out_trade_no)){
+            return back()->withErrors('订单不能重复退款');
+        }
+
+        $order = $this->queryOrder($out_trade_no);
+        if($order){
+            $refund_code = uniqid('REFUND');
+            Log::info('退款流程：订单号'.$out_trade_no.' --- 退款金额：'.$order->total_fee);
+            $result = $this->payment->refund($out_trade_no,$refund_code, $order->total_fee); // 总金额 100 退款 100，操作员：商户号
+            if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS')
+                return back()->withErrors('退款成功');
+        }
+        return back()->withErrors('退款失败');
     }
 
+    # 根据微信订单号查询订单
     public function queryOrder($out_trade_no)
     {
-        $result = $this->payment->queryRefund($out_trade_no);
-        dd($result->result_code);
         $order = $this->payment->query($out_trade_no);
-
-        $refund_code = uniqid('REFUND');
-        Log::info('退款流程：订单号'.$out_trade_no.' --- 退款金额：'.$order->total_fee);
-
-        $result = $this->payment->refund($out_trade_no,$refund_code, $order->total_fee); // 总金额 100 退款 100，操作员：商户号
-        dd($result);
-//        if($order)
-//            return $order;
-//        return null;
+        if($order->return_code == 'SUCCESS' && $order->result_code == 'SUCCESS')
+            return $order;
+        return null;
     }
 
+    # 根据微信交易单号查询交易记录
     public function queryOrderByTransactionId($id)
     {
         return $this->payment->queryByTransactionId($id);
+    }
+
+    # 判断微信订单是否已经退过款
+    public function isOrderRefunded($out_trade_no)
+    {
+        $result = $this->payment->queryRefund($out_trade_no);
+        if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS')
+            return true;
+        return false;
     }
 }

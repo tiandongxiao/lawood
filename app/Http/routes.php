@@ -135,7 +135,7 @@ Route::group(['prefix' => 'wxpay'], function(){
     Route::get('jsapi/{id}', 'WeChat\WxPayController@JSPay')
         ->middleware(['wechat.oauth']); # 微信浏览器内部支付方式
 
-    Route::get('refund/{id}','WeChat\WxPayController@queryOrder');
+    Route::get('refund/{id}','WeChat\WxPayController@refundByOrderNo');
 });
 
 Route::group(['prefix' => 'payment'], function(){
