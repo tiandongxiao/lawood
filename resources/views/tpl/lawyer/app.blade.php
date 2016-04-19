@@ -22,6 +22,7 @@
 </head>
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
+
     <!-- Header -->
     @include('tpl.lawyer.area.header')
             <!-- Sidebar -->
@@ -29,6 +30,11 @@
 
             <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+        @if($errors->any())
+            @foreach($errors->all() as $error)
+                <p class="alert alert-warning">{{ $error }}</p>
+            @endforeach
+        @endif
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
@@ -44,11 +50,6 @@
 
         <!-- Main content -->
         <section class="content">
-            @if($errors->any())
-                @foreach($errors->all() as $error)
-                    <p class="alert alert-warning">{{ $error }}</p>
-                @endforeach
-            @endif
             <!-- Your Page Content Here -->
             @yield('content')
         </section><!-- /.content -->
