@@ -78,7 +78,7 @@ class ClientController extends Controller
 
         $orders = $this->getPendingOrders($user);
 
-        return view('client.pending','orders');
+        return view('client.pending',compact('orders'));
     }
 
     public function completedOrders()

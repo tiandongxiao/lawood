@@ -109,6 +109,7 @@ class TestController extends Controller
 
     public function node(){
         dd(Auth::user()->orders);
-
     }
+
+
 }
