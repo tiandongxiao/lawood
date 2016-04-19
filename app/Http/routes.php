@@ -156,4 +156,6 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('dc','TestController@drawCategory');
     Route::get('http','TestController@getHttpLocation');
     Route::get('tran','TestController@node');
+
+    Route::get('order','TestController@order');
 });

@@ -112,4 +112,9 @@ class TestController extends Controller
     }
 
 
+    public function order()
+    {
+        $order = Auth::user()->orders[0];
+        dd($order->isRefunded());
+    }
 }
