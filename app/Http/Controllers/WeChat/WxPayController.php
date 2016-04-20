@@ -180,6 +180,7 @@ class WxPayController extends Controller
 
             $refund_code = uniqid('REFUND');
             $result = $this->payment->refund($out_trade_no,$refund_code, $order->total_fee);
+            
             if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
                 # 对Shop Order进行数据更新，改变订单状态
                 $shop_order = ShopOrder::where('order_no',$out_trade_no)->first();
