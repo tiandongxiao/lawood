@@ -53,7 +53,6 @@ class Location extends Model {
         return $newRules;
     }
 
-
     # 地址是私有概念，一个地址只属于一个用户
     public function user()
     {
@@ -66,6 +65,7 @@ class Location extends Model {
         return $this->hasMany(Item::class);
     }
 
+    # 一个地点对应多个咨询项目，所以需要先删除咨询项，然后再删除本身
     public function delete()
     {
         $consults = $this->consults;

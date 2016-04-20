@@ -10,8 +10,6 @@ class Order extends ShopOrderModel
 
     public function isRefunded()
     {
-        $this->refunded = true;
-        $this->save();
        return $this->refunded;
     }
 
@@ -20,5 +18,19 @@ class Order extends ShopOrderModel
         if(!$this->isRefunded() && $this->statusCode == 'pending')
             return true;
         return false;
+    }
+
+    public function refund()
+    {
+        if($this->isAllowRefund()){
+            $gateway = $this->transactions[0]->gateway;
+            switch($gateway){
+                case 'wx_native':
+                    //return redirect('/wxpay/')
+                    break;
+                case 'wx_js':
+                    break;
+            }
+        }
     }
 }

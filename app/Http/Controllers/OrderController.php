@@ -10,26 +10,20 @@ use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
-    #查询订单
+    # 查询订单
     public function queryOrder()
     {
         
     }
 
+    # 退款
     public function refund(Order $order)
     {
-        if(!$this->isRefunded($order)){
+        dd($order);
+        if(!$this->isRefunded()){
+            if($this->isAllowRefund())
             return back()->withErrors('退款成功');
-
-
         }
         return back()->withErrors('订单不可重复退款');
     }
-
-    public function isRefunded(Order $order)
-    {
-
-    }
-
-
 }

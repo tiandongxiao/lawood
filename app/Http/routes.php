@@ -142,6 +142,10 @@ Route::group(['prefix' => 'payment'], function(){
     Route::get('chose/{item_id}', 'ClientController@buy');  # 微信扫码支付方式
 });
 
+Route::group(['prefix' => 'order'], function(){
+    Route::get('refund/{id}','OrderController@refund');
+});
+
 Route::group(['prefix' => 'test'], function(){
     Route::get('put/{key}-{value}','TestController@putValue');
     Route::get('get/{key}','TestController@getValue');
