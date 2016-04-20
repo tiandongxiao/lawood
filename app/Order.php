@@ -26,7 +26,7 @@ class Order extends ShopOrderModel
         dd($gateway);
         if($this->isAllowRefund()){
             $gateway = $this->transactions[0]->gateway;
-            dd($gateway);
+            // dd($gateway);
             switch($gateway){
                 case 'wx_native':
                     //return redirect('/wxpay/')
