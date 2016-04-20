@@ -18,6 +18,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 use Shop;
 use App\Cart;
+use App\Order as ShopOrder;
 
 class WxPayController extends Controller
 {
@@ -120,6 +121,7 @@ class WxPayController extends Controller
 
         # 3 下单
         $order = Shop::placeOrder();
+        dd($order);
 
         if ($order->hasFailed) {
             $exception = Shop::exception();
@@ -131,7 +133,8 @@ class WxPayController extends Controller
         $info = explode('||',$transaction->detail);
 
         $url = $info[0];
-        $price = $info[1];
+        $price = $order->total;
+
         return view('payment.wxpay.native',compact('url','price'));
     }
 
@@ -177,13 +180,13 @@ class WxPayController extends Controller
 
         $order = $this->queryOrder($out_trade_no);
 
-
         if($order){
             $refund_code = uniqid('REFUND');
             Log::info('退款流程：订单号'.$out_trade_no.' --- 退款金额：'.$order->total_fee);
             $result = $this->payment->refund($out_trade_no,$refund_code, $order->total_fee); // 总金额 100 退款 100，操作员：商户号
-            if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS')
-                return back()->withErrors('退款成功');
+            if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
+                ShopOrder::where();
+            }
         }
         return back()->withErrors('退款失败');
     }

@@ -100,7 +100,7 @@ trait ShopDevTrait
     # 修改订单的状态
     public function changeOrderStatus(Order $order,$status_code)
     {
-        #检查status_code是否存在
+        # 检查status_code是否存在
         if($this->isValidStatus($status_code)){
             $order->status = $status_code;
         }

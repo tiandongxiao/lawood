@@ -27,6 +27,6 @@ class OrderController extends Controller
                     return  redirect('wxpay/refund/'.$order->transactions[0]->transaction_id);
                     break;
             }
-        }        
+        }
     }
 }

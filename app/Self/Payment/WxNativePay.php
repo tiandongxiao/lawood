@@ -44,16 +44,11 @@ class WxNativePay extends PaymentGateway
 
         # 开始支付流程
         try {
-
             # 如果订单的总金额为0，则其不需要走支付流程，直接将其状态设置为完成
             if ($order->total <= 0) {
-
                 $this->statusCode = 'completed';
-
                 $this->detail = 'Order total is 0; no PayPal transaction required.';
-
                 $this->transactionId = uniqid('TRAN_');
-
                 return true;
             }
 
@@ -61,18 +56,22 @@ class WxNativePay extends PaymentGateway
             $wx_order = new Order([
                 'body'             => '服务费', # 支付时显示给用户的内容项
                 'detail'           => Str::random(16), # 商品详情，
-                'out_trade_no'     => uniqid('E_ORDER_'), # 商户订单号
+                'out_trade_no'     => uniqid('WX_ORDER_'), # 商户订单号
                 'total_fee'        => $order->total, # 分为基本单位
-                'trade_type'       =>  'NATIVE' # 支付方式
+                'trade_type'       => 'NATIVE' # 支付方式
             ]);
 
             $result = $this->payment->prepare($wx_order);
+            if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
+                # 这里我们利用此项携带参数信息使用
+                $order->order_no = $wx_order->out_trade_no;
+                $order->attach = $result->code_url;
+                $order->save();
 
-            # 这里我们利用此项携带参数信息使用
-            $this->detail = $result->code_url.'||'.$order->total;
-            $this->transactionId = $wx_order->out_trade_no;
-            return true;
-
+                $this->detail = '订单总金额为：'.($order->total/100).'元,尚未支付';
+                $this->transactionId = null; # 尚未生成交易信息
+                return true;
+            }
         } catch (\Exception $e) {
 
             throw new GatewayException(

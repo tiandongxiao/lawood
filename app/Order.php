@@ -6,7 +6,7 @@ use Amsgames\LaravelShop\Models\ShopOrderModel;
 
 class Order extends ShopOrderModel
 {
-    protected $fillable = ['user_id', 'statusCode','refunded'];
+    protected $fillable = ['user_id', 'statusCode', 'order_no', 'refunded', 'attach'];
 
     public function isRefunded()
     {
