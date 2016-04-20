@@ -79,7 +79,6 @@ class WxNativePay extends PaymentGateway
                 1000,
                 $e
             );
-
         }
 
         return false;
