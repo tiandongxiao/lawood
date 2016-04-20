@@ -24,9 +24,10 @@ class OrderController extends Controller
             $gateway = $order->transactions[0]->gateway;
             switch($gateway){
                 case 'wx_native':
-                    return  redirect()->action('WeChat\WxPayController@refundByOrderNo', [$order->transactions[0]->transaction_id]);
+                    $code = \GuzzleHttp\json_decode(redirect()->action('WeChat\WxPayController@refundByOrderNo', [$order->transactions[0]->transaction_id])) ;
+                    dd(code);
                     //$result =  redirect('wxpay/refund/'.$order->transactions[0]->transaction_id);
-                    dd($result);
+                    //dd($result);
                     break;
             }
         }
