@@ -20,20 +20,4 @@ class Order extends ShopOrderModel
         }
         return false;
     }
-
-    public function refund()
-    {
-        if($this->isAllowRefund()){
-            $gateway = $this->transactions[0]->gateway;
-            switch($gateway){
-                case 'wx_native':
-                    dd($gateway.' is here');
-                    return redirect('/wxpay/refund/'.$this->id);
-                    break;
-                case 'wx_js':
-                    dd($gateway.' is here');
-                    break;
-            }
-        }
-    }
 }

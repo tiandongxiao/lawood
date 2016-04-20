@@ -20,6 +20,14 @@ class OrderController extends Controller
     public function refund($id)
     {
         $order = Order::findOrFail($id);
+        if($order->isAllowRefund()){
+            $gateway = $order->transactions[0]->gateway;
+            switch($gateway){
+                case 'wx_native':
+                    return redirect('wxpay/refund/'.$order->transactions[0]->transaction_id);
+                    break;
+            }
+        }
         $result = $order->refund();
 
     }
