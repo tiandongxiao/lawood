@@ -87,18 +87,7 @@ class LawyerController extends Controller
         return $unbinds;
     }
 
-    public function pendingOrders()
-    {
-        $user = Auth::user();
-        $user->role = 'lawyer';
-        $user->save();
-
-        $orders = $this->getPendingOrders($user);
-
-        //dd($orders);
-        return view('lawyer.pending',compact('orders'));
-    }
-
+    # 已完成的订单
     public function completedOrders()
     {
         $user = Auth::user();
@@ -106,11 +95,10 @@ class LawyerController extends Controller
         $user->save();
 
         $orders = $this->getCompletedOrders($user);
-
-        //dd($orders);
-        return view('lawyer.completed',compact('orders'));
+        return view('lawyer.status.completed',compact('orders'));
     }
 
+    # 已付款，尚未承接的订单
     public function payedOrders()
     {
         $user = Auth::user();
@@ -118,8 +106,27 @@ class LawyerController extends Controller
         $user->save();
 
         $orders = $this->getPayedOrders($user);
-        
-        //dd($orders);
-        return view('lawyer.payed',compact('orders'));
+        return view('lawyer.status.payed',compact('orders'));
+    }
+
+    # 已经承接的订单
+    public function acceptedOrders()
+    {
+        $user = Auth::user();
+        $user->role = 'lawyer';
+        $user->save();
+
+        $orders = $this->getAcceptedOrders($user);
+        return view('lawyer.status.accepted',compact('orders'));
+    }
+
+    public function rejectedOrders()
+    {
+        $user = Auth::user();
+        $user->role = 'lawyer';
+        $user->save();
+
+        $orders = $this->getRejectedOrders($user);
+        return view('lawyer.status.rejected',compact('orders'));
     }
 }

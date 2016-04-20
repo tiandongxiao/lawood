@@ -43,7 +43,28 @@ class OrderController extends Controller
     public function reject($id)
     {
         $order = Order::findOrFail($id);
-        if($order->statusCode == 'payed')
-            $order->statusCode = 'accepted';
+        if($order->statusCode == 'payed'){
+            $order->statusCode = 'rejected';
+            # 拒单后立即退款
+            $this->refund($id);
+            return back()->withErrors('已拒单');
+        }
+    }
+
+    # 订单签到
+    public function sign($id)
+    {
+        $order = Order::findOrFail($id);
+
+        switch($order->statusCode){
+            # 此时双方都为签到
+            case 'accepted':
+                $order->statusCode = 'in_process';
+                break;
+            # 此时一方已签到
+            case 'in_process':
+                $order->statusCode = 'completed';
+                break;
+        }
     }
 }

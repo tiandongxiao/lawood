@@ -130,6 +130,18 @@ trait ShopDevTrait
         return $this->getOrdersByStatus($user,'payed');
     }
 
+    # 获取律师已经承接的订单
+    public function getAcceptedOrders($user)
+    {
+        return $this->getOrdersByStatus($user,'accepted');
+    }
+
+    # 获取律师已经拒绝的订单
+    public function getRejectedOrders($user)
+    {
+        return $this->getOrdersByStatus($user,'rejected');
+    }
+
     # 根据用户类型和状态码来获取订单列表
     public function getOrdersByStatus($user,$status)
     {
