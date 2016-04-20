@@ -176,6 +176,7 @@ class WxPayController extends Controller
         }
 
         $order = $this->queryOrder($out_trade_no);
+        dd($order);
 
         if($order){
             $refund_code = uniqid('REFUND');
