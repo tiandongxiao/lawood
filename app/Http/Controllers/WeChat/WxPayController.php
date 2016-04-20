@@ -172,7 +172,8 @@ class WxPayController extends Controller
     public function refundByOrderNo($out_trade_no)
     {
         if($this->isOrderRefunded($out_trade_no)){
-            return 'REPEAT';
+            //return 'REPEAT';
+            return response()->json(['code' => 'REPEAT']);
         }
 
         $order = $this->queryOrder($out_trade_no);
@@ -182,9 +183,10 @@ class WxPayController extends Controller
             Log::info('退款流程：订单号'.$out_trade_no.' --- 退款金额：'.$order->total_fee);
             $result = $this->payment->refund($out_trade_no,$refund_code, $order->total_fee); // 总金额 100 退款 100，操作员：商户号
             if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS')
-                return 'SUCCESS';
+                return response()->json(['code' => 'SUCCESS']);
         }
-        return 'FAIL';
+
+        return response()->json(['code' => 'FAIL']);
     }
 
     # 根据微信订单号查询订单
