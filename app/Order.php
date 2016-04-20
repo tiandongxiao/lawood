@@ -22,6 +22,8 @@ class Order extends ShopOrderModel
 
     public function refund()
     {
+        $gateway = $this->transactions[0]->gateway;
+        dd($gateway);
         if($this->isAllowRefund()){
             $gateway = $this->transactions[0]->gateway;
             dd($gateway);
