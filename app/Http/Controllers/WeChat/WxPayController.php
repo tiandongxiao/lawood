@@ -44,23 +44,23 @@ class WxPayController extends Controller
     public function callback()
     {
         $response = $this->payment->handleNotify(function($notify, $successful){
-            #返回值中不包含transaction_id时，此时用户尚未生成支付订单
+            # 返回值中不包含transaction_id时，此时用户尚未生成支付订单
             Log::info('This is notify transaction id --'.$notify->transaction_id.'||'.$successful);
             # 用户是否支付成功
             if ($successful) {
                 # 不是已经支付状态则修改为已经支付状态
                 # 使用通知里的 "微信支付订单号" 或者 "商户订单号" 去自己的数据库找到订单
                 Log::info('商户支付订单号 --'.$notify->out_trade_no);
-                $transaction = $this->globalSearchTransaction($notify->out_trade_no);
-                $order =$transaction->order;
 
-                $order->statusCode='completed';
+                $order = $this->queryOrder($notify->out_trade_no);
+                $transaction = $order->transactions[0];
+
+                $order->statusCode='payed'; # 订单状态设置为已支付
                 $order->save();
-                Log::info($order->statusCode);
 
-                # 将真正的transaction_id赋予transaction对象
+                # 将真正的transaction_id 赋予transaction对象
                 $transaction->transaction_id = $notify->transaction_id;
-                Log::info('LLLLL'.$transaction->transaction_id);
+                $transaction->save();
 
                 $client = $this->client($order);
                 Log::info('客户邮件为--'.$client->email);
@@ -68,29 +68,14 @@ class WxPayController extends Controller
                 $seller = $this->seller($order);
                 Log::info('律师邮件为--'.$seller->email);
 
-
-
-//                # 如果订单不存在
-//                if (!$order) {
-//                    return 'Order not exist.'; // 告诉微信，我已经处理完了，订单没找到，别再通知我了
-//                }
-//
-//                # 检查订单是否已经更新过支付状态
-//                if ($order->paid_at) { # 假设订单字段“支付时间”不为空代表已经支付
-//                    return true; # 已经支付成功了就不再更新了
-//                }
-//                $order->paid_at = time(); # 更新支付时间为当前时间
-//                $order->status = 'paid';
-
             } else {
                 # 用户支付失败
-                //$order->status = 'paid_fail';
-            }
-
-            //$order->save(); # 保存订单
+                $order = $this->queryOrder($notify->out_trade_no);
+                $order->statusCode='failed'; # 订单状态设置为支付失败
+                $order->save();
+            }            
 
             return true; # 返回处理完成
-
         });
 
         return $response;
@@ -180,7 +165,7 @@ class WxPayController extends Controller
 
             $refund_code = uniqid('REFUND');
             $result = $this->payment->refund($out_trade_no,$refund_code, $order->total_fee);
-            
+
             if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
                 # 对Shop Order进行数据更新，改变订单状态
                 $shop_order = ShopOrder::where('order_no',$out_trade_no)->first();

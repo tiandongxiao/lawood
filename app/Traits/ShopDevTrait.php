@@ -85,6 +85,14 @@ trait ShopDevTrait
         return null;
     }
 
+    public function queryShopOrder($order_no)
+    {
+        $order = Order::where('order_no',$order_no)->first();
+        if($order)
+            return $order;
+        return null;
+    }
+
     # 通过Shop Order对象来获取下单顾客信息
     public function client(Order $order)
     {
@@ -95,21 +103,6 @@ trait ShopDevTrait
     public function seller(Order $order)
     {
         return Item::find($order->items[0]->reference_id)->user;
-    }
-
-    # 修改订单的状态
-    public function changeOrderStatus(Order $order,$status_code)
-    {
-        # 检查status_code是否存在
-        if($this->isValidStatus($status_code)){
-            $order->status = $status_code;
-        }
-    }
-
-    # 判断状态码是不是有效状态值
-    public function isValidStatus($status_code)
-    {
-        return true;
     }
 
     # 获取待付款的用户订单
@@ -163,7 +156,7 @@ trait ShopDevTrait
                 }
                 return $orders;
             case 'client':
-                #Shop开发包的这个函数不怎么好用，故而采用下面的方式
+                # Shop开发包的这个函数不怎么好用，故而采用下面的方式
                 //return Order::findByUser($user->id,$status);
 
                 return Order::whereUser($user->id)
