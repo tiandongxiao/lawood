@@ -17,8 +17,9 @@ class OrderController extends Controller
     }
 
     # 退款
-    public function refund(Order $order)
+    public function refund($id)
     {
+        $order = Order::findOrFail($id);
         dd($order);
         if(!$this->isRefunded()){
             if($this->isAllowRefund())
