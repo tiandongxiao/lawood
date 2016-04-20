@@ -22,34 +22,48 @@ class LaravelShopSeeder extends Seeder
 		[
 			'code' 				=> 'in_creation',
 			'name' 				=> 'In creation',
-			'description' => 'Order being created.',
+			'description'       => '订单创建成功',
 		],
 		[
 			'code' 				=> 'pending',
 			'name' 				=> 'Pending',
-			'description' => 'Created / placed order pending payment or similar.',
-		],
-		[
-			'code' 				=> 'in_process',
-			'name' 				=> 'In process',
-			'description' => 'Completed order in process of shipping or revision.',
-		],
-
-		[
-			'code' 				=> 'completed',
-			'name' 				=> 'Completed',
-			'description' => 'Completed order. Payment and other processes have been made.',
-		],
-		[
-			'code' 				=> 'failed',
-			'name' 				=> 'Failed',
-			'description' => 'Failed order. Payment or other process failed.',
+			'description'       => '顾客尚未付款',
 		],
 		[
 			'code' 				=> 'canceled',
 			'name' 				=> 'Canceled',
-			'description' => 'Canceled order.',
+			'description'       => '顾客取消订单',
 		],
+		[
+			'code' 				=> 'payed',
+			'name' 				=> 'Payed',
+			'description'       => '顾客订单已付款',
+		],
+		[
+			'code' 				=> 'accepted',
+			'name' 				=> 'Accepted',
+			'description'       => '律师已接单',
+		],
+		[
+			'code' 				=> 'rejected',
+			'name' 				=> 'Rejected',
+			'description'       => '律师已拒单',
+		],
+		[
+			'code' 				=> 'in_process',
+			'name' 				=> 'In process',
+			'description'       => '一方已签到',
+		],
+		[
+			'code' 				=> 'completed',
+			'name' 				=> 'Completed',
+			'description'       => '订单已完成',
+		],
+		[
+			'code' 				=> 'failed',
+			'name' 				=> 'Failed',
+			'description'       => 'Failed order. Payment or other process failed.',
+		]
 	]);
   }
 }
