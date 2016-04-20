@@ -40,7 +40,7 @@ class ClientController extends Controller
 
         $orders = $this->getPendingOrders($user);
 
-        return view('client.pending',compact('orders'));
+        return view('client.status.pending',compact('orders'));
     }
 
     public function completedOrders()
@@ -50,7 +50,7 @@ class ClientController extends Controller
         $user->save();
 
         $orders = $this->getCompletedOrders($user);
-        return view('client.completed',compact('orders'));
+        return view('client.status.completed',compact('orders'));
     }
 
     public function payedOrders()
@@ -61,6 +61,6 @@ class ClientController extends Controller
 
         $orders = $this->getPayedOrders($user);
 
-        return view('client.payed',compact('orders'));
+        return view('client.status.payed',compact('orders'));
     }
 }
