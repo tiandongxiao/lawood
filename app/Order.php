@@ -15,7 +15,7 @@ class Order extends ShopOrderModel
 
     public function isAllowRefund()
     {
-        if(!$this->isRefunded() && $this->statusCode == 'completed'){
+        if(!$this->isRefunded() && $this->statusCode == 'pending'){
             return true;
         }
         return false;
