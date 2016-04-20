@@ -69,7 +69,7 @@ class WxNativePay extends PaymentGateway
                 $order->save();
 
                 $this->detail = '订单总金额为：'.($order->total/100).'元,尚未支付';
-                $this->transactionId = $wx_order->out_trade_no; # 尚未生成交易信息
+                $this->transactionId = $wx_order->out_trade_no; # 尚未生成交易信息,暂时使用微信单号
                 return true;
             }
         } catch (\Exception $e) {
