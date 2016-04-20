@@ -20,11 +20,7 @@ class OrderController extends Controller
     public function refund($id)
     {
         $order = Order::findOrFail($id);
-        dd($order);
-        if(!$this->isRefunded()){
-            if($this->isAllowRefund())
-            return back()->withErrors('退款成功');
-        }
-        return back()->withErrors('订单不可重复退款');
+        $result = $order->refund();
+
     }
 }
