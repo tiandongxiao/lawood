@@ -24,7 +24,8 @@ class OrderController extends Controller
             $gateway = $order->transactions[0]->gateway;
             switch($gateway){
                 case 'wx_native':
-                    $result =  redirect('wxpay/refund/'.$order->transactions[0]->transaction_id);
+                    $result =  redirect()->action('WxPayController@refundByOrderNo', [$order->transactions[0]->transaction_id]);
+                    //$result =  redirect('wxpay/refund/'.$order->transactions[0]->transaction_id);
                     dd($result);
                     break;
             }
