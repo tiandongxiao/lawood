@@ -15,18 +15,16 @@ class Order extends ShopOrderModel
 
     public function isAllowRefund()
     {
-        if(!$this->isRefunded() && $this->statusCode == 'pending')
-            return true;
-        return false;
+        if(!$this->isRefunded() && $this->statusCode == 'pending'){
+            dd('允许退款');
+        }
+        dd('不允许退款');
     }
 
     public function refund()
     {
-        $gateway = $this->transactions[0]->gateway;
-        dd($gateway);
         if($this->isAllowRefund()){
             $gateway = $this->transactions[0]->gateway;
-            // dd($gateway);
             switch($gateway){
                 case 'wx_native':
                     //return redirect('/wxpay/')
