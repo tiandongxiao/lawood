@@ -21,44 +21,6 @@ class ClientController extends Controller
         return view('payment.chose',compact('item_id'));
     }
 
-    /**
-     * Native 扫码支付方式（对应于微信第二种扫码支付方式）
-     *
-     * @param $product_id
-     * @return 返回扫码支付界面
-     */
-    public function nativePay($id)
-    {
-        # 确保购物车中没有其他商品
-        Cart::current()->clear();
-
-        $this->addItemIntoCart($id);
-
-        # 1 执行Shop的其他操作之前，必须先选择支付方式
-        Shop::setGateway('wx_native');
-
-        # 2 On checkout 准备结账
-        if (!Shop::checkout()) {
-            $exception = Shop::exception();
-            echo $exception->getMessage();
-        }
-
-        # 3 下单
-        $order = Shop::placeOrder();
-
-        if ($order->hasFailed) {
-            $exception = Shop::exception();
-            echo $exception->getMessage();
-        }
-
-        $transaction = $order->transactions[0];
-        $info = explode('||',$transaction->detail);
-
-        $url = $info[0];
-        $price = $info[1];
-        return view('payment.wxpay.native',compact('url','price'));
-    }
-
     public function routePath()
     {
         if(Auth::check()){

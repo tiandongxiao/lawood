@@ -144,6 +144,8 @@ Route::group(['prefix' => 'payment'], function(){
 
 Route::group(['prefix' => 'order'], function(){
     Route::get('refund/{id}','OrderController@refund');
+    Route::get('accept/{id}','OrderController@accept');
+    Route::get('reject/{id}','OrderController@reject');
 });
 
 Route::group(['prefix' => 'test'], function(){

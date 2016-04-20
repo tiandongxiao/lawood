@@ -16,7 +16,7 @@ class OrderController extends Controller
         
     }
 
-    # 退款
+    # 退款逻辑
     public function refund($id)
     {
         $order = Order::findOrFail($id);
@@ -24,9 +24,26 @@ class OrderController extends Controller
             $gateway = $order->transactions[0]->gateway;
             switch($gateway){
                 case 'wx_native':
+                case 'wx_js':
                     return  redirect('wxpay/refund/'.$order->order_no);
-                    break;
             }
         }
+    }
+
+    # 接单逻辑
+    public function accept($id)
+    {
+        $order = Order::findOrFail($id);
+        if($order->statusCode == 'payed'){
+            $order->statusCode = 'accepted';
+        }
+    }
+
+    # 拒单逻辑
+    public function reject($id)
+    {
+        $order = Order::findOrFail($id);
+        if($order->statusCode == 'payed')
+            $order->statusCode = 'accepted';
     }
 }
