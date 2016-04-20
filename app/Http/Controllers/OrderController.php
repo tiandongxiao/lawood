@@ -28,7 +28,7 @@ class OrderController extends Controller
 //                    $code = \GuzzleHttp\json_decode(redirect()->action('WeChat\WxPayController@refundByOrderNo', [$order->transactions[0]->transaction_id])) ;
 //                    dd(code);
                     $result =  redirect('wxpay/refund/'.$order->transactions[0]->transaction_id);
-                    \GuzzleHttp\json_decode($result);
+                    
                     dd($result);
                     break;
             }
