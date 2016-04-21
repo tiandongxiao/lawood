@@ -70,7 +70,7 @@ class WxJSPay extends PaymentGateway
             if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
                 $params = $this->payment->configForPayment($result->prepay_id);
                 $order->order_no = $wx_order->out_trade_no;
-                $order->total = $wx_order->total_fee;
+                //$order->total = $wx_order->total_fee;
                 $order->attach = $params;
                 $order->save();
 
