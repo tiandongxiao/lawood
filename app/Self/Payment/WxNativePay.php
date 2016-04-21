@@ -64,7 +64,7 @@ class WxNativePay extends PaymentGateway
             $result = $this->payment->prepare($wx_order);
 
             if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
-                # 这里我们利用此项携带参数信息使用
+                # 保存微信订单的信息
                 $order->order_no = $wx_order->out_trade_no;
                 $order->attach = $result->code_url;
                 $order->save();
@@ -74,14 +74,12 @@ class WxNativePay extends PaymentGateway
                 return true;
             }
         } catch (\Exception $e) {
-
             throw new GatewayException(
                 $e->getMessage(),
                 1000,
                 $e
             );
         }
-
         return false;
     }
 }

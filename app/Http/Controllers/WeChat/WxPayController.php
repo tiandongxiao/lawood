@@ -88,7 +88,6 @@ class WxPayController extends Controller
      */
     public function nativePay($id)
     {
-        # 确保购物车中没有其他商品
         Cart::current()->clear();
 
         $this->addItemIntoCart($id);
@@ -96,7 +95,7 @@ class WxPayController extends Controller
         # 1 执行Shop的其他操作之前，必须先选择支付方式
         Shop::setGateway('wx_native');
 
-        # 2 On checkout 准备结账
+        # 2 准备结账
         if (!Shop::checkout()) {
             $exception = Shop::exception();
             echo $exception->getMessage();
@@ -111,7 +110,7 @@ class WxPayController extends Controller
         }
 
         $url = $order->attach;  # 如果是微信付款，则绑定扫码url
-        $price = $order->total; #
+        $price = $order->total;
 
         return view('payment.wxpay.native',compact('url','price'));
     }
@@ -122,25 +121,39 @@ class WxPayController extends Controller
      * @param $product_id
      * @return 返回用户在线支付商品信息显示界面
      */
-    public function JSPay($product_id)
+    public function JSPay($id)
     {
-        $user = session('wechat.oauth_user'); // 拿到授权用户资料
-        $open_id = $user->getId();
-
-        $order = new Order([
-            'body'            => '服务费',
-            'detail'          => Str::random(16),
-            'out_trade_no'    => Str::random(16),
-            'total_fee'       => random_int(10,1000),
-            'trade_type'      => 'JSAPI',
-            'openid'          => $open_id
-        ]);
-
-        $result = $this->payment->prepare($order);
-        $params = $this->payment->configForPayment($result->prepay_id);
-        $price  = $order->total_fee;
+        $order = $this->pay($id,'wx_js');
+        $params =  $order->attach;
+        $price = $order->total;
 
         return view('payment.wxpay.jsapi',compact('params','price'));
+    }
+
+    public function pay($id,$gateway)
+    {
+        Cart::current()->clear();
+
+        $this->addItemIntoCart($id);
+
+        # 1 执行Shop的其他操作之前，必须先选择支付方式
+        Shop::setGateway($gateway);
+
+        # 2 准备结账
+        if (!Shop::checkout()) {
+            $exception = Shop::exception();
+            echo $exception->getMessage();
+        }
+
+        # 3 下单
+        $order = Shop::placeOrder();
+
+        if ($order->hasFailed) {
+            $exception = Shop::exception();
+            echo $exception->getMessage();
+        }
+
+        return $order;
     }
 
     public function withdraw($product_id)
