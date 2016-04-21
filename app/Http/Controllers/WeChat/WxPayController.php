@@ -143,6 +143,27 @@ class WxPayController extends Controller
         return view('payment.wxpay.jsapi',compact('params','price'));
     }
 
+    public function withdraw($product_id)
+    {
+        $merchantPay = $this->app->merchant_pay;
+
+        $user = session('wechat.oauth_user'); // 拿到授权用户资料
+        $open_id = $user->getId();
+
+        $merchantPayData = [
+            'partner_trade_no' => str_random(16), # 随机字符串作为订单号，跟红包和支付一个概念。
+            'openid' => $open_id, //收款人的openid
+            'check_name' => 'NO_CHECK',  //文档中三分钟校验实名的方法NO_CHECK OPTION_CHECK FORCE_CHECK
+            're_user_name'=>'王国营',     //OPTION_CHECK FORCE_CHECK 校验实名的时候必须提交
+            'amount' => 100,  //单位为分
+            'desc' => '企业付款',
+            'spbill_create_ip' => '192.168.0.1',  //发起交易的IP地址
+        ];
+
+        $result = $merchantPay->send($merchantPayData);
+        dd($result);
+    }
+
 
     public function refundByTransaction($id)
     {
