@@ -257,7 +257,7 @@ return [
     */
     'gateways' => [
         'wx_native'     =>  App\Self\Payment\WxNativePay::class,
-        'wx_js'         =>  App\Self\Payment\WxJsPay::class
+        'wx_js'         =>  App\Self\Payment\WxJSPay::class
     ],
 
     /*
