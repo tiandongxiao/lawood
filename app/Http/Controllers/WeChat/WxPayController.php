@@ -160,7 +160,7 @@ class WxPayController extends Controller
         }
 
         $params =  $order->attach;
-        $price = $order->total;
+        $price = 1000;
 
         return view('payment.wxpay.jsapi',compact('params','price'));
     }
