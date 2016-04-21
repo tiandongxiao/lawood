@@ -52,6 +52,7 @@ class WxJSPay extends PaymentGateway
 
             $user = session('wechat.oauth_user'); // 拿到授权用户资料
             $open_id = $user->getId();
+            Log::info('JS支付，openid--'.$open_id);
 
             $wx_order = new Order([
                 'body'            => '服务费',
