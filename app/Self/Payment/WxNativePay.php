@@ -62,6 +62,7 @@ class WxNativePay extends PaymentGateway
             ]);
 
             $result = $this->payment->prepare($wx_order);
+
             if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
                 # 这里我们利用此项携带参数信息使用
                 $order->order_no = $wx_order->out_trade_no;

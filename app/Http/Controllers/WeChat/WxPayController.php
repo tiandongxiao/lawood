@@ -50,7 +50,6 @@ class WxPayController extends Controller
             # 用户是否支付成功
             if ($successful) {
                 # 不是已经支付状态则修改为已经支付状态
-                # 使用通知里的 "微信支付订单号" 或者 "商户订单号" 去自己的数据库找到订单
                 Log::info('商户支付订单号 --'.$notify->out_trade_no);
 
                 # 查询本地Shop Order对象
@@ -65,10 +64,7 @@ class WxPayController extends Controller
                 $transaction->save();
 
                 $client = $this->client($order);
-                Log::info('客户邮件为--'.$client->email);
-
                 $seller = $this->seller($order);
-                Log::info('律师邮件为--'.$seller->email);
 
             } else {
                 # 用户支付失败
