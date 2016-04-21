@@ -166,32 +166,6 @@ class WxPayController extends Controller
         return view('payment.wxpay.jsapi',compact('params','price'));
     }
 
-    public function pay($id,$gateway)
-    {
-        Cart::current()->clear();
-
-        $this->addItemIntoCart($id);
-
-        # 1 执行Shop的其他操作之前，必须先选择支付方式
-        Shop::setGateway($gateway);
-
-        # 2 准备结账
-        if (!Shop::checkout()) {
-            $exception = Shop::exception();
-            echo $exception->getMessage();
-        }
-
-        # 3 下单
-        $order = Shop::placeOrder();
-
-        if ($order->hasFailed) {
-            $exception = Shop::exception();
-            echo $exception->getMessage();
-        }
-
-        return $order;
-    }
-
     public function withdraw($product_id)
     {
         $merchantPay = $this->app->merchant_pay;

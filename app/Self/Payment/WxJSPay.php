@@ -43,13 +43,13 @@ class WxJSPay extends PaymentGateway
         # 开始支付流程
         try {
             # 如果订单的总金额为0，则其不需要走支付流程，直接将其状态设置为完成
-            if ($order->total <= 0) {
-                $this->statusCode = 'completed';
-                $this->detail = 'Order total is 0; no PayPal transaction required.';
-                $this->transactionId = uniqid('TRAN_');
-                return true;
-            }
-
+//            if ($order->total <= 0) {
+//                $this->statusCode = 'completed';
+//                $this->detail = 'Order total is 0; no PayPal transaction required.';
+//                $this->transactionId = uniqid('TRAN_');
+//                return true;
+//            }
+            Log::info('JS支付，begin');
             $user = session('wechat.oauth_user'); // 拿到授权用户资料
             $open_id = $user->getId();
             Log::info('JS支付，openid--'.$open_id);
