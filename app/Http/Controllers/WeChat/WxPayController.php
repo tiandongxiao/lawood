@@ -119,7 +119,7 @@ class WxPayController extends Controller
                 $user->wx_id = $open_id;
                 $user->save();
             }
-
+            Log::info('我又登录了一次');
             Auth::login($user);
         }
 
@@ -131,7 +131,7 @@ class WxPayController extends Controller
 
             return view('payment.wxpay.jsapi',compact('params','price'));
         }
-        
+
         return redirect('client/completed');
     }
 
