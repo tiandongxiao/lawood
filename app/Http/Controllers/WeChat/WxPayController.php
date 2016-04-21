@@ -48,16 +48,18 @@ class WxPayController extends Controller
         $response = $this->payment->handleNotify(function($notify, $successful){
             # 返回值中不包含transaction_id时，此时用户尚未生成支付订单
             Log::info('This is notify transaction id --'.$notify->transaction_id.'||'.$successful);
+
             # 用户是否支付成功
             if ($successful) {
-                # 不是已经支付状态则修改为已经支付状态
+
                 Log::info('商户支付订单号 --'.$notify->out_trade_no);
 
                 # 查询本地Shop Order对象
                 $order = $this->queryShopOrder($notify->out_trade_no);
                 $transaction = $order->transactions[0];
 
-                $order->statusCode='payed'; # 订单状态设置为已支付
+                # 订单状态设置为已支付
+                $order->statusCode='payed';
                 $order->save();
 
                 # 将真正的transaction_id 赋予transaction对象
@@ -69,8 +71,10 @@ class WxPayController extends Controller
 
             } else {
                 # 用户支付失败
-                $order = $this->queryOrder($notify->out_trade_no);
-                $order->statusCode='failed'; # 订单状态设置为支付失败
+                $order = $this->queryShopOrder($notify->out_trade_no);
+
+                # 订单状态设置为支付失败
+                $order->statusCode='failed';
                 $order->save();
             }            
 
@@ -87,9 +91,9 @@ class WxPayController extends Controller
      * @param $product_id
      * @return 返回扫码支付界面
      */
-    public function nativePay($id)
+    public function nativePay($item_id)
     {
-        $order = $this->prePay($id,'wx_native');
+        $order = $this->prePay($item_id, 'wx_native');
 
         if($order->statusCode == 'pending'){
             $url = $order->attach;
@@ -106,7 +110,7 @@ class WxPayController extends Controller
      * @param $product_id
      * @return 返回用户在线支付商品信息显示界面
      */
-    public function JSPay($id)
+    public function JSPay($item_id)
     {
         if(!Auth::check()) {
             $wx_user = session('wechat.oauth_user');  # 拿到授权用户资料
@@ -119,13 +123,15 @@ class WxPayController extends Controller
                 $user->wx_id = $open_id;
                 $user->save();
             }
+
             Log::info('我又登录了一次');
+
             Auth::login($user);
         }else{
             Log::info('我处于登录状态');
         }
 
-        $order = $this->prePay($id,'wx_js');
+        $order = $this->prePay($item_id, 'wx_js');
 
         if($order->statusCode == 'pending'){
             $params =  $order->attach;
@@ -219,11 +225,6 @@ class WxPayController extends Controller
         return null;
     }
 
-    # 根据微信交易单号查询交易记录
-    public function queryOrderByTransactionId($id)
-    {
-        return $this->payment->queryByTransactionId($id);
-    }
 
     # 判断微信订单是否已经退过款
     public function isOrderRefunded($out_trade_no)
