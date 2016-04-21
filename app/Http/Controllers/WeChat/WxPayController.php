@@ -121,6 +121,8 @@ class WxPayController extends Controller
             }
             Log::info('我又登录了一次');
             Auth::login($user);
+        }else{
+            Log::info('我处于登录状态');
         }
 
         $order = $this->prePay($id,'wx_js');
