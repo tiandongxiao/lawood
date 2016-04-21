@@ -127,7 +127,7 @@ class WxPayController extends Controller
         $wx_user = session('wechat.oauth_user'); // 拿到授权用户资料
         $open_id = $wx_user->getId();
         $user = new User();
-        $user->open_id = $open_id;
+        $user->wx_id = $open_id;
         $user->save();
 
         Auth::login($user);
