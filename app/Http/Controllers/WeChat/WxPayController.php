@@ -124,19 +124,21 @@ class WxPayController extends Controller
      */
     public function JSPay($id)
     {
-        $wx_user = session('wechat.oauth_user'); // 拿到授权用户资料
-        $open_id = $wx_user->getId();
-
-        $user = User::where('wx_id',$open_id)->first();
-
-        if(!$user){
-            $user = new User();
-            $user->wx_id = $open_id;
-            $user->save();
-        }
-
-
-        Auth::login($user);
+//        if(!Auth::check()) {
+//            $wx_user = session('wechat.oauth_user');  # 拿到授权用户资料
+//            $open_id = $wx_user->getId();
+//
+//            $user = User::where('wx_id', $open_id)->first();
+//
+//            if (!$user) {
+//                $user = new User();
+//                $user->wx_id = $open_id;
+//                $user->save();
+//            }
+//
+//
+//            Auth::login($user);
+//        }
 
         Cart::current()->clear();
 

@@ -45,12 +45,12 @@ class WxJSPay extends PaymentGateway
         # 开始支付流程
         try {
             # 如果订单的总金额为0，则其不需要走支付流程，直接将其状态设置为完成
-//            if ($order->total <= 0) {
-//                $this->statusCode = 'completed';
-//                $this->detail = 'Order total is 0; no PayPal transaction required.';
-//                $this->transactionId = uniqid('TRAN_');
-//                return true;
-//            }
+            if ($order->total <= 0) {
+                $this->statusCode = 'completed';
+                $this->detail = 'Order total is 0; no PayPal transaction required.';
+                $this->transactionId = uniqid('TRAN_');
+                return true;
+            }
 
             $user = session('wechat.oauth_user'); // 拿到授权用户资料
             $open_id = $user->getId();
@@ -68,14 +68,18 @@ class WxJSPay extends PaymentGateway
             $result = $this->payment->prepare($wx_order);
 
             if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
+
+                # 获取JS支付相关参数
                 $params = $this->payment->configForPayment($result->prepay_id);
+
                 $order->order_no = $wx_order->out_trade_no;
-                //$order->total = $wx_order->total_fee;
                 $order->attach = $params;
                 $order->save();
 
                 $this->detail = '订单总金额为：'.($order->total/100).'元,尚未支付';
-                $this->transactionId = $wx_order->out_trade_no; # 尚未生成交易信息,暂时使用微信单号
+
+                # 尚未生成交易信息,暂时使用微信单号
+                $this->transactionId = $wx_order->out_trade_no;
                 return true;
             }
         } catch (\Exception $e) {
