@@ -13,6 +13,7 @@ use Amsgames\LaravelShop\Exceptions\CheckoutException;
 use Amsgames\LaravelShop\Exceptions\GatewayException;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Log;
+use EasyWeChat\Payment\Order;
 
 class WxJSPay extends PaymentGateway
 {
@@ -49,7 +50,7 @@ class WxJSPay extends PaymentGateway
 //                $this->transactionId = uniqid('TRAN_');
 //                return true;
 //            }
-            Log::info('JS支付，begin');
+            
             $user = session('wechat.oauth_user'); // 拿到授权用户资料
             $open_id = $user->getId();
             Log::info('JS支付，openid--'.$open_id);

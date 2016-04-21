@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Self/Payment/WxJSPay.php" afterPath="$PROJECT_DIR$/app/Self/Payment/WxJSPay.php" />
     </list>
     <ignored path="base.iws" />
@@ -86,9 +84,11 @@
       <file leaf-file-name="WxJSPay.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Self/Payment/WxJSPay.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56199306">
-              <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-              <folding />
+            <state vertical-scroll-proportion="0.06141367">
+              <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+              <folding>
+                <element signature="e#125#170#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1187,9 +1187,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Self/Payment/WxJSPay.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56199306">
-          <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-          <folding />
+        <state vertical-scroll-proportion="0.06141367">
+          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+          <folding>
+            <element signature="e#125#170#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
