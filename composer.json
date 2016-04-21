@@ -20,7 +20,8 @@
         "amsgames/laravel-shop": "^0.2.12",
         "nvd/crud-generator": "^1.0",
         "vergil-lai/node-categories": "^1.1",
-        "simplesoftwareio/simple-qrcode": "^1.4"
+        "simplesoftwareio/simple-qrcode": "^1.4",
+        "pingplusplus/pingpp-php": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

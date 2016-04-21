@@ -32,6 +32,7 @@ class ClientController extends Controller
         return redirect('register/client')->withErrors('您需要先注册为咨询客户');
     }
 
+    # 返回未付款的订单列表
     public function pendingOrders()
     {
         $user = Auth::user();
@@ -43,6 +44,7 @@ class ClientController extends Controller
         return view('client.status.pending',compact('orders'));
     }
 
+    # 返回已经完成的订单列表
     public function completedOrders()
     {
         $user = Auth::user();
@@ -54,6 +56,7 @@ class ClientController extends Controller
         return view('client.status.completed',compact('orders'));
     }
 
+    # 返回已支付订单列表
     public function payedOrders()
     {
         $user = Auth::user();

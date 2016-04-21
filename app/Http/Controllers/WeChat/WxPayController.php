@@ -23,6 +23,7 @@ use App\Order as ShopOrder;
 class WxPayController extends Controller
 {
     use ShopDevTrait;
+
     # 微信 app 实例
     private $app;
 
@@ -113,8 +114,8 @@ class WxPayController extends Controller
             echo $exception->getMessage();
         }
 
-        $url = $order->attach;
-        $price = $order->total;
+        $url = $order->attach;  # 如果是微信付款，则绑定扫码url
+        $price = $order->total; #
 
         return view('payment.wxpay.native',compact('url','price'));
     }

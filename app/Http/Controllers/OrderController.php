@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Traits\ShopDevTrait;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -10,10 +11,21 @@ use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
+    use ShopDevTrait;
+
     # 查询订单
     public function queryOrder()
     {
         
+    }
+
+    # 对未下单的订单下单
+    public function placeOrder($id)
+    {
+        $order = Order::findOrFail($id);
+        if(!$order->isPayed){
+
+        }
     }
 
     # 退款逻辑
