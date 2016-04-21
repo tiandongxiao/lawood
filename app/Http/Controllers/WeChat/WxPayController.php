@@ -5,6 +5,7 @@ namespace App\Http\Controllers\WeChat;
 use App\Item;
 use App\Traits\ShopDevTrait;
 use App\Transaction;
+use App\User;
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Payment\Order;
 use Illuminate\Http\Request;
@@ -123,6 +124,14 @@ class WxPayController extends Controller
      */
     public function JSPay($id)
     {
+        $wx_user = session('wechat.oauth_user'); // 拿到授权用户资料
+        $open_id = $wx_user->getId();
+        $user = new User();
+        $user->open_id = $open_id;
+        $user->save();
+
+        Auth::login($user);
+
         Cart::current()->clear();
 
         $this->addItemIntoCart($id);
