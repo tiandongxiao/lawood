@@ -89,31 +89,15 @@ class WxPayController extends Controller
      */
     public function nativePay($id)
     {
-        Cart::current()->clear();
+        $order = $this->prePay($id,'wx_native');
 
-        $this->addItemIntoCart($id);
-
-        # 1 执行Shop的其他操作之前，必须先选择支付方式
-        Shop::setGateway('wx_native');
-
-        # 2 准备结账
-        if (!Shop::checkout()) {
-            $exception = Shop::exception();
-            echo $exception->getMessage();
+        if($order->statusCode == 'pending'){
+            $url = $order->attach;
+            $price = $order->total;
+            return view('payment.wxpay.native',compact('url','price'));
         }
 
-        # 3 下单
-        $order = Shop::placeOrder();
-
-        if ($order->hasFailed) {
-            $exception = Shop::exception();
-            echo $exception->getMessage();
-        }
-
-        $url = $order->attach;  # 如果是微信付款，则绑定扫码url
-        $price = $order->total;
-
-        return view('payment.wxpay.native',compact('url','price'));
+        return redirect('client/completed');
     }
 
     /**
@@ -136,16 +120,29 @@ class WxPayController extends Controller
                 $user->save();
             }
 
-
             Auth::login($user);
         }
 
+        $order = $this->prePay($id,'wx_js');
+
+        if($order->statusCode == 'pending'){
+            $params =  $order->attach;
+            $price = $order->total;
+
+            return view('payment.wxpay.jsapi',compact('params','price'));
+        }
+        
+        return redirect('client/completed');
+    }
+
+    public function prePay($id, $gateway)
+    {
         Cart::current()->clear();
 
         $this->addItemIntoCart($id);
 
         # 1 执行Shop的其他操作之前，必须先选择支付方式
-        Shop::setGateway('wx_js');
+        Shop::setGateway($gateway);
 
         # 2 准备结账
         if (!Shop::checkout()) {
@@ -161,13 +158,10 @@ class WxPayController extends Controller
             echo $exception->getMessage();
         }
 
-        $params =  $order->attach;
-
-        $price = 1000;
-
-        return view('payment.wxpay.jsapi',compact('params','price'));
+        return $order;
     }
 
+    # 提现，目前没有实现，丫的要我充值
     public function withdraw($product_id)
     {
         $merchantPay = $this->app->merchant_pay;
@@ -187,12 +181,6 @@ class WxPayController extends Controller
 
         $result = $merchantPay->send($merchantPayData);
         dd($result);
-    }
-
-
-    public function refundByTransaction($id)
-    {
-        $order = $this->queryOrderByTransactionId($id);
     }
 
     # 根据传入的微信订单号进行退款
