@@ -144,6 +144,6 @@ class LawyerController extends Controller
         foreach($orders as $order){
             $sum += $order->total;
         }
-        return $sum;
+        return $sum/100;
     }
 }
