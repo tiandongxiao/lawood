@@ -29,6 +29,9 @@ class Kernel extends HttpKernel
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'wechat.oauth' => \Overtrue\LaravelWechat\Middleware\OAuthAuthenticate::class, //微信用户鉴权
+        'wechat.oauth' => \Overtrue\LaravelWechat\Middleware\OAuthAuthenticate::class,  # 微信用户鉴权
+        'role' => \Bican\Roles\Middleware\VerifyRole::class, # 角色权限中间键
+        'permission' => \Bican\Roles\Middleware\VerifyPermission::class,
+        'level' => \Bican\Roles\Middleware\VerifyLevel::class,
     ];
 }

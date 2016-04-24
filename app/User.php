@@ -3,6 +3,10 @@
 namespace App;
 
 use Amsgames\LaravelShop\Traits\ShopUserTrait;
+
+use Ghanem\Rating\Contracts\Ratingable;
+use Ghanem\Rating\Traits\Ratingable as RatingTrait;
+
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -11,11 +15,23 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
+use Bican\Roles\Traits\HasRoleAndPermission;
+use Bican\Roles\Contracts\HasRoleAndPermission as HasRoleAndPermissionContract;
+
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
-                                    CanResetPasswordContract
+                                    CanResetPasswordContract,
+                                    Ratingable,
+                                    HasRoleAndPermissionContract
 {
-    use Authenticatable, Authorizable, CanResetPassword, ShopUserTrait;
+    use Authenticatable, CanResetPassword, ShopUserTrait, RatingTrait, HasRoleAndPermission ,Authorizable {
+        # 为解决冲突的问题
+//        Authorizable::can insteadof HasRoleAndPermission;
+//        HasRoleAndPermission::can as may;
+          HasRoleAndPermission::can insteadof Authorizable;
+          Authorizable::can as may;
+    }
+
 
     /**
      * The database table used by the model.
@@ -37,14 +53,6 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
-
-    /**
-     * @return bool
-     */
-    public function getIsAdminAttribute()
-    {
-        return true;
-    }
 
     # 一个律师可以拥有多个地址，以便于其扩展业务，地址信息独有不共享
     public function locations()

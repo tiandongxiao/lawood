@@ -159,6 +159,8 @@ return [
         Nvd\Crud\Providers\NvdCrudServiceProvider::class,       # CRUD服务
         VergilLai\NodeCategories\NodeCategoriesProvider::class, # 分类服务
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,   # 二维码服务
+        Ghanem\Rating\RatingServiceProvider::class,             # laravel 星级评分系统
+        Bican\Roles\RolesServiceProvider::class,                # 权限系统
     ],
 
     /*

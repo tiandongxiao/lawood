@@ -152,19 +152,31 @@ Route::group(['prefix' => 'order'], function(){
 });
 
 Route::group(['prefix' => 'test'], function(){
-    Route::get('put/{key}-{value}','TestController@putValue');
-    Route::get('get/{key}','TestController@getValue');
-    Route::get('uri','TestController@getUri');
-    Route::get('format','TestController@getShopFormat');
-    Route::get('pay','TestController@getPayMethod');
-    Route::get('cart','TestController@getCart');
-    Route::get('items','TestController@addItemIntoCart');
-    Route::get('remove/{id}','TestController@removeItem');
-    Route::get('place','TestController@getPlaceOrder');
+    Route::get('account','TestController@accountSystem');
+    Route::get('info','TestController@accountInfo');
+    Route::get('c_role/{name}','TestController@createRole');
+
+    Route::get('blade','TestController@blade');
+
+    Route::get('hasrole/{role}','TestController@hasRole');
+    Route::get('can','TestController@cando');
+
     Route::get('cate','TestController@getMakeCategories');
     Route::get('dc','TestController@drawCategory');
     Route::get('http','TestController@getHttpLocation');
     Route::get('tran','TestController@node');
 
     Route::get('order','TestController@order');
+
+    Route::get('rate','TestController@ratingUser');
+
+    Route::get('rateitem','TestController@ratingItem');
+    Route::get('role','TestController@addRole');
+
+    Route::get('bind','TestController@createPermission');
+    Route::get('user_perms','TestController@userPerms');
+    Route::get('role_perms/{name}','TestController@rolePerms');
 });
+
+Route::resource('role','RoleController');
+Route::resource('permission','PermissionController');
