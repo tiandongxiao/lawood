@@ -1,15 +1,10 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WebController@welcome');
+Route::get('map', 'WebController@map');
 
-Route::get('map', function () {
-    return view('index');
-});
-
-Route::get('yun',function(){
-    return view('map');
+Route::group(['prefix' => 'website'], function(){
+    Route::get('settings','WebController@settings');
 });
 
 # 用户认证系统自带控制器处理
@@ -158,8 +153,7 @@ Route::group(['prefix' => 'test'], function(){
 
     Route::get('blade','TestController@blade');
 
-    Route::get('hasrole/{role}','TestController@hasRole');
-    Route::get('can','TestController@cando');
+
 
     Route::get('cate','TestController@getMakeCategories');
     Route::get('dc','TestController@drawCategory');
@@ -171,11 +165,8 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('rate','TestController@ratingUser');
 
     Route::get('rateitem','TestController@ratingItem');
-    Route::get('role','TestController@addRole');
+    Route::get('code','TestController@scanQrCode');
 
-    Route::get('bind','TestController@createPermission');
-    Route::get('user_perms','TestController@userPerms');
-    Route::get('role_perms/{name}','TestController@rolePerms');
 });
 
 Route::resource('role','RoleController');

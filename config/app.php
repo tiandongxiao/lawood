@@ -161,6 +161,7 @@ return [
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,   # 二维码服务
         Ghanem\Rating\RatingServiceProvider::class,             # laravel 星级评分系统
         Bican\Roles\RolesServiceProvider::class,                # 权限系统
+        Backup\BackupServiceProvider::class,                    # 数据库恢复备份系统
     ],
 
     /*
@@ -222,5 +223,6 @@ return [
         'Tracker'   => PragmaRX\Tracker\Vendor\Laravel\Facade::class,  # Boss级数据跟踪系统
         'Shop'      => Amsgames\LaravelShop\LaravelShopFacade::class,  # 电商服务
         'QrCode'    => SimpleSoftwareIO\QrCode\Facades\QrCode::class,  # 二维码服务
+
     ],
 ];

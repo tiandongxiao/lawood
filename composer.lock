@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8ae7da21dc6cd521c1bb220a2ae0fb9e",
-    "content-hash": "0a1e163d2de4115da1128d72bab7dfff",
+    "hash": "6051e1be5db5f4e7a5d43cdf9320641c",
+    "content-hash": "3f627db450fd0b20ab047568ce78c8cd",
     "packages": [
         {
             "name": "amsgames/laravel-shop",
@@ -116,6 +116,86 @@
                 "paypal"
             ],
             "time": "2015-09-19 04:10:42"
+        },
+        {
+            "name": "aws/aws-sdk-php",
+            "version": "3.18.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aws/aws-sdk-php.git",
+                "reference": "ed9bfdfd19b1e50a13f7ac772fd3d09a00ed8ed1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/aws/aws-sdk-php/ed9bfdfd19b1e50a13f7ac772fd3d09a00ed8ed1.zip",
+                "reference": "ed9bfdfd19b1e50a13f7ac772fd3d09a00ed8ed1",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~5.3|~6.0.1|~6.1",
+                "guzzlehttp/promises": "~1.0",
+                "guzzlehttp/psr7": "~1.0",
+                "mtdowling/jmespath.php": "~2.2",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "andrewsville/php-token-reflection": "^1.4",
+                "aws/aws-php-sns-message-validator": "~1.0",
+                "behat/behat": "~3.0",
+                "doctrine/cache": "~1.4",
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-openssl": "*",
+                "ext-pcre": "*",
+                "ext-simplexml": "*",
+                "ext-spl": "*",
+                "nette/neon": "^2.3",
+                "phpunit/phpunit": "~4.0|~5.0",
+                "psr/cache": "^1.0"
+            },
+            "suggest": {
+                "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
+                "doctrine/cache": "To use the DoctrineCacheAdapter",
+                "ext-curl": "To send requests using cURL",
+                "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Aws\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Amazon Web Services",
+                    "homepage": "http://aws.amazon.com"
+                }
+            ],
+            "description": "AWS SDK for PHP - Use Amazon Web Services in your PHP project",
+            "homepage": "http://aws.amazon.com/sdkforphp",
+            "keywords": [
+                "amazon",
+                "aws",
+                "cloud",
+                "dynamodb",
+                "ec2",
+                "glacier",
+                "s3",
+                "sdk"
+            ],
+            "time": "2016-04-21 21:16:40"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -945,16 +1025,16 @@
         },
         {
             "name": "jaybizzle/crawler-detect",
-            "version": "v1.1.15",
+            "version": "v1.1.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JayBizzle/Crawler-Detect.git",
-                "reference": "d60127a45ee58dbe3206530f3a134ba2744037e7"
+                "reference": "0af6540ccc6c0890606d28684849222b98cce390"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/JayBizzle/Crawler-Detect/d60127a45ee58dbe3206530f3a134ba2744037e7.zip",
-                "reference": "d60127a45ee58dbe3206530f3a134ba2744037e7",
+                "url": "https://packagist.phpcomposer.com/files/JayBizzle/Crawler-Detect/0af6540ccc6c0890606d28684849222b98cce390.zip",
+                "reference": "0af6540ccc6c0890606d28684849222b98cce390",
                 "shasum": ""
             },
             "require": {
@@ -989,7 +1069,7 @@
                 "crawlerdetect",
                 "php crawler detect"
             ],
-            "time": "2016-04-18 18:17:39"
+            "time": "2016-04-22 18:19:32"
         },
         {
             "name": "jenssegers/agent",
@@ -1236,16 +1316,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.20",
+            "version": "1.0.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "e87a786e3ae12a25cf78a71bb07b4b384bfaa83a"
+                "reference": "35a83cf67d80d7040f306c77b0a84b9fbcc4fbfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/e87a786e3ae12a25cf78a71bb07b4b384bfaa83a",
-                "reference": "e87a786e3ae12a25cf78a71bb07b4b384bfaa83a",
+                "url": "https://packagist.phpcomposer.com/files/thephpleague/flysystem/35a83cf67d80d7040f306c77b0a84b9fbcc4fbfb.zip",
+                "reference": "35a83cf67d80d7040f306c77b0a84b9fbcc4fbfb",
                 "shasum": ""
             },
             "require": {
@@ -1315,7 +1395,54 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-03-14 21:54:11"
+            "time": "2016-04-22 10:56:25"
+        },
+        {
+            "name": "league/flysystem-aws-s3-v3",
+            "version": "1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem-aws-s3-v3.git",
+                "reference": "996491670d5ea9da8c0181b2324c0a7a7ae961fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/thephpleague/flysystem-aws-s3-v3/996491670d5ea9da8c0181b2324c0a7a7ae961fe.zip",
+                "reference": "996491670d5ea9da8c0181b2324c0a7a7ae961fe",
+                "shasum": ""
+            },
+            "require": {
+                "aws/aws-sdk-php": "^3.0.0",
+                "league/flysystem": "~1.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "henrikbjorn/phpspec-code-coverage": "~1.0.1",
+                "phpspec/phpspec": "^2.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Flysystem\\AwsS3v3\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Flysystem adapter for the AWS S3 SDK v3.x",
+            "time": "2016-04-19 20:27:15"
         },
         {
             "name": "maxmind-db/reader",
@@ -1468,16 +1595,16 @@
         },
         {
             "name": "mobiledetect/mobiledetectlib",
-            "version": "2.8.21",
+            "version": "2.8.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/serbanghita/Mobile-Detect.git",
-                "reference": "edf31d000b1166e0f78f3498b688c7b11a849499"
+                "reference": "53cddae0c272a478b24a4b5fb60d0f838caf70b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/serbanghita/Mobile-Detect/edf31d000b1166e0f78f3498b688c7b11a849499.zip",
-                "reference": "edf31d000b1166e0f78f3498b688c7b11a849499",
+                "url": "https://packagist.phpcomposer.com/files/serbanghita/Mobile-Detect/53cddae0c272a478b24a4b5fb60d0f838caf70b6.zip",
+                "reference": "53cddae0c272a478b24a4b5fb60d0f838caf70b6",
                 "shasum": ""
             },
             "require": {
@@ -1518,7 +1645,7 @@
                 "mobile detector",
                 "php mobile detect"
             ],
-            "time": "2016-04-18 15:04:00"
+            "time": "2016-04-24 09:47:16"
         },
         {
             "name": "monolog/monolog",
@@ -1641,6 +1768,61 @@
                 "schedule"
             ],
             "time": "2016-01-26 21:23:30"
+        },
+        {
+            "name": "mtdowling/jmespath.php",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jmespath/jmespath.php.git",
+                "reference": "192f93e43c2c97acde7694993ab171b3de284093"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/jmespath/jmespath.php/192f93e43c2c97acde7694993ab171b3de284093.zip",
+                "reference": "192f93e43c2c97acde7694993ab171b3de284093",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "bin/jp.php"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JmesPath\\": "src/"
+                },
+                "files": [
+                    "src/JmesPath.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Declaratively specify how to extract elements from a JSON document",
+            "keywords": [
+                "json",
+                "jsonpath"
+            ],
+            "time": "2016-01-05 18:25:05"
         },
         {
             "name": "nesbot/carbon",
@@ -1816,16 +1998,16 @@
         },
         {
             "name": "overtrue/laravel-wechat",
-            "version": "3.0.4",
+            "version": "3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/laravel-wechat.git",
-                "reference": "c43758a3c71c28fcce1bf05a9a76b084fecffb20"
+                "reference": "26307b8f882202efba37e270f9f87d541e5d0242"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/overtrue/laravel-wechat/c43758a3c71c28fcce1bf05a9a76b084fecffb20.zip",
-                "reference": "c43758a3c71c28fcce1bf05a9a76b084fecffb20",
+                "url": "https://packagist.phpcomposer.com/files/overtrue/laravel-wechat/26307b8f882202efba37e270f9f87d541e5d0242.zip",
+                "reference": "26307b8f882202efba37e270f9f87d541e5d0242",
                 "shasum": ""
             },
             "require": {
@@ -1854,7 +2036,7 @@
                 "wechat",
                 "weixin"
             ],
-            "time": "2016-04-19 10:48:56"
+            "time": "2016-04-24 12:25:27"
         },
         {
             "name": "overtrue/socialite",
@@ -1908,16 +2090,16 @@
         },
         {
             "name": "overtrue/wechat",
-            "version": "3.0.14",
+            "version": "3.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/wechat.git",
-                "reference": "c4ee504a6209e186659c8cea88a8d2408cca8a39"
+                "reference": "5b2a30f210afeb77a012462a79beeaa3e41ca4c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/overtrue/wechat/c4ee504a6209e186659c8cea88a8d2408cca8a39.zip",
-                "reference": "c4ee504a6209e186659c8cea88a8d2408cca8a39",
+                "url": "https://packagist.phpcomposer.com/files/overtrue/wechat/5b2a30f210afeb77a012462a79beeaa3e41ca4c3.zip",
+                "reference": "5b2a30f210afeb77a012462a79beeaa3e41ca4c3",
                 "shasum": ""
             },
             "require": {
@@ -1961,7 +2143,7 @@
                 "weixin",
                 "weixin-sdk"
             ],
-            "time": "2016-04-20 13:43:46"
+            "time": "2016-04-22 09:28:54"
         },
         {
             "name": "paragonie/random_compat",
@@ -2012,17 +2194,55 @@
             "time": "2016-03-18 20:34:03"
         },
         {
-            "name": "paypal/rest-api-sdk-php",
-            "version": "v1.7.0",
+            "name": "paulvl/backup",
+            "version": "1.1.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/paypal/PayPal-PHP-SDK.git",
-                "reference": "6175f127144cc47da9010c3915b0afa8443776e4"
+                "url": "https://github.com/paulvl/backup.git",
+                "reference": "ef14576c7d3b4ef1aee3a4f6903058cbc6b0226d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/paypal/PayPal-PHP-SDK/6175f127144cc47da9010c3915b0afa8443776e4.zip",
-                "reference": "6175f127144cc47da9010c3915b0afa8443776e4",
+                "url": "https://packagist.phpcomposer.com/files/paulvl/backup/ef14576c7d3b4ef1aee3a4f6903058cbc6b0226d.zip",
+                "reference": "ef14576c7d3b4ef1aee3a4f6903058cbc6b0226d",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.1.*",
+                "league/flysystem-aws-s3-v3": "~1.0",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Backup\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Vidal",
+                    "email": "paul.vidal.lujan@gmail.com"
+                }
+            ],
+            "description": "Database backup package for laravel 5.1",
+            "time": "2016-01-09 17:02:49"
+        },
+        {
+            "name": "paypal/rest-api-sdk-php",
+            "version": "v1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paypal/PayPal-PHP-SDK.git",
+                "reference": "d2fac37f2cba3ccf2a23ce30d3d23f34d17d099b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/paypal/PayPal-PHP-SDK/d2fac37f2cba3ccf2a23ce30d3d23f34d17d099b.zip",
+                "reference": "d2fac37f2cba3ccf2a23ce30d3d23f34d17d099b",
                 "shasum": ""
             },
             "require": {
@@ -2058,7 +2278,7 @@
                 "rest",
                 "sdk"
             ],
-            "time": "2016-04-18 18:39:43"
+            "time": "2016-04-22 03:29:29"
         },
         {
             "name": "pimple/pimple",
@@ -2654,16 +2874,16 @@
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleSoftwareIO/simple-qrcode.git",
-                "reference": "eb10ff69a8f30a05c81107db35a48bb04de00021"
+                "reference": "ec5268adff5a632a463ebdd1ad2b8bf9f305bd1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/SimpleSoftwareIO/simple-qrcode/eb10ff69a8f30a05c81107db35a48bb04de00021.zip",
-                "reference": "eb10ff69a8f30a05c81107db35a48bb04de00021",
+                "url": "https://packagist.phpcomposer.com/files/SimpleSoftwareIO/simple-qrcode/ec5268adff5a632a463ebdd1ad2b8bf9f305bd1a.zip",
+                "reference": "ec5268adff5a632a463ebdd1ad2b8bf9f305bd1a",
                 "shasum": ""
             },
             "require": {
@@ -2674,7 +2894,7 @@
             },
             "require-dev": {
                 "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "4.7.*"
+                "phpunit/phpunit": "~5"
             },
             "type": "library",
             "autoload": {
@@ -2701,7 +2921,7 @@
                 "qrcode",
                 "wrapper"
             ],
-            "time": "2016-04-15 23:58:05"
+            "time": "2016-04-24 02:00:22"
         },
         {
             "name": "snowplow/referer-parser",

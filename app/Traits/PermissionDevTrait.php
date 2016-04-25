@@ -10,7 +10,7 @@ namespace App\Traits;
 
 use Bican\Roles\Models\Role;
 
-/************************************************************************************
+/*************************************************************************************
  *
  * 系统权限相关辅助方法说明
  * <1> 任何权限被创建成功后，超级管理员(admin)会被授予此权限。
@@ -31,6 +31,7 @@ trait PermissionDevTrait
     public function hasPermission($role,$permission)
     {
         $result = $role->permissions->find($permission->id);
+
         if(is_object($result)){
             return true;
         }else{
@@ -47,6 +48,7 @@ trait PermissionDevTrait
     public function authPermission($perm,$role_array)
     {
         $roles = Role::all();
+
         foreach ($roles as $role) {
             if($role_array && in_array($role->name, $role_array)){
                 if(!$this->hasPermission($role,$perm)){
@@ -68,13 +70,12 @@ trait PermissionDevTrait
      */
     public function authToRole($permission,$slug)
     {
-        $result = false;
-
         $role = Role::where('slug',$slug)->firstOrFail();
 
         if(is_object($role)){
             $role->attachPermission($permission);
         }
+
         return $this->hasPermission($role,$permission);
     }
 
@@ -117,9 +118,11 @@ trait PermissionDevTrait
     public function removeAuthFromRole($permission,$slug)
     {
         $role = Role::where('slug',$slug)->firstOrFail();
+
         if(is_object($role)){
             $role->detachPermission($permission);
         }
+
         return !$this->hasPermission($role,$permission);
     }
 }

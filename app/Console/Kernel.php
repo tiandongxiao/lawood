@@ -26,5 +26,9 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('inspire')
                  ->hourly();
+        
+        # 每天0点备份数据库
+        $schedule->command('backup:mysql-dump')
+                 ->dailyAt('00:00');
     }
 }
