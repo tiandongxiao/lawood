@@ -24,7 +24,8 @@
         "pingplusplus/pingpp-php": "dev-master",
         "ghanem/rating": "^1.1",
         "bican/roles": "^2.1",
-        "paulvl/backup": "1.*"
+        "paulvl/backup": "1.*",
+        "rtconner/laravel-likeable": "^1.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6051e1be5db5f4e7a5d43cdf9320641c",
-    "content-hash": "3f627db450fd0b20ab047568ce78c8cd",
+    "hash": "c33eee738d4c30fb645b298522ea8fd9",
+    "content-hash": "ef718d9d1985d104adcbe642650b79c6",
     "packages": [
         {
             "name": "amsgames/laravel-shop",
@@ -1025,16 +1025,16 @@
         },
         {
             "name": "jaybizzle/crawler-detect",
-            "version": "v1.1.17",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JayBizzle/Crawler-Detect.git",
-                "reference": "0af6540ccc6c0890606d28684849222b98cce390"
+                "reference": "f929c498ef3053461fef1b36e3a63744ebaff8b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/JayBizzle/Crawler-Detect/0af6540ccc6c0890606d28684849222b98cce390.zip",
-                "reference": "0af6540ccc6c0890606d28684849222b98cce390",
+                "url": "https://packagist.phpcomposer.com/files/JayBizzle/Crawler-Detect/f929c498ef3053461fef1b36e3a63744ebaff8b8.zip",
+                "reference": "f929c498ef3053461fef1b36e3a63744ebaff8b8",
                 "shasum": ""
             },
             "require": {
@@ -1056,7 +1056,7 @@
             "authors": [
                 {
                     "name": "Mark Beech",
-                    "email": "mbeech@mark-beech.co.uk",
+                    "email": "m@rkbee.ch",
                     "role": "Developer"
                 }
             ],
@@ -1069,7 +1069,7 @@
                 "crawlerdetect",
                 "php crawler detect"
             ],
-            "time": "2016-04-22 18:19:32"
+            "time": "2016-04-24 21:17:34"
         },
         {
             "name": "jenssegers/agent",
@@ -2871,6 +2871,62 @@
                 "logging"
             ],
             "time": "2016-03-10 09:38:19"
+        },
+        {
+            "name": "rtconner/laravel-likeable",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rtconner/laravel-likeable.git",
+                "reference": "82f841190d815a65101eff140915d646bc4fb690"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/rtconner/laravel-likeable/82f841190d815a65101eff140915d646bc4fb690.zip",
+                "reference": "82f841190d815a65101eff140915d646bc4fb690",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": ">=5.0",
+                "illuminate/support": ">=5.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Conner\\Likeable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Conner",
+                    "email": "rtconner@smarter.bz"
+                }
+            ],
+            "description": "Trait for Laravel Eloquent models to allow easy implementation of a 'like' or 'favorite' or 'remember' feature.",
+            "homepage": "https://smartersoftware.net/packages/laravel-likeable-favorite",
+            "keywords": [
+                "Follow",
+                "eloquent",
+                "favorite",
+                "favourite",
+                "laravel",
+                "likable",
+                "like",
+                "likeable",
+                "remember",
+                "trait"
+            ],
+            "time": "2016-02-15 17:49:24"
         },
         {
             "name": "simplesoftwareio/simple-qrcode",

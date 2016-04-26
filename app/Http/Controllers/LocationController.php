@@ -57,6 +57,7 @@ class LocationController extends Controller
         {
             $data = [$request->name  => $request->value];
             $validator = \Validator::make( $data, Location::validationRules( $request->name ) );
+
             if($validator->fails())
                 return response($validator->errors()->first( $request->name),403);
             $location->update($data);
@@ -67,7 +68,7 @@ class LocationController extends Controller
 
         $location->update($request->all());
 
-        #同步高德地图中的数据,因为一个地址会对应多个咨询业务，所以可能会需要修改多项
+        # 同步高德地图中的数据,因为一个地址会对应多个咨询业务，所以可能会需要修改多项
         $consults = $location->consults;
 
         foreach($consults as $consult){

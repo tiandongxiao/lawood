@@ -162,6 +162,7 @@ return [
         Ghanem\Rating\RatingServiceProvider::class,             # laravel 星级评分系统
         Bican\Roles\RolesServiceProvider::class,                # 权限系统
         Backup\BackupServiceProvider::class,                    # 数据库恢复备份系统
+        \Conner\Likeable\LikeableServiceProvider::class,        # 收藏功能
     ],
 
     /*

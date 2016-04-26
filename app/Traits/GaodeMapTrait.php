@@ -11,8 +11,10 @@ namespace App\Traits;
  */
 use GuzzleHttp\Client;
 
-trait GdYunMapTrait
+trait GaodeMapTrait
 {
+    use RequestDevTrait;
+
     # 高德地图开发密钥
     private $key = '7c9c55a9631a4a9f64a1e858e81bb2e9';
 
@@ -31,10 +33,7 @@ trait GdYunMapTrait
         'search_id'      => 'http://yuntuapi.amap.com/datasearch/id? parameters',
         'search_filter'  => 'http://yuntuapi.amap.com/datamanage/data/list?parameters'
     ];
-
-    # 进行http请求的客户端实例
-    private $client;
-
+    
     # 高德地图表格映射
     private $tables =[
         'front' => '56fa40c9305a2a3288363151', //用户网站前段显示的地图
@@ -247,40 +246,5 @@ trait GdYunMapTrait
             return $result->datas;
         }
         return null;
-    }
-
-    ############################################## 辅助请求方法 ##############################################
-    /**
-     * POST方式请求高德 <云存储> 服务
-     *
-     * @param $uri
-     * @param $params
-     */
-    private function makePostRequest($uri, $params)
-    {
-        if(!$this->client instanceof Client){
-            $this->client = new Client();
-        }
-
-        return json_decode($this->client->request('POST',$uri,[
-            'form_params'=>$params
-        ])->getBody()->getContents());
-    }
-
-    /**
-     * GET方式请求高德 <云检索> 服务
-     *
-     * @param $uri
-     * @param $params
-     */
-    private function makeGetRequest($uri, $params)
-    {
-        if(!$this->client instanceof Client){
-            $this->client = new Client();
-        }
-
-        return json_decode($this->client->request('GET',$uri,[
-            'query'=>$params
-        ])->getBody()->getContents());
     }
 }

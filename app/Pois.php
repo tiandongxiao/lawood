@@ -1,7 +1,7 @@
 <?php
 namespace App;
 
-use App\Traits\GdYunMapTrait;
+use App\Traits\GaodeMapTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 
 class Pois extends Model
 {
-    use GdYunMapTrait;
+    use GaodeMapTrait;
 
     public $guarded = ["id","created_at","updated_at"];
 

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 
 
 use App\Category;
-use App\Traits\GdYunMapTrait;
+use App\Item;
+use App\Traits\GaodeMapTrait;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -18,11 +19,12 @@ use Shop;
 use Illuminate\Support\Facades\Auth;
 use Bican\Roles\Models\Role;
 use Bican\Roles\Models\Permission;
+use App\Place;
 
 
 class TestController extends Controller
 {
-    use GdYunMapTrait;
+    use GaodeMapTrait;
 
     public function getMakeCategories()
     {
@@ -82,8 +84,37 @@ class TestController extends Controller
 
     public function scanQrCode()
     {
-        //$url = 'http://www.exingdong.com';
         $url = action('RoleController@show', ['id' => 1]);
         return view('test.qr',compact('url'));
+    }
+
+    public function lists()
+    {
+        $items = Item::all();
+        return view('test.list',compact('items'));
+    }
+    public function like($id)
+    {
+        $user_id = Auth::user()->id;
+        $item = Item::findOrFail($id);
+        $item->like($user_id);
+        return back();
+
+    }
+
+    public function unlike($id)
+    {
+        //$user_id = Auth::user()->id;
+        
+        $item = Item::findOrFail($id);
+        if($item->liked()){
+            $item->unlike();
+        }
+        return back();
+    }
+
+    public function faker()
+    {
+        $all = factory(Place::class, 100)->create();
     }
 }

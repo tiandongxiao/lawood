@@ -126,14 +126,16 @@ Route::group(['prefix' => 'client'], function(){
 });
 
 Route::group(['prefix' => 'wxpay'], function(){
-    Route::post('callback', 'WeChat\WxPayController@callback');                             # 微信支付回调处理逻辑
-    Route::get('native/{id}', 'WeChat\WxPayController@nativePay');
+    Route::post('callback', 'WeChat\WxPayController@callback');    # 微信支付回调处理逻辑
+    Route::get('native/{id}', 'WeChat\WxPayController@nativePay'); # 微信扫码支付
+
     Route::get('jsapi/{id}', 'WeChat\WxPayController@JSPay')
         ->middleware(['wechat.oauth']); # 微信浏览器内部支付方式
-    Route::get('pay/{id}', 'WeChat\WxPayController@JSPay')
-        ->middleware(['wechat.oauth']); # 微信浏览器内部支付方式
 
-    Route::get('refund/{id}','WeChat\WxPayController@refundByOrderNo');
+    Route::get('pay/{id}', 'WeChat\WxPayController@JSPay')
+        ->middleware(['wechat.oauth']);
+
+    Route::get('refund/{id}','WeChat\WxPayController@refundByOrderNo'); # 微信退款
 });
 
 Route::group(['prefix' => 'payment'], function(){
@@ -153,21 +155,21 @@ Route::group(['prefix' => 'test'], function(){
 
     Route::get('blade','TestController@blade');
 
-
+    Route::get('list','TestController@lists');
+    Route::get('like/{id}','TestController@like');
+    Route::get('unlike/{id}','TestController@unlike');
 
     Route::get('cate','TestController@getMakeCategories');
     Route::get('dc','TestController@drawCategory');
     Route::get('http','TestController@getHttpLocation');
     Route::get('tran','TestController@node');
-
     Route::get('order','TestController@order');
-
     Route::get('rate','TestController@ratingUser');
-
-    Route::get('rateitem','TestController@ratingItem');
+    Route::get('rate_item','TestController@ratingItem');
     Route::get('code','TestController@scanQrCode');
-
+    Route::get('faker','TestController@faker');
 });
 
 Route::resource('role','RoleController');
 Route::resource('permission','PermissionController');
+Route::resource('place','PlaceController');

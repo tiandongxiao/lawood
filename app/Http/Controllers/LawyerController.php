@@ -48,13 +48,11 @@ class LawyerController extends Controller
     public function unbindCategory($id)
     {
         if($this->hasCategory($id)){
-
             # 当律师删除一个业务门类时，将相关的业务咨询服务都删除
-            $category = Category::find($id);
-            $consults = Auth::user()->items;
-            foreach($consults as $consult){
-                if($consult->category_id == $id){
-                    $consult->delete();
+            $items = Auth::user()->items;
+            foreach($items as $item){
+                if($item->category_id == $id){
+                    $item->delete();
                 }
             }
 

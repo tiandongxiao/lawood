@@ -18,8 +18,7 @@ class ConsultController extends Controller
     # 律师所有私有咨询业务
     public function index()
     {
-        $items = Auth::user()->items;
-        dd($items);
+        $items = Auth::user()->items;        
         return view('consult.index',compact('items'));
     }
 
@@ -84,11 +83,13 @@ class ConsultController extends Controller
     public function building()
     {
         $user  = Auth::user();
+
         $locations = $user->locations;
         $categories = $user->categories;
+
         foreach($locations as $location){
             foreach($categories as $category){
-                #如果不存在此咨询服务项时，创建此服务项
+                # 如果不存在此咨询服务项时，创建此服务项
                 if(!$this->isExist($category->id,$location->id))
                 {
                     $item = Item::create([
@@ -115,8 +116,7 @@ class ConsultController extends Controller
     # 判断律师是否提供了此项咨询业务
     public function isExist($category_id,$location_id)
     {
-        #在当前律师所有服务项中查找有没有提供此项服务
-        Log::info($category_id.' --- '.$location_id);
+        # 在当前律师所有服务项中查找有没有提供此项服务
         $items = Auth::user()->items;
         foreach($items as $item){
             if($item->category_id == $category_id && $item->location_id == $location_id){
@@ -126,21 +126,5 @@ class ConsultController extends Controller
         }
         Log::info('This item is NOT-EXIST ');
         return false;
-    }
-
-    public function isWished($category_id,$location_id)
-    {
-        $wishes = $this->getWishes();
-        foreach($wishes as $wish){
-            if($wish->category_id == $category_id && $wish->location_id == $location_id){
-                return true;
-            }
-            return false;
-        }
-    }
-
-    public function getWishes()
-    {
-
     }
 }

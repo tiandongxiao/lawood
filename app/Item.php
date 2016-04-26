@@ -3,18 +3,19 @@
 namespace App;
 
 use Amsgames\LaravelShop\Models\ShopItemModel;
-use App\Traits\GdYunMapTrait;
+use App\Traits\GaodeMapTrait;
+use Conner\Likeable\LikeableTrait;
 
 class Item extends ShopItemModel
 {
-    use GdYunMapTrait; # 引入高德云数据操作
+    use GaodeMapTrait; # 引入高德云数据操作
+    use LikeableTrait;
 
     protected $itemName = 'goods';
     protected $itemRouteParams = ['slug'];
 
     protected $fillable = ['user_id', 'cart_id', 'shop_id', 'sku', 'price', 'tax', 'shipping', 'currency', 'quantity', 'class', 'reference_id','category_id','location_id','yun_id'];
-
-
+    
     # 一个咨询服务项只属于一个分类
     public function category()
     {
