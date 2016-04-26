@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \App\Console\Commands\Inspire::class,
+        \App\Console\Commands\GetAccessToken::class,
     ];
 
     /**
@@ -29,7 +30,7 @@ class Kernel extends ConsoleKernel
                  ->dailyAt('00:00');
 
         # 一个小时获取一次access_token
-        $schedule->command('get:access_token')
-            ->everyMinute();
+        $schedule->command('access_token')
+            ->everyThirtyMinutes();
     }
 }

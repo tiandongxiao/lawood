@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Traits/WeChatDevTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Commands/GetAccessToken.php" afterPath="$PROJECT_DIR$/app/Console/Commands/GetAccessToken.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Kernel.php" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/LawyerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/LawyerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Traits/WeChatDevTrait.php" afterPath="$PROJECT_DIR$/app/Traits/WeChatDevTrait.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +34,8 @@
       <file leaf-file-name="TestController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="123" column="19" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
+            <state relative-caret-position="472">
+              <caret line="122" column="41" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="41" />
               <folding>
                 <element signature="e#42#59#0#PHP" expanded="true" />
               </folding>
@@ -46,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="168" column="49" selection-start-line="168" selection-start-column="49" selection-end-line="168" selection-end-column="49" />
+            <state relative-caret-position="117">
+              <caret line="159" column="54" selection-start-line="159" selection-start-column="54" selection-end-line="159" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -76,12 +73,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeChatDevTrait.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WeChatDevTrait.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Traits/WeChatDevTrait.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="274">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+              <folding>
+                <element signature="e#120#157#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,7 +108,7 @@
       <file leaf-file-name="Inspire.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Console/Commands/Inspire.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
+            <state relative-caret-position="693">
               <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
               <folding />
             </state>
@@ -119,8 +118,8 @@
       <file leaf-file-name="GetAccessToken.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Console/Commands/GetAccessToken.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+            <state relative-caret-position="142">
+              <caret line="18" column="40" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="40" />
               <folding>
                 <element signature="e#40#58#0#PHP" expanded="true" />
               </folding>
@@ -131,8 +130,8 @@
       <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state relative-caret-position="363">
+              <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -210,12 +209,12 @@
         <option value="$PROJECT_DIR$/app/Item.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LawyerController.php" />
         <option value="$PROJECT_DIR$/app/Traits/GaodeMapTrait.php" />
-        <option value="$PROJECT_DIR$/app/Traits/WeChatDevTrait.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/Inspire.php" />
-        <option value="$PROJECT_DIR$/app/Console/Commands/GetAccessToken.php" />
-        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/GetAccessToken.php" />
+        <option value="$PROJECT_DIR$/app/Traits/WeChatDevTrait.php" />
       </list>
     </option>
   </component>
@@ -638,7 +637,7 @@
       <workItem from="1461631298850" duration="281000" />
       <workItem from="1461637262760" duration="8128000" />
       <workItem from="1461654504039" duration="5441000" />
-      <workItem from="1461660502482" duration="3229000" />
+      <workItem from="1461660502482" duration="4508000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -763,7 +762,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192288000" />
+    <option name="totallyTimeSpent" value="193567000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1062,7 +1061,7 @@
         <state relative-caret-position="1419">
           <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
           <folding>
-            <element signature="e#22#61#0#PHP" expanded="true" />
+            <element signature="e#22#61#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1147,22 +1146,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Traits/GaodeMapTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Traits/WeChatDevTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthWeChatController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4356">
@@ -1187,47 +1170,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="159" column="54" selection-start-line="159" selection-start-column="54" selection-end-line="159" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/Inspire.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
+        <state relative-caret-position="693">
           <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/GetAccessToken.php">
+    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="363">
+          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
+    <entry file="file://$PROJECT_DIR$/app/Traits/GaodeMapTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="198">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="123" column="19" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
+        <state relative-caret-position="472">
+          <caret line="122" column="41" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="41" />
           <folding>
             <element signature="e#42#59#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/GetAccessToken.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="168" column="49" selection-start-line="168" selection-start-column="49" selection-end-line="168" selection-end-column="49" />
-          <folding />
+        <state relative-caret-position="142">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="40" />
+          <folding>
+            <element signature="e#40#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Traits/WeChatDevTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding>
+            <element signature="e#120#157#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
