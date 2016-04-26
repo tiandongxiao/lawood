@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'WebController@welcome');
+Route::get('/', 'WebController@index');
 Route::get('map', 'WebController@map');
 
 Route::group(['prefix' => 'website'], function(){
