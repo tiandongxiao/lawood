@@ -50,6 +50,7 @@ class LawyerController extends Controller
         if($this->hasCategory($id)){
             # 当律师删除一个业务门类时，将相关的业务咨询服务都删除
             $items = Auth::user()->items;
+
             foreach($items as $item){
                 if($item->category_id == $id){
                     $item->delete();

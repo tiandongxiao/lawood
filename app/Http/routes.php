@@ -168,6 +168,8 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('rate_item','TestController@ratingItem');
     Route::get('code','TestController@scanQrCode');
     Route::get('faker','TestController@faker');
+
+    Route::get('token','TestController@getToken');
 });
 
 Route::resource('role','RoleController');

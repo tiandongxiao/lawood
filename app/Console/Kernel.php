@@ -24,11 +24,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('inspire')
-                 ->hourly();
-
         # 每天0点备份数据库
         $schedule->command('backup:mysql-dump')
                  ->dailyAt('00:00');
+
+        # 一个小时获取一次access_token
+        $schedule->command('get:access_token')
+            ->everyMinute();
     }
 }

@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 
 use Shop;
@@ -116,5 +117,10 @@ class TestController extends Controller
     public function faker()
     {
         $all = factory(Place::class, 100)->create();
+    }
+
+    public function getToken(){
+        $token = Cache::get('access_token');
+        dd($token);
     }
 }
