@@ -8,15 +8,15 @@
 
 namespace App\Self\WeChat;
 
+use EasyWeChat\Core\AccessToken;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Artisan;
 use EasyWeChat\Core\AbstractAPI;
 
 class WeChatHelper extends AbstractAPI
 {
-    public function __construct()
-    {
-        $accessToken = $this->getAccessToken();
+    public function __construct(AccessToken $accessToken)
+    {        
         parent::__construct($accessToken);
     }
     const API_GET = 'https://api.weixin.qq.com/cgi-bin/user/info';
