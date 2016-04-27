@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\WeChat;
 
+use App\Self\WeChat\WeChatHelper;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 
@@ -71,6 +72,8 @@ class AuthWeChatController extends Controller
     public function wxCallback()
     {
         $info = Socialite::driver('wechat')->user();
+        $helper = new WeChatHelper();
+        $helper->getUnionID($info['id']);        
 
         if(Auth::check()){
             return $this->bindWxAccountToUser($info);
