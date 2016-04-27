@@ -17,6 +17,7 @@ use EasyWeChat\Support\Collection;
 use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use EasyWeChat\Core\AccessToken;
 
 
 class WeChatHelper
@@ -107,9 +108,13 @@ class WeChatHelper
     }
 
 
-    public function getUnionID($open_id, $lang = 'zh_CN')
+    /**
+     * @param $open_id
+     * @param string $lang
+     */
+    public function getUnionID($open_id, $access_token, $lang = 'zh_CN')
     {
-        $access_token = $this->accessToken();
+        //$access_token = $this->accessToken();
         $result = $this->get($open_id,$access_token,$lang);
         dd($result);
     }
@@ -134,9 +139,9 @@ class WeChatHelper
     }
 
     /**
-     * 获取微信的access_token
+     * 获取微信公众账号的access_token
      *
-     * @return mixed
+     * @return string
      */
     public function accessToken()
     {
@@ -150,5 +155,24 @@ class WeChatHelper
         }
 
         return $token;
+    }
+
+    /**
+     * 获取微信公众平台的access_token
+     *
+     * @return string
+     */
+    public function getOpenPlatformAccessToken()
+    {
+        $appId = config('services.wechat.client_id');
+        $secret = config('services.wechat.client_secret');
+        dd($appId.'@'.$secret);
+
+        $accessToken = new AccessToken($appId, $secret);
+
+        # token 字符串
+        $token = $accessToken->getToken();
+
+        dd($token);
     }
 }
