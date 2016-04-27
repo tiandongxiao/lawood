@@ -4,7 +4,7 @@ namespace App\Http\Controllers\WeChat;
 
 use App\Self\WeChat\WeChatHelper;
 use EasyWeChat\Foundation\Application;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
