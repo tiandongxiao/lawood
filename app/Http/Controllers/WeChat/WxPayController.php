@@ -116,6 +116,7 @@ class WxPayController extends Controller
     public function JSPay($item_id)
     {
         $wx_user = session('wechat.oauth_user');  # 拿到授权用户资料
+        dd($wx_user);
         $open_id = $wx_user->getId();
 
         $accessToken = $this->app->access_token; # EasyWeChat\Core\AccessToken 实例

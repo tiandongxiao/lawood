@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthWeChatController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthWeChatController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" />
     </list>
     <ignored path="base.iws" />
@@ -83,8 +82,8 @@
       <file leaf-file-name="AuthWeChatController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthWeChatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+            <state relative-caret-position="297">
+              <caret line="79" column="59" selection-start-line="79" selection-start-column="59" selection-end-line="79" selection-end-column="59" />
               <folding>
                 <element signature="e#47#80#0#PHP" expanded="true" />
               </folding>
@@ -95,8 +94,8 @@
       <file leaf-file-name="WxPayController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="117" column="57" selection-start-line="117" selection-start-column="57" selection-end-line="117" selection-end-column="57" />
+            <state relative-caret-position="99">
+              <caret line="118" column="21" selection-start-line="118" selection-start-column="21" selection-end-line="118" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -933,7 +932,7 @@
       <workItem from="1461637262760" duration="8128000" />
       <workItem from="1461654504039" duration="5441000" />
       <workItem from="1461660502482" duration="9578000" />
-      <workItem from="1461722425104" duration="13761000" />
+      <workItem from="1461722425104" duration="15643000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1058,7 +1057,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212398000" />
+    <option name="totallyTimeSpent" value="214280000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1506,8 +1505,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthWeChatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+        <state relative-caret-position="297">
+          <caret line="79" column="59" selection-start-line="79" selection-start-column="59" selection-end-line="79" selection-end-column="59" />
           <folding>
             <element signature="e#47#80#0#PHP" expanded="true" />
           </folding>
@@ -1516,8 +1515,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="117" column="57" selection-start-line="117" selection-start-column="57" selection-end-line="117" selection-end-column="57" />
+        <state relative-caret-position="99">
+          <caret line="118" column="21" selection-start-line="118" selection-start-column="21" selection-end-line="118" selection-end-column="21" />
           <folding />
         </state>
       </provider>
