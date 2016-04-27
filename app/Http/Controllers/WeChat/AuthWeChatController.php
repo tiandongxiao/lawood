@@ -72,12 +72,12 @@ class AuthWeChatController extends Controller
     public function wxCallback(Request $request)
     {
         $code = $request->get('code');
-        $info = Socialite::driver('wechat')->user();        
+        $info = Socialite::driver('wechat')->user();
 
         $helper = new WeChatHelper();
         $access_token = $info->token->access_token;
-
-        dd($helper->getUnionID($info['id'],$access_token));
+       // unionID
+        $helper->unionID($info['id'],$access_token,'Open');
 
         if(Auth::check()){
             return $this->bindWxAccountToUser($info);

@@ -25,19 +25,8 @@ use EasyWeChat\Core\AccessToken;
 class WeChatHelper
 {
     use RequestDevTrait;
-    /**
-     * Http instance.
-     *
-     * @var \EasyWeChat\Core\Http
-     */
-    protected $http;
 
-    /**
-     * The request token.
-     *
-     * @var \EasyWeChat\Core\AccessToken
-     */
-    protected $accessToken;
+    protected $http;
 
     const GET = 'get';
     const POST = 'post';
@@ -45,6 +34,7 @@ class WeChatHelper
 
     # 微信开放平台获取UnionID
     const API_OAUTH_GET = 'https://api.weixin.qq.com/sns/userinfo';
+
     # 微信公众平台获取UnionID
     const API_GET = 'https://api.weixin.qq.com/cgi-bin/user/info';
 
@@ -142,23 +132,20 @@ class WeChatHelper
         return $this->parseJSON('get', [self::API_GET, $params]);
     }
 
-    /**
-     * 获取微信公众账号的access_token
-     *
-     * @return string
-     */
-    public function accessToken()
+    public function unionID($open_id, $access_token,$platform = 'Pub')
     {
-        $token = Cache::get('wx_access_token');
+        $url = self::API_GET; # 微信公众平台
 
-        if(is_null($token)){
-            $exitCode = Artisan::call('access_token');
-            if($exitCode == 0){
-                $token = Cache::get('wx_access_token');
-            }
+        # 微信开放平台
+        if($platform == 'Open'){
+            $url = self::API_OAUTH_GET;
         }
 
-        return $token;
-        // o0VwFwtZgDSVGHFUQHqNggut0bZc
+        $params = [
+            'openid'        => $open_id,
+            'access_token'  => $access_token,
+        ];
+        $result = $this->makeGetRequest($url,$params);
+        dd($result);
     }
 }
