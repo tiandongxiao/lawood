@@ -73,7 +73,7 @@ class AuthWeChatController extends Controller
     {
         $code = $request->get('code');
         $info = Socialite::driver('wechat')->user();
-        dd($info);
+        dd($info->token->access_token);
 
         $helper = new WeChatHelper();
         $access_token = $helper->getOpenPlatformAccessToken();
