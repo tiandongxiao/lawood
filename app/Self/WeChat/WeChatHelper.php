@@ -71,7 +71,7 @@ class WeChatHelper
             'code'      =>  $code,
             'grant_type'=>  'authorization_code'
         ];
-        $result = $this->makePostRequest(self::API_OPEN_PLATFORM_TOKEN,$params);
+        $result = $this->makeGetRequest(self::API_OPEN_PLATFORM_TOKEN,$params);
         dd($result);
 
         if($result->status == 1){
