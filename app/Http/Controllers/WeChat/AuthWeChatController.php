@@ -76,7 +76,6 @@ class AuthWeChatController extends Controller
 
         $helper = new WeChatHelper();
         $access_token = $helper->getOpenPlatformAccessToken();
-        dd($access_token);
 
         dd($helper->getUnionID($info['id'],$access_token));
 

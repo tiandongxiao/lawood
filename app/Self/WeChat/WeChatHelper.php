@@ -42,42 +42,8 @@ class WeChatHelper
     const POST = 'post';
     const JSON = 'json';
 
-    const API_GET = 'https://api.weixin.qq.com/cgi-bin/user/info';
-    const API_OPEN_PLATFORM_TOKEN = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code';
+    const API_OAUTH_GET = 'https://api.weixin.qq.com/sns/userinfo';
 
-    public function createUrlForOpenPlatformToken()
-    {
-        $appId = config('services.wechat.client_id');
-        $secret = config('services.wechat.client_secret');
-
-        $urlObj = array();
-        $urlObj['appid'] = $appId;
-        $urlObj['secret'] = $secret;
-        $urlObj['code'] = 'code';
-        $urlObj['grant_type'] = 'authorization_code';
-        $queryStr = http_build_query($urlObj);
-
-        return 'https://open.weixin.qq.com/connect/oauth2/authorize?' . $queryStr;
-    }
-
-    public function lala($code)
-    {
-        $appId = config('services.wechat.client_id');
-        $secret = config('services.wechat.client_secret');
-
-        $params = [
-            'appid'     =>  $this->key,
-            'secret'    =>  $this->tables['front'],
-            'code'      =>$code,
-            'grant_type'=>'authorization_code'
-        ];
-        $result = $this->makePostRequest($this->URI['update_item'],$params);
-
-        if($result->status == 1){
-            return true;
-        }
-        return false;
-    }
     /**
      * Return the http instance.
      *
@@ -150,7 +116,6 @@ class WeChatHelper
      */
     public function getUnionID($open_id, $access_token, $lang = 'zh_CN')
     {
-        //$access_token = $this->accessToken();
         $result = $this->get($open_id,$access_token,$lang);
         dd($result);
     }
@@ -171,7 +136,7 @@ class WeChatHelper
             'lang'          => $lang,
         ];
 
-        return $this->parseJSON('get', [self::API_GET, $params]);
+        return $this->parseJSON('get', [self::API_OAUTH_GET, $params]);
     }
 
     /**
