@@ -8,18 +8,103 @@
 
 namespace App\Self\WeChat;
 
-use EasyWeChat\Core\AccessToken;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Artisan;
-use EasyWeChat\Core\AbstractAPI;
+use EasyWeChat\Core\Exceptions\HttpException;
+use EasyWeChat\Support\Collection;
 
-class WeChatHelper extends AbstractAPI
+use GuzzleHttp\Psr7\Uri;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+
+
+class WeChatHelper
 {
-    public function __construct(AccessToken $accessToken)
-    {        
-        parent::__construct($accessToken);
-    }
+    /**
+     * Http instance.
+     *
+     * @var \EasyWeChat\Core\Http
+     */
+    protected $http;
+
+    /**
+     * The request token.
+     *
+     * @var \EasyWeChat\Core\AccessToken
+     */
+    protected $accessToken;
+
+    const GET = 'get';
+    const POST = 'post';
+    const JSON = 'json';
+
     const API_GET = 'https://api.weixin.qq.com/cgi-bin/user/info';
+
+    /**
+     * Return the http instance.
+     *
+     * @return \EasyWeChat\Core\Http
+     */
+    public function getHttp()
+    {
+        if (is_null($this->http)) {
+            $this->http = new Http();
+        }
+
+        return $this->http;
+    }
+
+    /**
+     * Set the http instance.
+     *
+     * @param \EasyWeChat\Core\Http $http
+     *
+     * @return $this
+     */
+    public function setHttp(Http $http)
+    {
+        $this->http = $http;
+
+        return $this;
+    }
+
+    /**
+     * Parse JSON from response and check error.
+     *
+     * @param string $method
+     * @param array  $args
+     *
+     * @return \EasyWeChat\Support\Collection
+     */
+    public function parseJSON($method, array $args)
+    {
+        $http = $this->getHttp();
+
+        $contents = $http->parseJSON(call_user_func_array([$http, $method], $args));
+
+        $this->checkAndThrow($contents);
+
+        return new Collection($contents);
+    }
+
+    /**
+     * Check the array data errors, and Throw exception when the contents contains error.
+     *
+     * @param array $contents
+     *
+     * @throws \EasyWeChat\Core\Exceptions\HttpException
+     */
+    protected function checkAndThrow(array $contents)
+    {
+        if (isset($contents['errcode']) && 0 !== $contents['errcode']) {
+            if (empty($contents['errmsg'])) {
+                $contents['errmsg'] = 'Unknown';
+            }
+
+            throw new HttpException($contents['errmsg'], $contents['errcode']);
+        }
+    }
+
 
     public function getUnionID($open_id, $lang = 'zh_CN')
     {
