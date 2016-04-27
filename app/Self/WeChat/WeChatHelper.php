@@ -73,7 +73,7 @@ class WeChatHelper
             'code'      =>  $code,
             'grant_type'=>  'authorization_code'
         ];
-        $result = $this->makeGetRequest('https://api.weixin.qq.com/sns/oauth2/access_token?',$params);
+        $result = $this->makePostRequest('https://api.weixin.qq.com/sns/oauth2/access_token',$params);
         dd($result);
 
         if($result->status == 1){

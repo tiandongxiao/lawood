@@ -32,8 +32,8 @@
       <file leaf-file-name="WeChatHelper.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Self/WeChat/WeChatHelper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="76" column="20" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
+            <state relative-caret-position="330">
+              <caret line="75" column="92" selection-start-line="75" selection-start-column="92" selection-end-line="75" selection-end-column="92" />
               <folding>
                 <element signature="e#124#155#0#PHP" expanded="true" />
               </folding>
@@ -894,7 +894,7 @@
       <workItem from="1461637262760" duration="8128000" />
       <workItem from="1461654504039" duration="5441000" />
       <workItem from="1461660502482" duration="9578000" />
-      <workItem from="1461722425104" duration="7583000" />
+      <workItem from="1461722425104" duration="7652000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1019,7 +1019,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206220000" />
+    <option name="totallyTimeSpent" value="206289000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1470,8 +1470,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Self/WeChat/WeChatHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="76" column="20" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
+        <state relative-caret-position="330">
+          <caret line="75" column="92" selection-start-line="75" selection-start-column="92" selection-end-line="75" selection-end-column="92" />
           <folding>
             <element signature="e#124#155#0#PHP" expanded="true" />
           </folding>
