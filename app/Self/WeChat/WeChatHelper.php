@@ -43,7 +43,10 @@ class WeChatHelper
     const POST = 'post';
     const JSON = 'json';
 
+    # 微信开放平台获取UnionID
     const API_OAUTH_GET = 'https://api.weixin.qq.com/sns/userinfo';
+    # 微信公众平台获取UnionID
+    const API_GET = 'https://api.weixin.qq.com/cgi-bin/user/info';
 
     /**
      * Return the http instance.
@@ -136,7 +139,7 @@ class WeChatHelper
             'access_token'  => $access_token,
         ];
 
-        return $this->parseJSON('get', [self::API_OAUTH_GET, $params]);
+        return $this->parseJSON('get', [self::API_GET, $params]);
     }
 
     /**
