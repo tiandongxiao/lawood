@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\WeChat;
 
 use App\Item;
-use App\Self\WeChat\WeChatHelper;
 use App\Traits\ShopDevTrait;
-use App\Traits\WeChatDevTrait;
 use App\Transaction;
 use App\User;
 use EasyWeChat\Foundation\Application;
@@ -26,7 +24,6 @@ use App\Order as ShopOrder;
 class WxPayController extends Controller
 {
     use ShopDevTrait;
-    use WeChatDevTrait;
 
     # 微信 app 实例
     private $app;
@@ -115,29 +112,18 @@ class WxPayController extends Controller
      */
     public function JSPay($item_id)
     {
-        $wx_user = session('wechat.oauth_user');  # 拿到授权用户资料
-
-        $union_id = $wx_user->original['unionid'];
-        dd($union_id);
-
-
-        if(!Auth::check()) {
-            $wx_user = session('wechat.oauth_user');  # 拿到授权用户资料
-            $open_id = $wx_user->getId();
-
-            $user = User::where('wx_id', $open_id)->first();
+        if(!Auth::check()){
+            $account = session('wechat.oauth_user');  # 拿到授权用户资料
+            $wx_id = $account->original['unionid']; # 数据库中保存的 wx_id 为用户的Union ID
+            $user = User::where('wx_id', $wx_id)->first();
 
             if (!$user) {
                 $user = new User();
-                $user->wx_id = $open_id;
+                $user->wx_id = $wx_id;
                 $user->save();
             }
 
-            Log::info('我又登录了一次');
-
             Auth::login($user);
-        }else{
-            Log::info('我处于登录状态');
         }
 
         $order = $this->prePay($item_id, 'wx_js');
@@ -155,7 +141,6 @@ class WxPayController extends Controller
     public function prePay($id, $gateway)
     {
         Cart::current()->clear();
-
         $this->addItemIntoCart($id);
 
         # 1 执行Shop的其他操作之前，必须先选择支付方式

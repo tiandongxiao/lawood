@@ -67,12 +67,7 @@ class AuthWeChatController extends Controller
      */
     public function wxCallback(Request $request)
     {
-        $code = $request->get('code');
         $info = Socialite::driver('wechat')->user();
-
-        $union_id = $info->original->unionid;
-
-        dd($union_id);
 
         if(Auth::check()){
             return $this->bindWxAccountToUser($info);
@@ -92,12 +87,17 @@ class AuthWeChatController extends Controller
         $user = Auth::user();
         # 用户不是用微信登陆的，那就为其绑定微信号
         if(!$user->wx_id){
-            $result = User::where('wx_id',$info['id'])->first();
+
+            # 数据库中保存用户的Union ID
+            $wx_id = $info->original->unionid;
+
+            $result = User::where('wx_id',$wx_id)->first();
             if($result){
                 return redirect('/')->withErrors('这个微信账号已被其他用户绑定，您不能绑定此微信账号');
             }
-            $user->wx_id = $info['id'];
+            $user->wx_id = $wx_id;
             $user->save();
+
             return redirect('/')->withErrors('完成微信账号绑定');
         }
         # 用户之前已经用微信扫码登录
