@@ -8,6 +8,7 @@
 
 namespace App\Self\WeChat;
 
+use EasyWeChat\Core\Http;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Artisan;
 use EasyWeChat\Core\Exceptions\HttpException;
