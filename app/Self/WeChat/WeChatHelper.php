@@ -9,6 +9,7 @@
 namespace App\Self\WeChat;
 
 use App\Traits\RequestDevTrait;
+use Carbon\Carbon;
 use EasyWeChat\Core\Http;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Artisan;
@@ -165,13 +166,18 @@ class WeChatHelper
      */
     public function getOpenPlatformAccessToken()
     {
-        $appId = config('services.wechat.client_id');
-        $secret = config('services.wechat.client_secret');
+        $token = Cache::get('wx_open_platform_token');
 
-        $accessToken = new AccessToken($appId, $secret);
+        if(!$token){
+            $appId = config('services.wechat.client_id');
+            $secret = config('services.wechat.client_secret');
 
-        # token 字符串
-        $token = $accessToken->getToken();
+            $accessToken = new AccessToken($appId, $secret);
+            # token 字符串
+            $token = $accessToken->getToken();
+            $expireAt = Carbon::now()->addHours(2);
+            Cache::put('wx_open_platform_token',$token,$expireAt);
+        }
 
         return $token;
     }
