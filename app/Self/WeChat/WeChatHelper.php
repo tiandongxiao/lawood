@@ -16,7 +16,8 @@ class WeChatHelper extends AbstractAPI
 {
     public function __construct()
     {
-        parent::__construct();
+        $accessToken = $this->getAccessToken();
+        parent::__construct($accessToken);
     }
     const API_GET = 'https://api.weixin.qq.com/cgi-bin/user/info';
 
