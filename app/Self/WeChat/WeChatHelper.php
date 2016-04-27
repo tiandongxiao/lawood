@@ -43,7 +43,7 @@ class WeChatHelper
     const JSON = 'json';
 
     const API_GET = 'https://api.weixin.qq.com/cgi-bin/user/info';
-    const API_OPEN_PLATFORM_TOKEN = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code';
+    const API_OPEN_PLATFORM_TOKEN = 'https://api.weixin.qq.com/sns/oauth2/access_token';
 
     public function createUrlForOpenPlatformToken()
     {
@@ -57,8 +57,10 @@ class WeChatHelper
         $urlObj['grant_type'] = 'authorization_code';
         $queryStr = http_build_query($urlObj);
 
-        return 'https://open.weixin.qq.com/connect/oauth2/authorize?' . $queryStr;
+        return 'https://api.weixin.qq.com/sns/oauth2/access_token?' . $queryStr;
     }
+
+
 
     public function lala($code)
     {
