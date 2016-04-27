@@ -14,6 +14,10 @@ use EasyWeChat\Core\AbstractAPI;
 
 class WeChatHelper extends AbstractAPI
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
     const API_GET = 'https://api.weixin.qq.com/cgi-bin/user/info';
 
     public function getUnionID($open_id, $lang = 'zh_CN')

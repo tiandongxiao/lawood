@@ -47,11 +47,13 @@ return [
         'client_secret' => '2a9b4fa482ea566e5b8a2c80c3e806a4',
         'redirect'      => 'http://exingdong.com/bind/qq/callback',
     ],
+    
     'weibo' => [
         'client_id'     => '4052205488',
         'client_secret' => 'cedfbfd62a3eb07ba9947671f9ffa8f5',
         'redirect'      => 'http://exingdong.com/bind/wb/callback',
     ],
+
 //    'wechat' => [
 //        'client_id'     => 'wx92b14518e2ea48dc',
 //        'client_secret' => 'd6b32578526ad7e015150abe0f66602a',
