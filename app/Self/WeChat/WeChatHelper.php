@@ -133,7 +133,7 @@ class WeChatHelper
     {
         $params = [
             'openid'        => $openId,
-            'access_token'  => $access_token,            
+            'access_token'  => $access_token,
         ];
 
         return $this->parseJSON('get', [self::API_OAUTH_GET, $params]);
@@ -156,27 +156,6 @@ class WeChatHelper
         }
 
         return $token;
-    }
-
-    /**
-     * 获取微信公众平台的access_token
-     *
-     * @return string
-     */
-    public function getOpenPlatformAccessToken()
-    {
-        $token = Cache::get('wx_open_platform_token');
-
-        if(!$token){
-            $appId = config('services.wechat.client_id');
-            $secret = config('services.wechat.client_secret');
-
-            $accessToken = new AccessToken($appId, $secret);
-            # token 字符串
-            $token = $accessToken->getToken();
-            $expireAt = Carbon::now()->addHours(2);
-            Cache::put('wx_open_platform_token',$token,$expireAt);
-        }
-        return $token;
+        // o0VwFwtZgDSVGHFUQHqNggut0bZc
     }
 }
