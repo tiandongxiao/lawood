@@ -86,9 +86,11 @@
       <file leaf-file-name="AuthWeChatController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthWeChatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-              <folding />
+            <state relative-caret-position="330">
+              <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
+              <folding>
+                <element signature="e#47#80#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -892,7 +894,7 @@
       <workItem from="1461637262760" duration="8128000" />
       <workItem from="1461654504039" duration="5441000" />
       <workItem from="1461660502482" duration="9578000" />
-      <workItem from="1461722425104" duration="6861000" />
+      <workItem from="1461722425104" duration="6942000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1017,7 +1019,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205498000" />
+    <option name="totallyTimeSpent" value="205579000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1468,9 +1470,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthWeChatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="330">
+          <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
+          <folding>
+            <element signature="e#47#80#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
