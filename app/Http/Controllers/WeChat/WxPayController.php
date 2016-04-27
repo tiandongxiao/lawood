@@ -118,7 +118,7 @@ class WxPayController extends Controller
         $helper = new WeChatHelper();
         $accessToken = $this->app->access_token; // EasyWeChat\Core\AccessToken 实例
         $token = $accessToken->getToken(); // token 字符串
-        dd($token);
+
         //$accessToken = Cache::get('wx_access_token');
 
         $info = $helper->getUnionID($open_id,$token);
