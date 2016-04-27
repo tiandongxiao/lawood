@@ -2,22 +2,16 @@
 
 namespace App\Http\Controllers\WeChat;
 
-use App\Self\WeChat\WeChatHelper;
-use App\Traits\WeChatDevTrait;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use \Socialite;
 use Illuminate\Support\Facades\Auth;
 use App\User;
-use Illuminate\Support\Facades\Log;
-
 
 class AuthWeChatController extends Controller
 {
-    use WeChatDevTrait;
     # 微信实例
     private $wx;
 
@@ -75,10 +69,10 @@ class AuthWeChatController extends Controller
     {
         $code = $request->get('code');
         $info = Socialite::driver('wechat')->user();
-        dd($info);
-        $access_token = $info->token->access_token;
-        
-        $this->unionID($info['id'], $access_token, 'OPEN');
+
+        $union_id = $info->original->unionid;
+
+        dd($union_id);
 
         if(Auth::check()){
             return $this->bindWxAccountToUser($info);
