@@ -204,9 +204,6 @@ class WeChatHelper
         $secret = config('services.wechat.client_secret');
 
         $accessToken = new AccessToken($appId, $secret);
-        dd($accessToken);
-
-
 
         # token 字符串
         $token = $accessToken->getToken();
