@@ -166,6 +166,7 @@ class WeChatHelper
     public function getOpenPlatformAccessToken($code)
     {
         $url = $this->createUrlForOpenPlatformToken($code);
+        dd($url);
         $res = self::_getRequest($url);
         $data = json_decode($res, true);
         dd($data);
