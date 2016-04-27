@@ -30,7 +30,6 @@ class Kernel extends ConsoleKernel
                  ->dailyAt('00:00');
 
         # 一个小时获取一次access_token
-        //$schedule->command('access_token')->everyMinute();
-            //->everyThirtyMinutes();
+        $schedule->command('access_token')->everyThirtyMinutes();
     }
 }
