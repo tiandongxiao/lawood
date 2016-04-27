@@ -120,7 +120,14 @@ class TestController extends Controller
     }
 
     public function getToken(){
-        $token = Cache::get('access_token');
+        $token = Cache::get('wx_access_token');
+        dd($token);
+    }
+
+    public function eraseCache()
+    {
+        Cache::forget('wx_access_token');
+        $token = Cache::get('wx_access_token');
         dd($token);
     }
 }

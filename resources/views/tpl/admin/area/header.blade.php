@@ -85,7 +85,7 @@
                 @else
                     <li><a href="{{URL('chose')}}">注册</a></li>
                     <li><a href={{URL('login')}}>登陆</a></li>
-                    <li><a href={{URL('wxpay')}}>扫码登录</a></li>
+                    <li><a href={{URL('wx/login')}}>扫码登录</a></li>
                 @endif
             </ul>
         </div>

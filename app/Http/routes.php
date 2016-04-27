@@ -170,6 +170,7 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('faker','TestController@faker');
 
     Route::get('token','TestController@getToken');
+    Route::get('d_token','TestController@eraseCache');
 });
 
 Route::resource('role','RoleController');

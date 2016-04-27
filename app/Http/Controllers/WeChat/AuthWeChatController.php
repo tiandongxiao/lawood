@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Log;
 
 class AuthWeChatController extends Controller
 {
-
     # 微信实例
     private $wx;
 

@@ -12,7 +12,7 @@
     <!-- Ionicons -->
     <link href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
     @yield('css')
-            <!-- Theme style -->
+    <!-- Theme style -->
     <link rel="stylesheet" href="{{URL::asset('/')}}css/AdminLTE.min.css">
     <link rel="stylesheet" href="{{URL::asset('/')}}css/skins/skin-green.min.css">
     <!--[if lt IE 9]>
