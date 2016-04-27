@@ -9,142 +9,30 @@
 namespace App\Self\WeChat;
 
 use App\Traits\RequestDevTrait;
-use Carbon\Carbon;
-use EasyWeChat\Core\Http;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Artisan;
-use EasyWeChat\Core\Exceptions\HttpException;
-use EasyWeChat\Support\Collection;
-
-use GuzzleHttp\Psr7\Uri;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
-use EasyWeChat\Core\AccessToken;
-
 
 class WeChatHelper
 {
     use RequestDevTrait;
 
-    protected $http;
-
-    const GET = 'get';
-    const POST = 'post';
-    const JSON = 'json';
-
-    # 微信开放平台获取UnionID
-    const API_OAUTH_GET = 'https://api.weixin.qq.com/sns/userinfo';
-
-    # 微信公众平台获取UnionID
-    const API_GET = 'https://api.weixin.qq.com/cgi-bin/user/info';
-
-    /**
-     * Return the http instance.
-     *
-     * @return \EasyWeChat\Core\Http
-     */
-    public function getHttp()
+    public function unionID($open_id, $access_token,$platform = 'PUB')
     {
-        if (is_null($this->http)) {
-            $this->http = new Http();
-        }
-
-        return $this->http;
-    }
-
-    /**
-     * Set the http instance.
-     *
-     * @param \EasyWeChat\Core\Http $http
-     *
-     * @return $this
-     */
-    public function setHttp(Http $http)
-    {
-        $this->http = $http;
-
-        return $this;
-    }
-
-    /**
-     * Parse JSON from response and check error.
-     *
-     * @param string $method
-     * @param array  $args
-     *
-     * @return \EasyWeChat\Support\Collection
-     */
-    public function parseJSON($method, array $args)
-    {
-        $http = $this->getHttp();
-
-        $contents = $http->parseJSON(call_user_func_array([$http, $method], $args));
-
-        $this->checkAndThrow($contents);
-
-        return new Collection($contents);
-    }
-
-    /**
-     * Check the array data errors, and Throw exception when the contents contains error.
-     *
-     * @param array $contents
-     *
-     * @throws \EasyWeChat\Core\Exceptions\HttpException
-     */
-    protected function checkAndThrow(array $contents)
-    {
-        if (isset($contents['errcode']) && 0 !== $contents['errcode']) {
-            if (empty($contents['errmsg'])) {
-                $contents['errmsg'] = 'Unknown';
-            }
-
-            throw new HttpException($contents['errmsg'], $contents['errcode']);
-        }
-    }
-
-
-    /**
-     * @param $open_id
-     * @param string $lang
-     */
-    public function getUnionID($open_id, $access_token, $lang = 'zh_CN')
-    {
-        $result = $this->get($open_id,$access_token,$lang);
-        dd($result);
-    }
-
-    /**
-     * Fetch a user by open id.
-     *
-     * @param string $openId
-     * @param string $lang
-     *
-     * @return array
-     */
-    public function get($openId, $access_token, $lang = 'zh_CN')
-    {
-        $params = [
-            'openid'        => $openId,
-            'access_token'  => $access_token,
-        ];
-
-        return $this->parseJSON('get', [self::API_GET, $params]);
-    }
-
-    public function unionID($open_id, $access_token,$platform = 'Pub')
-    {
-        $url = self::API_GET; # 微信公众平台
-
-        # 微信开放平台
-        if($platform == 'Open'){
-            $url = self::API_OAUTH_GET;
+        switch ($platform){
+            case 'OPEN':
+                $url = 'https://api.weixin.qq.com/sns/userinfo'; # 微信开放平台
+                break;
+            case 'PUB':
+                $url = 'https://api.weixin.qq.com/cgi-bin/user/info'; # 微信公众平台
+                break;
+            default:
+                $url = 'https://api.weixin.qq.com/cgi-bin/user/info'; # 微信公众平台
+                break;
         }
 
         $params = [
             'openid'        => $open_id,
             'access_token'  => $access_token,
         ];
+
         $result = $this->makeGetRequest($url,$params);
         dd($result);
     }

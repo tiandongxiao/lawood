@@ -120,8 +120,7 @@ class WxPayController extends Controller
         $accessToken = $this->app->access_token; // EasyWeChat\Core\AccessToken 实例
         $token = $accessToken->getToken(true); // token 字符串
 
-        $helper->unionID($open_id, $token, 'Pub');
-
+        $helper->unionID($open_id, $token, 'PUB');
 
         if(!Auth::check()) {
             $wx_user = session('wechat.oauth_user');  # 拿到授权用户资料

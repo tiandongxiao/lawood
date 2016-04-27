@@ -77,7 +77,7 @@ class AuthWeChatController extends Controller
         $helper = new WeChatHelper();
         $access_token = $info->token->access_token;
        // unionID
-        $helper->unionID($info['id'], $access_token, 'Open');
+        $helper->unionID($info['id'], $access_token, 'OPEN');
 
         if(Auth::check()){
             return $this->bindWxAccountToUser($info);
