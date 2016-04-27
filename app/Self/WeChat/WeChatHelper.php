@@ -43,7 +43,7 @@ class WeChatHelper
     const JSON = 'json';
 
     const API_GET = 'https://api.weixin.qq.com/cgi-bin/user/info';
-    const API_OPEN_PLATFORM_TOKEN = 'https://api.weixin.qq.com/sns/oauth2/access_token';
+    const API_OPEN_PLATFORM_TOKEN = 'https://api.weixin.qq.com/sns/oauth2/access_token?';
 
     public function createUrlForOpenPlatformToken()
     {
@@ -73,7 +73,7 @@ class WeChatHelper
             'code'      =>  $code,
             'grant_type'=>  'authorization_code'
         ];
-        $result = $this->makeGetRequest(self::API_OPEN_PLATFORM_TOKEN,$params);
+        $result = $this->makeGetRequest('https://api.weixin.qq.com/sns/oauth2/access_token?',$params);
         dd($result);
 
         if($result->status == 1){
