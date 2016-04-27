@@ -166,13 +166,12 @@ class WeChatHelper
     {
         $appId = config('services.wechat.client_id');
         $secret = config('services.wechat.client_secret');
-        dd($appId.'@'.$secret);
 
         $accessToken = new AccessToken($appId, $secret);
 
         # token 字符串
         $token = $accessToken->getToken();
 
-        dd($token);
+        return $token;
     }
 }

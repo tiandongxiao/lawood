@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthWeChatController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthWeChatController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Self/WeChat/WeChatHelper.php" afterPath="$PROJECT_DIR$/app/Self/WeChat/WeChatHelper.php" />
     </list>
     <ignored path="base.iws" />
@@ -31,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WeChatHelper.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WeChatHelper.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Self/WeChat/WeChatHelper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="164" column="46" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="46" />
+            <state relative-caret-position="367">
+              <caret line="167" column="58" selection-start-line="167" selection-start-column="58" selection-end-line="167" selection-end-column="58" />
               <folding>
                 <element signature="e#124#149#0#PHP" expanded="true" />
               </folding>
@@ -107,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthWeChatController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthWeChatController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthWeChatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="76" column="61" selection-start-line="76" selection-start-column="61" selection-end-line="76" selection-end-column="61" />
+            <state relative-caret-position="377">
+              <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
               <folding>
                 <element signature="e#47#80#0#PHP" expanded="true" />
               </folding>
@@ -215,8 +213,8 @@
         <option value="$PROJECT_DIR$/resources/views/tpl/operator/area/header.blade.php" />
         <option value="$PROJECT_DIR$/config/services.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
-        <option value="$PROJECT_DIR$/app/Self/WeChat/WeChatHelper.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthWeChatController.php" />
+        <option value="$PROJECT_DIR$/app/Self/WeChat/WeChatHelper.php" />
       </list>
     </option>
   </component>
@@ -896,7 +894,7 @@
       <workItem from="1461637262760" duration="8128000" />
       <workItem from="1461654504039" duration="5441000" />
       <workItem from="1461660502482" duration="9578000" />
-      <workItem from="1461722425104" duration="3904000" />
+      <workItem from="1461722425104" duration="4008000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1021,7 +1019,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202541000" />
+    <option name="totallyTimeSpent" value="202645000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1454,22 +1452,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Self/WeChat/WeChatHelper.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthWeChatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="164" column="46" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="46" />
+        <state relative-caret-position="377">
+          <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
           <folding>
-            <element signature="e#124#149#0#PHP" expanded="true" />
+            <element signature="e#47#80#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthWeChatController.php">
+    <entry file="file://$PROJECT_DIR$/app/Self/WeChat/WeChatHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="76" column="61" selection-start-line="76" selection-start-column="61" selection-end-line="76" selection-end-column="61" />
+        <state relative-caret-position="367">
+          <caret line="167" column="58" selection-start-line="167" selection-start-column="58" selection-end-line="167" selection-end-column="58" />
           <folding>
-            <element signature="e#47#80#0#PHP" expanded="true" />
+            <element signature="e#124#149#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
