@@ -5,6 +5,7 @@ namespace App\Http\Controllers\WeChat;
 use App\Item;
 use App\Self\WeChat\WeChatHelper;
 use App\Traits\ShopDevTrait;
+use App\Traits\WeChatDevTrait;
 use App\Transaction;
 use App\User;
 use EasyWeChat\Foundation\Application;
@@ -25,6 +26,7 @@ use App\Order as ShopOrder;
 class WxPayController extends Controller
 {
     use ShopDevTrait;
+    use WeChatDevTrait;
 
     # 微信 app 实例
     private $app;
@@ -115,12 +117,11 @@ class WxPayController extends Controller
     {
         $wx_user = session('wechat.oauth_user');  # 拿到授权用户资料
         $open_id = $wx_user->getId();
-        $helper = new WeChatHelper();
 
-        $accessToken = $this->app->access_token; // EasyWeChat\Core\AccessToken 实例
-        $token = $accessToken->getToken(true); // token 字符串
+        $accessToken = $this->app->access_token; # EasyWeChat\Core\AccessToken 实例
+        $token = $accessToken->getToken(true);   # token 字符串
 
-        $helper->unionID($open_id, $token, 'PUB');
+        $this->unionID($open_id, $token, 'PUB');
 
         if(!Auth::check()) {
             $wx_user = session('wechat.oauth_user');  # 拿到授权用户资料
