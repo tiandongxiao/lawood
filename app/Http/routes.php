@@ -68,7 +68,7 @@ Route::group(['prefix' => 'wx'], function() {
     # 微信 <公众平台> 服务接口
     Route::any('serve','WeChat\WeChatPubController@serve');
     Route::get('menu','WeChat\WeChatPubController@menu');
-    Route::get('pub/reg','WeChat\WeChatPubController@register'); 
+    Route::get('pub/reg','WeChat\WeChatPubController@register');
     Route::get('pub/login','WeChat\WeChatPubController@login');
     Route::get('pub/bind','WeChat\WeChatPubController@bind');
     Route::get('pub/unbind','WeChat\WeChatPubController@unbind');
@@ -151,9 +151,6 @@ Route::group(['prefix' => 'wxpay'], function(){
 
     Route::get('js/{id}', 'WeChat\WxPayController@JSPay')
         ->middleware(['wechat.oauth']);  # 微信浏览器内部支付方式
-
-    Route::get('pay/{id}', 'WeChat\WxPayController@JSPay')
-        ->middleware(['wechat.oauth']);
 
     Route::get('refund/{id}','WeChat\WxPayController@refundByOrderNo'); # 微信退款
 });
