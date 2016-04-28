@@ -109,7 +109,7 @@ class AuthWeChatController extends Controller
             return redirect('/')->withErrors('完成微信账号绑定');
         }
 
-        $this->staff->message('你好')->to($user->wx_id)->send();
+        $this->staff->message('你好')->to($info['id'])->send();
         # 用户之前已经用微信扫码登录
         return redirect('/')->withErrors('您已登录，无需重新扫码');
     }
