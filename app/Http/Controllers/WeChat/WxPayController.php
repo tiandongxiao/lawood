@@ -114,7 +114,6 @@ class WxPayController extends Controller
     {
         if(!Auth::check()){
             $account = session('wechat.oauth_user');  # 拿到授权用户资料
-            dd($account);
 
             $wx_id = $account->original['unionid'];   # 数据库中保存的 wx_id 为用户的Union ID
             $user = User::where('wx_id', $wx_id)->first();

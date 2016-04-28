@@ -119,7 +119,6 @@ Route::group(['prefix' => 'lawyer'], function(){
     Route::get('withdraw','LawyerController@withdraw');
 });
 
-
 Route::group(['prefix' => 'client'], function(){
     Route::get('center','ClientController@center');
     Route::get('consults','ClientController@getConsults');
