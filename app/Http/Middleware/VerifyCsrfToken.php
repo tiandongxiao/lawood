@@ -15,6 +15,6 @@ class VerifyCsrfToken extends BaseVerifier
         'wxpay/callback/',
         'wxpay/serve/',
         'wxpay/js/*',
-        'wx/reg/'
+        'wx/pub/reg/'
     ];
 }
