@@ -32,6 +32,11 @@ trait WeChatDevTrait
         ];
 
         $result = $this->makeGetRequest($url,$params);
-        dd($result);
+
+        if($result && $result->unionid){
+            return $result->unionid;
+        }
+
+        return null;
     }
 }
