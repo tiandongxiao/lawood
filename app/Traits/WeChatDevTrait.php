@@ -16,10 +16,10 @@ trait WeChatDevTrait
     {
         switch ($platform){
             case 'OPEN':
-                $url = 'https://api.weixin.qq.com/sns/userinfo'; # 微信开放平台
+                $url = 'https://api.weixin.qq.com/sns/userinfo';     # 微信开放平台
                 break;
             case 'PUB':
-                $url = 'https://api.weixin.qq.com/cgi-bin/user/info'; # 微信公众平台
+                $url = 'https://api.weixin.qq.com/sns/userinfo'; # 微信公众平台
                 break;
             default:
                 $url = 'https://api.weixin.qq.com/cgi-bin/user/info'; # 微信公众平台
