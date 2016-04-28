@@ -21,7 +21,7 @@ class WeChatPubController extends Controller
         $this->app = $app;
         $this->staff = $app->staff;
         # 设置中间件
-        $this->middleware('wechat.oauth', ['except' => ['serve','menu']]);
+        //$this->middleware('wechat.oauth', ['except' => ['serve','menu']]);
     }
 
     public function register()
