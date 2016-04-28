@@ -163,7 +163,7 @@ class WeChatPubController extends Controller
     public function account()
     {
         $user = session('wechat.oauth_user');
-        dd($user);
+        //dd($user);
         dd($this->unionID($user->id,$user->token->access_token,'PUB'));
 
         $account = collect();
