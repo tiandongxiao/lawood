@@ -54,11 +54,11 @@ class WxNativePay extends PaymentGateway
 
             # 微信订单类
             $wx_order = new Order([
-                'body'             => '服务费', # 支付时显示给用户的内容项
-                'detail'           => Str::random(16), # 商品详情，
+                'body'             => '服务费',             # 支付时显示给用户的内容项
+                'detail'           => Str::random(16),     # 商品详情，
                 'out_trade_no'     => uniqid('WX_ORDER_'), # 商户订单号
-                'total_fee'        => $order->total, # 分为基本单位
-                'trade_type'       => 'NATIVE' # 支付方式
+                'total_fee'        => $order->total,       # 分为基本单位
+                'trade_type'       => 'NATIVE'             # 支付方式
             ]);
 
             $result = $this->payment->prepare($wx_order);

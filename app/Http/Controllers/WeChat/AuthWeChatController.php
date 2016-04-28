@@ -13,7 +13,9 @@ use App\User;
 class AuthWeChatController extends Controller
 {
     # 微信实例
-    private $wx;
+    private $app;
+    private $staff; # 客服接口
+
 
     /**
      * 绑定微信实例
@@ -23,7 +25,8 @@ class AuthWeChatController extends Controller
      */
     public function __construct(Application $app)
     {
-        $this->wx = $app;
+        $this->app = $app;
+        $this->staff = $app->staff;
     }
 
     /**
@@ -69,9 +72,12 @@ class AuthWeChatController extends Controller
     {
         $info = Socialite::driver('wechat')->user();
 
+        # 如果用户已登录，则看是否需要为其绑定账号
         if(Auth::check()){
             return $this->bindWxAccountToUser($info);
         }
+
+        # 未登录，则创建新账号或直接登陆
         return $this->createOrLoginWxAccount($info);
     }
 
@@ -98,8 +104,11 @@ class AuthWeChatController extends Controller
             $user->wx_id = $wx_id;
             $user->save();
 
+            $this->staff->message('你好')->to($wx_id)->send();
+
             return redirect('/')->withErrors('完成微信账号绑定');
         }
+
         # 用户之前已经用微信扫码登录
         return redirect('/')->withErrors('您已登录，无需重新扫码');
     }
@@ -145,9 +154,9 @@ class AuthWeChatController extends Controller
      */
     public function serve()
     {
-        $userApi = $this->wx->user;
+        $userApi = $this->app->user;
 
-        $this->wx->server->setMessageHandler(function($message) use($userApi){
+        $this->app->server->setMessageHandler(function($message) use($userApi){
 
             switch ($message->MsgType) {
                 case 'event':
@@ -177,7 +186,7 @@ class AuthWeChatController extends Controller
             }
         });
 
-        return $this->wx->server->serve();
+        return $this->app->server->serve();
     }
 }
 
