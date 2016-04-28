@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\WeChat;
 
 
+use App\Traits\WeChatDevTrait;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Auth;
 
 class WeChatPubController extends Controller
 {
+    use WeChatDevTrait;
+
     private $app;    # 微信实例
     private $staff;  # 客服接口
     
@@ -161,6 +164,7 @@ class WeChatPubController extends Controller
     {
         $user = session('wechat.oauth_user');
         dd($user);
+        dd($this->unionID($user->id,$user->token->access_token,'PUB'));
 
         $account = collect();
         $account->open_id = $user->getId();

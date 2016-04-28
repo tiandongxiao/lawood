@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\WeChat;
 
+use App\Traits\WeChatDevTrait;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -12,6 +13,8 @@ use App\User;
 
 class WeChatOpenController extends Controller
 {
+    use WeChatDevTrait;
+
     /**
      * 微信登陆页面,只有guest用户可访问
      *
@@ -62,7 +65,7 @@ class WeChatOpenController extends Controller
     public function callback(Request $request)
     {
         $info = Socialite::driver('wechat')->user();
-        dd($info);
+        dd($this->unionID($info->id,$info->token->access_token,'OPEN'));
 
         # 如果用户已登录，则看是否需要为其绑定账号
         if(Auth::check()){
@@ -87,15 +90,19 @@ class WeChatOpenController extends Controller
         if(!$user->union_id){
 
             # 数据库中保存用户的Union ID
-            $wx_id = $info->original->unionid;
+            $union_id = $info->original->unionid;
+            if(is_null($union_id)){
+                dd($this->unionID($info->id,$info->token->access_token));
+            }
 
-            $result = User::where('wx_id',$wx_id)->first();
+            $result = User::where('union_id',$union_id)->first();
 
             if($result){
                 return redirect('/')->withErrors('这个微信账号已被其他用户绑定，您不能绑定此微信账号');
             }
 
-            $user->wx_id = $wx_id;
+            $user->union_id = $union_id;
+
             $user->save();           
 
             return redirect('/')->withErrors('完成微信账号绑定');
