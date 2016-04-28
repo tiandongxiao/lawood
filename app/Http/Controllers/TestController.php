@@ -119,32 +119,4 @@ class TestController extends Controller
     {
         $all = factory(Place::class, 100)->create();
     }
-
-    public function getToken(){
-//        $token = Cache::get('wx_access_token');
-//        dd($token);
-//        $appId = config('services.wechat.client_id');
-//        $secret = config('services.wechat.client_secret');
-//        //dd($appId.'@'.$secret);
-//
-//        $accessToken = new AccessToken($appId, $secret);
-//
-//        # token 字符串
-//        $token = $accessToken->getToken();
-//
-//        dd($token);
-
-        $user = collect();
-        $user->name = 'hello';
-        dd($user->name);
-    }
-
-    public function eraseCache()
-    {
-        Cache::forget('wx_access_token');
-        $token = Cache::get('wx_access_token');
-        dd($token);
-    }
-
-
 }

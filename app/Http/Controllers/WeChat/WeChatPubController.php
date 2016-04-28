@@ -19,60 +19,49 @@ class WeChatPubController extends Controller
     public function __construct(Application $app)
     {
         $this->app = $app;
-        $this->staff = $app->staff;        
+        $this->staff = $app->staff;
+        # 设置中间件
+        $this->middleware('wechat.oauth', ['except' => ['serve','menu']]);
     }
 
-    /**
-     * 微信登陆页面,只有guest用户可访问
-     *
-     * @return mixed
-     */
     public function register()
     {
-        if(!Auth::check()){
-            $account = $this->account();
-            $user = User::where('wx_id', $account->union_id)->first();
-            if(!$user){
-                User::create([
-                    'union_id' => $account->union_id,
-                    'open_id'  => $account->open_id,
-                    'role'     => 'none'
-                ]);
-            }
-        }
-        return redirect('/');
+        $user = $this->loginUser();
+        $this->staff->message('你好')->to($user->open_id);
     }
 
     /**
-     * 微信登陆页面,只有guest用户可访问
+     * 1 - 如果用户已登录，直接返回登陆用户信息
+     * 2 - 如果用户未登录
+     *     2.1 如果用户未注册，则注册之，并自动登录
+     *     2.2 如果用户已注册，则自动登录此用户
+     */
+    public function loginUser()
+    {
+        if(Auth::check()){
+            $user = Auth::user();
+        }else{
+            $user = $this->regIfNotExist();
+            Auth::login($user);
+        }
+        return $user;
+    }
+
+    /**
+     * 登录并自动导流用户至相关页面
      *
      * @return mixed
      */
     public function login()
     {
-        return  Socialite::driver('wechat')->redirect();
-    }
+        $user = $this->loginUser();
 
-    /**
-     * 用户绑定微信入口，此方法只有auth用户可访问
-     *
-     * @return mixed
-     */
-    public function bind()
-    {
-        return  Socialite::driver('wechat')->redirect();
-    }
-
-    /**
-     * 解除微信绑定
-     *
-     * @param Request $request
-     */
-    public function unBind(Request $request)
-    {
-        $user = $request->user();
-        $user->wx_id = null;
-        return back()->withErrors('微信已解除绑定');
+        switch ($user->role){
+            case 'lawyer':
+                break;
+            case 'client':
+                break;
+        }
     }
 
     # 微信信息处理中心
@@ -127,18 +116,18 @@ class WeChatPubController extends Controller
                 "sub_button" => [
                     [
                         "type" => "view",
-                        "name" => "注册",
-                        "url"  => "http://www.soso.com/"
+                        "name" => "客服测试",
+                        "url"  => url('wx/pub/reg')
                     ],
                     [
                         "type" => "view",
-                        "name" => "视频",
-                        "url"  => "http://v.qq.com/"
+                        "name" => "一键登录",
+                        "url"  => url('wx/pub/login')
                     ],
                     [
-                        "type" => "click",
-                        "name" => "赞一下我们",
-                        "key" => "V1001_GOOD"
+                        "type" => "view",
+                        "name" => "关于我们",
+                        "url"  => url('about')
                     ],
                 ],
             ],
@@ -148,30 +137,97 @@ class WeChatPubController extends Controller
                     [
                         "type" => "view",
                         "name" => "订单中心",
-                        "url"  => "http://www.soso.com/"
+                        "url"  => url('wx/orders')
                     ],
                     [
                         "type" => "view",
                         "name" => "消息中心",
-                        "url"  => url('')
+                        "url"  => url('wx/messages')
                     ],
                     [
                         "type" => "view",
-                        "name" => "个人设置",
-                        "url" => url('website/about')
+                        "name" => "设置中心",
+                        "url" => url('wx/settings')
                     ],
                 ],
             ],
         ];
+
         $menu->add($buttons);
     }
 
+    # 获取微信公众号账户信息
     public function account()
     {
         $user = session('wechat.oauth_user');
         $account = collect();
         $account->open_id = $user->getId();
         $account->union_id = $user->original['unionid'];
+        return $user;
+    }
+
+    public function orders()
+    {
+        $user = $this->loginUser();
+
+        switch ($user->role){
+            case 'lawyer':
+                return redirect('lawyer/orders');
+
+            case 'client':
+                return redirect('client/orders');
+
+            case 'none':
+                return redirect('bind/chose');
+        }
+    }
+
+    public function messages()
+    {
+        $user = $this->loginUser();
+
+        switch ($user->role){
+            case 'lawyer':
+                return redirect('lawyer/messages');
+
+            case 'client':
+                return redirect('client/messages');
+
+            case 'none':
+                return redirect('bind/chose');
+        }
+    }
+
+    public function setting()
+    {
+        $user = $this->loginUser();
+
+        switch ($user->role){
+            case 'lawyer':
+                return redirect('lawyer/settings');
+
+            case 'client':
+                return redirect('client/settings');
+
+            case 'none':
+                return redirect('bind/chose');
+        }
+    }
+
+    # 如果用户不存在，创建一个用户，并绑定账号
+    public function regIfNotExist()
+    {
+        $account = $this->account();
+        $user = User::where('union_id', $account->union_id)->first();
+
+        if(!$user){
+            $user = User::create([
+                'union_id' => $account->union_id, # 绑定Union ID
+                'open_id'  => $account->open_id,  # 绑定Open ID
+                'role'     => 'none'              # 身份未定
+            ]);
+        }
+
         return $user;
     }
 }

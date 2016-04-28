@@ -83,7 +83,7 @@ class WeChatOpenController extends Controller
     {
         $user = Auth::user();
         # 用户不是用微信登陆的，那就为其绑定微信号
-        if(!$user->wx_id){
+        if(!$user->union_id){
 
             # 数据库中保存用户的Union ID
             $wx_id = $info->original->unionid;
@@ -125,10 +125,9 @@ class WeChatOpenController extends Controller
 
         switch ($user->role){
             case 'lawyer':
-            case 'assist':
-                return redirect('/')->withErrors('欢迎'.$user->role.'使用我们的法律平台');
+                return redirect('lawyer/center')->withErrors('欢迎'.$user->role.'使用我们的法律平台');
             case 'client':
-                return redirect('/')->withErrors('欢迎咨询用户使用我们的服务');
+                return redirect('client/center')->withErrors('欢迎咨询用户使用我们的服务');
             case 'none':
                 return redirect('bind/chose');
             default:
