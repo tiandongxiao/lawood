@@ -159,7 +159,9 @@ class WeChatPubController extends Controller
     # 获取微信公众号账户信息
     public function account()
     {
-        $user = session('wechat.oauth_user');        
+        $user = session('wechat.oauth_user');
+        dd($user);
+
         $account = collect();
         $account->open_id = $user->getId();
         $account->union_id = $user->original['unionid'];
