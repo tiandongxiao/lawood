@@ -80,7 +80,7 @@ class ConsultController extends Controller
     }
 
     # 根据用户的选择的分类和地址信息创建所有咨询业务
-    public function building()
+    public function build()
     {
         $user  = Auth::user();
 

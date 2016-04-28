@@ -229,6 +229,7 @@ class AuthController extends Controller
             $user->save();
 
             DB::table('email_actives')->where('token',$token)->delete(); # 删除此条存储记录
+            
             Auth::login($user);
 
             return redirect('/')->withErrors('邮箱已激活并为您登录');

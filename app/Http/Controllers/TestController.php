@@ -123,16 +123,20 @@ class TestController extends Controller
     public function getToken(){
 //        $token = Cache::get('wx_access_token');
 //        dd($token);
-        $appId = config('services.wechat.client_id');
-        $secret = config('services.wechat.client_secret');
-        //dd($appId.'@'.$secret);
+//        $appId = config('services.wechat.client_id');
+//        $secret = config('services.wechat.client_secret');
+//        //dd($appId.'@'.$secret);
+//
+//        $accessToken = new AccessToken($appId, $secret);
+//
+//        # token 字符串
+//        $token = $accessToken->getToken();
+//
+//        dd($token);
 
-        $accessToken = new AccessToken($appId, $secret);
-
-        # token 字符串
-        $token = $accessToken->getToken();
-
-        dd($token);
+        $user = collect();
+        $user->name = 'hello';
+        dd($user->name);
     }
 
     public function eraseCache()
@@ -141,4 +145,6 @@ class TestController extends Controller
         $token = Cache::get('wx_access_token');
         dd($token);
     }
+
+
 }

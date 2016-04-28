@@ -10,23 +10,26 @@ use \Socialite;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 
-class AuthWeChatController extends Controller
+class WeChatOpenController extends Controller
 {
-    # 微信实例
-    private $app;
-    private $staff; # 客服接口
-
+    /**
+     * 微信登陆页面,只有guest用户可访问
+     *
+     * @return mixed
+     */
+    public function register()
+    {
+        return  Socialite::driver('wechat')->redirect();
+    }
 
     /**
-     * 绑定微信实例
+     * 微信登陆页面,只有guest用户可访问
      *
-     * AuthWeChatController constructor.
-     * @param Application $app
+     * @return mixed
      */
-    public function __construct(Application $app)
+    public function login()
     {
-        $this->app = $app;
-        $this->staff = $app->staff;
+        return  Socialite::driver('wechat')->redirect();
     }
 
     /**
@@ -34,9 +37,8 @@ class AuthWeChatController extends Controller
      *
      * @return mixed
      */
-    public function wxBind()
+    public function bind()
     {
-        echo 'I am going to bind a wxpay account to a user';
         return  Socialite::driver('wechat')->redirect();
     }
 
@@ -45,7 +47,7 @@ class AuthWeChatController extends Controller
      *
      * @param Request $request
      */
-    public function wxUnBind(Request $request)
+    public function unBind(Request $request)
     {
         $user = $request->user();
         $user->wx_id = null;
@@ -53,22 +55,11 @@ class AuthWeChatController extends Controller
     }
 
     /**
-     * 微信登陆页面,只有guest用户可访问
-     *
-     * @return mixed
-     */
-    public function wxLogin()
-    {
-        echo 'I am going to WeiChat Login page';
-        return  Socialite::driver('wechat')->redirect();
-    }
-
-    /**
      * 微信登陆回调处理逻辑
      *
      * @return mixed
      */
-    public function wxCallback(Request $request)
+    public function callback(Request $request)
     {
         $info = Socialite::driver('wechat')->user();
 
@@ -98,18 +89,16 @@ class AuthWeChatController extends Controller
             $wx_id = $info->original->unionid;
 
             $result = User::where('wx_id',$wx_id)->first();
+
             if($result){
                 return redirect('/')->withErrors('这个微信账号已被其他用户绑定，您不能绑定此微信账号');
             }
-            $user->wx_id = $wx_id;
-            $user->save();
 
-            $this->staff->message('你好')->to($wx_id)->send();
+            $user->wx_id = $wx_id;
+            $user->save();           
 
             return redirect('/')->withErrors('完成微信账号绑定');
-        }
-
-        $this->staff->message('你好')->to($info['id'])->send();
+        }        
         # 用户之前已经用微信扫码登录
         return redirect('/')->withErrors('您已登录，无需重新扫码');
     }
@@ -128,7 +117,7 @@ class AuthWeChatController extends Controller
         if(is_null($user)){
             $user = User::create([
                 'wx_id' => $info['id'],
-                'role'  => 'undefined',
+                'role'  => 'none',
             ]);
         }
 
@@ -140,54 +129,11 @@ class AuthWeChatController extends Controller
                 return redirect('/')->withErrors('欢迎'.$user->role.'使用我们的法律平台');
             case 'client':
                 return redirect('/')->withErrors('欢迎咨询用户使用我们的服务');
-            case 'undefined':
+            case 'none':
                 return redirect('bind/chose');
             default:
                 return redirect('/')->withErrors('您的信息已被记录，恶意攻击将被记录在案');
         }
-    }
-
-    /**
-     * 微信信息处理中心
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     * @throws \EasyWeChat\Core\Exceptions\InvalidArgumentException
-     */
-    public function serve()
-    {
-        $userApi = $this->app->user;
-
-        $this->app->server->setMessageHandler(function($message) use($userApi){
-
-            switch ($message->MsgType) {
-                case 'event':
-                    # 事件消息...
-                    break;
-                case 'text':
-                    # return '你好! '.$userApi->get($message->FromUserName)->nickname;
-                    break;
-                case 'image':
-                    # 图片消息...
-                    break;
-                case 'voice':
-                    # 语音消息...
-                    break;
-                case 'video':
-                    # 视频消息...
-                    break;
-                case 'location':
-                    # 坐标消息...
-                    break;
-                case 'link':
-                    # 链接消息...
-                    break;
-                default:
-                    # 其它消息...
-                    break;
-            }
-        });
-
-        return $this->app->server->serve();
     }
 }
 
