@@ -167,7 +167,7 @@ class WeChatPubController extends Controller
 //        $accessToken = $this->app->access_token;
 //        $token = $accessToken->getToken(true); # 强制重新从微信服务器获取 token.
         $token = $user->token->access_token;
-        dd($token);
+        
         $this->unionID($user->id, $token, 'PUB');
 
         $account = collect();
