@@ -26,7 +26,7 @@ class WeChatPubController extends Controller
 
     public function register()
     {
-        $user = $this->loginUser();
+        $user = $this->account();
         $this->staff->message('你好')->to($user->open_id);
     }
 
