@@ -173,7 +173,8 @@ class WeChatPubController extends Controller
         $account = collect();
         $account->open_id = $user->getId();
         $account->union_id = $union_id;
-        return $user;
+
+        return $account;
     }
 
     public function orders()
