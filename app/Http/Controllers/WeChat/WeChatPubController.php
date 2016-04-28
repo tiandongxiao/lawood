@@ -17,12 +17,12 @@ class WeChatPubController extends Controller
     use WeChatDevTrait;
 
     private $app;    # 微信实例
-    private $staff;  # 客服接口
+    private $broadcast;  # 客服接口
     
     public function __construct(Application $app)
     {
         $this->app = $app;
-        $this->staff = $app->staff;
+        $this->broadcast = $app->broadcast;
 
         # 设置中间件
         $this->middleware('wechat.oauth', ['except' => ['serve','menu']]);
@@ -164,7 +164,7 @@ class WeChatPubController extends Controller
     public function account()
     {
         $user = session('wechat.oauth_user');
-        $this->staff->message('nihao')->to($user->id);
+        $this->broadcast->sendText('hello', [$user->getId()]);
 
         $accessToken = $this->app->access_token;
         $token = $accessToken->getToken(true); # 强制重新从微信服务器获取 token.
