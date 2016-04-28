@@ -21,7 +21,7 @@ class WeChatPubController extends Controller
         $this->app = $app;
         $this->staff = $app->staff;
         # 设置中间件
-        //$this->middleware('wechat.oauth', ['except' => ['serve','menu']]);
+        $this->middleware('wechat.oauth', ['except' => ['serve','menu']]);
     }
 
     public function register()
@@ -126,8 +126,8 @@ class WeChatPubController extends Controller
                     ],
                     [
                         "type" => "view",
-                        "name" => "关于我们",
-                        "url"  => url('about')
+                        "name" => "支付测试",
+                        "url"  => url('wxpay/js/1')
                     ],
                 ],
             ],

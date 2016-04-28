@@ -68,7 +68,7 @@ Route::group(['prefix' => 'wx'], function() {
     # 微信 <公众平台> 服务接口
     Route::any('serve','WeChat\WeChatPubController@serve');
     Route::get('menu','WeChat\WeChatPubController@menu');
-    Route::get('pub/reg','WeChat\WeChatPubController@register')->middleware(['wechat.oauth']); 
+    Route::get('pub/reg','WeChat\WeChatPubController@register'); 
     Route::get('pub/login','WeChat\WeChatPubController@login');
     Route::get('pub/bind','WeChat\WeChatPubController@bind');
     Route::get('pub/unbind','WeChat\WeChatPubController@unbind');
