@@ -30,7 +30,7 @@ class WeChatPubController extends Controller
 
     public function register()
     {
-        $user = $this->account();        
+        $user = $this->account();
     }
 
     /**
@@ -208,7 +208,7 @@ class WeChatPubController extends Controller
         }
     }
 
-    public function setting()
+    public function settings()
     {
         $user = $this->loginUser();
 
