@@ -62,6 +62,7 @@ class WeChatOpenController extends Controller
     public function callback(Request $request)
     {
         $info = Socialite::driver('wechat')->user();
+        dd($info);
 
         # 如果用户已登录，则看是否需要为其绑定账号
         if(Auth::check()){
