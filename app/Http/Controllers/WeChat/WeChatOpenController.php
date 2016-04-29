@@ -113,7 +113,6 @@ class WeChatOpenController extends Controller
      */
     private function createOrLoginWxAccount($account)
     {
-        dd($account);
         $user = $this->regIfNotExist($account);
 
         Auth::login($user);
@@ -134,6 +133,7 @@ class WeChatOpenController extends Controller
     private function regIfNotExist($account)
     {
         $union_id = $account->original->unionid;
+        dd($union_id);
         $user = User::where('union_id', $union_id)->first();
 
         if(!$user){
