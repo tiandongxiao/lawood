@@ -101,14 +101,14 @@ class WeChatPubController extends Controller
 
                     $userId = $account->openid;
                     $templateId = 'MCG5frr7twN4Wl8O8ZgRoMTB_hB61hUhIMeNTsKhJsc';
-                    $url = 'http://overtrue.me';
+                    $url = url('wx/pub/chose');
                     $color = '#FF0000';
                     $data = array(
                         'first'      =>  "恭喜您完成注册的第一部分",
                         'keyword1'   =>  $account->nickname,
                         "keyword2"   =>  Carbon::now(),
                         "keyword3"   =>  $account->nickname,
-                        "remark"     =>  "补充材料完成注册",
+                        "remark"     =>  "<a href='".$url."'>下一步</a>",
                     );
 
                     $messageId = $this->notice->to($userId)->uses($templateId)->andUrl($url)->withColor($color)->data($data)->send();
@@ -263,8 +263,9 @@ class WeChatPubController extends Controller
     }
 
     # 微信公众号模板方式进行下一步注册
-    public function choseRole()
+    public function chose()
     {
-
+        $user = $this->loginUser();
+        return redirect('chose');
     }
 }

@@ -72,7 +72,7 @@ Route::group(['prefix' => 'wx'], function() {
     Route::get('menu','WeChat\WeChatPubController@menu');
     Route::get('pub/reg','WeChat\WeChatPubController@register');
     Route::get('pub/login','WeChat\WeChatPubController@login');
-    Route::get('pub/bind','WeChat\WeChatPubController@bind');
+    Route::get('pub/chose','WeChat\WeChatPubController@chose');
     Route::get('pub/unbind','WeChat\WeChatPubController@unbind');
 
     Route::get('orders', 'WeChat\WeChatPubController@orders');
