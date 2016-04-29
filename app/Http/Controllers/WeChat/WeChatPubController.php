@@ -19,12 +19,14 @@ class WeChatPubController extends Controller
     use WeChatDevTrait;
 
     private $app;        # 微信实例
-    private $broadcast;  # 客服接口
+    private $broadcast;  # 广播接口
+    private $notice;     # 模板消息通知
     
     public function __construct(Application $app)
     {
         $this->app = $app;
         $this->broadcast = $app->broadcast;
+        $this->notice = $app->notice;
 
         # 设置中间件
         $this->middleware('wechat.oauth', ['except' => ['serve','menu']]);
@@ -78,8 +80,10 @@ class WeChatPubController extends Controller
                 case 'event':
                     # 事件消息...
                     switch ($message->Event) {
-                        case 'subscribe': # 关注事件
-                            # code...
+                        case 'subscribe':   # 关注事件
+                            $account = $userApi->get($message->FromUserName);
+                            $user = $this->regBySubscribe($account);
+                            return null;
                             break;
 
                         default:
@@ -91,9 +95,24 @@ class WeChatPubController extends Controller
                 case 'text':
                     $time = Carbon::now()->addHour(1);
                     Cache::put('user',$userApi->get($message->FromUserName),$time);
+                    $account = $userApi->get($message->FromUserName);
 
                     //dd($userApi->get($message->FromUserName));
-                     return '你好! '.$userApi->get($message->FromUserName)->nickname;
+
+                    $userId = $account->openid;
+                    $templateId = 'ngqIpbwh8bUfcSsECmogfXcV14J0tQlEpBO27izEYtY';
+                    $url = 'http://overtrue.me';
+                    $color = '#FF0000';
+                    $data = array(
+                        'first'      =>  "恭喜您完成注册的第一部分",
+                        'keyword1'   =>  $account->nickname,
+                        "keyword2"   =>  Carbon::now(),
+                        "keyword3"   =>  $account->nickname,
+                        "remark"     =>  "补充材料完成注册",
+                    );
+
+                    $messageId = $this->notice->to($userId)->url($url)->template($templateId)->andData($data)->send();
+                    return '你好! '.$userApi->get($message->FromUserName)->nickname;
                     break;
                 case 'image':
                     # 图片消息...
@@ -222,5 +241,30 @@ class WeChatPubController extends Controller
             case 'none':
                 return redirect('bind/chose');
         }
+    }
+
+    private function regBySubscribe($account)
+    {
+        $user = User::where('union_id',$account->unionid)->first();
+
+        if(!$user){
+            $user = User::create([
+                'union_id'  =>  $account->unionid,
+                'open_id'   =>  $account->openid
+            ]);
+        }
+
+        if(!$user->open_id){
+            $user->open_id = $account->openid;
+            $user->save();
+        }
+
+        return $user;
+    }
+
+    # 微信公众号模板方式进行下一步注册
+    public function choseRole()
+    {
+
     }
 }
