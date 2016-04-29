@@ -116,7 +116,6 @@ class WeChatOpenController extends Controller
         $user = $this->regIfNotExist($account);
 
         Auth::login($user);
-        dd($user->role);
 
         switch ($user->role){
             case 'lawyer':
@@ -124,6 +123,7 @@ class WeChatOpenController extends Controller
             case 'client':
                 return redirect('client/center')->withErrors('欢迎咨询用户使用我们的服务');
             case 'none':
+                dd('I am here3');
                 return redirect('bind/chose');
             default:
                 return redirect('/')->withErrors('您的信息已被记录，恶意攻击将被记录在案');
