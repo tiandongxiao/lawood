@@ -87,7 +87,7 @@ class WeChatOpenController extends Controller
 
         # 用户不是用微信登陆的，那就为其绑定微信号
         if(!$user->union_id){
-            $union_id = $account->original->unionid;
+            $union_id = $account['original']['unionid'];
 
             # 查找数据库中是否已保存此Union ID
             $result = User::where('union_id',$union_id)->first();
@@ -132,14 +132,13 @@ class WeChatOpenController extends Controller
     # 如果用户不存在，创建一个用户，并绑定账号
     private function regIfNotExist($account)
     {
-        dd($account['original']['unionid']);
-        $union_id = $account->original->unionid;
-        dd($union_id);
+        $union_id = $account['original']['unionid'];
+
         $user = User::where('union_id', $union_id)->first();
 
         if(!$user){
             $user = User::create([
-                'union_id' => $union_id,          # 绑定Union ID
+                'union_id' => $union_id, # 绑定Union ID
             ]);
         }
 
