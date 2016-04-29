@@ -101,7 +101,7 @@ class WeChatPubController extends Controller
 
                     $userId = $account->openid;
                     $templateId = 'MCG5frr7twN4Wl8O8ZgRoMTB_hB61hUhIMeNTsKhJsc';
-                    $url = url('wx/pub/chose');
+                    $url = url('wx/orders');
                     $color = '#FF0000';
                     $data = array(
                         'first'      =>  "恭喜您完成注册的第一部分",
