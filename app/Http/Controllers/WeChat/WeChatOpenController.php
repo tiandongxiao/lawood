@@ -113,6 +113,7 @@ class WeChatOpenController extends Controller
      */
     private function createOrLoginWxAccount($account)
     {
+        dd($account);
         $user = $this->regIfNotExist($account);
 
         Auth::login($user);
