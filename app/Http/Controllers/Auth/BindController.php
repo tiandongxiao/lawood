@@ -47,11 +47,11 @@ class BindController extends Controller
         $user = User::where('phone',$phone)->first();
         if($user && $user->password == bcrypt($password)){
             $cur_user = Auth::user();
-            $wx_id = $cur_user->wx_id;
+            $union_id = $cur_user->union_id;
 
             $cur_user->delete();
 
-            $user->wx_id = $wx_id;
+            $user->union_id = $union_id;
             $user->save();
 
             Auth::login($user);

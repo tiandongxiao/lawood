@@ -4,6 +4,7 @@ namespace App\Http\Controllers\WeChat;
 
 use App\Item;
 use App\Traits\ShopDevTrait;
+use App\Traits\WeChatDevTrait;
 use App\Transaction;
 use App\User;
 use EasyWeChat\Foundation\Application;
@@ -24,15 +25,12 @@ use App\Order as ShopOrder;
 class WxPayController extends Controller
 {
     use ShopDevTrait;
+    use WeChatDevTrait;
 
-    # 微信 app 实例
-    private $app;
+    private $app;        # 微信 app 实例
+    private $payment;    # 微信支付句柄
+    private $user;       # 用户服务句柄
 
-    # 微信支付句柄
-    private $payment;
-
-    # 用户服务句柄
-    private $user;
 
     # 绑定相关微信服务
     public function __construct(Application $app)
@@ -112,20 +110,8 @@ class WxPayController extends Controller
      */
     public function JSPay($item_id)
     {
-        if(!Auth::check()){
-            $account = session('wechat.oauth_user');  # 拿到授权用户资料
-
-            $wx_id = $account->original['unionid'];   # 数据库中保存的 wx_id 为用户的Union ID
-            $user = User::where('wx_id', $wx_id)->first();
-
-            if (!$user) {
-                $user = new User();
-                $user->wx_id = $wx_id;
-                $user->save();
-            }
-
-            Auth::login($user);
-        }
+        $user = $this->regIfNotExist();
+        Auth::login($user);
 
         $order = $this->prePay($item_id, 'wx_js');
 
@@ -169,17 +155,17 @@ class WxPayController extends Controller
     {
         $merchantPay = $this->app->merchant_pay;
 
-        $user = session('wechat.oauth_user'); // 拿到授权用户资料
+        $user = session('wechat.oauth_user');     # 拿到授权用户资料
         $open_id = $user->getId();
 
         $merchantPayData = [
             'partner_trade_no' => str_random(16), # 随机字符串作为订单号，跟红包和支付一个概念。
-            'openid' => $open_id, //收款人的openid
-            'check_name' => 'NO_CHECK',  //文档中三分钟校验实名的方法NO_CHECK OPTION_CHECK FORCE_CHECK
-            're_user_name'=>'王国营',     //OPTION_CHECK FORCE_CHECK 校验实名的时候必须提交
-            'amount' => 100,  //单位为分
+            'openid' => $open_id,                 # 收款人的openid
+            'check_name' => 'NO_CHECK',           # 文档中三分钟校验实名的方法NO_CHECK OPTION_CHECK FORCE_CHECK
+            're_user_name'=>'王国营',              # OPTION_CHECK FORCE_CHECK 校验实名的时候必须提交
+            'amount' => 100,                      # 单位为分
             'desc' => '企业付款',
-            'spbill_create_ip' => '192.168.0.1',  //发起交易的IP地址
+            'spbill_create_ip' => '192.168.0.1',  # 发起交易的IP地址
         ];
 
         $result = $merchantPay->send($merchantPayData);
@@ -219,7 +205,6 @@ class WxPayController extends Controller
             return $order;
         return null;
     }
-
 
     # 判断微信订单是否已经退过款
     public function isOrderRefunded($out_trade_no)

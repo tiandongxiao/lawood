@@ -55,7 +55,7 @@
                         </li>
                         <!-- Menu Body -->
                         <li class="user-body">
-                            @if(is_null(Auth::user()->wx_id))
+                            @if(is_null(Auth::user()->union_id))
                                 <div class="col-xs-4">
                                     <a class="btn btn-warning" href="{{url('wxpay')}}">绑定微信</a>
                                 </div>

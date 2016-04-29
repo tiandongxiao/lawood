@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\WeChat;
 
-use App\Traits\WeChatDevTrait;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -13,7 +12,6 @@ use App\User;
 
 class WeChatOpenController extends Controller
 {
-    use WeChatDevTrait;
 
     /**
      * 微信登陆页面,只有guest用户可访问
@@ -53,7 +51,8 @@ class WeChatOpenController extends Controller
     public function unBind(Request $request)
     {
         $user = $request->user();
-        $user->wx_id = null;
+        $user->union_id = null;
+        $user->open_id = null;
         return back()->withErrors('微信已解除绑定');
     }
 
@@ -64,16 +63,15 @@ class WeChatOpenController extends Controller
      */
     public function callback(Request $request)
     {
-        $info = Socialite::driver('wechat')->user();
-        dd($this->unionID($info->id,$info->token->access_token,'OPEN'));
+        $account = Socialite::driver('wechat')->user();
 
         # 如果用户已登录，则看是否需要为其绑定账号
         if(Auth::check()){
-            return $this->bindWxAccountToUser($info);
+            return $this->bindWxAccountToUser($account);
         }
 
         # 未登录，则创建新账号或直接登陆
-        return $this->createOrLoginWxAccount($info);
+        return $this->createOrLoginWxAccount($account);
     }
 
 
@@ -83,30 +81,26 @@ class WeChatOpenController extends Controller
      * @param $wx_info
      * @return mixed
      */
-    private function bindWxAccountToUser($info)
+    private function bindWxAccountToUser($account)
     {
         $user = Auth::user();
+
         # 用户不是用微信登陆的，那就为其绑定微信号
         if(!$user->union_id){
+            $union_id = $account->original->unionid;
 
-            # 数据库中保存用户的Union ID
-            $union_id = $info->original->unionid;
-            if(is_null($union_id)){
-                dd($this->unionID($info->id,$info->token->access_token));
-            }
-
+            # 查找数据库中是否已保存此Union ID
             $result = User::where('union_id',$union_id)->first();
-
-            if($result){
-                return redirect('/')->withErrors('这个微信账号已被其他用户绑定，您不能绑定此微信账号');
+            if(!$result){
+                $user->union_id = $union_id; # 只绑定其Union ID
+                $user->save();
+                return redirect('/')->withErrors('完成微信账号绑定');
             }
 
-            $user->union_id = $union_id;
-
-            $user->save();           
-
-            return redirect('/')->withErrors('完成微信账号绑定');
-        }        
+            # 如果已有此记录，则提示用户不能绑定
+            return redirect('/')->withErrors('这个微信账号已被其他用户绑定，您不能绑定此微信账号');
+        }
+        
         # 用户之前已经用微信扫码登录
         return redirect('/')->withErrors('您已登录，无需重新扫码');
     }
@@ -117,17 +111,9 @@ class WeChatOpenController extends Controller
      * @param $info
      * @return mixed
      */
-    private function createOrLoginWxAccount($info)
+    private function createOrLoginWxAccount($account)
     {
-        $user = User::where('wx_id',$info['id'])->first();
-
-        # 如果用户是不是已注册用户，需要创建新用户
-        if(is_null($user)){
-            $user = User::create([
-                'wx_id' => $info['id'],
-                'role'  => 'none',
-            ]);
-        }
+        $user = $this->regIfNotExist($account);
 
         Auth::login($user);
 
@@ -141,6 +127,21 @@ class WeChatOpenController extends Controller
             default:
                 return redirect('/')->withErrors('您的信息已被记录，恶意攻击将被记录在案');
         }
+    }
+
+    # 如果用户不存在，创建一个用户，并绑定账号
+    private function regIfNotExist($account)
+    {
+        $union_id = $account->original->unionid;
+        $user = User::where('union_id', $union_id)->first();
+
+        if(!$user){
+            $user = User::create([
+                'union_id' => $union_id,          # 绑定Union ID
+            ]);
+        }
+
+        return $user;
     }
 }
 

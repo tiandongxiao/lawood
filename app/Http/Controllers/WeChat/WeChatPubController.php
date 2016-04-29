@@ -16,7 +16,7 @@ class WeChatPubController extends Controller
 {
     use WeChatDevTrait;
 
-    private $app;    # 微信实例
+    private $app;        # 微信实例
     private $broadcast;  # 客服接口
     
     public function __construct(Application $app)
@@ -159,25 +159,7 @@ class WeChatPubController extends Controller
         $menu->add($buttons);
     }
 
-    # 获取微信公众号账户信息
-    public function account()
-    {
-        $user = session('wechat.oauth_user');
-        $this->broadcast->previewText('hello', $user->getId());
-
-        $accessToken = $this->app->access_token;
-        $token = $accessToken->getToken(true); # 强制重新从微信服务器获取 token.
-
-        $union_id = $this->unionID($user->id, $token, 'PUB');
-        dd($union_id);
-
-        $account = collect();
-        $account->open_id = $user->getId();
-        $account->union_id = $union_id;
-
-        return $account;
-    }
-
+    
     public function orders()
     {
         $user = $this->loginUser();
@@ -224,22 +206,5 @@ class WeChatPubController extends Controller
             case 'none':
                 return redirect('bind/chose');
         }
-    }
-
-    # 如果用户不存在，创建一个用户，并绑定账号
-    public function regIfNotExist()
-    {
-        $account = $this->account();
-        $user = User::where('union_id', $account->union_id)->first();
-
-        if(!$user){
-            $user = User::create([
-                'union_id' => $account->union_id, # 绑定Union ID
-                'open_id'  => $account->open_id,  # 绑定Open ID
-                'role'     => 'none'              # 身份未定
-            ]);
-        }
-
-        return $user;
     }
 }

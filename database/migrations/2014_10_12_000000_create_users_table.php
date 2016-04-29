@@ -20,11 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('phone',15)->unique()->nullable()->index();  # 手机号码
             $table->string('union_id')->unique()->nullable()->index();  # 微信 Union ID
             $table->string('open_id')->unique()->nullable()->index();   # 微信 Open ID
-            $table->string('union_id')->unique()->nullable()->index();  # 微信 Union ID
             $table->string('wb_id')->unique()->nullable()->index();     # 新浪微博 ID
             $table->string('email',40)->unique()->nullable()->index();  # 邮箱
             $table->boolean('email_active')->default(false);  # 邮箱是否激活
-            $table->string('role',20)->nullable();            # 用户角色类型
+            $table->string('role',20)->default('none');       # 用户角色类型
             $table->string('avatar')->nullable();             # 用户头像
             $table->boolean('active')->default(false);        # 用户是否已激活
             $table->string('password', 60)->nullable();       # 密码
