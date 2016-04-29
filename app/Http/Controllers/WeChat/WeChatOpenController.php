@@ -122,8 +122,7 @@ class WeChatOpenController extends Controller
                 return redirect('lawyer/center')->withErrors('欢迎'.$user->role.'使用我们的法律平台');
             case 'client':
                 return redirect('client/center')->withErrors('欢迎咨询用户使用我们的服务');
-            case 'none':
-                dd('I am here3');
+            case 'none':                
                 return redirect('bind/chose');
             default:
                 return redirect('/')->withErrors('您的信息已被记录，恶意攻击将被记录在案');
