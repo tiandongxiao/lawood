@@ -132,7 +132,7 @@ class WeChatOpenController extends Controller
     # 如果用户不存在，创建一个用户，并绑定账号
     private function regIfNotExist($account)
     {
-        dd($account);
+        dd($account['original']['unionid']);
         $union_id = $account->original->unionid;
         dd($union_id);
         $user = User::where('union_id', $union_id)->first();
