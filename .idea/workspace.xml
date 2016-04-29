@@ -31,7 +31,7 @@
           <file leaf-file-name="Broadcast.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/vendor/overtrue/wechat/src/Broadcast/Broadcast.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="9968">
+                <state relative-caret-position="11748">
                   <caret line="364" column="33" selection-start-line="364" selection-start-column="33" selection-end-line="364" selection-end-column="33" />
                   <folding />
                 </state>
@@ -41,7 +41,7 @@
           <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3753">
+                <state relative-caret-position="5511">
                   <caret line="167" column="54" selection-start-line="167" selection-start-column="54" selection-end-line="167" selection-end-column="54" />
                   <folding />
                 </state>
@@ -51,8 +51,8 @@
           <file leaf-file-name="WeChatPubController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="467">
-                  <caret line="176" column="24" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="24" />
+                <state relative-caret-position="500">
+                  <caret line="171" column="22" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
                   <folding>
                     <element signature="e#47#77#0#PHP" expanded="true" />
                   </folding>
@@ -63,8 +63,8 @@
           <file leaf-file-name="WeChatDevTrait.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Traits/WeChatDevTrait.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="896">
-                  <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+                <state relative-caret-position="297">
+                  <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -75,13 +75,7 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="0">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding>
-                    <marker date="1461854434355" expanded="true" signature="113:1283" placeholder="{...}" />
-                    <marker date="1461854434355" expanded="true" signature="123:209" placeholder=" The application's global HTTP middleware stack. ..." />
-                    <marker date="1461854434355" expanded="true" signature="241:630" placeholder="..." />
-                    <marker date="1461854434355" expanded="true" signature="641:715" placeholder=" The application's route middleware. ..." />
-                    <marker date="1461854434355" expanded="true" signature="752:1279" placeholder="..." />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -89,7 +83,7 @@
           <file leaf-file-name="VerifyCsrfToken.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="28">
+                <state relative-caret-position="132">
                   <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
                   <folding />
                 </state>
@@ -99,7 +93,7 @@
           <file leaf-file-name=".env" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.env">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="448">
+                <state relative-caret-position="528">
                   <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
                   <folding />
                 </state>
@@ -109,7 +103,7 @@
           <file leaf-file-name="LawyerController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LawyerController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1120">
+                <state relative-caret-position="1320">
                   <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
                   <folding />
                 </state>
@@ -119,7 +113,7 @@
           <file leaf-file-name="WxPayController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4424">
+                <state relative-caret-position="4752">
                   <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
                   <folding />
                 </state>
@@ -238,10 +232,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="25" />
-    <option name="y" value="49" />
-    <option name="width" value="1903" />
-    <option name="height" value="989" />
+    <option name="x" value="-13" />
+    <option name="y" value="55" />
+    <option name="width" value="2564" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -268,7 +262,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -432,6 +425,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -527,6 +521,7 @@
       <workItem from="1461660502482" duration="9578000" />
       <workItem from="1461722425104" duration="45667000" />
       <workItem from="1461854644838" duration="1698000" />
+      <workItem from="1461889038674" duration="82000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -651,7 +646,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246002000" />
+    <option name="totallyTimeSpent" value="246084000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -663,11 +658,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="25" y="49" width="1903" height="989" extended-state="0" />
+    <frame x="-13" y="55" width="2564" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1430912" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14285715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09299781" sideWeight="0.5026061" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -897,7 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
           <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,7 +951,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WebsiteController.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LawyerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
+        <state relative-caret-position="1320">
           <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
           <folding />
         </state>
@@ -972,7 +966,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
+        <state relative-caret-position="528">
           <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding />
         </state>
@@ -990,19 +984,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1461854434355" expanded="true" signature="113:1283" placeholder="{...}" />
-            <marker date="1461854434355" expanded="true" signature="123:209" placeholder=" The application's global HTTP middleware stack. ..." />
-            <marker date="1461854434355" expanded="true" signature="241:630" placeholder="..." />
-            <marker date="1461854434355" expanded="true" signature="641:715" placeholder=" The application's route middleware. ..." />
-            <marker date="1461854434355" expanded="true" signature="752:1279" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4424">
+        <state relative-caret-position="4752">
           <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
           <folding />
         </state>
@@ -1010,7 +998,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
+        <state relative-caret-position="132">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
@@ -1018,32 +1006,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/overtrue/wechat/src/Broadcast/Broadcast.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9968">
+        <state relative-caret-position="11748">
           <caret line="364" column="33" selection-start-line="364" selection-start-column="33" selection-end-line="364" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Traits/WeChatDevTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3753">
+        <state relative-caret-position="5511">
           <caret line="167" column="54" selection-start-line="167" selection-start-column="54" selection-end-line="167" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Traits/WeChatDevTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="176" column="24" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="24" />
+        <state relative-caret-position="500">
+          <caret line="171" column="22" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
           <folding>
             <element signature="e#47#77#0#PHP" expanded="true" />
           </folding>
