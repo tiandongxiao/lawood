@@ -110,7 +110,7 @@ class WeChatPubController extends Controller
                         "keyword3"   =>  $account->nickname,
                         "remark"     =>  "点击 个人中心->设置中心 进行下一步",
                     );
-
+                    $messageId = $this->notice->to($userId)->uses($templateId)->andUrl($url)->withColor($color)->data($data)->send();
                     return '你好! '.$userApi->get($message->FromUserName)->nickname;
                     break;
                 case 'image':
@@ -137,21 +137,21 @@ class WeChatPubController extends Controller
         return $this->app->server->serve();
     }
 
-    private function sendTplMessage($open_id, $message)
-    {
-        $userId = $account->openid;
-        $templateId = 'MCG5frr7twN4Wl8O8ZgRoMTB_hB61hUhIMeNTsKhJsc';
-        $url = url('wx/orders');
-        $color = '#FF0000';
-        $data = array(
-            'first'      =>  "恭喜您完成注册的第一部分",
-            'keyword1'   =>  $account->nickname,
-            "keyword2"   =>  Carbon::now(),
-            "keyword3"   =>  $account->nickname,
-            "remark"     =>  "<a href='".$url."'>下一步</a>",
-        );
-        $messageId = $this->notice->to($userId)->uses($templateId)->andUrl($url)->withColor($color)->data($data)->send();
-    }
+//    private function sendTplMessage($open_id, $message)
+//    {
+//        $userId = $account->openid;
+//        $templateId = 'MCG5frr7twN4Wl8O8ZgRoMTB_hB61hUhIMeNTsKhJsc';
+//        $url = url('wx/orders');
+//        $color = '#FF0000';
+//        $data = array(
+//            'first'      =>  "恭喜您完成注册的第一部分",
+//            'keyword1'   =>  $account->nickname,
+//            "keyword2"   =>  Carbon::now(),
+//            "keyword3"   =>  $account->nickname,
+//            "remark"     =>  "<a href='".$url."'>下一步</a>",
+//        );
+//        $messageId = $this->notice->to($userId)->uses($templateId)->andUrl($url)->withColor($color)->data($data)->send();
+//    }
 
     # 生成微信公众号菜单
     public function menu()
