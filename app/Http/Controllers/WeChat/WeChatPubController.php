@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 
 # 微信公众平台相关操作
 
@@ -82,7 +83,8 @@ class WeChatPubController extends Controller
                     switch ($message->Event) {
                         case 'subscribe':   # 关注事件
                             $account = $userApi->get($message->FromUserName);
-                            $user = $this->regBySubscribe($account);
+                            $this->regBySubscribe($account);
+                            Log::info($account->nickname.'关注了我们的公众号');
                             return null;
                             break;
 
