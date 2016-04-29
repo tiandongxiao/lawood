@@ -116,6 +116,7 @@ class WeChatOpenController extends Controller
         $user = $this->regIfNotExist($account);
 
         Auth::login($user);
+        dd($user->role);
 
         switch ($user->role){
             case 'lawyer':
