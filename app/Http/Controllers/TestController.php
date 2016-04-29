@@ -119,4 +119,13 @@ class TestController extends Controller
     {
         $all = factory(Place::class, 100)->create();
     }
+
+    public function cache($key)
+    {
+        $value = Cache::get($key);
+        if($value){
+            dd($value);
+        }
+        dd('No');
+    }
 }

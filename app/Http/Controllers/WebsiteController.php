@@ -20,4 +20,9 @@ class WebsiteController extends Controller
     {
         return view('welcome');
     }
+
+    public function regByQrCode()
+    {
+        return view('auth.qr_code');
+    }
 }

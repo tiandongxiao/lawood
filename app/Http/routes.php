@@ -4,6 +4,8 @@ Route::get('/', 'WebsiteController@index');
 Route::get('map', 'WebsiteController@map');
 Route::get('about', 'WebsiteController@about');
 
+Route::get('qr_code', 'WebsiteController@regByQrCode');
+
 # 用户认证系统自带控制器处理
 Route::get('login', 'Auth\AuthController@getPhoneLogin');
 Route::post('login', 'Auth\AuthController@postPhoneLogin');
@@ -176,6 +178,7 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('rate_item','TestController@ratingItem');
     Route::get('code','TestController@scanQrCode');
     Route::get('faker','TestController@faker');
+    Route::get('cache/{key}','TestController@cache');
 });
 
 Route::group(['prefix' => 'website'], function(){

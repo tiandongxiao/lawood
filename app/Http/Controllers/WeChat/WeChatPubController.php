@@ -3,12 +3,14 @@ namespace App\Http\Controllers\WeChat;
 
 
 use App\Traits\WeChatDevTrait;
+use Carbon\Carbon;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 # 微信公众平台相关操作
 
@@ -75,9 +77,23 @@ class WeChatPubController extends Controller
             switch ($message->MsgType) {
                 case 'event':
                     # 事件消息...
+                    switch ($message->Event) {
+                        case 'subscribe': # 关注事件
+                            # code...
+                            break;
+
+                        default:
+                            # code...
+                            break;
+                    }
+
                     break;
                 case 'text':
-                    # return '你好! '.$userApi->get($message->FromUserName)->nickname;
+                    $time = Carbon::now()->addHour(1);
+                    Cache::put('user',$userApi->get($message->FromUserName),$time);
+
+                    //dd($userApi->get($message->FromUserName));
+                     return '你好! '.$userApi->get($message->FromUserName)->nickname;
                     break;
                 case 'image':
                     # 图片消息...

@@ -12,42 +12,28 @@ use App\User;
 
 class WeChatOpenController extends Controller
 {
-
-    /**
-     * 微信登陆页面,只有guest用户可访问
-     *
-     * @return mixed
-     */
+    #  微信登陆页面,只有guest用户可访问
     public function register()
     {
         return  Socialite::driver('wechat')->redirect();
     }
 
-    /**
-     * 微信登陆页面,只有guest用户可访问
-     *
-     * @return mixed
-     */
+
+    # 微信登陆页面,只有guest用户可访问
     public function login()
     {
         return  Socialite::driver('wechat')->redirect();
     }
 
-    /**
-     * 用户绑定微信入口，此方法只有auth用户可访问
-     *
-     * @return mixed
-     */
+
+    #  用户绑定微信入口，此方法只有auth用户可访问
     public function bind()
     {
         return  Socialite::driver('wechat')->redirect();
     }
 
-    /**
-     * 解除微信绑定
-     *
-     * @param Request $request
-     */
+
+    #  解除微信绑定
     public function unBind(Request $request)
     {
         $user = $request->user();
@@ -56,11 +42,8 @@ class WeChatOpenController extends Controller
         return back()->withErrors('微信已解除绑定');
     }
 
-    /**
-     * 微信登陆回调处理逻辑
-     *
-     * @return mixed
-     */
+
+    #  微信登陆回调处理逻辑
     public function callback(Request $request)
     {
         $account = Socialite::driver('wechat')->user();
@@ -108,7 +91,7 @@ class WeChatOpenController extends Controller
     /**
      * 使用微信用户信息创建一个网站用户账号
      *
-     * @param $info
+     * @param $account
      * @return mixed
      */
     private function createOrLoginWxAccount($account)
@@ -116,9 +99,6 @@ class WeChatOpenController extends Controller
         $user = $this->regIfNotExist($account);
 
         Auth::login($user);
-        if(!$user->open_id){
-            dd('为了您获得更便捷服务，请扫码关注服务号，随时随地使用我们的服务');
-        }
 
         switch ($user->role){
             case 'lawyer':
