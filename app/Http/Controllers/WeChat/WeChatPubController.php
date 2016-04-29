@@ -99,19 +99,19 @@ class WeChatPubController extends Controller
 
                     //dd($userApi->get($message->FromUserName));
 
-//                    $userId = $account->openid;
-//                    $templateId = 'ngqIpbwh8bUfcSsECmogfXcV14J0tQlEpBO27izEYtY';
-//                    $url = 'http://overtrue.me';
-//                    $color = '#FF0000';
-//                    $data = array(
-//                        'first'      =>  "恭喜您完成注册的第一部分",
-//                        'keyword1'   =>  $account->nickname,
-//                        "keyword2"   =>  Carbon::now(),
-//                        "keyword3"   =>  $account->nickname,
-//                        "remark"     =>  "补充材料完成注册",
-//                    );
+                    $userId = $account->openid;
+                    $templateId = 'MCG5frr7twN4Wl8O8ZgRoMTB_hB61hUhIMeNTsKhJsc';
+                    $url = 'http://overtrue.me';
+                    $color = '#FF0000';
+                    $data = array(
+                        'first'      =>  "恭喜您完成注册的第一部分",
+                        'keyword1'   =>  $account->nickname,
+                        "keyword2"   =>  Carbon::now(),
+                        "keyword3"   =>  $account->nickname,
+                        "remark"     =>  "补充材料完成注册",
+                    );
 
-                    //$messageId = $this->notice->to($userId)->url($url)->template($templateId)->andData($data)->send();
+                    $messageId = $this->notice->uses($templateId)->andUrl($url)->withColor($color)->data($data)->send();
                     return '你好! '.$userApi->get($message->FromUserName)->nickname;
                     break;
                 case 'image':
