@@ -111,7 +111,7 @@ class WeChatPubController extends Controller
                         "remark"     =>  "补充材料完成注册",
                     );
 
-                    $messageId = $this->notice->uses($templateId)->andUrl($url)->withColor($color)->data($data)->send();
+                    $messageId = $this->notice->to($userId)->uses($templateId)->andUrl($url)->withColor($color)->data($data)->send();
                     return '你好! '.$userApi->get($message->FromUserName)->nickname;
                     break;
                 case 'image':
