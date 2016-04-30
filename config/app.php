@@ -163,6 +163,7 @@ return [
         Bican\Roles\RolesServiceProvider::class,                # 权限系统
         Backup\BackupServiceProvider::class,                    # 数据库恢复备份系统
         \Conner\Likeable\LikeableServiceProvider::class,        # 收藏功能
+        \App\Self\Notify\NotifyServiceProvider::class,          # 通知/微信模板消息
     ],
 
     /*
@@ -224,6 +225,7 @@ return [
         'Tracker'   => PragmaRX\Tracker\Vendor\Laravel\Facade::class,  # Boss级数据跟踪系统
         'Shop'      => Amsgames\LaravelShop\LaravelShopFacade::class,  # 电商服务
         'QrCode'    => SimpleSoftwareIO\QrCode\Facades\QrCode::class,  # 二维码服务
+        'Notify'    => \App\Self\Notify\NotifyFacade::class,           # 消息，微信模板消息
 
     ],
 ];

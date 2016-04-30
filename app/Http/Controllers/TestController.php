@@ -22,6 +22,7 @@ use Bican\Roles\Models\Role;
 use Bican\Roles\Models\Permission;
 use App\Place;
 use EasyWeChat\Core\AccessToken;
+use \Notify;
 
 
 class TestController extends Controller
@@ -122,6 +123,7 @@ class TestController extends Controller
 
     public function cache($key)
     {
+        Notify::send(1,2);
         $value = Cache::get($key);
         if($value){
             dd($value);

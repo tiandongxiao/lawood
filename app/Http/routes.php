@@ -188,3 +188,4 @@ Route::group(['prefix' => 'website'], function(){
 Route::resource('role','RoleController');
 Route::resource('permission','PermissionController');
 Route::resource('place','PlaceController');
+Route::resource('notification','NotificationController');
