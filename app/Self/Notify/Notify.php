@@ -43,26 +43,44 @@ class Notify
 
             # 顾客取消预约
             case 'cancel':
+                $info->title = '取消预约';
+                $info->content = '您刚刚取消了一个预约咨询，欢迎您再次使用我们的服务';
+                $info->url = url('order/'.$data['order_id']);
                 break;
 
             # 用户付款通知
             case 'payed':
+                $info->title = '付费成功';
+                $info->content = '您刚刚取消了一个预约咨询，欢迎您再次使用我们的服务';
+                $info->url = url('order/'.$data['order_id']);
                 break;
 
             # 退款通知
             case 'refund':
+                $info->title = '取消预约';
+                $info->content = '您刚刚取消了一个预约咨询，欢迎您再次使用我们的服务';
+                $info->url = url('order/'.$data['order_id']);
                 break;
 
             # 律师接单通知
             case 'accept':
+                $info->title = '律师接单';
+                $info->content = '律师已接受您的预约咨询请求，';
+                $info->url = url('order/'.$data['order_id']);
                 break;
 
             # 律师拒单通知
             case 'reject':
+                $info->title = '取消预约';
+                $info->content = '您刚刚取消了一个预约咨询，欢迎您再次使用我们的服务';
+                $info->url = url('order/'.$data['order_id']);
                 break;
 
             # 订单完成通知
             case 'complete':
+                $info->title = '开始咨询';
+                $info->content = '双方签到完成，咨询正式开始，请完成线下咨询后，对我们的律师进行评价';
+                $info->url = url('order/'.$data['order_id']);
                 break;
         }
 //
