@@ -179,6 +179,10 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('code','TestController@scanQrCode');
     Route::get('faker','TestController@faker');
     Route::get('cache/{key}','TestController@cache');
+    Route::get('notify/{email}','TestController@notifications');
+    Route::get('build','TestController@buildNotifications');
+    Route::get('read/{email}','TestController@read');
+    Route::get('unread/{email}','TestController@unread');
 });
 
 Route::group(['prefix' => 'website'], function(){

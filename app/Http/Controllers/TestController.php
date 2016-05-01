@@ -6,8 +6,10 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Item;
+use App\Notification;
 use App\Traits\GaodeMapTrait;
 use App\User;
+use Faker\Factory;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -129,5 +131,41 @@ class TestController extends Controller
             dd($value);
         }
         dd('No');
+    }
+
+    public function notifications($email)
+    {
+        $user = User::where('email',$email)->first();
+        if($user){
+            $notifications = $user->notifications;
+            dd($notifications);
+        }
+        dd('No.....................');
+    }
+
+    public function buildNotifications()
+    {
+        //$user = User::where('email',$email)->first();
+        factory(Notification::class, 20)->create();
+    }
+
+    public function read($email)
+    {
+        $user = User::where('email',$email)->first();
+        if($user){
+            $notifications = $user->notifications()->where('read',true)->get();
+            dd($notifications);
+        }
+        dd('No.....................');
+    }
+
+    public function unread($email)
+    {
+        $user = User::where('email',$email)->first();
+        if($user){
+            $notifications = $user->notifications()->where('read',false)->get();
+            dd($notifications);
+        }
+        dd('No.....................');
     }
 }

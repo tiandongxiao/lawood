@@ -6,92 +6,26 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class NotificationController extends Controller
 {
     public $viewDir = "notification";
 
+    # CRUD 列举所有
     public function index()
     {
         $records = Notification::findRequested();
         return $this->view( "index", ['records' => $records] );
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return  \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return $this->view("create");
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param    \Illuminate\Http\Request  $request
-     * @return  \Illuminate\Http\Response
-     */
-    public function store( Request $request )
-    {
-        $this->validate($request, Notification::validationRules());
-
-        Notification::create($request->all());
-
-        return redirect('/notification');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @return  \Illuminate\Http\Response
-     */
+    # CRUD 查看
     public function show(Request $request, Notification $notification)
     {
         return $this->view("show",['notification' => $notification]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @return  \Illuminate\Http\Response
-     */
-    public function edit(Request $request, Notification $notification)
-    {
-        return $this->view( "edit", ['notification' => $notification] );
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param    \Illuminate\Http\Request  $request
-     * @return  \Illuminate\Http\Response
-     */
-    public function update(Request $request, Notification $notification)
-    {
-        if( $request->isXmlHttpRequest() )
-        {
-            $data = [$request->name  => $request->value];
-            $validator = \Validator::make( $data, Notification::validationRules( $request->name ) );
-            if($validator->fails())
-                return response($validator->errors()->first( $request->name),403);
-            $notification->update($data);
-            return "Record updated";
-        }
-
-        $this->validate($request, Notification::validationRules());
-
-        $notification->update($request->all());
-
-        return redirect('/notification');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @return  \Illuminate\Http\Response
-     */
+    # CRUD 删除
     public function destroy(Request $request, Notification $notification)
     {
         $notification->delete();
@@ -103,4 +37,29 @@ class NotificationController extends Controller
         return view($this->viewDir.".".$view, $data);
     }
 
+    # * ------------------用户层面的相关操作 ------------------ * #
+
+    # 登录用户所有通告
+    public function all()
+    {
+        $user = Auth::user();
+        $notifies = $user->notifications;
+        return view('notification.all',compact('notifies'));
+    }
+
+    # 登录用户所有已读通告
+    public function read()
+    {
+        $user = Auth::user();
+        $notifies = $user->notifications()->where('read',true)->get();
+        return view('notification.read',compact('notifies'));
+    }
+
+    # 登录用户所有未读通告
+    public function unread()
+    {
+        $user = Auth::user();
+        $notifies = $user->notifications()->where('read',false)->get();
+        return view('notification.unread',compact('notifies'));
+    }
 }

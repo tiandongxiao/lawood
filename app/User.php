@@ -67,4 +67,10 @@ class User extends Model implements AuthenticatableContract,
     }
 
     # 一个律师拥有多个Item项，这个关系在ShopUserTrait中已经绑定 #
+
+    # 用户与通告消息是一对多的关系
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
 }

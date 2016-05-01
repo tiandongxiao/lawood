@@ -30,3 +30,14 @@ $factory->define(App\Place::class, function (Faker\Generator $faker) {
         'attach'  => str_random()
     ];
 });
+
+$factory->define(App\Notification::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => \App\User::where('email','lawyer@lawood.cn')->first()->id,
+        'type' => $faker->word,
+        'title' => $faker->title,
+        'content' => $faker->sentence(6),
+        'url' => $faker->url,
+        'read' => $faker->boolean
+    ];
+});
