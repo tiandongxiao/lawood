@@ -8,11 +8,8 @@ use Conner\Likeable\LikeableTrait;
 
 class Item extends ShopItemModel
 {
-    use GaodeMapTrait; # 引入高德云数据操作
-    use LikeableTrait;
-
-    protected $itemName = 'goods';
-    protected $itemRouteParams = ['slug'];
+    use GaodeMapTrait;    # 引入高德云数据操作
+    use LikeableTrait;    # 引入评级系统
 
     protected $fillable = ['user_id', 'cart_id', 'shop_id', 'sku', 'price', 'tax', 'shipping', 'currency', 'quantity', 'class', 'reference_id','category_id','location_id','yun_id'];
     

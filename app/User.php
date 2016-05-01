@@ -24,34 +24,14 @@ class User extends Model implements AuthenticatableContract,
                                     Ratingable,
                                     HasRoleAndPermissionContract
 {
-    use Authenticatable, CanResetPassword, ShopUserTrait, RatingTrait, HasRoleAndPermission ,Authorizable {
+    use Authenticatable, CanResetPassword, ShopUserTrait, RatingTrait, HasRoleAndPermission, Authorizable {
         # 为解决冲突的问题
-//        Authorizable::can insteadof HasRoleAndPermission;
-//        HasRoleAndPermission::can as may;
-          HasRoleAndPermission::can insteadof Authorizable;
-          Authorizable::can as may;
+        HasRoleAndPermission::can insteadof Authorizable;
+        Authorizable::can as may;
     }
 
-
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
     protected $table = 'users';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['name', 'phone', 'email', 'active', 'avatar', 'role', 'wx_id', 'password'];
-
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
+    protected $fillable = ['name', 'phone', 'email', 'active', 'avatar', 'role', 'union_id', 'open_id', 'password'];
     protected $hidden = ['password', 'remember_token'];
 
     # 一个律师可以拥有多个地址，以便于其扩展业务，地址信息独有不共享

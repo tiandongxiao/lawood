@@ -2,35 +2,22 @@
 
 namespace App\Http\Controllers;
 
-
-
 use App\Category;
 use App\Item;
 use App\Notification;
-use App\Traits\GaodeMapTrait;
 use App\User;
-use Faker\Factory;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
-
-use Shop;
 use Illuminate\Support\Facades\Auth;
-use Bican\Roles\Models\Role;
-use Bican\Roles\Models\Permission;
 use App\Place;
-use EasyWeChat\Core\AccessToken;
 use \Notify;
 
 
 class TestController extends Controller
 {
-    use GaodeMapTrait;
-
     public function getMakeCategories()
     {
         $root = Category::where('name','root')->first();
@@ -40,7 +27,7 @@ class TestController extends Controller
     public function drawCategory()
     {
         $root = Category::where('name','root')->first();
-        //$root = Category::findOrFail(0)->first();
+        // $root = Category::findOrFail(0)->first();
         $nodes = $root->tree()[0]['nodes'];
         return view('index',compact('nodes'));
     }
@@ -66,11 +53,6 @@ class TestController extends Controller
             'filter' => '_name:王国营+category:家庭'
         ];
         dd($this->searchByFilter($condition));
-    }
-
-    public function getLocations()
-    {
-        dd(Auth::user()->locations);
     }
 
     public function ratingUser()
@@ -104,7 +86,6 @@ class TestController extends Controller
         $item = Item::findOrFail($id);
         $item->like($user_id);
         return back();
-
     }
 
     public function unlike($id)
@@ -133,39 +114,9 @@ class TestController extends Controller
         dd('No');
     }
 
-    public function notifications($email)
-    {
-        $user = User::where('email',$email)->first();
-        if($user){
-            $notifications = $user->notifications;
-            dd($notifications);
-        }
-        dd('No.....................');
-    }
-
     public function buildNotifications()
     {
         //$user = User::where('email',$email)->first();
         factory(Notification::class, 20)->create();
-    }
-
-    public function read($email)
-    {
-        $user = User::where('email',$email)->first();
-        if($user){
-            $notifications = $user->notifications()->where('read',true)->get();
-            dd($notifications);
-        }
-        dd('No.....................');
-    }
-
-    public function unread($email)
-    {
-        $user = User::where('email',$email)->first();
-        if($user){
-            $notifications = $user->notifications()->where('read',false)->get();
-            dd($notifications);
-        }
-        dd('No.....................');
     }
 }

@@ -14,11 +14,7 @@ class PermissionController extends Controller
 {
     use PermissionDevTrait;
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    # 列举所有权限信息
     public function index()
     {
         $permissions = Permission::all();
@@ -27,22 +23,13 @@ class PermissionController extends Controller
         return view('permission.index',compact('permissions','roles'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    # 创建新的权限
     public function create()
     {
         return view('permission.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    # 保存一个新权限
     public function store(Request $request)
     {
         $name = trim($request->get('name'));
@@ -61,12 +48,7 @@ class PermissionController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    # 显示某权限具体信息
     public function show($id)
     {
         $permission = Permission::findOrFail($id);
@@ -74,12 +56,7 @@ class PermissionController extends Controller
         return view('permission.show',compact('permission'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    # 修改某个权限信息
     public function edit($id)
     {
         $permission = Permission::findOrFail($id);
@@ -88,13 +65,7 @@ class PermissionController extends Controller
         return view('permission.edit',compact('permission','roles'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    # 更新某个权限信息
     public function update(Request $request, $id)
     {
         $permission = Permission::findOrFail($id);
@@ -112,12 +83,7 @@ class PermissionController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    # 删除某个权限信息
     public function destroy($id)
     {
         $permission = Permission::findOrFail($id);

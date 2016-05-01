@@ -55,14 +55,14 @@ class ConsultController extends Controller
     # 显示一条consult详细信息
     public function show($id)
     {
-        $consult = Item::find($id);
+        $consult = Item::findOrFail($id);
         return view('consult.show');
     }
 
     # 编辑律师咨询
     public function edit($id)
     {
-        $item = Item::find($id);
+        $item = Item::findOrFail($id);
         return view('consult.update',compact($item));
     }
 
@@ -106,7 +106,7 @@ class ConsultController extends Controller
                     $item->poi()->save($poi);
 
                     # 为避免高德云图请求太快出现问题，故让其延迟一些
-                    usleep(50);
+                    usleep(10);
                 }
             }
         }
@@ -118,12 +118,14 @@ class ConsultController extends Controller
     {
         # 在当前律师所有服务项中查找有没有提供此项服务
         $items = Auth::user()->items;
+
         foreach($items as $item){
             if($item->category_id == $category_id && $item->location_id == $location_id){
                 Log::info('This item is EXIST ');
                 return true;
             }
         }
+
         Log::info('This item is NOT-EXIST ');
         return false;
     }
