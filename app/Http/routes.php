@@ -173,7 +173,7 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('rate_item','TestController@ratingItem');
     Route::get('code','TestController@scanQrCode');
     Route::get('faker','TestController@faker');
-    Route::get('cache/{key}','TestController@cache');
+    Route::get('cache','TestController@cache');
     Route::get('build','TestController@buildNotifications');
 });
 
@@ -187,8 +187,8 @@ Route::resource('permission','PermissionController');
 Route::resource('place','PlaceController');
 Route::resource('notification','NotificationController');
 
-Route::group(['prefix' => 'permissions'], function(){
-    Route::get('/','UserPermissionController@index');      # 登录用户所有权限    
+Route::group(['prefix' => 'user'], function(){
+    Route::get('/','UserController@index');      # 登录用户所有权限
 });
 
 Route::group(['prefix' => 'notify'], function(){

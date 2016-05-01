@@ -14,6 +14,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use App\Place;
 use \Notify;
+use Bican\Roles\Models\Role;
 
 
 class TestController extends Controller
@@ -104,14 +105,17 @@ class TestController extends Controller
         $all = factory(Place::class, 100)->create();
     }
 
-    public function cache($key)
+    public function cache()
     {
-        Notify::send(1,2);
-        $value = Cache::get($key);
-        if($value){
-            dd($value);
-        }
-        dd('No');
+        $adminRole = Role::where('slug','admin')->first();
+        $admin = User::where('email','admin@lawood.cn')->first();
+        $admin->attachRole($adminRole);
+//        Notify::send(1,2);
+//        $value = Cache::get($key);
+//        if($value){
+//            dd($value);
+//        }
+//        dd('No');
     }
 
     public function buildNotifications()
