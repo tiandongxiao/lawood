@@ -52,8 +52,10 @@ class PermissionController extends Controller
     public function show($id)
     {
         $permission = Permission::findOrFail($id);
+        $roles = $permission->roles;
+        $users = $permission->users;
 
-        return view('permission.show',compact('permission'));
+        return view('permission.show',compact('permission','roles','users'));
     }
 
     # 修改某个权限信息
