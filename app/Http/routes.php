@@ -131,7 +131,7 @@ Route::group(['prefix' => 'consult'], function(){
 
 Route::group(['prefix' => 'client'], function(){
     Route::get('center','User\ClientController@center');
-    Route::get('consults','UserClientController@getConsults');
+    Route::get('consults','User\ClientController@getConsults');
     Route::get('buy/{id}','User\ClientController@getPlaceOrder');
 
     Route::get('pending','User\ClientController@pendingOrders');
@@ -152,7 +152,7 @@ Route::group(['prefix' => 'wxpay'], function(){
 });
 
 Route::group(['prefix' => 'payment'], function(){
-    Route::get('chose/{item_id}', 'ClientController@buy');  # 微信扫码支付方式
+    Route::get('chose/{item_id}', 'User\ClientController@buy');  # 微信扫码支付方式
 });
 
 Route::group(['prefix' => 'order'], function(){
@@ -178,7 +178,7 @@ Route::group(['prefix' => 'test'], function(){
 });
 
 Route::group(['prefix' => 'website'], function(){
-    Route::get('settings','WebController@settings');
+    Route::get('settings','WebsiteController@settings');
 });
 
 // Route::resource('pois','PoisController');             # 地图业务服务兴趣点，不会对其直接进行操作，所以注释掉

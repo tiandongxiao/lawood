@@ -16,7 +16,7 @@
                         <td>{{ $permission->name }}</td>
                         <td>{{$permission->slug}}</td>
                         <td>{{$permission->description}}</td>
-                        <td><a href="{{url('$permission/'.$permission->id)}}">查看</a></td>
+                        <td><a href="{{url('admin/permission/'.$permission->id)}}">查看</a></td>
                     </tr>
                 @endforeach
                 </tbody>
