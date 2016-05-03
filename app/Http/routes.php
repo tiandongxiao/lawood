@@ -119,9 +119,9 @@ Route::group(['prefix' => 'lawyer'], function(){
 
 Route::group(['prefix' => 'category'], function(){
     # 律师相关
-    Route::get('/','User\LawyerController@getCategories');             # 律师服务门类管理
-    Route::get('bind/{id}','User\LawyerController@bindCategory');      # 绑定新的服务门类
-    Route::get('unbind/{id}','User\LawyerController@unbindCategory');  # 解绑旧有服务门类
+    Route::get('/','User\LawyerController@getCategories');              # 律师服务门类管理
+    Route::get('bind/{id}','User\LawyerController@bindCategory');       # 绑定新的服务门类
+    Route::get('unbind/{id}','User\LawyerController@unbindCategory');   # 解绑旧有服务门类
 });
 
 Route::group(['prefix' => 'consult'], function(){
@@ -146,7 +146,7 @@ Route::group(['prefix' => 'wxpay'], function(){
     Route::get('native/{id}', 'WeChat\WxPayController@nativePay'); # 微信扫码支付
 
     Route::get('js/{id}', 'WeChat\WxPayController@JSPay')
-        ->middleware(['wechat.oauth']);  # 微信浏览器内部支付方式
+        ->middleware(['wechat.oauth']);     # 微信浏览器内部支付方式
 
     Route::get('refund/{id}','WeChat\WxPayController@refundByOrderNo'); # 微信退款
 });
@@ -181,18 +181,28 @@ Route::group(['prefix' => 'website'], function(){
     Route::get('settings','WebController@settings');
 });
 
-// Route::resource('pois','PoisController');    # 地图业务服务兴趣点，不会对其直接进行操作，所以注释掉
-Route::resource('role','RoleController');
-Route::resource('permission','PermissionController');
-Route::resource('place','PlaceController');
-Route::resource('notification','NotificationController');
+// Route::resource('pois','PoisController');             # 地图业务服务兴趣点，不会对其直接进行操作，所以注释掉
 
-Route::group(['prefix' => 'user'], function(){
-    Route::get('/','UserController@index');      # 登录用户所有权限
-});
+Route::resource('place', 'PlaceController');
+Route::resource('notification', 'NotificationController');
 
 Route::group(['prefix' => 'notify'], function(){
-    Route::get('all','NotificationController@all');      # 登录用户所有通告消息
-    Route::get('read','NotificationController@read');    # 登录用户所有已读通告消息
-    Route::get('unread','NotificationController@read');  # 登录用户所有未读通告消息
+    Route::get('all','NotificationController@all');       # 登录用户所有通告消息
+    Route::get('read','NotificationController@read');     # 登录用户所有已读通告消息
+    Route::get('unread','NotificationController@read');   # 登录用户所有未读通告消息
+});
+
+Route::group(['prefix' => 'admin'], function(){
+    Route::resource('role', 'RoleController');
+    Route::resource('permission', 'PermissionController');
+
+    Route::get('user','UserController@index');                                               # 所有用户
+
+    Route::get('perms/{user_id}','UserController@permissions');                              # 用户权限信息
+    Route::get('perms/attach/{user_id}/{perm_id}','UserController@attachPermission');        # 授予用户权限
+    Route::get('perms/detach/{user_id}/{perm_id}','UserController@detachPermission');        # 解除用户权限
+
+    Route::get('roles/{user_id}','UserController@roles');                                    # 用户角色信息
+    Route::get('roles/attach/{user_id}/{role_id}','UserController@attachRole');              # 首页用户角色
+    Route::get('roles/detach/{user_id}/{role_id}','UserController@detachRole');              # 解除用户角色
 });

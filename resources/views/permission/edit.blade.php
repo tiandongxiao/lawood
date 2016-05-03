@@ -5,7 +5,7 @@
             <h3 class="box-title">编辑权限</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
-        <form class="form-horizontal" action="{{ URL('permission/'.$permission->id) }}" method="POST">
+        <form class="form-horizontal" action="{{ URL('admin/permission/'.$permission->id) }}" method="POST">
             <input name="_method" type="hidden" value="PUT">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="box-body">

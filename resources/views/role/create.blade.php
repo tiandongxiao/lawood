@@ -5,7 +5,7 @@
             <h3 class="box-title">新增角色</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
-        <form class="form-horizontal" action="{{ URL('role') }}" method="POST">
+        <form class="form-horizontal" action="{{ URL('admin/role') }}" method="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="box-body">
                 <div class="form-group">

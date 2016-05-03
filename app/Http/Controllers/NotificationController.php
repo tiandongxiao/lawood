@@ -12,10 +12,10 @@ class NotificationController extends Controller
 {
     public $viewDir = "notification";
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
 
     # CRUD 列举所有
     public function index()

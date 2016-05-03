@@ -42,7 +42,7 @@ class PermissionController extends Controller
         ]);
         if($permission){
             $this->authToAdmin($permission);
-            return redirect('permission');
+            return redirect('admin/permission');
         }else{
             return back()->withInput()->withErrors('创建失败');
         }
@@ -77,7 +77,7 @@ class PermissionController extends Controller
 
         if ($permission->save()) {
             $this->authPermission($permission,$role_array);
-            return redirect('permission');
+            return redirect('admin/permission');
         } else {
             return back()->withInput()->withErrors('更新失败！');
         }
@@ -89,6 +89,6 @@ class PermissionController extends Controller
         $permission = Permission::findOrFail($id);
         $permission->delete();
 
-        return redirect('permission');
+        return redirect('admin/permission');
     }
 }

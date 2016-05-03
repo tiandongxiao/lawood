@@ -10,11 +10,6 @@ use App\Http\Controllers\Controller;
 
 class RoleController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     # 列举所有角色
     public function index()
     {
@@ -41,7 +36,7 @@ class RoleController extends Controller
         ]);
 
         if($role){
-            return redirect('role');
+            return redirect('admin/role');
         }else{
             return back()->withInput()->withErrors('创建失败');
         }
@@ -77,7 +72,7 @@ class RoleController extends Controller
         $role->description = $request->get('desc');
 
         if ($role->save()) {
-            return redirect('role');
+            return redirect('admin/role');
         } else {
             return back()->withInput()->withErrors('更新失败！');
         }
@@ -88,6 +83,7 @@ class RoleController extends Controller
     {
         $role = Role::findOrFail($id);
         $role->delete();
-        return back();
+
+        return redirect('admin/role');
     }
 }

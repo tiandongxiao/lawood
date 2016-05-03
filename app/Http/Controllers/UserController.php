@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -22,23 +21,29 @@ class UserController extends Controller
     # 所有用户信息
     public function index()
     {
-        $users = User::findRequested();        
+        $users = User::findRequested();
         return view('user.index',compact('users'));
+    }
+
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+        return view('user.show',compact('user'));
     }
 
     # 用户所有权限（角色权限，专属权限）
     public function permissions($id)
     {
         $user = User::findOrFail($id);
-        $role_perms = $user->rolePermissions(); # 角色权限
-        $user_perms = $user->userPermissions(); # 专属权限
+        $role_perms = $user->rolePermissions()->get(); # 角色权限
+        $user_perms = $user->userPermissions()->get(); # 专属权限
 
         # 为赋予的权限
-        $x_permissions = Permission::all()->filter(function($item) use($user){
-            return $item->user_id != $user->id;
+        $x_perms = Permission::all()->filter(function($item) use($user){
+            return !$user->hasPermission($item->id);
         });
 
-        return view('permission.user',compact('role_perms','user_perms','x_permissions'));
+        return view('user.perms',compact('id', 'role_perms', 'user_perms', 'x_perms'));
     }
 
     # 用户的角色信息
@@ -46,8 +51,12 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user_roles = $user->roles;
-        $roles = Role::all();
-        return view('user.role',compact('user_roles','roles'));        
+
+        $x_roles = Role::all()->filter(function($item) use($user){
+            return !$item->users->contains($user);
+        });
+
+        return view('user.roles',compact('id', 'user_roles', 'x_roles'));
     }
 
     # 绑定角色
@@ -55,6 +64,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($user_id);
         $user->attachRole($role_id);
+
         return back();
     }
 
@@ -63,22 +73,29 @@ class UserController extends Controller
     {
         $user = User::findOrFail($user_id);
         $user->detachRole($role_id);
+
         return back();
     }
 
     # 绑定权限
-    public function attachPermission($user_id,$permission_id)
+    public function attachPermission($user_id,$perm_id)
     {
         $user = User::findOrFail($user_id);
-        $user->attachPermission($permission_id);
+        $perm = Permission::findOrFail($perm_id);
+
+        $user->attachPermission($perm);
+
         return back();
     }
 
     # 解除权限
-    public function detachPermission($user_id,$permission_id)
+    public function detachPermission($user_id,$perm_id)
     {
         $user = User::findOrFail($user_id);
-        $user->detachPermission($permission_id);
+        $perm = Permission::findOrFail($perm_id);
+
+        $user->detachPermission($perm);
+
         return back();
     }
 }

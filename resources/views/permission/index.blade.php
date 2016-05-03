@@ -2,7 +2,7 @@
 @section('content')
     <div class="box">
         <div class="box-header with-border">
-            <a href="{{ url('permission/create') }}" class="btn btn-lg btn-warning" >新增权限</a>
+            <a href="{{ url('admin/permission/create') }}" class="btn btn-lg btn-warning" >新增权限</a>
         </div><!-- /.box-header -->
         <div class="box-body">
             <table class="table table-bordered text-center">
@@ -22,10 +22,10 @@
                         <td>{{$permission->slug}}</td>
                         <td>{{$permission->description}}</td>
                         <td>
-                            <a href="{{ url('permission/'.$permission->id.'/edit') }}" class="btn btn-success">编辑</a>
+                            <a href="{{ url('admin/permission/'.$permission->id.'/edit') }}" class="btn btn-success">编辑</a>
                         </td>
                         <td>
-                            <form action="{{ url('permission/'.$permission->id) }}" method="POST">
+                            <form action="{{ url('admin/permission/'.$permission->id) }}" method="POST">
                                 <input name="_method" type="hidden" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-danger">删除</button>
