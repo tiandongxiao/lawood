@@ -46,6 +46,7 @@ class Handler extends ExceptionHandler
         if ($e instanceof ModelNotFoundException) {
             $e = new NotFoundHttpException($e->getMessage(), $e);
         }
+
         if($e instanceof RoleDeniedException){
             return redirect()->back();
         }

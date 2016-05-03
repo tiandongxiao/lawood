@@ -17,6 +17,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 use Bican\Roles\Traits\HasRoleAndPermission;
 use Bican\Roles\Contracts\HasRoleAndPermission as HasRoleAndPermissionContract;
+use Illuminate\Support\Facades\Request;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
@@ -52,5 +53,19 @@ class User extends Model implements AuthenticatableContract,
     public function notifications()
     {
         return $this->hasMany(Notification::class);
+    }
+
+    public static function findRequested()
+    {
+        $query = User::query();
+        # 根据用户输入搜索信息
+        Request::input('name') and $query->where('name','like','%'.Request::input('name').'%');
+        Request::input('phone') and $query->where('phone',Request::input('phone'));
+        Request::input('email') and $query->where('email','like','%'.Request::input('email').'%');
+        Request::input('union_id') and $query->where('union_id','like','%'.Request::input('union_id').'%');
+        Request::input('open_id') and $query->where('open_id','like','%'.Request::input('open_id').'%');
+
+        # 对结果进行分页
+        return $query->paginate(15);
     }
 }
