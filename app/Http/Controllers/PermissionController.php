@@ -40,6 +40,7 @@ class PermissionController extends Controller
             'slug'        =>  $slug,
             'description' =>  $request->get('desc')
         ]);
+
         if($permission){
             $this->authToAdmin($permission);
             return redirect('admin/permission');

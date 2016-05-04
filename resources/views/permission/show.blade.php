@@ -13,16 +13,16 @@
                     <td>{{ $permission->name }}</td>
                     <td>{{$permission->slug}}</td>
                     <td>{{$permission->description}}</td>
-
                 </tr>
                 </tbody>
             </table>
         </div><!-- /.box-header -->
         <br/><br/>
         <div class="box-body">
-            <h4>所属角色</h4>
+            <h4 class="font-light">所属角色</h4>
             <table class="table table-bordered text-center">
-                <tbody><tr>
+                <tbody>
+                <tr style="font-family: '微软雅黑 Light'">
                     <th>角色名称</th>
                     <th>机读名称</th>
                     <th>角色描述</th>
@@ -39,7 +39,8 @@
             <br/><br/>
             <h4>所属用户</h4>
             <table class="table table-bordered text-center">
-                <tbody><tr>
+                <tbody>
+                <tr>
                     <th>用户名称</th>
                     <th>手机号码</th>
                     <th>电子邮件</th>

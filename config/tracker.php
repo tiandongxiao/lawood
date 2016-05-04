@@ -5,12 +5,12 @@ return [
 	/**
 	 * Enable it?
 	 */
-	'enabled' => true,
+	'enabled' => false,
 
 	/**
 	 * Robots should be tracked?
 	 */
-	'do_not_track_robots' => false,
+	'do_not_track_robots' => true,
 
 	/**
 	 * Which environments are not trackable?
@@ -54,7 +54,7 @@ return [
 	 *    - Error log
 	 *    - URL queries (including values)
 	 */
-	'log_enabled' => true,
+	'log_enabled' => false,
 
 	/**
 	 * Log SQL queries?

@@ -47,7 +47,9 @@ class RoleController extends Controller
     {
         $role = Role::findOrFail($id);
         $permissions = $role->permissions;
-        return view('role.show',compact('role','permissions'));
+        $users = $role->users;
+
+        return view('role.show',compact('role','permissions','users'));
     }
 
     # 编辑角色信息

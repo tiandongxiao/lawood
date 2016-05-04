@@ -82,7 +82,7 @@ Route::group(['prefix' => 'wx'], function() {
 Route::group(['prefix' => 'tool'], function(){
     Route::post('cpt_check','ToolsController@captchaCheck');
     Route::get('cpt','ToolsController@getCaptcha');
-    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+    Route::get('logs', 'WebsiteController@logs');
 });
 
 Route::group(['prefix' => 'communicate'], function(){
