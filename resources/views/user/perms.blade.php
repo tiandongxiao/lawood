@@ -16,7 +16,7 @@
                         <td>{{ $permission->name }}</td>
                         <td>{{$permission->slug}}</td>
                         <td>{{$permission->description}}</td>
-                        <td><a href="{{url('admin/permission/'.$permission->id)}}">查看</a></td>
+                        <td><a href="{{url('site/permission/'.$permission->id)}}">查看</a></td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -37,7 +37,7 @@
                         <td>{{ $permission->name }}</td>
                         <td>{{$permission->slug}}</td>
                         <td>{{$permission->description}}</td>
-                        <td><a href="{{url('admin/perms/detach/'.$id.'/'.$permission)}}">解除</a></td>
+                        <td><a href="{{url('site/perms/detach/'.$id.'/'.$permission)}}">解除</a></td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -56,7 +56,7 @@
                         <td>{{ $permission->name }}</td>
                         <td>{{$permission->slug}}</td>
                         <td>{{$permission->description}}</td>
-                        <td><a href="{{url('admin/perms/attach/'.$id.'/'.$permission->id)}}">授权</a></td>
+                        <td><a href="{{url('site/perms/attach/'.$id.'/'.$permission->id)}}">授权</a></td>
                     </tr>
                 @endforeach
                 </tbody>

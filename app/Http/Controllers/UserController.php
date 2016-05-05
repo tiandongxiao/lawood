@@ -25,10 +25,31 @@ class UserController extends Controller
         return view('user.index',compact('users'));
     }
 
+    # 用户详细信息
     public function show($id)
     {
         $user = User::findOrFail($id);
         return view('user.show',compact('user'));
+    }
+
+    # 用户详细信息
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+        return view('user.edit',compact('user'));
+    }
+
+    public function update(Request $request,$id)
+    {
+        $user = User::findOrFail($id);
+        
+        return back();
+    }
+
+    public function destroy($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
     }
 
     # 用户所有权限（角色权限，专属权限）

@@ -13,35 +13,40 @@
                 <a href="#"><i class="icon-camera-retro"></i> 在线</a>
             </div>
         </div>
-        <!-- search form (Optional) -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                <span class="input-group-btn">
-                  <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                </span>
-            </div>
-        </form>
-        <!-- /.search form -->
+        <hr/>
+
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">个人工作区</li>
-            <!-- Optionally, you can add icons to the links -->
-            <li class="active">
-                <a href="{{url('admin/calendar')}}">
-                    <i class="fa fa-calendar"></i> <span>任务日历</span>
+            <li>
+                <a href="{{url('site/user')}}">
+                    <i class="fa fa-user"></i> <span>用户管理</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{url('site/role')}}">
+                    <i class="fa fa-unlock-alt"></i> <span>角色管理</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{url('site/permission')}}">
+                    <i class="fa fa-key"></i> <span>权限管理</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{url('site/calendar')}}">
+                    <i class="fa fa-calendar-check-o"></i> <span>任务日历</span>
                     <small class="label pull-right bg-red">3</small>
                 </a>
             </li>
-            <li><a href="#"><span>时间轴线</span></a></li>
-            <li class="treeview">
-                <a href="#"><span>用户管理</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="{{url('role/create')}}">创建角色</a></li>
-                    <li><a href="#">角色管理</a></li>
-                    <li><a href="#">权限管理</a></li>
-                    <li><a href="#">用户列表</a></li>
-                </ul>
+            <li>
+                <a href="{{url('site/logs')}}">
+                    <i class="fa  fa-pencil"></i> <span>日志分析</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{url('site/settings')}}">
+                    <i class="fa fa-cog"></i> <span>设置</span>
+                </a>
             </li>
         </ul><!-- /.sidebar-menu -->
     </section>

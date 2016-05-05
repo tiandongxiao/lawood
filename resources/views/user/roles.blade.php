@@ -16,7 +16,7 @@
                         <td>{{ $role->name }}</td>
                         <td>{{$role->slug}}</td>
                         <td>{{$role->description}}</td>
-                        <td><a href="{{url('admin/roles/detach/'.$id.'/'.$role->id)}}">解除</a></td>
+                        <td><a href="{{url('site/roles/detach/'.$id.'/'.$role->id)}}">解除</a></td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -37,7 +37,7 @@
                         <td>{{ $role->name }}</td>
                         <td>{{$role->slug}}</td>
                         <td>{{$role->description}}</td>
-                        <td><a href="{{url('admin/roles/attach/'.$id.'/'.$role->id)}}">授权</a></td>
+                        <td><a href="{{url('site/roles/attach/'.$id.'/'.$role->id)}}">授权</a></td>
                     </tr>
                 @endforeach
                 </tbody>

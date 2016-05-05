@@ -7,14 +7,16 @@
         <div class="box-body">
             <table class="table table-bordered text-center">
                 <thead>
-                <tr class="header-row">
+                <tr class="header-row" style="font-family: '微软雅黑 Light'">
                     <th>用户名</th>
                     <th>电话</th>
-                    <th>email</th>
+                    <th>Email</th>
                     <th>Union ID</th>
                     <th>Open ID</th>
                     <th>角色</th>
                     <th>权限</th>
+                    <th>删除</th>
+                    <th>编辑</th>
                 </tr>
                 <tr class="search-row">
                     <form class="search-form">
@@ -35,8 +37,8 @@
                         <td>{{$user->email}}</td>
                         <td>{{$user->union_id}}</td>
                         <td>{{$user->open_id}}</td>
-                        <td><a href="{{url('admin/roles/'.$user->id)}}">角色信息</a></td>
-                        <td><a href="{{url('admin/perms/'.$user->id)}}">权限信息</a></td>
+                        <td><a href="{{url('site/roles/'.$user->id)}}">角色信息</a></td>
+                        <td><a href="{{url('site/perms/'.$user->id)}}">权限信息</a></td>
                     </tr>
                 @endforeach
                 </tbody>

@@ -82,7 +82,6 @@ Route::group(['prefix' => 'wx'], function() {
 Route::group(['prefix' => 'tool'], function(){
     Route::post('cpt_check','ToolsController@captchaCheck');
     Route::get('cpt','ToolsController@getCaptcha');
-    Route::get('logs', 'WebsiteController@logs');
 });
 
 Route::group(['prefix' => 'communicate'], function(){
@@ -177,7 +176,21 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('build','TestController@buildNotifications');
 });
 
-Route::group(['prefix' => 'website'], function(){
+Route::group(['prefix' => 'site'], function(){
+    Route::resource('role', 'RoleController');
+    Route::resource('permission', 'PermissionController');
+
+    Route::get('user','UserController@index');                                               # 所有用户
+
+    Route::get('perms/{user_id}','UserController@permissions');                              # 用户权限信息
+    Route::get('perms/attach/{user_id}/{perm_id}','UserController@attachPermission');        # 授予用户权限
+    Route::get('perms/detach/{user_id}/{perm_id}','UserController@detachPermission');        # 解除用户权限
+
+    Route::get('roles/{user_id}','UserController@roles');                                    # 用户角色信息
+    Route::get('roles/attach/{user_id}/{role_id}','UserController@attachRole');              # 首页用户角色
+    Route::get('roles/detach/{user_id}/{role_id}','UserController@detachRole');              # 解除用户角色
+
+    Route::get('logs', 'WebsiteController@logs');
     Route::get('settings','WebsiteController@settings');
 });
 
@@ -193,16 +206,5 @@ Route::group(['prefix' => 'notify'], function(){
 });
 
 Route::group(['prefix' => 'admin'], function(){
-    Route::resource('role', 'RoleController');
-    Route::resource('permission', 'PermissionController');
 
-    Route::get('user','UserController@index');                                               # 所有用户
-
-    Route::get('perms/{user_id}','UserController@permissions');                              # 用户权限信息
-    Route::get('perms/attach/{user_id}/{perm_id}','UserController@attachPermission');        # 授予用户权限
-    Route::get('perms/detach/{user_id}/{perm_id}','UserController@detachPermission');        # 解除用户权限
-
-    Route::get('roles/{user_id}','UserController@roles');                                    # 用户角色信息
-    Route::get('roles/attach/{user_id}/{role_id}','UserController@attachRole');              # 首页用户角色
-    Route::get('roles/detach/{user_id}/{role_id}','UserController@detachRole');              # 解除用户角色
 });

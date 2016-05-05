@@ -14,20 +14,20 @@
     @yield('css')
     <!-- Theme style -->
     <link rel="stylesheet" href="{{URL::asset('/')}}css/AdminLTE.min.css">
-    <link rel="stylesheet" href="{{URL::asset('/')}}css/skins/skin-green.min.css">
+    <link rel="stylesheet" href="{{URL::asset('/')}}css/skins/skin-purple.min.css">
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="hold-transition skin-green sidebar-mini">
+<body class="hold-transition skin-purple sidebar-menu">
 <div class="wrapper">
     <!-- Header -->
     @include('tpl.admin.area.header')
             <!-- Sidebar -->
     @include('tpl.admin.area.sidebar')
 
-            <!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -37,8 +37,7 @@
             </h1>
             <!-- You can dynamically generate breadcrumbs here -->
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                <li class="active">Here</li>
+                <li><a><i class="fa fa-dashboard"></i></a></li>
             </ol>
         </section>
 

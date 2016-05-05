@@ -36,7 +36,7 @@ class RoleController extends Controller
         ]);
 
         if($role){
-            return redirect('admin/role');
+            return redirect('site/role');
         }else{
             return back()->withInput()->withErrors('创建失败');
         }
@@ -74,7 +74,7 @@ class RoleController extends Controller
         $role->description = $request->get('desc');
 
         if ($role->save()) {
-            return redirect('admin/role');
+            return redirect('site/role');
         } else {
             return back()->withInput()->withErrors('更新失败！');
         }
@@ -86,6 +86,6 @@ class RoleController extends Controller
         $role = Role::findOrFail($id);
         $role->delete();
 
-        return redirect('admin/role');
+        return redirect('site/role');
     }
 }
