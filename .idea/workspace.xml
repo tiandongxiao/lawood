@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Traits/CategoryDevTrait.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Traits/ConsultDevTrait.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Traits/LocationDevTrait.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/consult/all.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/consult/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/consult/show.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/lawyer/category/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/lawyer/consult/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/lawyer/location/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/lawyer/location/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/lawyer/notify/index.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/category/list.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/lawyer/categories.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/lawyer/consult.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/lawyer/consults.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/lawyer/locations.blade.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ConsultController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConsultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Pois.php" afterPath="$PROJECT_DIR$/app/Pois.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/payment/chose.blade.php" afterPath="$PROJECT_DIR$/resources/views/payment/chose.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tpl/lawyer/area/sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/tpl/lawyer/area/sidebar.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -137,8 +113,8 @@
           <file leaf-file-name="WxPayController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="163">
-                  <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+                <state relative-caret-position="328">
+                  <caret line="114" column="18" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -197,7 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/seeds/RolePermissionSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/UserRolePermSeeder.php" />
         <option value="$PROJECT_DIR$/public/css/AdminLTE.css" />
@@ -248,6 +223,7 @@
         <option value="$PROJECT_DIR$/resources/views/consult/all.blade.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" />
       </list>
     </option>
   </component>
@@ -748,7 +724,7 @@
       <workItem from="1462321094819" duration="15960000" />
       <workItem from="1462354240984" duration="755000" />
       <workItem from="1462355028168" duration="11818000" />
-      <workItem from="1462442080004" duration="27881000" />
+      <workItem from="1462442080004" duration="28119000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -873,7 +849,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="366845000" />
+    <option name="totallyTimeSpent" value="367083000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1364,8 +1340,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+        <state relative-caret-position="328">
+          <caret line="114" column="18" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
           <folding />
         </state>
       </provider>

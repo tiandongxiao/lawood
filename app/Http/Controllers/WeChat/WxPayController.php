@@ -112,6 +112,7 @@ class WxPayController extends Controller
     {
         $user = $this->regIfNotExist();
         Auth::login($user);
+        dd($user);
 
         $order = $this->prePay($item_id, 'wx_js');
 
