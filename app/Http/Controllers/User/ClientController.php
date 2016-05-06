@@ -31,9 +31,9 @@ class ClientController extends Controller
         return view('client.board');
     }
 
-    public function buy($item_id)
+    public function orders()
     {
-        return view('payment.chose',compact('item_id'));
+        dd($this->user->orders);
     }
 
     # 返回未付款的订单列表

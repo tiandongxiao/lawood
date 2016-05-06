@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/User/ClientController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/ClientController.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,16 +28,6 @@
     <splitter split-orientation="horizontal" split-proportion="0.5325602">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="jsapi.blade.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/payment/wxpay/jsapi.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="858">
-                  <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="WxPayController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -71,14 +60,24 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="LawyerController.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="LawyerController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="528">
-                  <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+                <state relative-caret-position="165">
+                  <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
                   <folding>
                     <element signature="e#45#77#0#PHP" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ClientController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/ClientController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="297">
+                  <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -202,7 +201,6 @@
         <option value="$PROJECT_DIR$/resources/views/client/board.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tpl/client/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tpl/client/area/sidebar.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/User/ClientController.php" />
         <option value="$PROJECT_DIR$/database/factories/ModelFactory.php" />
         <option value="$PROJECT_DIR$/resources/views/tpl/lawyer/area/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/lawyer/notify/index.blade.php" />
@@ -227,6 +225,7 @@
         <option value="$PROJECT_DIR$/resources/views/payment/wxpay/jsapi.blade.php" />
         <option value="$PROJECT_DIR$/app/Self/Payment/WxJSPay.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/User/ClientController.php" />
       </list>
     </option>
   </component>
@@ -647,6 +646,32 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="User" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Auth" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -759,7 +784,7 @@
       <workItem from="1462354240984" duration="755000" />
       <workItem from="1462355028168" duration="11818000" />
       <workItem from="1462442080004" duration="31386000" />
-      <workItem from="1462534761192" duration="853000" />
+      <workItem from="1462534761192" duration="1169000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -884,7 +909,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="371203000" />
+    <option name="totallyTimeSpent" value="371519000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1127,13 +1152,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/ClientController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="35" column="56" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/jenssegers/agent/src/Facades/Agent.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1310,11 +1328,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+        <state relative-caret-position="165">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
           <folding>
             <element signature="e#45#77#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/ClientController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
