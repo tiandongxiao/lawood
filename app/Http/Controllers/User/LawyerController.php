@@ -37,7 +37,7 @@ class LawyerController extends Controller
 
     public function orders()
     {
-        $orders = $this->getPendingOrders($this->user);
+        $orders = $this->getOrders($this->user);
         #$orders = $this->user->orders;
         dd($orders);
     }

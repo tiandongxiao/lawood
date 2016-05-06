@@ -105,6 +105,11 @@ trait ShopDevTrait
         return Item::find($order->items[0]->reference_id)->user;
     }
 
+    public function getOrders($user)
+    {
+        $this->getOrdersByStatus($user);
+    }
+
     # 获取待付款的用户订单
     public function getPendingOrders($user)
     {
@@ -136,7 +141,7 @@ trait ShopDevTrait
     }
 
     # 根据用户类型和状态码来获取订单列表
-    public function getOrdersByStatus($user,$status)
+    public function getOrdersByStatus($user, $status = 'all')
     {
         switch($user->role){
             case 'lawyer':
@@ -150,15 +155,21 @@ trait ShopDevTrait
                     foreach($services as $service){
                         # 每一个条目对应一个Order订单
                         $order = $service->order;
-                        if($order->statusCode == $status)
+                        if($status == 'all'){
                             $orders[] = $order;
+                        }else{
+                            if($order->statusCode == $status)
+                                $orders[] = $order;
+                        }
                     }
                 }
                 return $orders;
             case 'client':
                 # Shop开发包的这个函数不怎么好用，故而采用下面的方式
                 //return Order::findByUser($user->id,$status);
-
+                if($status == 'all'){
+                    return $this->user->orders;
+                }
                 return Order::whereUser($user->id)
                     ->whereStatus($status)->get();
         }
