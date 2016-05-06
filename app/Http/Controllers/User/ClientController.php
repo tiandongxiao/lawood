@@ -16,55 +16,44 @@ class ClientController extends Controller
 {
     use ShopDevTrait;
 
+    private $user;
+
+    public function __construct()
+    {
+        $this->middleware('auth',['except'=>'board']);
+        $this->middleware('role:client',['except'=>'board']);
+        $this->user = Auth::user();
+    }
+
+    # 总览面板
+    public function board()
+    {
+        return view('client.board');
+    }
+
     public function buy($item_id)
     {
         return view('payment.chose',compact('item_id'));
     }
 
-    public function routePath()
-    {
-        if(Auth::check()){
-            $user = Auth::user();
-            if($user->phone || $user->name){
-                return redirect('/')->withErrors('您需要提供您的手机号码和真实姓名，以便律师联系您');
-            }
-        }
-        return redirect('register/client')->withErrors('您需要先注册为咨询客户');
-    }
-
     # 返回未付款的订单列表
     public function pendingOrders()
     {
-        $user = Auth::user();
-        $user->role = 'client';
-        $user->save();
-
-        $orders = $this->getPendingOrders($user);
-
-        return view('client.status.pending',compact('orders'));
+        $orders = $this->getPendingOrders($this->user);
+        return view('client.order.pending',compact('orders'));
     }
 
     # 返回已经完成的订单列表
     public function completedOrders()
     {
-        $user = Auth::user();
-        $user->role = 'client';
-        $user->save();
-
-        $orders = $this->getCompletedOrders($user);
-
-        return view('client.status.completed',compact('orders'));
+        $orders = $this->getCompletedOrders($this->user);
+        return view('client.order.completed',compact('orders'));
     }
 
     # 返回已支付订单列表
     public function payedOrders()
     {
-        $user = Auth::user();
-        $user->role = 'client';
-        $user->save();
-
-        $orders = $this->getPayedOrders($user);
-
-        return view('client.status.payed',compact('orders'));
+        $orders = $this->getPayedOrders($this->user);
+        return view('client.order.payed',compact('orders'));
     }
 }

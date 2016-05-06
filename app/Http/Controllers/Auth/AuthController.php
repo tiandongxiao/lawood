@@ -235,4 +235,10 @@ class AuthController extends Controller
             return redirect('/')->withErrors('邮箱已激活并为您登录');
         }
     }
+
+    # 扫描二维码注册方式
+    public function registerByQrCode()
+    {
+        return view('auth.qr_code');
+    }
 }

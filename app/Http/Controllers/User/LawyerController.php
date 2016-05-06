@@ -17,16 +17,25 @@ class LawyerController extends Controller
 {
     use ShopDevTrait;
 
-    # 律师主页
-    public function index()
+    private $user;
+
+    public function __construct()
     {
-        return view('lawyer.main');
+        $this->middleware('auth',['except'=>'board']);
+        $this->middleware('role:lawyer',['except'=>'board']);
+        $this->user = Auth::user();
+    }
+
+    # 总览面板
+    public function board()
+    {
+        return view('lawyer.board');
     }
 
     # 显示当前律师的业务类别
-    public function getCategories()
+    public function categories()
     {
-        $binds = Auth::user()->categories;
+        $binds = $this->user->categories;
         $unbinds = $this->getUnbindCategories();
         return view('category.list',compact('binds','unbinds'));
     }
@@ -34,10 +43,10 @@ class LawyerController extends Controller
     # 增加一个新的业务类别
     public function bindCategory($id)
     {
-        $category = Category::find($id);
+        $category = Category::findOrFail($id);
 
         if(!$this->hasCategory($category->id)){
-            Auth::user()->categories()->attach($category->id);
+            $this->user->categories()->attach($category->id);
             return redirect('category');
         }
 
@@ -57,7 +66,7 @@ class LawyerController extends Controller
                 }
             }
 
-            Auth::user()->categories()->detach($id);
+            $this->user->categories()->detach($id);
             return redirect('category');
         }
     }
@@ -65,7 +74,7 @@ class LawyerController extends Controller
     # 判断是否有某个业务类别
     public function hasCategory($cate_id)
     {
-        foreach(Auth::user()->categories as $category){
+        foreach($this->user->categories as $category){
             if($category->id == $cate_id)
                 return true;
         }
@@ -86,58 +95,50 @@ class LawyerController extends Controller
         return $unbinds;
     }
 
+    public function locations()
+    {
+        $locations = $this->user->locations;
+        return view('lawyer.locations',compact('locations'));
+    }
+
     # 已完成的订单
     public function completedOrders()
     {
-        $user = $this->getUser();
-        $orders = $this->getCompletedOrders($user);
-        return view('lawyer.status.completed',compact('orders'));
+        $orders = $this->getCompletedOrders($this->user);
+        return view('lawyer.order.completed',compact('orders'));
     }
 
     # 已付款，尚未承接的订单
     public function payedOrders()
     {
-        $user = $this->getUser();
-        $orders = $this->getPayedOrders($user);
-        return view('lawyer.status.payed',compact('orders'));
+        $orders = $this->getPayedOrders($this->user);
+        return view('lawyer.order.payed',compact('orders'));
     }
 
     # 已经承接的订单
     public function acceptedOrders()
     {
-        $user = $this->getUser();
-        $orders = $this->getAcceptedOrders($user);
-        return view('lawyer.status.accepted',compact('orders'));
+        $orders = $this->getAcceptedOrders($this->user);
+        return view('lawyer.order.accepted',compact('orders'));
     }
 
     # 拒绝的订单
     public function rejectedOrders()
     {
-        $user = $this->getUser();
-        $orders = $this->getRejectedOrders($user);
-        return view('lawyer.status.rejected',compact('orders'));
+        $orders = $this->getRejectedOrders($this->user);
+        return view('lawyer.order.rejected',compact('orders'));
     }
 
     # 提款
     public function withdraw()
     {
-        $user = $this->getUser();
-        $sum = $this->account($user);
-
+        $sum = $this->account();
         dd($sum);
     }
 
-    public function getUser()
+    public function account()
     {
-        $user = Auth::user();
-        $user->role = 'lawyer';
-        $user->save();
-        return $user;
-    }
-
-    public function account($user)
-    {
-        $orders = $this->getPayedOrders($user);
+        $orders = $this->getPayedOrders($this->user);
         $sum = 0;
 
         foreach($orders as $order){

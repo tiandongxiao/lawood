@@ -22,13 +22,10 @@
 </head>
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
+    @include('tpl.client.area.header')
+    @include('tpl.client.area.sidebar')
 
-    <!-- Header -->
-    @include('tpl.lawyer.area.header')
-            <!-- Sidebar -->
-    @include('tpl.lawyer.area.sidebar')
-
-            <!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         @if($errors->any())
             @foreach($errors->all() as $error)
@@ -55,7 +52,7 @@
     </div><!-- /.content-wrapper -->
 
     <!-- Footer -->
-    @include('tpl.lawyer.area.footer')
+    @include('tpl.client.area.footer')
 </div><!-- ./wrapper -->
 
 <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>

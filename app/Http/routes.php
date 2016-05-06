@@ -1,9 +1,7 @@
 <?php
 
-Route::get('/', 'WebsiteController@index');
-Route::get('map', 'WebsiteController@map');
-Route::get('about', 'WebsiteController@about');
-Route::get('qr_code', 'WebsiteController@regByQrCode');
+Route::get('/', 'HomeController@index');
+Route::get('about', 'HomeController@about');
 
 # 用户认证系统自带控制器处理
 Route::get('login', 'Auth\AuthController@getPhoneLogin');
@@ -27,17 +25,17 @@ Route::post('reset', 'Auth\PasswordController@postPhoneReset');
 Route::get('reset/confirm', 'Auth\PasswordController@getPhoneResetConfirm');
 Route::post('reset/confirmed', 'Auth\PasswordController@postPhoneResetConfirm');
 
-Route::get('email/active/{token}','Auth\AuthController@getActiveEmail');
-Route::get('email/bind/{token}','Auth\BindController@getBindEmailHandler');
-
-Route::get('reg/email', 'Auth\AuthController@getEmailRegister');
-Route::post('reg/email', 'Auth\AuthController@postEmailRegister');
-
-Route::get('reset/email', 'Auth\PasswordController@getEmail');
-Route::post('reset/email', 'Auth\PasswordController@postEmail');
-
-Route::get('reset/email/{token}', 'Auth\PasswordController@getEmailReset');
-Route::post('reset/email/confirmed', 'Auth\PasswordController@postEmailReset');
+//Route::get('email/active/{token}','Auth\AuthController@getActiveEmail');
+//Route::get('email/bind/{token}','Auth\BindController@getBindEmailHandler');
+//
+//Route::get('reg/email', 'Auth\AuthController@getEmailRegister');
+//Route::post('reg/email', 'Auth\AuthController@postEmailRegister');
+//
+//Route::get('reset/email', 'Auth\PasswordController@getEmail');
+//Route::post('reset/email', 'Auth\PasswordController@postEmail');
+//
+//Route::get('reset/email/{token}', 'Auth\PasswordController@getEmailReset');
+//Route::post('reset/email/confirmed', 'Auth\PasswordController@postEmailReset');
 
 Route::group(['prefix' => 'bind'], function(){
     Route::get('chose','Auth\BindController@getChoseRole');
@@ -98,30 +96,30 @@ Route::group(['prefix' => 'address'], function(){
 });
 
 Route::group(['prefix' => 'lawyer'], function(){
-    Route::get('center','User\LawyerController@center');
+    Route::get('','User\LawyerController@board');
 
     Route::get('consults','User\LawyerController@getConsults');
     Route::get('consult/{consult}','User\LawyerController@displayConsultDetail');
 
-    Route::get('categories','User\LawyerController@getCategories');
-    Route::get('category/add','User\LawyerController@addCategory');
-    Route::get('category/rm/{id}','User\LawyerController@deleteCategory');
-    Route::get('category/new','User\LawyerController@getUnbindCategories');
+    Route::get('categories','User\LawyerController@categories');              # 律师服务门类管理
+    Route::get('category/bind/{id}','User\LawyerController@bindCategory');       # 绑定新的服务门类
+    Route::get('category/unbind/{id}','User\LawyerController@unbindCategory');   # 解绑旧有服务门类
 
-    Route::get('locations','User\LawyerController@getBindLocations');
+    Route::get('notifies','NotificationController@notifies');         # 登录用户所有通告消息
+    Route::get('notify/read','NotificationController@readNotifies');     # 登录用户所有已读通告消息
+    Route::get('notify/unread','NotificationController@unreadNotifies');   # 登录用户所有未读通告消息
 
-    Route::get('pending','User\LawyerController@pendingOrders');
-    Route::get('payed','User\LawyerController@payedOrders');
-    Route::get('completed','User\LawyerController@completedOrders');
+    Route::get('locations','User\LawyerController@locations');
+    Route::get('location/create','User\LawyerController@getBindLocations');
+    Route::get('location/delete/{id}','User\LawyerController@getBindLocations');
+
+    Route::get('orders','User\LawyerController@orders');
+    Route::get('order/pending','User\LawyerController@pendingOrders');
+    Route::get('order/payed','User\LawyerController@payedOrders');
+    Route::get('order/completed','User\LawyerController@completedOrders');
     Route::get('withdraw','User\LawyerController@withdraw');
 });
 
-Route::group(['prefix' => 'category'], function(){
-    # 律师相关
-    Route::get('/','User\LawyerController@getCategories');              # 律师服务门类管理
-    Route::get('bind/{id}','User\LawyerController@bindCategory');       # 绑定新的服务门类
-    Route::get('unbind/{id}','User\LawyerController@unbindCategory');   # 解绑旧有服务门类
-});
 
 Route::group(['prefix' => 'consult'], function(){
     Route::get('list','ConsultController@index');     # 查看律师所有服务条目
@@ -129,16 +127,20 @@ Route::group(['prefix' => 'consult'], function(){
 });
 
 Route::group(['prefix' => 'client'], function(){
-    Route::get('center','User\ClientController@center');
+    Route::get('','User\ClientController@board');
+
     Route::get('consults','User\ClientController@getConsults');
     Route::get('buy/{id}','User\ClientController@getPlaceOrder');
 
-    Route::get('pending','User\ClientController@pendingOrders');
-    Route::get('payed','User\ClientController@payedOrders');
-    Route::get('completed','User\ClientController@completedOrders');
-});
+    Route::get('orders','User\ClientController@orders');
+    Route::get('order/pending','User\ClientController@pendingOrders');
+    Route::get('order/payed','User\ClientController@payedOrders');
+    Route::get('order/completed','User\ClientController@completedOrders');
 
-//Route::resource('category','CategoryController');
+    Route::get('notifies','NotificationController@notifies');         # 登录用户所有通告消息
+    Route::get('notify/read','NotificationController@read');     # 登录用户所有已读通告消息
+    Route::get('notify/unread','NotificationController@read');   # 登录用户所有未读通告消息
+});
 
 Route::group(['prefix' => 'wxpay'], function(){
     Route::post('callback', 'WeChat\WxPayController@callback');    # 微信支付回调处理逻辑
@@ -160,8 +162,33 @@ Route::group(['prefix' => 'order'], function(){
     Route::get('reject/{id}','OrderController@reject');
 });
 
+Route::group(['prefix' => 'site'], function(){
+    Route::get('','SiteController@board');
+
+    Route::resource('role', 'RoleController');
+    Route::resource('permission', 'PermissionController');
+
+    Route::get('user','UserController@index');                                               # 所有用户
+
+    Route::get('perms/{user_id}','UserController@permissions');                              # 用户权限信息
+    Route::get('perms/attach/{user_id}/{perm_id}','UserController@attachPermission');        # 授予用户权限
+    Route::get('perms/detach/{user_id}/{perm_id}','UserController@detachPermission');        # 解除用户权限
+
+    Route::get('roles/{user_id}','UserController@roles');                                    # 用户角色信息
+    Route::get('roles/attach/{user_id}/{role_id}','UserController@attachRole');              # 首页用户角色
+    Route::get('roles/detach/{user_id}/{role_id}','UserController@detachRole');              # 解除用户角色
+
+    Route::get('logs', 'SiteController@logs');
+    Route::get('settings','SiteController@settings');
+});
+
+# Route::resource('category','CategoryController');
+# Route::resource('pois','PoisController');             # 地图业务服务兴趣点，不会对其直接进行操作，所以注释掉
+
+Route::resource('place', 'PlaceController');
+Route::resource('notification', 'NotificationController');
+
 Route::group(['prefix' => 'test'], function(){
-    Route::get('c_role/{name}','TestController@createRole');
     Route::get('blade','TestController@blade');
     Route::get('list','TestController@lists');
     Route::get('like/{id}','TestController@like');
@@ -176,35 +203,3 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('build','TestController@buildNotifications');
 });
 
-Route::group(['prefix' => 'site'], function(){
-    Route::resource('role', 'RoleController');
-    Route::resource('permission', 'PermissionController');
-
-    Route::get('user','UserController@index');                                               # 所有用户
-
-    Route::get('perms/{user_id}','UserController@permissions');                              # 用户权限信息
-    Route::get('perms/attach/{user_id}/{perm_id}','UserController@attachPermission');        # 授予用户权限
-    Route::get('perms/detach/{user_id}/{perm_id}','UserController@detachPermission');        # 解除用户权限
-
-    Route::get('roles/{user_id}','UserController@roles');                                    # 用户角色信息
-    Route::get('roles/attach/{user_id}/{role_id}','UserController@attachRole');              # 首页用户角色
-    Route::get('roles/detach/{user_id}/{role_id}','UserController@detachRole');              # 解除用户角色
-
-    Route::get('logs', 'WebsiteController@logs');
-    Route::get('settings','WebsiteController@settings');
-});
-
-// Route::resource('pois','PoisController');             # 地图业务服务兴趣点，不会对其直接进行操作，所以注释掉
-
-Route::resource('place', 'PlaceController');
-Route::resource('notification', 'NotificationController');
-
-Route::group(['prefix' => 'notify'], function(){
-    Route::get('all','NotificationController@all');       # 登录用户所有通告消息
-    Route::get('read','NotificationController@read');     # 登录用户所有已读通告消息
-    Route::get('unread','NotificationController@read');   # 登录用户所有未读通告消息
-});
-
-Route::group(['prefix' => 'admin'], function(){
-
-});

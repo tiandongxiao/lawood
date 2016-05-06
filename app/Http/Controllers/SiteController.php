@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Redirect;
@@ -11,22 +12,17 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
 use Rap2hpoutre\LaravelLogViewer\LaravelLogViewer;
 
-class WebsiteController extends Controller
+class SiteController extends Controller
 {
-
-    public function index()
+    public function __construct()
     {
-        return view('website.snow');
+        //$this->middleware('role:admin');
     }
-
-    public function welcome()
+    
+    # 总览面板
+    public function board()
     {
-        return view('welcome');
-    }
-
-    public function regByQrCode()
-    {
-        return view('auth.qr_code');
+        return view('site.board');
     }
 
     public function logs()
@@ -44,7 +40,7 @@ class WebsiteController extends Controller
 
         $logs = LaravelLogViewer::all();
 
-        return view('website.logs',[
+        return view('site.logs',[
             'logs' => $logs,
             'files' => LaravelLogViewer::getFiles(true),
             'current_file' => LaravelLogViewer::getFileName()
