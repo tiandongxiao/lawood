@@ -2,20 +2,23 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Category;
-use App\Item;
-use App\Post;
+use App\Traits\CategoryDevTrait;
+use App\Traits\ConsultDevTrait;
+use App\Traits\LocationDevTrait;
 use App\Traits\ShopDevTrait;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
+
 
 class LawyerController extends Controller
 {
-    use ShopDevTrait;
+    use ShopDevTrait;       # 电子商务开发包
+    use ConsultDevTrait;    # 电商开发辅助包
+    use LocationDevTrait;   # 地址开发辅助包
+    use CategoryDevTrait;   # 业务门类开发包
 
     private $user;
 
@@ -30,75 +33,6 @@ class LawyerController extends Controller
     public function board()
     {
         return view('lawyer.board');
-    }
-
-    # 显示当前律师的业务类别
-    public function categories()
-    {
-        $binds = $this->user->categories;
-        $unbinds = $this->getUnbindCategories();
-        return view('category.list',compact('binds','unbinds'));
-    }
-
-    # 增加一个新的业务类别
-    public function bindCategory($id)
-    {
-        $category = Category::findOrFail($id);
-
-        if(!$this->hasCategory($category->id)){
-            $this->user->categories()->attach($category->id);
-            return redirect('category');
-        }
-
-        return back()->withErrors('您已填加此分类，不能重复添加');
-    }
-
-    # 删除某个业务类别
-    public function unbindCategory($id)
-    {
-        if($this->hasCategory($id)){
-            # 当律师删除一个业务门类时，将相关的业务咨询服务都删除
-            $items = Auth::user()->items;
-
-            foreach($items as $item){
-                if($item->category_id == $id){
-                    $item->delete();
-                }
-            }
-
-            $this->user->categories()->detach($id);
-            return redirect('category');
-        }
-    }
-
-    # 判断是否有某个业务类别
-    public function hasCategory($cate_id)
-    {
-        foreach($this->user->categories as $category){
-            if($category->id == $cate_id)
-                return true;
-        }
-        return false;
-    }
-
-    # 获取当前律师没有提供的业务范围
-    public function getUnbindCategories()
-    {
-        $unbinds = [];
-        $categories = Category::all();
-
-        foreach($categories as $category){
-            if($category->level == 3 && !$this->hasCategory($category->id)){
-                $unbinds[] = $category;
-            }
-        }
-        return $unbinds;
-    }
-
-    public function locations()
-    {
-        $locations = $this->user->locations;
-        return view('lawyer.locations',compact('locations'));
     }
 
     # 已完成的订单
@@ -145,5 +79,22 @@ class LawyerController extends Controller
             $sum += $order->total;
         }
         return $sum/100;
+    }
+
+    public function notifies()
+    {
+        $notifies = $this->user->notifications;
+
+        return view('lawyer.notify.index',compact('notifies'));
+    }
+
+    public function readNotifies()
+    {
+
+    }
+
+    public function unreadNotifies()
+    {
+
     }
 }

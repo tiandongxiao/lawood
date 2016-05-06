@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
 use App\Order;
 use App\Traits\ShopDevTrait;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Jenssegers\Agent\Facades\Agent;
 
 class OrderController extends Controller
 {
@@ -22,10 +24,15 @@ class OrderController extends Controller
     # 对未下单的订单下单
     public function placeOrder($id)
     {
-        $order = Order::findOrFail($id);
-        if(!$order->isPayed){
+        Item::findOrFail($id);
 
+        if(Agent::isMobile()){
+            # 如果是微信浏览器
+            if (strpos(Agent::getUserAgent(), 'MicroMessenger') !== false)
+                return redirect('wxpay/js/'.$id);
         }
+
+        return redirect('wxpay/native/'.$id);
     }
 
     # 退款逻辑

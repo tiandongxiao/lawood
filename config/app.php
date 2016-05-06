@@ -164,6 +164,7 @@ return [
         Backup\BackupServiceProvider::class,                    # 数据库恢复备份系统
         \Conner\Likeable\LikeableServiceProvider::class,        # 收藏功能
         \App\Self\Notify\NotifyServiceProvider::class,          # 通知/微信模板消息
+        Jenssegers\Agent\AgentServiceProvider::class,           # 用户代理识别
     ],
 
     /*
@@ -226,6 +227,7 @@ return [
         'Shop'      => Amsgames\LaravelShop\LaravelShopFacade::class,  # 电商服务
         'QrCode'    => SimpleSoftwareIO\QrCode\Facades\QrCode::class,  # 二维码服务
         'Notify'    => \App\Self\Notify\NotifyFacade::class,           # 消息，微信模板消息
+        'Agent'     => Jenssegers\Agent\Facades\Agent::class,          # 用户代理识别
 
     ],
 ];

@@ -15,6 +15,13 @@ use App\Pois;
 
 class ConsultController extends Controller
 {
+    public function all()
+    {
+        $consults = Item::all();
+
+        return view('consult.all',compact('consults'));
+
+    }
     # 律师所有私有咨询业务
     public function index()
     {
@@ -56,7 +63,7 @@ class ConsultController extends Controller
     public function show($id)
     {
         $consult = Item::findOrFail($id);
-        return view('consult.show');
+        return view('consult.show',compact('consult'));
     }
 
     # 编辑律师咨询
@@ -69,13 +76,13 @@ class ConsultController extends Controller
     # 更新律师咨询
     public function update(Request $request, $id)
     {
-        $item = Item::find($id);
+        $item = Item::findOrFail($id);
     }
 
     # 删除律师咨询
     public function destroy($id)
     {
-        $item = Item::find($id);
+        $item = Item::findOrFail($id);
         $item->delete();
     }
 

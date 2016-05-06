@@ -59,7 +59,9 @@ class Pois extends Model
             '_name'        => str_random(6),
             '_address'     => $location->address,
             'category'     => $category->name,
-            'pay_url'      => url('payment/chose/'.$item->id),
+            'price'        => $item->price,
+            #'pay_url'      => url('payment/chose/'.$item->id),
+            'pay_url'      => url('order/place/'.$item->id),
             'detail_url'   => url('consult/'.$item->id)
         ]);
 
