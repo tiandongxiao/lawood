@@ -17,7 +17,7 @@
                 function(res){
                     WeixinJSBridge.log(res.err_msg);
 
-                    if(res.err_msg == "get_brand_wcpay_request：ok"){
+                    if(res.err_msg == "get_brand_wcpay_request:ok"){
                         window.location.href="{{url('/')}}";
                     }else{
                         alert('xixi'+res.err_code+res.err_desc+res.err_msg);
