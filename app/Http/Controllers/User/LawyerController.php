@@ -35,6 +35,11 @@ class LawyerController extends Controller
         return view('lawyer.board');
     }
 
+    public function orders()
+    {
+        dd($this->user->orders);        
+    }
+
     # 已完成的订单
     public function completedOrders()
     {
