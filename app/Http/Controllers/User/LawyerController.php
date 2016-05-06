@@ -25,7 +25,7 @@ class LawyerController extends Controller
     public function __construct()
     {
         $this->middleware('auth',['except'=>'board']);
-        $this->middleware('role:lawyer',['except'=>'board']);
+        //$this->middleware('role:lawyer',['except'=>'board']);
         $this->user = Auth::user();
     }
 
@@ -37,7 +37,7 @@ class LawyerController extends Controller
 
     public function orders()
     {
-        dd($this->user->orders);        
+        dd($this->user->orders);
     }
 
     # 已完成的订单

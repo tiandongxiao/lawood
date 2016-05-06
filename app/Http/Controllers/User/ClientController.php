@@ -21,7 +21,7 @@ class ClientController extends Controller
     public function __construct()
     {
         $this->middleware('auth',['except'=>'board']);
-        $this->middleware('role:client',['except'=>'board']);
+        //$this->middleware('role:client',['except'=>'board']);
         $this->user = Auth::user();
     }
 

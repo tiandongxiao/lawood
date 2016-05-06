@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/User/ClientController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/ClientController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,16 +29,6 @@
     <splitter split-orientation="horizontal" split-proportion="0.5325602">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="WxPayController.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3267">
-                  <caret line="117" column="44" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="WxJSPay.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Self/Payment/WxJSPay.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -60,11 +51,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="LawyerController.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="LawyerController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+                <state relative-caret-position="528">
+                  <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
                   <folding>
                     <element signature="e#45#77#0#PHP" expanded="true" />
                   </folding>
@@ -72,11 +63,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ClientController.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ClientController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/ClientController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="297">
-                  <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+                <state relative-caret-position="495">
+                  <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1353">
+                  <caret line="152" column="44" selection-start-line="152" selection-start-column="44" selection-end-line="152" selection-end-column="44" />
                   <folding />
                 </state>
               </provider>
@@ -224,8 +225,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" />
         <option value="$PROJECT_DIR$/resources/views/payment/wxpay/jsapi.blade.php" />
         <option value="$PROJECT_DIR$/app/Self/Payment/WxJSPay.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/ClientController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php" />
       </list>
     </option>
   </component>
@@ -784,7 +785,7 @@
       <workItem from="1462354240984" duration="755000" />
       <workItem from="1462355028168" duration="11818000" />
       <workItem from="1462442080004" duration="31386000" />
-      <workItem from="1462534761192" duration="1169000" />
+      <workItem from="1462534761192" duration="1354000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -909,7 +910,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="371519000" />
+    <option name="totallyTimeSpent" value="371704000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1167,13 +1168,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="152" column="44" selection-start-line="152" selection-start-column="44" selection-end-line="152" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1326,21 +1320,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-          <folding>
-            <element signature="e#45#77#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="1353">
+          <caret line="152" column="44" selection-start-line="152" selection-start-column="44" selection-end-line="152" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/ClientController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        <state relative-caret-position="495">
+          <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/LawyerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+          <folding>
+            <element signature="e#45#77#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
