@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Item;
 
 
 class LawyerController extends Controller
@@ -37,9 +38,17 @@ class LawyerController extends Controller
 
     public function orders()
     {
-        $orders = $this->getOrders($this->user);
-        #$orders = $this->user->orders;
-        dd($orders);
+        $orders = []; # 定义存储容器
+        $items = $this->user->items; # 获取律师所有服务项
+
+        foreach($items as $item){  # 搜索Item数据库中所有购买了律师服务的条目
+            $services = Item::where('reference_id',$item->id)->get();
+            foreach($services as $service){
+                $order = $service->order; # 每一个条目对应一个Order订单
+                $orders[] = $order;
+            }
+        }
+        return view('lawyer.order.index',compact('orders'));
     }
 
     # 已完成的订单

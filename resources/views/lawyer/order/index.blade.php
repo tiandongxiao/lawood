@@ -1,11 +1,11 @@
 @extends('tpl.lawyer.app')
 @section('content')
-    @if($consults)
+    @if($orders)
         <div class="text-center">
-            @foreach($consults as $consult)
+            @foreach($orders as $order)
                 <div class="bg-black-gradient">
-                    <h3>{{$consult->price}}</h3>
-                    <p>{{$consult->user->email}}</p>
+                    <h3>{{$order->user_id}}</h3>
+                    <p>{{$order->statusCode}}</p>
                 </div>
             @endforeach
         </div>
