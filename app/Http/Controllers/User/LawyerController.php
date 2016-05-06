@@ -36,8 +36,9 @@ class LawyerController extends Controller
     }
 
     public function orders()
-    {
-        dd($this->user->orders);
+    {        
+        $orders = $this->getPendingOrders($this->user);
+        dd($orders);
     }
 
     # 已完成的订单
