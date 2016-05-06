@@ -112,14 +112,13 @@ class WxPayController extends Controller
     {
         $user = $this->regIfNotExist();
         Auth::login($user);
-        dd($user);
 
         $order = $this->prePay($item_id, 'wx_js');
 
         if($order->statusCode == 'pending'){
             $params =  $order->attach;
             $price = $order->total;
-
+            Log::info('JSPay '.' price');
             return view('payment.wxpay.jsapi',compact('params','price'));
         }
 
@@ -130,6 +129,7 @@ class WxPayController extends Controller
     {
         Cart::current()->clear();
         $this->addItemIntoCart($id);
+        Log::info('prePay '.$gateway);
 
         # 1 执行Shop的其他操作之前，必须先选择支付方式
         Shop::setGateway($gateway);
@@ -139,10 +139,12 @@ class WxPayController extends Controller
             $exception = Shop::exception();
             echo $exception->getMessage();
         }
+        Log::info('prePay '.$gateway.' checkout');
 
         # 3 下单
         $order = Shop::placeOrder();
 
+        Log::info('prePay '.$gateway.' placeorder');
         if ($order->hasFailed) {
             $exception = Shop::exception();
             echo $exception->getMessage();
