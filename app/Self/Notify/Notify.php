@@ -23,7 +23,7 @@ class Notify
     # 发送站内消息
     public function send($user,$data)
     {
-        $this->sendNotice($user,$data);         # 发送微信模板消息
+        //$this->sendNotice($user,$data);         # 发送微信模板消息
         $this->sendNotification($user,$data);   # 发送站内通知消息
     }
 
@@ -35,6 +35,12 @@ class Notify
 
         switch ($data['type']){
             # 预约咨询通知
+            case 'reminder':
+                $info->title   = '催单通知';
+                $info->content = '用户正在催单，您是否忘记了接单';
+                $info->url = url('lawyer/order/accept/'.$data['order_id']);
+                break;
+
             case 'query':
                 $info->title   = '预约通知';
                 $info->content = '尊敬的咨询用户，预约律师将在12小时内拨打您电话确定此次法律咨询的具体事宜';
@@ -83,14 +89,14 @@ class Notify
                 $info->url = url('order/'.$data['order_id']);
                 break;
         }
-//
-//        $notification = Notification::create([
-//            'user_id'  => $user->id,
-//            'type'     => $data['type'],
-//            'title'    => $data['title'],
-//            'content'  => $data['content'],
-//            'url'     =>  $data['url']
-//        ]);
+
+        Notification::create([
+            'user_id'  => $user->id,
+            'type'     => $data['type'],
+            'title'    => $info->title,
+            'content'  => $info->content,
+            'url'     =>  $info->url
+        ]);
     }
 
 

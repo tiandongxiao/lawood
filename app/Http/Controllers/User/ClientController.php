@@ -21,8 +21,14 @@ class ClientController extends Controller
     public function __construct()
     {
         $this->middleware('auth',['except'=>'board']);
-        //$this->middleware('role:client',['except'=>'board']);
+        $this->middleware('role:client',['except'=>'board']);
         $this->user = Auth::user();
+    }
+
+    public function notifies()
+    {
+        $notifies = $this->user->notifications;
+        return view('client.notify.index',compact('notifies'));
     }
 
     # 总览面板
@@ -33,7 +39,8 @@ class ClientController extends Controller
 
     public function orders()
     {
-        dd($this->user->orders);
+        $orders = $this->user->orders;
+        return view('client.order.index',compact('orders'));
     }
 
     # 返回未付款的订单列表

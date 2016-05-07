@@ -26,7 +26,7 @@ class LawyerController extends Controller
     public function __construct()
     {
         $this->middleware('auth',['except'=>'board']);
-        //$this->middleware('role:lawyer',['except'=>'board']);
+        $this->middleware('role:lawyer',['except'=>'board']);
         $this->user = Auth::user();
     }
 
@@ -48,6 +48,7 @@ class LawyerController extends Controller
                 $orders[] = $order;
             }
         }
+        $orders = collect($orders);
         
         return view('lawyer.order.index',compact('orders'));
     }
@@ -101,6 +102,7 @@ class LawyerController extends Controller
     public function notifies()
     {
         $notifies = $this->user->notifications;
+        $notifies = $notifies->reverse();
         return view('lawyer.notify.index',compact('notifies'));
     }
 

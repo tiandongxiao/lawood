@@ -30,4 +30,9 @@ class Order extends ShopOrderModel
             return false;
         return true;
     }
+
+    public function seller()
+    {
+        return Item::find($this->items[0]->reference_id)->user;
+    }
 }

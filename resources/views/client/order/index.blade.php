@@ -1,4 +1,4 @@
-@extends('tpl.lawyer.app')
+@extends('tpl.client.app')
 @section('content')
     @if($orders)
         <div class="col-md-1">
@@ -17,12 +17,12 @@
             <h4>已付款未接单</h4>
             @foreach($orders as $order)
                 @if($order->statusCode == 'payed')
-                <div class="bg-black-gradient">
-                    <h4>{{$order->seller()->email}}</h4>
-                    <p>{{$order->statusCode}}</p>
-                    <a href="{{url('order/accept/'.$order->id)}}">接单</a>
-                    <a href="{{url('order/reject/'.$order->id)}}">忽略</a>
-                </div>
+                    <div class="bg-black-gradient">
+                        <h4>{{$order->seller()->email}}</h4>
+                        <p>{{$order->statusCode}}</p>
+                        <a href="{{url('order/cancel/'.$order->id)}}">取消</a>
+                        <a href="{{url('order/reminder/'.$order->id)}}">催单</a>
+                    </div>
                 @endif
             @endforeach
         </div>
@@ -32,7 +32,7 @@
             @foreach($orders as $order)
                 @if($order->statusCode == 'accepted')
                     <div class="bg-black-gradient">
-                        <h4>{{$order->seller()->email}}</h4>
+                        <h3>{{$order->user_id}}</h3>
                         <p>{{$order->statusCode}}</p>
                         <a href="{{url('order/sign/'.$order->id)}}">签到</a>
                     </div>
@@ -41,11 +41,11 @@
         </div>
 
         <div class="col-md-1">
-            <h4>忽略订单</h4>
+            <h4>拒绝订单</h4>
             @foreach($orders as $order)
                 @if($order->statusCode == 'rejected')
                     <div class="bg-black-gradient">
-                        <h4>{{$order->seller()->email}}</h4>
+                        <h3>{{$order->user_id}}</h3>
                         <p>{{$order->statusCode}}</p>
                     </div>
                 @endif
@@ -57,7 +57,7 @@
             @foreach($orders as $order)
                 @if($order->statusCode == 'canceled')
                     <div class="bg-black-gradient">
-                        <h4>{{$order->seller()->email}}</h4>
+                        <h3>{{$order->user_id}}</h3>
                         <p>{{$order->statusCode}}</p>
                     </div>
                 @endif
@@ -69,7 +69,7 @@
             @foreach($orders as $order)
                 @if($order->statusCode == 'in_process')
                     <div class="bg-black-gradient">
-                        <h4>{{$order->seller()->email}}</h4>
+                        <h3>{{$order->user_id}}</h3>
                         <p>{{$order->statusCode}}</p>
                         <a href="{{url('order/sign/'.$order->id)}}">签到</a>
                     </div>
@@ -82,7 +82,7 @@
             @foreach($orders as $order)
                 @if($order->statusCode == 'completed')
                     <div class="bg-black-gradient">
-                        <h4>{{$order->seller()->email}}</h4>
+                        <h3>{{$order->user_id}}</h3>
                         <p>{{$order->statusCode}}</p>
                     </div>
                 @endif

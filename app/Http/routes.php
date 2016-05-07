@@ -124,7 +124,7 @@ Route::group(['prefix' => 'client'], function(){
     Route::get('order/payed','User\ClientController@payedOrders');
     Route::get('order/completed','User\ClientController@completedOrders');
 
-    Route::get('notifies','NotificationController@notifies');         # 登录用户所有通告消息
+    Route::get('notifies','User\ClientController@notifies');         # 登录用户所有通告消息
     Route::get('notify/read','NotificationController@read');     # 登录用户所有已读通告消息
     Route::get('notify/unread','NotificationController@read');   # 登录用户所有未读通告消息
 });
@@ -144,12 +144,16 @@ Route::group(['prefix' => 'payment'], function(){
 });
 
 Route::group(['prefix' => 'order'], function(){
-    Route::get('place/{id}','OrderController@placeOrder');
-    Route::get('pta/{id}','OrderController@pendingToAccepted'); # 测试打桩
+
+    Route::get('pta/{id}','OrderController@pendingToAccepted');  # 测试打桩
     Route::get('accept/{id}','OrderController@accept');
     Route::get('reject/{id}','OrderController@reject');
     Route::get('sign/{id}','OrderController@sign');
     Route::get('refund/{id}','OrderController@refund');
+
+    Route::get('place/{id}','OrderController@placeOrder');  # 顾客下单
+    Route::get('cancel/{id}','OrderController@cancel');     # 顾客取消订单
+    Route::get('reminder/{id}','OrderController@reminder'); # 顾客催单
 });
 
 Route::get('consults','ConsultController@all');

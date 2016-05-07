@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Item;
 use App\Order;
+use App\Self\Notify\NotifyFacade;
 use App\Traits\ShopDevTrait;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Jenssegers\Agent\Facades\Agent;
+use Notify;
 
 class OrderController extends Controller
 {
@@ -101,5 +103,25 @@ class OrderController extends Controller
         }
         $order->save();
         return back();
+    }
+
+    public function cancel($id)
+    {
+        $order = Order::findOrFail($id);
+        if($order->statusCode == 'payed' || $order->statusCode == 'pending'){
+            $order->statusCode = 'canceled';
+            $order->save();
+        }
+        return redirect('client/orders');
+    }
+
+    public function reminder($id)
+    {
+        $order = Order::findOrFail($id);
+        $seller = $order->seller();
+        //dd($order->items[0]);
+
+        Notify::send($seller,['type'=>'reminder','order_id'=>$order->id]);
+        return back()->withErrors('已发送催单通知');
     }
 }

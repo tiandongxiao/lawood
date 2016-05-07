@@ -181,7 +181,7 @@ class WxPayController extends Controller
         if($this->isOrderRefunded($out_trade_no)){
             return back()->withErrors('订单不能重复退款');
         }
-
+        # 微信支付的order对象
         $order = $this->queryOrder($out_trade_no);
 
         if($order){
@@ -193,7 +193,7 @@ class WxPayController extends Controller
             if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
                 # 对Shop Order进行数据更新，改变订单状态
                 $shop_order = ShopOrder::where('order_no',$out_trade_no)->first();
-                $shop_order->statusCode = 'payed';
+                $shop_order->statusCode = 'canceled';
                 $shop_order->save();
             }
         }

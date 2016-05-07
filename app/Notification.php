@@ -22,9 +22,10 @@ class Notification extends Model {
         Request::input('created_at') and $query->where('created_at',Request::input('created_at'));
         
         # sort results
-        Request::input("sort") and $query->orderBy(Request::input("sort"),Request::input("sortType","asc"));
+        # Request::input("sort") and $query->orderBy(Request::input("sort"),Request::input("sortType","asc"));
 
         # paginate results
+        $query->orderBy('update_at','desc');
         return $query->paginate(15);
     }
 
