@@ -145,9 +145,11 @@ Route::group(['prefix' => 'payment'], function(){
 
 Route::group(['prefix' => 'order'], function(){
     Route::get('place/{id}','OrderController@placeOrder');
-    Route::get('refund/{id}','OrderController@refund');
+    Route::get('pta/{id}','OrderController@pendingToAccepted'); # 测试打桩
     Route::get('accept/{id}','OrderController@accept');
     Route::get('reject/{id}','OrderController@reject');
+    Route::get('sign/{id}','OrderController@sign');
+    Route::get('refund/{id}','OrderController@refund');
 });
 
 Route::get('consults','ConsultController@all');

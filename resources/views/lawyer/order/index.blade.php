@@ -8,6 +8,7 @@
                     <div class="bg-black-gradient">
                         <h3>{{$order->user_id}}</h3>
                         <p>{{$order->statusCode}}</p>
+                        <a href="{{url('order/pta/'.$order->id)}}">付款</a>
                     </div>
                 @endif
             @endforeach
@@ -33,6 +34,7 @@
                     <div class="bg-black-gradient">
                         <h3>{{$order->user_id}}</h3>
                         <p>{{$order->statusCode}}</p>
+                        <a href="{{url('order/sign/'.$order->id)}}">签到</a>
                     </div>
                 @endif
             @endforeach
@@ -45,6 +47,19 @@
                     <div class="bg-black-gradient">
                         <h3>{{$order->user_id}}</h3>
                         <p>{{$order->statusCode}}</p>
+                    </div>
+                @endif
+            @endforeach
+        </div>
+
+        <div class="col-md-2">
+            <h4>一方签到</h4>
+            @foreach($orders as $order)
+                @if($order->statusCode == 'in_process')
+                    <div class="bg-black-gradient">
+                        <h3>{{$order->user_id}}</h3>
+                        <p>{{$order->statusCode}}</p>
+                        <a href="{{url('order/sign/'.$order->id)}}">签到</a>
                     </div>
                 @endif
             @endforeach

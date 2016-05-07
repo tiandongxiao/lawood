@@ -49,13 +49,25 @@ class OrderController extends Controller
         }
     }
 
+    public function pendingToAccepted($id)
+    {
+        $order = Order::findOrFail($id);
+        if($order->statusCode == 'pending'){
+            $order->statusCode = 'payed';
+            $order->save();
+        }
+        return back();
+    }
+
     # 接单逻辑
     public function accept($id)
     {
         $order = Order::findOrFail($id);
         if($order->statusCode == 'payed'){
             $order->statusCode = 'accepted';
+            $order->save();
         }
+        return back();
     }
 
     # 拒单逻辑
@@ -64,6 +76,8 @@ class OrderController extends Controller
         $order = Order::findOrFail($id);
         if($order->statusCode == 'payed'){
             $order->statusCode = 'rejected';
+            $order->save();
+
             # 拒单后立即退款
             $this->refund($id);
             return back()->withErrors('已拒单');
@@ -85,5 +99,7 @@ class OrderController extends Controller
                 $order->statusCode = 'completed';
                 break;
         }
+        $order->save();
+        return back();
     }
 }
