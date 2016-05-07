@@ -48,6 +48,7 @@ class LawyerController extends Controller
                 $orders[] = $order;
             }
         }
+        
         return view('lawyer.order.index',compact('orders'));
     }
 
@@ -100,7 +101,6 @@ class LawyerController extends Controller
     public function notifies()
     {
         $notifies = $this->user->notifications;
-
         return view('lawyer.notify.index',compact('notifies'));
     }
 
