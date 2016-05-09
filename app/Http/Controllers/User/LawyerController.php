@@ -81,24 +81,6 @@ class LawyerController extends Controller
         return view('lawyer.order.rejected',compact('orders'));
     }
 
-    # 提款
-    public function withdraw()
-    {
-        $sum = $this->account();
-        dd($sum);
-    }
-
-    public function account()
-    {
-        $orders = $this->getPayedOrders($this->user);
-        $sum = 0;
-
-        foreach($orders as $order){
-            $sum += $order->total;
-        }
-        return $sum/100;
-    }
-
     public function notifies()
     {
         $notifies = $this->user->notifications;
@@ -118,7 +100,8 @@ class LawyerController extends Controller
 
     public function bills()
     {
-
+        $sum = $this->billsAccount();
+        return view('bill.index');
     }
 
     public function billsIncoming()
@@ -133,6 +116,11 @@ class LawyerController extends Controller
 
     public function billsAccount()
     {
-        
+        $orders = $this->getNotWithdrawOrders($this->user);
+        $sum = 0;
+        foreach ($orders as $order){
+            $sum += $order->total;
+        }
+        return $sum;
     }
 }

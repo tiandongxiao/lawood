@@ -24,6 +24,7 @@ class CreateLocationsTable extends Migration
                 ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->index(['id', 'user_id', 'statusCode']);
         });
     }
 

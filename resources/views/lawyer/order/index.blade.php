@@ -84,6 +84,7 @@
                     <div class="bg-black-gradient">
                         <h4>{{$order->user->email}}</h4>
                         <p>{{$order->statusCode}}</p>
+                        <p>{{$order->total}}</p>
                     </div>
                 @endif
             @endforeach

@@ -140,6 +140,26 @@ trait ShopDevTrait
         return $this->getOrdersByStatus($user,'rejected');
     }
 
+    # 获取尚未被律师折现的订单
+    public function getNotWithdrawOrders($user)
+    {
+        $orders = $this->getCompletedOrders($user);
+        $filtered = $orders->filter(function($item){
+            return $item->withdraw == false;
+        });
+        return $filtered;
+    }
+
+    # 获得已被律师折现的订单
+    public function getWithdrewOrders($user)
+    {
+        $orders = $this->getCompletedOrders($user);
+        $filtered = $orders->filter(function($item){
+            return $item->withdraw == true;
+        });
+        return $filtered;
+    }
+
     # 根据用户类型和状态码来获取订单列表
     public function getOrdersByStatus($user, $status)
     {
@@ -159,7 +179,7 @@ trait ShopDevTrait
                             $orders[] = $order;
                     }
                 }
-                return $orders;
+                return collect($orders);
             case 'client':
                 # Shop开发包的这个函数不怎么好用，故而采用下面的方式
                 //return Order::findByUser($user->id,$status);

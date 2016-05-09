@@ -111,7 +111,7 @@ Route::group(['prefix' => 'lawyer'], function(){
     Route::get('order/payed','User\LawyerController@payedOrders');
     Route::get('order/completed','User\LawyerController@completedOrders');
 
-    Route::get('bills','User\LawyerController@bills');
+    Route::get('wallet','User\LawyerController@bills');
     Route::get('bill/withdraw','User\LawyerController@billsWithdraw');
     Route::get('bill/income','User\LawyerController@billsIncoming');
 });

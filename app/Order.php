@@ -6,7 +6,7 @@ use Amsgames\LaravelShop\Models\ShopOrderModel;
 
 class Order extends ShopOrderModel
 {
-    protected $fillable = ['user_id', 'statusCode', 'billing_id', 'order_no', 'type', 'subject', 'refunded', 'attach'];
+    protected $fillable = ['user_id', 'statusCode', 'order_no', 'refunded', 'withdrew', 'attach'];
 
     # 订单是否已退款
     public function isRefunded()
@@ -31,7 +31,8 @@ class Order extends ShopOrderModel
         return true;
     }
 
-    public function seller()
+    # 获取卖家信息
+    public function getSellerAttribute()
     {
         return Item::find($this->items[0]->reference_id)->user;
     }

@@ -11,7 +11,7 @@ class ShopSetupTables extends Migration
      */
     public function up()
     {
-        // Create table for storing carts
+        # Create table for storing carts
         Schema::create('cart', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
@@ -23,10 +23,10 @@ class ShopSetupTables extends Migration
                 ->onDelete('cascade');
             $table->unique('user_id');
         });
-        // Create table for storing items
+        # Create table for storing items
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id')->unsigned()->nullable();    # 关联user,一个执业项目只属于一个律师
+            $table->integer('user_id')->unsigned()->nullable();  # 关联user,一个执业项目只属于一个律师
             $table->bigInteger('cart_id')->unsigned()->nullable();
             $table->bigInteger('order_id')->unsigned()->nullable();
             $table->string('sku');
@@ -62,7 +62,7 @@ class ShopSetupTables extends Migration
             $table->index(['user_id', 'sku', 'order_id']);
             $table->index(['reference_id']);
         });
-        // Create table for storing coupons
+        # Create table for storing coupons
         Schema::create('coupons', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code')->unique();
@@ -79,7 +79,7 @@ class ShopSetupTables extends Migration
             $table->index(['code', 'active', 'expires_at']);
             $table->index(['sku']);
         });
-        // Create table for storing coupons
+        # Create table for storing coupons
         Schema::create('order_status', function (Blueprint $table) {
             $table->string('code', 32);
             $table->string('name');
@@ -87,18 +87,16 @@ class ShopSetupTables extends Migration
             $table->timestamps();
             $table->primary('code');
         });
-        // Create table for storing carts
+        # Create table for storing carts
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->string('statusCode', 32);
 
-            $table->string('billing_id')->nullable();    # 记录ping++ 交易ID
-            $table->string('subject',64)->nullable();    # 记录ping++ 主题内容
-            $table->string('order_no', 64)->nullable();  # 订单编号
-            $table->string('type', 64)->nullable();      # ping++ 中charge对象的种类
 
-            $table->boolean('refunded')->default(false); # 是否已退款标志位            
+            $table->string('order_no', 64)->nullable();  # 订单编号
+            $table->boolean('refunded')->default(false); # 是否已退款标志位
+            $table->boolean('withdrew')->default(false); # 是否已折现标志位
             $table->string('attach', 64)->nullable();    # 附件数据
 
             $table->timestamps();
@@ -112,10 +110,10 @@ class ShopSetupTables extends Migration
                 ->on('order_status')
                 ->onUpdate('cascade');
             $table->index(['user_id', 'statusCode']);
-            $table->index(['id', 'user_id', 'statusCode']);
+            $table->index(['id', 'user_id', 'statusCode','order_no','refunded','withdrew']);
 
         });
-        // Create table for storing transactions
+        # Create table for storing transactions
         Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('order_id')->unsigned();
