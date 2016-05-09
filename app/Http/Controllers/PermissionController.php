@@ -14,6 +14,11 @@ class PermissionController extends Controller
 {
     use PermissionDevTrait;
 
+    public function __construct()
+    {
+        //$this->middleware('role:admin');
+    }
+
     # 列举所有权限信息
     public function index()
     {

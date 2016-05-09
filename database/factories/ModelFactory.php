@@ -21,8 +21,9 @@ $factory->define(App\Place::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Notification::class, function (Faker\Generator $faker) {
+    $user_ids = \App\User::lists('id')->toArray();
     return [
-        'user_id' => \App\User::where('email','lawyer@lawood.cn')->first()->id,
+        'user_id' => $faker->randomElement($user_ids),
         'type' => $faker->word,
         'title' => $faker->title,
         'content' => $faker->sentence(6),

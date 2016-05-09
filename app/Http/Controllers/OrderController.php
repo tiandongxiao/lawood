@@ -118,8 +118,7 @@ class OrderController extends Controller
     public function reminder($id)
     {
         $order = Order::findOrFail($id);
-        $seller = $order->seller();
-        //dd($order->items[0]);
+        $seller = $order->seller();        
 
         Notify::send($seller,['type'=>'reminder','order_id'=>$order->id]);
         return back()->withErrors('已发送催单通知');

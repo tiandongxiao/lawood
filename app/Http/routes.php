@@ -110,7 +110,10 @@ Route::group(['prefix' => 'lawyer'], function(){
     Route::get('order/pending','User\LawyerController@pendingOrders');
     Route::get('order/payed','User\LawyerController@payedOrders');
     Route::get('order/completed','User\LawyerController@completedOrders');
-    Route::get('withdraw','User\LawyerController@withdraw');
+
+    Route::get('bills','User\LawyerController@bills');
+    Route::get('bill/withdraw','User\LawyerController@billsWithdraw');
+    Route::get('bill/income','User\LawyerController@billsIncoming');
 });
 
 Route::group(['prefix' => 'client'], function(){

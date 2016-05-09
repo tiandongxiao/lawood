@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
+use Faker\Generator as FakerGenerator;
+use Faker\Factory as FakerFactory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Carbon::setLocale('zh'); # 设置Carbon采用中文格式
+        $this->app->singleton(FakerGenerator::class,function(){
+            return FakerFactory::create('zh_CN');
+        }); # Faker生成中文测试数据
     }
 
     /**

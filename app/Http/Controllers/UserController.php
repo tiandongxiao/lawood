@@ -14,8 +14,8 @@ class UserController extends Controller
 {
     # 只有管理员可以访问
     public function __construct()
-    {
-        //$this->middleware('role:admin');
+    {        
+        $this->middleware('role:admin');
     }
 
     # 所有用户信息

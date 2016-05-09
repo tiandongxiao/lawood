@@ -58,6 +58,7 @@ class User extends Model implements AuthenticatableContract,
     public static function findRequested()
     {
         $query = User::query();
+        
         # 根据用户输入搜索信息
         Request::input('name') and $query->where('name','like','%'.Request::input('name').'%');
         Request::input('phone') and $query->where('phone',Request::input('phone'));
@@ -65,7 +66,10 @@ class User extends Model implements AuthenticatableContract,
         Request::input('union_id') and $query->where('union_id','like','%'.Request::input('union_id').'%');
         Request::input('open_id') and $query->where('open_id','like','%'.Request::input('open_id').'%');
 
+
         # 对结果进行分页
         return $query->paginate(15);
     }
+
+
 }

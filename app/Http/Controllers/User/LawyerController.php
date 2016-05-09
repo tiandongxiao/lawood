@@ -115,4 +115,24 @@ class LawyerController extends Controller
     {
 
     }
+
+    public function bills()
+    {
+
+    }
+
+    public function billsIncoming()
+    {
+
+    }
+
+    public function billsWithdraw()
+    {
+
+    }
+
+    public function billsAccount()
+    {
+        
+    }
 }

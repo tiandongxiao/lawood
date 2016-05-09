@@ -26,7 +26,7 @@ class ShopSetupTables extends Migration
         // Create table for storing items
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id')->unsigned()->nullable(); # 关联user,一个执业项目只属于一个律师
+            $table->integer('user_id')->unsigned()->nullable();    # 关联user,一个执业项目只属于一个律师
             $table->bigInteger('cart_id')->unsigned()->nullable();
             $table->bigInteger('order_id')->unsigned()->nullable();
             $table->string('sku');

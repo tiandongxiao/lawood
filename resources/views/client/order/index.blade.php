@@ -32,7 +32,7 @@
             @foreach($orders as $order)
                 @if($order->statusCode == 'accepted')
                     <div class="bg-black-gradient">
-                        <h3>{{$order->user_id}}</h3>
+                        <h4>{{$order->seller()->email}}</h4>
                         <p>{{$order->statusCode}}</p>
                         <a href="{{url('order/sign/'.$order->id)}}">签到</a>
                     </div>
@@ -45,7 +45,7 @@
             @foreach($orders as $order)
                 @if($order->statusCode == 'rejected')
                     <div class="bg-black-gradient">
-                        <h3>{{$order->user_id}}</h3>
+                        <h4>{{$order->seller()->email}}</h4>
                         <p>{{$order->statusCode}}</p>
                     </div>
                 @endif
@@ -57,7 +57,7 @@
             @foreach($orders as $order)
                 @if($order->statusCode == 'canceled')
                     <div class="bg-black-gradient">
-                        <h3>{{$order->user_id}}</h3>
+                        <h4>{{$order->seller()->email}}</h4>
                         <p>{{$order->statusCode}}</p>
                     </div>
                 @endif
@@ -69,7 +69,7 @@
             @foreach($orders as $order)
                 @if($order->statusCode == 'in_process')
                     <div class="bg-black-gradient">
-                        <h3>{{$order->user_id}}</h3>
+                        <h4>{{$order->seller()->email}}</h4>
                         <p>{{$order->statusCode}}</p>
                         <a href="{{url('order/sign/'.$order->id)}}">签到</a>
                     </div>
@@ -82,8 +82,9 @@
             @foreach($orders as $order)
                 @if($order->statusCode == 'completed')
                     <div class="bg-black-gradient">
-                        <h3>{{$order->user_id}}</h3>
+                        <h4>{{$order->seller()->email}}</h4>
                         <p>{{$order->statusCode}}</p>
+                        <a></a>
                     </div>
                 @endif
             @endforeach

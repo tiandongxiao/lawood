@@ -41,30 +41,4 @@ class NotificationController extends Controller
     {
         return view($this->viewDir.".".$view, $data);
     }
-
-    # * ------------------用户层面的相关操作 ------------------ * #
-
-    # 登录用户所有通告
-    public function all()
-    {
-        $user = Auth::user();
-        $notifies = $user->notifications;
-        return view('notification.all',compact('notifies'));
-    }
-
-    # 登录用户所有已读通告
-    public function read()
-    {
-        $user = Auth::user();
-        $notifies = $user->notifications()->where('read',true)->get();
-        return view('notification.read',compact('notifies'));
-    }
-
-    # 登录用户所有未读通告
-    public function unread()
-    {
-        $user = Auth::user();
-        $notifies = $user->notifications()->where('read',false)->get();
-        return view('notification.unread',compact('notifies'));
-    }
 }

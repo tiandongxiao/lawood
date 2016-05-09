@@ -10,6 +10,10 @@ use App\Http\Controllers\Controller;
 
 class RoleController extends Controller
 {
+    public function __construct()
+    {
+        //$this->middleware('role:admin');
+    }
     # 列举所有角色
     public function index()
     {

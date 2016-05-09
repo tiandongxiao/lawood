@@ -120,7 +120,20 @@ class TestController extends Controller
 
     public function buildNotifications()
     {
+        $user = User::find(1);
+        dd($user->created_at->diffForHumans());
         //$user = User::where('email',$email)->first();
-        factory(Notification::class, 20)->create();
+        #factory(Notification::class, 20)->create();
     }
+
+    public function entityPerm()
+    {
+        $edit_perm = Permission::create([
+            'name' => 'Edit notification',
+            'slug' => 'edit.notification',
+            'model' => 'App\Notification',
+        ]);
+        
+    }
+
 }
