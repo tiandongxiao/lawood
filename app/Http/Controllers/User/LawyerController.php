@@ -101,20 +101,22 @@ class LawyerController extends Controller
     public function bills()
     {
         $sum = $this->billsAccount();
-        return view('bill.index');
+        $orders = $this->getCompletedOrders($this->user);
+
+        return view('lawyer.bill.index',compact('sum','orders'));
     }
 
-    public function billsIncoming()
+    public function withdraw()
     {
-
+        $orders = $this->getNotWithdrawOrders($this->user);
+        $orders->each(function($items){
+            $items->withdrew = true;
+            $items->save();
+        });
+        return back();
     }
 
-    public function billsWithdraw()
-    {
-
-    }
-
-    public function billsAccount()
+    public function amount()
     {
         $orders = $this->getNotWithdrawOrders($this->user);
         $sum = 0;

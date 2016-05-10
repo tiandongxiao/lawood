@@ -145,7 +145,7 @@ trait ShopDevTrait
     {
         $orders = $this->getCompletedOrders($user);
         $filtered = $orders->filter(function($item){
-            return $item->withdraw == false;
+            return $item->withdrew == false;
         });
         return $filtered;
     }

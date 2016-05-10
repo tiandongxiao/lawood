@@ -17,8 +17,8 @@ class ConsultController extends Controller
 {
     public function all()
     {
-        $consults = Item::all();
-
+        # 卖家服务项的字段填充是不同的
+        $consults = Item::where('class',null)->get();
         return view('consult.all',compact('consults'));
 
     }
