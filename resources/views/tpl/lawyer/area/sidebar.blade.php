@@ -24,7 +24,7 @@
             </li>
             <li><a href="{{url('lawyer/orders')}}"><i class="fa fa-calendar"></i> <span>我的订单</span></a></li>
             <li class="nav-divider"></li>
-            <li><a href="#"><i class="fa fa-calendar"></i> <span>我的主页</span></a></li>
+            <li><a href="{{url('lawyer/show/'.Auth::user()->id)}}"><i class="fa fa-calendar"></i> <span>我的主页</span></a></li>
             <li><a href="{{url('lawyer/wallet')}}"><i class="fa fa-calendar"></i> <span>我的钱包</span></a></li>
             <li><a href="#"><i class="fa fa-calendar"></i> <span>停用</span></a></li>
             <li><a href="#"><i class="fa fa-calendar"></i> <span>设置</span></a></li>

@@ -132,7 +132,7 @@ class TestController extends Controller
 
         $comment = $lawyer->comment([
             'title' => 'hello',
-            'body'  => 'I am body'
+            'body'  => str_random(23)
         ],Auth::user());
         dd($lawyer->comments);
 

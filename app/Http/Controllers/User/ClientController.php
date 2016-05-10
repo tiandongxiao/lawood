@@ -11,6 +11,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Shop;
+use App\Order;
 
 class ClientController extends Controller
 {
@@ -62,5 +63,22 @@ class ClientController extends Controller
     {
         $orders = $this->getPayedOrders($this->user);
         return view('client.order.payed',compact('orders'));
+    }
+
+    # 用户反馈系统（评分，评论）
+    public function feedback($id)
+    {
+        $order = Order::findOrFail($id);
+        if($this->user->orders->contains($order)){
+            $seller = $order->seller;
+            $consult = Item::findOrFail($order->items[0]->reference_id);
+            return view('client.order.feedback',compact('seller','consult'));
+        }
+        return back()->withErrors('您无权对此订单进行评论');
+    }
+
+    public function postFeedback(Request $request)
+    {
+        
     }
 }

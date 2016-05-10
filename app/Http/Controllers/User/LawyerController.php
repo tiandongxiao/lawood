@@ -12,6 +12,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Item;
+use App\User;
 
 
 class LawyerController extends Controller
@@ -25,8 +26,8 @@ class LawyerController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth',['except'=>'board']);
-        $this->middleware('role:lawyer',['except'=>'board']);
+        $this->middleware('auth',['except'=>'board','index']);
+        $this->middleware('role:lawyer',['except'=>'board','index']);
         $this->user = Auth::user();
     }
 
@@ -34,6 +35,25 @@ class LawyerController extends Controller
     public function board()
     {
         return view('lawyer.board');
+    }
+
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+        if($user->role == 'lawyer') {
+            $categories = $user->categories;
+            $comments = $user->comments;
+            $num = count($this->getCompletedOrders($this->user));
+
+            return view('lawyer.index', compact('user', 'num', 'categories', 'comments'));
+        }
+        return back()->withErrors('无此律师');
+    }
+
+    public function consults()
+    {
+        $consults = Item::where('class',null)->where('email',$this->user->email)->get();
+
     }
 
     public function orders()
@@ -44,7 +64,7 @@ class LawyerController extends Controller
         foreach($items as $item){  # 搜索Item数据库中所有购买了律师服务的条目
             $services = Item::where('reference_id',$item->id)->get();
             foreach($services as $service){
-                $order = $service->order; # 每一个条目对应一个Order订单
+                $order = $service->order;  # 每一个条目对应一个Order订单
                 $orders[] = $order;
             }
         }

@@ -5,14 +5,12 @@ namespace App;
 use Amsgames\LaravelShop\Models\ShopItemModel;
 use App\Traits\GaodeMapTrait;
 use Conner\Likeable\LikeableTrait;
-use DraperStudio\Commentable\Contracts\Commentable;
-use DraperStudio\Commentable\Traits\Commentable as CommentTrait;
 
-class Item extends ShopItemModel implements  Commentable
+class Item extends ShopItemModel
 {
     use GaodeMapTrait;    # 引入高德云数据操作
     use LikeableTrait;    # 引入评级系统
-    use CommentTrait;     # 引入评论系统
+
 
     protected $fillable = ['user_id', 'cart_id', 'shop_id', 'sku', 'price', 'tax', 'shipping', 'currency', 'quantity', 'class', 'reference_id','category_id','location_id','yun_id'];
     

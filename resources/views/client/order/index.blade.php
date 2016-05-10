@@ -84,6 +84,8 @@
                     <div class="bg-black-gradient">
                         <h4>{{$order->seller->email}}</h4>
                         <p>{{$order->statusCode}}</p>
+                        <p>{{$order->statusCode}}</p>
+                        <a href="{{url('client/order/feedback/'.$order->id)}}">立即评论</a>
                         <a></a>
                     </div>
                 @endif
