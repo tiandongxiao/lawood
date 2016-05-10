@@ -120,8 +120,24 @@ class TestController extends Controller
 
     public function buildNotifications()
     {
-        $user = User::find(1);
-        dd($user->created_at->diffForHumans());
+//        $item = Item::find(1);
+//
+//        $comment = $item->comment([
+//            'title' => 'hello',
+//            'body'  => 'I am body'
+//        ],Auth::user());
+//        dd(Auth::user()->comments);
+
+        $lawyer = User::where('email','lawyer@lawood.cn')->first();
+
+        $comment = $lawyer->comment([
+            'title' => 'hello',
+            'body'  => 'I am body'
+        ],Auth::user());
+        dd($lawyer->comments);
+
+//        $user = User::find(1);
+//        dd($user->created_at->diffForHumans());
         //$user = User::where('email',$email)->first();
         #factory(Notification::class, 20)->create();
     }

@@ -4,6 +4,7 @@ namespace App;
 
 use Amsgames\LaravelShop\Traits\ShopUserTrait;
 
+
 use Ghanem\Rating\Contracts\Ratingable;
 use Ghanem\Rating\Traits\Ratingable as RatingTrait;
 
@@ -19,13 +20,18 @@ use Bican\Roles\Traits\HasRoleAndPermission;
 use Bican\Roles\Contracts\HasRoleAndPermission as HasRoleAndPermissionContract;
 use Illuminate\Support\Facades\Request;
 
+use DraperStudio\Commentable\Contracts\Commentable;
+use DraperStudio\Commentable\Traits\Commentable as CommentTrait;
+
+
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract,
                                     Ratingable,
-                                    HasRoleAndPermissionContract
+                                    HasRoleAndPermissionContract,
+                                    Commentable
 {
-    use Authenticatable, CanResetPassword, ShopUserTrait, RatingTrait, HasRoleAndPermission, Authorizable {
+    use Authenticatable, CanResetPassword, ShopUserTrait, RatingTrait, HasRoleAndPermission, Authorizable ,CommentTrait{
         # 为解决冲突的问题
         HasRoleAndPermission::can insteadof Authorizable;
         Authorizable::can as may;

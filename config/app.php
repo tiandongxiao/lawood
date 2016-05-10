@@ -165,6 +165,7 @@ return [
         \Conner\Likeable\LikeableServiceProvider::class,        # 收藏功能
         \App\Self\Notify\NotifyServiceProvider::class,          # 通知/微信模板消息
         Jenssegers\Agent\AgentServiceProvider::class,           # 用户代理识别
+        DraperStudio\Commentable\ServiceProvider::class,        # 评论模块
     ],
 
     /*

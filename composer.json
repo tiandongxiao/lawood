@@ -25,7 +25,8 @@
         "ghanem/rating": "^1.1",
         "bican/roles": "^2.1",
         "paulvl/backup": "1.*",
-        "rtconner/laravel-likeable": "^1.2"
+        "rtconner/laravel-likeable": "^1.2",
+        "draperstudio/laravel-commentable": "^0.1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
