@@ -17,12 +17,6 @@ class OrderController extends Controller
 {
     use ShopDevTrait;
 
-    # 查询订单
-    public function queryOrder()
-    {
-        
-    }
-
     # 对未下单的订单下单
     public function placeOrder($id)
     {

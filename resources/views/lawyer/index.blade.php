@@ -3,6 +3,7 @@
     <div>
         <h4>{{$user->email}}</h4>
         <blockquote>被约见次数：{{$num}}</blockquote>
+        <p>评分：{{$user->averageRating()}}</p>
     </div>
     <div>
         @if($categories)

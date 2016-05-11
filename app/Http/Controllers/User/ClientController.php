@@ -76,28 +76,53 @@ class ClientController extends Controller
 
     public function postFeedback(Request $request)
     {
+        //dd($request->all());
         $order = Order::findOrFail($request->get('order_id'));
         if($this->user->orders->contains($order) && $order->statusCode == 'completed') {
             $seller = $order->seller;
+            $seller->buildAnalysis();
             $consult = Item::findOrFail($order->items[0]->reference_id);
 
             $seller->rating([
                 'rating' => $request->get('rating')
             ], $this->user);
 
-            $consult->rating([
+            $seller->timing->rating([
                 'rating' => $request->get('timing')
             ], $this->user);
+
+            $seller->dressing->rating([
+                'rating' => $request->get('dressing')
+            ], $this->user);
+
+            $seller->polite->rating([
+                'rating' => $request->get('polite')
+            ], $this->user);
+
+            $consult->rating([
+                'rating' => $request->get('major')
+            ], $this->user);
+            
 
             if ($request->get('comment')) {
                 $seller->comment([
                     'title' => 'hello',
-                    'body' => str_random(23)
+                    'body' => $request->get('comment')
                 ], Auth::user());
             }
 
-            return view('client.order.feedback',compact('id','seller','consult'));
+            return redirect('lawyer/show/'.$seller->id);
         }
         return back()->withErrors('您无权对此订单进行评论');
+    }
+
+    public function payPendingOrder($id)
+    {
+        $order = Order::findOrFail($id);
+        if($this->user->orders->contains($order) && $order->statusCode == 'pending'){
+            $consult_id = $order->items[0]->reference_id;
+            $order->delete();
+            return redirect('order/place/'.$consult_id);
+        }
     }
 }

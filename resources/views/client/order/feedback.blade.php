@@ -29,7 +29,7 @@
                         <input type="input" class="form-control" name="rating" id="rating" placeholder="rating">
                     </div>
                 </div>
-                <h4 style="padding-left: 50px">律师印象</h4>
+                <h4 style="padding-left: 50px">准时</h4>
                 <div class="form-group" style="padding-left: 150px;">
                     <div class="radio">
                         <label>
@@ -51,6 +51,78 @@
                     </div>
                 </div>
             </div>
+
+            <h4 style="padding-left: 50px">穿着</h4>
+            <div class="form-group" style="padding-left: 150px;">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="dressing"  value="5" checked="">
+                        提前
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="dressing"  value="3">
+                        准时
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="dressing"  value="1" >
+                        迟到
+                    </label>
+                </div>
+            </div>
+
+            <h4 style="padding-left: 50px">专业</h4>
+            <div class="form-group" style="padding-left: 150px;">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="major"  value="5" checked="">
+                        专业
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="major"  value="3">
+                        一般
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="major"  value="1" >
+                        业余
+                    </label>
+                </div>
+            </div>
+            <h4 style="padding-left: 50px">礼貌</h4>
+            <div class="form-group" style="padding-left: 150px;">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="polite"  value="5" checked="">
+                        礼貌
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="polite"  value="3">
+                        一般
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="polite"  value="1" >
+                        粗鲁
+                    </label>
+                </div>
+            </div>
+            <h4>其他评论</h4>
+            <div class="form-group" style="padding-left: 150px;">
+                <div>
+                    <input type="input" name="comment" />
+                </div>
+            </div>
+
             <!-- /.box-body -->
             <div class="box-footer">
                 <button type="submit" class="btn btn-info pull-right">提交</button>

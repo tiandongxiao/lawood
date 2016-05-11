@@ -62,7 +62,7 @@ trait ShopDevTrait
         }
         return null;
     }
-
+    
     public function searchOrderById($order_id)
     {
         $orders = Auth::user()->orders; # 查询订单($notify->transaction_id);

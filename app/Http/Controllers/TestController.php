@@ -138,10 +138,10 @@ class TestController extends Controller
 //        ],Auth::user());
 //        dd($lawyer->comments);
         $lawyer = User::where('email','lawyer@lawood.cn')->first();
-        $lawyer->buildAnalysis();
-        //dd($lawyer->dressing);
-        //dd($lawyer->timing);
-        dd($lawyer->polite);
+
+        //dd($lawyer->dressing->ratings);
+        //dd($lawyer->timing->ratings);
+        dd($lawyer->polite->ratings);
 //        $time = new UserPolite();
 //        $time->save();
 //        dd($time);

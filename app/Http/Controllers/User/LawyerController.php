@@ -26,8 +26,8 @@ class LawyerController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth',['except'=>'board','index']);
-        $this->middleware('role:lawyer',['except'=>'board','index']);
+        $this->middleware('auth',['except'=>'board','index','show']);
+        $this->middleware('role:lawyer',['except'=>'board','index','show']);
         $this->user = Auth::user();
     }
 
@@ -53,7 +53,6 @@ class LawyerController extends Controller
     public function consults()
     {
         $consults = Item::where('class',null)->where('email',$this->user->email)->get();
-
     }
 
     public function orders()
@@ -61,13 +60,14 @@ class LawyerController extends Controller
         $orders = []; # 定义存储容器
         $items = $this->user->items; # 获取律师所有服务项
 
-        foreach($items as $item){  # 搜索Item数据库中所有购买了律师服务的条目
+        foreach($items as $item){    # 搜索Item数据库中所有购买了律师服务的条目
             $services = Item::where('reference_id',$item->id)->get();
             foreach($services as $service){
                 $order = $service->order;  # 每一个条目对应一个Order订单
                 $orders[] = $order;
             }
         }
+
         $orders = collect($orders);
         
         return view('lawyer.order.index',compact('orders'));

@@ -8,7 +8,7 @@
                     <div class="bg-black-gradient">
                         <h4>{{$order->seller->email}}</h4>
                         <p>{{$order->statusCode}}</p>
-                        <a href="{{url('order/pta/'.$order->id)}}">付款</a>
+                        <a href="{{url('client/order/pay/'.$order->id)}}">付款</a>
                     </div>
                 @endif
             @endforeach
@@ -83,7 +83,6 @@
                 @if($order->statusCode == 'completed')
                     <div class="bg-black-gradient">
                         <h4>{{$order->seller->email}}</h4>
-                        <p>{{$order->statusCode}}</p>
                         <p>{{$order->statusCode}}</p>
                         <a href="{{url('client/order/feedback/'.$order->id)}}">立即评论</a>
                         <a></a>

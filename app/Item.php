@@ -14,7 +14,6 @@ class Item extends ShopItemModel implements Ratingable
     use LikeableTrait;    # 引入收藏系统
     use RatingTrait;      # 引入评级系统
 
-
     protected $fillable = ['user_id', 'cart_id', 'shop_id', 'sku', 'price', 'tax', 'shipping', 'currency', 'quantity', 'class', 'reference_id','category_id','location_id','yun_id'];
     
     # 一个咨询服务项只属于一个分类
@@ -35,26 +34,10 @@ class Item extends ShopItemModel implements Ratingable
         return $this->hasOne(Pois::class);
     }
 
-    public function major()
-    {
-        return $this->hasOne(UserMajor::class);
-    }
-
-    public function buildAnalysis()
-    {
-        if(is_null($this->major)){
-            UserMajor::create([
-                'item_id' => $this->id
-            ]);
-        }
-    }
-
-
     public function delete()
     {
         #删除地图与本地POI信息
         $this->poi->delete();
-        $this->major->delete();
         parent::delete();
     }
 }
