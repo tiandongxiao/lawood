@@ -5,6 +5,7 @@ namespace App;
 use Amsgames\LaravelShop\Traits\ShopUserTrait;
 
 
+use App\Traits\UserAnalysisTrait;
 use Ghanem\Rating\Contracts\Ratingable;
 use Ghanem\Rating\Traits\Ratingable as RatingTrait;
 
@@ -31,7 +32,7 @@ class User extends Model implements AuthenticatableContract,
                                     HasRoleAndPermissionContract,
                                     Commentable
 {
-    use Authenticatable, CanResetPassword, ShopUserTrait, RatingTrait, HasRoleAndPermission, Authorizable ,CommentTrait{
+    use Authenticatable, CanResetPassword, ShopUserTrait, RatingTrait, HasRoleAndPermission, Authorizable ,CommentTrait, UserAnalysisTrait{
         # 为解决冲突的问题
         HasRoleAndPermission::can insteadof Authorizable;
         Authorizable::can as may;
@@ -77,5 +78,35 @@ class User extends Model implements AuthenticatableContract,
         return $query->paginate(15);
     }
 
+    public function buildAnalysis()
+    {
+        if(is_null($this->dressing)){
+            UserDressing::create([
+                'user_id' => $this->id
+            ]);
+        }
+        if(is_null($this->timing)){
+            UserTiming::create([
+                'user_id' => $this->id
+            ]);
+        }
+        if(is_null($this->polite)){
+            UserPolite::create([
+                'user_id' => $this->id
+            ]);
+        }
+    }
 
+    public function delete()
+    {
+        foreach ($this->categories as $category){
+            $this->categories()->detach($category->id);
+        }
+        $this->locations->delete();
+        $this->comments->delete();
+        $this->timing->delete();
+        $this->dressing->delete();
+        $this->polite->delete();        
+        parent::delete();
+    }
 }

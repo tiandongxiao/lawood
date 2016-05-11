@@ -5,11 +5,14 @@ namespace App;
 use Amsgames\LaravelShop\Models\ShopItemModel;
 use App\Traits\GaodeMapTrait;
 use Conner\Likeable\LikeableTrait;
+use Ghanem\Rating\Contracts\Ratingable;
+use Ghanem\Rating\Traits\Ratingable as RatingTrait;
 
-class Item extends ShopItemModel
+class Item extends ShopItemModel implements Ratingable
 {
     use GaodeMapTrait;    # 引入高德云数据操作
-    use LikeableTrait;    # 引入评级系统
+    use LikeableTrait;    # 引入收藏系统
+    use RatingTrait;      # 引入评级系统
 
 
     protected $fillable = ['user_id', 'cart_id', 'shop_id', 'sku', 'price', 'tax', 'shipping', 'currency', 'quantity', 'class', 'reference_id','category_id','location_id','yun_id'];
@@ -32,10 +35,26 @@ class Item extends ShopItemModel
         return $this->hasOne(Pois::class);
     }
 
+    public function major()
+    {
+        return $this->hasOne(UserMajor::class);
+    }
+
+    public function buildAnalysis()
+    {
+        if(is_null($this->major)){
+            UserMajor::create([
+                'item_id' => $this->id
+            ]);
+        }
+    }
+
+
     public function delete()
     {
         #删除地图与本地POI信息
         $this->poi->delete();
+        $this->major->delete();
         parent::delete();
     }
 }

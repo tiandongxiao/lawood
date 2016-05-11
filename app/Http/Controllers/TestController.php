@@ -6,6 +6,8 @@ use App\Category;
 use App\Item;
 use App\Notification;
 use App\User;
+use App\UserPolite;
+use App\UserTiming;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -128,13 +130,21 @@ class TestController extends Controller
 //        ],Auth::user());
 //        dd(Auth::user()->comments);
 
+//        $lawyer = User::where('email','lawyer@lawood.cn')->first();
+//
+//        $comment = $lawyer->comment([
+//            'title' => 'hello',
+//            'body'  => str_random(23)
+//        ],Auth::user());
+//        dd($lawyer->comments);
         $lawyer = User::where('email','lawyer@lawood.cn')->first();
-
-        $comment = $lawyer->comment([
-            'title' => 'hello',
-            'body'  => str_random(23)
-        ],Auth::user());
-        dd($lawyer->comments);
+        $lawyer->buildAnalysis();
+        //dd($lawyer->dressing);
+        //dd($lawyer->timing);
+        dd($lawyer->polite);
+//        $time = new UserPolite();
+//        $time->save();
+//        dd($time);
 
 //        $user = User::find(1);
 //        dd($user->created_at->diffForHumans());
@@ -149,7 +159,13 @@ class TestController extends Controller
             'slug' => 'edit.notification',
             'model' => 'App\Notification',
         ]);
-        
+    }
+
+    public function timing()
+    {
+        $time = new UserTiming();
+        $time->save();
+        dd($time);
     }
 
 }

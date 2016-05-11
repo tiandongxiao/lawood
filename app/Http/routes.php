@@ -127,6 +127,7 @@ Route::group(['prefix' => 'client'], function(){
     Route::get('order/payed','User\ClientController@payedOrders');
     Route::get('order/completed','User\ClientController@completedOrders');
     Route::get('order/feedback/{id}','User\ClientController@feedback');
+    Route::post('order/feedback','User\ClientController@postFeedback');
 
     Route::get('notifies','User\ClientController@notifies');         # 登录用户所有通告消息
     Route::get('notify/read','NotificationController@read');     # 登录用户所有已读通告消息

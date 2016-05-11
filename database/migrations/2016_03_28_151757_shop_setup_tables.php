@@ -110,7 +110,7 @@ class ShopSetupTables extends Migration
                 ->on('order_status')
                 ->onUpdate('cascade');
             $table->index(['user_id', 'statusCode']);
-            $table->index(['id', 'user_id', 'statusCode','order_no','refunded','withdrew']);
+            $table->index(['id', 'user_id', 'statusCode']);
 
         });
         # Create table for storing transactions

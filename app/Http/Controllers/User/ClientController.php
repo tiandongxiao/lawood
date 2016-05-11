@@ -69,16 +69,35 @@ class ClientController extends Controller
     public function feedback($id)
     {
         $order = Order::findOrFail($id);
-        if($this->user->orders->contains($order)){
-            $seller = $order->seller;
-            $consult = Item::findOrFail($order->items[0]->reference_id);
-            return view('client.order.feedback',compact('seller','consult'));
-        }
+        if($this->user->orders->contains($order) && $order->statusCode == 'completed')
+            return view('client.order.feedback',compact('id'));
         return back()->withErrors('您无权对此订单进行评论');
     }
 
     public function postFeedback(Request $request)
     {
-        
+        $order = Order::findOrFail($request->get('order_id'));
+        if($this->user->orders->contains($order) && $order->statusCode == 'completed') {
+            $seller = $order->seller;
+            $consult = Item::findOrFail($order->items[0]->reference_id);
+
+            $seller->rating([
+                'rating' => $request->get('rating')
+            ], $this->user);
+
+            $consult->rating([
+                'rating' => $request->get('timing')
+            ], $this->user);
+
+            if ($request->get('comment')) {
+                $seller->comment([
+                    'title' => 'hello',
+                    'body' => str_random(23)
+                ], Auth::user());
+            }
+
+            return view('client.order.feedback',compact('id','seller','consult'));
+        }
+        return back()->withErrors('您无权对此订单进行评论');
     }
 }

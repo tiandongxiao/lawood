@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLocationsTable extends Migration
+class CreateUserMajorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,20 +12,16 @@ class CreateLocationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('locations', function (Blueprint $table) {
+        Schema::create('user_majors', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->nullable();
-            $table->string('type',20);
-            $table->string('address');
+            $table->bigInteger('item_id')->unsigned()->nullable();
             $table->timestamps();
-
-            $table->foreign('user_id')
+            
+            $table->foreign('item_id')
                 ->references('id')
-                ->on('users')
+                ->on('items')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-
-            $table->index(['id', 'user_id']);
         });
     }
 
@@ -36,6 +32,6 @@ class CreateLocationsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('locations');
+        Schema::drop('user_majors');
     }
 }
