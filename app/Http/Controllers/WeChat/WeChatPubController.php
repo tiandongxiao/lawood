@@ -172,7 +172,7 @@ class WeChatPubController extends Controller
                     [
                         "type" => "view",
                         "name" => "客服测试",
-                        "url"  => url('test/call')
+                        "url"  => url('wx/pub/reg')
                     ],
                     [
                         "type" => "view",
