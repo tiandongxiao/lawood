@@ -20,15 +20,17 @@ class OrderController extends Controller
     # 对未下单的订单下单
     public function placeOrder($id)
     {
-        Item::findOrFail($id);
+        $consult = Item::findOrFail($id);
+        $seller = $consult->seller;
+        if($seller->enable == false)
+            return back()->withErrors('律师因个人原因暂停服务');
 
-        if(Agent::isMobile()){
+        if (Agent::isMobile()) {
             # 如果是微信浏览器
             if (strpos(Agent::getUserAgent(), 'MicroMessenger') !== false)
-                return redirect('wxpay/js/'.$id);
+                return redirect('wxpay/js/' . $id);
         }
-
-        return redirect('wxpay/native/'.$id);
+        return redirect('wxpay/native/' . $id);
     }
 
     # 退款逻辑

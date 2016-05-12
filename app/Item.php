@@ -40,4 +40,13 @@ class Item extends ShopItemModel implements Ratingable
         $this->poi->delete();
         parent::delete();
     }
+
+    public function getSellerAttribute()
+    {
+        # 如果是律师自身items对象中的一个
+        if(is_null($this->class)){
+            return User::find($this->user_id);
+        }
+        return Item::find($this->reference_id)->seller;
+    }
 }

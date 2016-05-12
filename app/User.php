@@ -39,7 +39,7 @@ class User extends Model implements AuthenticatableContract,
     }
 
     protected $table = 'users';
-    protected $fillable = ['name', 'phone', 'email', 'active', 'avatar', 'role', 'union_id', 'open_id', 'password'];
+    protected $fillable = ['name', 'real_name', 'phone', 'email', 'active', 'enable' ,'avatar', 'role', 'union_id', 'open_id', 'password'];
     protected $hidden = ['password', 'remember_token'];
 
     # 一个律师可以拥有多个地址，以便于其扩展业务，地址信息独有不共享
@@ -52,6 +52,11 @@ class User extends Model implements AuthenticatableContract,
     public function categories()
     {
         return $this->belongsToMany(Category::class,'user_category');
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
     }
 
     # 一个律师拥有多个Item项，这个关系在ShopUserTrait中已经绑定 #

@@ -117,7 +117,8 @@ class ConsultController extends Controller
                 }
             }
         }
-        return redirect('test/dc');
+        #return redirect('test/dc');
+        return redirect('lawyer/consults');
     }
 
     # 判断律师是否提供了此项咨询业务

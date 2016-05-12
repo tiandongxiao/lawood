@@ -26,8 +26,8 @@ class LawyerController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth',['except'=>'board','index','show']);
-        $this->middleware('role:lawyer',['except'=>'board','index','show']);
+        $this->middleware('auth',['except'=>'show']);
+        $this->middleware('role:lawyer',['except'=>'show']);
         $this->user = Auth::user();
     }
 
@@ -109,16 +109,6 @@ class LawyerController extends Controller
         return view('lawyer.notify.index',compact('notifies'));
     }
 
-    public function readNotifies()
-    {
-
-    }
-
-    public function unreadNotifies()
-    {
-
-    }
-
     public function bills()
     {
         $sum = $this->billsAccount();
@@ -145,5 +135,19 @@ class LawyerController extends Controller
             $sum += $order->total;
         }
         return $sum;
+    }
+
+    public function startService()
+    {
+        $this->user->enable =  true;
+        $this->user->save();
+        return redirect('lawyer');
+    }
+
+    public function stopService()
+    {
+        $this->user->enable =  false;
+        $this->user->save();
+        return redirect('lawyer');
     }
 }

@@ -168,6 +168,14 @@ class AuthController extends Controller
         $pwd = $request->get('password');
 
         if(Auth::attempt(['email'=>$email,'password'=>$pwd])){
+            switch(Auth::user()->role){
+                case 'lawyer':
+                    return redirect('lawyer');
+                case 'client':
+                    return redirect('client');
+                case 'admin':
+                    return redirect('site');
+            }
             return redirect()->to('/');
         }
         return redirect('login/email')->withErrors('账号密码有误');

@@ -114,6 +114,8 @@ Route::group(['prefix' => 'lawyer'], function(){
 
     Route::get('wallet','User\LawyerController@bills');
     Route::get('withdraw','User\LawyerController@withdraw');
+    Route::get('on','User\LawyerController@startService');
+    Route::get('off','User\LawyerController@stopService');
 });
 
 Route::group(['prefix' => 'client'], function(){
