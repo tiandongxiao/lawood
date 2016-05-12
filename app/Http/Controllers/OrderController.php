@@ -117,4 +117,14 @@ class OrderController extends Controller
         Notify::send($seller,['type'=>'reminder','order_id'=>$order->id]);
         return back()->withErrors('已发送催单通知');
     }
+
+    public function heal()
+    {
+        $orders = Order::where('order_no',null)->get();
+        if($orders){
+            $orders->each(function($order){
+                $order->statusCode = 'abandoned';
+            });
+        }
+    }
 }

@@ -17,6 +17,15 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\SomeEvent' => [
             'App\Listeners\EventListener',
         ],
+        'Amsgames\LaravelShop\Events\OrderCompleted' => [
+            'App\Listeners\OrderCompletedListener',
+        ],
+        'Amsgames\LaravelShop\Events\OrderStatusChanged' => [
+            'App\Listeners\OrderStatusChangedListener',
+        ],
+        'Amsgames\LaravelShop\Events\OrderPlaced' => [
+            'App\Listeners\OrderPlacedListener',
+        ],
     ];
 
     /**

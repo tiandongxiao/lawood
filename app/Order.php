@@ -35,12 +35,4 @@ class Order extends ShopOrderModel
     {
         return Item::find($this->items[0]->reference_id)->user;
     }
-
-    public function delete()
-    {
-        $this->items()->delete();
-        $this->transactions()->delete();
-        $this->user_id = null;
-        $this->statusCode = null;
-    }
 }

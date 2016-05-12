@@ -11,10 +11,12 @@ namespace App\Self\Payment;
 use Amsgames\LaravelShop\Core\PaymentGateway;
 use Amsgames\LaravelShop\Exceptions\CheckoutException;
 use Amsgames\LaravelShop\Exceptions\GatewayException;
+use Amsgames\LaravelShop\LaravelShop;
 use Illuminate\Support\Facades\Log;
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Payment\Order;
 use Illuminate\Support\Str;
+use Amsgames\LaravelShop\Events\OrderStatusChanged;
 
 class WxNativePay extends PaymentGateway
 {
@@ -68,7 +70,7 @@ class WxNativePay extends PaymentGateway
                 $order->order_no = $wx_order->out_trade_no;
                 $order->attach = $result->code_url;
                 $order->save();
-
+                event(new OrderStatusChanged($order->id, $order->statusCode, 'null'));
                 $this->detail = '订单总金额为：'.($order->total/100).'元,尚未支付';
                 $this->transactionId = $wx_order->out_trade_no; # 尚未生成交易信息,暂时使用微信单号
                 return true;

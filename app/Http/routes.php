@@ -203,5 +203,6 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('faker','TestController@faker');
     Route::get('cache','TestController@cache');
     Route::get('build','TestController@buildNotifications');
+    Route::get('heal','OrderController@heal');
 });
 

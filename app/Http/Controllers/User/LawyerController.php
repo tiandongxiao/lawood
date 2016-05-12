@@ -52,7 +52,8 @@ class LawyerController extends Controller
 
     public function consults()
     {
-        $consults = Item::where('class',null)->where('email',$this->user->email)->get();
+        $consults = Item::where('class',null)->where('user_id',$this->user->id)->get();
+        return view('lawyer.consult.index',compact('consults'));
     }
 
     public function orders()

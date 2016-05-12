@@ -63,6 +63,11 @@ class LaravelShopSeeder extends Seeder
 			'code' 				=> 'failed',
 			'name' 				=> 'Failed',
 			'description'       => 'Failed order. Payment or other process failed.',
+		],
+		[
+			'code' 				=> 'abandoned',
+			'name' 				=> 'Abandoned',
+			'description'       => '废弃的订单',
 		]
 	]);
   }
