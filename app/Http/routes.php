@@ -204,5 +204,6 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('cache','TestController@cache');
     Route::get('build','TestController@buildNotifications');
     Route::get('heal','OrderController@heal');
+    Route::get('call','OrderController@call');
 });
 

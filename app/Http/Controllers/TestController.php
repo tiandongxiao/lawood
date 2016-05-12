@@ -168,4 +168,9 @@ class TestController extends Controller
         dd($time);
     }
 
+    public function call()
+    {
+        return view('test.call');
+    }
+
 }
