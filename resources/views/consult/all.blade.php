@@ -5,7 +5,7 @@
             @foreach($consults as $consult)
                 <div class="bg-black-gradient">
                     <h3>{{$consult->price}}</h3>
-                    <p>{{$consult->user->email}}</p>
+                    <p>{{$consult->seller->email}}</p>
                     <a href="{{url('order/place/'.$consult->id)}}">预约咨询</a>
                 </div>
             @endforeach

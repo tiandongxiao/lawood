@@ -113,7 +113,7 @@ class ConsultController extends Controller
                     $item->poi()->save($poi);
 
                     # 为避免高德云图请求太快出现问题，故让其延迟一些
-                    usleep(10);
+                    usleep(1);
                 }
             }
         }

@@ -122,6 +122,7 @@ class TestController extends Controller
 
     public function buildNotifications()
     {
+
 //        $item = Item::find(1);
 //
 //        $comment = $item->comment([
@@ -138,6 +139,7 @@ class TestController extends Controller
 //        ],Auth::user());
 //        dd($lawyer->comments);
         $lawyer = User::where('email','lawyer@lawood.cn')->first();
+        dd($lawyer->consults);
 
         //dd($lawyer->dressing->ratings);
         //dd($lawyer->timing->ratings);

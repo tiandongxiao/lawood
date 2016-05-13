@@ -60,9 +60,9 @@ class Pois extends Model
             '_address'     => $location->address,
             'category'     => $category->name,
             'price'        => $item->price,
-            #'pay_url'      => url('payment/chose/'.$item->id),
-            'pay_url'      => url('order/place/'.$item->id),
-            'detail_url'   => url('consult/'.$item->id)
+            'enable'       => $item->seller->enable,
+            'link_buy'      => url('order/place/'.$item->id),
+            'link_detail'   => url('consult/'.$item->id)
         ]);
 
         $this->poi_id = $poi_id;

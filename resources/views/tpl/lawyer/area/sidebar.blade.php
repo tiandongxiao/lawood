@@ -26,9 +26,12 @@
             <li class="nav-divider"></li>
             <li><a href="{{url('lawyer/show/'.Auth::user()->id)}}"><i class="fa fa-calendar"></i> <span>我的主页</span></a></li>
             <li><a href="{{url('lawyer/wallet')}}"><i class="fa fa-calendar"></i> <span>我的钱包</span></a></li>
-            <li><a href="#"><i class="fa fa-calendar"></i> <span>停用</span></a></li>
-            <li><a href="#"><i class="fa fa-calendar"></i> <span>设置</span></a></li>
-
+            @if(Auth::user()->enable)
+            <li><a href="{{url('lawyer/off')}}"><i class="fa fa-power-off"></i> <span>关闭</span></a></li>
+            @else
+            <li><a href="{{url('lawyer/on')}}"><i class="fa fa-sheqel"></i> <span>开启</span></a></li>
+            @endif
+            <li><a href="{{url('lawyer/setting')}}"><i class="fa fa-th"></i> <span>设置</span></a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
