@@ -17,7 +17,7 @@ class CreateProfilesTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('licence');     # 律师证号
             $table->string('office',128);  # 律所名称
-            $table->string('years',5);     # 工作年限
+            $table->text('description');
             $table->timestamps();
 
             $table->foreign('user_id')

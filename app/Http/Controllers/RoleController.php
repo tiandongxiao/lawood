@@ -14,6 +14,7 @@ class RoleController extends Controller
     {
         //$this->middleware('role:admin');
     }
+    
     # 列举所有角色
     public function index()
     {

@@ -114,4 +114,5 @@ class User extends Model implements AuthenticatableContract,
         $this->polite->delete();        
         parent::delete();
     }
+
 }

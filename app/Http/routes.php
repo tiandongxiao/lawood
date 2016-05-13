@@ -209,3 +209,5 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('call','TestController@call');
 });
 
+
+Route::resource('receipt','ReceiptController');
