@@ -1,12 +1,12 @@
 @extends('wechat.base.app')
 @section('css')
     <style>body{background:#f8f8f8}</style>
-@endsection
+@stop
 @section('content')
     <!--默认状态-->
     <section class="zc-main">
         <div class="banner"><img src="images/zc-banner.png" width="100%"></div>
-        <form  action="#" id="form">
+        <form  action="{{url('wechat/reg_more')}}" id="form" method="POST">
             {!! csrf_field() !!}
             <div class="form">
                 <a class="itms itms-link" href="#">
@@ -93,7 +93,7 @@
 
     </section>
     <!--默认状态-->
-@endsection
+@stop
 @section('script')
     <script>
         $(function(){
@@ -126,4 +126,4 @@
             //默认
         })
     </script>
-@endsection
+@stop
