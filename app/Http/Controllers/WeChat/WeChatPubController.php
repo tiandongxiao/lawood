@@ -283,6 +283,6 @@ class WeChatPubController extends Controller
     public function chose()
     {
         $user = $this->loginUser();
-        return redirect('chose');
+        return redirect('app/chose');
     }
 }

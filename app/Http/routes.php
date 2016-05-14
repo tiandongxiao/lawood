@@ -19,11 +19,11 @@ Route::post('chose', 'Auth\AuthController@postChoseRegRole');
 Route::get('register/{role}', 'Auth\AuthController@getPhoneRegister');
 Route::post('register', 'Auth\AuthController@postPhoneRegister');
 
-Route::get('reset', 'Auth\PasswordController@getPhoneReset');
-Route::post('reset', 'Auth\PasswordController@postPhoneReset');
-
-Route::get('reset/confirm', 'Auth\PasswordController@getPhoneResetConfirm');
-Route::post('reset/confirmed', 'Auth\PasswordController@postPhoneResetConfirm');
+//Route::get('reset', 'Auth\PasswordController@getPhoneReset');
+//Route::post('reset', 'Auth\PasswordController@postPhoneReset');
+//
+//Route::get('reset/confirm', 'Auth\PasswordController@getPhoneResetConfirm');
+//Route::post('reset/confirmed', 'Auth\PasswordController@postPhoneResetConfirm');
 
 //Route::get('email/active/{token}','Auth\AuthController@getActiveEmail');
 //Route::get('email/bind/{token}','Auth\BindController@getBindEmailHandler');
@@ -211,3 +211,14 @@ Route::group(['prefix' => 'test'], function(){
 
 
 Route::resource('receipt','ReceiptController');
+
+
+Route::group(['prefix' => 'wechat'], function(){
+    Route::get('chose','Wechat\WechatController@chose');
+    Route::get('reg/{role}','Wechat\WechatController@register');
+    Route::post('reg','Wechat\WechatController@postRegister');
+    Route::get('reg_more','Wechat\WechatController@registerMore');
+    Route::post('reg_more','Wechat\WechatController@postRegisterMore');
+
+    Route::get('consults','Wechat\WechatController@consults');
+});
