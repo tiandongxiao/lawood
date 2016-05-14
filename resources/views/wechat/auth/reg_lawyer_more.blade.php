@@ -5,21 +5,23 @@
 @section('content')
     <!--默认状态-->
     <section class="zc-main">
-        <div class="banner"><img src="images/zc-banner.png" width="100%"></div>
+        <div class="banner"><img src="/images/zc-banner.png" width="100%"></div>
         <form  action="{{url('wechat/reg_more')}}" id="form" method="POST">
             {!! csrf_field() !!}
             <div class="form">
-                <a class="itms itms-link" href="#">
+                <a class="itms itms-link" href="{{url('wechat/setting/office')}}">
                     <div class="f-left">律所名称</div>
                     <div class="right fc-cccccc">如北京京师事务所</div>
                 </a>
                 <a class="itms itms-link" href="#">
                     <div class="f-left">律所地址</div>
                     <div class="right fc-cccccc">我的位置</div>
+                    <input type="hidden" name="office" value="office_addr"/>
                 </a>
                 <a class="itms itms-link" href="#">
                     <div class="f-left">居住地址</div>
                     <div class="right fc-cccccc">我的位置</div>
+                    <input type="hidden" name="office" value="office_addr"/>
                 </a>
             </div>
             <div class="scly-main pad-0-10">
@@ -67,7 +69,6 @@
                         <span class="list">专利权</span>
                         <span class="list">土地</span>
                         <span class="list">股权</span>
-
                     </div>
                     <div class="itms-bd clearfix">
                         <span class="list">婚姻</span>
@@ -83,21 +84,29 @@
                         <span class="list">专利权</span>
                         <span class="list">土地</span>
                         <span class="list">股权</span>
-
                     </div>
                 </div>
-
             </div>
-            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-30" value="提交注册" id="In-btn">
+            <div id="select">
+                <input type="hidden"  name="range[]" value="提交注册"  />
+                <input type="hidden"  name="range[]" value="提交"  />
+                <input type="hidden"  name="range[]" value="交"  />
+            </div>
+            <input type="submit" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-30" value="提交注册" id="In-btn">
         </form>
-
     </section>
     <!--默认状态-->
 @stop
 @section('script')
     <script>
         $(function(){
-//默认
+            function updateSelect() {
+                $('#select input').remove();
+                $('.list.on').each(function () {
+                    $('#select').append("<input type='hidden' name='range[]' value='"+$(this).text()+"'/>");
+                });
+            }
+            //默认
             //切换擅长领域
             $('.itms-hd').tap(function(){
                 $('.itms-hd').removeClass('on');
@@ -113,17 +122,16 @@
                     if($(this).attr('class')	==	'list on'){
                         $(this).removeClass('on');
                         $('#num').html($('.list.on').size())
-
+                        updateSelect();
                     }else{
                         alert('最多只能选择4项')
-
                     }
                 }else{
                     $(this).toggleClass('on');
                     $('#num').html($('.list.on').size())
+                    updateSelect();
                 }
             })
-            //默认
         })
     </script>
 @stop

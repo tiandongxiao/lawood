@@ -30,11 +30,10 @@
 @section('script')
     <script>
         $(function(){
-            var form	=	false	;
-
-//表单判断
+            var form	=	false;
+            //表单判断
             $('.In-text').bind('input propertychange', function() {
-                form	= true;
+                form = true;
                 //姓名
                 if(!$('#name').val()){
 

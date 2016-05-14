@@ -220,5 +220,8 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('reg_more','Wechat\WechatController@registerMore');
     Route::post('reg_more','Wechat\WechatController@postRegisterMore');
 
+    Route::get('setting/{type}','Wechat\WechatController@setting');
+    Route::post('setting','Wechat\WechatController@postSetting');
+
     Route::get('consults','Wechat\WechatController@consults');
 });

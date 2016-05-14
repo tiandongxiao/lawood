@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\WeChat;
 
 use App\Item;
+use App\Location;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class WechatController extends Controller
 
     public function __construct(Application $application)
     {
-//        $this->app = $application;
+        $this->app = $application;
+        $this->middleware('auth');
         $this->user = Auth::user();
 
     }
@@ -28,6 +30,9 @@ class WechatController extends Controller
 
     public function register($role)
     {
+        $this->user->role = $role;
+        $this->user->save();
+
         switch ($role){
             case 'lawyer':
                 return view('wechat.auth.reg_lawyer');
@@ -39,7 +44,7 @@ class WechatController extends Controller
     public function postRegister(Request $request)
     {
         $phone = trim($request->get('phone'));
-        switch ($request->get('role')){
+        switch ($this->user->role){
             case 'client':
                 $this->user->phone = $phone;
                 $this->user->save();
@@ -60,12 +65,45 @@ class WechatController extends Controller
 
     public function postRegisterMore(Request $request)
     {
-
+        dd($request->all());
     }
 
     public function consults()
     {
         $consults = Item::where('class',null)->get();
         return view('wechat.consults',compact('consults'));
+    }
+
+    public function setting($item)
+    {
+        switch ($item){
+            case 'office':
+                return view('wechat.lawyer.office');
+            case 'home_add':
+            case 'work_add':
+                $setting = trim($item);
+                return view('wechat.lawyer.address',compact('setting'));
+        }
+    }
+
+    public function postSetting(Request $request)
+    {
+        $setting = trim($request->get('setting'));
+        switch ($setting){
+            case 'office':
+                $this->user->office = trim($request->get('office'));
+                $this->user->save();
+                break;
+            case 'home_add':
+            case 'work_add':
+                $address = Location::create([
+                    'type'    => $setting,
+                    'address' => trim($request->get('address'))
+                ]);
+
+                Auth::user()->locations()->save($address);
+                break;
+        }
+        return redirect('wechat/reg_more');
     }
 }

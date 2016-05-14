@@ -256,16 +256,16 @@ transform:scale(0.8,0.8);
 
 /*13-地图定位*/
 .dtdw-main	{ position:absolute; width:100%; height:100%; top:100px;     overflow: hidden; z-index:90;}
-.dtdw-main	.lvzy-main	{ position:absolute; bottom:10px; width:100%;}
+.dtdw-main	.lvzy-main	{ position:absolute; bottom:5%; width:100%;}
 .dtdw-main	.btn-pl			{ position:absolute; top:10px; right:10px; width:44px; height:44px;}
 .dtdw-main	.btn-wz			{ width:10%; height:10%; background:url(../images/icon-wz.png) center center no-repeat; background-size:22px 28px; position:absolute; left:45%; top:45%;}
 
 
 /*14-离婚律师您附近的专业律师*/
 .lstc-main	{ position:absolute; left:0; top:0; width:100%; height:100%; z-index:200; background:rgba(83,83,83,0.7)}
-.lstc-main	.tc-m	{ position:absolute; bottom:0px; left:4%; bottom:5%; width:92%; display:none; text-align:center;}
-.lstc-main	.tc-m		.c-main	{  border-radius:10px; max-height:400px; overflow:auto; position:relative; max-width:300px; margin:0 auto;}
-.lstc-main	.tc-m		.c-main	.tie	{ width:92%; height:45px; line-height:45px; text-align:center; color:#686868; border-bottom:1px solid #f8f8f8; position:fixed; z-index:100; background:#fff; padding:5px 0; border-top-left-radius:10px; border-top-right-radius:10px; font-size:16px; max-width:300px;}
+.lstc-main	.tc-m	{ position:absolute; bottom:0px; left:4%; bottom:5%; width:92%; display:none; }
+.lstc-main	.tc-m		.c-main	{  border-radius:10px; max-height:400px; overflow:auto; position:relative; }
+.lstc-main	.tc-m		.c-main	.tie	{ width:92%; height:45px; line-height:45px; text-align:center; color:#686868; border-bottom:1px solid #f8f8f8; position:fixed; z-index:100; background:#fff; padding:5px 0; border-top-left-radius:10px; border-top-right-radius:10px; font-size:16px; }
 .lstc-main	.tc-m		.c-main	.tie	.btn-fjls	{ width:45px; height:45px; position:absolute; right:5px; top:5px; background:url(../images/gb.png) center center no-repeat; background-size:22px 22px;}
 .lstc-main	.tc-m	.con	{ padding:56px 10px 10px 10px;}
 .lstc-main	.fjls-main	.c-main	.itms	{ width:100%; height:50px; padding:10px 0; border-bottom:1px solid #f8f8f8; position:relative; }
@@ -278,12 +278,13 @@ transform:scale(0.8,0.8);
 
 /*15-律师名片您附近的专业律师*/
 .lstc-main	.tc-m		.c-main	.tie	.btn-back	{ width:45px; height:45px; position:absolute; left:5px; top:5px; background:url(../images/mp-back.png) center center no-repeat; background-size:12px 23px;}
-.lstc-main	.lsmp-main	.c-main	.img		{ position:relative;}
+.lstc-main	.lsmp-main	.c-main	.img		{ position:relative; }
+.lstc-main	.lsmp-main	.c-main	.img	img		{ max-height:240px; }
 .lstc-main	.lsmp-main	.c-main	.img	.link-more	{ position:absolute; display:block; background:rgba(83,83,83,0.7); left:0; bottom:0; line-height:30px; height:30px; color:#fff; width:96%; padding:0 2%;}
 .lstc-main	.lsmp-main	.c-main	.img	.zxf		{ position:absolute; width:72px; height:35px; background:url(../images/mp-zx.png) center center no-repeat; background-size:77px 35px; left:-10px; top:-5px; color:#fff; padding-left:5px; z-index:101;}
 .lstc-main	.lsmp-main	.c-main	.img	.zxf	.top	{transform:scale(0.8,0.8); -webkit-transform:scale(0.8,0.8); }
 .lstc-main	.lsmp-main	.c-main	.img	.zxf	.bottom	{transform:scale(0.8,0.8); -webkit-transform:scale(0.8,0.8); position:relative; font-size:16px; top:-7px; }
-.lstc-main	.lsmp-main	.c-main		.name		{ padding:5px 0; height:50px;}
+.lstc-main	.lsmp-main	.c-main		.name		{ padding:5px 0; height:50px; text-align:left;}
 .lstc-main	.lsmp-main	.c-main		.name		.f-right	.btn-ljzx	{ width:80px; height:35px; line-height:35px; text-align:center; background:#03aaf0; color:#fff; border-radius:5px; display:block; position:relative; top:8px;}
 .lstc-main	.lsmp-main	.c-main		.name	.left	h3	{ color:#535353; font-size:15px; line-height:20px; font-weight:normal; padding-top:8px;}
 .lstc-main	.lsmp-main	.c-main		.name	.left	p	{ color:#909090; font-size:12px; line-height:20px;}
@@ -433,12 +434,12 @@ transform:scale(0.8,0.8);
 .lsdd-main		.bd	.itms	.con	.xx	.name	span	{ font-size:14px; margin-left:10px; color:#c0c0c0;}
 .lsdd-main		.bd	.itms	.con	.xx	.dd		{ height:30px; line-height:15px; font-size:12px; color:#c8c8c8; padding-top:5px;}
 .lsdd-main		.bd	.itms	.con	.xx	.jl		{ height:15px; line-height:15px; font-size:12px; color:#c8c8c8;}
-.lsdd-main		.bd	.itms	.con	.zxf		{ width:76px; height:35px; background:url(../images/bg-zxf.png) center center #fff no-repeat; background-size:86px 35px; position:absolute; right:-10px; top:10px; padding-left:10px; text-align:center;}
-.lsdd-main		.bd	.itms	.con	.zxf		p	{ font-size:12px; color:#03aaf0; transform:scale(0.8,0.8); line-height:12px; position:relative; top:3px;
--webkit-transform:scale(0.8,0.8); }
-.lsdd-main		.bd	.itms	.con	.zxf		p.jg	{ font-size:16px; font-weight:bold; top:6px;}
+.lsdd-main		.bd	.itms	.con	.zxf		{ width:68px; height:40px; background:url(../images/bg-zxf.png) left center #fff no-repeat; background-size:98px 40px; position:absolute; right:-10px; top:10px; padding-left:10px; text-align:center; }
+.lsdd-main		.bd	.itms	.con	.zxf		p	{ font-size:12px; color:#03aaf0;line-height:12px; position:relative; top:4px; 
+-webkit-transform:scale(0.8,0.8); transform:scale(0.8,0.8);  }
+.lsdd-main		.bd	.itms	.con	.zxf		p.jg	{ font-size:20px; font-weight:bold; top:8px;}
 .lsdd-main		.bd	.itms	.bottom				{ height:45px; line-height:45px; border-top:1px solid #f8f8f8;}
-.lsdd-main		.bd	.itms	.bottom		.djs	{ height:45px; line-height:45px; float:left;}
+.lsdd-main		.bd	.itms	.bottom		.djs	{ height:45px; line-height:45px; float:left;}	
 .lsdd-main		.bd	.itms	.bottom		.djs	b	{ font-weight:normal; color:#03aaf0;}
 .lsdd-main		.bd	.itms	.bottom		.btn-main		{ float:right; }
 .lsdd-main		.bd	.itms	.bottom		.btn-main 	.btn	{ display:block; width:80px; height:25px; line-height:25px; float:left; text-align:center; border:1px solid #c0c0c0; color:#909090; position:relative; top:10px; margin:0 5px; border-radius:8px;}
