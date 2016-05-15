@@ -115,4 +115,18 @@ class User extends Model implements AuthenticatableContract,
         parent::delete();
     }
 
+    public function home_add()
+    {
+        return 'home';
+    }
+
+    public function work_add()
+    {
+        return 'work';
+    }
+
+    public function office()
+    {
+        return 'office';
+    }
 }

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class WechatController extends Controller
 {
@@ -65,7 +66,9 @@ class WechatController extends Controller
 
     public function postRegisterMore(Request $request)
     {
-        dd($request->all());
+        Log::info('I am reg more');
+        $submit = true;
+        return redirect('wechat/reg_more',compact('submit'));
     }
 
     public function consults()
@@ -104,6 +107,13 @@ class WechatController extends Controller
                 Auth::user()->locations()->save($address);
                 break;
         }
-        return redirect('wechat/reg_more');
+        if(!$this->active)
+            return redirect('wechat/reg_more');
+        return redirect('wechat/settings');
+    }
+
+    public function settings()
+    {
+        return view('wechat.settings');
     }
 }
