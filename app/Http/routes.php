@@ -214,15 +214,34 @@ Route::resource('receipt','ReceiptController');
 
 
 Route::group(['prefix' => 'wechat'], function(){
-    Route::get('chose','WeChat\WechatController@chose');
-    Route::get('reg/{role}','WeChat\WechatController@register');
-    Route::post('reg','WeChat\WechatController@postRegister');
-    Route::get('reg_more','WeChat\WechatController@registerMore');
-    Route::post('reg_more','WeChat\WechatController@postRegisterMore');
+    Route::get('chose','WeChat\WeChatController@chose');
+    Route::get('reg/{role}','WeChat\WeChatController@register');
+    Route::post('reg','WeChat\WeChatController@postRegister');
+    Route::get('reg_more','WeChat\WeChatController@registerMore');
+    Route::post('reg_more','WeChat\WeChatController@postRegisterMore');
+    Route::get('reg_finish','WeChat\WeChatController@finish');
 
-    Route::get('setting/{type}','Wechat\WechatController@setting');
-    Route::post('setting','WeChat\WechatController@postSetting');
-    Route::get('settings','WeChat\WechatController@settings');
+    Route::get('settings','WeChat\WeChatController@settings');
 
-    Route::get('consults','WeChat\WechatController@consults');
+    Route::get('consults','WeChat\WeChatController@consults');
+    Route::get('show/{id}','WeChat\LawyerController@show');
+
+    Route::get('client','WeChat\ClientController@index');
+    Route::get('client/notifies','WeChat\ClientController@notifies');
+    Route::get('client/orders','WeChat\ClientController@orders');
+    Route::get('client/order/sign/{id}','WeChat\ClientController@signOrder');
+    Route::get('client/setting','WeChat\ClientController@setting');
+    Route::get('client/config/{key}','WeChat\ClientController@config');
+    Route::post('client/config','WeChat\ClientController@postConfig');
+
+    Route::get('lawyer','WeChat\LawyerController@index');
+    Route::get('lawyer/notifies','WeChat\LawyerController@notifies');
+    Route::get('lawyer/orders','WeChat\LawyerController@orders');
+    Route::get('lawyer/wallet','WeChat\LawyerController@wallet');
+    Route::get('lawyer/draw','WeChat\LawyerController@draw');
+    Route::post('lawyer/draw','WeChat\LawyerController@postDraw');
+    Route::get('lawyer/order/sign/{id}','WeChat\LawyerController@signOrder');
+    Route::get('lawyer/setting','WeChat\LawyerController@setting');
+    Route::get('lawyer/config/{key}','WeChat\LawyerController@config');
+    Route::post('lawyer/config','WeChat\LawyerController@postConfig');
 });

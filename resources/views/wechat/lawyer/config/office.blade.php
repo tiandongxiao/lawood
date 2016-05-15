@@ -5,7 +5,7 @@
 @section('content')
     <!--律师名称-->
     <section class="lszcmc-main">
-        <form action="" method="">
+        <form id="form" action="#">
             <label class="pad-10-0 dis-block top">
                 <input type="tel" class="In-text bg-fff-box" placeholder="请输入您的律所名称" id="In-name">
             </label>
@@ -22,7 +22,13 @@
                     <div class="itms chaochu_1">北京京师律师事务所8</div>
                 </div>
             </div>
-            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-50" value="确认" >
+
+            <div class="bottom-btn">
+                <div class="blank100"></div>
+                <div class="con te-cen">
+                    <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10" value="确定" id="In-btn">
+                </div>
+            </div>
         </form>
     </section>
     <!--律师名称-->
@@ -35,6 +41,15 @@
                 $('#btn-name .itms').removeClass('on')
                 $(this).addClass('on')
                 $('#In-name').val($(this).text());
+            })
+            //表单提交
+            $('#In-btn').tap(function(){
+                //名称
+                if(!$('.In-text').val()){
+                    alert('律师事务所名称不能为空')
+                    return	false;
+                }
+                $("#form").submit();
             })
         })
     </script>

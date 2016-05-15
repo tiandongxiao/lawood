@@ -6,7 +6,7 @@
     <!--默认状态-->
     <section class="zc-main">
         <div class="banner"><img src="/images/zc-banner.png" width="100%"></div>
-        <form id="form" method="POST">
+        <form id="form" action="{{url('wechat/reg_more')}}" method="POST">
             {!! csrf_field() !!}
             <div class="form">
                 <div>
@@ -91,21 +91,11 @@
             </div>
             <div id="select">
             </div>
-            <input type="submit" value="submit" style="display: none">
-            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-30" value="提交注册" id="In-btn">
+            <input type="submit" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-30" value="提交注册" id="In-btn">
         </form>
     </section>
     <!--默认状态-->
-    <!--提交审核-->
-    <section class="tc-main	tjsh-main" style="display: none;">
-        <div class="main te-cen">
-            <div class="pad-10-0"><img src="/images/wc.png" width="38" height="38"></div>
-            <div class="line-20 fc-909090 pad-10-0 fs-15">您的注册已经提交律屋</div>
-            <div class="fc-03aaf0">我们将尽快审核</div>
-            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-30" value="确认" id="btn-qr">
-        </div>
-    </section>
-    <!--提交审核-->
+
 @stop
 @section('script')
     <script src="http://malsup.github.com/jquery.form.js"></script>
@@ -142,26 +132,6 @@
                     $('#num').html($('.list.on').size())
                     updateSelect();
                 }
-            })
-
-            //提交审核
-            $('#btn-qr').tap(function(){
-                $('.tc-main').fadeOut();
-                window.location.href='/wechat/settings';
-            })
-
-            $('#In-btn').tap(function(){
-                var options = {
-                    url: '/wechat/reg_more',
-                    type: 'post',
-                    dataType: 'text',
-                    data: $("#form").serialize(),
-                    success: function (data) {
-                        if (data.length > 0)
-                                alert(1);
-                    }
-                };
-                $.ajax(options);
             })
         })
     </script>
