@@ -214,7 +214,7 @@ Route::resource('receipt','ReceiptController');
 
 
 Route::group(['prefix' => 'wechat'], function(){
-    Route::get('chose','WeChat\WeChatController@chose');
+    Route::get('chose','WeChat\WechatController@chose');
     Route::get('reg/{role}','WeChat\WechatController@register');
     Route::post('reg','WeChat\WechatController@postRegister');
     Route::get('reg_more','WeChat\WechatController@registerMore');
