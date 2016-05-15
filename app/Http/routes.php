@@ -214,15 +214,15 @@ Route::resource('receipt','ReceiptController');
 
 
 Route::group(['prefix' => 'wechat'], function(){
-    Route::get('chose','Wechat\WechatController@chose');
-    Route::get('reg/{role}','Wechat\WechatController@register');
-    Route::post('reg','Wechat\WechatController@postRegister');
-    Route::get('reg_more','Wechat\WechatController@registerMore');
-    Route::post('reg_more','Wechat\WechatController@postRegisterMore');
+    Route::get('chose','WeChat\WeChatController@chose');
+    Route::get('reg/{role}','WeChat\WechatController@register');
+    Route::post('reg','WeChat\WechatController@postRegister');
+    Route::get('reg_more','WeChat\WechatController@registerMore');
+    Route::post('reg_more','WeChat\WechatController@postRegisterMore');
 
     Route::get('setting/{type}','Wechat\WechatController@setting');
-    Route::post('setting','Wechat\WechatController@postSetting');
-    Route::get('settings','Wechat\WechatController@settings');
+    Route::post('setting','WeChat\WechatController@postSetting');
+    Route::get('settings','WeChat\WechatController@settings');
 
-    Route::get('consults','Wechat\WechatController@consults');
+    Route::get('consults','WeChat\WechatController@consults');
 });
