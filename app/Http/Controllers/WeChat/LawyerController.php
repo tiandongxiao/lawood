@@ -14,6 +14,12 @@ use Illuminate\Http\Request;
 
 class LawyerController extends Controller
 {
+    private $user;
+
+    public function __construct()
+    {
+
+    }
     public function index()
     {
         return view('wechat.lawyer.index');
@@ -90,5 +96,11 @@ class LawyerController extends Controller
             case 'major':
                 return view('wechat.lawyer.config.major');
         }
+    }
+
+    public function me()
+    {
+        $user = $this->user;
+        return view('wechat.lawyer.me',compact('user'));
     }
 }

@@ -9,22 +9,25 @@
         <form id="form" action="{{url('wechat/reg_more')}}" method="POST">
             {!! csrf_field() !!}
             <div class="form">
-                <div>
-                    <label>律所名称</label>
-                    <input type="text" placeholder="" name="office">
+                <div class="itms" >
+                    <div class="f-left">律所名称</div>
+                    <div class="right">
+                        <input type="text" class="In-text" placeholder="如北京京师事务所">
+                    </div>
+                </div >
+                <div class="itms">
+                    <div class="f-left">律所地址</div>
+                    <div class="right">
+                        <input type="text" class="In-text" placeholder="我的位置">
+                    </div>
                 </div>
-                <div>
-                    <label>律师证号</label>
-                    <input type="text" placeholder="" name="code">
+                <div class="itms" >
+                    <div class="f-left">居住地址</div>
+                    <div class="right">
+                        <input type="text" class="In-text" placeholder="我的位置">
+                    </div>
                 </div>
-                <div>
-                    <label>律所地址</label>
-                    <input type="text" placeholder="" name="work_add">
-                </div>
-                <div>
-                    <label>居住地址</label>
-                    <input type="text" placeholder="" name="home_add">
-                </div>
+
             </div>
             <div class="scly-main pad-0-10">
                 <div class="top">
@@ -131,6 +134,14 @@
                     $(this).toggleClass('on');
                     $('#num').html($('.list.on').size())
                     updateSelect();
+                }
+            })
+            //输入判断
+            $('.In-text').bind('input propertychange', function() {
+                if($(this).val()){
+                    $(this).parents('.itms').addClass('itms-ok')
+                }else{
+                    $(this).parents('.itms').removeClass('itms-ok')
                 }
             })
         })

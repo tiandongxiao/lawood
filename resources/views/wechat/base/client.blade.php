@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
     <meta content="telephone=no" name="format-detection" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#035c9b">
@@ -77,7 +77,6 @@
         </div>
     </div>
 </div>
-@yield('content')
 <!--顶部-->
 <section class="cblm-main po-f">
     <div class="main">
@@ -103,6 +102,7 @@
         </a>
     </div>
 </section>
+@yield('content')
 </body>
 <script src="/js/jquery-1.9.1.min.js"></script>
 <script src="/js/tap.js"></script>

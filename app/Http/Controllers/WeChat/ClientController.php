@@ -43,6 +43,7 @@ class ClientController extends Controller
     {
         return view('wechat.client.setting');
     }
+
     public function config($key)
     {
         switch ($key){
@@ -60,4 +61,19 @@ class ClientController extends Controller
                 dd('phone');
         }
     }
+
+    public function results()
+    {
+        return view('wechat.client.results');
+    }
+
+    public function lawyer($id)
+    {
+        $lawyer = User::findOrFail($id);
+        if($lawyer->role == 'lawyer')
+            return view('wechat.client.lawyer',compact('$lawyer'));
+        
+    }
+
+
 }

@@ -13,7 +13,7 @@
 .bg-lan1	{ background:#03aaf0;}
 .dl-main	.wjmm		{ width:300px; max-width:90%;  margin:0 auto;}
 .dl-main	.bottom		{ position:absolute; width:100%; bottom:50px; text-align:center}
-.dl-main	.bottom-index		{ position:absolute; width:100%; bottom:32%; text-align:center}
+.dl-main	.bottom-index	{ position:absolute; width:100%; bottom:32%; text-align:center}
 
 
 /*02-忘记密码*/
@@ -36,11 +36,13 @@
 .zc-main	.form	.itms	.f-left	{ color:#969696;}
 .zc-main	.form	.itms	.right	{ padding-left:70px;}
 .zc-main	.form	.itms	.right	.In-text	{ color:#c0c0c0; display:block; width:100%; height:45px; line-height:45px; line-height:normal; font-size:13px;}
+
+.zc-main	.form	.itms	.right	.In-text::-webkit-input-placeholder	{ color:#cccccc; }
 .In-btn-1			{ box-shadow:none; margin:50px auto 10px;}
 .zc-main	.btn-yzm		{ height:35px; line-height:35px; top:5px; right:10px;}
 
 /*05_注册2*/
-.zc-main	.form		.itms-link:before	{ content:''; display:block; width:20px; height:45px; background:url(../images/link.png) center center no-repeat; background-size:8px 13px; position:absolute; right:0px; top:0px; }
+.zc-main	.form		.itms-ok:before	{ content:''; display:block; width:30px; height:45px; background:url(../images/wc.png) center center no-repeat; background-size:20px 20px; position:absolute; right:0px; top:0px; }
 .scly-main	.top	{ width:100%; height:40px; line-height:40px;}
 .scly-main	.top	.num	{ float:right;}
 .scly-main	.hd				{ width:100%; height:40px; line-height:40px;}
@@ -82,7 +84,7 @@
 .lszcmc-main	.hot			{ padding:0 10px;}
 .lszcmc-main	.hot	.tie	{ height:50px; line-height:50px; background:url(../images/icon-hot.png) center left no-repeat; background-size:27px 30px; padding-left:30px; font-size:16px;}
 .lszcmc-main	.con 	.itms	{ width:42%; padding-left:3%; padding-right:3%;  height:45px; line-height:45px; position:relative; float:left; z-index:10; }
-.lszcmc-main	.con 	.itms:after			{ position:absolute; content:''; display:block; width:100%; height:1px; left:0; top:0px; background:#f8f8f8;}
+.lszcmc-main	.con 	.itms:after			{ position:absolute; content:''; display:block; width:100%; height:1px; left:0; top:0px; background:#f8f8f8;}		
 .lszcmc-main	.con 	.itms:nth-child(2n)	{padding-left:4%;}
 .lszcmc-main	.con 	.itms:nth-child(2n):before	{ position:absolute; content:''; display:block; width:4%; height:47px; left:-2%; top:-1px; background:url(../images/icon-before.png) center center no-repeat #fff; background-size:5px 41px; z-index:11; }
 .lszcmc-main	.con	{ border-bottom:1px solid #f8f8f8;}
@@ -115,7 +117,7 @@
 	-webkit-animation: an-nav-main 0.8s;
 	-webkit-animation-timing-function: ease-in-out;
 	-webkit-animation-fill-mode: forwards;
-
+	
 	}
 @keyframes an-nav-main
 {
@@ -135,7 +137,7 @@
 	-webkit-animation: an-nav-main1 0.8s;
 	-webkit-animation-timing-function: ease-in-out;
 	-webkit-animation-fill-mode: forwards;
-
+	
 	}
 @keyframes an-nav-main1
 {
@@ -179,8 +181,8 @@
 .cblm-main	.main	{ background:#f8f8f8; width:60%; padding:0 10px; min-height:100%; overflow:auto; height:100%;}
 .cblm-main	.main	.itms	{ width:100%; display:block; height:45px; line-height:45px; position:relative; }
 .cblm-main	.main	.itms		.right	{ padding-left:30px; color:#909090;}
-.cblm-main	.main	.itms		.ts	{ height:30px; line-height:15px !important; padding:7px 0; color:#c4c4c4; font-size:12px !important; position:absolute; left:60px; top:0px;
-transform:scale(0.8,0.8);
+.cblm-main	.main	.itms		.ts	{ height:30px; line-height:15px !important; padding:7px 0; color:#c4c4c4; font-size:12px !important; position:absolute; left:60px; top:0px;  
+transform:scale(0.8,0.8); 
 -webkit-transform:scale(0.8,0.8); }
 .In-check {
     height: 16px;
@@ -206,7 +208,7 @@ transform:scale(0.8,0.8);
 	-webkit-animation: an-cblm-main 0.8s;
 	-webkit-animation-timing-function: ease-in-out;
 	-webkit-animation-fill-mode: forwards;
-
+	
 	}
 @keyframes an-cblm-main
 {
@@ -226,7 +228,7 @@ transform:scale(0.8,0.8);
 	-webkit-animation: an-cblm-main1 0.8s;
 	-webkit-animation-timing-function: ease-in-out;
 	-webkit-animation-fill-mode: forwards;
-
+	
 	}
 @keyframes an-cblm-main1
 {
@@ -330,14 +332,14 @@ transform:scale(0.8,0.8);
 .lsjs-main	.lsjj		.bg-fff-box		{ padding-bottom:10px;}
 .lsjs-main	.lsjj	.jj		{ max-height:55px; overflow:hidden;}
 .lsjs-main	.lsjj	.jj.on	{
-
+	
 	animation: an-jj 0.8s;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
 	-webkit-animation: an-jj 0.8s;
 	-webkit-animation-timing-function: ease-in-out;
 	-webkit-animation-fill-mode: forwards;
-	}
+	}	
 @keyframes an-jj
 {
 0%  { max-height:55px; }
@@ -357,21 +359,17 @@ transform:scale(0.8,0.8);
 	-webkit-animation: an-jj1 0.8s;
 	-webkit-animation-timing-function: ease-in-out;
 	-webkit-animation-fill-mode: forwards;
-	}
+	}	
 @keyframes an-jj1
 {
 0%   { max-height:200px; }
 100%  { max-height:55px; }
 }
-
 @-webkit-keyframes an-jj1
 {
 0%   { max-height:200px; }
 100%  { max-height:55px; }
 }
-
-
-
 .lsjs-main	.lsjj	.btn-xl	{ width:100%; height:30px; background:url(../images/xl.png) center center no-repeat; background-size:23px 12px;}
 .lsjs-main	.lsjj	.btn-ss	{ width:100%; height:30px; background:url(../images/ss.png) center center no-repeat; background-size:23px 12px;}
 .lsjs-main	.khpj	.itms	{ border-bottom:1px solid #f8f8f8; padding:10px 0; min-height:50px;}
@@ -413,11 +411,11 @@ transform:scale(0.8,0.8);
 .xxtz-main	.itms	.top	.f-right	{ padding-right:10px}
 .xxtz-main	.itms	.top	.bt		{ padding-left:10px; font-size:16px;}
 .xxtz-main	.itms	.con	{ padding:10px; color:#909090; line-height:20px;}
-.xxtz-main	.itms	.bottom	{ height:40px; line-height:40px; border-top:1px dashed #efefef;}
-.xxtz-main	.itms	.bottom		.more	{ color:#00abeb;}
+.xxtz-main	.itms	.bottom	{ height:40px; line-height:40px; border-top:1px dashed #efefef;}	
+.xxtz-main	.itms	.bottom		.more	{ color:#00abeb;}	
 .xxtz-main	.itms	.bottom		.time	{ color:#c1c1c1;  float:right; font-size:12px;}
 .xxtz-main	.itms.hui		.top	{ background:#909090;}
-.xxtz-main	.itms.hui	.bottom		.more	{ color:#909090;}
+.xxtz-main	.itms.hui	.bottom		.more	{ color:#909090;}	
 
 /*22-律师订单*/
 .lsdd-main		.hd	{ width:80%; left:0; top:0; background:#fff; height:40px; line-height:40px; padding:0 10%; z-index:5; box-shadow:0px 5px 5px #f2f2f2;}
@@ -471,7 +469,7 @@ transform:scale(0.8,0.8);
 	-webkit-animation-timing-function: linear;
 	-webkit-animation-iteration-count:infinite;
 	-webkit-animation-delay: 0s;
-	}
+	}	
 .zx-main	.zx		.bl-2	{
 
 	animation: an-op1 2.4s;
@@ -480,7 +478,7 @@ transform:scale(0.8,0.8);
 	animation: an-op1 2.4s;
 	-webkit-animation-timing-function: linear;
 	-webkit-animation-iteration-count:infinite;
-	}
+	}	
 .zx-main	.zx		.bl-3	{
 
 	animation: an-op2 2.4s;
@@ -489,7 +487,7 @@ transform:scale(0.8,0.8);
 	animation: an-op2 2.4s;
 	-webkit-animation-timing-function: linear;
 	-webkit-animation-iteration-count:infinite;
-	}
+	}	
 @keyframes an-op
 {
 0%   { opacity:0; }
@@ -539,7 +537,7 @@ transform:scale(0.8,0.8);
 90%  {opacity:1; }
 100%  {opacity:0; }
 }
-.zx-wc	{ position:absolute; width:100%; height:100%; left:0; top：0; background:rgba(83,83,83,0.7); z-index:200;}
+.zx-wc	{ position:absolute; width:100%; height:100%; left:0; top:0; background:rgba(83,83,83,0.7); z-index:200;}
 
 /*26-取消订单*/
 .tc-main	.btn-main	{ width:100%; height:30px; line-height:30px; border-top:1px solid #f8f8f8; position:relative; top:10px;}
@@ -565,7 +563,7 @@ transform:scale(0.8,0.8);
 .pj-main	.lsyx	.itms	.right	span.on	{ background:#03aaf0; color:#fff; border-radius:5px;}
 .pj-main	.pjyj		.In-text	{ display:block; width:96%; padding:2%; text-align:left; height:40px; border:1px solid #efefef; border-radius:5px;
 
-}
+}  
 .pj-main	.pjyj		.In-text::-webkit-input-placeholder	{ color:#c0c0c0; font-size:14px;}
 .pj-main	.In-btn-1	{ width:100%;}
 
@@ -579,8 +577,8 @@ transform:scale(0.8,0.8);
 .wdqb-main		.hd	.itms.on	span	{ border-bottom:2px solid #03aaf0; color:#03aaf0; height:38px; line-height:38px; display:inline-block; padding:0 5px;}
 .wdqb-main		.bd	.bd-itms	{ padding:0 10px; display:none;}
 .wdqb-main		.bd	.bd-itms	.itms	{ width:100%; height:40px; line-height:40px; padding:10px 0;  border-bottom:1px solid #efefef;}
-.wdqb-main		.bd	.bd-itms	.itms	.f-left	h3	{ line-height:20px; color:#90900; font-size:15px; font-weight:normal;}
-.wdqb-main		.bd	.bd-itms	.itms	.f-left	p	{  line-height:20px; color:#90900; font-size:12px; font-weight:normal}
+.wdqb-main		.bd	.bd-itms	.itms	.f-left	h3	{ line-height:20px; color:#909090; font-size:15px; font-weight:normal;}
+.wdqb-main		.bd	.bd-itms	.itms	.f-left	p	{  line-height:20px; color:#909090; font-size:12px; font-weight:normal}
 .wdqb-main		.bd	.bd-itms	.itms	.right	{ float:right; color:#535353}
 
 
