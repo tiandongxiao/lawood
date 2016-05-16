@@ -214,14 +214,14 @@ Route::resource('receipt','ReceiptController');
 
 
 Route::group(['prefix' => 'wechat'], function(){
-    Route::get('chose','WeChat\WeChatController@chose');
-    Route::get('reg/{role}','WeChat\WeChatController@register');
-    Route::post('reg','WeChat\WeChatController@postRegister');
-    Route::get('reg_more','WeChat\WeChatController@registerMore');
-    Route::post('reg_more','WeChat\WeChatController@postRegisterMore');
-    Route::get('reg_finish','WeChat\WeChatController@finish');
+    Route::get('chose','WeChat\AuthController@chose');
+    Route::get('reg/{role}','WeChat\AuthController@register');
+    Route::post('reg','WeChat\AuthController@postRegister');
+    Route::get('reg_more','WeChat\AuthController@registerMore');
+    Route::post('reg_more','WeChat\AuthController@postRegisterMore');
+    Route::get('reg_finish','WeChat\AuthController@finish');
 
-    Route::get('settings','WeChat\WeChatController@settings');
+    Route::get('settings','WeChat\AuthController@settings');
 
     Route::get('consults','WeChat\WeChatController@consults');
     Route::get('user/{id}','WeChat\ClientController@lawyer');

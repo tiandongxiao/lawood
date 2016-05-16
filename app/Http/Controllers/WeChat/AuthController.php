@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
-class WeChatController extends Controller
+class AuthController extends Controller
 {
     private $app;
     private $user;
