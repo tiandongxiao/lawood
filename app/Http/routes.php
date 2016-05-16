@@ -224,7 +224,7 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('settings','WeChat\AuthController@settings');
 
     Route::get('consults','WeChat\WeChatController@consults');
-    Route::get('user/{id}','WeChat\ClientController@lawyer');
+
 
     Route::get('client','WeChat\ClientController@index');
     Route::get('client/notifies','WeChat\ClientController@notifies');
@@ -235,6 +235,7 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::post('client/config','WeChat\ClientController@postConfig');
     Route::get('client/results','WeChat\ClientController@results');
     Route::get('client/results','WeChat\ClientController@results');
+    Route::get('user/{id}','WeChat\ClientController@lawyer');
 
     Route::get('lawyer','WeChat\LawyerController@index');
     Route::get('lawyer/notifies','WeChat\LawyerController@notifies');
