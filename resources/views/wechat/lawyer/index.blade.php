@@ -51,7 +51,7 @@
         $(function(){
 
             $('#In-btn').tap(function () {
-                alert('me');
+                window.location.href="/wechat/lawyer/search";
             });
         })
     </script>

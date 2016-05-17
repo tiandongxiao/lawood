@@ -52,7 +52,7 @@
         $(function(){
 
             $('#In-btn').click(function () {
-                alert('me');
+                window.location.href="/wechat/client/search";
             });
         })
     </script>
