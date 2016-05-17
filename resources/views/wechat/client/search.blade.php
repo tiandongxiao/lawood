@@ -3,8 +3,8 @@
 <!--地图定位-->
 <section class="dtdw-main">
 
-    <div class="map"><img src="images/map.png" class="po-a"  width="100%" height="100%"></div>
-    <div class="btn-pl"><img src="images/icon-pl.png" width="44" height="44"></div>
+    <div class="map"><img src="/images/map.png" class="po-a"  width="100%" height="100%"></div>
+    <div class="btn-pl"><img src="/images/icon-pl.png" width="44" height="44"></div>
     <div class="btn-wz"></div>
     <div class="btn-wz"></div>
     <div class="btn-wz"></div>
@@ -24,7 +24,7 @@
             <div class="tie">您附近的专业律师<i class="btn-fjls btn-gb"></i></div>
             <div class="con">
                 <div class="itms">
-                    <div class="f-left"><img src="images/ls.jpg" width="40px" height="40px;"></div>
+                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
                     <div class="right">
                         <h3 class="chaochu_1">王树德 律师</h3>
                         <p class="chaochu_1">北京市朝阳区京师律师事务所</p>
@@ -32,7 +32,7 @@
                     <div class="btn-ckmp">查看名片</div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="images/ls.jpg" width="40px" height="40px;"></div>
+                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
                     <div class="right">
                         <h3 class="chaochu_1">王树德 律师</h3>
                         <p class="chaochu_1">北京市朝阳区京师律师事务所</p>
@@ -40,7 +40,7 @@
                     <div class="btn-ckmp">查看名片</div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="images/ls.jpg" width="40px" height="40px;"></div>
+                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
                     <div class="right">
                         <h3 class="chaochu_1">王树德 律师</h3>
                         <p class="chaochu_1">北京市朝阳区京师律师事务所</p>
@@ -48,7 +48,7 @@
                     <div class="btn-ckmp">查看名片</div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="images/ls.jpg" width="40px" height="40px;"></div>
+                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
                     <div class="right">
                         <h3 class="chaochu_1">王树德 律师</h3>
                         <p class="chaochu_1">北京市朝阳区京师律师事务所</p>
@@ -56,7 +56,7 @@
                     <div class="btn-ckmp">查看名片</div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="images/ls.jpg" width="40px" height="40px;"></div>
+                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
                     <div class="right">
                         <h3 class="chaochu_1">王树德 律师</h3>
                         <p class="chaochu_1">北京市朝阳区京师律师事务所</p>
@@ -64,7 +64,7 @@
                     <div class="btn-ckmp">查看名片</div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="images/ls.jpg" width="40px" height="40px;"></div>
+                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
                     <div class="right">
                         <h3 class="chaochu_1">王树德 律师</h3>
                         <p class="chaochu_1">北京市朝阳区京师律师事务所</p>
@@ -72,7 +72,7 @@
                     <div class="btn-ckmp">查看名片</div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="images/ls.jpg" width="40px" height="40px;"></div>
+                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
                     <div class="right">
                         <h3 class="chaochu_1">王树德 律师</h3>
                         <p class="chaochu_1">北京市朝阳区京师律师事务所</p>
@@ -80,7 +80,7 @@
                     <div class="btn-ckmp">查看名片</div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="images/ls.jpg" width="40px" height="40px;"></div>
+                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
                     <div class="right">
                         <h3 class="chaochu_1">王树德 律师</h3>
                         <p class="chaochu_1">北京市朝阳区京师律师事务所</p>
@@ -88,7 +88,7 @@
                     <div class="btn-ckmp">查看名片</div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="images/ls.jpg" width="40px" height="40px;"></div>
+                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
                     <div class="right">
                         <h3 class="chaochu_1">王树德 律师</h3>
                         <p class="chaochu_1">北京市朝阳区京师律师事务所</p>
@@ -105,7 +105,7 @@
             <div class="tie">您附近的专业律师<i class="btn-fjls  btn-gb"></i><i class="btn-back back-fjls"></i></div>
             <div class="con">
                 <div class="img">
-                    <img src="images/mp-banner.png" width="100%">
+                    <img src="/images/mp-banner.png" width="100%">
                     <a href="#" class="link-more">点击查看详情</a>
                     <div class="zxf">
                         <p class="top">咨询费</p>
@@ -169,7 +169,7 @@
             <div class="con">
                 <div class="line-40 fc-505050">提示：下列地点仅为推荐，可协商变更</div>
                 <div class="itms">
-                    <div class="f-left"><img src="images/dd-banner.jpg" width="120" height="80"></div>
+                    <div class="f-left"><img src="/images/dd-banner.jpg" width="120" height="80"></div>
                     <div class="right">
                         <h3 class="chaochu_1">COST咖啡店</h3>
                         <p class="chaochu_1">法律咖啡：人均25元</p>
@@ -179,7 +179,7 @@
                     <div class="itms-radio"><input type="radio" name="dd" class="In-radio" checked></div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="images/dd-banner.jpg" width="120" height="80"></div>
+                    <div class="f-left"><img src="/images/dd-banner.jpg" width="120" height="80"></div>
                     <div class="right">
                         <h3 class="chaochu_1">COST咖啡店</h3>
                         <p class="chaochu_1">法律咖啡：人均25元</p>
@@ -189,7 +189,7 @@
                     <div class="itms-radio"><input type="radio" name="dd" class="In-radio"></div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="images/dd-banner.jpg" width="120" height="80"></div>
+                    <div class="f-left"><img src="/images/dd-banner.jpg" width="120" height="80"></div>
                     <div class="right">
                         <h3 class="chaochu_1">COST咖啡店</h3>
                         <p class="chaochu_1">法律咖啡：人均25元</p>
@@ -199,7 +199,7 @@
                     <div class="itms-radio"><input type="radio" name="dd" class="In-radio"></div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="images/dd-banner.jpg" width="120" height="80"></div>
+                    <div class="f-left"><img src="/images/dd-banner.jpg" width="120" height="80"></div>
                     <div class="right">
                         <h3 class="chaochu_1">COST咖啡店</h3>
                         <p class="chaochu_1">法律咖啡：人均25元</p>
