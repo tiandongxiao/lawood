@@ -73,12 +73,12 @@ class ClientController extends Controller
 
     public function search()
     {
-        return view('wechat.client.results');
+        return view('wechat.client.search');
     }
 
     public function postSearch()
     {
-        return view('wechat.client.results');
+        return view('wechat.client.search');
     }
 
     public function lawyer($id)
