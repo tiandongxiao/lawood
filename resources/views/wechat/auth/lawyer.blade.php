@@ -22,7 +22,7 @@
                     <input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true">
                 </div>
             </div>
-            <input type="button" class="In-btn In-btn-1 bg-hui fc-fff" value="下一步" id="In-btn">
+            <input type="submit" class="In-btn In-btn-1 bg-hui fc-fff" value="下一步" id="In-btn">
         </form>
         <div class="wjmm fc-d2d2d2 line-20 te-cen fs-12">点击［下一步］代表您已阅读并同意<a href="#" class="fc-03aaf0">用户使用协议</a></div>
     </section>
@@ -91,12 +91,11 @@
 
 
             //表单提交
-            $('#In-btn').tap(function(){
-                if(form){
-                    $("#form").submit();
-                }
-
-            })
+//            $('#In-btn').tap(function(){
+//                if(form){
+//                    $("#form").submit();
+//                }
+//            })
 
 
             //发送验证码
