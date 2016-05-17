@@ -159,7 +159,6 @@
                 $('.btn-ss').attr({class:'btn-xl'})
             }
         })
-
         //打开侧边
         $('.btn-cb').tap(function(){
             $('.cblm-main').removeClass('on1');
@@ -176,63 +175,6 @@
         $('.list').tap(function(){
             $('.list').removeClass('on');
             $(this).addClass('on')
-        })
-        //查看更多律师
-        $('#btn-more').tap(function(){
-            $('.lstc-main').fadeIn();
-            $('.fjls-main').fadeIn();
-        })
-
-        //查看名片
-        $('.btn-ckmp').tap(function(){
-            $('.fjls-main').css({display:'none'});
-            $('.lsmp-main').fadeIn();
-        })
-        //返回附近律师
-        $('.back-fjls').tap(function(){
-            $('.lsmp-main').css({display:'none'});
-            $('.fjls-main').fadeIn();
-        })
-        //律师咨询
-        $('.btn-ljzx').tap(function(){
-            $('.lsmp-main').css({display:'none'});
-            $('.lszx-main').fadeIn();
-        })
-        //返回律师名片
-        $('.back-lsmp').tap(function(){
-            $('.lszx-main').css({display:'none'});
-            $('.lsmp-main').fadeIn();
-        })
-
-        //切换咨询栏目
-        $('.list-1').tap(function(){
-            $('.list-1').removeClass('on');
-            $(this).addClass('on')
-        })
-
-        //约见地点
-        $('.btn-yjdd').tap(function(){
-            $('.lszx-main').css({display:'none'});
-            $('.yjdd-main').fadeIn();
-        })
-
-        //返回律师咨询
-        $('.back-lszx').tap(function(){
-            $('.yjdd-main').css({display:'none'});
-            $('.lszx-main').fadeIn();
-        })
-        //关闭弹出框
-        $('.lstc-main').click(function(){
-
-            if(event.target==this){
-                $('.lstc-main').fadeOut();
-                $('.tc-m').fadeOut();
-            }
-        })
-        $('.btn-gb').tap(function(){
-
-            $('.lstc-main').fadeOut();
-            $('.tc-m').fadeOut();
         })
     })
 </script>

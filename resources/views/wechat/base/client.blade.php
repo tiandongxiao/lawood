@@ -112,6 +112,11 @@
 <script src="/js/tap.js"></script>
 <script>
     $(function(){
+        $('.dtdw-main').height($('body').height()-100)
+        $(window).resize(function() {
+            $('.dtdw-main').height($('body').height()-100)
+        });
+
         //切换栏目
         $('.itms-hd').tap(function(){
             $('.itms-hd').removeClass('on');
@@ -133,23 +138,22 @@
             $('.nav-main').addClass('on1');
             $(this).attr({class:'btn-xl'})
         })
-        $('.nav-main').tap(function(){
+        $('.nav-main').click(function(){
             if(event.target==this){
                 $('.nav-main').removeClass('on');
                 $('.nav-main').addClass('on1');
                 $('.btn-ss').attr({class:'btn-xl'})
             }
         })
-
         //打开侧边
         $('.btn-cb').tap(function(){
-            $('.nav-main').removeClass('on1');
+            $('.cblm-main').removeClass('on1');
             $('.cblm-main').addClass('on')
         })
-        $('.cblm-main').tap(function(){
+        $('.cblm-main').click(function(){
 
             if(event.target==this){
-                $('.nav-main').removeClass('on');
+                $('.cblm-main').removeClass('on');
                 $('.cblm-main').addClass('on1')
             }
         })
