@@ -5,7 +5,7 @@
     <section class="dtdw-main">
 
         <div class="map"><img src="/images/map.png" class="po-a"  width="100%" height="100%"></div>
-        <div class="btn-pl"><img src="/images/icon-pl.png" width="44" height="44"></div>
+        <div class="btn-pl"><a><img src="/images/icon-pl.png" width="44" height="44"></a></div>
         <div class="btn-wz"></div>
         <div class="btn-wz"></div>
         <div class="btn-wz"></div>
