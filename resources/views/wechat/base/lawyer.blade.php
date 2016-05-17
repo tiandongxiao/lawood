@@ -90,19 +90,19 @@
             <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
             <div class="right">律屋主页</div>
         </a>
-        <a class="itms new" href="#">
+        <a class="itms new" href="{{url('wechat/lawyer/notifies')}}">
             <div class="f-left"><img src="/images/nav2.png" width="20" height="20"></div>
             <div class="right">消息通知</div>
         </a>
-        <a class="itms bor-bot" href="#">
+        <a class="itms bor-bot" href="{{url('wechat/lawyer/orders')}}">
             <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
             <div class="right">我的订单</div>
         </a>
-        <a class="itms" href="#">
+        <a class="itms" href="{{url('wechat/lawyer/me')}}">
             <div class="f-left"><img src="/images/nav4.png" width="20" height="20"></div>
             <div class="right">我的主页</div>
         </a>
-        <a class="itms" href="#">
+        <a class="itms" href="{{url('wechat/lawyer/wallet')}}">
             <div class="f-left"><img src="/images/nav5.png" width="20" height="20"></div>
             <div class="right">我的钱包</div>
         </a>
@@ -112,7 +112,7 @@
             <div class="ts">停用后律屋将停止</br>对您推荐</div>
             <input type="checkbox" class="In-check" >
         </label>
-        <a class="itms bor-bot" href="#">
+        <a class="itms bor-bot" href="{{url('wechat/lawyer/setting')}}">
             <div class="f-left"><img src="/images/nav7.png" width="20" height="20"></div>
             <div class="right">设置</div>
         </a>

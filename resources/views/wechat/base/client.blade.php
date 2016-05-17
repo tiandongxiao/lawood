@@ -84,19 +84,19 @@
             <div class="f-left"><img src="/images/tx.png" width="60" height="60" ></div>
             <div class="right">王树德</div>
         </div>
-        <a class="itms new" href="#">
+        <a class="itms new" href="{{url('wechat/client/notifies')}}">
             <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
             <div class="right">消息通知</div>
         </a>
-        <a class="itms bor-bot" href="#">
+        <a class="itms bor-bot" href="{{url('wechat/client/orders')}}">
             <div class="f-left"><img src="/images/nav2.png" width="20" height="20"></div>
             <div class="right">我的订单</div>
         </a>
-        <a class="itms" href="#">
+        <a class="itms" href="{{url('wechat/client/collection')}}">
             <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
             <div class="right">收藏律师</div>
         </a>
-        <a class="itms bor-bot" href="#">
+        <a class="itms bor-bot" href="{{url('wechat/client/setting')}}">
             <div class="f-left"><img src="/images/nav4.png" width="20" height="20"></div>
             <div class="right">设置</div>
         </a>
