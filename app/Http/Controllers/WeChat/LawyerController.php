@@ -11,6 +11,7 @@ namespace App\Http\Controllers\WeChat;
 use App\Http\Controllers\Controller;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LawyerController extends Controller
 {
