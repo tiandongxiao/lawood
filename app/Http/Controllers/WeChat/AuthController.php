@@ -31,8 +31,7 @@ class AuthController extends Controller
 
     public function bind($role_name)
     {
-        dd($role_name);
-        if(!$this->user->role) {
+        if(!$this->user->role == 'none') {
             $this->user->role = $role_name;
             $this->user->save();
             $role = Role::where('slug',$role_name)->first();
