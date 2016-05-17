@@ -39,7 +39,7 @@ class AuthController extends Controller
                 $this->user->attachRole($role);
         }
 
-        switch ($role){
+        switch ($role_name){
             case 'lawyer':
                 if(!$this->user->phone)
                     return view('wechat.auth.lawyer');
