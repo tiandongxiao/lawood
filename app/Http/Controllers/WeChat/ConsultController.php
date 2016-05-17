@@ -13,5 +13,8 @@ use App\Http\Controllers\Controller;
 
 class ConsultController extends Controller
 {
-
+    public function index()
+    {
+        
+    }
 }

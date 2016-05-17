@@ -11,14 +11,23 @@ namespace App\Http\Controllers\WeChat;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ClientController extends Controller
 {
-    public function __construct()
-    {
+    private $app;
+    private $user;
 
+    public function __construct(Application $application)
+    {
+        $this->middleware('auth');
+        $this->middleware('role:client');
+        $this->app = $application;
+        $this->user = Auth::user();
     }
+
     public function index()
     {
         return view('wechat.client.index');
@@ -72,8 +81,8 @@ class ClientController extends Controller
         $lawyer = User::findOrFail($id);
         if($lawyer->role == 'lawyer')
             return view('wechat.client.lawyer',compact('$lawyer'));
-        
+
+        return back();
+
     }
-
-
 }

@@ -8,22 +8,28 @@
 
 namespace App\Http\Controllers\WeChat;
 
-
 use App\Http\Controllers\Controller;
+use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 
 class LawyerController extends Controller
 {
+    private $app;
     private $user;
 
-    public function __construct()
+    public function __construct(Application $application)
     {
-
+        $this->middleware('auth');
+        $this->middleware('role:client');
+        $this->app = $application;
+        $this->user = Auth::user();
     }
+
     public function index()
     {
         return view('wechat.lawyer.index');
     }
+
     public function show($id)
     {
         return view('wechat.lawyer.show',compact('user'));

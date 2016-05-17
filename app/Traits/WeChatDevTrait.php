@@ -47,6 +47,9 @@ trait WeChatDevTrait
     {
         $account = $this->account();
 
+        if(is_null($account))
+            return null;
+
         $user = User::where('union_id', $account->union_id)->first();
 
         if(!$user){
@@ -69,15 +72,17 @@ trait WeChatDevTrait
     public function account()
     {
         $user = session('wechat.oauth_user');
+        if ($user) {
+            $accessToken = $this->app->access_token;
+            $token = $accessToken->getToken(true);  # 强制重新从微信服务器获取 token.
+            $union_id = $this->unionID($user->id, $token, 'PUB');
 
-        $accessToken = $this->app->access_token;
-        $token = $accessToken->getToken(true); # 强制重新从微信服务器获取 token.
-        $union_id = $this->unionID($user->id, $token, 'PUB');
+            $account = collect();
+            $account->open_id = $user->getId();
+            $account->union_id = $union_id;
 
-        $account = collect();
-        $account->open_id = $user->getId();
-        $account->union_id = $union_id;
-
-        return $account;
+            return $account;
+        }
+        return null;
     }
 }

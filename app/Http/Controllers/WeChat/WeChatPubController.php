@@ -22,20 +22,17 @@ class WeChatPubController extends Controller
     private $app;        # 微信实例
     private $broadcast;  # 广播接口
     private $notice;     # 模板消息通知
+    private $user;
     
     public function __construct(Application $app)
-    {
+    {   # 设置中间件
+        $this->middleware('wechat.oauth', ['except' => ['serve','menu']]);
+
         $this->app = $app;
         $this->broadcast = $app->broadcast;
         $this->notice = $app->notice;
-
-        # 设置中间件
-        $this->middleware('wechat.oauth', ['except' => ['serve','menu']]);
-    }
-
-    public function register()
-    {
-        $user = $this->account();
+        if(!is_null($this->loginUser()))
+            $this->user = $this->loginUser();
     }
 
     /**
@@ -46,13 +43,13 @@ class WeChatPubController extends Controller
      */
     public function loginUser()
     {
-        if(Auth::check()){
-            $user = Auth::user();
-        }else{
+        if(!Auth::check()){
             $user = $this->regIfNotExist();
+            if(is_null($user))
+                return null;
             Auth::login($user);
         }
-        return $user;
+        return Auth::user();
     }
 
     /**
@@ -62,9 +59,7 @@ class WeChatPubController extends Controller
      */
     public function login()
     {
-        $user = $this->loginUser();
-
-        switch ($user->role){
+        switch ($this->user->role){
             case 'lawyer':
                 break;
             case 'client':
@@ -214,49 +209,43 @@ class WeChatPubController extends Controller
     
     public function orders()
     {
-        $user = $this->loginUser();
-
-        switch ($user->role){
+        switch ($this->user->role){
             case 'lawyer':
-                return redirect('lawyer/orders');
+                return redirect('wechat/lawyer/orders');
 
             case 'client':
-                return redirect('client/orders');
+                return redirect('wechat/client/orders');
 
             case 'none':
-                return redirect('bind/chose');
+                return redirect('wechat/chose');
         }
     }
 
     public function messages()
     {
-        $user = $this->loginUser();
-
-        switch ($user->role){
+        switch ($this->user->role){
             case 'lawyer':
-                return redirect('lawyer/messages');
+                return redirect('wechat/lawyer/notifies');
 
             case 'client':
-                return redirect('client/messages');
+                return redirect('wechat/client/notifies');
 
             case 'none':
-                return redirect('bind/chose');
+                return redirect('wechat/chose');
         }
     }
 
     public function settings()
     {
-        $user = $this->loginUser();
-
-        switch ($user->role){
+        switch ($this->user->role){
             case 'lawyer':
-                return redirect('lawyer/settings');
+                return redirect('wechat/lawyer/setting');
 
             case 'client':
-                return redirect('client/settings');
+                return redirect('wechat/client/setting');
 
             case 'none':
-                return redirect('bind/chose');
+                return redirect('wechat/chose');
         }
     }
 
@@ -277,12 +266,5 @@ class WeChatPubController extends Controller
         }
 
         return $user;
-    }
-
-    # 微信公众号模板方式进行下一步注册
-    public function chose()
-    {
-        $user = $this->loginUser();
-        return redirect('app/chose');
     }
 }
