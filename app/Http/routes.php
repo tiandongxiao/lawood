@@ -223,7 +223,6 @@ Route::group(['prefix' => 'wechat'], function(){
     
     Route::get('consults','WeChat\WeChatController@consults');
 
-
     Route::get('client','WeChat\ClientController@index');
     Route::get('client/notifies','WeChat\ClientController@notifies');
     Route::get('client/orders','WeChat\ClientController@orders');

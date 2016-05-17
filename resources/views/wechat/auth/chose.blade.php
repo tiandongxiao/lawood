@@ -6,7 +6,7 @@
     <section class="dl-main">
         <div class="logo-index"><img src="/images/logo.png"></div>
         <div class="fc-fff bottom-index">
-            <a href="{{url('wechat/reg/client')}}">个人注册</a>　|　<a href="{{url('wechat/reg/lawyer')}}">律师注册</a>
+            <a href="{{url('wechat/bind/client')}}">个人注册</a>　|　<a href="{{url('wechat/bind/lawyer')}}">律师注册</a>
         </div>
     </section>
 @endsection

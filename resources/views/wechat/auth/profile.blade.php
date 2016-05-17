@@ -6,7 +6,7 @@
     <!--默认状态-->
     <section class="zc-main">
         <div class="banner"><img src="/images/zc-banner.png" width="100%"></div>
-        <form id="form" action="{{url('wechat/reg_more')}}" method="POST">
+        <form id="form" action="{{url('wechat/profile')}}" method="POST">
             {!! csrf_field() !!}
             <div class="form">
                 <div class="itms" >

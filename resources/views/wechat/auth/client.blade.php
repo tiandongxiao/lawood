@@ -7,7 +7,7 @@
         <div class="gr-tx te-cen">
             <label class="label"><img src="/images/tx.png" width="70" height="70" class="tx" id="File_img"><input type="file" class="op-0" id="file_toget"></label>
         </div>
-        <form  action="{{url('wechat/reg')}}" id="form" method="POST">
+        <form  action="{{url('wechat/bind')}}" id="form" method="POST">
             {!! csrf_field() !!}
             <div class="form">
                 <div class="itms">

@@ -5,7 +5,7 @@
 @section('content')
     <section class="zc-main">
         <div class="banner"><img src="/images/zc-banner.png" width="100%"></div>
-        <form  action="{{url('wechat/reg')}}" id="form" method="POST">
+        <form  action="{{url('wechat/bind')}}" id="form" method="POST">
             {!! csrf_field() !!}
             <div class="form">
                 <div class="itms">
