@@ -88,6 +88,13 @@ class Notify
                 $info->content = '双方签到完成，咨询正式开始，请完成线下咨询后，对我们的律师进行评价';
                 $info->url = url('order/'.$data['order_id']);
                 break;
+
+            # 订单完成通知
+            case 'ad':
+                $info->title = '推广链接';
+                $info->content = '律师下单测试链接';
+                $info->url = url('order/place/'.$data['item_id']);
+                break;
         }
 
         Notification::create([

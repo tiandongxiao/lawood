@@ -122,6 +122,8 @@ class TestController extends Controller
 
     public function buildNotifications()
     {
+        $lawyer = User::where('email','lawyer@lawood.cn')->first();
+        Notify::send($lawyer,['type'=>'ad','item_id'=>random_int(1, 10)]);
 
 //        $item = Item::find(1);
 //
@@ -174,5 +176,4 @@ class TestController extends Controller
     {
         return view('test.call');
     }
-
 }
