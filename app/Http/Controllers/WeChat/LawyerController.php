@@ -43,7 +43,6 @@ class LawyerController extends Controller
 
     public function orders()
     {
-        dd('I am here');
         return view('wechat.lawyer.orders');
     }
 
