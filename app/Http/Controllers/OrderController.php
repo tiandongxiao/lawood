@@ -21,8 +21,6 @@ class OrderController extends Controller
     # 对未下单的订单下单
     public function placeOrder($id)
     {
-        if(Auth::user())
-            dd(Auth::user());
         $consult = Item::findOrFail($id);
         $seller = $consult->seller;
         if($seller->enable == false)

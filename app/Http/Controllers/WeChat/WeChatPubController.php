@@ -100,7 +100,7 @@ class WeChatPubController extends Controller
 
                     $userId = $account->openid;
                     $templateId = 'MCG5frr7twN4Wl8O8ZgRoMTB_hB61hUhIMeNTsKhJsc';
-                    $url = url('order/place/'.random_int(1, 5));
+                    $url = "www.baidu.com";
                     $color = '#FF0000';
                     $data = array(
                         'first'      =>  "恭喜您完成注册的第一部分",
