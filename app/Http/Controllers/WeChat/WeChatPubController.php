@@ -192,6 +192,7 @@ class WeChatPubController extends Controller
 
     public function find()
     {
+        dd($this->user->role);
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/search');
