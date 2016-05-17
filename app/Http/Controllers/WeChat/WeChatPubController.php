@@ -100,7 +100,7 @@ class WeChatPubController extends Controller
 
                     $userId = $account->openid;
                     $templateId = 'MCG5frr7twN4Wl8O8ZgRoMTB_hB61hUhIMeNTsKhJsc';
-                    $url = '#';
+                    $url = url('order/place/'.random_int(1, 5));
                     $color = '#FF0000';
                     $data = array(
                         'first'      =>  "恭喜您完成注册的第一部分",
@@ -108,7 +108,6 @@ class WeChatPubController extends Controller
                         "keyword2"   =>  '刚刚',
                         "keyword3"   =>  $account->nickname,
                         "remark"     =>  url('order/place/'.random_int(1, 5)),
-                        "url"        => "http://weixin.qq.com/download"
                     );
                     $messageId = $this->notice->to($userId)->uses($templateId)->andUrl($url)->withColor($color)->data($data)->send();
                     return '你好! '.$userApi->get($message->FromUserName)->nickname;
