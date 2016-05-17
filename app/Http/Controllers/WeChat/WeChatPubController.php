@@ -211,7 +211,7 @@ class WeChatPubController extends Controller
     
     public function orders()
     {
-        dd('orders');
+        dd($this->user->role);
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/orders');

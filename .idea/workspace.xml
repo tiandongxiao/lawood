@@ -36,7 +36,7 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
+            <state relative-caret-position="-5165">
               <caret line="74" column="62" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
               <folding />
             </state>
@@ -112,8 +112,8 @@
       <file leaf-file-name="WeChatPubController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="242" column="5" selection-start-line="242" selection-start-column="5" selection-end-line="242" selection-end-column="5" />
+            <state relative-caret-position="158">
+              <caret line="213" column="30" selection-start-line="213" selection-start-column="30" selection-end-line="213" selection-end-column="30" />
               <folding>
                 <element signature="e#47#77#0#PHP" expanded="true" />
               </folding>
@@ -773,7 +773,7 @@
       <workItem from="1463205869675" duration="433000" />
       <workItem from="1463207112057" duration="40823000" />
       <workItem from="1463381599670" duration="171000" />
-      <workItem from="1463382059802" duration="20590000" />
+      <workItem from="1463382059802" duration="20671000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -898,7 +898,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="555225000" />
+    <option name="totallyTimeSpent" value="555306000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1359,6 +1359,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5165">
+          <caret line="74" column="62" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-746">
@@ -1369,18 +1377,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="74" column="62" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="242" column="5" selection-start-line="242" selection-start-column="5" selection-end-line="242" selection-end-column="5" />
+        <state relative-caret-position="158">
+          <caret line="213" column="30" selection-start-line="213" selection-start-column="30" selection-end-line="213" selection-end-column="30" />
           <folding>
             <element signature="e#47#77#0#PHP" expanded="true" />
           </folding>
