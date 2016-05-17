@@ -46,3 +46,13 @@
         </div>
     </section>
 @stop
+@section('script')
+    <script>
+        $(function(){
+
+            $('#In-btn').tap(function () {
+                alert('me');
+            });
+        })
+    </script>
+@stop
