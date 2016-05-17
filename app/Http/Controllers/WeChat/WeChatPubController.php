@@ -164,26 +164,6 @@ class WeChatPubController extends Controller
                 "url"  => url('wx/find')
             ],
             [
-                "name"       => "服务中心",
-                "sub_button" => [
-                    [
-                        "type" => "view",
-                        "name" => "客服测试",
-                        "url"  => url('wx/pub/reg')
-                    ],
-                    [
-                        "type" => "view",
-                        "name" => "一键登录",
-                        "url"  => url('wx/pub/login')
-                    ],
-                    [
-                        "type" => "view",
-                        "name" => "支付测试",
-                        "url"  => url('wxpay/js/1')
-                    ],
-                ],
-            ],
-            [
                 "name"       => "个人中心",
                 "sub_button" => [
                     [
@@ -206,6 +186,8 @@ class WeChatPubController extends Controller
         ];
 
         $menu->add($buttons);
+
+        dd('OK');
     }
 
     public function find()
