@@ -12,7 +12,6 @@
     @yield('css')
 </head>
 <body style="background:#f8f8f8">
-
 <!--顶部-->
 <div class="po-f nav-main">
     <div class="btn-cb"></div>
@@ -78,30 +77,35 @@
     </div>
 </div>
 <!--顶部-->
-<section class="cblm-main po-f">
+
+<!--侧边-->
+<section class="cblm-main po-f" >
     <div class="main">
         <div class="itms itms-tx bor-bot">
             <div class="f-left"><img src="/images/tx.png" width="60" height="60" ></div>
-            <div class="right">王树德</div>
+            <div class="right">登录/注册</div>
         </div>
-        <a class="itms new" href="{{url('wechat/client/notifies')}}">
+        <a class="itms" href="{{url('wechat/client')}}">
             <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
+            <div class="right">律屋主页</div>
+        </a>
+        <a class="itms" href="{{url('wechat/client/notifies')}}">
+            <div class="f-left"><img src="/images/nav2.png" width="20" height="20"></div>
             <div class="right">消息通知</div>
         </a>
         <a class="itms bor-bot" href="{{url('wechat/client/orders')}}">
-            <div class="f-left"><img src="/images/nav2.png" width="20" height="20"></div>
+            <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
             <div class="right">我的订单</div>
         </a>
-        <a class="itms" href="{{url('wechat/client/collection')}}">
-            <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
-            <div class="right">收藏律师</div>
-        </a>
         <a class="itms bor-bot" href="{{url('wechat/client/setting')}}">
-            <div class="f-left"><img src="/images/nav4.png" width="20" height="20"></div>
+            <div class="f-left">
+                <img src="/images/nav7.png" width="20" height="20">
+            </div>
             <div class="right">设置</div>
         </a>
     </div>
 </section>
+<!--侧边-->
 @yield('content')
 </body>
 <script src="/js/jquery-1.9.1.min.js"></script>

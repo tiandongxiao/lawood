@@ -161,7 +161,7 @@
 .nav-main	.hd	.itms-hd.on	{ color:#03aaf0;}
 .nav-main	.bd				{ padding:0px 40px 10px 10px;}
 .nav-main	.bd	.itms-bd	{ display:none;}
-.nav-main	.bd	.itms-bd	.list	{ padding:5px 10px; color:#9d9d9d; margin:10px 10px 0 0; display:block; float:left; border-radius:10px; border:1px solid #fff;}
+.nav-main	.bd	.itms-bd	.list	{ padding:5px 10px; color:#9d9d9d; margin:10px 10px 0 0; display:block; float:left; border-radius:10px; border:1px solid #f8f8f8;}
 .nav-main	.bd	.itms-bd	.list.on	 {   color:#03aaf0; border:1px solid #03aaf0; border-radius:10px;}
 .nav-main	.bd	.itms-bd.show	{
 	display:block;
@@ -267,9 +267,9 @@ transform:scale(0.8,0.8);
 .lstc-main	{ position:absolute; left:0; top:0; width:100%; height:100%; z-index:200; background:rgba(83,83,83,0.7)}
 .lstc-main	.tc-m	{ position:absolute; bottom:0px; left:4%; bottom:5%; width:92%; display:none; }
 .lstc-main	.tc-m		.c-main	{  border-radius:10px; max-height:400px; overflow:auto; position:relative; }
-.lstc-main	.tc-m		.c-main	.tie	{ width:92%; height:45px; line-height:45px; text-align:center; color:#686868; border-bottom:1px solid #f8f8f8; position:fixed; z-index:100; background:#fff; padding:5px 0; border-top-left-radius:10px; border-top-right-radius:10px; font-size:16px; }
+.lstc-main	.tc-m		.c-main	.tie	{ width:100%; height:45px; line-height:45px; text-align:center; color:#686868; border-bottom:1px solid #f8f8f8; position:relative !important; z-index:100; background:#fff; padding:5px 0; border-top-left-radius:10px; border-top-right-radius:10px; font-size:16px; }
 .lstc-main	.tc-m		.c-main	.tie	.btn-fjls	{ width:45px; height:45px; position:absolute; right:5px; top:5px; background:url(../images/gb.png) center center no-repeat; background-size:22px 22px;}
-.lstc-main	.tc-m	.con	{ padding:56px 10px 10px 10px;}
+.lstc-main	.tc-m	.con	{ padding:0px 10px 10px 10px;}
 .lstc-main	.fjls-main	.c-main	.itms	{ width:100%; height:50px; padding:10px 0; border-bottom:1px solid #f8f8f8; position:relative; }
 .lstc-main	.fjls-main	.c-main	.itms	.f-left	img	{ border-radius:100%; width:50px !important; height:50px !important;}
 .lstc-main	.fjls-main	.c-main	.itms	.right		{ padding-left:60px; padding-right:70px;}
@@ -298,7 +298,7 @@ transform:scale(0.8,0.8);
 .lszx-main	.c-main	{ padding:0px !important;}
 .lszx-main	.c-main	.top	{ background:#24a7df;}
 .lszx-main	.c-main	.top	.tie	{ color:#fff !important; border-bottom:none !important; background:#24a7df !important;}
-.lszx-main	.c-main	.top	.xx		{ text-align:center; color:#fff; padding:56px 0 10px;}
+.lszx-main	.c-main	.top	.xx		{ text-align:center; color:#fff; padding:0px 0 10px;}
 .lszx-main	.c-main	.top	.xx		h3	{ font-size:30px; font-weight:normal; padding:5px 0 10px;}
 .lszx-main	.c-main	.top	.xx		p	{ color:#95d9fb;}
 .lszx-main	.c-main	.bottom	.itms-select		 { height:40px;}
@@ -537,7 +537,7 @@ transform:scale(0.8,0.8);
 90%  {opacity:1; }
 100%  {opacity:0; }
 }
-.zx-wc	{ position:absolute; width:100%; height:100%; left:0; top:0; background:rgba(83,83,83,0.7); z-index:200;}
+.zx-wc	{ position:absolute; width:100%; height:100%; left:0; top：0; background:rgba(83,83,83,0.7); z-index:200;}
 
 /*26-取消订单*/
 .tc-main	.btn-main	{ width:100%; height:30px; line-height:30px; border-top:1px solid #f8f8f8; position:relative; top:10px;}
@@ -577,8 +577,8 @@ transform:scale(0.8,0.8);
 .wdqb-main		.hd	.itms.on	span	{ border-bottom:2px solid #03aaf0; color:#03aaf0; height:38px; line-height:38px; display:inline-block; padding:0 5px;}
 .wdqb-main		.bd	.bd-itms	{ padding:0 10px; display:none;}
 .wdqb-main		.bd	.bd-itms	.itms	{ width:100%; height:40px; line-height:40px; padding:10px 0;  border-bottom:1px solid #efefef;}
-.wdqb-main		.bd	.bd-itms	.itms	.f-left	h3	{ line-height:20px; color:#909090; font-size:15px; font-weight:normal;}
-.wdqb-main		.bd	.bd-itms	.itms	.f-left	p	{  line-height:20px; color:#909090; font-size:12px; font-weight:normal}
+.wdqb-main		.bd	.bd-itms	.itms	.f-left	h3	{ line-height:20px; color:#90900; font-size:15px; font-weight:normal;}
+.wdqb-main		.bd	.bd-itms	.itms	.f-left	p	{  line-height:20px; color:#90900; font-size:12px; font-weight:normal}
 .wdqb-main		.bd	.bd-itms	.itms	.right	{ float:right; color:#535353}
 
 

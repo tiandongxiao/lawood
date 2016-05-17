@@ -12,7 +12,6 @@
     @yield('css')
 </head>
 <body style="background:#f8f8f8">
-
 <!--顶部-->
 <div class="po-f nav-main">
     <div class="btn-cb"></div>
@@ -78,19 +77,19 @@
     </div>
 </div>
 <!--顶部-->
-@yield('content')
 
-<section class="cblm-main po-f">
+<!--侧边-->
+<section class="cblm-main po-f" >
     <div class="main">
-        <div class="itms itms-tx bor-bot">
+        <a class="itms itms-tx bor-bot">
             <div class="f-left"><img src="/images/tx.png" width="60" height="60" ></div>
-            <div class="right">王树德</div>
-        </div>
-        <a class="itms" href="#">
+            <div class="right">登录/注册</div>
+        </a>
+        <a class="itms" href="{{url('wechat/lawyer')}}">
             <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
             <div class="right">律屋主页</div>
         </a>
-        <a class="itms new" href="{{url('wechat/lawyer/notifies')}}" style="display: block">
+        <a class="itms" href="{{url('wechat/lawyer/notifies')}}">
             <div class="f-left"><img src="/images/nav2.png" width="20" height="20"></div>
             <div class="right">消息通知</div>
         </a>
@@ -98,7 +97,7 @@
             <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
             <div class="right">我的订单</div>
         </a>
-        <a class="itms" href="{{url('wechat/lawyer/me')}}">
+        <a class="itms " href="{{url('wechat/lawyer/me')}}">
             <div class="f-left"><img src="/images/nav4.png" width="20" height="20"></div>
             <div class="right">我的主页</div>
         </a>
@@ -106,23 +105,32 @@
             <div class="f-left"><img src="/images/nav5.png" width="20" height="20"></div>
             <div class="right">我的钱包</div>
         </a>
-        <label class="itms bor-bot" href="#">
+        <a class="itms bor-bot" href="http://www.baidu.com">
             <div class="f-left"><img src="/images/nav6.png" width="20" height="20"></div>
             <div class="right">停用</div>
             <div class="ts">停用后律屋将停止</br>对您推荐</div>
             <input type="checkbox" class="In-check" >
-        </label>
+        </a>
         <a class="itms bor-bot" href="{{url('wechat/lawyer/setting')}}">
-            <div class="f-left"><img src="/images/nav7.png" width="20" height="20"></div>
+            <div class="f-left">
+                <img src="/images/nav7.png" width="20" height="20">
+            </div>
             <div class="right">设置</div>
         </a>
     </div>
 </section>
+<!--侧边-->
+@yield('content')
 </body>
 <script src="/js/jquery-1.9.1.min.js"></script>
 <script src="/js/tap.js"></script>
 <script>
     $(function(){
+        $('.dtdw-main').height($('body').height()-100)
+        $(window).resize(function() {
+            $('.dtdw-main').height($('body').height()-100)
+        });
+
         //切换栏目
         $('.itms-hd').tap(function(){
             $('.itms-hd').removeClass('on');
@@ -130,6 +138,7 @@
             $('.itms-bd').removeClass('show');
             $('.itms-bd').removeClass('on');
             $('.itms-bd').eq($(this).index()).addClass('on');
+
         })
 
         //栏目下拉上升
@@ -143,7 +152,7 @@
             $('.nav-main').addClass('on1');
             $(this).attr({class:'btn-xl'})
         })
-        $('.nav-main').tap(function(){
+        $('.nav-main').click(function(){
             if(event.target==this){
                 $('.nav-main').removeClass('on');
                 $('.nav-main').addClass('on1');
@@ -153,13 +162,13 @@
 
         //打开侧边
         $('.btn-cb').tap(function(){
-            $('.nav-main').removeClass('on1');
+            $('.cblm-main').removeClass('on1');
             $('.cblm-main').addClass('on')
         })
-        $('.cblm-main').tap(function(){
+        $('.cblm-main').click(function(){
 
             if(event.target==this){
-                $('.nav-main').removeClass('on');
+                $('.cblm-main').removeClass('on');
                 $('.cblm-main').addClass('on1')
             }
         })
@@ -167,6 +176,63 @@
         $('.list').tap(function(){
             $('.list').removeClass('on');
             $(this).addClass('on')
+        })
+        //查看更多律师
+        $('#btn-more').tap(function(){
+            $('.lstc-main').fadeIn();
+            $('.fjls-main').fadeIn();
+        })
+
+        //查看名片
+        $('.btn-ckmp').tap(function(){
+            $('.fjls-main').css({display:'none'});
+            $('.lsmp-main').fadeIn();
+        })
+        //返回附近律师
+        $('.back-fjls').tap(function(){
+            $('.lsmp-main').css({display:'none'});
+            $('.fjls-main').fadeIn();
+        })
+        //律师咨询
+        $('.btn-ljzx').tap(function(){
+            $('.lsmp-main').css({display:'none'});
+            $('.lszx-main').fadeIn();
+        })
+        //返回律师名片
+        $('.back-lsmp').tap(function(){
+            $('.lszx-main').css({display:'none'});
+            $('.lsmp-main').fadeIn();
+        })
+
+        //切换咨询栏目
+        $('.list-1').tap(function(){
+            $('.list-1').removeClass('on');
+            $(this).addClass('on')
+        })
+
+        //约见地点
+        $('.btn-yjdd').tap(function(){
+            $('.lszx-main').css({display:'none'});
+            $('.yjdd-main').fadeIn();
+        })
+
+        //返回律师咨询
+        $('.back-lszx').tap(function(){
+            $('.yjdd-main').css({display:'none'});
+            $('.lszx-main').fadeIn();
+        })
+        //关闭弹出框
+        $('.lstc-main').click(function(){
+
+            if(event.target==this){
+                $('.lstc-main').fadeOut();
+                $('.tc-m').fadeOut();
+            }
+        })
+        $('.btn-gb').tap(function(){
+
+            $('.lstc-main').fadeOut();
+            $('.tc-m').fadeOut();
         })
     })
 </script>
