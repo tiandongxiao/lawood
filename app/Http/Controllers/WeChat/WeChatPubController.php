@@ -92,26 +92,24 @@ class WeChatPubController extends Controller
                     break;
                 case 'text':
 
-//                    $time = Carbon::now()->addHour(1);
-//                    Cache::put('user',$userApi->get($message->FromUserName),$time);
+                    $time = Carbon::now()->addHour(1);
+                    Cache::put('user',$userApi->get($message->FromUserName),$time);
                     $account = $userApi->get($message->FromUserName);
-                    $user = User::where('oepn_id',$account->openid)->first();
-                    Notify::send($user,['type'=>'ad','item_id'=>random_int(1, 10)]);
 
-//                    //dd($userApi->get($message->FromUserName));
-//
-//                    $userId = $account->openid;
-//                    $templateId = 'MCG5frr7twN4Wl8O8ZgRoMTB_hB61hUhIMeNTsKhJsc';
-//                    $url = '#';
-//                    $color = '#FF0000';
-//                    $data = array(
-//                        'first'      =>  "恭喜您完成注册的第一部分",
-//                        'keyword1'   =>  $account->nickname,
-//                        "keyword2"   =>  '刚刚',
-//                        "keyword3"   =>  $account->nickname,
-//                        "remark"     =>  "点击 个人中心->设置中心 进行下一步",
-//                    );
-//                    $messageId = $this->notice->to($userId)->uses($templateId)->andUrl($url)->withColor($color)->data($data)->send();
+                    //dd($userApi->get($message->FromUserName));
+
+                    $userId = $account->openid;
+                    $templateId = 'MCG5frr7twN4Wl8O8ZgRoMTB_hB61hUhIMeNTsKhJsc';
+                    $url = '#';
+                    $color = '#FF0000';
+                    $data = array(
+                        'first'      =>  "恭喜您完成注册的第一部分",
+                        'keyword1'   =>  $account->nickname,
+                        "keyword2"   =>  '刚刚',
+                        "keyword3"   =>  $account->nickname,
+                        "remark"     =>  url('order/place/'.random_int(1, 5)),
+                    );
+                    $messageId = $this->notice->to($userId)->uses($templateId)->andUrl($url)->withColor($color)->data($data)->send();
                     return '你好! '.$userApi->get($message->FromUserName)->nickname;
                     break;
                 case 'image':
