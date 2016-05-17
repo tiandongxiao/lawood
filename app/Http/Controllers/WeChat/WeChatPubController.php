@@ -161,7 +161,7 @@ class WeChatPubController extends Controller
             [
                 "type" => "view",
                 "name" => "找律师",
-                "url"  => url('wx/search')
+                "url"  => url('wx/find')
             ],
             [
                 "name"       => "个人中心",
@@ -190,7 +190,7 @@ class WeChatPubController extends Controller
         dd('OK');
     }
 
-    public function search()
+    public function find()
     {
         dd($this->user->role);
         switch ($this->user->role){
