@@ -90,7 +90,7 @@
             <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
             <div class="right">律屋主页</div>
         </a>
-        <a class="itms new" href="{{url('wechat/lawyer/notifies')}}">
+        <a class="itms new" href="{{url('wechat/lawyer/notifies')}}" style="display: block">
             <div class="f-left"><img src="/images/nav2.png" width="20" height="20"></div>
             <div class="right">消息通知</div>
         </a>
