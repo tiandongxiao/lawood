@@ -31,6 +31,7 @@ class AuthController extends Controller
 
     public function bind($role_name)
     {
+        dd($role_name);
         if(!$this->user->role) {
             $this->user->role = $role_name;
             $this->user->save();
