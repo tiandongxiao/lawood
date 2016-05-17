@@ -71,7 +71,12 @@ class ClientController extends Controller
         }
     }
 
-    public function results()
+    public function search()
+    {
+        return view('wechat.client.results');
+    }
+
+    public function postSearch()
     {
         return view('wechat.client.results');
     }

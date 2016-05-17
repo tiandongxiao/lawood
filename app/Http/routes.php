@@ -72,6 +72,7 @@ Route::group(['prefix' => 'wx'], function() {
     Route::get('pub/chose','WeChat\WeChatPubController@chose');
     Route::get('pub/unbind','WeChat\WeChatPubController@unbind');
 
+    Route::get('find', 'WeChat\WeChatPubController@find');
     Route::get('orders', 'WeChat\WeChatPubController@orders');
     Route::get('settings', 'WeChat\WeChatPubController@settings');
     Route::get('messages', 'WeChat\WeChatPubController@messages');
@@ -230,8 +231,9 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('client/setting','WeChat\ClientController@setting');
     Route::get('client/config/{key}','WeChat\ClientController@config');
     Route::post('client/config','WeChat\ClientController@postConfig');
-    Route::get('client/results','WeChat\ClientController@results');
-    Route::get('client/results','WeChat\ClientController@results');
+
+    Route::get('client/search','WeChat\ClientController@search');
+    Route::get('client/search','WeChat\ClientController@postSearch');
     Route::get('user/{id}','WeChat\ClientController@lawyer');
 
     Route::get('lawyer','WeChat\LawyerController@index');
@@ -244,5 +246,7 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('lawyer/setting','WeChat\LawyerController@setting');
     Route::get('lawyer/config/{key}','WeChat\LawyerController@config');
     Route::post('lawyer/config','WeChat\LawyerController@postConfig');
+    Route::get('lawyer/search','WeChat\LawyerController@search');
+    Route::get('lawyer/search','WeChat\LawyerController@postSearch');
     Route::get('lawyer/me','WeChat\LawyerController@me');
 });

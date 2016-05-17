@@ -161,7 +161,7 @@ class WeChatPubController extends Controller
             [
                 "type" => "view",
                 "name" => "找律师",
-                "url"  => url('consults')
+                "url"  => url('wx/find')
             ],
             [
                 "name"       => "服务中心",
@@ -208,6 +208,16 @@ class WeChatPubController extends Controller
         $menu->add($buttons);
     }
 
+    public function find()
+    {
+        switch ($this->user->role){
+            case 'lawyer':
+                return redirect('wechat/lawyer/');
+                break;
+            case 'client':
+                break;
+        }
+    }
     
     public function orders()
     {
@@ -239,7 +249,7 @@ class WeChatPubController extends Controller
     }
 
     public function settings()
-    {      
+    {
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/setting');

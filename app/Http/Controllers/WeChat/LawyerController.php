@@ -110,4 +110,14 @@ class LawyerController extends Controller
         $user = $this->user;
         return view('wechat.lawyer.me',compact('user'));
     }
+
+    public function search()
+    {
+        return view('wechat.lawyer.search');
+    }
+
+    public function postSearch()
+    {
+        return view('wechat.lawyer.search');
+    }
 }
