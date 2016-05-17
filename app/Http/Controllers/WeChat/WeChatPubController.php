@@ -212,10 +212,9 @@ class WeChatPubController extends Controller
     {
         switch ($this->user->role){
             case 'lawyer':
-                return redirect('wechat/lawyer/');
-                break;
+                return redirect('wechat/lawyer/search');
             case 'client':
-                break;
+                return redirect('wechat/client/search');
         }
     }
     
