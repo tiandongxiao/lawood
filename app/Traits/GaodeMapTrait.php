@@ -62,6 +62,7 @@ trait GaodeMapTrait
             #成功返回新数据项的id
             return $result->_id;
         }
+        dd($result);
         return null;
     }
 
