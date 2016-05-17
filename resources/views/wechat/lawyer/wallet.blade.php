@@ -7,7 +7,7 @@
             <div class="right">￥<span>1200.00</span></div>
         </div>
         <div class="bg-f8f8f8 clearfix pad-10-0">
-            <a href="#" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16 line-40" >全部提现</a>
+            <a href="{{url('wechat/lawyer/draw')}}" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16 line-40" >全部提现</a>
         </div>
         <div class="hd">
             <div  class="itms on"><span>全部</span></div>
