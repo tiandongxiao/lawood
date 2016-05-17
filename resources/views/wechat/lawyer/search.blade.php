@@ -1,4 +1,4 @@
-@extends('wechat.base.client')
+@extends('wechat.base.lawyer')
 @section('content')
 
     <!--地图定位-->
