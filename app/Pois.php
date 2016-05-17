@@ -56,7 +56,7 @@ class Pois extends Model
     public function build(Location $location, Category $category, Item $item)
     {
         $poi_id = $this->addPOI([
-            '_name'        => $item->seller->real_name,
+            '_name'        => $category->name,
             '_address'     => $location->address,
             'category'     => $category->name,
             'price'        => $item->price,
