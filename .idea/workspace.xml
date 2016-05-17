@@ -78,8 +78,8 @@
       <file leaf-file-name="WeChatPubController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="96" column="69" selection-start-line="96" selection-start-column="69" selection-end-line="96" selection-end-column="69" />
+            <state relative-caret-position="297">
+              <caret line="111" column="22" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
               <folding>
                 <element signature="e#47#77#0#PHP" expanded="true" />
               </folding>
@@ -757,7 +757,7 @@
       <workItem from="1463205869675" duration="433000" />
       <workItem from="1463207112057" duration="40823000" />
       <workItem from="1463381599670" duration="171000" />
-      <workItem from="1463382059802" duration="15934000" />
+      <workItem from="1463382059802" duration="16119000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -882,7 +882,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="550569000" />
+    <option name="totallyTimeSpent" value="550754000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1355,8 +1355,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="96" column="69" selection-start-line="96" selection-start-column="69" selection-end-line="96" selection-end-column="69" />
+        <state relative-caret-position="297">
+          <caret line="111" column="22" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
           <folding>
             <element signature="e#47#77#0#PHP" expanded="true" />
           </folding>
