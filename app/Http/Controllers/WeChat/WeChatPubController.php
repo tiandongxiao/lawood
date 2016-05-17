@@ -161,7 +161,7 @@ class WeChatPubController extends Controller
             [
                 "type" => "view",
                 "name" => "找律师",
-                "url"  => url('wx/find')
+                "url"  => url('wx/search')
             ],
             [
                 "name"       => "个人中心",
