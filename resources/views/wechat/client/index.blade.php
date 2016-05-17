@@ -51,7 +51,7 @@
     <script>
         $(function(){
 
-            $('#In-btn').tap(function () {
+            $('#In-btn').click(function () {
                 alert('me');
             });
         })
