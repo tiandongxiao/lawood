@@ -21,7 +21,7 @@ class LawyerController extends Controller
     public function __construct(Application $application)
     {
         $this->middleware('auth');
-        $this->middleware('role:client');
+        $this->middleware('role:lawyer');
         $this->app = $application;
         $this->user = Auth::user();
     }
