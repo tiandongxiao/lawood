@@ -190,7 +190,7 @@ class WeChatPubController extends Controller
         dd('OK');
     }
 
-    public function find()
+    public function search()
     {
         dd($this->user->role);
         switch ($this->user->role){
