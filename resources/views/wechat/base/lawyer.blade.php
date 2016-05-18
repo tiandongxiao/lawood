@@ -20,7 +20,7 @@
     <div class="hd">
         @foreach($category->nodes as $node)
             @if($node['tab_name']=='ms')
-                <li class="active"><a href="#{{$node['tab_name']}}" data-toggle="tab">{{$node['name']}}</a></li>                <div class="itms-hd on">{{$node['name']}}</div>
+                <div class="itms-hd on">{{$node['name']}}</div>
             @else
                 <div class="itms-hd">{{$node['name']}}</div>
             @endif
