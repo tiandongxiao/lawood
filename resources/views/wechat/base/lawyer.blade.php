@@ -74,12 +74,12 @@
             <div class="f-left"><img src="/images/nav5.png" width="20" height="20"></div>
             <div class="right">我的钱包</div>
         </a>
-        <a class="itms bor-bot" href="http://www.baidu.com">
+        <div class="itms bor-bot" href="http://www.baidu.com">
             <div class="f-left"><img src="/images/nav6.png" width="20" height="20"></div>
             <div class="right">停用</div>
             <div class="ts">停用后律屋将停止</br>对您推荐</div>
             <input type="checkbox" class="In-check" >
-        </a>
+        </div>
         <a class="itms bor-bot" href="{{url('wechat/lawyer/setting')}}">
             <div class="f-left">
                 <img src="/images/nav7.png" width="20" height="20">
