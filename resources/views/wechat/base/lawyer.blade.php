@@ -28,7 +28,7 @@
     </div>
 
     <div class="bd">
-        @foreach($nodes as $node)
+        @foreach($category->nodes as $node)
             @if($node['tab_name']=='ms')
                 <div class="itms-bd clearfix show">
                     @foreach($node['nodes'] as $item)
