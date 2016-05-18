@@ -31,7 +31,7 @@ class Category extends Model
         parent::delete();
     }
 
-    public function nodes()
+    public function getNodesAttribute()
     {
         $root = Category::where('name','root')->first();
         $nodes = $root->tree()[0]['nodes'];
