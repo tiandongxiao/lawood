@@ -118,6 +118,7 @@ class AuthController extends Controller
         $user = $this->create($request->all());
 
         Auth::login($user);
+        
         switch ($user->role){
             case 'lawyer':                
                 //return redirect('/')->withErrors('律师用户注册完成，您需要提交您的执业资质进行审核');
@@ -129,8 +130,6 @@ class AuthController extends Controller
             default:
                 return redirect('/')->withErrors('我去，外星人啊');
         }
-
-        return redirect('/')->withErrors('恭喜您已经完成了注册');
     }
 
 

@@ -127,26 +127,22 @@ class User extends Model implements AuthenticatableContract,
     public function checkProfile()
     {
         if(!$this->profile){
-            $profile = Profile::create([]);
-            $this->profile()->associate($profile);
+            Profile::create(['user_id'=>$this->id]);
         }
     }
 
     public function checkRatings()
     {
         if(is_null($this->dressing)){
-            $dressing = UserDressing::create([]);
-            $this->dressing()->associate($dressing);
+            UserDressing::create(['user_id',$this->id]);
         }
 
         if(is_null($this->timing)){
-            $timing = UserTiming::create([]);
-            $this->timing()->associate($timing);
+            UserTiming::create(['user_id'=>$this->id]);
         }
 
         if(is_null($this->polite)){
-            $polite = UserPolite::create([]);
-            $this->polite()->associate($polite);
+            UserPolite::create(['user_id',$this->id]);
         }
     }
 
