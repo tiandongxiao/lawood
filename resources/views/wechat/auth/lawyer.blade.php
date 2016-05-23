@@ -90,11 +90,11 @@
             });
 
             //表单提交
-            $('#In-btn').tap(function(){
-                if(form){
-                    $("#form").submit();
-                }
-            })
+//            $('#In-btn').tap(function(){
+//                if(form){
+//                    $("#form").submit();
+//                }
+//            })
 
             //发送验证码
             var	Time	=	60;
