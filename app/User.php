@@ -105,6 +105,7 @@ class User extends Model implements AuthenticatableContract,
     public function setOfficeAttribute($office)
     {
         $this->checkProfile();
+        dd($this->profile);
         $this->profile->office = $office;
         $this->profile->save();
     }
