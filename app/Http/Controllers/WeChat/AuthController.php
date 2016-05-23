@@ -67,7 +67,7 @@ class AuthController extends Controller
         return view('wechat/auth/profile');
     }
 
-    public function postProfile(ProfileRegRequest $request)
+    public function postProfile(Request $request)
     {
         return view('wechat.auth.finish');
     }
