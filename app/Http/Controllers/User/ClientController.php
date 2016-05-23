@@ -75,12 +75,11 @@ class ClientController extends Controller
     }
 
     public function postFeedback(Request $request)
-    {
-        //dd($request->all());
+    {        
         $order = Order::findOrFail($request->get('order_id'));
         if($this->user->orders->contains($order) && $order->statusCode == 'completed') {
             $seller = $order->seller;
-            $seller->buildAnalysis();
+            $seller->checkRatings();
             $consult = Item::findOrFail($order->items[0]->reference_id);
 
             $seller->rating([

@@ -94,7 +94,6 @@ class UserController extends Controller
     {
         $user = User::findOrFail($user_id);
         $user->detachRole($role_id);
-
         return back();
     }
 

@@ -54,7 +54,6 @@ class AuthController extends Controller
                 return redirect('wechat/client');
             case 'lawyer':
                 $name = trim($request->get('name'));
-
                 $this->user->phone = $phone;
                 $this->user->real_name = $name;
                 $this->user->save();
@@ -69,6 +68,9 @@ class AuthController extends Controller
 
     public function postProfile(Request $request)
     {
+        $office = $request->get('office');
+        $this->user->office = $office;
+        $this->user->save();        
         return view('wechat.auth.finish');
     }
 

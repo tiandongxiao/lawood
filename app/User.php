@@ -78,25 +78,8 @@ class User extends Model implements AuthenticatableContract,
         Request::input('union_id') and $query->where('union_id','like','%'.Request::input('union_id').'%');
         Request::input('open_id') and $query->where('open_id','like','%'.Request::input('open_id').'%');
 
-
         # 对结果进行分页
         return $query->paginate(15);
-    }
-
-    public function buildAnalysis()
-    {
-        if(is_null($this->dressing)){
-            $dressing = UserDressing::create([]);
-            $this->dressing()->associate($dressing);
-        }
-        if(is_null($this->timing)){
-            $timing = UserTiming::create([]);
-            $this->timing()->associate($timing);
-        }
-        if(is_null($this->polite)){
-            $polite = UserPolite::create([]);
-            $this->polite()->associate($polite);
-        }
     }
 
     public function delete()
@@ -112,27 +95,11 @@ class User extends Model implements AuthenticatableContract,
         parent::delete();
     }
 
-    public function home_add()
-    {
-        return 'home';
-    }
-
-    public function work_add()
-    {
-        return 'work';
-    }
-
-    public function office()
-    {
-        return 'office';
-    }
-
     public function getOfficeAttribute()
     {
-        return 'office';
-//        if (is_null($this->profile))
-//            return null;
-//        return $this->profile->office;
+        if (is_null($this->profile))
+            return null;
+        return $this->profile->office;
     }
 
     public function setOfficeAttribute($office)
@@ -140,15 +107,13 @@ class User extends Model implements AuthenticatableContract,
         $this->checkProfile();
         $this->profile->office = $office;
         $this->profile->save();
-
     }
 
     public function getDescriptionAttribute()
     {
-        return 'desc';
-//        if (is_null($this->profile))
-//            return null;
-//        return $this->profile->description;
+        if (is_null($this->profile))
+            return null;
+        return $this->profile->description;
     }
     
     public function setIntroductionAttribute($desc)
@@ -156,14 +121,77 @@ class User extends Model implements AuthenticatableContract,
         $this->checkProfile();
         $this->profile->description = $desc;
         $this->profile->save();
-
     }
 
     public function checkProfile()
     {
         if(!$this->profile){
-            $this->profile()->associate(new Profile());
+            $profile = Profile::create([]);
+            $this->profile()->associate($profile);
         }
     }
 
+    public function checkRatings()
+    {
+        if(is_null($this->dressing)){
+            $dressing = UserDressing::create([]);
+            $this->dressing()->associate($dressing);
+        }
+
+        if(is_null($this->timing)){
+            $timing = UserTiming::create([]);
+            $this->timing()->associate($timing);
+        }
+
+        if(is_null($this->polite)){
+            $polite = UserPolite::create([]);
+            $this->polite()->associate($polite);
+        }
+    }
+
+    public function setHomeAttribute($address)
+    {
+        $home = $this->locations()->where('type','home')->get();
+        if($home){
+            $home->address = $address;
+            $home->save();
+        }else{
+            $home = Location::create([
+                'type'    => 'home',
+                'address' => $address
+            ]);
+            $this->locations()->save($home);
+        }
+    }
+
+    public function setWorkAttribute($address)
+    {
+        $work = $this->locations()->where('type','work')->get();
+        if($work){
+            $work->address = $address;
+            $work->save();
+        }else{
+            $work = Location::create([
+                'type'    => 'work',
+                'address' => $address
+            ]);
+            $this->locations()->save($work);
+        }
+    }
+
+    public function getHomeAttribute()
+    {
+        $home = $this->locations()->where('type','home')->get();
+        if($home)
+            return $home->address;
+        return null;
+    }
+
+    public function getWorkAttribute()
+    {
+        $work = $this->locations()->where('type','work')->get();
+        if($work)
+            return $work->address;
+        return null;
+    }
 }
