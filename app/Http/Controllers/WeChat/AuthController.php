@@ -63,15 +63,19 @@ class AuthController extends Controller
         $phone = trim($request->get('phone'));
         switch ($this->user->role){
             case 'client':
-                $this->user->phone = $phone;
-                $this->user->save();
-                return redirect('wechat/client');
+                if($phone){
+                    $this->user->phone = $phone;
+                    $this->user->save();
+                    return redirect('wechat/client');
+                }
             case 'lawyer':
                 $name = trim($request->get('name'));
-                $this->user->phone = $phone;
-                $this->user->real_name = $name;
-                $this->user->save();
-                return redirect('wechat/profile');
+                if($phone && $name){
+                    $this->user->phone = $phone;
+                    $this->user->real_name = $name;
+                    $this->user->save();
+                    return redirect('wechat/profile');
+                }
         }
     }
 
@@ -82,7 +86,6 @@ class AuthController extends Controller
 
     public function postProfile(ProfileRegRequest $request)
     {
-        
         return view('wechat.auth.finish');
     }
 
