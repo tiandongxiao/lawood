@@ -41,15 +41,6 @@ class AuthController extends Controller
             if($role)
                 $this->user->attachRole($role);
         }
-
-        switch ($role_name){
-            case 'lawyer':
-                return redirect('wechat/lawyer');
-            case 'client':
-                return redirect('wechat/client');
-            default:
-                break;
-        }
     }
 
     public function postBind(PhoneRegRequest $request)
