@@ -105,7 +105,6 @@ class User extends Model implements AuthenticatableContract,
     public function setOfficeAttribute($office)
     {
         $this->checkProfile();
-        dd($this->profile);
         $this->profile->office = $office;
         $this->profile->save();
     }
@@ -127,29 +126,33 @@ class User extends Model implements AuthenticatableContract,
     public function checkProfile()
     {
         if(!$this->profile){
-            Profile::create(['user_id'=>$this->id]);
+            $profile = Profile::create([]);
+            $this->profile()->associate($profile);
         }
     }
 
     public function checkRatings()
     {
         if(is_null($this->dressing)){
-            UserDressing::create(['user_id',$this->id]);
+            $dressing = UserDressing::create([]);
+            $this->dressing()->associate($dressing);
         }
 
         if(is_null($this->timing)){
-            UserTiming::create(['user_id'=>$this->id]);
+            $timing = UserTiming::create([]);
+            $this->timing()->associate($timing);
         }
 
         if(is_null($this->polite)){
-            UserPolite::create(['user_id',$this->id]);
+            $polite = UserPolite::create([]);
+            $this->polite()->associate($polite);
         }
     }
 
     public function setHomeAttribute($address)
     {
         $home = $this->locations()->where('type','home')->get();
-        
+
         if($home){
             $home->address = $address;
             $home->save();
@@ -165,6 +168,7 @@ class User extends Model implements AuthenticatableContract,
     public function setWorkAttribute($address)
     {
         $work = $this->locations()->where('type','work')->get();
+
         if($work){
             $work->address = $address;
             $work->save();
