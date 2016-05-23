@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class PhoneRegRequest extends Request
+class ProfileRegRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class PhoneRegRequest extends Request
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**

@@ -236,7 +236,7 @@ class AuthController extends Controller
             $user->email_active = true;
             $user->save();
 
-            DB::table('email_actives')->where('token',$token)->delete(); # 删除此条存储记录
+            DB::table('email_actives')->where('token',$token)->delete();  # 删除此条存储记录
             
             Auth::login($user);
 

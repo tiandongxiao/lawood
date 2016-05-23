@@ -86,19 +86,16 @@ class User extends Model implements AuthenticatableContract,
     public function buildAnalysis()
     {
         if(is_null($this->dressing)){
-            UserDressing::create([
-                'user_id' => $this->id
-            ]);
+            $dressing = UserDressing::create([]);
+            $this->dressing()->associate($dressing);
         }
         if(is_null($this->timing)){
-            UserTiming::create([
-                'user_id' => $this->id
-            ]);
+            $timing = UserTiming::create([]);
+            $this->timing()->associate($timing);
         }
         if(is_null($this->polite)){
-            UserPolite::create([
-                'user_id' => $this->id
-            ]);
+            $polite = UserPolite::create([]);
+            $this->polite()->associate($polite);
         }
     }
 

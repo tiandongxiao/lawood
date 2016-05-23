@@ -12,19 +12,19 @@
                 <div class="itms" >
                     <div class="f-left">律所名称</div>
                     <div class="right">
-                        <input type="text" class="In-text" placeholder="如北京京师事务所">
+                        <input type="text" class="In-text" placeholder="如北京京师事务所" name="office">
                     </div>
                 </div >
                 <div class="itms">
                     <div class="f-left">律所地址</div>
                     <div class="right">
-                        <input type="text" class="In-text" placeholder="我的位置">
+                        <input type="text" class="In-text" placeholder="我的位置" name="work">
                     </div>
                 </div>
                 <div class="itms" >
                     <div class="f-left">居住地址</div>
                     <div class="right">
-                        <input type="text" class="In-text" placeholder="我的位置">
+                        <input type="text" class="In-text" placeholder="我的位置" name="home">
                     </div>
                 </div>
 

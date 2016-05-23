@@ -107,7 +107,11 @@
 /*10-个人注册*/
 .zc-main	.gr-tx		{ width:100%; height:70px; padding:65px 0; }
 .zc-main	.gr-tx	.tx	{ border-radius:100%;}
+.grxy-main		{ position:absolute; left:5%; top:5%; width:90%; height:90%; background:#fff; overflow-y:auto; overflow-x:hidden;}
+.grxy-main		.top	{ position:fixed; top:5%; height:40px; line-height:40px;  background:#fff; width:90%;}
 
+.grxy-main		.con	{ padding:50px 10px;}
+.grxy-main		.bottom	{  position:fixed; bottom:5%; height:40px; line-height:40px; text-align:center; background:#fff; width:90%;}
 /*11-律屋主页*/
 .nav-main	{ width:100%; height:100px; left:0; top:0; z-index:100; background:rgba(83,83,83,0.7); overflow:hidden;}
 .nav-main.on	{
@@ -250,7 +254,12 @@ transform:scale(0.8,0.8);
 .lvzy-main	.itms-form:before	{ content:''; display:block; width:8px; height:8px; background:url(../images/icon-wdwz.png) center center no-repeat; position:absolute; left:15px; top:16px; background-size:8px 8px;}
 .lvzy-main	.itms-form	.In-text	{ color:#585858; margin-left:30px; line-height:38px;  width:250px; display:block; height:38px; }
 
-.lvzy-main	.itms-form	.In-text::-webkit-input-placeholder	{ color:#585858;}
+.lvzy-main	.itms-form:after	{ content:''; display:block; width:1px; height:20px; background:#d6d6d6; position:absolute; right:40px; top:10px;}
+.lvzy-main	.itms-form	.In-text::-webkit-input-placeholder	{ color:#9c9c9c;}
+.lvzy-main	.itms-form	.icon-wz	{ display:block; width:40px; height:40px; background:url(../images/index-wz.png) center center no-repeat; background-size:15px 20px; position:absolute; right:0px; top:0px;}
+.lvzy-main	.itms-form	.icon-xm	{ display:block; width:50px; height:40px; background:url(../images/index-user.png) center center no-repeat; background-size:20px 20px; position:absolute; right:40px; top:0px;}
+.lvzy-main	.itms-form	.icon-wz.on	{ background-image:url(../images/index-wz-on.png)}
+.lvzy-main	.itms-form	.icon-xm.on	{ background-image:url(../images/index-user-on.png)}
 .lvzy-main	.tjls	.itms	{ width:50%; float:left; margin-bottom:10px; position:relative;}
 .lvzy-main	.tjls	.itms	p	{ position:absolute; line-height:20px; right:10px; bottom:5px; color:#fff; padding-left:20px; background:url(../images/icon-bj.png) center left no-repeat; background-size:20px 20px;}
 .lvzy-main	.tjls	.itms	.img	{ padding-right:5px;}
@@ -265,9 +274,15 @@ transform:scale(0.8,0.8);
 
 /*14-离婚律师您附近的专业律师*/
 .lstc-main	{ position:absolute; left:0; top:0; width:100%; height:100%; z-index:200; background:rgba(83,83,83,0.7)}
-.lstc-main	.tc-m	{ position:absolute; bottom:0px; left:4%; bottom:5%; width:92%; display:none; }
-.lstc-main	.tc-m		.c-main	{  border-radius:10px; max-height:400px; overflow:auto; position:relative; }
-.lstc-main	.tc-m		.c-main	.tie	{ width:100%; height:45px; line-height:45px; text-align:center; color:#686868; border-bottom:1px solid #f8f8f8; position:relative !important; z-index:100; background:#fff; padding:5px 0; border-top-left-radius:10px; border-top-right-radius:10px; font-size:16px; }
+.lstc-main	.tc-m	{ position:absolute; bottom:0px; left:4%; width:92%; display:none; }
+.lstc-main	.tc-m		.c-main	{  border-radius:10px; max-height:400px; height:400px; overflow:auto; position:relative; }
+.lstc-main	.tc-m		.c-main	.tie	{ width:92%; height:45px; line-height:45px; text-align:center; color:#686868; border-bottom:1px solid #f8f8f8; position:fixed !important; z-index:100; background:#fff; padding:5px 0; border-top-left-radius:10px; border-top-right-radius:10px; font-size:16px; }
+.lstc-main	.tc-m		.c-main	.btn-ddxz	{  width:92%; height:65px; line-height:45px; text-align:center;  position:fixed !important; z-index:100; left:4%; background:#fff;   border-bottom-left-radius:10px; border-bottom-right-radius:10px;}
+.lstc-main	.tc-m		.c-main	.tie-1	{ height:75px;}
+.lstc-main	.tc-m		.c-main	.tie-1	.itms-nav	{ width:50%; height:30px; float:left; font-size:12px; line-height:30px;}
+.lstc-main	.tc-m		.c-main	.tie-1	.itms-nav	span	{ padding-right:20px; background:url(../images/nav.png) right center no-repeat; background-size:15px 30px;}
+.lstc-main	.tc-m		.c-main	.tie-1	.itms-nav.on	span	{ background-image:url(../images/nav-up.png)}
+.lstc-main	.tc-m		.c-main	.tie-1	.itms-nav.on.on1	span	{ background-image:url(../images/nav-down.png)}
 .lstc-main	.tc-m		.c-main	.tie	.btn-fjls	{ width:45px; height:45px; position:absolute; right:5px; top:5px; background:url(../images/gb.png) center center no-repeat; background-size:22px 22px;}
 .lstc-main	.tc-m	.con	{ padding:0px 10px 10px 10px;}
 .lstc-main	.fjls-main	.c-main	.itms	{ width:100%; height:50px; padding:10px 0; border-bottom:1px solid #f8f8f8; position:relative; }
@@ -386,6 +401,7 @@ transform:scale(0.8,0.8);
 .yy-footer 	.itms-left	span	{ width:40%; padding:0 5%; display:block; float:left; height:30px; line-height:30px; position:relative; top:5px; color:#909090; text-align:center; position:relative;}
 .yy-footer 	.itms-left	.fx		i	{ font-style:normal; padding-left:30px; background:url(../images/fc.png) left center no-repeat; background-size:25px 25px;}
 .yy-footer 	.itms-left	.sc		i	{ font-style:normal; padding-left:25px; background:url(../images/sc.png) left center no-repeat; background-size:20px 20px;}
+.yy-footer 	.itms-left	.sc.on		i	{ background-image:url(../images/sc-on.png)}
 .yy-footer 	.itms-left	.sc:before	{ width:1px; height:25px; background:#efefef; content:''; display:block; position:absolute; left:0%; top:5px;}
 
 /*19时间选择*/
@@ -412,10 +428,13 @@ transform:scale(0.8,0.8);
 .xxtz-main	.itms	.top	.bt		{ padding-left:10px; font-size:16px;}
 .xxtz-main	.itms	.con	{ padding:10px; color:#909090; line-height:20px;}
 .xxtz-main	.itms	.bottom	{ height:40px; line-height:40px; border-top:1px dashed #efefef;}	
-.xxtz-main	.itms	.bottom		.more	{ color:#00abeb;}	
+.xxtz-main	.itms	.bottom		.more	{ color:#00abeb; padding-right:16px; background:url(../images/xx-link.png) center right no-repeat; background-size:15px 15px;}	
+.xxtz-main	.itms	.bottom		.more.on	{ background-image:url(../images/xx-link-on.png)}
+.xxtz-main	.itms	.jtxx		{ padding:10px; display:none;}
 .xxtz-main	.itms	.bottom		.time	{ color:#c1c1c1;  float:right; font-size:12px;}
 .xxtz-main	.itms.hui		.top	{ background:#909090;}
-.xxtz-main	.itms.hui	.bottom		.more	{ color:#909090;}	
+.xxtz-main	.itms.hui	.bottom		.more	{ color:#909090; background-image:url(../images/xx-link-hui.png)}	
+.xxtz-main	.itms.hui	.bottom		.more.on		{ background-image:url(../images/xx-link-hui-on.png)}
 
 /*22-律师订单*/
 .lsdd-main		.hd	{ width:80%; left:0; top:0; background:#fff; height:40px; line-height:40px; padding:0 10%; z-index:5; box-shadow:0px 5px 5px #f2f2f2;}
@@ -593,3 +612,9 @@ transform:scale(0.8,0.8);
 .form-list	.itms	.right.zxf	.In-text	{ text-align:right; font-size:16px}
 .form-list	.itms	.right.zxf	.dw	{ position:absolute; right:0px; top:0px; line-height:55px; font-size:12px;}
 .bottom-btn	.con	{ position:absolute; bottom:30px; width:100%; background:#f8f8f8; padding:0px; display:block !important;}
+/*我的收藏*/
+.wdsc-main	{     position:static !important;    height:auto !important%;   z-index: 200;   background: none}
+.wdsc-main	.fjls-main	.c-main	.itms	{ padding:10px; margin-bottom:15px;   box-shadow:0px 5px 5px #f2f2f2; width:auto; height:70px;}
+.wdsc-main	.fjls-main	.c-main	.itms	.f-left 	 { padding:15px 0;}
+.wdsc-main	.fjls-main	.c-main	.itms	.f-right 	 { padding-left:55px;}
+.wdsc-main	.fjls-main	.c-main	.itms	.f-left img	{ height:40px !important; width:40px !important;}

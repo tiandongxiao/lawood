@@ -12,6 +12,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Bican\Roles\Models\Role;
+use App\Http\Requests\PhoneRegRequest;
+use App\Http\Requests\ProfileRegRequest;
 
 class AuthController extends Controller
 {
@@ -44,7 +46,7 @@ class AuthController extends Controller
             case 'lawyer':
                 if(!$this->user->phone)
                     return view('wechat.auth.lawyer');
-                if(!$this->user->office)
+                if(!$this->user->profile->office)
                     return redirect('wechat/profile');
                 return redirect('wechat/lawyer');
             case 'client':
@@ -56,7 +58,7 @@ class AuthController extends Controller
         }
     }
 
-    public function postBind(Request $request)
+    public function postBind(PhoneRegRequest $request)
     {
         $phone = trim($request->get('phone'));
         switch ($this->user->role){
@@ -78,9 +80,9 @@ class AuthController extends Controller
         return view('wechat/auth/profile');
     }
 
-    public function postProfile(Request $request)
+    public function postProfile(ProfileRegRequest $request)
     {
-        Log::info('I am reg more');
+        
         return view('wechat.auth.finish');
     }
 
