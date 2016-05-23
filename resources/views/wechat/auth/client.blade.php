@@ -5,9 +5,9 @@
 @section('content')
         <section class="zc-main">
         			<div class="gr-tx te-cen">
-                    <label class="label"><img src="images/tx.png" width="70" height="70" class="tx" id="File_img"><input type="file" class="op-0" id="file_toget"></label>
+                    <label class="label"><img src="/images/tx.png" width="70" height="70" class="tx" id="File_img"><input type="file" class="op-0" id="file_toget"></label>
                     </div>
-                    <form  action="#" id="form">
+                    <form  action="{{url('wechat/bind')}}" id="form" method="POST">
                         <div class="form">
                                 <div class="itms">
                                 	<div class="f-left">手机号码</div>
@@ -18,16 +18,8 @@
                                     <div class="right"><input type="text" placeholder="短信验证码" class="In-text" id="yzm"></div>
                                 	<input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true">      
                                 </div>
-                                <div class="itms">
-                                	<div class="f-left">登录密码</div>
-                                    <div class="right"><input type="password" placeholder="长度不少于8字符" class="In-text" id="password"></div>
-                                </div>
-                                <div class="itms">
-                                	<div class="f-left">确认密码</div>
-                                    <div class="right"><input type="password" placeholder="重复登录密码" class="In-text" id="passwordtwo"></div>
-                                </div>
                         </div>
-                        <input type="button" class="In-btn In-btn-1 bg-hui fc-fff" value="立即注册" id="In-btn">
+                        <input type="submit" class="In-btn In-btn-1 bg-hui fc-fff" value="立即注册" id="In-btn">
                     </form>
                 	<div class="wjmm fc-d2d2d2 line-20 te-cen fs-12">点击［立即注册］代表您已阅读并同意<span  class="fc-03aaf0" id="yhyx">用户使用协议</span></div>
         </section>
@@ -42,7 +34,6 @@
 <p>1、用户在使用本服务前需要注册一个“律屋”帐号。“律屋”帐号应当使用手机号码绑定注册，请用户使用尚未与“律屋”帐号绑定的手机号码，以及未被律屋根据本协议封禁的手机号码注册“律屋”帐号。律屋可以根据用户需求或产品需要对帐号注册和绑定的方式进行变更，而无须事先通知用户。</p>
                 </div>
                 <div class="bottom" id="xy-back">返回</div>
-            
             </div>
         </section>
 @endsection
@@ -50,53 +41,39 @@
 <script>	
 	
 $(function(){
-		var form	=	false	;
-		
-//表单判断
-$('.In-text').bind('input propertychange', function() {
-					form	= true;
-						
-					 //手机号
-						 if(!$('#mobile').val()){
-				 
-							form	= false;
-							$('#In-btn').removeClass('bg-lan1')
-							
-			 			}else{
-					 
-								var re = /^1\d{10}$/
-								if (!re.test($('#mobile').val())) {
-									
-								form	= false;
-								$('#In-btn').removeClass('bg-lan1')
-								}
-					
-						}
-						
-					//判断验证码
-					if(!$('#yzm').val()){
-								form	= false;
-								$('#In-btn').removeClass('bg-lan1')
-						
-						}else{
-					 
-								var re =  /^.{4}$/
-								if (!re.test($('#yzm').val())) {
-									
-								form	= false;
-								$('#In-btn').removeClass('bg-lan1')
-								}
-					
-						}	
-						
-						
-						
-					//更改按钮状态	
-					if(form){
-						$('#In-btn').addClass('bg-lan1')
-						}
-});
-	
+	var form	=	false	;
+	//表单判断
+	$('.In-text').bind('input propertychange', function() {
+		form	= true;
+		 //手机号
+			 if(!$('#mobile').val()){
+				form	= false;
+				$('#In-btn').removeClass('bg-lan1')
+			}else{
+					var re = /^1\d{10}$/
+					if (!re.test($('#mobile').val())) {
+					form	= false;
+					$('#In-btn').removeClass('bg-lan1')
+					}
+			}
+
+		//判断验证码
+		if(!$('#yzm').val()){
+					form	= false;
+					$('#In-btn').removeClass('bg-lan1')
+			}else{
+					var re =  /^.{4}$/
+					if (!re.test($('#yzm').val())) {
+					form	= false;
+					$('#In-btn').removeClass('bg-lan1')
+					}
+			}
+
+		//更改按钮状态
+		if(form){
+			$('#In-btn').addClass('bg-lan1')
+			}
+	});
 	
 		//表单提交
 		$('#In-btn').tap(function(){
@@ -183,8 +160,7 @@ function getObjectURL(file) {
 	} else if (window.webkitURL!=undefined) { // webkit or chrome
 		url = window.webkitURL.createObjectURL(file) ;
 	}
-	return url ;
-}	
+	return url ;}
 
 </script>
 @endsection

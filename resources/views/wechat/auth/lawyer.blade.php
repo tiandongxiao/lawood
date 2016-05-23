@@ -22,7 +22,7 @@
                     <input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true">
                 </div>
             </div>
-            <input type="button" class="In-btn In-btn-1 bg-hui fc-fff" value="下一步" id="In-btn">
+            <input type="submit" class="In-btn In-btn-1 bg-hui fc-fff" value="下一步" id="In-btn">
         </form>
         <div class="wjmm fc-d2d2d2 line-20 te-cen fs-12">点击［下一步］代表您已阅读并同意<span  class="fc-03aaf0" id="yhyx">用户使用协议</span></div>
     </section>
@@ -37,7 +37,6 @@
 <p>1、用户在使用本服务前需要注册一个“律屋”帐号。“律屋”帐号应当使用手机号码绑定注册，请用户使用尚未与“律屋”帐号绑定的手机号码，以及未被律屋根据本协议封禁的手机号码注册“律屋”帐号。律屋可以根据用户需求或产品需要对帐号注册和绑定的方式进行变更，而无须事先通知用户。</p>
                 </div>
                 <div class="bottom" id="xy-back">返回</div>
-            
             </div>
         </section>
 @endsection
@@ -50,36 +49,26 @@
                 form = true;
                 //姓名
                 if(!$('#name').val()){
-
                     form	= false;
                     $('#In-btn').removeClass('bg-lan1')
-
                 }else{
-
                     var re = /^.{2,20}$/
                     if (!re.test($('#name').val())) {
-
                         form	= false;
                         $('#In-btn').removeClass('bg-lan1')
                     }
-
                 }
 
                 //手机号
                 if(!$('#mobile').val()){
-
                     form	= false;
                     $('#In-btn').removeClass('bg-lan1')
-
                 }else{
-
                     var re = /^1\d{10}$/
                     if (!re.test($('#mobile').val())) {
-
                         form	= false;
                         $('#In-btn').removeClass('bg-lan1')
                     }
-
                 }
 
                 //判断验证码
@@ -90,19 +79,15 @@
                 }else{
                     var re =  /\d{4}$/
                     if (!re.test($('#yzm').val())) {
-
                         form	= false;
                         $('#In-btn').removeClass('bg-lan1')
                     }
-
                 }
-
                 //更改按钮状态
                 if(form){
                     $('#In-btn').addClass('bg-lan1')
                 }
             });
-
 
             //表单提交
             $('#In-btn').tap(function(){
@@ -111,40 +96,28 @@
                 }
             })
 
-
             //发送验证码
-
             var	Time	=	60;
 
             $('#btn-yzm').tap(function(){
 
                 if(!$('#mobile').val()){
-
                     alert('手机号码不能为空');
                     return false;
-
-
                 }else{
-
                     var re = /^1\d{10}$/
                     if (!re.test($('#mobile').val())) {
-
                         alert('请正确填写手机号码')
                         return false;
                     }
-
                 }
 
                 if($('#btn-yzm').attr('fs') == 'true'){
                     show_Time()
                 }
-
             })
 
-
-
             function show_Time(){ //加时函数
-
                 if(Time == 0){
 
                     $('#btn-yzm').attr({'fs':'true'})
