@@ -210,7 +210,9 @@ class WeChatPubController extends Controller
 
     public function find()
     {
-        $this->routeUser();
+        if($this->routeUser())
+            return $this->routeUser();
+
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer');
@@ -221,7 +223,9 @@ class WeChatPubController extends Controller
     
     public function orders()
     {
-        $this->routeUser();
+        if($this->routeUser())
+            return $this->routeUser();
+
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/orders');
@@ -232,6 +236,9 @@ class WeChatPubController extends Controller
 
     public function messages()
     {
+        if($this->routeUser())
+            return $this->routeUser();
+
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/notifies');
@@ -242,7 +249,9 @@ class WeChatPubController extends Controller
 
     public function settings()
     {
-        $this->routeUser();
+        if($this->routeUser())
+            return $this->routeUser();
+
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/setting');
