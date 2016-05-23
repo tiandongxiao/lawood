@@ -137,15 +137,32 @@ class User extends Model implements AuthenticatableContract,
 
     public function setOfficeAttribute($office)
     {
-        if(!$this->profile){
-            new
-        }
+        $this->checkProfile();
+        $this->profile->office = $office;
+        $this->profile->save();
+
+    }
+
+    public function getDescriptionAttribute()
+    {
+        return 'desc';
+//        if (is_null($this->profile))
+//            return null;
+//        return $this->profile->description;
+    }
+    
+    public function setIntroductionAttribute($desc)
+    {
+        $this->checkProfile();
+        $this->profile->description = $desc;
+        $this->profile->save();
+
     }
 
     public function checkProfile()
     {
         if(!$this->profile){
-
+            $this->profile()->associate(new Profile());
         }
     }
 
