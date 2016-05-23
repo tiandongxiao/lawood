@@ -14,7 +14,7 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->nullable();
             $table->string('licence');     # 律师证号
             $table->string('office',128);  # 律所名称
             $table->text('description');
