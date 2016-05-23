@@ -190,30 +190,43 @@ class WeChatPubController extends Controller
         dd('OK');
     }
 
+    public function routeUser()
+    {
+        switch ($this->user->role){
+            case 'lawyer':
+                if(is_null($this->user->phone))
+                    return view('wechat.auth.lawyer');
+                if(is_null($this->user->office))
+                    return redirect('wechat/profile');
+                break;
+            case 'client':
+                if(is_null($this->user->phone))
+                    return view('wechat.auth.client');
+                break;
+            case 'none':
+                return redirect('wechat/chose');
+        }
+    }
+
     public function find()
     {
-
+        $this->routeUser();
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer');
             case 'client':
                 return redirect('wechat/client');
-            case 'none':
-                return redirect('wechat/chose');
         }
     }
     
     public function orders()
     {
+        $this->routeUser();
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/orders');
-
             case 'client':
                 return redirect('wechat/client/orders');
-
-            case 'none':
-                return redirect('wechat/chose');
         }
     }
 
@@ -222,26 +235,19 @@ class WeChatPubController extends Controller
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/notifies');
-
             case 'client':
                 return redirect('wechat/client/notifies');
-
-            case 'none':
-                return redirect('wechat/chose');
         }
     }
 
     public function settings()
     {
+        $this->routeUser();
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/setting');
-
             case 'client':
                 return redirect('wechat/client/setting');
-
-            case 'none':
-                return redirect('wechat/chose');
         }
     }
 

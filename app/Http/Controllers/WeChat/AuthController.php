@@ -44,14 +44,8 @@ class AuthController extends Controller
 
         switch ($role_name){
             case 'lawyer':
-                if(!$this->user->phone)
-                    return view('wechat.auth.lawyer');
-                if(!$this->user->profile->office)
-                    return redirect('wechat/profile');
                 return redirect('wechat/lawyer');
             case 'client':
-                if(!$this->user->phone)
-                    return view('wechat.auth.client');
                 return redirect('wechat/client');
             default:
                 break;
@@ -63,19 +57,17 @@ class AuthController extends Controller
         $phone = trim($request->get('phone'));
         switch ($this->user->role){
             case 'client':
-                if($phone){
-                    $this->user->phone = $phone;
-                    $this->user->save();
-                    return redirect('wechat/client');
-                }
+                $this->user->phone = $phone;
+                $this->user->save();
+                return redirect('wechat/client');
             case 'lawyer':
                 $name = trim($request->get('name'));
-                if($phone && $name){
-                    $this->user->phone = $phone;
-                    $this->user->real_name = $name;
-                    $this->user->save();
-                    return redirect('wechat/profile');
-                }
+
+                $this->user->phone = $phone;
+                $this->user->real_name = $name;
+                $this->user->save();
+                return redirect('wechat/profile');
+
         }
     }
 
