@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/auth/lawyer.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/auth/lawyer.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthController.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+            <state relative-caret-position="495">
+              <caret line="60" column="50" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
               <folding>
                 <element signature="e#47#60#0#PHP" expanded="true" />
               </folding>
@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lawyer.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lawyer.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/auth/lawyer.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="94" column="42" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
+            <state relative-caret-position="264">
+              <caret line="92" column="42" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -210,9 +210,9 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthController.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/auth/client.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/auth/lawyer.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthController.php" />
       </list>
     </option>
   </component>
@@ -861,7 +861,7 @@
       <workItem from="1463494812199" duration="2832000" />
       <workItem from="1463531791016" duration="5397000" />
       <workItem from="1463707021622" duration="12261000" />
-      <workItem from="1463968668739" duration="7647000" />
+      <workItem from="1463968668739" duration="7896000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -986,7 +986,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="591524000" />
+    <option name="totallyTimeSpent" value="591773000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -998,7 +998,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="175" y="58" width="2059" height="1047" extended-state="0" />
+    <frame x="175" y="58" width="2059" height="1047" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1419,16 +1419,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-          <folding>
-            <element signature="e#47#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/auth/client.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -1439,9 +1429,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/auth/lawyer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="94" column="42" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
+        <state relative-caret-position="264">
+          <caret line="92" column="42" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="60" column="50" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
+          <folding>
+            <element signature="e#47#60#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

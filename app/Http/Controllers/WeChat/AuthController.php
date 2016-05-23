@@ -44,7 +44,7 @@ class AuthController extends Controller
         return  view('wechat.auth.'.$role_name);
     }
 
-    public function postBind(PhoneRegRequest $request)
+    public function postBind(Request $request)
     {
         $phone = trim($request->get('phone'));
         switch ($this->user->role){
@@ -59,7 +59,6 @@ class AuthController extends Controller
                 $this->user->real_name = $name;
                 $this->user->save();
                 return redirect('wechat/profile');
-
         }
     }
 
