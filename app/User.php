@@ -152,6 +152,7 @@ class User extends Model implements AuthenticatableContract,
     public function setHomeAttribute($address)
     {
         $home = $this->locations()->where('type','home')->get();
+        dd($home);
         if($home){
             $home->address = $address;
             $home->save();
@@ -167,6 +168,7 @@ class User extends Model implements AuthenticatableContract,
     public function setWorkAttribute($address)
     {
         $work = $this->locations()->where('type','work')->get();
+        dd($work);
         if($work){
             $work->address = $address;
             $work->save();
