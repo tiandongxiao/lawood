@@ -41,6 +41,7 @@ class AuthController extends Controller
             if($role)
                 $this->user->attachRole($role);
         }
+        return  view('wechat.auth.'.$role_name);
     }
 
     public function postBind(PhoneRegRequest $request)
