@@ -14,7 +14,7 @@ class CreateUserTimingsTable extends Migration
     {
         Schema::create('user_timings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('user_id')->unsigned()->nullable()->index();
             $table->timestamps();
             
             $table->foreign('user_id')

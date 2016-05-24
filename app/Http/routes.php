@@ -169,6 +169,7 @@ Route::get('consults','ConsultController@all');
 
 Route::group(['prefix' => 'site'], function(){
     Route::get('','SiteController@board');
+    Route::get('php','SiteController@phpInfo');
 
     Route::resource('role', 'RoleController');
     Route::resource('permission', 'PermissionController');

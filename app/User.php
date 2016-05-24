@@ -19,6 +19,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 use Bican\Roles\Traits\HasRoleAndPermission;
 use Bican\Roles\Contracts\HasRoleAndPermission as HasRoleAndPermissionContract;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
 
 use DraperStudio\Commentable\Contracts\Commentable;
@@ -59,8 +60,6 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasOne(Profile::class);
     }
 
-    # 一个律师拥有多个Item项，这个关系在ShopUserTrait中已经绑定 #
-
     # 用户与通告消息是一对多的关系
     public function notifications()
     {
@@ -87,11 +86,14 @@ class User extends Model implements AuthenticatableContract,
         foreach ($this->categories as $category){
             $this->categories()->detach($category->id);
         }
+
         $this->locations->delete();
         $this->comments->delete();
         $this->timing->delete();
         $this->dressing->delete();
-        $this->polite->delete();        
+        $this->polite->delete();
+        $this->profile->delete();
+
         parent::delete();
     }
 
@@ -104,7 +106,6 @@ class User extends Model implements AuthenticatableContract,
 
     public function setOfficeAttribute($office)
     {
-        $this->checkProfile();
         $this->profile->office = $office;
         $this->profile->save();
     }
@@ -118,44 +119,16 @@ class User extends Model implements AuthenticatableContract,
     
     public function setIntroductionAttribute($desc)
     {
-        $this->checkProfile();
         $this->profile->description = $desc;
         $this->profile->save();
     }
 
-    public function checkProfile()
-    {
-        if(!$this->profile){
-            $profile = Profile::create([]);
-            $this->profile()->associate($profile);
-        }
-    }
-
-    public function checkRatings()
-    {
-        if(is_null($this->dressing)){
-            $dressing = UserDressing::create([]);
-            $this->dressing()->associate($dressing);
-        }
-
-        if(is_null($this->timing)){
-            $timing = UserTiming::create([]);
-            $this->timing()->associate($timing);
-        }
-
-        if(is_null($this->polite)){
-            $polite = UserPolite::create([]);
-            $this->polite()->associate($polite);
-        }
-    }
-
     public function setHomeAttribute($address)
     {
-        $home = $this->locations()->where('type','home')->get();
+        $home = $this->locations()->where('type','home')->first();
 
         if($home){
-            $home->address = $address;
-            $home->save();
+            $home->update(['address'=>$address]);
         }else{
             $home = Location::create([
                 'type'    => 'home',
@@ -167,11 +140,10 @@ class User extends Model implements AuthenticatableContract,
 
     public function setWorkAttribute($address)
     {
-        $work = $this->locations()->where('type','work')->get();
+        $work = $this->locations()->where('type','work')->first();
 
         if($work){
-            $work->address = $address;
-            $work->save();
+            $work->update(['address'=>$address]);
         }else{
             $work = Location::create([
                 'type'    => 'work',
@@ -195,5 +167,25 @@ class User extends Model implements AuthenticatableContract,
         if($work)
             return $work->address;
         return null;
+    }
+
+    public function buildLawyer()
+    {
+        # building the profile
+        if(is_null($this->profile))
+            Profile::create(['user_id'=>$this->id]);
+
+        # build dressing rating
+        if(is_null($this->dressing))
+            UserDressing::create(['user_id',$this->id]);
+
+        # build timing rating
+        if(is_null($this->timing))
+            UserTiming::create(['user_id',$this->id]);
+
+        # build polite rating
+        if(is_null($this->polite))
+            UserPolite::create(['user_id',$this->id]);
+
     }
 }

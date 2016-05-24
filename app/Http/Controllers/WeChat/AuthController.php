@@ -4,6 +4,7 @@ namespace App\Http\Controllers\WeChat;
 
 use App\Item;
 use App\Location;
+use App\Profile;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 
@@ -37,10 +38,16 @@ class AuthController extends Controller
         if($this->user->role == 'none') {
             $this->user->role = $role_name;
             $this->user->save();
+
             $role = Role::where('slug',$role_name)->first();
+
             if($role)
                 $this->user->attachRole($role);
         }
+
+        if($role_name == 'lawyer')
+            $this->user->buildLawyer();
+
         return  view('wechat.auth.'.$role_name);
     }
 
@@ -68,9 +75,10 @@ class AuthController extends Controller
 
     public function postProfile(Request $request)
     {
+        Log::info('I am postProfile');
         $office = $request->get('office');
         $this->user->office = $office;
-        $this->user->save();        
+        $this->user->save();
         return view('wechat.auth.finish');
     }
 

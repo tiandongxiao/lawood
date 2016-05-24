@@ -26,6 +26,11 @@ class SiteController extends Controller
         return view('site.board');
     }
 
+    public function phpInfo()
+    {
+        echo phpinfo();
+    }
+
     public function logs()
     {
         if (Request::input('l')) {
