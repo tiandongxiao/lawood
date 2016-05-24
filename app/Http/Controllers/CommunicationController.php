@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Cache;
 
 class CommunicationController extends Controller
 {
-    public function checkPhoneNumber(Request $request)
+    public function checkPhone(Request $request)
     {
         $phone = $request->get('phone');
         if($request->ajax()){
