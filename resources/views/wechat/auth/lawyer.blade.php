@@ -20,7 +20,7 @@
                 </div>
                 <div class="itms">
                     <div class="f-left">验 证 码</div>
-                    <div class="right"><input type="text" placeholder="短信验证码" class="In-text" id="yzm"></div>
+                    <div class="right"><input type="text" placeholder="短信验证码" class="In-text" id="yzm" name="code"></div>
                     <input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true">
                 </div>
             </div>
@@ -45,31 +45,32 @@
 @section('script')
     <script>
         $(function(){
-            var form	=	false;
+            var form = false;
             //表单判断
             $('.In-text').bind('input propertychange', function() {
                 form = true;
                 //姓名
                 if(!$('#name').val()){
-                    form	= false;
+                    form = false;
                     $('#In-btn').removeClass('bg-lan1')
                 }else{
                     var re = /^.{2,20}$/
                     if (!re.test($('#name').val())) {
-                        form	= false;
+                        form = false;
                         $('#In-btn').removeClass('bg-lan1')
                     }
                 }
 
                 //手机号
                 if(!$('#mobile').val()){
-                    form	= false;
+                    form = false;
                     $('#In-btn').removeClass('bg-lan1')
                 }else{
                     var re = /^1\d{10}$/
                     if (!re.test($('#mobile').val())) {
-                        form	= false;
-                        $('#In-btn').removeClass('bg-lan1')                        
+                        form = false;
+                        $('#In-btn').removeClass('bg-lan1')
+                        $('#mobile').parents('.itms').removeClass('itms-ok')
                         return false;
                     }
                     var address = $('input[name=uri]').val();
@@ -87,7 +88,8 @@
                                 }
                                 form = false;
                                 $('#In-btn').removeClass('bg-lan1')
-                                alert('此号码已被注册');
+                                if(!$('#mobile').parents('.itms').hasClass('itms-ok'))
+                                    alert('此号码已被注册');
                                 return false;
                             }
                         });
@@ -123,17 +125,8 @@
             var	Time	=	60;
 
             $('#btn-yzm').tap(function(){
-
-                if(!$('#mobile').val()){
-                    alert('手机号码不能为空');
-                    return false;
-                }else{
-                    var re = /^1\d{10}$/
-                    if (!re.test($('#mobile').val())) {
-                        alert('请正确填写手机号码')
+                if(!$('#mobile').parents('.itms').hasClass('itms-ok'))
                         return false;
-                    }
-                }
 
                 if($('#btn-yzm').attr('fs') == 'true'){
                     var address = $('input[name=uri]').val();
@@ -146,7 +139,12 @@
                                 'todo': $('input[name=todo]').val()
                             },
                             success: function(data){
-                                alert(data.info);
+                                Time = 60;
+                                clearTimeout(timer);
+                                $('#btn-yzm').attr({'fs':'true'})
+                                $('#btn-yzm').val('再发一次');
+                                $('#btn-yzm').removeClass('on');
+                                alert(data.info)
                             }
                         });
                     }

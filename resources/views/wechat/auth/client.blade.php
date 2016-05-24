@@ -8,18 +8,21 @@
                     <label class="label"><img src="/images/tx.png" width="70" height="70" class="tx" id="File_img"><input type="file" class="op-0" id="file_toget"></label>
                     </div>
                     <form  action="{{url('wechat/bind')}}" id="form" method="POST">
+						{!! csrf_field() !!}
+						<input type="hidden" name="todo" value="reg">
+						<input type="hidden" name="uri" value="{{url('/')}}">
                         <div class="form">
                                 <div class="itms">
                                 	<div class="f-left">手机号码</div>
-                                    <div class="right"><input type="tel" placeholder="有效手机号" class="In-text" id="mobile"></div>
+                                    <div class="right"><input type="tel" placeholder="有效手机号" class="In-text" id="mobile" name="phone"></div>
                                 </div>
                                 <div class="itms">
                                 	<div class="f-left">验 证 码</div>
-                                    <div class="right"><input type="text" placeholder="短信验证码" class="In-text" id="yzm"></div>
-                                	<input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true">      
+                                    <div class="right"><input type="text" placeholder="短信验证码" class="In-text" id="yzm" name="code"></div>
+                                	<input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true" style="display: none">
                                 </div>
                         </div>
-                        <input type="submit" class="In-btn In-btn-1 bg-hui fc-fff" value="立即注册" id="In-btn">
+                        <input type="button" class="In-btn In-btn-1 bg-hui fc-fff" value="立即注册" id="In-btn">
                     </form>
                 	<div class="wjmm fc-d2d2d2 line-20 te-cen fs-12">点击［立即注册］代表您已阅读并同意<span  class="fc-03aaf0" id="yhyx">用户使用协议</span></div>
         </section>
@@ -38,105 +41,128 @@
         </section>
 @endsection
 @section('script')
-<script>
-$(function(){
-	var form	=	false	;
-	//表单判断
-	$('.In-text').bind('input propertychange', function() {
-		form	= true;
-		 //手机号
-		 if(!$('#mobile').val()){
-			form	= false;
-			$('#In-btn').removeClass('bg-lan1')
-		 }else{
-			var re = /^1\d{10}$/
-			if (!re.test($('#mobile').val())) {
-				form = false;
-				$('#In-btn').removeClass('bg-lan1')
-			}
-		 }
-
-		//判断验证码
-		if(!$('#yzm').val()){
-				form = false;
-				$('#In-btn').removeClass('bg-lan1')
-			}else{
-				var re =  /^.{4}$/
-				if (!re.test($('#yzm').val())) {
-				form	= false;
-				$('#In-btn').removeClass('bg-lan1')
+	<script>
+		$(function(){
+			var form = false;
+			//表单判断
+			$('.In-text').bind('input propertychange', function() {
+				form = true;
+				//手机号
+				if(!$('#mobile').val()){
+					form	= false;
+					$('#In-btn').removeClass('bg-lan1')
+				}else{
+					var re = /^1\d{10}$/
+					if (!re.test($('#mobile').val())) {
+						form = false;
+						$('#In-btn').removeClass('bg-lan1')
+						$('#mobile').parents('.itms').removeClass('itms-ok')
+						return false;
+					}
+					var address = $('input[name=uri]').val();
+					function checkPhone(){
+						$.ajax({
+							url: address+'/communicate/phone_check',
+							data: {
+								'phone':$('input[name=phone]').val(),
+								'_token':$('input[name=_token]').val(),
+							},
+							success: function(data){
+								if(data.info == 'valid'){
+									$('#mobile').parents('.itms').addClass('itms-ok')
+									$('#btn-yzm').show();
+									return true;
+								}
+								form = false;
+								$('#In-btn').removeClass('bg-lan1')
+								if(!$('#mobile').parents('.itms').hasClass('itms-ok'))
+									alert('此号码已被注册');
+								return false;
+							}
+						});
+					}
+					checkPhone();
 				}
-			}
 
-		//更改按钮状态
-		if(form){
-			$('#In-btn').addClass('bg-lan1')
-		}
-	});
-	
-	//表单提交
-	$('#In-btn').tap(function(){
-		if(form){
-			$("#form").submit();
-		}
-	})
-			
-	//发送验证码
-	var	Time	=	60;
-	$('#btn-yzm').tap(function(){
-		 if(!$('#mobile').val()){
-				alert('手机号码不能为空');
-				return false;
-			}else{
-				var re = /^1\d{10}$/
-				if (!re.test($('#mobile').val())) {
-					alert('请正确填写手机号码')
+				//判断验证码
+				if(!$('#yzm').val()){
+					form	= false;
+					$('#In-btn').removeClass('bg-lan1')
+				}else{
+					var re =  /\d{4}$/
+					if (!re.test($('#yzm').val())) {
+						form = false;
+						$('#In-btn').removeClass('bg-lan1')
+					}
+				}
+				//更改按钮状态
+				if(form){
+					$('#In-btn').addClass('bg-lan1')
+				}
+			});
+
+			//表单提交
+			$('#In-btn').tap(function(){
+				if(form){
+					$("#form").submit();
+				}
+			})
+
+			//发送验证码
+			var	Time	=	60;
+			var timer;
+
+			$('#btn-yzm').tap(function(){
+				if(!$('#mobile').parents('.itms').hasClass('itms-ok'))
 					return false;
-				}
-			}
-			if($('#btn-yzm').attr('fs') == 'true'){
-				var address = $('input[name=uri]').val();
-				function sendMsg(){
-					$.ajax({
-						url: address+'/communicate/phone_code',
-						data: {
-							'phone':$('input[name=phone]').val(),
-							'_token':$('input[name=_token]').val(),
-							'todo': $('input[name=todo]').val()
-						},
-						success: function(data){
-							alert(data.info);
-						}
-					});
-				}
-				sendMsg()
-				show_Time()
-			}
-		})
 
-	   function show_Time(){ //加时函数
-			if(Time == 0){
-				$('#btn-yzm').attr({'fs':'true'})
-				$('#btn-yzm').val('再发一次');
-				$('#btn-yzm').removeClass('on');
-			}else{
-				$('#btn-yzm').addClass('on');
-				$('#btn-yzm').val(Time+'s后重新发送');
-				Time--;
-				setTimeout(show_Time,1000);
+				if($('#btn-yzm').attr('fs') == 'true'){
+					var address = $('input[name=uri]').val();
+					function sendMsg(){
+						$.ajax({
+							url: address+'/communicate/phone_code',
+							data: {
+								'phone':$('input[name=phone]').val(),
+								'_token':$('input[name=_token]').val(),
+								'todo': $('input[name=todo]').val()
+							},
+							success: function(data){
+								Time = 60;
+								clearTimeout(timer);
+								$('#btn-yzm').attr({'fs':'true'})
+								$('#btn-yzm').val('再发一次');
+								$('#btn-yzm').removeClass('on');
+								alert(data.info)
+							}
+						});
+					}
+					sendMsg()
+					show_Time()
+				}
+			})
+
+			function show_Time(){ //加时函数
+				if(Time == 0){
+					$('#btn-yzm').attr({'fs':'true'})
+					$('#btn-yzm').val('再发一次');
+					$('#btn-yzm').removeClass('on');
+				}else{
+					$('#btn-yzm').addClass('on');
+					$('#btn-yzm').val(Time+'s后重新发送');
+					Time--;
+					timer = setTimeout(show_Time,1000);
 					$('#btn-yzm').attr({'fs':'false'})
 				}
-		};
-		
-		//个人协议
-		$('#yhyx').tap(function(){
-			$('#zcxy').fadeIn();
+			};
+
+			//个人协议
+			$('#yhyx').tap(function(){
+				$('#zcxy').fadeIn();
+			})
+			$('#xy-back').tap(function(){
+				$('#zcxy').fadeOut();
+			})
 		})
-		$('#xy-back').tap(function(){
-			$('#zcxy').fadeOut();
-		})
-})
- 		
 //H5图像	
 $("#file_toget").change(function(){
 	var objUrl = getObjectURL(this.files[0]) ;
