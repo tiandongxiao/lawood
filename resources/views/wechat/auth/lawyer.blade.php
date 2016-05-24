@@ -21,7 +21,7 @@
                 <div class="itms">
                     <div class="f-left">验 证 码</div>
                     <div class="right"><input type="text" placeholder="短信验证码" class="In-text" id="yzm" name="code"></div>
-                    <input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true">
+                    <input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true" style="display: none">
                 </div>
             </div>
             <input type="button" class="In-btn In-btn-1 bg-hui fc-fff" value="下一步" id="In-btn">
@@ -65,12 +65,15 @@
                 if(!$('#mobile').val()){
                     form = false;
                     $('#In-btn').removeClass('bg-lan1')
+                    $('#mobile').parents('.itms').removeClass('itms-ok')
+                    $('#btn-yzm').hide()
                 }else{
                     var re = /^1\d{10}$/
                     if (!re.test($('#mobile').val())) {
                         form = false;
                         $('#In-btn').removeClass('bg-lan1')
                         $('#mobile').parents('.itms').removeClass('itms-ok')
+                        $('#btn-yzm').hide()
                         return false;
                     }
                     var address = $('input[name=uri]').val();
@@ -84,6 +87,7 @@
                             success: function(data){
                                 if(data.info == 'valid'){
                                     $('#mobile').parents('.itms').addClass('itms-ok')
+                                    $('#btn-yzm').show()
                                     return true;
                                 }
                                 form = false;
@@ -123,6 +127,7 @@
 
             //发送验证码
             var	Time	=	60;
+            var timer;
 
             $('#btn-yzm').tap(function(){
                 if(!$('#mobile').parents('.itms').hasClass('itms-ok'))
@@ -162,7 +167,7 @@
                     $('#btn-yzm').addClass('on');
                     $('#btn-yzm').val(Time+'s后重新发送');
                     Time--;
-                    setTimeout(show_Time,1000);
+                    timer = setTimeout(show_Time,1000);
                     $('#btn-yzm').attr({'fs':'false'})
                 }
             };

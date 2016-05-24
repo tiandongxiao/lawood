@@ -51,12 +51,15 @@
 				if(!$('#mobile').val()){
 					form	= false;
 					$('#In-btn').removeClass('bg-lan1')
+					$('#mobile').parents('.itms').removeClass('itms-ok')
+					$('#btn-yzm').hide()
 				}else{
 					var re = /^1\d{10}$/
 					if (!re.test($('#mobile').val())) {
 						form = false;
 						$('#In-btn').removeClass('bg-lan1')
 						$('#mobile').parents('.itms').removeClass('itms-ok')
+						$('#btn-yzm').hide()
 						return false;
 					}
 					var address = $('input[name=uri]').val();
