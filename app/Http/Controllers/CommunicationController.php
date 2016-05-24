@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Toplan\PhpSms;
 use Illuminate\Support\Facades\Cache;
+use App\User;
 
 class CommunicationController extends Controller
 {
