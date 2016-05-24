@@ -12,13 +12,13 @@ class CheckController extends Controller
 {
     public function phone(Request $request)
     {
-        $phone = trim($request->get('phone'));
+        $phone = $request->get('phone');
         if($request->ajax()){
-            $result = User::where('phone',$phone)->first();
-            if($result)
-                return 'EXIST';
+            $record = User::where('phone',$phone)->first();
+            if($record)
+                return 'Y';
+            return 'X';
         }
-        return 'OK';
     }
 
     public function email(Request $request)
@@ -30,5 +30,26 @@ class CheckController extends Controller
                 return 'EXIST';
         }
         return 'OK';
+    }
+
+    public function code(Request $request)
+    {
+        if($request->ajax()){
+            $type =  $request->get('todo');
+            $phone = $request->get('phone');
+            $key = $type.'_'.$phone;
+
+            if(!Cache::has($key)){
+                return 'E';
+            }
+
+            $value = Cache::get($key);
+            Cache::forget($key);
+
+            if($request->get('code') != $value){
+                return 'X';
+            }
+            return 'Y';
+        }
     }
 }

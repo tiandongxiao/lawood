@@ -59,6 +59,7 @@ class AuthController extends Controller
     public function postBind(Request $request)
     {
         $phone = trim($request->get('phone'));
+
         switch ($this->user->role){
             case 'client':
                 $this->user->update([

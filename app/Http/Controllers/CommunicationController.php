@@ -18,8 +18,8 @@ class CommunicationController extends Controller
         if($request->ajax()){
             $record = User::where('phone',$phone)->first();
             if($record)
-                return response()->json(['code' => 400, 'info' => 'invalid']);
-            return response()->json(['code' => 200, 'info' => 'valid']);
+                return 'Y';
+            return 'X';
         }
     }
 

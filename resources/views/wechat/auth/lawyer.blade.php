@@ -79,13 +79,14 @@
                     var address = $('input[name=uri]').val();
                     function checkPhone(){
                         $.ajax({
+                            type: 'POST',
                             url: address+'/communicate/phone_check',
                             data: {
                                 'phone':$('input[name=phone]').val(),
                                 '_token':$('input[name=_token]').val(),
                             },
                             success: function(data){
-                                if(data.info == 'valid'){
+                                if(data == 'Y'){
                                     $('#mobile').parents('.itms').addClass('itms-ok')
                                     $('#btn-yzm').show()
                                     return true;
@@ -105,12 +106,43 @@
                 if(!$('#yzm').val()){
                     form	= false;
                     $('#In-btn').removeClass('bg-lan1')
+                    return false;
                 }else{
                     var re =  /\d{4}$/
                     if (!re.test($('#yzm').val())) {
                         form = false;
                         $('#In-btn').removeClass('bg-lan1')
+                        return false;
                     }
+
+                    var address = $('input[name=uri]').val();
+                    $.ajax({
+                        type: 'POST',
+                        url: address+'/check/code',
+                        data: {
+                            'code':$('input[name=code]').val(),
+                            '_token':$('input[name=_token]').val(),
+                        },
+                        success: function(data){
+                            switch (data){
+                                case 'Y':
+                                    $('#btn-yzm').parents('.itms').addClass('itms-ok')
+                                    return true;
+                                case 'E':
+                                    form = false;
+                                    $('#In-btn').removeClass('bg-lan1')
+                                    $('#mobile').parents('.itms').removeClass('itms-ok')
+                                    alert('验证码已过期')
+                                    return false;
+                                case 'N':
+                                    form = false;
+                                    $('#In-btn').removeClass('bg-lan1')
+                                    $('#mobile').parents('.itms').removeClass('itms-ok')
+                                    alert('验证码错误');
+                                    return false;
+                            }
+                        }
+                    })
                 }
                 //更改按钮状态
                 if(form){
