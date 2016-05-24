@@ -11,6 +11,16 @@ use Illuminate\Support\Facades\Cache;
 
 class CommunicationController extends Controller
 {
+    public function checkPhoneNumber(Request $request)
+    {
+        $phone = $request->get('phone');
+        if($request->ajax()){
+            $record = User::where('phone',$phone)->first();
+            if($record)
+                return response()->json(['code' => 400, 'info' => 'invalid']);
+            return response()->json(['code' => 200, 'info' => 'valid']);
+        }
+    }
 
     /**
      * 发送手机验证码，支持短信smd，语音voice两种

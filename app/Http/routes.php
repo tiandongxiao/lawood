@@ -84,6 +84,7 @@ Route::group(['prefix' => 'tool'], function(){
 });
 
 Route::group(['prefix' => 'communicate'], function(){
+    Route::post('phone_check','CommunicationController@checkPhone');
     Route::get('phone_code','CommunicationController@sendPhoneCode');
     Route::post('message','CommunicationController@sendMessageByRequest');
 });

@@ -45,6 +45,24 @@
 @section('script')
     <script>
         $(function(){
+            $('#mobile').blur(function(){
+                var address = $('input[name=uri]').val();
+                function checkPhone(){
+                    $.ajax({
+                        url: address+'/communicate/phone_check',
+                        data: {
+                            'phone':$('input[name=phone]').val(),
+                            '_token':$('input[name=_token]').val(),
+                            'todo': $('input[name=todo]').val()
+                        },
+                        success: function(data){
+                            alert(data.info);
+                        }
+                    });
+                }
+                checkPhone();
+            });
+
             var form	=	false;
             //表单判断
             $('.In-text').bind('input propertychange', function() {

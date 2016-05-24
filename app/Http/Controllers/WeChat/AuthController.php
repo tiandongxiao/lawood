@@ -59,12 +59,6 @@ class AuthController extends Controller
     public function postBind(Request $request)
     {
         $phone = trim($request->get('phone'));
-        if($request->ajax()){
-            $record = User::where('phone',$phone)->first();
-            if($record)
-                return response('此手机号已被注册', 400);
-            return response('OK',200);
-        }
         switch ($this->user->role){
             case 'client':
                 $this->user->update([
