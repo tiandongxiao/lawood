@@ -42,8 +42,8 @@
 
                 <div class="bd">
                     <div class="itms-bd clearfix show">
-                        <span class="list">婚姻</span>
-                        <span class="list">房产</span>
+                        <span class="list" val="1">婚姻</span>
+                        <span class="list" val="2">房产</span>
                         <span class="list">债务</span>
                         <span class="list">劳动争议</span>
                         <span class="list">合同纠纷</span>
@@ -57,8 +57,8 @@
                         <span class="list">股权</span>
                     </div>
                     <div class="itms-bd clearfix">
-                        <span class="list">婚姻</span>
-                        <span class="list">房产</span>
+                        <span class="list" val="1">婚姻</span>
+                        <span class="list" val="2">房产</span>
                         <span class="list">债务</span>
                         <span class="list">劳动争议</span>
                         <span class="list">合同纠纷</span>
@@ -76,8 +76,8 @@
                         <span class="list">股权</span>
                     </div>
                     <div class="itms-bd clearfix">
-                        <span class="list">婚姻</span>
-                        <span class="list">房产</span>
+                        <span class="list" val="1">婚姻</span>
+                        <span class="list" val="2">房产</span>
                         <span class="list">债务</span>
                         <span class="list">劳动争议</span>
                         <span class="list">合同纠纷</span>
@@ -107,7 +107,7 @@
             function updateSelect() {
                 $('#select input').remove();
                 $('.list.on').each(function () {
-                    $('#select').append("<input type='hidden' name='range[]' value='"+$(this).text()+"'/>");
+                    $('#select').append("<input type='hidden' name='range[]' value='"+$(this).attr('val')+"'/>");
                 });
             }
             //默认
@@ -118,7 +118,6 @@
                 $('.itms-bd').removeClass('show');
                 $('.itms-bd').removeClass('on');
                 $('.itms-bd').eq($(this).index()).addClass('on');
-
             })
             //个数
             $('.list').tap(function(){

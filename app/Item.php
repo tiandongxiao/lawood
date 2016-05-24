@@ -49,4 +49,11 @@ class Item extends ShopItemModel implements Ratingable
         }
         return Item::find($this->reference_id)->seller;
     }
+
+    # 获取所有服务项（商品项）
+    public static function consults()
+    {
+        $consults = Item::where('class',null)->get();
+        return $consults;
+    }
 }

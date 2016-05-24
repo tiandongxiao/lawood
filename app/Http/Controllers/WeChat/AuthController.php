@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\WeChat;
 
+use App\Category;
 use App\Item;
 use App\Location;
 use App\Profile;
+use App\Traits\CategoryDevTrait;
+use App\User;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 
@@ -18,6 +21,8 @@ use App\Http\Requests\ProfileRegRequest;
 
 class AuthController extends Controller
 {
+    use CategoryDevTrait;
+
     private $app;
     private $user;
 
@@ -35,35 +40,43 @@ class AuthController extends Controller
 
     public function bind($role_name)
     {
-        if($this->user->role == 'none') {
-            $this->user->role = $role_name;
-            $this->user->save();
+        if(in_array($role_name, ['client','lawyer'])) {
+            if ($this->user->role == 'none') {
+                $this->user->update(['role' => $role_name]);
+                $role = Role::where('slug', $role_name)->first();
+                if ($role)
+                    $this->user->attachRole($role);
+            }
 
-            $role = Role::where('slug',$role_name)->first();
+            if ($role_name == 'lawyer')
+                $this->user->buildLawyer();
 
-            if($role)
-                $this->user->attachRole($role);
+            return view('wechat.auth.' . $role_name);
         }
-
-        if($role_name == 'lawyer')
-            $this->user->buildLawyer();
-
-        return  view('wechat.auth.'.$role_name);
+        return back();
     }
 
     public function postBind(Request $request)
     {
         $phone = trim($request->get('phone'));
+        if($request->ajax()){
+            $record = User::where('phone',$phone)->first();
+            if($record)
+                return response('此手机号已被注册', 400);
+            return response('OK',200);
+        }
         switch ($this->user->role){
             case 'client':
-                $this->user->phone = $phone;
-                $this->user->save();
+                $this->user->update([
+                    'phone' => $phone
+                ]);
                 return redirect('wechat/client');
             case 'lawyer':
                 $name = trim($request->get('name'));
-                $this->user->phone = $phone;
-                $this->user->real_name = $name;
-                $this->user->save();
+                $this->user->update([
+                    'phone'     => $phone,
+                    'real_name' => $name
+                ]);
                 return redirect('wechat/profile');
         }
     }
@@ -75,16 +88,32 @@ class AuthController extends Controller
 
     public function postProfile(Request $request)
     {
-        Log::info('I am postProfile');
-        $office = $request->get('office');
-        $this->user->office = $office;
-        $this->user->save();
+        $categories = $request->get('range');
+
+        foreach ($categories as $category){
+            $this->user->bindCategory($category);
+        }
+
+        $this->user->update(['office'=>$request->get('office')]);
+
+        $home = Location::create([
+            'type'    => 'home',
+            'address' => $request->get('home')
+        ]);
+
+        $work = Location::create([
+            'type'    => 'work',
+            'address' => $request->get('work')
+        ]);
+
+        $this->user->locations()->saveMany([$home,$work]);
         return view('wechat.auth.finish');
     }
 
     public function consults()
     {
-        $consults = Item::where('class',null)->get();
+        $consults = Item::consults();
+
         return view('wechat.consults',compact('consults'));
     }
 }

@@ -5,6 +5,7 @@ namespace App;
 use Amsgames\LaravelShop\Traits\ShopUserTrait;
 
 
+use App\Traits\CategoryDevTrait;
 use App\Traits\UserAnalysisTrait;
 use Ghanem\Rating\Contracts\Ratingable;
 use Ghanem\Rating\Traits\Ratingable as RatingTrait;
@@ -169,6 +170,7 @@ class User extends Model implements AuthenticatableContract,
         return null;
     }
 
+    # 构建律师建模信息
     public function buildLawyer()
     {
         # building the profile
@@ -186,6 +188,64 @@ class User extends Model implements AuthenticatableContract,
         # build polite rating
         if(is_null($this->polite))
             UserPolite::create(['user_id',$this->id]);
+    }
 
+    # 增加一个新的业务类别
+    public function bindCategory($id)
+    {
+        $count = $this->categories()->count();
+        if( $count < 4) {
+            $category = Category::findOrFail($id);
+            if (!$this->hasCategory($category->id)) {
+                $this->categories()->attach($category->id);
+                return 'SUCCESS';
+            }
+
+            return 'REPEAT';
+        }
+        return 'FAIL';
+    }
+
+    # 删除某个业务类别
+    public function unbindCategory($id)
+    {
+        if($this->hasCategory($id)){
+            # 当律师删除一个业务门类时，将相关的业务咨询服务都删除
+            $items = $this->items;
+            if(!is_null($items)) {
+                foreach ($items as $item) {
+                    if ($item->category_id == $id)
+                        $item->delete();
+                }
+                $this->categories()->detach($id);
+
+                return true;
+            }
+        }
+        return false;
+    }
+
+    # 判断是否有某个业务类别
+    public function hasCategory($cate_id)
+    {
+        foreach($this->categories as $category){
+            if($category->id == $cate_id)
+                return true;
+        }
+        return false;
+    }
+
+    # 获取当前律师没有提供的业务范围
+    public function getUnbindCategories()
+    {
+        $unbinds = [];
+        $categories = Category::all();
+
+        foreach($categories as $category){
+            if($category->level == 3 && !$this->hasCategory($category->id)){
+                $unbinds[] = $category;
+            }
+        }
+        return $unbinds;
     }
 }

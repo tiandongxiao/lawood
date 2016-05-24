@@ -38,107 +38,103 @@
         </section>
 @endsection
 @section('script')
-<script>	
-	
+<script>
 $(function(){
 	var form	=	false	;
 	//表单判断
 	$('.In-text').bind('input propertychange', function() {
 		form	= true;
 		 //手机号
-			 if(!$('#mobile').val()){
-				form	= false;
+		 if(!$('#mobile').val()){
+			form	= false;
+			$('#In-btn').removeClass('bg-lan1')
+		 }else{
+			var re = /^1\d{10}$/
+			if (!re.test($('#mobile').val())) {
+				form = false;
 				$('#In-btn').removeClass('bg-lan1')
-			}else{
-					var re = /^1\d{10}$/
-					if (!re.test($('#mobile').val())) {
-					form	= false;
-					$('#In-btn').removeClass('bg-lan1')
-					}
 			}
+		 }
 
 		//判断验证码
 		if(!$('#yzm').val()){
-					form	= false;
-					$('#In-btn').removeClass('bg-lan1')
+				form = false;
+				$('#In-btn').removeClass('bg-lan1')
 			}else{
-					var re =  /^.{4}$/
-					if (!re.test($('#yzm').val())) {
-					form	= false;
-					$('#In-btn').removeClass('bg-lan1')
-					}
+				var re =  /^.{4}$/
+				if (!re.test($('#yzm').val())) {
+				form	= false;
+				$('#In-btn').removeClass('bg-lan1')
+				}
 			}
 
 		//更改按钮状态
 		if(form){
 			$('#In-btn').addClass('bg-lan1')
-			}
+		}
 	});
 	
-		//表单提交
-		$('#In-btn').tap(function(){
-				if(form){
-					$("#form").submit();
+	//表单提交
+	$('#In-btn').tap(function(){
+		if(form){
+			$("#form").submit();
+		}
+	})
+			
+	//发送验证码
+	var	Time	=	60;
+	$('#btn-yzm').tap(function(){
+		 if(!$('#mobile').val()){
+				alert('手机号码不能为空');
+				return false;
+			}else{
+				var re = /^1\d{10}$/
+				if (!re.test($('#mobile').val())) {
+					alert('请正确填写手机号码')
+					return false;
 				}
-				
+			}
+			if($('#btn-yzm').attr('fs') == 'true'){
+				var address = $('input[name=uri]').val();
+				function sendMsg(){
+					$.ajax({
+						url: address+'/communicate/phone_code',
+						data: {
+							'phone':$('input[name=phone]').val(),
+							'_token':$('input[name=_token]').val(),
+							'todo': $('input[name=todo]').val()
+						},
+						success: function(data){
+							alert(data.info);
+						}
+					});
+				}
+				sendMsg()
+				show_Time()
+			}
 		})
-		
-			
-			//发送验证码			
-			var	Time	=	60;
-			
-			$('#btn-yzm').tap(function(){
-				
-					 if(!$('#mobile').val()){
-				 
-				 			alert('手机号码不能为空');
-							return false;
-							
-							
-			 			}else{
-					 
-								var re = /^1\d{10}$/
-								if (!re.test($('#mobile').val())) {
-									
-				 					alert('请正确填写手机号码')
-									return false;
-								}
-					
-						}
-				
-						if($('#btn-yzm').attr('fs') == 'true'){
-								show_Time()
-						}
-				
-				})			
-			
-			
-		   function show_Time(){ //加时函数		   
-				
-				if(Time == 0){ 
-				
-					$('#btn-yzm').attr({'fs':'true'})
-					$('#btn-yzm').val('再发一次');
-					$('#btn-yzm').removeClass('on');
-				}else{
-					
-					$('#btn-yzm').addClass('on');
-					$('#btn-yzm').val(Time+'s后重新发送');
-					Time--;
-					setTimeout(show_Time,1000); 
-						$('#btn-yzm').attr({'fs':'false'})
-					}	
-					
-			};
+
+	   function show_Time(){ //加时函数
+			if(Time == 0){
+				$('#btn-yzm').attr({'fs':'true'})
+				$('#btn-yzm').val('再发一次');
+				$('#btn-yzm').removeClass('on');
+			}else{
+				$('#btn-yzm').addClass('on');
+				$('#btn-yzm').val(Time+'s后重新发送');
+				Time--;
+				setTimeout(show_Time,1000);
+					$('#btn-yzm').attr({'fs':'false'})
+				}
+		};
 		
 		//个人协议
 		$('#yhyx').tap(function(){
 			$('#zcxy').fadeIn();
-			})
+		})
 		$('#xy-back').tap(function(){
 			$('#zcxy').fadeOut();
-			})
-		
+		})
 })
  		
 //H5图像	
@@ -147,7 +143,6 @@ $("#file_toget").change(function(){
 	console.log("objUrl = "+objUrl) ;
 	if (objUrl) {
 		$('#File_img').attr({src:objUrl})
-
 	}
 }) ;
 //建立一個可存取到該file的url
@@ -160,7 +155,7 @@ function getObjectURL(file) {
 	} else if (window.webkitURL!=undefined) { // webkit or chrome
 		url = window.webkitURL.createObjectURL(file) ;
 	}
-	return url ;}
-
+	return url ;
+}
 </script>
 @endsection

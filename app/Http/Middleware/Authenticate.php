@@ -2,11 +2,13 @@
 
 namespace App\Http\Middleware;
 
+use App\Traits\AgentDevTrait;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
 class Authenticate
 {
+    use AgentDevTrait;
     /**
      * The Guard implementation.
      *
@@ -38,6 +40,9 @@ class Authenticate
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
+                if($this->isWxBrowser()){
+                    return redirect()->guest('wx/warning');
+                }
                 return redirect()->guest('login/email');
             }
         }

@@ -7,6 +7,8 @@
         <div class="banner"><img src="/images/zc-banner.png" width="100%"></div>
         <form  action="{{url('wechat/bind')}}" id="form" method="POST">
             {!! csrf_field() !!}
+            <input type="hidden" name="todo" value="reg">
+            <input type="hidden" name="uri" value="{{url('/')}}">
             <div class="form">
                 <div class="itms">
                     <div class="f-left">真实姓名</div>
@@ -113,6 +115,21 @@
                 }
 
                 if($('#btn-yzm').attr('fs') == 'true'){
+                    var address = $('input[name=uri]').val();
+                    function sendMsg(){
+                        $.ajax({
+                            url: address+'/communicate/phone_code',
+                            data: {
+                                'phone':$('input[name=phone]').val(),
+                                '_token':$('input[name=_token]').val(),
+                                'todo': $('input[name=todo]').val()
+                            },
+                            success: function(data){
+                                alert(data);
+                            }
+                        });
+                    }
+                    sendMsg()
                     show_Time()
                 }
             })
