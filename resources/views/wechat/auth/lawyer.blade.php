@@ -81,7 +81,7 @@
                 }else{
                     var re =  /\d{4}$/
                     if (!re.test($('#yzm').val())) {
-                        form	= false;
+                        form = false;
                         $('#In-btn').removeClass('bg-lan1')
                     }
                 }
@@ -125,7 +125,7 @@
                                 'todo': $('input[name=todo]').val()
                             },
                             success: function(data){
-                                alert(data);
+                                alert(data.info);
                             }
                         });
                     }
