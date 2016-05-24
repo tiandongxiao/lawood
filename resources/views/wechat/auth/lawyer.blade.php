@@ -24,7 +24,7 @@
                     <input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true">
                 </div>
             </div>
-            <input type="submit" class="In-btn In-btn-1 bg-hui fc-fff" value="下一步" id="In-btn">
+            <input type="button" class="In-btn In-btn-1 bg-hui fc-fff" value="下一步" id="In-btn">
         </form>
         <div class="wjmm fc-d2d2d2 line-20 te-cen fs-12">点击［下一步］代表您已阅读并同意<span  class="fc-03aaf0" id="yhyx">用户使用协议</span></div>
     </section>
@@ -45,24 +45,6 @@
 @section('script')
     <script>
         $(function(){
-            $('#mobile').blur(function(){
-                var address = $('input[name=uri]').val();
-                function checkPhone(){
-                    $.ajax({
-                        url: address+'/communicate/phone_check',
-                        data: {
-                            'phone':$('input[name=phone]').val(),
-                            '_token':$('input[name=_token]').val(),
-                            'todo': $('input[name=todo]').val()
-                        },
-                        success: function(data){
-                            alert(data.info);
-                        }
-                    });
-                }
-                checkPhone();
-            });
-
             var form	=	false;
             //表单判断
             $('.In-text').bind('input propertychange', function() {
@@ -87,15 +69,36 @@
                     var re = /^1\d{10}$/
                     if (!re.test($('#mobile').val())) {
                         form	= false;
-                        $('#In-btn').removeClass('bg-lan1')
+                        $('#In-btn').removeClass('bg-lan1')                        
+                        return false;
                     }
+                    var address = $('input[name=uri]').val();
+                    function checkPhone(){
+                        $.ajax({
+                            url: address+'/communicate/phone_check',
+                            data: {
+                                'phone':$('input[name=phone]').val(),
+                                '_token':$('input[name=_token]').val(),
+                            },
+                            success: function(data){
+                                if(data.info == 'valid'){
+                                    $('#mobile').parents('.itms').addClass('itms-ok')
+                                    return true;
+                                }
+                                form = false;
+                                $('#In-btn').removeClass('bg-lan1')
+                                alert('此号码已被注册');
+                                return false;
+                            }
+                        });
+                    }
+                    checkPhone();
                 }
 
                 //判断验证码
                 if(!$('#yzm').val()){
                     form	= false;
                     $('#In-btn').removeClass('bg-lan1')
-
                 }else{
                     var re =  /\d{4}$/
                     if (!re.test($('#yzm').val())) {
@@ -110,11 +113,11 @@
             });
 
             //表单提交
-//            $('#In-btn').tap(function(){
-//                if(form){
-//                    $("#form").submit();
-//                }
-//            })
+            $('#In-btn').tap(function(){
+                if(form){
+                    $("#form").submit();
+                }
+            })
 
             //发送验证码
             var	Time	=	60;
@@ -154,19 +157,16 @@
 
             function show_Time(){ //加时函数
                 if(Time == 0){
-
                     $('#btn-yzm').attr({'fs':'true'})
                     $('#btn-yzm').val('再发一次');
                     $('#btn-yzm').removeClass('on');
                 }else{
-
                     $('#btn-yzm').addClass('on');
                     $('#btn-yzm').val(Time+'s后重新发送');
                     Time--;
                     setTimeout(show_Time,1000);
                     $('#btn-yzm').attr({'fs':'false'})
                 }
-
             };
             
             //个人协议
