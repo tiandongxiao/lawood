@@ -106,33 +106,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="search.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/search.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="202" column="55" selection-start-line="202" selection-start-column="55" selection-end-line="202" selection-end-column="55" />
+            <state relative-caret-position="-627">
+              <caret line="92" column="150" selection-start-line="92" selection-start-column="150" selection-end-line="92" selection-end-column="150" />
               <folding>
                 <element signature="e#752#773#0#HTML" expanded="true" />
                 <element signature="e#1168#1193#0#HTML" expanded="true" />
-                <element signature="e#6192#6217#0#HTML" expanded="true" />
-                <element signature="e#7376#7401#0#HTML" expanded="true" />
-                <element signature="e#9244#9275#0#HTML" expanded="true" />
+                <element signature="e#6200#6225#0#HTML" expanded="true" />
+                <element signature="e#7384#7409#0#HTML" expanded="true" />
+                <element signature="e#9252#9283#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/search.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+            <state relative-caret-position="165">
+              <caret line="92" column="150" selection-start-line="92" selection-start-column="150" selection-end-line="92" selection-end-column="150" />
               <folding>
                 <element signature="e#752#773#0#HTML" expanded="true" />
                 <element signature="e#1168#1193#0#HTML" expanded="true" />
-                <element signature="e#6192#6217#0#HTML" expanded="true" />
-                <element signature="e#7376#7401#0#HTML" expanded="true" />
-                <element signature="e#9244#9275#0#HTML" expanded="true" />
+                <element signature="e#6200#6225#0#HTML" expanded="true" />
+                <element signature="e#7384#7409#0#HTML" expanded="true" />
+                <element signature="e#9252#9283#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -226,8 +226,8 @@
         <option value="$PROJECT_DIR$/public/css/css.css" />
         <option value="$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/client/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/wechat/client/search.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/lawyer/search.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/wechat/client/search.blade.php" />
       </list>
     </option>
   </component>
@@ -247,10 +247,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="504" />
-    <option name="y" value="29" />
-    <option name="width" value="2413" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="2576" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -820,7 +820,7 @@
       <workItem from="1463494812199" duration="2832000" />
       <workItem from="1463531791016" duration="5397000" />
       <workItem from="1463707021622" duration="12261000" />
-      <workItem from="1463968668739" duration="76150000" />
+      <workItem from="1463968668739" duration="76778000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -945,7 +945,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="660027000" />
+    <option name="totallyTimeSpent" value="660655000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -957,13 +957,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="504" y="29" width="2413" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18232045" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.066375196" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.014223195" sideWeight="0.504393" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.014084507" sideWeight="0.504393" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32966483" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42036837" sideWeight="0.49560702" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4626219" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1430,30 +1430,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/search.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="202" column="55" selection-start-line="202" selection-start-column="55" selection-end-line="202" selection-end-column="55" />
+        <state relative-caret-position="165">
+          <caret line="92" column="150" selection-start-line="92" selection-start-column="150" selection-end-line="92" selection-end-column="150" />
           <folding>
             <element signature="e#752#773#0#HTML" expanded="true" />
             <element signature="e#1168#1193#0#HTML" expanded="true" />
-            <element signature="e#6192#6217#0#HTML" expanded="true" />
-            <element signature="e#7376#7401#0#HTML" expanded="true" />
-            <element signature="e#9244#9275#0#HTML" expanded="true" />
+            <element signature="e#6200#6225#0#HTML" expanded="true" />
+            <element signature="e#7384#7409#0#HTML" expanded="true" />
+            <element signature="e#9252#9283#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/search.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        <state relative-caret-position="-627">
+          <caret line="92" column="150" selection-start-line="92" selection-start-column="150" selection-end-line="92" selection-end-column="150" />
           <folding>
             <element signature="e#752#773#0#HTML" expanded="true" />
             <element signature="e#1168#1193#0#HTML" expanded="true" />
-            <element signature="e#6192#6217#0#HTML" expanded="true" />
-            <element signature="e#7376#7401#0#HTML" expanded="true" />
-            <element signature="e#9244#9275#0#HTML" expanded="true" />
+            <element signature="e#6200#6225#0#HTML" expanded="true" />
+            <element signature="e#7384#7409#0#HTML" expanded="true" />
+            <element signature="e#9252#9283#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
