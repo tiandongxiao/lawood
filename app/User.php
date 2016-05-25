@@ -156,7 +156,7 @@ class User extends Model implements AuthenticatableContract,
 
     public function getHomeAttribute()
     {
-        $home = $this->locations()->where('type','home')->get();
+        $home = $this->locations()->where('type','home')->first();
         if($home)
             return $home->address;
         return null;
@@ -164,10 +164,23 @@ class User extends Model implements AuthenticatableContract,
 
     public function getWorkAttribute()
     {
-        $work = $this->locations()->where('type','work')->get();
+        $work = $this->locations()->where('type','work')->first();
         if($work)
             return $work->address;
         return null;
+    }
+
+    public function getLicenceAttribute()
+    {
+        if (is_null($this->profile))
+            return null;
+        return $this->profile->licence;
+    }
+
+    public function setLicenceAttribute($licence)
+    {
+        $this->profile->licence = $licence;
+        $this->profile->save();
     }
 
     # 构建律师建模信息
@@ -247,5 +260,92 @@ class User extends Model implements AuthenticatableContract,
             }
         }
         return $unbinds;
+    }
+
+    public function updateCategories($range)
+    {
+        foreach ($this->categories as $category){
+            if(!in_array($category->id, $range)){
+                $this->unbindCategory($category->id);
+            }
+        }
+        foreach ($range as $item){
+            if(!$this->hasCategory($item)){
+                $this->bindCategory($item);
+            }
+        }
+    }
+
+    # 律师获取自己所有的服务项
+    public function getConsultsAttribute()
+    {
+        $goods = Item::where('class',null)->where('user_id',$this->id)->get();
+        return $goods;
+    }
+
+    public function getConsultByCategory($cate_id)
+    {
+        foreach ($this->consults as $consult){
+            if ($consult->category->id == $cate_id)
+                return $consult;
+        }
+    }
+
+    /**
+     * 根据用户的选择的分类和地址信息创建所有咨询业务
+     */
+    public function buildConsults()
+    {
+        foreach($this->locations as $location){
+            foreach($this->categories as $category){
+                if(!$this->isConsultExist($category->id,$location->id)){
+                    $item = Item::create([
+                        'user_id'           => $this->id,
+                        'price' 			=> random_int(10,1000),
+                        'sku'				=> uniqid('ITEM_',true),
+                        'description'		=> str_random(500),
+                        'category_id'       => $category->id,
+                        'location_id'       => $location->id
+                    ]);
+
+                    $poi = new Pois();
+                    $poi->build($location,$category,$item);
+                    $item->poi()->save($poi);
+
+                    # 为避免高德云图请求太快出现问题，故让其延迟一些
+                    usleep(5);
+                }
+            }
+        }
+    }
+
+
+    /**
+     * 判断律师是否提供了此项咨询业务
+     *
+     * @param $category_id
+     * @param $location_id
+     * @return bool
+     */
+    public function isConsultExist($category_id, $location_id)
+    {
+        $consults = $this->consults;
+        foreach($consults as $consult){
+            if($consult->category_id == $category_id && $consult->location_id == $location_id)
+                return true;
+        }
+        return false;
+    }
+
+    # 开启服务
+    public function start()
+    {
+        
+    }
+
+    # 关闭服务
+    public function stop()
+    {
+
     }
 }

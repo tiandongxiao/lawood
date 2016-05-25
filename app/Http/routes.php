@@ -92,7 +92,6 @@ Route::group(['prefix' => 'communicate'], function(){
 Route::group(['prefix' => 'check'], function(){
     Route::post('phone','CheckController@phone');
     Route::post('code','CheckController@code');
-
 });
 
 Route::group(['prefix' => 'lawyer'], function(){

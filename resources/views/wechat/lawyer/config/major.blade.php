@@ -3,68 +3,52 @@
     <style>body{background:#f8f8f8}</style>
 @stop
 @section('content')
+    @inject('category','App\Category')
     <!--默认状态-->
     <section class="zc-main">
         <div class="scly-main pad-10 bg-fff-box">
             <div class="hd">
-                <div class="itms-hd on">民事、经济</div>
-                <div class="itms-hd">刑事案件</div>
-                <div class="itms-hd">行政案件</div>
+                @foreach($category->nodes as $node)
+                    @if($node['tab_name']=='ms')
+                        <div class="itms-hd on">{{$node['name']}}</div>
+                    @else
+                        <div class="itms-hd">{{$node['name']}}</div>
+                    @endif
+                @endforeach
             </div>
 
             <div class="bd">
-                <div class="itms-bd clearfix show">
-                    <span class="list">婚姻</span>
-                    <span class="list">房产</span>
-                    <span class="list">债务</span>
-                    <span class="list">劳动争议</span>
-                    <span class="list">合同纠纷</span>
-                    <span class="list">损害赔偿</span>
-                    <span class="list">医疗纠纷</span>
-                    <span class="list">建设工程</span>
-                    <span class="list">著作权</span>
-                    <span class="list">商标权</span>
-                    <span class="list">专利权</span>
-                    <span class="list">土地</span>
-                    <span class="list">股权</span>
-                </div>
-                <div class="itms-bd clearfix">
-                    <span class="list">婚姻</span>
-                    <span class="list">房产</span>
-                    <span class="list">债务</span>
-                    <span class="list">劳动争议</span>
-                    <span class="list">合同纠纷</span>
-                    <span class="list">损害赔偿</span>
-                    <span class="list">医疗纠纷</span>
-                    <span class="list">建设工程</span>
-                    <span class="list">著作权</span>
-                    <span class="list">商标权</span>
-                    <span class="list">专利权</span>
-                    <span class="list">土地</span>
-                    <span class="list">股权</span>
-                    <span class="list">商标权</span>
-                    <span class="list">专利权</span>
-                    <span class="list">土地</span>
-                    <span class="list">股权</span>
-
-                </div>
-                <div class="itms-bd clearfix">
-                    <span class="list">婚姻</span>
-                    <span class="list">房产</span>
-                    <span class="list">债务</span>
-                    <span class="list">劳动争议</span>
-                    <span class="list">合同纠纷</span>
-                    <span class="list">损害赔偿</span>
-                    <span class="list">医疗纠纷</span>
-                    <span class="list">建设工程</span>
-                    <span class="list">著作权</span>
-                    <span class="list">商标权</span>
-                    <span class="list">专利权</span>
-                    <span class="list">土地</span>
-                    <span class="list">股权</span>
-                </div>
+                @foreach($category->nodes as $node)
+                    @if($node['tab_name']=='ms')
+                        <div class="itms-bd clearfix show">
+                            @foreach($node['nodes'] as $item)
+                                @if(Auth::user()->hasCategory($item['id']))
+                                    <span class="list on" val="{{$item['id']}}">{{$item['name']}}</span>
+                                @else
+                                    <span class="list" val="{{$item['id']}}">{{$item['name']}}</span>
+                                @endif
+                            @endforeach
+                        </div>
+                    @else
+                        <div class="itms-bd clearfix">
+                            @foreach($node['nodes'] as $item)
+                                @if(Auth::user()->hasCategory($item['id']))
+                                    <span class="list on" val="{{$item['id']}}">{{$item['name']}}</span>
+                                @else
+                                    <span class="list" val="{{$item['id']}}">{{$item['name']}}</span>
+                                @endif
+                            @endforeach
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
+        <form id="form" action="{{url('wechat/lawyer/config')}}" method="POST">
+            {!! csrf_field() !!}
+            <input type="hidden" name="key" value="major">
+            <div id="select">
+            </div>
+        </form>
         <div class="bottom-btn">
             <div class="blank100"></div>
             <div class="con te-cen">
@@ -77,7 +61,12 @@
 @section('script')
     <script>
         $(function(){
-            //默认
+            function updateSelect() {
+                $('#select input').remove();
+                $('.list.on').each(function () {
+                    $('#select').append("<input type='hidden' name='range[]' value='"+$(this).attr('val')+"'/>");
+                });
+            }
             //切换擅长领域
             $('.itms-hd').tap(function(){
                 $('.itms-hd').removeClass('on');
@@ -89,20 +78,27 @@
             })
             //个数
             $('.list').tap(function(){
-                if($('.list.on').size()	>	3){
+                if($('.list.on').size()	> 3){
                     if($(this).attr('class')	==	'list on'){
                         $(this).removeClass('on');
                         $('#num').html($('.list.on').size())
-
+                        updateSelect();
                     }else{
                         alert('最多只能选择4项')
                     }
                 }else{
                     $(this).toggleClass('on');
                     $('#num').html($('.list.on').size())
+                    updateSelect();
                 }
             })
-            //默认
+
+            //表单提交
+            $('#In-btn').tap(function(){
+                if(form){
+                    $("#form").submit();
+                }
+            })
         })
     </script>
 @stop

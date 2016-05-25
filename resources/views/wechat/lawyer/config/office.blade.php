@@ -5,9 +5,11 @@
 @section('content')
     <!--律师名称-->
     <section class="lszcmc-main">
-        <form id="form" action="#">
+        <form id="form" action="{{url('wechat/lawyer/config')}}" method="post">
+            {!! csrf_field() !!}
+            <input type="hidden" name="key" value="office">
             <label class="pad-10-0 dis-block top">
-                <input type="tel" class="In-text bg-fff-box" placeholder="请输入您的律所名称" id="In-name">
+                <input type="tel" class="In-text bg-fff-box" placeholder="请输入您的律所名称" id="In-name" name="office">
             </label>
             <div class="hot bg-fff-box fc-909090">
                 <div class="tie">热门律所</div>

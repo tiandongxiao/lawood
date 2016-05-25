@@ -72,7 +72,7 @@ class LawyerController extends Controller
     }
 
     public function config($key)
-    {
+    {        
         switch ($key){
             case 'phone':
                 return view('wechat.lawyer.config.phone');
@@ -93,15 +93,31 @@ class LawyerController extends Controller
     {
         switch ($request->get('key')){
             case 'phone':
-                return view('wechat.lawyer.config.office');
+                $phone = trim($request->get('phone'));
+                $this->user->update([
+                    'phone' => $phone
+                ]);
+                return redirect('wechat/lawyer/setting');
             case 'office':
-                return view('wechat.lawyer.config.office');
+                $office = trim($request->get('office'));
+                $this->user->office = $office;
+                return redirect('wechat/lawyer/setting');
             case 'work':
-                return view('wechat.lawyer.config.work_add');
+                $work = trim($request->get('work'));
+                $this->user->work = $work;
+                return redirect('wechat/lawyer/setting');
             case 'home':
-                return view('wechat.lawyer.config.home_add');
-            case 'major':
-                return view('wechat.lawyer.config.major');
+                $home = trim($request->get('home'));
+                $this->user->home = $home;
+                return redirect('wechat/lawyer/setting');
+            case 'major':                
+                $range = $request->get('range');
+                if(!is_null($range)){
+                    $this->user->updateCategories($range);
+                }
+                return redirect('wechat/lawyer/setting');
+            case 'price':
+                return redirect('wechat/lawyer/setting');
         }
     }
 

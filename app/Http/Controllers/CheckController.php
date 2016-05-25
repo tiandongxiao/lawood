@@ -8,17 +8,19 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 
 class CheckController extends Controller
 {
     public function phone(Request $request)
     {
         $phone = $request->get('phone');
+        Log::info('进行验证的手机号码 - '.$phone);
         if($request->ajax()){
             $record = User::where('phone',$phone)->first();
-            if($record)
-                return 'X'; # 号码已被注册
-            return 'Y';
+            if(is_null($record))
+                return 'Y';
+            return 'X';
         }
     }
 
@@ -27,10 +29,10 @@ class CheckController extends Controller
         $email = trim($request->get('email'));
         if($request->ajax()){
             $result = User::where('email',$email)->first();
-            if($result)
-                return 'EXIST';
+            if(is_null($result))
+                return 'Y';
         }
-        return 'OK';
+        return 'X';
     }
 
     public function code(Request $request)
@@ -41,16 +43,15 @@ class CheckController extends Controller
             $phone = $request->get('phone');
             $key = $type.'_'.$phone;
 
-            if(!Cache::has($key)){
+            if(!Cache::has($key))
                 return 'E';
-            }
 
             $value = Cache::get($key);
-            Cache::forget($key);
 
-            if($request->get('code') != $value){
+            if($request->get('code') != $value)
                 return 'X';
-            }
+
+            Cache::forget($key);
             return 'Y';
         }
     }

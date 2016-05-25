@@ -84,10 +84,12 @@ class AuthController extends Controller
     public function postProfile(Request $request)
     {
         $this->user->office = $request->get('office');
+        $this->user->licence = $request->get('licence');
         $this->user->home = $request->get('home');
         $this->user->work = $request->get('work');
 
         $categories = $request->get('range');
+
         foreach ($categories as $category){
             $this->user->bindCategory($category);
         }

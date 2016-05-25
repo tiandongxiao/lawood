@@ -4,10 +4,12 @@
 @stop
 @section('content')
     <section class="lszcdz-main">
-        <form id="form" action="#">
+        <form id="form" action="{{url('wechat/lawyer/config')}}" method="post">
+            {!! csrf_field() !!}
+            <input type="hidden" name="key" value="work">
             <div class="mar-top-10 clearfix bg-fff-box">
                 <div class="top">
-                    <input type="tel" class="In-text" placeholder="请输入您的居住区域" id="In-lsdz">
+                    <input type="tel" class="In-text" placeholder="请输入您的居住区域" id="In-lsdz" name="work">
                     <input type="button" value="取消" class="btn-but">
                 </div>
                 <div class="con" id="btn-lsdz">

@@ -111,12 +111,14 @@
                 if(!$('#yzm').val()){
                     form	= false;
                     $('#In-btn').removeClass('bg-lan1')
+                    $('#btn-yzm').parents('.itms').removeClass('itms-ok')
                     return false;
                 }else{
                     var re =  /\d{4}$/
                     if (!re.test($('#yzm').val())) {
                         form = false;
                         $('#In-btn').removeClass('bg-lan1')
+                        $('#btn-yzm').parents('.itms').removeClass('itms-ok')
                         return false;
                     }
 
@@ -169,7 +171,7 @@
 
             $('#btn-yzm').tap(function(){
                 if(!$('#mobile').parents('.itms').hasClass('itms-ok'))
-                        return false;
+                    return false;
 
                 if($('#btn-yzm').attr('fs') == 'true'){
                     var address = $('input[name=uri]').val();
