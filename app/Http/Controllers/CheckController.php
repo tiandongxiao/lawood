@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 
 class CheckController extends Controller
 {
@@ -16,8 +17,8 @@ class CheckController extends Controller
         if($request->ajax()){
             $record = User::where('phone',$phone)->first();
             if($record)
-                return 'Y';
-            return 'X';
+                return 'X'; # 号码已被注册
+            return 'Y';
         }
     }
 
@@ -34,6 +35,7 @@ class CheckController extends Controller
 
     public function code(Request $request)
     {
+        return 'Y';
         if($request->ajax()){
             $type =  $request->get('todo');
             $phone = $request->get('phone');

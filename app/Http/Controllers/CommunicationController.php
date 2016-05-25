@@ -18,8 +18,8 @@ class CommunicationController extends Controller
         if($request->ajax()){
             $record = User::where('phone',$phone)->first();
             if($record)
-                return 'Y';
-            return 'X';
+                return 'X';
+            return 'Y';
         }
     }
 

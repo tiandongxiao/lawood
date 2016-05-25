@@ -89,6 +89,12 @@ Route::group(['prefix' => 'communicate'], function(){
     Route::post('message','CommunicationController@sendMessageByRequest');
 });
 
+Route::group(['prefix' => 'check'], function(){
+    Route::post('phone','CheckController@phone');
+    Route::post('code','CheckController@code');
+
+});
+
 Route::group(['prefix' => 'lawyer'], function(){
     Route::get('','User\LawyerController@board');
     Route::get('show/{id}','User\LawyerController@show');
@@ -212,20 +218,20 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('call','TestController@call');
 });
 
-
 Route::resource('receipt','ReceiptController');
 
-
 Route::group(['prefix' => 'wechat'], function(){
+    # begin 注册绑定
     Route::get('chose','WeChat\AuthController@chose');
     Route::get('bind/{role}','WeChat\AuthController@bind');
     Route::post('bind','WeChat\AuthController@postBind');
     Route::get('profile','WeChat\AuthController@profile');
     Route::post('profile','WeChat\AuthController@postProfile');
-    Route::get('reg_finish','WeChat\AuthController@finish');
-    
-    Route::get('consults','WeChat\WeChatController@consults');
+    # end 注册绑定
 
+    Route::get('consults','WeChat\ConsultController@index');
+
+    # begin 咨询用户
     Route::get('client','WeChat\ClientController@index');
     Route::get('client/notifies','WeChat\ClientController@notifies');
     Route::get('client/orders','WeChat\ClientController@orders');
@@ -233,11 +239,13 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('client/setting','WeChat\ClientController@setting');
     Route::get('client/config/{key}','WeChat\ClientController@config');
     Route::post('client/config','WeChat\ClientController@postConfig');
-
     Route::get('client/search','WeChat\ClientController@search');
     Route::post('client/search','WeChat\ClientController@postSearch');
+    # end 咨询用户
+
     Route::get('user/{id}','WeChat\ClientController@lawyer');
 
+    # begin 律师
     Route::get('lawyer','WeChat\LawyerController@index');
     Route::get('lawyer/notifies','WeChat\LawyerController@notifies');
     Route::get('lawyer/orders','WeChat\LawyerController@orders');
@@ -251,4 +259,5 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('lawyer/search','WeChat\LawyerController@search');
     Route::post('lawyer/search','WeChat\LawyerController@postSearch');
     Route::get('lawyer/me','WeChat\LawyerController@me');
+    # end 律师
 });

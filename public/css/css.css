@@ -402,7 +402,7 @@ transform:scale(0.8,0.8);
 .yy-footer 	.itms-left	.fx		i	{ font-style:normal; padding-left:30px; background:url(../images/fc.png) left center no-repeat; background-size:25px 25px;}
 .yy-footer 	.itms-left	.sc		i	{ font-style:normal; padding-left:25px; background:url(../images/sc.png) left center no-repeat; background-size:20px 20px;}
 .yy-footer 	.itms-left	.sc.on		i	{ background-image:url(../images/sc-on.png)}
-.yy-footer 	.itms-left	.sc:before	{ width:1px; height:25px; background:#efefef; content:''; display:block; position:absolute; left:0%; top:5px;}
+.yy-footer 	.itms-left	.sc:before	{ width:1px; height:25px; background:#efefef; content:''; display:block; position:absolute; left:0px; top:5px;}
 
 /*19时间选择*/
 .sjxz-main	.top	{ background:#02b3ed; padding:10px; position:relative;}

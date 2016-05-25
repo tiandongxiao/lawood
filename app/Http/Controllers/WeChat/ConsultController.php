@@ -15,6 +15,7 @@ class ConsultController extends Controller
 {
     public function index()
     {
-        
+        $consults = Item::consults();
+        return view('wechat.consults',compact('consults'));
     }
 }

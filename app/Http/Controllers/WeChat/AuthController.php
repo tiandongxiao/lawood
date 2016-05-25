@@ -83,32 +83,15 @@ class AuthController extends Controller
 
     public function postProfile(Request $request)
     {
-        $categories = $request->get('range');
+        $this->user->office = $request->get('office');
+        $this->user->home = $request->get('home');
+        $this->user->work = $request->get('work');
 
+        $categories = $request->get('range');
         foreach ($categories as $category){
             $this->user->bindCategory($category);
         }
 
-        $this->user->update(['office'=>$request->get('office')]);
-
-        $home = Location::create([
-            'type'    => 'home',
-            'address' => $request->get('home')
-        ]);
-
-        $work = Location::create([
-            'type'    => 'work',
-            'address' => $request->get('work')
-        ]);
-
-        $this->user->locations()->saveMany([$home,$work]);
         return view('wechat.auth.finish');
-    }
-
-    public function consults()
-    {
-        $consults = Item::consults();
-
-        return view('wechat.consults',compact('consults'));
     }
 }

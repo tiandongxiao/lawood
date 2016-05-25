@@ -17,3 +17,12 @@
     </section>
     <!--提交审核-->
 @endsection
+@section('script')
+    <script>
+    //提交审核
+    $('#btn-qr').tap(function(){
+        $('.tc-main').fadeOut();
+        window.location.href="/wechat/lawyer";
+    })
+    </script>
+@stop

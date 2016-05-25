@@ -48,7 +48,7 @@
             var form = false;
             //表单判断
             $('.In-text').bind('input propertychange', function() {
-                form = true;
+                //form = true;
                 //姓名
                 if(!$('#name').val()){
                     form = false;
@@ -66,6 +66,8 @@
                     form = false;
                     $('#In-btn').removeClass('bg-lan1')
                     $('#mobile').parents('.itms').removeClass('itms-ok')
+                    $('#btn-yzm').parents('.itms').removeClass('itms-ok')
+                    $('#yzm').val('');
                     $('#btn-yzm').hide()
                 }else{
                     var re = /^1\d{10}$/
@@ -73,6 +75,8 @@
                         form = false;
                         $('#In-btn').removeClass('bg-lan1')
                         $('#mobile').parents('.itms').removeClass('itms-ok')
+                        $('#btn-yzm').parents('.itms').removeClass('itms-ok')
+                        $('#yzm').val('');
                         $('#btn-yzm').hide()
                         return false;
                     }
@@ -88,7 +92,8 @@
                             success: function(data){
                                 if(data == 'Y'){
                                     $('#mobile').parents('.itms').addClass('itms-ok')
-                                    $('#btn-yzm').show()
+                                    if(!$('#btn-yzm').parents('.itms').hasClass('itms-ok'))
+                                        $('#btn-yzm').show()
                                     return true;
                                 }
                                 form = false;
@@ -126,27 +131,28 @@
                         success: function(data){
                             switch (data){
                                 case 'Y':
+                                    $('#btn-yzm').hide()
                                     $('#btn-yzm').parents('.itms').addClass('itms-ok')
+                                    form = true;
+                                    $('#In-btn').addClass('bg-lan1')
                                     return true;
                                 case 'E':
                                     form = false;
                                     $('#In-btn').removeClass('bg-lan1')
                                     $('#mobile').parents('.itms').removeClass('itms-ok')
                                     alert('验证码已过期')
+                                    $('#yzm').val('');
                                     return false;
                                 case 'N':
                                     form = false;
                                     $('#In-btn').removeClass('bg-lan1')
                                     $('#mobile').parents('.itms').removeClass('itms-ok')
                                     alert('验证码错误');
+                                    $('#yzm').val('');
                                     return false;
                             }
                         }
                     })
-                }
-                //更改按钮状态
-                if(form){
-                    $('#In-btn').addClass('bg-lan1')
                 }
             });
 
