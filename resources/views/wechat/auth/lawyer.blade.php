@@ -181,7 +181,7 @@
                             data: {
                                 'phone':$('input[name=phone]').val(),
                                 '_token':$('input[name=_token]').val(),
-                                'todo': $('input[name=todo]').val()
+                                'todo': 'reg'
                             },
                             success: function(data){
                                 Time = 60;
