@@ -43,10 +43,6 @@
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
                 <p>1.4km</p>
             </div>
-            <div class="itms">
-                <div class="img"><img src="/images/ls.jpg" width="100%"></div>
-                <p>1.4km</p>
-            </div>
         </div>
     </section>
 @stop
