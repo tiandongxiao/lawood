@@ -9,7 +9,6 @@
                     </div>
                     <form  action="{{url('wechat/bind')}}" id="form" method="POST">
 						{!! csrf_field() !!}
-						<input type="hidden" name="todo" value="reg">
 						<input type="hidden" name="uri" value="{{url('/')}}">
                         <div class="form">
                                 <div class="itms">
@@ -82,7 +81,7 @@
 					function checkPhone(){
 						$.ajax({
 							type: 'POST',
-							url: address+'/communicate/phone_check',
+							url: address+'/check/phone',
 							data: {
 								'phone':$('input[name=phone]').val(),
 								'_token':$('input[name=_token]').val(),
@@ -180,7 +179,7 @@
 							data: {
 								'phone':$('input[name=phone]').val(),
 								'_token':$('input[name=_token]').val(),
-								'todo': $('input[name=todo]').val()
+								'todo': 'reg'
 							},
 							success: function(data){
 								Time = 60;

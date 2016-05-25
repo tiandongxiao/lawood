@@ -7,7 +7,6 @@
         <div class="banner"><img src="/images/zc-banner.png" width="100%"></div>
         <form  action="{{url('wechat/bind')}}" id="form" method="POST">
             {!! csrf_field() !!}
-            <input type="hidden" name="todo" value="reg">
             <input type="hidden" name="uri" value="{{url('/')}}">
             <div class="form">
                 <div class="itms">
@@ -84,9 +83,9 @@
                     function checkPhone(){
                         $.ajax({
                             type: 'POST',
-                            url: address+'/communicate/phone_check',
+                            url: address+'/check/phone',
                             data: {
-                                'phone':$('input[name=phone]').val(),
+                                'phone' : $('input[name=phone]').val(),
                                 '_token':$('input[name=_token]').val(),
                             },
                             success: function(data){

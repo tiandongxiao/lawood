@@ -41,6 +41,7 @@ class CheckController extends Controller
             $type =  $request->get('todo');
             $phone = $request->get('phone');
             $key = $type.'_'.$phone;
+            Log::info($key);
 
             if(!Cache::has($key))
                 return 'E';
