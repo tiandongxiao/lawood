@@ -109,15 +109,21 @@ class TestController extends Controller
 
     public function cache()
     {
-        $adminRole = Role::where('slug','admin')->first();
-        $admin = User::where('email','admin@lawood.cn')->first();
-        $admin->attachRole($adminRole);
+        dd(Cache::get('reg_18301191705'));
+//        $adminRole = Role::where('slug','admin')->first();
+//        $admin = User::where('email','admin@lawood.cn')->first();
+//        $admin->attachRole($adminRole);
 //        Notify::send(1,2);
 //        $value = Cache::get($key);
 //        if($value){
 //            dd($value);
 //        }
 //        dd('No');
+    }
+
+    public function putValue()
+    {
+        Cache::add('reg_18301191705',random_int(1000, 9999),2);
     }
 
     public function buildNotifications()

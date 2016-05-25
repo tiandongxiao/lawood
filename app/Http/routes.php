@@ -211,7 +211,8 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('rate_item','TestController@ratingItem');
     Route::get('code','TestController@scanQrCode');
     Route::get('faker','TestController@faker');
-    Route::get('cache','TestController@cache');
+    Route::get('put','TestController@putValue');
+    Route::get('get','TestController@cache');
     Route::get('build','TestController@buildNotifications');
     Route::get('heal','OrderController@heal');
     Route::get('call','TestController@call');
