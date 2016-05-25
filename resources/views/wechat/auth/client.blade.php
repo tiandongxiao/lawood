@@ -126,6 +126,7 @@
 						url: address+'/check/code',
 						data: {
 							'code':$('input[name=code]').val(),
+							'todo': 'reg',
 							'_token':$('input[name=_token]').val(),
 						},
 						success: function(data){
