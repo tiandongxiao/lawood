@@ -126,8 +126,9 @@
                         type: 'POST',
                         url: address+'/check/code',
                         data: {
+                            'type': 'reg',
                             'code':$('input[name=code]').val(),
-                            'todo': 'reg',
+                            'phone':$('input[name=phone]').val(),
                             '_token':$('input[name=_token]').val(),
                         },
                         success: function(data){

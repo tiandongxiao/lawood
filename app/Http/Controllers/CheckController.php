@@ -38,7 +38,7 @@ class CheckController extends Controller
     public function code(Request $request)
     {
         if($request->ajax()){
-            $type =  $request->get('todo');
+            $type =  $request->get('type');
             $phone = $request->get('phone');
             $key = $type.'_'.$phone;
             Log::info($key);
