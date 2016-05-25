@@ -101,7 +101,9 @@
                         type: 'POST',
                         url: address+'/check/code',
                         data: {
+                            'type':'reset',
                             'code':$('input[name=code]').val(),
+                            'phone':$('input[name=phone]').val(),
                             '_token':$('input[name=_token]').val(),
                         },
                         success: function(data){
@@ -112,14 +114,8 @@
                                     form = true;
                                     $('#In-btn').addClass('bg-lan1')
                                     return true;
-                                case 'E':
-                                    form = false;
-                                    $('#In-btn').removeClass('bg-lan1')
-                                    $('#mobile').parents('.itms').removeClass('itms-ok')
-                                    alert('验证码已过期')
-                                    $('#yzm').val('');
-                                    return false;
                                 case 'N':
+                                case 'E':
                                     form = false;
                                     $('#In-btn').removeClass('bg-lan1')
                                     $('#mobile').parents('.itms').removeClass('itms-ok')
