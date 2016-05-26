@@ -53,14 +53,13 @@ class Pois extends Model
     }
 
     # 创建一个新云图POI并与本地POI对象绑定
-    public function build(Location $location, Category $category, Item $item)
+    public function build(Item $item)
     {
         $poi_id = $this->addPOI([
-            '_name'        => $category->name,
-            '_address'     => $location->address,
-            'category'     => $category->name,
+            '_name'        => $item->category->name,
+            '_address'     => $item->location->address,
+            'category'     => $item->category->name,
             'price'        => $item->price,
-            'enable'       => $item->seller->enable,
             'link_buy'      => url('order/place/'.$item->id),
             'link_detail'   => url('consult/'.$item->id)
         ]);

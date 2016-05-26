@@ -136,4 +136,19 @@ class LawyerController extends Controller
     {
         return view('wechat.lawyer.search');
     }
+
+    public function on(Request $request)
+    {
+        $result = $this->user->start();
+        if($request->ajax())
+            return $result;
+
+    }
+
+    public function off(Request $request)
+    {
+        $result = $this->user->stop();
+        if($request->ajax())
+            return $result;
+    }
 }

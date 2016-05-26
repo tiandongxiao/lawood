@@ -299,7 +299,7 @@ class User extends Model implements AuthenticatableContract,
         foreach($this->locations as $location){
             foreach($this->categories as $category){
                 if(!$this->isConsultExist($category->id,$location->id)){
-                    $item = Item::create([
+                    $consult = Item::create([
                         'user_id'           => $this->id,
                         'price' 			=> random_int(10,1000),
                         'sku'				=> uniqid('ITEM_',true),
@@ -307,18 +307,12 @@ class User extends Model implements AuthenticatableContract,
                         'category_id'       => $category->id,
                         'location_id'       => $location->id
                     ]);
-
-                    $poi = new Pois();
-                    $poi->build($location,$category,$item);
-                    $item->poi()->save($poi);
-
-                    # 为避免高德云图请求太快出现问题，故让其延迟一些
-                    usleep(5);
+                    $consult->buildPOI();
                 }
             }
         }
-    }
 
+    }
 
     /**
      * 判断律师是否提供了此项咨询业务
@@ -338,14 +332,40 @@ class User extends Model implements AuthenticatableContract,
     }
 
     # 开启服务
-    public function start()
+    public function start(Request $request)
     {
-        
+//        if(!$this->active || !$this->consults)
+//            return false;
+
+        # 设置启动标志位
+        $this->update(['enable'=>true]);
+
+        # 更新所有consults，将其信息推送至高德地图
+        foreach ($this->consults as $consult){
+            $consult->buildPOI();
+            # 为避免高德云图请求太快出现问题，故让其延迟一些
+            usleep(5);
+        }
+
+        return true;
     }
 
     # 关闭服务
-    public function stop()
+    public function stop(Request $request)
     {
+//        if(!$this->active || !$this->consults)
+//            return false;
 
+        # 设置启动标志位
+        $this->update(['enable'=>false]);
+
+        # 更新所有consults，将其信息从高德地图中清除
+        foreach ($this->consults as $consult){
+            $consult->deletePOI();
+            # 为避免高德云图请求太快出现问题，故让其延迟一些
+            usleep(5);
+        }
+
+        return true;
     }
 }

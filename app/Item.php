@@ -56,4 +56,22 @@ class Item extends ShopItemModel implements Ratingable
         $consults = Item::where('class',null)->get();
         return $consults;
     }
+
+    # 构建POI对象，并推送至地图
+    public function buildPOI()
+    {
+        if(is_null($this->poi)){
+            $poi = new Pois();
+            $poi->build($this);
+            $this->poi()->save($poi);
+        }
+    }
+
+    # 删除POI对象，并将数据从高德地图中删除
+    public function deletePOI()
+    {
+        if($this->poi){
+            $this->poi->delete();
+        }
+    }
 }

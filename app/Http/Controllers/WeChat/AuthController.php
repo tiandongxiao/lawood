@@ -94,6 +94,12 @@ class AuthController extends Controller
             $this->user->bindCategory($category);
         }
 
+        return redirect('wechat/finish');
+    }
+
+    public function finish()
+    {
+        $this->user->buildConsults();
         return view('wechat.auth.finish');
     }
 }

@@ -227,6 +227,7 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::post('bind','WeChat\AuthController@postBind');
     Route::get('profile','WeChat\AuthController@profile');
     Route::post('profile','WeChat\AuthController@postProfile');
+    Route::get('finish','WeChat\AuthController@finish');
     # end 注册绑定
 
     Route::get('consults','WeChat\ConsultController@index');
@@ -259,5 +260,7 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('lawyer/search','WeChat\LawyerController@search');
     Route::post('lawyer/search','WeChat\LawyerController@postSearch');
     Route::get('lawyer/me','WeChat\LawyerController@me');
+    Route::get('lawyer/on','WeChat\LawyerController@on');
+    Route::get('lawyer/off','WeChat\LawyerController@off');
     # end 律师
 });

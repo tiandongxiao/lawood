@@ -74,11 +74,17 @@
             <div class="f-left"><img src="/images/nav5.png" width="20" height="20"></div>
             <div class="right">我的钱包</div>
         </a>
-        <div class="itms bor-bot" href="http://www.baidu.com">
+        <div class="itms bor-bot">
             <div class="f-left"><img src="/images/nav6.png" width="20" height="20"></div>
             <div class="right">停用</div>
             <div class="ts">停用后律屋将停止</br>对您推荐</div>
-            <input type="checkbox" class="In-check" >
+            <input type="hidden" name="uri" value="{{url('/')}}">
+            {!! csrf_field() !!}
+            @if(Auth::user()->enable))
+            <input type="checkbox" class="In-check" id="In-service" checked>
+            @else
+            <input type="checkbox" class="In-check" id="In-service">
+            @endif
         </div>
         <a class="itms bor-bot" href="{{url('wechat/lawyer/setting')}}">
             <div class="f-left">
@@ -144,6 +150,30 @@
         $('.list').tap(function(){
             $('.list').removeClass('on');
             $(this).addClass('on')
+        })
+        var address = $('input[name=uri]').val();
+        $("#In-service").change(function() {
+            if ($('#In-service').is(':checked')){
+                $.ajax({
+                    url: address + '/wechat/lawyer/on',
+                    data: {
+                        '_token':$('input[name=_token]').val(),
+                    },
+                    success: function (data) {
+                        alert(data)
+                    }
+                })
+            }else{
+                $.ajax({
+                    url: address + '/wechat/lawyer/off',
+                    data: {
+                        '_token':$('input[name=_token]').val(),
+                    },
+                    success: function (data) {
+                        alert(data)
+                    }
+                })
+            }
         })
     })
 </script>
