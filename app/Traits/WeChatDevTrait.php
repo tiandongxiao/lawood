@@ -74,6 +74,7 @@ trait WeChatDevTrait
     public function account()
     {
         $user = session('wechat.oauth_user');
+        dd($user);
         if ($user) {
             $accessToken = $this->app->access_token;
             $token = $accessToken->getToken(true);  # 强制重新从微信服务器获取 token.
