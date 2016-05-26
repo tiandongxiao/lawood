@@ -18,6 +18,11 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
             <li>
+                <a href="{{url('site/lawyers/unapproved')}}">
+                    <i class="fa fa-user"></i> <span>律师审核</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{url('site/user')}}">
                     <i class="fa fa-user"></i> <span>用户管理</span>
                 </a>

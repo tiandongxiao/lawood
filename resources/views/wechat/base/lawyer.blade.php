@@ -163,7 +163,9 @@
                         '_token':$('input[name=_token]').val(),
                     },
                     success: function (data) {
-                        alert(data)
+                        if(data == 'X'){
+                            $("#In-service").removeAttr("checked");
+                        }
                     }
                 })
             }else{
@@ -175,7 +177,9 @@
                         '_token':$('input[name=_token]').val(),
                     },
                     success: function (data) {
-                        alert(data)
+                        if(data == 'X'){
+                            $("#In-service").attr("checked",'true');
+                        }
                     }
                 })
             }

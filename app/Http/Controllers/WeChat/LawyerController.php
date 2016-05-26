@@ -85,7 +85,8 @@ class LawyerController extends Controller
             case 'major':
                 return view('wechat.lawyer.config.major');
             case 'price':
-                return view('wechat.lawyer.config.price');
+                $items = $this->user->prices; #通过价格来处理当前的问题，只是权宜之计
+                return view('wechat.lawyer.config.price',compact('items'));
         }
     }
 
@@ -117,6 +118,7 @@ class LawyerController extends Controller
                 }
                 return redirect('wechat/lawyer/setting');
             case 'price':
+                dd($request->all());
                 return redirect('wechat/lawyer/setting');
         }
     }

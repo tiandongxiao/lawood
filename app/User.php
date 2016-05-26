@@ -67,6 +67,12 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasMany(Notification::class);
     }
 
+    # 价格策略，为提升效率权宜之法
+    public function prices()
+    {
+        return $this->hasMany(Price::class);
+    }
+
     public static function findRequested()
     {
         $query = User::query();
@@ -88,12 +94,16 @@ class User extends Model implements AuthenticatableContract,
             $this->categories()->detach($category->id);
         }
 
-        $this->locations->delete();
-        $this->comments->delete();
-        $this->timing->delete();
-        $this->dressing->delete();
-        $this->polite->delete();
-        $this->profile->delete();
+        foreach ($this->consults as $consult){
+            $consult->deletePOI();
+        }
+
+        $this->locations()->delete();
+        $this->comments()->delete();
+        $this->timing()->delete();
+        $this->dressing()->delete();
+        $this->polite()->delete();
+        $this->profile()->delete();
 
         parent::delete();
     }
@@ -211,9 +221,9 @@ class User extends Model implements AuthenticatableContract,
             $category = Category::findOrFail($id);
             if (!$this->hasCategory($category->id)) {
                 $this->categories()->attach($category->id);
+                $this->buildPrice($category->id); # 增加价格调整策略
                 return 'SUCCESS';
             }
-
             return 'REPEAT';
         }
         return 'FAIL';
@@ -231,7 +241,7 @@ class User extends Model implements AuthenticatableContract,
                         $item->delete();
                 }
                 $this->categories()->detach($id);
-
+                $this->deletePrice($id);   # 删除价格策略
                 return true;
             }
         }
@@ -330,12 +340,43 @@ class User extends Model implements AuthenticatableContract,
         return false;
     }
 
+    # 判断是否有此类别价格策略
+    public function hasPrice($cate_id)
+    {
+        foreach ($this->prices as $price){
+            if($price->category_id == $cate_id)
+                return true;
+        }
+        return false;
+    }
+
+    # 构建类别的价格策略
+    public function buildPrice($cate_id)
+    {
+        if(!$this->hasPrice($cate_id)){
+            $price = Price::create([
+                'category_id' => $cate_id,
+                'price'       => 500
+            ]);
+            $this->prices()->save($price);
+        }
+    }
+
+    # 删除类别的价格策略
+    public function deletePrice($cate_id)
+    {
+        if($this->hasPrice($cate_id)){
+            foreach ($this->prices as $price) {
+                if ($price->category_id == $cate_id)
+                    $price->delete();
+            }
+        }
+    }
+
     # 开启服务
     public function start()
     {
-//        if(!$this->active || !$this->consults)
-//            return false;
-        if(!$this->consults)
+        if(!$this->active || !$this->consults)
             return false;
 
         # 设置启动标志位
@@ -345,7 +386,7 @@ class User extends Model implements AuthenticatableContract,
         foreach ($this->consults as $consult){
             $consult->buildPOI();
             # 为避免高德云图请求太快出现问题，故让其延迟一些
-            usleep(5);
+            usleep(1);
         }
 
         return true;
@@ -354,10 +395,9 @@ class User extends Model implements AuthenticatableContract,
     # 关闭服务
     public function stop()
     {
-//        if(!$this->active || !$this->consults)
-//            return false;
-        if(!$this->consults)
+        if(!$this->active || !$this->consults)
             return false;
+
         # 设置启动标志位
         $this->update(['enable'=>false]);
 
@@ -365,7 +405,7 @@ class User extends Model implements AuthenticatableContract,
         foreach ($this->consults as $consult){
             $consult->deletePOI();
             # 为避免高德云图请求太快出现问题，故让其延迟一些
-            usleep(5);
+            usleep(1);
         }
 
         return true;

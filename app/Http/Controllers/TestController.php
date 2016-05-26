@@ -109,6 +109,8 @@ class TestController extends Controller
 
     public function cache()
     {
+        $users = User::where('role','lawyer')->where('active',true)->get();
+        dd($users);
         if(Cache::has('reg_18301191705'))
             dd(Cache::get('reg_18301191705'));
 //        $adminRole = Role::where('slug','admin')->first();

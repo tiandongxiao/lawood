@@ -50,6 +50,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
+        return back();
     }
 
     # 用户所有权限（角色权限，专属权限）
@@ -116,6 +117,37 @@ class UserController extends Controller
 
         $user->detachPermission($perm);
 
+        return back();
+    }
+
+    public function lawyers()
+    {
+        $users = User::where('role','lawyer')->get();
+        return view('user.lawyer.index',compact('users'));
+
+    }
+
+    public function approvedLawyers()
+    {
+        $users = User::where('role','lawyer')
+            ->where('active',true)
+            ->get();
+        return view('user.lawyer.approved',compact('users'));
+    }
+
+    public function unapprovedLawyers()
+    {
+        $users = User::where('role','lawyer')
+            ->where('active',false)
+            ->get();        
+        return view('user.lawyer.unapproved',compact('users'));
+    }
+
+    public function approve($id)
+    {
+        $user = User::findOrFail($id);
+        $user->update(['active'=>true]);
+        $user->start();
         return back();
     }
 }

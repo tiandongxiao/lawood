@@ -181,6 +181,7 @@ Route::group(['prefix' => 'site'], function(){
     Route::resource('permission', 'PermissionController');
 
     Route::get('user','UserController@index');                                               # 所有用户
+    Route::get('user/delete/{id}','UserController@destroy');                                 # 删除用户
 
     Route::get('perms/{user_id}','UserController@permissions');                              # 用户权限信息
     Route::get('perms/attach/{user_id}/{perm_id}','UserController@attachPermission');        # 授予用户权限
@@ -192,6 +193,11 @@ Route::group(['prefix' => 'site'], function(){
 
     Route::get('logs', 'SiteController@logs');
     Route::get('settings','SiteController@settings');
+
+    Route::get('lawyers','UserController@lawyers');                                     # 所有律师
+    Route::get('lawyers/unapproved','UserController@unapprovedLawyers');                # 未通过审核的律师
+    Route::get('lawyers/approved','UserController@approvedLawyers');                    # 通过审核的律师
+    Route::get('approve/{id}','UserController@approve');
 });
 
 Route::resource('category','CategoryController');
@@ -272,3 +278,4 @@ Route::group(['prefix' => 'ajax'], function(){
 
     #
 });
+Route::resource('price','PriceController');
