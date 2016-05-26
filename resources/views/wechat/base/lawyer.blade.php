@@ -51,7 +51,7 @@
 <section class="cblm-main po-f" >
     <div class="main">
         <a class="itms itms-tx bor-bot">
-            <div class="f-left"><img src="/images/tx.png" width="60" height="60" ></div>
+            <div class="f-left"><img src="{{Auth::user()->avatar}}" width="60" height="60" ></div>
             <div class="right">{{Auth::user()->real_name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span></div>
         </a>
         <a class="itms" href="{{url('wechat/lawyer')}}">
