@@ -123,10 +123,8 @@ class LawyerController extends Controller
                 return redirect('wechat/lawyer/setting');
 
             case 'price':
-                $range = $request->all();
-                //dd($range);
-
-                foreach ($range as $key=>$value){
+                $prices = $request->all();
+                foreach ($prices as $key=>$value){
                     if(is_int($key))
                         $this->user->updatePrice($key,$value);
                 }
