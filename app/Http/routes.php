@@ -266,7 +266,9 @@ Route::group(['prefix' => 'wechat'], function(){
 });
 
 Route::group(['prefix' => 'ajax'], function(){
-    # begin 注册绑定
-    Route::get('start','AjaxController@start');
-    Route::get('stop','AjaxController@stop');
+    # 律师启动关闭自己服务的操作
+    Route::post('start','AjaxController@start');
+    Route::post('stop','AjaxController@stop');
+
+    #
 });

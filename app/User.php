@@ -299,7 +299,7 @@ class User extends Model implements AuthenticatableContract,
         foreach($this->locations as $location){
             foreach($this->categories as $category){
                 if(!$this->isConsultExist($category->id,$location->id)){
-                    $consult = Item::create([
+                    Item::create([
                         'user_id'           => $this->id,
                         'price' 			=> random_int(10,1000),
                         'sku'				=> uniqid('ITEM_',true),
@@ -307,7 +307,6 @@ class User extends Model implements AuthenticatableContract,
                         'category_id'       => $category->id,
                         'location_id'       => $location->id
                     ]);
-                    $consult->buildPOI();
                 }
             }
         }
@@ -332,10 +331,12 @@ class User extends Model implements AuthenticatableContract,
     }
 
     # 开启服务
-    public function start(Request $request)
+    public function start()
     {
 //        if(!$this->active || !$this->consults)
 //            return false;
+        if(!$this->consults)
+            return false;
 
         # 设置启动标志位
         $this->update(['enable'=>true]);
@@ -351,11 +352,12 @@ class User extends Model implements AuthenticatableContract,
     }
 
     # 关闭服务
-    public function stop(Request $request)
+    public function stop()
     {
 //        if(!$this->active || !$this->consults)
 //            return false;
-
+        if(!$this->consults)
+            return false;
         # 设置启动标志位
         $this->update(['enable'=>false]);
 

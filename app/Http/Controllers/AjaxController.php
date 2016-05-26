@@ -15,7 +15,9 @@ class AjaxController extends Controller
         if($request->ajax()){
             $user = User::findOrFail($request->get('user'));
             $result = $user->start();
-            return $result;
+            if($result)
+                return 'Y';
+            return 'X';
         }
     }
 
@@ -24,7 +26,9 @@ class AjaxController extends Controller
         if($request->ajax()){
             $user = User::findOrFail($request->get('user'));
             $result = $user->stop();
-            return $result;
+            if($result)
+                return 'Y';
+            return 'X';
         }
     }
 }

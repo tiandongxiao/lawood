@@ -79,6 +79,7 @@
             <div class="right">停用</div>
             <div class="ts">停用后律屋将停止</br>对您推荐</div>
             <input type="hidden" name="uri" value="{{url('/')}}">
+            <input type="hidden" name="user" value="{{Auth::user()->id}}">
             {!! csrf_field() !!}
             @if(Auth::user()->enable))
             <input type="checkbox" class="In-check" id="In-service" checked>
@@ -156,8 +157,9 @@
             if ($('#In-service').is(':checked')){
                 $.ajax({
                     type: 'POST',
-                    url: address + '/wechat/lawyer/start',
+                    url: address + '/ajax/start',
                     data: {
+                        'user':$('input[name=user]').val(),
                         '_token':$('input[name=_token]').val(),
                     },
                     success: function (data) {
@@ -167,8 +169,9 @@
             }else{
                 $.ajax({
                     type: 'POST',
-                    url: address + '/wechat/lawyer/stop',
+                    url: address + '/ajax/stop',
                     data: {
+                        'user':$('input[name=user]').val(),
                         '_token':$('input[name=_token]').val(),
                     },
                     success: function (data) {
