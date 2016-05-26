@@ -155,7 +155,8 @@
         $("#In-service").change(function() {
             if ($('#In-service').is(':checked')){
                 $.ajax({
-                    url: address + '/wechat/lawyer/on',
+                    type: 'POST',
+                    url: address + '/wechat/lawyer/start',
                     data: {
                         '_token':$('input[name=_token]').val(),
                     },
@@ -165,7 +166,8 @@
                 })
             }else{
                 $.ajax({
-                    url: address + '/wechat/lawyer/off',
+                    type: 'POST',
+                    url: address + '/wechat/lawyer/stop',
                     data: {
                         '_token':$('input[name=_token]').val(),
                     },

@@ -260,7 +260,13 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('lawyer/search','WeChat\LawyerController@search');
     Route::post('lawyer/search','WeChat\LawyerController@postSearch');
     Route::get('lawyer/me','WeChat\LawyerController@me');
-    Route::get('lawyer/on','WeChat\LawyerController@on');
-    Route::get('lawyer/off','WeChat\LawyerController@off');
+    Route::post('lawyer/start','WeChat\LawyerController@start');
+    Route::post('lawyer/stop','WeChat\LawyerController@stop');
     # end 律师
+});
+
+Route::group(['prefix' => 'ajax'], function(){
+    # begin 注册绑定
+    Route::get('start','AjaxController@start');
+    Route::get('stop','AjaxController@stop');
 });
