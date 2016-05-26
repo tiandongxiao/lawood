@@ -36,8 +36,7 @@ class CheckController extends Controller
     }
 
     public function code(Request $request)
-    {
-        return 'Y';
+    {        
         if($request->ajax()){
             $type =  $request->get('type');
             $phone = $request->get('phone');
