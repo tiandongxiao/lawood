@@ -38,7 +38,8 @@ class Item extends ShopItemModel implements Ratingable
     public function delete()
     {
         #删除地图与本地POI信息
-        $this->poi->delete();
+        if($this->poi)
+            $this->poi->delete();
         parent::delete();
     }
 
