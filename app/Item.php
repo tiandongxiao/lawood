@@ -7,6 +7,7 @@ use App\Traits\GaodeMapTrait;
 use Conner\Likeable\LikeableTrait;
 use Ghanem\Rating\Contracts\Ratingable;
 use Ghanem\Rating\Traits\Ratingable as RatingTrait;
+use Symfony\Component\Yaml\Tests\A;
 
 class Item extends ShopItemModel implements Ratingable
 {
@@ -32,6 +33,11 @@ class Item extends ShopItemModel implements Ratingable
     public function poi()
     {
         return $this->hasOne(Pois::class);
+    }
+
+    public function update(array $attributes)
+    {
+        parent::update($attributes);        
     }
 
     public function delete()
@@ -73,5 +79,13 @@ class Item extends ShopItemModel implements Ratingable
         if($this->poi){
             $this->poi->delete();
         }
+    }
+
+    public function updatePOI()
+    {
+        $data = [
+            
+        ];
+        $this->poi->updateInfo($data);
     }
 }

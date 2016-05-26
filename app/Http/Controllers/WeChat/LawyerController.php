@@ -99,27 +99,39 @@ class LawyerController extends Controller
                     'phone' => $phone
                 ]);
                 return redirect('wechat/lawyer/setting');
+
             case 'office':
                 $office = trim($request->get('office'));
                 $this->user->office = $office;
                 return redirect('wechat/lawyer/setting');
+
             case 'work':
                 $work = trim($request->get('work'));
                 $this->user->work = $work;
                 return redirect('wechat/lawyer/setting');
+
             case 'home':
                 $home = trim($request->get('home'));
                 $this->user->home = $home;
                 return redirect('wechat/lawyer/setting');
+
             case 'major':                
                 $range = $request->get('range');
                 if(!is_null($range)){
                     $this->user->updateCategories($range);
                 }
                 return redirect('wechat/lawyer/setting');
+
             case 'price':
-                dd($request->all());
+                $range = $request->all();
+                //dd($range);
+
+                foreach ($range as $key=>$value){
+                    if(is_int($key))
+                        $this->user->updatePrice($key,$value);
+                }
                 return redirect('wechat/lawyer/setting');
+
         }
     }
 

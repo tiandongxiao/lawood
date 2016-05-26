@@ -52,7 +52,7 @@
     <div class="main">
         <a class="itms itms-tx bor-bot">
             <div class="f-left"><img src="/images/tx.png" width="60" height="60" ></div>
-            <div class="right">登录/注册</div>
+            <div class="right">{{Auth::user()->real_name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span></div>
         </a>
         <a class="itms" href="{{url('wechat/lawyer')}}">
             <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
@@ -81,7 +81,7 @@
             <input type="hidden" name="uri" value="{{url('/')}}">
             <input type="hidden" name="user" value="{{Auth::user()->id}}">
             {!! csrf_field() !!}
-            @if(Auth::user()->enable))
+            @if(Auth::user()->enable)
             <input type="checkbox" class="In-check" id="In-service" checked>
             @else
             <input type="checkbox" class="In-check" id="In-service">

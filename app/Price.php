@@ -56,7 +56,7 @@ class Price extends Model {
 
     public function getCategoryAttribute()
     {
-        return Category::findOrFail($this->category_id);        
+        return Category::findOrFail($this->category_id);
     }
 
 }

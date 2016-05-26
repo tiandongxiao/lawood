@@ -350,6 +350,15 @@ class User extends Model implements AuthenticatableContract,
         return false;
     }
 
+    public function getPrice($cate_id)
+    {
+        foreach ($this->prices as $price){
+            if($price->category_id == $cate_id)
+                return $price;
+        }
+        return null;
+    }
+
     # 构建类别的价格策略
     public function buildPrice($cate_id)
     {
@@ -359,6 +368,24 @@ class User extends Model implements AuthenticatableContract,
                 'price'       => 500
             ]);
             $this->prices()->save($price);
+        }
+    }
+
+
+    public function updatePrice($cate_id,$value)
+    {
+        $price = $this->getPrice($cate_id);
+        if($price){
+            foreach ($this->consults as $consult){
+                if($consult->category->id == $cate_id && $consult->price != (int)$value){
+                    $consult->update([
+                        'price' => $value
+                    ]);
+                    $price->update([
+                        'price'=>$value
+                    ]);
+                }
+            }
         }
     }
 
@@ -409,5 +436,19 @@ class User extends Model implements AuthenticatableContract,
         }
 
         return true;
+    }
+
+    public function getStatusAttribute()
+    {
+        if($this->role == "lawyer"&& $this->active)
+            return "认证律师";
+        switch ($this->role){
+            case "lawyer":
+                if($this->active)
+                    return "认证律师";
+                return "审核中";
+            case "client":
+                return "用户";
+        }
     }
 }
