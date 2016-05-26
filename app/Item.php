@@ -35,11 +35,6 @@ class Item extends ShopItemModel implements Ratingable
         return $this->hasOne(Pois::class);
     }
 
-    public function update(array $attributes)
-    {
-        parent::update($attributes);        
-    }
-
     public function delete()
     {
         #删除地图与本地POI信息
@@ -84,7 +79,7 @@ class Item extends ShopItemModel implements Ratingable
     public function updatePOI()
     {
         $data = [
-            
+
         ];
         $this->poi->updateInfo($data);
     }
