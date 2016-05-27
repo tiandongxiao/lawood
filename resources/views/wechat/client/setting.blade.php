@@ -11,6 +11,7 @@
             </div>
             <a class="itms itms-link" href="{{url('wechat/client/config/phone')}}">
                 <div class="f-left">手机号码</div>
+                <div class="f-right">{{Auth::user()->phone}}</div>
             </a>
         </div>
         <div class="bottom-btn">
