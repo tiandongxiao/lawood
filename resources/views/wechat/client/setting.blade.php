@@ -26,9 +26,9 @@
 @section('script')
     <script>
         $(function () {
-            $('#In-btn').tap(function(){
-                window.location.href="wechat/client/setting"
-            })
+            $('#In-btn').click(function () {
+                window.location.href="/wechat/client/setting";
+            });
         })
     </script>
 @stop
