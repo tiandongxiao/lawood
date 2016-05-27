@@ -98,6 +98,9 @@ class User extends Model implements AuthenticatableContract,
             $consult->deletePOI();
         }
 
+        $this->prices()->delete();
+        $this->notifications()->delete();
+
         $this->locations()->delete();
         $this->comments()->delete();
         $this->timing()->delete();
