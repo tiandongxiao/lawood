@@ -7,7 +7,7 @@
         <div class="form-list bg-fff-box">
             <div class="itms">
                 <div class="f-left">真实姓名</div>
-                <div class="f-right">王树德</div>
+                <div class="f-right">{{Auth::user()->real_name}}</div>
             </div>
             <a class="itms itms-link" href="{{url('wechat/client/config/phone')}}">
                 <div class="f-left">手机号码</div>
