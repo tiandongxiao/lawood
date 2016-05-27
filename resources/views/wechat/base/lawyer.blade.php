@@ -76,8 +76,16 @@
         </a>
         <div class="itms bor-bot">
             <div class="f-left"><img src="/images/nav6.png" width="20" height="20"></div>
-            <div class="right">停用</div>
-            <div class="ts">停用后律屋将停止</br>对您推荐</div>
+            @if(Auth::user()->active)
+                @if(Auth::user()->enable)
+                    <div class="right">停用</div>
+                    <div class="ts">停用后律屋将停止</br>对您推荐</div>
+                @else
+                    <div class="right">开启</div>
+                    <div class="ts">开启后咨询用户才</br>可找到您</div>
+                @endif
+            @endif
+
             <input type="hidden" name="uri" value="{{url('/')}}">
             <input type="hidden" name="user" value="{{Auth::user()->id}}">
             {!! csrf_field() !!}

@@ -66,6 +66,10 @@
             <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
             <div class="right">我的订单</div>
         </a>
+        <a class="itms bor-bot" href="{{url('wechat/client/orders')}}">
+            <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
+            <div class="right">我的收藏</div>
+        </a>
         <a class="itms bor-bot" href="{{url('wechat/client/setting')}}">
             <div class="f-left">
                 <img src="/images/nav7.png" width="20" height="20">

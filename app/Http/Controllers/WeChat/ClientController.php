@@ -95,6 +95,5 @@ class ClientController extends Controller
             return view('wechat.client.lawyer',compact('$lawyer'));
 
         return back();
-
     }
 }
