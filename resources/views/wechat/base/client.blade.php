@@ -52,7 +52,7 @@
     <div class="main">
         <div class="itms itms-tx bor-bot">
             <div class="f-left"><img src="/images/tx.png" width="60" height="60" ></div>
-            <div class="right">登录/注册</div>
+            <div class="right">{{Auth::user()->real_name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span></div>
         </div>
         <a class="itms" href="{{url('wechat/client')}}">
             <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
