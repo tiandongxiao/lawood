@@ -14,11 +14,12 @@
             <div class="hot bg-fff-box fc-909090">
                 <div class="tie">热门律所</div>
                 <div class="con  clearfix" id="btn-name">
-                    <div class="itms chaochu_1">北京京师律师事务所1</div>
-                    <div class="itms chaochu_1 on">北京京师律师事务所2</div>
+                    <div class="itms chaochu_1 on">北京京师律师事务所1</div>
+                    <div class="itms chaochu_1">北京京师律师事务所2</div>
                     <div class="itms chaochu_1">北京京师律师事务所3</div>
                     <div class="itms chaochu_1">北京京师律师事务所4</div>
                     <div class="itms chaochu_1">北京京师律师事务所5</div>
+                    <div class="itms chaochu_1">北京京师律师事务所6</div>
                 </div>
             </div>
 
