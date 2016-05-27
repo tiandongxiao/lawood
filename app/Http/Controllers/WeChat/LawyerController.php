@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tiandongxiao
- * Date: 15/05/2016
- * Time: 14:22
- */
-
 namespace App\Http\Controllers\WeChat;
 
 use App\Http\Controllers\Controller;
@@ -26,31 +19,38 @@ class LawyerController extends Controller
         $this->user = Auth::user();
     }
 
+    # 律屋主页
     public function index()
     {
         return view('wechat.lawyer.index');
     }
 
+    # 律师个人主页
     public function show($id)
     {
         return view('wechat.lawyer.show',compact('user'));
     }
 
+    # 律师通告消息
     public function notifies()
     {
-        return view('wechat.lawyer.notifies');
+        $notifies = $this->user->notifications;
+        return view('wechat.lawyer.notifies',compact('notifies'));
     }
 
+    # 律师订单中心
     public function orders()
     {
         return view('wechat.lawyer.orders');
     }
 
+    # 律师钱包管理中心
     public function wallet()
     {
         return view('wechat.lawyer.wallet');
     }
 
+    # 律师提现
     public function draw()
     {
         return view('wechat.lawyer.draw');
@@ -61,16 +61,19 @@ class LawyerController extends Controller
 
     }
 
+    # 订单签到
     public function signOrder()
     {
         return view('wechat.lawyer.sign');
     }
 
+    # 设置主界面
     public function setting()
     {
         return view('wechat.lawyer.setting');
     }
 
+    # 具体设置项的界面
     public function config($key)
     {        
         switch ($key){
@@ -91,8 +94,13 @@ class LawyerController extends Controller
         }
     }
 
+    # 处理设置的逻辑
     public function postConfig(Request $request)
     {
+        \Notify::send($this->user,[
+            'type'   => 'setting',
+            'config' => $request->get('key')
+        ]);
         switch ($request->get('key')){
             case 'phone':
                 $phone = trim($request->get('phone'));
@@ -134,12 +142,14 @@ class LawyerController extends Controller
         }
     }
 
+    # 个人主页
     public function me()
     {
         $user = $this->user;
         return view('wechat.lawyer.me',compact('user'));
     }
 
+    # 搜索页面
     public function search()
     {
         return view('wechat.lawyer.search');

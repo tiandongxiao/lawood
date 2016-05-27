@@ -22,15 +22,14 @@ class Notify
     # 发送站内消息
     public function send($user,$data)
     {
-        $this->sendWeChatNotice($user,$data);     # 发送微信模板消息
         $this->sendNotification($user,$data);     # 发送站内通知消息
-        $this->sendMessage($user,$data);          # 发送短信通知
+        //$this->sendWeChatNotice($user,$data);     # 发送微信模板消息
+        //$this->sendMessage($user,$data);          # 发送短信通知
     }
 
     # 构建站内消息
     public function sendNotification($user,$data)
     {
-        Log::info('我是站内消息');
         $info = collect();
 
         switch ($data['type']){
@@ -41,7 +40,15 @@ class Notify
                 $info->url = url('lawyer/order/accept/'.$data['order_id']);
                 break;
 
-            case 'place':
+            # 预约咨询通知
+            case 'place.client':
+                $info->title   = '预约通知';
+                $info->content = '尊敬的咨询用户，预约律师将在12小时内拨打您电话确定此次法律咨询的具体事宜';
+                $info->url = url('order/'.$data['order_id']);
+                break;
+
+            # 预约咨询通知
+            case 'place.lawyer':
                 $info->title   = '预约通知';
                 $info->content = '尊敬的咨询用户，预约律师将在12小时内拨打您电话确定此次法律咨询的具体事宜';
                 $info->url = url('order/'.$data['order_id']);
@@ -63,8 +70,8 @@ class Notify
 
             # 退款通知
             case 'refund':
-                $info->title = '取消预约';
-                $info->content = '您刚刚取消了一个预约咨询，欢迎您再次使用我们的服务';
+                $info->title = '退款通知';
+                $info->content = '您的订单退款完成,订单号:'.$data['order_id'];
                 $info->url = url('order/'.$data['order_id']);
                 break;
 
@@ -78,7 +85,7 @@ class Notify
             # 律师拒单通知
             case 'reject':
                 $info->title = '取消预约';
-                $info->content = '您刚刚取消了一个预约咨询，欢迎您再次使用我们的服务';
+                $info->content = '抱歉通知您，律师因档期原因取消您的预约预约，欢迎您咨询其他律师';
                 $info->url = url('order/'.$data['order_id']);
                 break;
 

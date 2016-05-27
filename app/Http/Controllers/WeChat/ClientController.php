@@ -35,7 +35,8 @@ class ClientController extends Controller
 
     public function notifies()
     {
-        return view('wechat.client.notifies');
+        $notifies = $this->user->notifications;
+        return view('wechat.client.notifies',compact('notifies'));
     }
 
     public function orders()

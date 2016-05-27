@@ -267,6 +267,10 @@ Route::group(['prefix' => 'ajax'], function(){
     Route::post('phone','AjaxController@phone');
     Route::post('sms','AjaxController@sms'); 
     Route::post('code','AjaxController@code');
+
+    # Notification 读取状态设置
+    Route::post('notify/read','AjaxController@setNotifyRead');
+    Route::post('notify/unread','AjaxController@setNotifyUnread');
 });
 
 Route::resource('price','PriceController');

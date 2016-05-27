@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notification;
 use App\Self\Notify\NotifyFacade;
 use App\User;
 use Illuminate\Http\Request;
@@ -94,6 +95,7 @@ class AjaxController extends Controller
 
     public function code(Request $request)
     {
+        return 'Y';
         if($request->ajax()){
             $type =  $request->get('type');
             $phone = $request->get('phone');
@@ -110,6 +112,33 @@ class AjaxController extends Controller
 
             Cache::forget($key);
             return 'Y';
+        }
+    }
+
+    public function setNotifyRead(Request $request)
+    {
+        if($request->ajax()){
+            $notify = Notification::findOrFail($request->get('notify'));
+            $notify->update([
+                'read' => true
+            ]);
+
+            if($notify->read)
+                return 'Y';
+            return 'X';
+        }
+    }
+
+    public function setNotifyUnread(Request $request)
+    {
+        if($request->ajax()){
+            $notify = Notification::findOrFail($request->get('id'));
+            $notify->update([
+                'read' => false
+            ]);
+            if($notify->read == false)
+                return 'Y';
+            return 'X';
         }
     }
 }
