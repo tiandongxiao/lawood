@@ -5,10 +5,9 @@ use App\Notification;
 use Illuminate\Support\Facades\Log;
 
 /**
- * Created by PhpStorm.
- * User: tiandongxiao
- * Date: 30/04/2016
- * Time: 14:12
+ * 描述 : 系统的消息发送中心（站内消息，微信模板消息，手机短信，手机音频）
+ * 作者 : 王国营
+ * 日期 : 30/04/2016
  */
 class Notify
 {

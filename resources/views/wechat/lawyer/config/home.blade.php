@@ -29,26 +29,6 @@
                         <h3 class="chaochu_1">北京京师律师事务所</h3>
                         <p class="chaochu_1">雍和宫大街于安定门东大街交叉口</p>
                     </div>
-                    <div class="itms" data-sx="北京京师律师事务所5">
-                        <h3 class="chaochu_1">北京京师律师事务所</h3>
-                        <p class="chaochu_1">雍和宫大街于安定门东大街交叉口</p>
-                    </div>
-                    <div class="itms" data-sx="北京京师律师事务所6">
-                        <h3 class="chaochu_1">北京京师律师事务所</h3>
-                        <p class="chaochu_1">雍和宫大街于安定门东大街交叉口</p>
-                    </div>
-                    <div class="itms" data-sx="北京京师律师事务所7">
-                        <h3 class="chaochu_1">北京京师律师事务所</h3>
-                        <p class="chaochu_1">雍和宫大街于安定门东大街交叉口</p>
-                    </div>
-                    <div class="itms" data-sx="北京京师律师事务所8">
-                        <h3 class="chaochu_1">北京京师律师事务所</h3>
-                        <p class="chaochu_1">雍和宫大街于安定门东大街交叉口</p>
-                    </div>
-                    <div class="itms" data-sx="北京京师律师事务所9">
-                        <h3 class="chaochu_1">北京京师律师事务所</h3>
-                        <p class="chaochu_1">雍和宫大街于安定门东大街交叉口</p>
-                    </div>
                 </div>
             </div>
             <div class="bottom-btn">

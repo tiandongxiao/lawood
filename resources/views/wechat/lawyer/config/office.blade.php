@@ -19,9 +19,6 @@
                     <div class="itms chaochu_1">北京京师律师事务所3</div>
                     <div class="itms chaochu_1">北京京师律师事务所4</div>
                     <div class="itms chaochu_1">北京京师律师事务所5</div>
-                    <div class="itms chaochu_1">北京京师律师事务所6</div>
-                    <div class="itms chaochu_1">北京京师律师事务所7</div>
-                    <div class="itms chaochu_1">北京京师律师事务所8</div>
                 </div>
             </div>
 
