@@ -27,7 +27,7 @@
     <script>
         $(function () {
             $('#In-btn').click(function () {
-                window.location.href="/wechat/client/setting";
+                window.location.href="/wechat/client";
             });
         })
     </script>
