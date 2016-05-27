@@ -83,7 +83,7 @@
                     function checkPhone(){
                         $.ajax({
                             type: 'POST',
-                            url: address+'/check/phone',
+                            url: address+'/ajax/phone',
                             data: {
                                 'phone' : $('input[name=phone]').val(),
                                 '_token':$('input[name=_token]').val(),
@@ -124,7 +124,7 @@
                     var address = $('input[name=uri]').val();
                     $.ajax({
                         type: 'POST',
-                        url: address+'/check/code',
+                        url: address+'/ajax/code',
                         data: {
                             'type': 'reg',
                             'code':$('input[name=code]').val(),
@@ -172,11 +172,12 @@
                     var address = $('input[name=uri]').val();
                     function sendMsg(){
                         $.ajax({
-                            url: address+'/communicate/phone_code',
+                            type: 'POST',
+                            url: address+'/ajax/sms',
                             data: {
                                 'phone':$('input[name=phone]').val(),
                                 '_token':$('input[name=_token]').val(),
-                                'todo': 'reg'
+                                'do': 'reg'
                             },
                             success: function(data){
                                 Time = 60;

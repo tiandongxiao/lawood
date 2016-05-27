@@ -78,30 +78,27 @@
 						return false;
 					}
 					var address = $('input[name=uri]').val();
-					function checkPhone(){
-						$.ajax({
-							type: 'POST',
-							url: address+'/check/phone',
-							data: {
-								'phone':$('input[name=phone]').val(),
-								'_token':$('input[name=_token]').val(),
-							},
-							success: function(data){
-								if(data == 'Y'){
-									$('#mobile').parents('.itms').addClass('itms-ok')
-									if(!$('#btn-yzm').parents('.itms').hasClass('itms-ok'))
-										$('#btn-yzm').show()
-									return true;
-								}
-								form = false;
-								$('#In-btn').removeClass('bg-lan1')
-								if(!$('#mobile').parents('.itms').hasClass('itms-ok'))
-									alert('此号码已被注册');
-								return false;
+					$.ajax({
+						type: 'POST',
+						url: address+'/ajax/phone',
+						data: {
+							'phone':$('input[name=phone]').val(),
+							'_token':$('input[name=_token]').val()
+						},
+						success: function(data){
+							if(data == 'Y'){
+								$('#mobile').parents('.itms').addClass('itms-ok')
+								if(!$('#btn-yzm').parents('.itms').hasClass('itms-ok'))
+									$('#btn-yzm').show()
+								return true;
 							}
-						});
-					}
-					checkPhone();
+							form = false;
+							$('#In-btn').removeClass('bg-lan1')
+							if(!$('#mobile').parents('.itms').hasClass('itms-ok'))
+								alert('此号码已被注册');
+							return false;
+						}
+					});
 				}
 
 				//判断验证码
@@ -122,7 +119,7 @@
 					var address = $('input[name=uri]').val();
 					$.ajax({
 						type: 'POST',
-						url: address+'/check/code',
+						url: address+'/ajax/code',
 						data: {
 							'type': 'reg',
 							'code':$('input[name=code]').val(),
@@ -170,11 +167,12 @@
 					var address = $('input[name=uri]').val();
 					function sendMsg(){
 						$.ajax({
-							url: address+'/communicate/phone_code',
+							type: 'POST',
+							url: address+'/ajax/sms',
 							data: {
 								'phone':$('input[name=phone]').val(),
 								'_token':$('input[name=_token]').val(),
-								'todo': 'reg'
+								'do' : 'reg'
 							},
 							success: function(data){
 								Time = 60;

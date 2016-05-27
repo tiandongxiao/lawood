@@ -6,7 +6,6 @@
     <section class="zc-main">
         <form id="form" action="{{url('wechat/client/config')}}" method="post">
             {!! csrf_field() !!}
-            <input type="hidden" name="todo" value="reset">
             <input type="hidden" name="key" value="phone">
             <input type="hidden" name="uri" value="{{url('/')}}">
             <div class="form">
@@ -58,7 +57,7 @@
                     function checkPhone(){
                         $.ajax({
                             type: 'POST',
-                            url: address+'/check/phone',
+                            url: address+'/ajax/phone',
                             data: {
                                 'phone':$('input[name=phone]').val(),
                                 '_token':$('input[name=_token]').val(),
@@ -99,7 +98,7 @@
                     var address = $('input[name=uri]').val();
                     $.ajax({
                         type: 'POST',
-                        url: address+'/check/code',
+                        url: address+'/ajax/code',
                         data: {
                             'type':'reset',
                             'code':$('input[name=code]').val(),
@@ -147,11 +146,12 @@
                     var address = $('input[name=uri]').val();
                     function sendMsg(){
                         $.ajax({
-                            url: address+'/communicate/phone_code',
+                            type: 'POST',
+                            url: address+'/ajax/sms',
                             data: {
                                 'phone':$('input[name=phone]').val(),
                                 '_token':$('input[name=_token]').val(),
-                                'todo': $('input[name=todo]').val()
+                                'do' : 'reset'
                             },
                             success: function(data){
                                 Time = 60;

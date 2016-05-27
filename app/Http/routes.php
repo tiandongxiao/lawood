@@ -83,17 +83,6 @@ Route::group(['prefix' => 'tool'], function(){
     Route::get('cpt','ToolsController@getCaptcha');
 });
 
-Route::group(['prefix' => 'communicate'], function(){
-    Route::post('phone_check','CommunicationController@checkPhone');
-    Route::get('phone_code','CommunicationController@sendPhoneCode');
-    Route::post('message','CommunicationController@sendMessageByRequest');
-});
-
-Route::group(['prefix' => 'check'], function(){
-    Route::post('phone','CheckController@phone');
-    Route::post('code','CheckController@code');
-});
-
 Route::group(['prefix' => 'lawyer'], function(){
     Route::get('','User\LawyerController@board');
     Route::get('show/{id}','User\LawyerController@show');
@@ -148,9 +137,7 @@ Route::group(['prefix' => 'wxpay'], function(){
     Route::post('callback', 'WeChat\WxPayController@callback');    # 微信支付回调处理逻辑
     Route::get('native/{id}', 'WeChat\WxPayController@nativePay'); # 微信扫码支付
 
-    Route::get('js/{id}', 'WeChat\WxPayController@JSPay')
-        ->middleware(['wechat.oauth']);     # 微信浏览器内部支付方式
-
+    Route::get('js/{id}', 'WeChat\WxPayController@JSPay')->middleware(['wechat.oauth']);  # 微信浏览器内部支付方式
     Route::get('refund/{id}','WeChat\WxPayController@refundByOrderNo'); # 微信退款
 });
 
@@ -276,6 +263,10 @@ Route::group(['prefix' => 'ajax'], function(){
     Route::post('start','AjaxController@start');
     Route::post('stop','AjaxController@stop');
 
-    #
+    # 验证性的 ajax 操作
+    Route::post('phone','AjaxController@phone');
+    Route::post('sms','AjaxController@sms'); 
+    Route::post('code','AjaxController@code');
 });
+
 Route::resource('price','PriceController');

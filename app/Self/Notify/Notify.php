@@ -23,8 +23,9 @@ class Notify
     # 发送站内消息
     public function send($user,$data)
     {
-        //$this->sendNotice($user,$data);         # 发送微信模板消息
-        $this->sendNotification($user,$data);   # 发送站内通知消息
+        $this->sendWeChatNotice($user,$data);     # 发送微信模板消息
+        $this->sendNotification($user,$data);     # 发送站内通知消息
+        $this->sendMessage($user,$data);          # 发送短信通知
     }
 
     # 构建站内消息
@@ -41,7 +42,7 @@ class Notify
                 $info->url = url('lawyer/order/accept/'.$data['order_id']);
                 break;
 
-            case 'query':
+            case 'place':
                 $info->title   = '预约通知';
                 $info->content = '尊敬的咨询用户，预约律师将在12小时内拨打您电话确定此次法律咨询的具体事宜';
                 $info->url = url('order/'.$data['order_id']);
@@ -95,6 +96,13 @@ class Notify
                 $info->content = '律师下单测试链接';
                 $info->url = url('order/place/'.$data['item_id']);
                 break;
+
+            # 设置相关通知
+            case 'setting':
+                $info->title = '设置';
+                $info->content = '尊敬的用户，您刚刚修改了'.$data['config'];
+                $info->url = null;
+                break;
         }
 
         Notification::create([
@@ -108,7 +116,7 @@ class Notify
 
 
     # 发送微信模板消息
-    public function sendNotice($user,$data)
+    public function sendWeChatNotice($user,$data)
     {
         //$message = $this->buildNotice($user,$data);
         Log::info('我是微信模板消息');
@@ -150,5 +158,82 @@ class Notify
         }
 
         return $notice;
+    }
+
+    /**
+     * 发送模板短信
+     *
+     * @param $phone
+     * @param $content
+     * @return bool
+     */
+    public function sendSMS($phone, $data)
+    {
+        $result = \PhpSms::make()->to($phone)->template('YunTongXun', $data['tpl'])->data($data['content'])->send();
+
+        if($result['success'])
+            return true;
+
+        return false;
+    }
+
+    /**
+     * 发送语音消息
+     *
+     * @param $phone
+     * @param $content
+     * @return bool
+     */
+    public function sendVoice($phone, $data)
+    {
+        $result = \PhpSms::voice($data['content'])->to($phone)->send();
+
+        if($result['success'])
+            return true;
+
+        return false;
+    }
+
+    /**
+     * 发送通知短信
+     *
+     * @param $phone
+     * @param $content
+     * @return bool
+     */
+    public function sendNotifySMS($phone, $data)
+    {
+        //只希望使用内容方式发送,如云片,luosimao
+        $result = \PhpSms::make()->to($phone)->content($data['content'])->send();
+
+        if($result['success'])
+            return true;
+
+        return false;
+    }
+
+    /**
+     * 发送消息总接口
+     *
+     * @param $info
+     * @return bool
+     */
+    public function sendMessage($phone,$data)
+    {
+        \PhpSms::queue(false);
+
+        switch($data['method']){
+            case 'sms':
+                return $this->sendSMS($phone,$data);
+
+            case 'voice':
+                return $this->sendVoice($phone,$data);
+
+            case 'notify':
+                return $this->sendNotifySMS($phone,$data);
+
+            default:
+                break;
+        }
     }
 }
