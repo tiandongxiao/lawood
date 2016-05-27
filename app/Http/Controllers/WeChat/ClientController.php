@@ -67,7 +67,14 @@ class ClientController extends Controller
     {
         switch ($request->get('key')){
             case 'phone':
-                dd('phone');
+                $phone = trim($request->get('phone'));
+                $this->user->update([
+                    'phone' => $phone
+                ]);
+                return redirect('wechat/client/setting');
+            default:
+                return redirect('wechat/client/setting');
+
         }
     }
 
