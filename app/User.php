@@ -451,7 +451,7 @@ class User extends Model implements AuthenticatableContract,
                     return "认证律师";
                 return "审核中";
             case "client":
-                return "用户";
+                return "咨询用户";
         }
     }
 }
