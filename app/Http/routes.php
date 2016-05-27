@@ -269,8 +269,8 @@ Route::group(['prefix' => 'ajax'], function(){
     Route::post('code','AjaxController@code');
 
     # Notification 读取状态设置
-    Route::post('notify/read','AjaxController@setNotifyRead');
-    Route::post('notify/unread','AjaxController@setNotifyUnread');
+    Route::post('notify/read','AjaxController@notifyRead');
+    Route::post('notify/unread','AjaxController@notifyUnread');
 });
 
 Route::resource('price','PriceController');

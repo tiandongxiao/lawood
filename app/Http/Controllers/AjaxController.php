@@ -115,7 +115,7 @@ class AjaxController extends Controller
         }
     }
 
-    public function setNotifyRead(Request $request)
+    public function notifyRead(Request $request)
     {
         if($request->ajax()){
             $notify = Notification::findOrFail($request->get('notify'));
@@ -129,7 +129,7 @@ class AjaxController extends Controller
         }
     }
 
-    public function setNotifyUnread(Request $request)
+    public function notifyUnread(Request $request)
     {
         if($request->ajax()){
             $notify = Notification::findOrFail($request->get('id'));

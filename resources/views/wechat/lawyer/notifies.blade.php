@@ -59,6 +59,7 @@
                         }
                     });
                 }
+
                 if(option == 'unread'){
                     $.ajax({
                         type: 'POST',
