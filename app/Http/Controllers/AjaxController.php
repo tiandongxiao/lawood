@@ -113,34 +113,4 @@ class AjaxController extends Controller
             return 'Y';
         }
     }
-
-
-    # * ------------------ 验证性的 ajax 请求 ------------------ * #
-    #    
-    public function read(Request $request)
-    {
-        if($request->ajax()){
-            $notify = Notification::findOrFail($request->get('notify'));
-            $notify->update([
-                'read' => true
-            ]);
-
-            if($notify->read)
-                return 'Y';
-            return 'X';
-        }
-    }
-
-    public function unread(Request $request)
-    {
-        if($request->ajax()){         
-            $notify = Notification::findOrFail($request->get('notify'));
-            $notify->update([
-                'read' => false
-            ]);
-            if($notify->read == false)
-                return 'Y';
-            return 'X';
-        }
-    }
 }

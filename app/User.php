@@ -237,11 +237,11 @@ class User extends Model implements AuthenticatableContract,
     {
         if($this->hasCategory($id)){
             # 当律师删除一个业务门类时，将相关的业务咨询服务都删除
-            $items = $this->items;
-            if(!is_null($items)) {
-                foreach ($items as $item) {
-                    if ($item->category_id == $id)
-                        $item->delete();
+            $consults = $this->consults;
+            if(!is_null($consults)) {
+                foreach ($consults as $consult) {
+                    if ($consult->category_id == $id)
+                        $consult->delete();
                 }
                 $this->categories()->detach($id);
                 $this->deletePrice($id);   # 删除价格策略
@@ -285,6 +285,18 @@ class User extends Model implements AuthenticatableContract,
         foreach ($range as $item){
             if(!$this->hasCategory($item)){
                 $this->bindCategory($item);
+                foreach($this->locations as $location){
+                    if(!$this->isConsultExist($item,$location->id)){
+                        Item::create([
+                            'user_id'           => $this->id,
+                            'price' 			=> 500,
+                            'sku'				=> uniqid('ITEM_',true),
+                            'description'		=> str_random(500),
+                            'category_id'       => $item,
+                            'location_id'       => $location->id
+                        ]);
+                    }
+                }
             }
         }
     }
