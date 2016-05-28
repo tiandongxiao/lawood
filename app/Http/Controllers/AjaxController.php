@@ -95,7 +95,6 @@ class AjaxController extends Controller
 
     public function code(Request $request)
     {
-        return 'Y';
         if($request->ajax()){
             $type =  $request->get('type');
             $phone = $request->get('phone');
@@ -115,7 +114,10 @@ class AjaxController extends Controller
         }
     }
 
-    public function notifyRead(Request $request)
+
+    # * ------------------ 验证性的 ajax 请求 ------------------ * #
+    #    
+    public function read(Request $request)
     {
         if($request->ajax()){
             $notify = Notification::findOrFail($request->get('notify'));
@@ -129,10 +131,10 @@ class AjaxController extends Controller
         }
     }
 
-    public function notifyUnread(Request $request)
+    public function unread(Request $request)
     {
-        if($request->ajax()){
-            $notify = Notification::findOrFail($request->get('id'));
+        if($request->ajax()){         
+            $notify = Notification::findOrFail($request->get('notify'));
             $notify->update([
                 'read' => false
             ]);

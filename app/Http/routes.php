@@ -114,6 +114,8 @@ Route::group(['prefix' => 'lawyer'], function(){
     Route::get('off','User\LawyerController@stopService');
 });
 
+
+
 Route::group(['prefix' => 'client'], function(){
     Route::get('','User\ClientController@board');
 
@@ -269,8 +271,9 @@ Route::group(['prefix' => 'ajax'], function(){
     Route::post('code','AjaxController@code');
 
     # Notification 读取状态设置
-    Route::post('notify/read','AjaxController@notifyRead');
-    Route::post('notify/unread','AjaxController@notifyUnread');
+    Route::post('read','NotificationController@read');
+    Route::post('unread','NotificationController@unread');
+
 });
 
 Route::resource('price','PriceController');

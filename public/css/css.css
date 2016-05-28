@@ -428,12 +428,12 @@ transform:scale(0.8,0.8);
 .xxtz-main	.itms	.top	.bt		{ padding-left:10px; font-size:16px;}
 .xxtz-main	.itms	.con	{ padding:10px; color:#909090; line-height:20px;}
 .xxtz-main	.itms	.bottom	{ height:40px; line-height:40px; border-top:1px dashed #efefef;}	
-.xxtz-main	.itms	.bottom		.more	{ color:#00abeb; padding-right:16px; background:url(../images/xx-link.png) center right no-repeat; background-size:15px 15px;}	
+.xxtz-main	.itms	.bottom		.more	{ color:#00abeb; padding-right:16px; }
 .xxtz-main	.itms	.bottom		.more.on	{ background-image:url(../images/xx-link-on.png)}
 .xxtz-main	.itms	.jtxx		{ padding:10px; display:none;}
 .xxtz-main	.itms	.bottom		.time	{ color:#c1c1c1;  float:right; font-size:12px;}
 .xxtz-main	.itms.hui		.top	{ background:#909090;}
-.xxtz-main	.itms.hui	.bottom		.more	{ color:#909090; background-image:url(../images/xx-link-hui.png)}	
+.xxtz-main	.itms.hui	.bottom		.more	{ color:#909090; }
 .xxtz-main	.itms.hui	.bottom		.more.on		{ background-image:url(../images/xx-link-hui-on.png)}
 
 /*22-律师订单*/

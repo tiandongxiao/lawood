@@ -14,7 +14,7 @@
                         <div class="con">{{$notify->content}}</div>
                         <div class="pad-0-10">
                             <div class="bottom">
-                                <a  href="#" class="more" data-no="{{$notify->id}}" data-do="unread">设为未读</a>
+                                <a  href="#" class="more" data-notify="{{$notify->id}}" data-do="unread">设为未读</a>
                                 <span class="time">{{$notify->created_at}}</span>
                             </div>
                         </div>
@@ -45,31 +45,43 @@
                 var address = $('input[name=uri]').val();
                 var notify = $(this).data("notify");
                 var option = $(this).data("do");
+                var _this = $(this);
 
                 if(option == 'read'){
                     $.ajax({
                         type: 'POST',
-                        url: address+'/ajax/notify/read',
+                        url: address+'/ajax/read',
                         data: {
                             'notify' : notify,
                             '_token':$('input[name=_token]').val()
                         },
                         success: function(data){
-                            alert(data)
+                            if(data == 'Y'){
+                                _this.text('设为未读');
+                                _this.data('do','unread');
+                                _this.parents('.itms').addClass('hui');
+                                _this.parents('.itms').find('.f-right').html('已读');
+                            }
                         }
                     });
+                    return;
                 }
 
                 if(option == 'unread'){
                     $.ajax({
                         type: 'POST',
-                        url: address+'/ajax/notify/unread',
+                        url: address+'/ajax/unread',
                         data: {
                             'notify' : notify,
                             '_token':$('input[name=_token]').val()
                         },
                         success: function(data){
-                            alert(data)
+                            if(data == 'Y'){
+                                _this.text('设为已读');
+                                _this.data('do','read');
+                                _this.parents('.itms').removeClass('hui');
+                                _this.parents('.itms').find('.f-right').html('未读');
+                            }
                         }
                     });
                 }
