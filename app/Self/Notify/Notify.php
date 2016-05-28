@@ -105,7 +105,7 @@ class Notify
 
             # 设置相关通知
             case 'setting':
-                $info->title = '设置';
+                $info->title = '设置修改';
                 $info->content = '尊敬的用户，您刚刚修改了'.$data['config'];
                 $info->url = null;
                 break;
