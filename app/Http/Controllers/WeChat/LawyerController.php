@@ -35,6 +35,7 @@ class LawyerController extends Controller
     public function notifies()
     {
         $notifies = $this->user->notifications;
+        $notifies = $notifies->reverse();
         return view('wechat.lawyer.notifies',compact('notifies'));
     }
 
