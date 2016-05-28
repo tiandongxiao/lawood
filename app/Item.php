@@ -62,6 +62,9 @@ class Item extends ShopItemModel implements Ratingable
     # 构建POI对象，并推送至地图
     public function buildPOI()
     {
+        if(!$this->seller->enable)
+            return;
+
         if(is_null($this->poi)){
             $poi = new Pois();
             $poi->build($this);
