@@ -79,6 +79,9 @@ class Item extends ShopItemModel implements Ratingable
 
     public function updatePOI()
     {
+        if(!$this->seller->enable())
+            return;
+
         $data = [
             '_name'    => $this->category->name,
             '_address' => $this->location->address,
@@ -93,5 +96,11 @@ class Item extends ShopItemModel implements Ratingable
             'price' => $price
         ]);
         $this->updatePOI();
+    }
+
+    public static function createConsult(array $data)
+    {
+        $consult = static::create($data);
+        $consult->buildPOI();
     }
 }

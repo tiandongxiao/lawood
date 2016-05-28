@@ -287,10 +287,10 @@ class User extends Model implements AuthenticatableContract,
                 $this->bindCategory($cate_id);
                 foreach($this->locations as $location){
                     if(!$this->isConsultExist($cate_id,$location->id)){
-                        Item::create([
+                        Item::createConsult([
                             'user_id'           => $this->id,
                             'price' 			=> 500,
-                            'sku'				=> uniqid('ITEM_',true),
+                            'sku'				=> uniqid('ITEM_'),
                             'description'		=> str_random(500),
                             'category_id'       => $cate_id,
                             'location_id'       => $location->id
@@ -324,10 +324,10 @@ class User extends Model implements AuthenticatableContract,
         foreach($this->locations as $location){
             foreach($this->categories as $category){
                 if(!$this->isConsultExist($category->id,$location->id)){
-                    Item::create([
+                    Item::createConsult([
                         'user_id'           => $this->id,
-                        'price' 			=> random_int(10,1000),
-                        'sku'				=> uniqid('ITEM_',true),
+                        'price' 			=> 500,
+                        'sku'				=> uniqid('ITEM_'),
                         'description'		=> str_random(500),
                         'category_id'       => $category->id,
                         'location_id'       => $location->id
