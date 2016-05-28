@@ -82,4 +82,10 @@ class Location extends Model {
         }
     }
 
+    public function updateInfo($data)
+    {
+        $this->update($data);
+        $this->updateConsults();
+    }
+
 }

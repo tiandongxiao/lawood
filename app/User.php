@@ -142,7 +142,7 @@ class User extends Model implements AuthenticatableContract,
         $home = $this->locations()->where('type','home')->first();
 
         if($home){
-            $home->update(['address'=>$address]);
+            $home->updateInfo(['address'=>$address]);
         }else{
             $home = Location::create([
                 'type'    => 'home',
@@ -157,7 +157,7 @@ class User extends Model implements AuthenticatableContract,
         $work = $this->locations()->where('type','work')->first();
 
         if($work){
-            $work->update(['address'=>$address]);
+            $work->updateInfo(['address'=>$address]);
         }else{
             $work = Location::create([
                 'type'    => 'work',
@@ -282,17 +282,17 @@ class User extends Model implements AuthenticatableContract,
                 $this->unbindCategory($category->id);
             }
         }
-        foreach ($range as $item){
-            if(!$this->hasCategory($item)){
-                $this->bindCategory($item);
+        foreach ($range as $cate_id){
+            if(!$this->hasCategory($cate_id)){
+                $this->bindCategory($cate_id);
                 foreach($this->locations as $location){
-                    if(!$this->isConsultExist($item,$location->id)){
+                    if(!$this->isConsultExist($cate_id,$location->id)){
                         Item::create([
                             'user_id'           => $this->id,
                             'price' 			=> 500,
                             'sku'				=> uniqid('ITEM_',true),
                             'description'		=> str_random(500),
-                            'category_id'       => $item,
+                            'category_id'       => $cate_id,
                             'location_id'       => $location->id
                         ]);
                     }
