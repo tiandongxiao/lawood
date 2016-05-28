@@ -80,8 +80,18 @@ class Item extends ShopItemModel implements Ratingable
     public function updatePOI()
     {
         $data = [
-
+            '_name'    => $this->category->name,
+            '_address' => $this->location->address,
+            'price'    => $this->price
         ];
         $this->poi->updateInfo($data);
+    }
+
+    public function updatePrice($price)
+    {
+        $this->update([
+            'price' => $price
+        ]);
+        $this->updatePOI();
     }
 }

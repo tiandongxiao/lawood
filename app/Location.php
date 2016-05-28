@@ -3,27 +3,26 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Request;
 
 class Location extends Model {
 
     public $guarded = ["id","created_at","updated_at"];
 
-    /**
-     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
-     */
+    # 查询方案
     public static function findRequested()
     {
         $query = Location::query();
 
-        // search results based on user input
-        \Request::input('id') and $query->where('id',\Request::input('id'));
-        \Request::input('type') and $query->where('type','like','%'.\Request::input('type').'%');
-        \Request::input('address') and $query->where('address','like','%'.\Request::input('address').'%');
+        # search results based on user input
+        Request::input('id') and $query->where('id',Request::input('id'));
+        Request::input('type') and $query->where('type','like','%'.Request::input('type').'%');
+        Request::input('address') and $query->where('address','like','%'.Request::input('address').'%');
         
-        // sort results
-        \Request::input("sort") and $query->orderBy(\Request::input("sort"),\Request::input("sortType","asc"));
+        # sort results
+        Request::input("sort") and $query->orderBy(Request::input("sort"),Request::input("sortType","asc"));
 
-        // paginate results
+        # paginate results
         return $query->paginate(15);
     }
 
@@ -38,15 +37,15 @@ class Location extends Model {
             'address' => 'required|string|max:255',
         ];
 
-        // no list is provided
+        # no list is provided
         if(!$attributes)
             return $rules;
 
-        // a single attribute is provided
+        # a single attribute is provided
         if(!is_array($attributes))
             return [ $attributes => $rules[$attributes] ];
 
-        // a list of attributes is provided
+        # a list of attributes is provided
         $newRules = [];
         foreach ( $attributes as $attr )
             $newRules[$attr] = $rules[$attr];
@@ -73,6 +72,14 @@ class Location extends Model {
             $consult->delete();
         }
         parent::delete();
+    }
+
+    # 更新相关咨询项，主要是更新地图数据
+    public function updateConsults()
+    {
+        foreach ($this->consults as $consult){
+            $consult->updatePOI();
+        }
     }
 
 }

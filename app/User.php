@@ -393,12 +393,8 @@ class User extends Model implements AuthenticatableContract,
         if($price){
             foreach ($this->consults as $consult){
                 if($consult->category->id == $cate_id && $consult->price != (int)$value){
-                    $consult->update([
-                        'price' => $value
-                    ]);
-                    $price->update([
-                        'price'=>$value
-                    ]);
+                    $consult->updatePrice($value);
+                    $price->update(['price'=>$value]);
                 }
             }
         }
