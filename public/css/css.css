@@ -607,7 +607,7 @@ transform:scale(0.8,0.8);
 .form-list	.itms	.right	{ padding-left:70px;}
 .form-list	.itms	.In-text	{ display:block; width:100%; height:50px; line-height:50px; line-height:normal;}
 .form-list	.itms	.right	.btn-yzm	{ top:10px;}
-.form-list	.itms   .itms-link		 { background:url(../images/link.png) center  right no-repeat; background-size:8px 13px;}
+.form-list	.itms.itms-link		 { background:url(../images/link.png) center  right no-repeat; background-size:8px 13px;}
 .form-list	.itms	.right.zxf		{ display:block; padding-right:45px;}
 .form-list	.itms	.right.zxf	.In-text	{ text-align:right; font-size:16px}
 .form-list	.itms	.right.zxf	.dw	{ position:absolute; right:0px; top:0px; line-height:55px; font-size:12px;}
@@ -619,4 +619,4 @@ transform:scale(0.8,0.8);
 .wdsc-main	.fjls-main	.c-main	.itms	.f-right 	 { padding-left:55px;}
 .wdsc-main	.fjls-main	.c-main	.itms	.f-left img	{ height:40px !important; width:40px !important;}
 
-.lssz-main .itms	.f-right 	 { margin-right:20px;}
+.lssz-main .itms .f-right { margin-right:15px;}
