@@ -79,7 +79,7 @@ class Item extends ShopItemModel implements Ratingable
 
     public function updatePOI()
     {
-        if(!$this->seller->enable())
+        if(!$this->seller->enable)
             return;
 
         $data = [
