@@ -72,56 +72,62 @@
 
     // 地址-坐标 正向编码
     function geocoder(location) {
-        var coder = new AMap.Geocoder({
-            city: "010", //城市，默认：“全国”
-            radius: 1000 //范围，默认：500
-        });
-        //地理编码,返回地理编码结果
-        coder.getLocation(location, function(status, result) {
-            if (status === 'complete' && result.info === 'OK') {
-                geocoder_CallBack(result);
-            }
-        });
 
-        function addMarker(i, d) {
-            var marker = new AMap.Marker({
-                map: map,
-                position: [ d.location.getLng(),  d.location.getLat()]
+        AMap.service(["AMap.Geocoder"], function() { //加载地理编码
+            var coder = new AMap.Geocoder({
+                radius: 1000 //范围，默认：500
             });
-            var infoWindow = new AMap.InfoWindow({
-                content: d.formattedAddress,
-                offset: {x: 0, y: -30}
-            });
-            marker.on("mouseover", function(e) {
-                infoWindow.open(map, marker.getPosition());
-            });
-        }
 
-        //地理编码返回结果展示
-        function geocoder_CallBack(data) {
-            var resultStr = "";
-            //地理编码结果数组
-            var geocode = data.geocodes;
-            for (var i = 0; i < geocode.length; i++) {
-                //拼接输出html
-                resultStr += "<span style=\"font-size: 12px;padding:0px 0 4px 2px; border-bottom:1px solid #C1FFC1;\">" + "<b>地址</b>：" + geocode[i].formattedAddress + "" + "&nbsp;&nbsp;<b>的地理编码结果是:</b><b>&nbsp;&nbsp;&nbsp;&nbsp;坐标</b>：" + geocode[i].location.getLng() + ", " + geocode[i].location.getLat() + "" + "<b>&nbsp;&nbsp;&nbsp;&nbsp;匹配级别</b>：" + geocode[i].level + "</span>";
-                addMarker(i, geocode[i]);
+            //地理编码,返回地理编码结果
+            coder.getLocation(location, function(status, result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    callBack(result);
+                }
+            });
+
+//            function addMarker(i, d) {
+//                var marker = new AMap.Marker({
+//                    map: map,
+//                    position: [ d.location.getLng(),  d.location.getLat()]
+//                });
+//                var infoWindow = new AMap.InfoWindow({
+//                    content: d.formattedAddress,
+//                    offset: {x: 0, y: -30}
+//                });
+//                marker.on("mouseover", function(e) {
+//                    infoWindow.open(map, marker.getPosition());
+//                });
+//            }
+
+            //地理编码返回结果展示
+            function callBack(data) {
+                var resultStr = "";
+                //地理编码结果数组
+                var geocode = data.geocodes;
+                alert(geocode.length);
+                alert(geocode[0].location.getLng()+'-'+geocode[0].location.getLat());
+//                for (var i = 0; i < geocode.length; i++) {
+//                    //拼接输出html
+//                    resultStr += "<span style=\"font-size: 12px;padding:0px 0 4px 2px; border-bottom:1px solid #C1FFC1;\">" + "<b>地址</b>：" + geocode[i].formattedAddress + "" + "&nbsp;&nbsp;<b>的地理编码结果是:</b><b>&nbsp;&nbsp;&nbsp;&nbsp;坐标</b>：" + geocode[i].location.getLng() + ", " + geocode[i].location.getLat() + "" + "<b>&nbsp;&nbsp;&nbsp;&nbsp;匹配级别</b>：" + geocode[i].level + "</span>";
+//                    addMarker(i, geocode[i]);
+//                }
+//                map.setFitView();
+//                document.getElementById("result").innerHTML = resultStr;
             }
-            map.setFitView();
-            document.getElementById("result").innerHTML = resultStr;
-        }
+        })
+
     }
 
     // 坐标-地址 逆地理编码 positon = [116.396574, 39.992706];
     function regeocoder(positon) {  //new AMap.LngLat(112.752686,37.692514)
         //通过AMap.service加载检索服务，加载的服务可以包括服务插件列表中一个或多个
         AMap.service(["AMap.Geocoder"], function() { //加载地理编码
-            geocoder = new AMap.Geocoder({
+            coder = new AMap.Geocoder({
                 radius: 1000,
                 extensions: "all"
             });
             //步骤三：通过服务对应的方法回调服务返回结果，本例中通过逆地理编码方法getAddress回调结果
-            geocoder.getAddress(positon, function(status, result){
+            coder.getAddress(positon, function(status, result){
                 if (status === 'complete' && result.info === 'OK') {
                     callBack(result);
                 }
@@ -133,11 +139,11 @@
 //                position: lnglatXY
 //            });
 //            map.setFitView();
-//
+
             // 回调函数
             function callBack(data) {
                 $('#In-wz').val(data.regeocode.formattedAddress);
-                //alert(result.regeocode.formattedAddress);
+                geocoder(data.regeocode.formattedAddress);
             }
         });
     }
