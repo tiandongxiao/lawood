@@ -136,7 +136,7 @@
 //
             // 回调函数
             function callBack(data) {
-                $('#In-wz').val(result.regeocode.formattedAddress);
+                $('#In-wz').val(data.regeocode.formattedAddress);
                 //alert(result.regeocode.formattedAddress);
             }
         });
