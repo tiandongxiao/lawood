@@ -47,8 +47,11 @@
     </section>
 @stop
 @section('script')
+    @include('wechat.base.service.gaode')
     <script>
         $(function(){
+            // 初始化地图
+            gdMapInit();
             //切换查找条件
             $('#form-xz .hd i').tap(function(){
                 $('#form-xz .hd i').removeClass('on')
