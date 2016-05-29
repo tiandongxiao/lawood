@@ -20,10 +20,10 @@
                 <div class="itms">
                     <div class="f-left">验 证 码</div>
                     <div class="right"><input type="text" placeholder="短信验证码" class="In-text" id="yzm" name="code"></div>
-                    <input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true" style="display: none">
+                    <input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true" style="display: none" readonly>
                 </div>
             </div>
-            <input type="button" class="In-btn In-btn-1 bg-hui fc-fff" value="下一步" id="In-btn">
+            <input type="button" class="In-btn In-btn-1 bg-hui fc-fff" value="下一步" id="In-btn" readonly>
         </form>
         <div class="wjmm fc-d2d2d2 line-20 te-cen fs-12">点击［下一步］代表您已阅读并同意<span  class="fc-03aaf0" id="yhyx">用户使用协议</span></div>
     </section>

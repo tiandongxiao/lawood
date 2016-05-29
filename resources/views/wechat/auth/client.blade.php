@@ -21,7 +21,7 @@
                                 	<input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true" style="display: none">
                                 </div>
                         </div>
-                        <input type="button" class="In-btn In-btn-1 bg-hui fc-fff" value="立即注册" id="In-btn">
+                        <input type="button" class="In-btn In-btn-1 bg-hui fc-fff" value="立即注册" id="In-btn" readonly>
                     </form>
                 	<div class="wjmm fc-d2d2d2 line-20 te-cen fs-12">点击［立即注册］代表您已阅读并同意<span  class="fc-03aaf0" id="yhyx">用户使用协议</span></div>
         </section>

@@ -71,7 +71,7 @@
             </div>
             <div id="select">
             </div>
-            <input type="submit" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-30" value="提交注册" id="In-btn">
+            <input type="submit" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-30" value="提交注册" id="In-btn" readonly>
         </form>
     </section>
     <!--默认状态-->

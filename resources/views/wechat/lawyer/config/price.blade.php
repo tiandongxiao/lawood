@@ -35,7 +35,7 @@
             <div class="pad-10-0"><img src="/images/icon-xsts.png" width="50" height="50"></div>
             <div class="line-20  fs-20">超限提示</div>
             <div class=" pad-20 mar-top-10 fs-13 fc-d2d2d2 te-left">您设置的金额超出限制，最低不低于300元，最高不超过1500元。</div>
-            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16" value="确定" id="ok-btn">
+            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16" value="确定" id="ok-btn" readonly>
         </div>
     </section>
     <!--提交审核-->
