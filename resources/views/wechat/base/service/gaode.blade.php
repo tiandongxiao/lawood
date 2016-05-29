@@ -31,6 +31,7 @@
         // 解析定位结果
         function onComplete(data) {
             alert('定位成功');
+            regeocoder(data.position);
             var str=['定位成功'];
             str.push('经度：' + data.position.getLng());
             str.push('纬度：' + data.position.getLat());
@@ -111,28 +112,44 @@
         }
     }
 
-    // 坐标-地址 逆地理编码 lnglatXY = [116.396574, 39.992706];
-    function regeocoder(lnglatXY) {
-        var coder = new AMap.Geocoder({
-            radius: 1000,
-            extensions: "all"
-        });
-        coder.getAddress(lnglatXY, function(status, result) {
-            if (status === 'complete' && result.info === 'OK') {
-                callBack(result);
-            }
-        });
-        var marker = new AMap.Marker({  //加点
-            map: map,
-            position: lnglatXY
-        });
-        map.setFitView();
+    // 坐标-地址 逆地理编码 positon = [116.396574, 39.992706];
+    function regeocoder(positon) {  //new AMap.LngLat(112.752686,37.692514)
+        //通过AMap.service加载检索服务，加载的服务可以包括服务插件列表中一个或多个
+        AMap.service(["AMap.Geocoder"], function() { //加载地理编码
+            geocoder = new AMap.Geocoder({
+                radius: 1000,
+                extensions: "all"
+            });
+            //步骤三：通过服务对应的方法回调服务返回结果，本例中通过逆地理编码方法getAddress回调结果
+            geocoder.getAddress(positon, function(status, result){
+                if (status === 'complete' && result.info === 'OK') {
+                    alert(result.regeocode.formattedAddress);
+                    //callBack(result);
+                }
+            });
 
-        // 回调函数
-        function callBack(data) {
-            var address = data.regeocode.formattedAddress; //返回地址描述
-            document.getElementById("result").innerHTML = address;
-        }
+//            var coder = new AMap.Geocoder({
+//                radius: 1000,
+//                extensions: "all"
+//            });
+//            coder.getAddress(lnglatXY, function(status, result) {
+//                if (status === 'complete' && result.info === 'OK') {
+//                    alert(result.regeocode.formattedAddress);
+//                    //callBack(result);
+//                }
+//            });
+//            var marker = new AMap.Marker({  //加点
+//                map: map,
+//                position: lnglatXY
+//            });
+//            map.setFitView();
+//
+//            // 回调函数
+//            function callBack(data) {
+//                var address = data.regeocode.formattedAddress; //返回地址描述
+//                document.getElementById("result").innerHTML = address;
+//            }
+        });
     }
 
     // Begin  搜索高德地图 公共数据
