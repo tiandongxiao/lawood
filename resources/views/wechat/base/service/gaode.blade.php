@@ -30,13 +30,13 @@
         });
         // 解析定位结果
         function onComplete(data) {
-            alert('定位成功');
+            //alert('定位成功');
             regeocoder(data.position);
-            var str=['定位成功'];
-            str.push('经度：' + data.position.getLng());
-            str.push('纬度：' + data.position.getLat());
-            str.push('精度：' + data.accuracy + ' 米');
-            str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
+//            var str=['定位成功'];
+//            str.push('经度：' + data.position.getLng());
+//            str.push('纬度：' + data.position.getLat());
+//            str.push('精度：' + data.accuracy + ' 米');
+//            str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
             //document.getElementById('tip').innerHTML = str.join('<br>');
         }
         // 解析定位错误信息
@@ -123,32 +123,22 @@
             //步骤三：通过服务对应的方法回调服务返回结果，本例中通过逆地理编码方法getAddress回调结果
             geocoder.getAddress(positon, function(status, result){
                 if (status === 'complete' && result.info === 'OK') {
-                    alert(result.regeocode.formattedAddress);
-                    //callBack(result);
+                    callBack(result);
                 }
             });
 
-//            var coder = new AMap.Geocoder({
-//                radius: 1000,
-//                extensions: "all"
-//            });
-//            coder.getAddress(lnglatXY, function(status, result) {
-//                if (status === 'complete' && result.info === 'OK') {
-//                    alert(result.regeocode.formattedAddress);
-//                    //callBack(result);
-//                }
-//            });
+
 //            var marker = new AMap.Marker({  //加点
 //                map: map,
 //                position: lnglatXY
 //            });
 //            map.setFitView();
 //
-//            // 回调函数
-//            function callBack(data) {
-//                var address = data.regeocode.formattedAddress; //返回地址描述
-//                document.getElementById("result").innerHTML = address;
-//            }
+            // 回调函数
+            function callBack(data) {
+                $('#In-wz').val(result.regeocode.formattedAddress);
+                //alert(result.regeocode.formattedAddress);
+            }
         });
     }
 

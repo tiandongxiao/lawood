@@ -76,10 +76,10 @@
       <file leaf-file-name="gaode.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/base/service/gaode.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="127" column="17" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
+            <state relative-caret-position="364">
+              <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
               <folding>
-                <marker date="1464532602194" expanded="true" signature="3943:4014" placeholder="..." />
+                <marker date="1464533664959" expanded="true" signature="3955:4026" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -762,7 +762,7 @@
       <workItem from="1463968668739" duration="154389000" />
       <workItem from="1464422716758" duration="7838000" />
       <workItem from="1464505444411" duration="4900000" />
-      <workItem from="1464513284064" duration="5566000" />
+      <workItem from="1464513284064" duration="6622000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -887,7 +887,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="756570000" />
+    <option name="totallyTimeSpent" value="757626000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1357,10 +1357,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/base/service/gaode.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="127" column="17" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
+        <state relative-caret-position="364">
+          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
           <folding>
-            <marker date="1464532602194" expanded="true" signature="3943:4014" placeholder="..." />
+            <marker date="1464533664959" expanded="true" signature="3955:4026" placeholder="..." />
           </folding>
         </state>
       </provider>
