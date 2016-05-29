@@ -89,9 +89,10 @@ class AuthController extends Controller
         $this->user->work = $request->get('work');
 
         $categories = $request->get('range');
-
-        foreach ($categories as $category){
-            $this->user->bindCategory($category);
+        if ($categories) {
+            foreach ($categories as $category) {
+                $this->user->bindCategory($category);
+            }
         }
 
         return redirect('wechat/finish');
