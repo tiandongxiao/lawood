@@ -220,8 +220,8 @@
     <script>
         $(function(){
             gdMapInit();
-            showCenter();
-            locatePosition();
+            //locatePosition();
+            setCenter();
             showCloudData();
             //查看更多律师
             $('#btn-more').tap(function(){

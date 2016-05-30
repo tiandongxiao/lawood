@@ -221,8 +221,8 @@
         $(function(){
             // 初始化地图
             gdMapInit();
-            showCenter();
-            locatePosition();
+            //locatePosition();
+            setCenter();
             showCloudData();
             //查看更多律师
             $('#btn-more').tap(function(){

@@ -38,6 +38,10 @@
 
     }
 
+    function setCenter() {
+        geocoder('北京市天安门');
+    }
+
     function showCenter() {
         console.log('show center');
         var toolBar;
@@ -68,7 +72,7 @@
             cloudDataLayer = new AMap.CloudDataLayer('56fa40c9305a2a3288363151', layerOptions); //实例化云图层类
             cloudDataLayer.setMap(map); //叠加云图层到地图
 
-            map.setCenter(cur_location);
+            //map.setCenter(cur_location);
 
             AMap.event.addListener(cloudDataLayer, 'click', function (result) {
                 var cloudData = result.data;
@@ -86,6 +90,7 @@
 
     // 地址-坐标 正向编码
     function geocoder(location) {
+        var position;
         AMap.service(["AMap.Geocoder"], function() { //加载地理编码
             var coder = new AMap.Geocoder({
                 radius: 1000 //范围，默认：500
@@ -93,15 +98,28 @@
             // 地理编码,返回地理编码结果
             coder.getLocation(location, function(status, result) {
                 if (status === 'complete' && result.info === 'OK') {
-                    var geocode = data.geocodes;
+                    var geocode = result.geocodes;
                     if(geocode.length == 1){
-                        return geocode[0].location; // location.getLng()  location.getLat()
+                        position = geocode[0].location;
+                        //return geocode[0].location; // location.getLng()  location.getLat()
+                        map.setZoom(13);
+                        map.setCenter(position);
+                        //添加点标记，并使用自己的icon
+                        var icon = new AMap.Icon({
+                            image: '/images/icon-wz.png',
+                            size: new AMap.Size(44, 56)
+                        });
+                        new AMap.Marker({
+                            map: map,
+                            position: [position.getLng(),position.getLat()],
+                            icon: icon
+                        });
                     }
                 }
                 return null;
             });
+            return position;
         })
-
     }
 
     // 坐标-地址 逆地理编码
