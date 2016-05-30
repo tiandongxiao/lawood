@@ -228,7 +228,7 @@
                 map.setCenter(position);
                 //添加点标记，并使用自己的icon
                 var icon = new AMap.Icon({
-                    image: '/images/icon-wz2.png',
+                    image: '/images/icon-wz.png',
                     size: new AMap.Size(22, 28)
                 });
                 new AMap.Marker({
