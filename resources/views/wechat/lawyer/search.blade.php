@@ -226,17 +226,6 @@
                 position = data.position;
                 map.setZoom(13);
                 map.setCenter(position);
-                //添加点标记，并使用自己的icon
-                var icon = new AMap.Icon({
-                    image: '/images/index-wz-on.png',
-                    size: new AMap.Size(30, 40)
-                });
-                new AMap.Marker({
-                    map: map,
-                    position: [position.getLng(),position.getLat()],
-                    icon: icon
-                });
-
             },function (data) {
                 // 定位失败
             });
