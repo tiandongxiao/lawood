@@ -9,7 +9,7 @@
     }
 
 
-    function locatePosition() {
+    function locatePosition(onComplete,onError) {
 
         map.plugin('AMap.Geolocation', function() {
             geolocation = new AMap.Geolocation({
@@ -25,16 +25,16 @@
             AMap.event.addListener(geolocation, 'error', onError);       //返回定位出错信息
         });
 
-        // 解析定位结果
-        function onComplete(data) {
-            cur_location = data.position;
-            regeocoder(data.position);
-
-        }
-        // 解析定位错误信息
-        function onError(data) {
-            $('#In-wz').val('定位失败，请输入您的位置');
-        }
+//        // 解析定位结果
+//        function onComplete(data) {
+//            cur_location = data.position;
+//            regeocoder(data.position);
+//
+//        }
+//        // 解析定位错误信息
+//        function onError(data) {
+//            $('#In-wz').val('定位失败，请输入您的位置');
+//        }
 
     }
 

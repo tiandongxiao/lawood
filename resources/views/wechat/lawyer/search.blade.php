@@ -221,8 +221,26 @@
         $(function(){
             // 初始化地图
             gdMapInit();
-            //locatePosition();
-            setCenter();
+            locatePosition(function (data) {                
+                // 定位成功
+                position = data.position;
+                map.setZoom(13);
+                map.setCenter(position);
+                //添加点标记，并使用自己的icon
+                var icon = new AMap.Icon({
+                    image: '/images/icon-wz.png',
+                    size: new AMap.Size(44, 56)
+                });
+                new AMap.Marker({
+                    map: map,
+                    position: [position.getLng(),position.getLat()],
+                    icon: icon
+                });
+
+            },function (data) {
+                // 定位失败
+            });
+
             showCloudData();
             //查看更多律师
             $('#btn-more').tap(function(){
