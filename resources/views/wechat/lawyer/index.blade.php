@@ -52,6 +52,7 @@
         $(function(){
             // 初始化地图
             gdMapInit();
+            locatePosition();
             //切换查找条件
             $('#form-xz .hd i').tap(function(){
                 $('#form-xz .hd i').removeClass('on')

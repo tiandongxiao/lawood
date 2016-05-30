@@ -6,15 +6,14 @@
         map = new AMap.Map('map', {
             resizeEnable: true
         });
-        addLayers();
     }
 
     function addLayers() {
-        locationPlugin();
+        //locationPlugin();
         //cloudDataPlugin();
     }
 
-    function locationPlugin() {
+    function locatePosition() {
         map.plugin('AMap.Geolocation', function() {
             geolocation = new AMap.Geolocation({
                 enableHighAccuracy: true,  //是否使用高精度定位，默认:true
@@ -36,8 +35,7 @@
         }
         // 解析定位错误信息
         function onError(data) {
-            alert('定位失败');
-            console(data);
+            $('#In-wz').val('定位失败，请输入您的位置');
         }
 
     }
@@ -95,6 +93,7 @@
             });
             coder.getAddress(position, function(status, result){
                 if (status === 'complete' && result.info === 'OK') {
+                    $('#In-wz').val(result.regeocode.formattedAddress);
                     return result.regeocode.formattedAddress;
                 }
                 return null;
