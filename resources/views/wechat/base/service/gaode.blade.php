@@ -5,6 +5,7 @@
     function gdMapInit() {
         map = new AMap.Map('map', {
             resizeEnable: true,
+            jogEnable:false,
             dragEnable:false
         });
     }
