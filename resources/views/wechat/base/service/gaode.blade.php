@@ -1,6 +1,6 @@
 <script src="http://webapi.amap.com/maps?v=1.3&key=b6f97a31076e886a1236312d87e8b35e"></script>
 <script>
-    var map, location, keyword, cloudDataLayer;
+    var map, cur_location, keyword, cloudDataLayer;
 
     function gdMapInit() {
         map = new AMap.Map('map', {
@@ -8,12 +8,9 @@
         });
     }
 
-    function addLayers() {
-        //locationPlugin();
-        //cloudDataPlugin();
-    }
 
     function locatePosition() {
+
         map.plugin('AMap.Geolocation', function() {
             geolocation = new AMap.Geolocation({
                 enableHighAccuracy: true,  //是否使用高精度定位，默认:true
@@ -30,6 +27,7 @@
 
         // 解析定位结果
         function onComplete(data) {
+            cur_location = data.position;
             regeocoder(data.position);
 
         }
@@ -40,15 +38,37 @@
 
     }
 
-    function cloudDataPlugin() {
+    function showCenter() {
+        console.log('show center');
+        var toolBar;
+        var customMarker = new AMap.Marker({
+            offset: new AMap.Pixel(-14, -34),//相对于基点的位置
+            icon: new AMap.Icon({  //复杂图标
+                size: new AMap.Size(27, 36),//图标大小
+                image: "/images/icon-wz.png"
+            })
+        });
+
+        //地图中添加地图操作ToolBar插件
+        map.plugin(["AMap.ToolBar"], function() {
+            toolBar = new AMap.ToolBar({locationMarker: customMarker}); //设置地位标记为自定义标记
+            map.addControl(toolBar);
+        });
+    }
+
+    function showCloudData() {
+
         // 加载云图层插件
         map.plugin('AMap.CloudDataLayer', function () {
+//            map.setZoom(2);
             var layerOptions = {
                 query:{keywords: ''},
                 clickable:true
             };
             cloudDataLayer = new AMap.CloudDataLayer('56fa40c9305a2a3288363151', layerOptions); //实例化云图层类
             cloudDataLayer.setMap(map); //叠加云图层到地图
+
+            map.setCenter(cur_location);
 
             AMap.event.addListener(cloudDataLayer, 'click', function (result) {
                 var cloudData = result.data;
@@ -112,7 +132,6 @@
                 map: map,
                 panel: "panel"
             });
-
 
             placeSearch.searchNearBy('', center, 200, function(status, result) {
 

@@ -2,12 +2,8 @@
 @section('content')
     <!--地图定位-->
     <section class="dtdw-main">
-
-        <div class="map"><img src="/images/map.png" class="po-a"  width="100%" height="100%"></div>
+        <div class="map" id="map" style="height: 100%"></div>
         <div class="btn-pl"><img src="/images/icon-pl.png" width="44" height="44"></div>
-        <div class="btn-wz"></div>
-        <div class="btn-wz"></div>
-        <div class="btn-wz"></div>
         <div class="lvzy-main">
             <a class="itms-form" href="#"><span  class="In-text" >我的位置</span></a>
 
@@ -220,8 +216,14 @@
     <!--弹出框-->
 @stop
 @section('script')
+    @include('wechat.base.service.gaode')
     <script>
         $(function(){
+            // 初始化地图
+            gdMapInit();
+            showCenter();
+            locatePosition();
+            showCloudData();
             //查看更多律师
             $('#btn-more').tap(function(){
                 $('.lstc-main').fadeIn();
