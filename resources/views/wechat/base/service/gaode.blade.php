@@ -1,9 +1,9 @@
-<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=b6f97a31076e886a1236312d87e8b35e"></script>
+<script src="http://webapi.amap.com/maps?v=1.3&key=b6f97a31076e886a1236312d87e8b35e"></script>
 <script>
     var map, location, keyword, cloudDataLayer;
 
     function gdMapInit() {
-        map = new AMap.Map('container', {
+        map = new AMap.Map('map', {
             resizeEnable: true
         });
         addLayers();
@@ -11,8 +11,7 @@
 
     function addLayers() {
         locationPlugin();
-
-        cloudDataPlugin();
+        //cloudDataPlugin();
     }
 
     function locationPlugin() {
@@ -30,8 +29,6 @@
             AMap.event.addListener(geolocation, 'error', onError);       //返回定位出错信息
         });
 
-
-
         // 解析定位结果
         function onComplete(data) {
             regeocoder(data.position);
@@ -41,7 +38,6 @@
         function onError(data) {
             alert('定位失败');
             console(data);
-
         }
 
     }
