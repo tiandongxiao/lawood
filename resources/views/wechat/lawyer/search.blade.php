@@ -221,7 +221,7 @@
         $(function(){
             // 初始化地图
             gdMapInit();
-            locatePosition(function (data) {                
+            locatePosition(function (data) {
                 // 定位成功
                 position = data.position;
                 map.setZoom(13);
