@@ -46,8 +46,8 @@
       <file leaf-file-name="search.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="241" column="51" selection-start-line="241" selection-start-column="51" selection-end-line="241" selection-end-column="51" />
+            <state relative-caret-position="327">
+              <caret line="262" column="40" selection-start-line="262" selection-start-column="40" selection-end-line="262" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -839,7 +839,7 @@
       <workItem from="1464505444411" duration="4900000" />
       <workItem from="1464513284064" duration="11660000" />
       <workItem from="1464568634776" duration="5247000" />
-      <workItem from="1464585222702" duration="38337000" />
+      <workItem from="1464585222702" duration="39667000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -964,7 +964,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="806248000" />
+    <option name="totallyTimeSpent" value="807578000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1453,8 +1453,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="241" column="51" selection-start-line="241" selection-start-column="51" selection-end-line="241" selection-end-column="51" />
+        <state relative-caret-position="327">
+          <caret line="262" column="40" selection-start-line="262" selection-start-column="40" selection-end-line="262" selection-end-column="40" />
           <folding />
         </state>
       </provider>

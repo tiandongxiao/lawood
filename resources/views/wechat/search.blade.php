@@ -216,10 +216,11 @@
 @section('script')
     @include('wechat.base.service.gaode')
     <script>
-        function highlightChose() {
-            major = "{!! $major !!}";
-            address = "{!! $address !!}";
+        major = "{!! $major !!}";
+        address = "{!! $address !!}";
+        var cur_position;
 
+        function highlightChose() {
             $('.list').each(function () {
                 if($(this).text() == major){
                     $(this).addClass('on');
@@ -232,33 +233,35 @@
             // 初始化地图
             gdMapInit();
             geocoder(address,function (position) {
-                map.setZoom(13);
-                map.setCenter(position);
-                //添加点标记，并使用自己的icon
-                new AMap.Marker({
-                    map: map,
-                    position: [position.getLng(), position.getLat()],
-                    icon: new AMap.Icon({
-                        size: new AMap.Size(48, 48),  //图标大小
-                        image: "/images/marker.svg"
-                    })
-                });
+                cur_position = position;
+                setCenter(cur_position);
             },function () {
                 alert('转化失败');
             });
-//            locatePosition(function (data) {
-//                // 定位成功
-//                position = data.position;
-//                map.setZoom(13);
-//                map.setCenter(position);
-//            },function (data) {
-//                // 定位失败
-//            });
-
             showCloudData();
         }
+
+        function setCenter(position) {
+            map.setZoom(13);
+            map.setCenter(position);
+            //添加点标记，并使用自己的icon
+            new AMap.Marker({
+                map: map,
+                position: [position.getLng(), position.getLat()],
+                icon: new AMap.Icon({
+                    size: new AMap.Size(48, 48),  //图标大小
+                    image: "/images/marker.svg"
+                })
+            });
+        }
+
         $(function(){
             highlightChose();
+
+            //律师咨询
+            $('.btn-pl').tap(function(){
+                setCenter(cur_position);
+            })
 
             //查看更多律师
             $('#btn-more').tap(function(){
