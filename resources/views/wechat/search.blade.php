@@ -239,8 +239,8 @@
                     map: map,
                     position: [position.getLng(), position.getLat()],
                     icon: new AMap.Icon({
-                        size: new AMap.Size(32, 32),  //图标大小
-                        image: "/images/icon-wz2.png"
+                        size: new AMap.Size(48, 48),  //图标大小
+                        image: "/images/marker.svg"
                     })
                 });
             },function () {
