@@ -157,7 +157,9 @@
         //切换栏目
         $('.list').tap(function(){
             $('.list').removeClass('on');
+            $(this).hide('on')
             $(this).addClass('on')
+            $(this).show()
         })
         var address = $('input[name=uri]').val();
         $("#In-service").change(function() {

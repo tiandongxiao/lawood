@@ -52,7 +52,15 @@
         $(function(){
             // 初始化地图
             gdMapInit();
-            locatePosition();
+            locatePosition(function (data) {
+                regeocoder(data.position,function (result) {
+                    console.log(result);
+                    $('#In-wz').val(result.formattedAddress);
+                });
+            },function () {
+                // 定位失败
+                $('#In-wz').val('定位失败，请输入您的位置');
+            });
             //切换查找条件
             $('#form-xz .hd i').tap(function(){
                 $('#form-xz .hd i').removeClass('on')

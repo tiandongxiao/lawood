@@ -5,9 +5,7 @@
         <div class="map" id="map" style="height: 100%"></div>
         <div class="btn-pl"><img src="/images/icon-pl.png" width="44" height="44"></div>
         <div class="lvzy-main">
-            <a class="itms-form" href="#"><span  class="In-text" >我的位置</span></a>
-
-            <span  class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16 line-40" id="btn-more">发现204位相关律师<font class="fs-12">(点击查看)</font></span>
+            <span  class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16 line-40" id="btn-more">发现204位相关律师 <font class="fs-12">[ 查看 ]</font></span>
         </div>
     </section>
     <!--地图定位-->

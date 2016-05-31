@@ -26,18 +26,6 @@
             AMap.event.addListener(geolocation, 'complete', onComplete); //返回定位信息
             AMap.event.addListener(geolocation, 'error', onError);       //返回定位出错信息
         });
-
-//        // 解析定位结果
-//        function onComplete(data) {
-//            cur_location = data.position;
-//            regeocoder(data.position);
-//
-//        }
-//        // 解析定位错误信息
-//        function onError(data) {
-//            $('#In-wz').val('定位失败，请输入您的位置');
-//        }
-
     }
 
     function setCenter() {
@@ -125,7 +113,7 @@
     }
 
     // 坐标-地址 逆地理编码
-    function regeocoder(position) {  //new AMap.LngLat(112.752686,37.692514)
+    function regeocoder(position,handler) {
         AMap.service(["AMap.Geocoder"], function() { //加载地理编码
             coder = new AMap.Geocoder({
                 radius: 1000,
@@ -133,16 +121,14 @@
             });
             coder.getAddress(position, function(status, result){
                 if (status === 'complete' && result.info === 'OK') {
-                    $('#In-wz').val(result.regeocode.formattedAddress);
-                    return result.regeocode.formattedAddress;
+                    handler(result.regeocode);
                 }
-                return null;
             });
         });
     }
 
     // Begin  搜索高德地图 公共数据
-    function searchPublicByAround(center,type) { //center = [116.405467, 39.907761];
+    function searchPublicByAround(center,type) {
         AMap.service(["AMap.PlaceSearch"], function() {
             var placeSearch = new AMap.PlaceSearch({ //构造地点查询类
                 pageSize: 5,
