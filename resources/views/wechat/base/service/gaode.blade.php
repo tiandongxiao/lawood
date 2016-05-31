@@ -10,9 +10,7 @@
         });
     }
 
-
     function locatePosition(onComplete,onError) {
-
         map.plugin('AMap.Geolocation', function() {
             geolocation = new AMap.Geolocation({
                 enableHighAccuracy: true,  //是否使用高精度定位，默认:true
@@ -25,28 +23,6 @@
             geolocation.getCurrentPosition();
             AMap.event.addListener(geolocation, 'complete', onComplete); //返回定位信息
             AMap.event.addListener(geolocation, 'error', onError);       //返回定位出错信息
-        });
-    }
-
-    function setCenter() {
-        geocoder('北京市天安门');
-    }
-
-    function showCenter() {
-        console.log('show center');
-        var toolBar;
-        var customMarker = new AMap.Marker({
-            offset: new AMap.Pixel(-14, -34),//相对于基点的位置
-            icon: new AMap.Icon({  //复杂图标
-                size: new AMap.Size(27, 36),//图标大小
-                image: "/images/icon-wz.png"
-            })
-        });
-
-        //地图中添加地图操作ToolBar插件
-        map.plugin(["AMap.ToolBar"], function() {
-            toolBar = new AMap.ToolBar({locationMarker: customMarker}); //设置地位标记为自定义标记
-            map.addControl(toolBar);
         });
     }
 
