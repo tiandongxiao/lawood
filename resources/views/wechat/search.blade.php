@@ -256,7 +256,7 @@
                     for(var i = 0; i < data.length; i++){
                         $('.fjls-main .con').append(
                             "<div class='itms'>" +
-                                "<div class='f-left'><img src='"+data[i]._image+"' width='40px' height='40px'></div>"+
+                                "<div class='f-left'><img src='"+data[i].avatar+"' width='40px' height='40px'></div>"+
                                 "<div class='right'>"+
                                     "<h3 class='chaochu_1'>"+ data[i]._name +" 律师</h3>"+
                                     "<p class='chaochu_1'><span><img src='/images/icon-q.png' width='20' height='20' class='img'>"+ data[i].price+"元</span>　　<span><img src='/images/icon-w.png' width='20' height='20' class='img'>" + data[i]._distance + "米</span></p>"+
