@@ -28,10 +28,6 @@ class ClientController extends Controller
         $this->user = Auth::user();
     }
 
-    public function index()
-    {
-        return view('wechat.client.index');
-    }
 
     public function notifies()
     {
@@ -77,16 +73,6 @@ class ClientController extends Controller
                 return redirect('wechat/client/setting');
 
         }
-    }
-
-    public function search()
-    {
-        return view('wechat.client.search');
-    }
-
-    public function postSearch()
-    {
-        return view('wechat.client.search');
     }
 
     public function lawyer($id)

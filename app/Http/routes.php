@@ -216,6 +216,9 @@ Route::group(['prefix' => 'test'], function(){
 Route::resource('receipt','ReceiptController');
 
 Route::group(['prefix' => 'wechat'], function(){
+    Route::get('','WeChat\WeChatController@index');
+    Route::get('search','WeChat\WeChatController@search');
+
     # begin 注册绑定
     Route::get('chose','WeChat\AuthController@chose');
     Route::get('bind/{role}','WeChat\AuthController@bind');
@@ -228,21 +231,17 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('consults','WeChat\ConsultController@index');
 
     # begin 咨询用户
-    Route::get('client','WeChat\ClientController@index');
     Route::get('client/notifies','WeChat\ClientController@notifies');
     Route::get('client/orders','WeChat\ClientController@orders');
     Route::get('client/order/sign/{id}','WeChat\ClientController@signOrder');
     Route::get('client/setting','WeChat\ClientController@setting');
     Route::get('client/config/{key}','WeChat\ClientController@config');
     Route::post('client/config','WeChat\ClientController@postConfig');
-    Route::get('client/search','WeChat\ClientController@search');
-    Route::post('client/search','WeChat\ClientController@postSearch');
     # end 咨询用户
 
     Route::get('user/{id}','WeChat\ClientController@lawyer');
 
     # begin 律师
-    Route::get('lawyer','WeChat\LawyerController@index');
     Route::get('lawyer/notifies','WeChat\LawyerController@notifies');
     Route::get('lawyer/orders','WeChat\LawyerController@orders');
     Route::get('lawyer/wallet','WeChat\LawyerController@wallet');
@@ -252,8 +251,6 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('lawyer/setting','WeChat\LawyerController@setting');
     Route::get('lawyer/config/{key}','WeChat\LawyerController@config');
     Route::post('lawyer/config','WeChat\LawyerController@postConfig');
-    Route::get('lawyer/search','WeChat\LawyerController@search');
-    Route::post('lawyer/search','WeChat\LawyerController@postSearch');
     Route::get('lawyer/me','WeChat\LawyerController@me');
     Route::post('lawyer/start','WeChat\LawyerController@start');
     Route::post('lawyer/stop','WeChat\LawyerController@stop');

@@ -15,7 +15,9 @@
 @inject('category','App\Category')
 <!--顶部-->
 <div class="po-f nav-main">
+    @if(Auth::user())
     <div class="btn-cb"></div>
+    @endif
     <div class="btn-xl"></div>
     <div class="hd">
         @foreach($category->nodes as $node)
@@ -47,14 +49,67 @@
 </div>
 <!--顶部-->
 
+@if(Auth::user())
 <!--侧边-->
-<section class="cblm-main po-f" >
-    <div class="main">
+<section class="cblm-main po-f" ><div class="main">
+    @if(Auth::user()->role == 'lawyer')
+        <a class="itms itms-tx bor-bot">
+            <div class="f-left"><img src="{{Auth::user()->avatar}}" width="60" height="60" ></div>
+            <div class="right">{{Auth::user()->real_name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span></div>
+        </a>
+        <a class="itms" href="{{url('wechat')}}">
+            <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
+            <div class="right">律屋主页</div>
+        </a>
+        <a class="itms" href="{{url('wechat/lawyer/notifies')}}">
+            <div class="f-left"><img src="/images/nav2.png" width="20" height="20"></div>
+            <div class="right">消息通知</div>
+        </a>
+        <a class="itms bor-bot" href="{{url('wechat/lawyer/orders')}}">
+            <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
+            <div class="right">我的订单</div>
+        </a>
+        <a class="itms " href="{{url('wechat/lawyer/me')}}">
+            <div class="f-left"><img src="/images/nav4.png" width="20" height="20"></div>
+            <div class="right">我的主页</div>
+        </a>
+        <a class="itms" href="{{url('wechat/lawyer/wallet')}}">
+            <div class="f-left"><img src="/images/nav5.png" width="20" height="20"></div>
+            <div class="right">我的钱包</div>
+        </a>
+        @if(Auth::user()->active)
+            <div class="itms bor-bot">
+                <div class="f-left"><img src="/images/nav6.png" width="20" height="20"></div>
+                @if(Auth::user()->enable)
+                    <div class="right">停用</div>
+                    <div class="ts">停用后律屋将停止</br>对您推荐</div>
+                @else
+                    <div class="right">开启</div>
+                    <div class="ts">开启后咨询用户才</br>可找到您</div>
+                @endif
+                <input type="hidden" name="uri" value="{{url('/')}}">
+                <input type="hidden" name="user" value="{{Auth::user()->id}}">
+                {!! csrf_field() !!}
+                @if(Auth::user()->enable)
+                    <input type="checkbox" class="In-check" id="In-service" checked>
+                @else
+                    <input type="checkbox" class="In-check" id="In-service">
+                @endif
+            </div>
+        @endif
+        <a class="itms bor-bot" href="{{url('wechat/lawyer/setting')}}">
+            <div class="f-left">
+                <img src="/images/nav7.png" width="20" height="20">
+            </div>
+            <div class="right">设置</div>
+        </a>
+
+    @elseif(Auth::user()->role == 'client')
         <div class="itms itms-tx bor-bot">
             <div class="f-left"><img src="{{Auth::user()->avatar}}" width="60" height="60" ></div>
             <div class="right">{{Auth::user()->real_name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span></div>
         </div>
-        <a class="itms" href="{{url('wechat/client')}}">
+        <a class="itms" href="{{url('wechat')}}">
             <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
             <div class="right">律屋主页</div>
         </a>
@@ -76,14 +131,17 @@
             </div>
             <div class="right">设置</div>
         </a>
-    </div>
-</section>
+    @endif
+</div></section>
 <!--侧边-->
+@endif
+
 @yield('content')
 </body>
 <script src="/js/jquery-1.9.1.min.js"></script>
 <script src="/js/tap.js"></script>
 <script>
+    var major;
     $(function(){
         $('.dtdw-main').height($('body').height()-100)
         $(window).resize(function() {
@@ -118,6 +176,14 @@
                 $('.btn-ss').attr({class:'btn-xl'})
             }
         })
+
+        //切换栏目
+        $('.list').tap(function(){
+            $('.list').removeClass('on');
+            $(this).addClass('on');
+            major = $(this).text();
+        })
+        @if(Auth::user())
         //打开侧边
         $('.btn-cb').tap(function(){
             $('.cblm-main').removeClass('on1');
@@ -130,11 +196,41 @@
                 $('.cblm-main').addClass('on1')
             }
         })
-        //切换栏目
-        $('.list').tap(function(){
-            $('.list').removeClass('on');
-            $(this).addClass('on')
+        @if(Auth::user()->role =='lawyer')
+        var address = $('input[name=uri]').val();
+        $("#In-service").change(function() {
+            if ($('#In-service').is(':checked')){
+                $.ajax({
+                    type: 'POST',
+                    url: address + '/ajax/start',
+                    data: {
+                        'user':$('input[name=user]').val(),
+                        '_token':$('input[name=_token]').val(),
+                    },
+                    success: function (data) {
+                        if(data == 'X'){
+                            $("#In-service").removeAttr("checked");
+                        }
+                    }
+                })
+            }else{
+                $.ajax({
+                    type: 'POST',
+                    url: address + '/ajax/stop',
+                    data: {
+                        'user':$('input[name=user]').val(),
+                        '_token':$('input[name=_token]').val(),
+                    },
+                    success: function (data) {
+                        if(data == 'X'){
+                            $("#In-service").attr("checked",'true');
+                        }
+                    }
+                })
+            }
         })
+        @endif
+        @endif
     })
 </script>
 @yield('script')

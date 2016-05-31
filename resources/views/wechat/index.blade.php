@@ -1,4 +1,4 @@
-@extends('wechat.base.client')
+@extends('wechat.base.menu')
 @section('content')
     <section class="lvzy-main">
         <h3 class="tie">您附近有<font class="fc-03aaf0">103</font>名律师</h3>
@@ -50,31 +50,51 @@
     @include('wechat.base.service.gaode')
     <script>
         $(function(){
+
             // 初始化地图
             gdMapInit();
             locatePosition(function (data) {
-                // 定位成功
                 regeocoder(data.position,function (result) {
                     console.log(result);
                     $('#In-wz').val(result.formattedAddress);
                 });
-            },function (data) {
+            },function () {
                 // 定位失败
                 $('#In-wz').val('定位失败，请输入您的位置');
             });
-
             //切换查找条件
             $('#form-xz .hd i').tap(function(){
                 $('#form-xz .hd i').removeClass('on')
                 $(this).addClass('on');
                 $('#form-xz .bd .In-text').css({display:'none'})
                 $('#form-xz .bd .In-text').eq($(this).index()).css({display:'block'})
-            })
+            });
 
-            $('#In-btn').click(function () {
-                window.location.href="/wechat/client/search";
+
+            $('#In-btn').tap(function () {
+
+                if($('#icon-wz').hasClass('on')){
+                    if(!major){
+                        alert('您没有选择任何咨询门类');
+                        return;
+                    }
+
+                    if(!$('#In-wz').val()){
+                        alert('地址不能为空');
+                        return;
+                    }
+                    query = 'chose=position&'+'major='+major+'&address='+$('#In-wz').val();
+                    window.location.href="/wechat/search?"+query;
+                }
+                if($('#icon-xm').hasClass('on')){
+                    if(!$('#In-xm').val()){
+                        alert('请输入要查找的律师姓名');
+                        return;
+                    }
+                    query = 'chose=name&'+'name='+$('#In-xm').val();
+                    window.location.href="/wechat/search?"+query;
+                }
             });
         })
     </script>
-
 @stop

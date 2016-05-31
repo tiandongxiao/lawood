@@ -19,11 +19,6 @@ class LawyerController extends Controller
         $this->user = Auth::user();
     }
 
-    # 律屋主页
-    public function index()
-    {
-        return view('wechat.lawyer.index');
-    }
 
     # 律师个人主页
     public function show($id)
@@ -150,14 +145,4 @@ class LawyerController extends Controller
         return view('wechat.lawyer.me',compact('user'));
     }
 
-    # 搜索页面
-    public function search()
-    {
-        return view('wechat.lawyer.search');
-    }
-
-    public function postSearch()
-    {
-        return view('wechat.lawyer.search');
-    }
 }

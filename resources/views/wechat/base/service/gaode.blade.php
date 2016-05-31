@@ -55,36 +55,21 @@
     }
 
     // 地址-坐标 正向编码
-    function geocoder(location) {
-        var position;
+    function geocoder(location,success,fail) {
+
         AMap.service(["AMap.Geocoder"], function() { //加载地理编码
-            var coder = new AMap.Geocoder({
-                radius: 1000 //范围，默认：500
-            });
+            var coder = new AMap.Geocoder();
             // 地理编码,返回地理编码结果
             coder.getLocation(location, function(status, result) {
                 if (status === 'complete' && result.info === 'OK') {
                     var geocode = result.geocodes;
                     if(geocode.length == 1){
-                        position = geocode[0].location;
-                        //return geocode[0].location; // location.getLng()  location.getLat()
-                        map.setZoom(13);
-                        map.setCenter(position);
-                        //添加点标记，并使用自己的icon
-                        var icon = new AMap.Icon({
-                            image: '/images/icon-wz.png',
-                            size: new AMap.Size(44, 56)
-                        });
-                        new AMap.Marker({
-                            map: map,
-                            position: [position.getLng(),position.getLat()],
-                            icon: icon
-                        });
+                        success(geocode[0].location);
+                        return;
                     }
                 }
-                return null;
+                fail();
             });
-            return position;
         })
     }
 
