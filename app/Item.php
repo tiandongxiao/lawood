@@ -86,9 +86,10 @@ class Item extends ShopItemModel implements Ratingable
             return;
 
         $data = [
-            '_name'    => $this->category->name,
+            '_name'    => $this->seller->real_name,
             '_address' => $this->location->address,
-            'price'    => $this->price
+            'price'    => $this->price,
+            'avatar'   => $this->seller->avatar
         ];
         if($this->poi)
             $this->poi->updateInfo($data);
