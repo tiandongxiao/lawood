@@ -60,7 +60,7 @@ class Pois extends Model
             '_address'    =>  $item->location->address,
             'category'    =>  $item->category->name,
             'office'      =>  $item->seller->office,
-            'avatar'      =>  $item->seller->avatar,
+//            'avatar'      =>  $item->seller->avatar,
             'price'       =>  $item->price,
             'consult'     =>  $item->id,
             'user'        =>  $item->user->id

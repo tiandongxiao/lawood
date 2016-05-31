@@ -83,7 +83,7 @@
                         alert('地址不能为空');
                         return;
                     }
-                    query = 'chose=position&'+'major='+major+'&address='+$('#In-wz').val();
+                    query = 'chose=position&'+'major='+major+'&tab='+tabName+'&address='+$('#In-wz').val();
                     window.location.href="/wechat/search?"+query;
                 }
                 if($('#icon-xm').hasClass('on')){

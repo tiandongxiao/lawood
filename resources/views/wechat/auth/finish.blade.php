@@ -22,7 +22,7 @@
     //提交审核
     $('#btn-qr').tap(function(){
         $('.tc-main').fadeOut();
-        window.location.href="/wechat/lawyer";
+        window.location.href="/wechat";
     })
     </script>
 @stop

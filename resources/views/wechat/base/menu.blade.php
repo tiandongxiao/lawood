@@ -141,7 +141,7 @@
 <script src="/js/jquery-1.9.1.min.js"></script>
 <script src="/js/tap.js"></script>
 <script>
-    var major;
+    var major,tabName;
     $(function(){
         $('.dtdw-main').height($('body').height()-100)
         $(window).resize(function() {
@@ -152,6 +152,7 @@
         $('.itms-hd').tap(function(){
             $('.itms-hd').removeClass('on');
             $(this).addClass('on');
+            tabName = $(this).text();
             $('.itms-bd').removeClass('show');
             $('.itms-bd').removeClass('on');
             $('.itms-bd').eq($(this).index()).addClass('on');
@@ -182,7 +183,8 @@
             $('.list').removeClass('on');
             $(this).addClass('on');
             major = $(this).text();
-        })
+        });
+
         @if(Auth::user())
         //打开侧边
         $('.btn-cb').tap(function(){
@@ -228,7 +230,7 @@
                     }
                 })
             }
-        })
+        });
         @endif
         @endif
     })

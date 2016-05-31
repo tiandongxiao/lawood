@@ -1,6 +1,6 @@
 @extends('wechat.base.menu')
 @section('content')
-        <!--地图定位-->
+<!--地图定位-->
 <section class="dtdw-main">
     <div class="map" id="map" style="height: 100%"></div>
     <div class="btn-pl"><img src="/images/icon-pl.png" width="44" height="44"></div>
@@ -218,23 +218,58 @@
     <script>
         major = "{!! $major !!}";
         address = "{!! $address !!}";
+        tabName = "{!! $tab !!}";
         var cur_position;
 
         function highlightChose() {
             $('.list').each(function () {
                 if($(this).text() == major){
+                    // 分类显示逻辑
+                    $('.itms-hd').removeClass('on');
+                    $('.itms-hd').each(function () {
+                        if($(this).text() == tabName){
+                            $(this).addClass('on');
+                            $('.itms-bd').removeClass('show');
+                            $('.itms-bd').removeClass('on');
+                            $('.itms-bd').eq($(this).index()).addClass('on');
+                        }
+                    });
                     $(this).addClass('on');
+
+                    // 数据逻辑
                     getResults(address,major);
                 }
             });
         }
 
         function getResults(address,major) {
-            // 初始化地图
+            //初始化地图
             gdMapInit();
             geocoder(address,function (position) {
                 cur_position = position;
                 setCenter(cur_position);
+                searchPrivateByAround(cur_position,major,function (result) {
+                    // 搜索成功
+                    console.log(result.datas);
+                    $('.fjls-main .con').empty();
+                    var data = result.datas;
+                    for(var i = 0; i < data.length; i++){
+                        $('.fjls-main .con').append(
+                            "<div class='itms'>" +
+                                "<div class='f-left'><img src='"+data[i]._image+"' width='40px' height='40px'></div>"+
+                                "<div class='right'>"+
+                                    "<h3 class='chaochu_1'>"+ data[i]._name +" 律师</h3>"+
+                                    "<p class='chaochu_1'><span><img src='/images/icon-q.png' width='20' height='20' class='img'>"+ data[i].price+"元</span>　　<span><img src='/images/icon-w.png' width='20' height='20' class='img'>" + data[i]._distance + "米</span></p>"+
+                                "</div>"+
+                                "<div class='btn-ckmp'>查看名片</div>"+
+                            "</div>"
+                        );
+                    }
+                },function (result) {
+                    // 失败
+                    console.log(data);
+                    alert('没搜到任何数据');
+                });
             },function () {
                 alert('转化失败');
             });
@@ -257,18 +292,15 @@
 
         $(function(){
             highlightChose();
-
-            //律师咨询
+            //返回中心点
             $('.btn-pl').tap(function(){
                 setCenter(cur_position);
-            })
-
+            });
             //查看更多律师
             $('#btn-more').tap(function(){
                 $('.lstc-main').fadeIn();
                 $('.fjls-main').fadeIn();
-            })
-
+            });
             //查看名片
             $('.btn-ckmp').tap(function(){
                 $('.fjls-main').css({display:'none'});
@@ -288,35 +320,30 @@
             $('.back-lsmp').tap(function(){
                 $('.lszx-main').css({display:'none'});
                 $('.lsmp-main').fadeIn();
-            })
-
+            });
             //切换咨询栏目
             $('.list-1').tap(function(){
                 $('.list-1').removeClass('on');
                 $(this).addClass('on')
-            })
-
+            });
             //约见地点
             $('.btn-yjdd').tap(function(){
                 $('.lszx-main').css({display:'none'});
                 $('.yjdd-main').fadeIn();
-            })
-
+            });
             //返回律师咨询
             $('.back-lszx').tap(function(){
                 $('.yjdd-main').css({display:'none'});
                 $('.lszx-main').fadeIn();
-            })
+            });
             //关闭弹出框
             $('.lstc-main').click(function(){
-
                 if(event.target==this){
                     $('.lstc-main').fadeOut();
                     $('.tc-m').fadeOut();
                 }
-            })
+            });
             $('.btn-gb').tap(function(){
-
                 $('.lstc-main').fadeOut();
                 $('.tc-m').fadeOut();
             })

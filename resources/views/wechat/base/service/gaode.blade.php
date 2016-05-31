@@ -108,11 +108,9 @@
     // Ended  搜索高德地图 公共数据
 
     // Begin 搜索自创建地图 私有数据
-    function searchPrivateByAround(center,keyword) { //center = [116.405467, 39.907761];
+    function searchPrivateByAround(center,keyword,onComplete,onError) { //center = [116.405467, 39.907761];
         var search;
         var searchOptions = {
-            map: map,
-            panel: 'panel',
             keywords: keyword,
             pageSize: 5,
             orderBy: '_id:ASC'
@@ -120,7 +118,14 @@
         //加载CloudDataSearch服务插件
         AMap.service(["AMap.CloudDataSearch"], function() {
             search = new AMap.CloudDataSearch('56fa40c9305a2a3288363151', searchOptions);
-            search.searchNearBy(center, 10000);
+            search.searchNearBy(center, 10000000,function (status, result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    //TODO : 解析返回结果,如果设置了map和panel，api将帮助完成点标注和列表
+                    onComplete(result);
+                    return;
+                }
+                onError(result);
+            });
         });
     }
     // Ended 搜索自创建地图 私有数据

@@ -23,7 +23,8 @@ class WeChatController extends Controller
             case 'position':
                 $address  = $request->get('address');
                 $major = $request->get('major');
-                return view('wechat.search',compact('address','major'));
+                $tab = $request->get('tab');
+                return view('wechat.search',compact('address','major','tab'));
             case 'name':
                 $name = $request->get('name');
                 $lawyers = User::where('role','lawyer')->where('real_name',$name)->get();

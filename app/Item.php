@@ -90,7 +90,8 @@ class Item extends ShopItemModel implements Ratingable
             '_address' => $this->location->address,
             'price'    => $this->price
         ];
-        $this->poi->updateInfo($data);
+        if($this->poi)
+            $this->poi->updateInfo($data);
     }
 
     public function updatePrice($price)
