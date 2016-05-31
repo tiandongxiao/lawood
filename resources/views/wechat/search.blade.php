@@ -232,8 +232,6 @@
             // 初始化地图
             gdMapInit();
             geocoder(address,function (position) {
-
-                alert(position.getLng());
                 map.setZoom(13);
                 map.setCenter(position);
                 //添加点标记，并使用自己的icon
@@ -241,7 +239,7 @@
                     map: map,
                     position: [position.getLng(), position.getLat()],
                     icon: new AMap.Icon({
-                        size: new AMap.Size(32, 32),  //图标大小
+                        size: new AMap.Size(48, 48),  //图标大小
                         image: "/images/icon-wz2.png"
                     })
                 });
