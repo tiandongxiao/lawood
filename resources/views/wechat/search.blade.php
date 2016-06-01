@@ -5,7 +5,7 @@
     <div class="map" id="map" style="height: 100%"></div>
     <div class="btn-pl"><img src="/images/icon-pl.png" width="44" height="44"></div>
     <div class="lvzy-main">
-        <span  class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16 line-40" id="btn-more">发现204位相关律师 <font class="fs-12">[ 查看 ]</font></span>
+        <span  class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16 line-40" id="btn-more"></span>
     </div>
 </section>
 <!--地图定位-->
@@ -21,74 +21,6 @@
                 <div class="itms-nav"><span>距离筛选</span></div>
             </div>
             <div class="con" style="padding-top:80px;">
-                <div class="itms">
-                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">王树德 律师</h3>
-                        <p class="chaochu_1"><span><img src="/images/icon-q.png" width="20" height="20" class="img">220元</span>　　<span><img src="/images/icon-w.png" width="20" height="20" class="img">220米</span></p>
-                    </div>
-                    <div class="btn-ckmp">查看名片</div>
-                </div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">王树德 律师</h3>
-                        <p class="chaochu_1"><span><img src="/images/icon-q.png" width="20" height="20" class="img">220元</span>　　<span><img src="/images/icon-w.png" width="20" height="20" class="img">220米</span></p>
-                    </div>
-                    <div class="btn-ckmp">查看名片</div>
-                </div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">王树德 律师</h3>
-                        <p class="chaochu_1"><span><img src="/images/icon-q.png" width="20" height="20" class="img">220元</span>　　<span><img src="/images/icon-w.png" width="20" height="20" class="img">220米</span></p>
-                    </div>
-                    <div class="btn-ckmp">查看名片</div>
-                </div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">王树德 律师</h3>
-                        <p class="chaochu_1"><span><img src="/images/icon-q.png" width="20" height="20" class="img">220元</span>　　<span><img src="/images/icon-w.png" width="20" height="20" class="img">220米</span></p>
-                    </div>
-                    <div class="btn-ckmp">查看名片</div>
-                </div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">王树德 律师</h3>
-                        <p class="chaochu_1"><span><img src="/images/icon-q.png" width="20" height="20" class="img">220元</span>　　<span><img src="/images/icon-w.png" width="20" height="20" class="img">220米</span></p>
-                    </div>
-                    <div class="btn-ckmp">查看名片</div>
-                </div>
-
-                <div class="itms">
-                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">王树德 律师</h3>
-                        <p class="chaochu_1"><span><img src="/images/icon-q.png" width="20" height="20" class="img">220元</span>　　<span><img src="/images/icon-w.png" width="20" height="20" class="img">220米</span></p>
-                    </div>
-                    <div class="btn-ckmp">查看名片</div>
-                </div>
-
-                <div class="itms">
-                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">王树德 律师</h3>
-                        <p class="chaochu_1"><span><img src="/images/icon-q.png" width="20" height="20" class="img">220元</span>　　<span><img src="/images/icon-w.png" width="20" height="20" class="img">220米</span></p>
-                    </div>
-                    <div class="btn-ckmp">查看名片</div>
-                </div>
-
-                <div class="itms">
-                    <div class="f-left"><img src="/images/ls.jpg" width="40px" height="40px;"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">王树德 律师</h3>
-                        <p class="chaochu_1"><span><img src="/images/icon-q.png" width="20" height="20" class="img">220元</span>　　<span><img src="/images/icon-w.png" width="20" height="20" class="img">220米</span></p>
-                    </div>
-                    <div class="btn-ckmp">查看名片</div>
-                </div>
-
             </div>
         </div>
     </div>
@@ -223,6 +155,7 @@
 
         function highlightChose() {
             $('.list').each(function () {
+
                 if($(this).text() == major){
                     // 分类显示逻辑
                     $('.itms-hd').removeClass('on');
@@ -248,32 +181,44 @@
             geocoder(address,function (position) {
                 cur_position = position;
                 setCenter(cur_position);
-                searchPrivateByAround(cur_position,major,function (result) {
-                    // 搜索成功
-                    console.log(result.datas);
-                    $('.fjls-main .con').empty();
-                    var data = result.datas;
-                    for(var i = 0; i < data.length; i++){
-                        $('.fjls-main .con').append(
-                            "<div class='itms'>" +
-                                "<div class='f-left'><img src='"+data[i].avatar+"' width='40px' height='40px'></div>"+
-                                "<div class='right'>"+
-                                    "<h3 class='chaochu_1'>"+ data[i]._name +" 律师</h3>"+
-                                    "<p class='chaochu_1'><span><img src='/images/icon-q.png' width='20' height='20' class='img'>"+ data[i].price+"元</span>　　<span><img src='/images/icon-w.png' width='20' height='20' class='img'>" + data[i]._distance + "米</span></p>"+
-                                "</div>"+
-                                "<div class='btn-ckmp'>查看名片</div>"+
-                            "</div>"
-                        );
-                    }
-                },function (result) {
-                    // 失败
-                    console.log(data);
-                    alert('没搜到任何数据');
-                });
+                searchDataByMajor();
             },function () {
                 alert('转化失败');
             });
             showCloudData();
+        }
+
+        function searchDataByMajor() { //仍然使用当前位置
+            searchPrivateByAround(cur_position,major,function (result) {
+                // 搜索成功
+                var dom = $('.fjls-main .con');
+                console.log(result.datas);
+                dom.empty();
+                var data = result.datas;
+                $('#btn-more').text("您附近有 "+data.length+" 位相关律师  (点击查看)");
+                for(var i = 0; i < data.length; i++){
+                    dom.append(
+                        "<div class='itms'>" +
+                            "<div class='f-left'><img src='"+data[i].avatar+"' width='40px' height='40px'></div>"+
+                            "<div class='right'>"+
+                                "<h3 class='chaochu_1'>"+ data[i]._name +" 律师</h3>"+
+                                "<p class='chaochu_1'><span><img src='/images/icon-q.png' width='20' height='20' class='img'>"+ data[i].price+"元</span>　　<span><img src='/images/icon-w.png' width='20' height='20' class='img'>" + data[i]._distance + "米</span></p>"+
+                            "</div>"+
+                            "<div class='btn-ckmp'>查看名片</div>"+
+                        "</div>"
+                    );
+                }
+                // 查看名片
+                $('.btn-ckmp').tap(function(){
+                    $('.fjls-main').css({display:'none'});
+                    $('.lsmp-main').fadeIn();
+                });
+            },function (result) {
+                // 失败
+                $('.fjls-main .con').empty();
+                $('#btn-more').text("抱歉，您附近没有相关领域律师");
+                console.log(result);
+            });
         }
 
         function setCenter(position) {
@@ -291,7 +236,6 @@
         }
 
         $(function(){
-            highlightChose();
             //返回中心点
             $('.btn-pl').tap(function(){
                 setCenter(cur_position);
@@ -301,11 +245,14 @@
                 $('.lstc-main').fadeIn();
                 $('.fjls-main').fadeIn();
             });
-            //查看名片
-            $('.btn-ckmp').tap(function(){
-                $('.fjls-main').css({display:'none'});
-                $('.lsmp-main').fadeIn();
-            })
+
+            //切换栏目，完成搜索
+            $('.list').tap(function(){
+                //console.log(cur_position);
+                //alert(major);
+                searchDataByMajor(major);
+            });
+
             //返回附近律师
             $('.back-fjls').tap(function(){
                 $('.lsmp-main').css({display:'none'});
@@ -347,6 +294,7 @@
                 $('.lstc-main').fadeOut();
                 $('.tc-m').fadeOut();
             })
-        })
+        });
+        highlightChose();
     </script>
-@stop
+@stop      

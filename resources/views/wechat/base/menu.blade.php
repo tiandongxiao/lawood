@@ -138,7 +138,7 @@
 
 @yield('content')
 </body>
-<script src="/js/jquery-1.9.1.min.js"></script>
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="/js/tap.js"></script>
 <script>
     var major,tabName;
