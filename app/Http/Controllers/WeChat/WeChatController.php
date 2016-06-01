@@ -28,10 +28,13 @@ class WeChatController extends Controller
             case 'name':
                 $name = $request->get('name');
                 $lawyers = User::where('role','lawyer')->where('real_name',$name)->get();
-                if($lawyers->count() >= 1)
-                    return back();
-                return back(); # 查无此人
+                return view('wechat.search_lawyer',compact('lawyers'));
         }
+
+    }
+
+    public function searchLawyer(Request $request)
+    {
 
     }
 }

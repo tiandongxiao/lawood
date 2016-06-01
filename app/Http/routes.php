@@ -218,6 +218,7 @@ Route::resource('receipt','ReceiptController');
 Route::group(['prefix' => 'wechat'], function(){
     Route::get('','WeChat\WeChatController@index');
     Route::get('search','WeChat\WeChatController@search');
+    Route::get('search/lawyer','WeChat\WeChatController@searchLawyer');
 
     # begin 注册绑定
     Route::get('chose','WeChat\AuthController@chose');
