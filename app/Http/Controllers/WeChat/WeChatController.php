@@ -29,8 +29,8 @@ class WeChatController extends Controller
                 $name = $request->get('name');
                 $lawyers = User::where('role','lawyer')->where('real_name',$name)->get();
                 if($lawyers->count() >= 1)
-                    return redirect();
-                return redirect(); # 查无此人
+                    return back();
+                return back(); # 查无此人
         }
 
     }
