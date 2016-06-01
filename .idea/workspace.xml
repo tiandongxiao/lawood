@@ -48,10 +48,10 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="3" column="78" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
+            <state relative-caret-position="130">
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
               <folding>
-                <element signature="e#105#128#0#HTML" expanded="true" />
+                <element signature="e#105#149#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -690,7 +690,7 @@
       <workItem from="1464505444411" duration="4900000" />
       <workItem from="1464513284064" duration="11660000" />
       <workItem from="1464568634776" duration="5247000" />
-      <workItem from="1464585222702" duration="69701000" />
+      <workItem from="1464585222702" duration="69778000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -815,7 +815,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="837612000" />
+    <option name="totallyTimeSpent" value="837689000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1316,10 +1316,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="78" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
+        <state relative-caret-position="130">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
           <folding>
-            <element signature="e#105#128#0#HTML" expanded="true" />
+            <element signature="e#105#149#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

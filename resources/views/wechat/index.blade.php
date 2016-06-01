@@ -1,7 +1,7 @@
 @extends('wechat.base.menu')
 @section('content')
     <section class="lvzy-main">
-        <h3 class="tie" style="font-size: 20px">律屋共有<span class="fc-03aaf0"> 400 </span>名律师</h3>
+        <h3 class="tie" style="font-size: 20px;font-weight: lighter">律屋共有<span class="fc-03aaf0"> 400 </span>名律师</h3>
         <p class="sx mar-top-20">输入有<font class="fc-03aaf0">律师姓名</font>或者有<font class="fc-03aaf0">您的位置</font>即可快速查找</p>
         <form>
             <div class="itms-form" id="form-xz">
