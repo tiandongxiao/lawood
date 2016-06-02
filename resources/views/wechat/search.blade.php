@@ -28,7 +28,7 @@
     <!--律师名片-->
     <div class="tc-m lsmp-main">
         <div class="bg-fff c-main">
-            <div class="tie">您附近的专业律师<i class="btn-fjls  btn-gb"></i><i class="btn-back back-fjls"></i></div>
+            <div class="tie">您附近的专业律师<i class="btn-fjls  btn-gb"></i></div>
             <div class="con" style="padding-top:60px;">
                 <div class="img">
                     <img src="/images/mp-banner.png" width="100%">
@@ -190,21 +190,6 @@
 
         function showPOI(data) {
             var position = data._location;
-//            //添加点标记，并使用自己的icon
-//            marker = new AMap.Marker({
-//                map: map,
-//                clickable:true,
-//                position: [position.getLng(), position.getLat()],
-//                content:"<img style='border-radius: 100%;border: solid 2px white' src='"+data.avatar+"' height='30' width='30'>",
-//                extData:{
-//                    'name':data._name,
-//                    'price': data.price,
-//                    'office':data.office,
-//                    'consult':'good',
-//                    'total':10
-//                }
-//            });
-//            console.log(marker);
 
             AMap.event.addListener(new AMap.Marker({
                 map: map,
@@ -263,6 +248,9 @@
                 });
             },function (result) {
                 // 失败
+                console.log(map.getAllOverlays('marker'));
+                map.clearMap();
+                setCenter(cur_position);
                 $('.fjls-main .con').empty();
                 $('#btn-more').text("抱歉，您附近没有相关领域律师");
                 console.log(result);
@@ -294,25 +282,21 @@
                 $('.lstc-main').fadeIn();
                 $('.fjls-main').fadeIn();
             });
-
             //切换栏目，完成搜索
             $('.list').tap(function(){
-                //console.log(cur_position);
-                //alert(major);
                 searchDataByMajor(major);
             });
-
             //返回附近律师
             $('.back-fjls').tap(function(){
                 $('.lsmp-main').css({display:'none'});
                 $('.fjls-main').fadeIn();
-            })
+            });
             //律师咨询
             $('.btn-ljzx').tap(function(){
                 //alert($(this).data(consult));
                 $('.lsmp-main').css({display:'none'});
                 $('.lszx-main').fadeIn();
-            })
+            });
             //返回律师名片
             $('.back-lsmp').tap(function(){
                 $('.lszx-main').css({display:'none'});
