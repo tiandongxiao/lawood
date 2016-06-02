@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/base/menu.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/base/menu.blade.php" />
-    </list>
+    <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="" />
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -100,7 +98,7 @@
       <file leaf-file-name="menu.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/base/menu.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
+            <state relative-caret-position="3276">
               <caret line="144" column="17" selection-start-line="144" selection-start-column="17" selection-end-line="144" selection-end-column="17" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -747,7 +745,7 @@
       <workItem from="1464568634776" duration="5247000" />
       <workItem from="1464585222702" duration="72942000" />
       <workItem from="1464830455797" duration="25284000" />
-      <workItem from="1464878366300" duration="3044000" />
+      <workItem from="1464878366300" duration="3640000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -872,7 +870,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="869181000" />
+    <option name="totallyTimeSpent" value="869777000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1270,7 +1268,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/base/menu.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
+        <state relative-caret-position="3276">
           <caret line="144" column="17" selection-start-line="144" selection-start-column="17" selection-end-line="144" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
