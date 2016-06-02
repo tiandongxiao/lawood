@@ -20,7 +20,7 @@
                 <div class="itms-nav"><span>价格筛选</span></div>
                 <div class="itms-nav"><span>距离筛选</span></div>
             </div>
-            <div class="con">
+            <div class="con" style="padding-top: 85px;">
             </div>
         </div>
     </div>
