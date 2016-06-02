@@ -220,7 +220,7 @@
 
                 $('.lstc-main').show();
                 $('.fjls-main').hide();
-                $('.lsmp-main').fadeIn();
+                $('.lsmp-main').show();
             });
         }
 
