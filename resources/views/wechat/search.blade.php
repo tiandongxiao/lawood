@@ -152,46 +152,6 @@
                             "<div class='btn-ckmp' data-user='"+data[i].user+"'>查看名片</div>"+
                         "</div>"
                     );
-                    dom.append(
-                            "<div class='itms'>" +
-                            "<div class='f-left'><img src='"+data[i].avatar+"' width='40px' height='40px'></div>"+
-                            "<div class='right'>"+
-                            "<h3 class='chaochu_1'>"+ data[i]._name +" 律师</h3>"+
-                            "<p class='chaochu_1'><span><img src='/images/icon-q.png' width='20' height='20' class='img'>"+ data[i].price+"元</span>　　<span><img src='/images/icon-w.png' width='20' height='20' class='img'>" + data[i]._distance + "米</span></p>"+
-                            "</div>"+
-                            "<div class='btn-ckmp' data-user='"+data[i].user+"'>查看名片</div>"+
-                            "</div>"
-                    );
-                    dom.append(
-                            "<div class='itms'>" +
-                            "<div class='f-left'><img src='"+data[i].avatar+"' width='40px' height='40px'></div>"+
-                            "<div class='right'>"+
-                            "<h3 class='chaochu_1'>"+ data[i]._name +" 律师</h3>"+
-                            "<p class='chaochu_1'><span><img src='/images/icon-q.png' width='20' height='20' class='img'>"+ data[i].price+"元</span>　　<span><img src='/images/icon-w.png' width='20' height='20' class='img'>" + data[i]._distance + "米</span></p>"+
-                            "</div>"+
-                            "<div class='btn-ckmp' data-user='"+data[i].user+"'>查看名片</div>"+
-                            "</div>"
-                    );
-                    dom.append(
-                            "<div class='itms'>" +
-                            "<div class='f-left'><img src='"+data[i].avatar+"' width='40px' height='40px'></div>"+
-                            "<div class='right'>"+
-                            "<h3 class='chaochu_1'>"+ data[i]._name +" 律师</h3>"+
-                            "<p class='chaochu_1'><span><img src='/images/icon-q.png' width='20' height='20' class='img'>"+ data[i].price+"元</span>　　<span><img src='/images/icon-w.png' width='20' height='20' class='img'>" + data[i]._distance + "米</span></p>"+
-                            "</div>"+
-                            "<div class='btn-ckmp' data-user='"+data[i].user+"'>查看名片</div>"+
-                            "</div>"
-                    );
-                    dom.append(
-                            "<div class='itms'>" +
-                            "<div class='f-left'><img src='"+data[i].avatar+"' width='40px' height='40px'></div>"+
-                            "<div class='right'>"+
-                            "<h3 class='chaochu_1'>"+ data[i]._name +" 律师</h3>"+
-                            "<p class='chaochu_1'><span><img src='/images/icon-q.png' width='20' height='20' class='img'>"+ data[i].price+"元</span>　　<span><img src='/images/icon-w.png' width='20' height='20' class='img'>" + data[i]._distance + "米</span></p>"+
-                            "</div>"+
-                            "<div class='btn-ckmp' data-user='"+data[i].user+"'>查看名片</div>"+
-                            "</div>"
-                    );
                 }
                 // 查看名片
                 $('.btn-ckmp').tap(function(){
