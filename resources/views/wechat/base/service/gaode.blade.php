@@ -43,7 +43,9 @@
             AMap.event.addListener(cloudDataLayer, 'click', function (result) {
                 var cloudData = result.data;
                 var infoWindow = new AMap.InfoWindow({
-                    content:"<h3><font face=\"微软雅黑\"color=\"#3366FF\">"+ cloudData._name +"</font></h3><hr />地址："+ cloudData._address + "<br />" + "业务：" +cloudData.category+  "</strong><br />",
+                    isCustom: true,  //使用自定义窗体
+                    content:"<div><h3><font face=\"微软雅黑\"color=\"#3366FF\">"+ cloudData._name +"</font></h3><hr />地址："+ cloudData._address + "<br />" + "业务：" +cloudData.category+  "</strong><br /></div>",
+                    content:"<",
                     size:new AMap.Size(300, 0),
                     autoMove:true,
                     offset:new AMap.Pixel(0,-5)

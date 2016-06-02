@@ -218,7 +218,7 @@ Route::resource('receipt','ReceiptController');
 Route::group(['prefix' => 'wechat'], function(){
     Route::get('','WeChat\WeChatController@index');
     Route::get('search','WeChat\WeChatController@search');
-    Route::get('search/lawyer','WeChat\WeChatController@searchLawyer');
+    Route::get('user/{id}','WeChat\WeChatController@showUser');
 
     # begin 注册绑定
     Route::get('chose','WeChat\AuthController@chose');
@@ -240,7 +240,7 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::post('client/config','WeChat\ClientController@postConfig');
     # end 咨询用户
 
-    Route::get('user/{id}','WeChat\ClientController@lawyer');
+//    Route::get('user/{id}','WeChat\ClientController@lawyer');
 
     # begin 律师
     Route::get('lawyer/notifies','WeChat\LawyerController@notifies');

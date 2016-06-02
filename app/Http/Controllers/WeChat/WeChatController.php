@@ -33,8 +33,11 @@ class WeChatController extends Controller
 
     }
 
-    public function searchLawyer(Request $request)
+    public function showUser($id)
     {
-
+        $user = User::findOrFail(2);
+        if($user->role == 'lawyer')
+            return view('wechat.lawyer.index',compact('user'));
+        abort(404);
     }
 }

@@ -32,22 +32,22 @@
             <div class="con" style="padding-top:60px;">
                 <div class="img">
                     <img src="/images/mp-banner.png" width="100%">
-                    <a href="#" class="link-more">点击查看详情</a>
+                    <a href="" class="link-more" id="detail_info">点击查看详情</a>
                     <div class="zxf">
                         <p class="top">咨询费</p>
-                        <p class="bottom">220<font class="fs-18">元</font></p>
+                        <p class="bottom"><span id="price">220</span><font class="fs-18">元</font></p>
                     </div>
                 </div>
                 <div class="name">
-                    <div class="f-right"><span class="btn-ljzx">立即咨询</span></div>
+                    <div class="f-right" ><span class="btn-ljzx"><a>立即咨询</a></span></div>
                     <div class="left">
-                        <h3 class="chaochu_1">王树德	<span>律师</span></h3>
-                        <p class="chaochu_1">北京市朝阳区京师律师事务所</p>
+                        <h3 class="chaochu_1" ><span id="name">王树德</span>	<span>律师</span></h3>
+                        <p class="chaochu_1" id="office">北京市朝阳区京师律师事务所</p>
                     </div>
                 </div>
                 <div class="bq">
-                    <span class="ren">39人咨询过</span>
-                    <span class="jl">0.5km</span>
+                    <span class="ren" id="total">39人咨询过</span>
+                    <span class="jl" id="distance">0.5km</span>
                 </div>
             </div>
         </div>
@@ -142,7 +142,6 @@
         </div>
     </div>
     <!--约见地点-->
-
 </section>
 <!--弹出框-->
 @stop
@@ -186,7 +185,44 @@
             },function () {
                 alert('转化失败');
             });
-            showCloudData();
+            //showCloudData();
+        }
+
+        function showPOI(data) {
+            var position = data._location;
+            //添加点标记，并使用自己的icon
+            marker = new AMap.Marker({
+                map: map,
+                clickable:true,
+                position: [position.getLng(), position.getLat()],
+                content:"<img style='border-radius: 100%;border: solid 2px white' src='"+data.avatar+"' height='30' width='30'>",
+                extData:{
+                    'name':data._name,
+                    'price': data.price,
+                    'office':data.office,
+                    'consult':'good',
+                    'total':10
+                }
+            });
+            console.log(marker);
+
+            AMap.event.addListener(marker, 'click', function () {
+                alert('meiyou');
+                var data = marker.H.extData;
+                console.log(marker.H.extData);
+
+                $('#name').text(data.name);
+                $('#price').text(data.price);
+                $('#office').text(data.office);
+                $('#distance').text(data._distance);
+                $('#total').text(data.total);
+                $('.btn-ljzx').data('consult',data.consult);
+
+
+                $('.lstc-main').show();
+                $('.fjls-main').hide();
+                $('.lsmp-main').fadeIn();
+            });
         }
 
         function searchDataByMajor() { //仍然使用当前位置
@@ -198,6 +234,7 @@
                 var data = result.datas;
                 $('#btn-more').text("您附近有 "+data.length+" 位相关律师  (点击查看)");
                 for(var i = 0; i < data.length; i++){
+                    showPOI(data[i]);
                     dom.append(
                         "<div class='itms'>" +
                             "<div class='f-left'><img src='"+data[i].avatar+"' width='40px' height='40px'></div>"+
@@ -205,14 +242,13 @@
                                 "<h3 class='chaochu_1'>"+ data[i]._name +" 律师</h3>"+
                                 "<p class='chaochu_1'><span><img src='/images/icon-q.png' width='20' height='20' class='img'>"+ data[i].price+"元</span>　　<span><img src='/images/icon-w.png' width='20' height='20' class='img'>" + data[i]._distance + "米</span></p>"+
                             "</div>"+
-                            "<div class='btn-ckmp'>查看名片</div>"+
+                            "<div class='btn-ckmp' data-user='"+data[i].user+"'>查看名片</div>"+
                         "</div>"
                     );
                 }
                 // 查看名片
                 $('.btn-ckmp').tap(function(){
-                    $('.fjls-main').css({display:'none'});
-                    $('.lsmp-main').fadeIn();
+                    window.location.href="/wechat/user/"+$(this).data('user');
                 });
             },function (result) {
                 // 失败
@@ -235,6 +271,7 @@
                 })
             });
         }
+
 
         $(function(){
             //返回中心点
@@ -261,6 +298,7 @@
             })
             //律师咨询
             $('.btn-ljzx').tap(function(){
+                //alert($(this).data(consult));
                 $('.lsmp-main').css({display:'none'});
                 $('.lszx-main').fadeIn();
             })

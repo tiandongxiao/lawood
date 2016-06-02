@@ -18,8 +18,8 @@
                         @endforeach
                     @else
                         <p class="te-cen" style="margin-top: 100px">查无此律师</p>
-                        <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 margin-bottom"  value="返回" />
                     @endif
+                    <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 margin-bottom"  value="返回" />
                 </div>
             </div>
         </div>
