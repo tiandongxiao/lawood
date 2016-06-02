@@ -143,6 +143,17 @@
 <script>
     var major,tabName;
     $(function(){
+        $('.dtdw-main').height($('body').height()-100)
+        $('.tc-m').css({top:$('body').height()*0.95-400});
+        $('.tie').css({top:$('body').height()*0.95-400});
+        $('.btn-ddxz').css({top:$('body').height()*0.95-65});
+        $(window).resize(function() {
+            $('.dtdw-main').height($('body').height()-100)
+            $('.tc-m').css({top:$('body').height()*0.95-400});
+            $('.tie').css({top:$('body').height()*0.95-400});
+            $('.btn-ddxz').css({top:$('body').height()*0.95-65});
+        });
+
         //切换栏目
         $('.itms-hd').tap(function(){
             $('.itms-hd').removeClass('on');

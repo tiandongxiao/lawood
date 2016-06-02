@@ -213,11 +213,7 @@
                 $('.lszx-main').css({display:'none'});
                 $('.lsmp-main').fadeIn();
             });
-            //返回律师咨询
-            $('.back-lszx').tap(function(){
-                $('.yjdd-main').css({display:'none'});
-                $('.lszx-main').fadeIn();
-            });
+
             //关闭弹出框
             $('.lstc-main').click(function(){
                 if(event.target==this){
