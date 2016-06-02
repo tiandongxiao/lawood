@@ -35,7 +35,7 @@ class WeChatController extends Controller
 
     public function showUser($id)
     {
-        $user = User::findOrFail(2);
+        $user = User::findOrFail($id);
         if($user->role == 'lawyer')
             return view('wechat.lawyer.index',compact('user'));
         abort(404);
