@@ -207,8 +207,8 @@
             console.log(marker);
 
             AMap.event.addListener(marker, 'click', function () {
-                var data = marker.H.extData;
-                console.log(marker.H.extData);
+                var data = this.H.extData;
+                console.log(data);
 
                 $('#name').text(data.name);
                 $('#price').text(data.price);
