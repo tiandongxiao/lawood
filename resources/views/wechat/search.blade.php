@@ -20,7 +20,7 @@
                 <div class="itms-nav"><span>价格筛选</span></div>
                 <div class="itms-nav"><span>距离筛选</span></div>
             </div>
-            <div class="con" style="padding-top:80px;">
+            <div class="con">
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
     <div class="tc-m lsmp-main">
         <div class="bg-fff c-main">
             <div class="tie">您附近的专业律师<i class="btn-fjls  btn-gb"></i></div>
-            <div class="con" style="padding-top:60px;">
+            <div class="con">
                 <div class="img">
                     <img src="/images/mp-banner.png" width="100%">
                     <a href="" class="link-more" id="detail_info">点击查看详情</a>
@@ -53,95 +53,6 @@
         </div>
     </div>
     <!--律师名片-->
-    <!--律师咨询费-->
-    <div class="tc-m lszx-main">
-        <div class="bg-fff c-main">
-            <div class="top" style="padding-top:60px;">
-                <div class="tie">咨询费<i class="btn-fjls btn-gb"></i><i class="btn-back back-lsmp"></i></div>
-                <div class="xx">
-                    <div><img src="/images/logo.png"  height="50"></div>
-                    <div>咨询费　｜　220元</div>
-                    <p class="fs-12 line-15 mar-top-5">见面咨询90分钟</p>
-                    <p class="fs-12 line-15">电话咨询不超过60分钟</p>
-                </div>
-            </div>
-            <div class="bottom pad-10">
-                <div class="line-35 fs-16 fc-505050">选择地区</div>
-                <div class="itms-select">
-                    <div class="f-left">
-                        <select>
-                            <option>北京地区</option>
-                            <option>上海地区</option>
-                            <option>广州地区</option>
-                        </select>
-                    </div>
-                    <div class="right chaochu_1">其他地区预约后只能电话咨询</div>
-                </div>
-                <div class="line-35 fs-16 fc-505050">选择相关法律问题</div>
-                <div class="itms-bd-1 clearfix">
-                    <span class="list-1 on">婚姻</span>
-                    <span class="list-1">房产</span>
-                    <span class="list-1">债务</span>
-                    <span class="list-1">劳动争议</span>
-                </div>
-                <a href="#" class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 mar-top-10 btn-yjdd">立即咨询</a>
-            </div>
-        </div>
-    </div>
-    <!--律师咨询费-->
-    <!--约见地点-->
-    <div class="tc-m yjdd-main" >
-        <div class="bg-fff c-main">
-            <div class="tie">选择约见地点<i class="btn-fjls btn-gb"></i><i class="btn-back back-lszx"></i></div>
-            <div class="con" style="padding:60px 10px 70px;">
-                <div class="line-40 fc-505050">提示：下列地点仅为推荐，可协商变更</div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/dd-banner.jpg" width="120" height="80"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">COST咖啡店</h3>
-                        <p class="chaochu_1">法律咖啡：人均25元</p>
-                        <p class="chaochu_1">地址：北京市海淀区中关村33号</p>
-                        <p class="chaochu_1 mar-top-10">距离200米</p>
-                    </div>
-                    <div class="itms-radio"><input type="radio" name="dd" class="In-radio" checked></div>
-                </div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/dd-banner.jpg" width="120" height="80"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">COST咖啡店</h3>
-                        <p class="chaochu_1">法律咖啡：人均25元</p>
-                        <p class="chaochu_1">地址：北京市海淀区中关村33号</p>
-                        <p class="chaochu_1 mar-top-10">距离200米</p>
-                    </div>
-                    <div class="itms-radio"><input type="radio" name="dd" class="In-radio"></div>
-                </div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/dd-banner.jpg" width="120" height="80"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">COST咖啡店</h3>
-                        <p class="chaochu_1">法律咖啡：人均25元</p>
-                        <p class="chaochu_1">地址：北京市海淀区中关村33号</p>
-                        <p class="chaochu_1 mar-top-10">距离200米</p>
-                    </div>
-                    <div class="itms-radio"><input type="radio" name="dd" class="In-radio"></div>
-                </div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/dd-banner.jpg" width="120" height="80"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">COST咖啡店</h3>
-                        <p class="chaochu_1">法律咖啡：人均25元</p>
-                        <p class="chaochu_1">地址：北京市海淀区中关村33号</p>
-                        <p class="chaochu_1 mar-top-10">距离200米</p>
-                    </div>
-                    <div class="itms-radio"><input type="radio" name="dd" class="In-radio"></div>
-                </div>
-            </div>
-            <div class=" btn-ddxz">
-                <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 mar-top-10" value="立即咨询" id="btn-ddxz">
-            </div>
-        </div>
-    </div>
-    <!--约见地点-->
 </section>
 <!--弹出框-->
 @stop
@@ -195,7 +106,7 @@
                 map: map,
                 clickable:true,
                 position: [position.getLng(), position.getLat()],
-                content:"<img style='border-radius: 100%;border: solid 2px white' src='"+data.avatar+"' height='30' width='30'>",
+                content:"<img style='border-radius: 100%;border: solid 2px white; z-index: 9999' src='"+data.avatar+"' height='30' width='30'>",
                 extData:{
                     'name':data._name,
                     'price': data.price,
@@ -278,7 +189,7 @@
                 setCenter(cur_position);
             });
             //查看更多律师
-            $('#btn-more').tap(function(){
+            $('#btn-more').click(function(){
                 $('.lstc-main').fadeIn();
                 $('.fjls-main').fadeIn();
             });
@@ -301,16 +212,6 @@
             $('.back-lsmp').tap(function(){
                 $('.lszx-main').css({display:'none'});
                 $('.lsmp-main').fadeIn();
-            });
-            //切换咨询栏目
-            $('.list-1').tap(function(){
-                $('.list-1').removeClass('on');
-                $(this).addClass('on')
-            });
-            //约见地点
-            $('.btn-yjdd').tap(function(){
-                $('.lszx-main').css({display:'none'});
-                $('.yjdd-main').fadeIn();
             });
             //返回律师咨询
             $('.back-lszx').tap(function(){
