@@ -275,7 +275,7 @@ transform:scale(0.8,0.8);
 
 /*14-您附近的专业律师*/
 .lstc-main	{ position:absolute; left:0; top:0; width:100%; height:100%; z-index:200; background:rgba(83,83,83,0.7)}
-.lstc-main	.tc-m	{ position:absolute; bottom:0px; left:4%; width:92%; display:none; }
+.lstc-main	.tc-m	{ position:absolute; bottom:4%; left:4%; width:92%; display:none; }
 .lstc-main	.tc-m		.c-main	{  border-radius:10px; max-height:400px; height:400px; overflow:auto; position:relative; }
 .lstc-main	.tc-m		.c-main	.tie	{ width:92%; height:45px; line-height:45px; text-align:center; color:#686868; border-bottom:1px solid #f8f8f8; z-index:100; background:#fff; padding:5px 0; border-top-left-radius:10px; border-top-right-radius:10px; font-size:16px; }
 .lstc-main	.tc-m		.c-main	.btn-ddxz	{  width:92%; height:65px; line-height:45px; text-align:center;  position:fixed !important; z-index:100; left:4%; background:#fff;   border-bottom-left-radius:10px; border-bottom-right-radius:10px;}
