@@ -63,7 +63,7 @@ class Pois extends Model
             'avatar'      =>  $item->seller->avatar,
             'price'       =>  $item->price,
             'consult'     =>  $item->id,
-            'user'        =>  $item->user->id
+            'user'        =>  $item->seller->id
         ]);
 
         $this->poi_id = $poi_id;
