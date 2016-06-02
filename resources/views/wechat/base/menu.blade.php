@@ -176,8 +176,7 @@
                 $('.nav-main').addClass('on1');
                 $('.btn-ss').attr({class:'btn-xl'})
             }
-        })
-
+        });
         //切换栏目
         $('.list').tap(function(){
             $('.list').removeClass('on');
@@ -190,14 +189,13 @@
         $('.btn-cb').tap(function(){
             $('.cblm-main').removeClass('on1');
             $('.cblm-main').addClass('on')
-        })
-        $('.cblm-main').click(function(){
-
+        });
+        $('.cblm-main').tap(function(){
             if(event.target==this){
                 $('.cblm-main').removeClass('on');
                 $('.cblm-main').addClass('on1')
             }
-        })
+        });
         @if(Auth::user()->role =='lawyer')
         var address = $('input[name=uri]').val();
         $("#In-service").change(function() {
