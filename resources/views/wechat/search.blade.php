@@ -207,7 +207,6 @@
             console.log(marker);
 
             AMap.event.addListener(marker, 'click', function () {
-                alert('meiyou');
                 var data = marker.H.extData;
                 console.log(marker.H.extData);
 
