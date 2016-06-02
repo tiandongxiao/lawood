@@ -143,11 +143,6 @@
 <script>
     var major,tabName;
     $(function(){
-        $('.dtdw-main').height($('body').height()-100)
-        $(window).resize(function() {
-            $('.dtdw-main').height($('body').height()-100)
-        });
-
         //切换栏目
         $('.itms-hd').tap(function(){
             $('.itms-hd').removeClass('on');
@@ -157,19 +152,21 @@
             $('.itms-bd').removeClass('on');
             $('.itms-bd').eq($(this).index()).addClass('on');
 
-        })
+        });
 
         //栏目下拉上升
         $(document).on('click','.btn-xl',function(){
             $('.nav-main').removeClass('on1');
             $('.nav-main').addClass('on');
             $(this).attr({class:'btn-ss'})
-        })
+        });
+
         $(document).on('click','.btn-ss',function(){
             $('.nav-main').removeClass('on');
             $('.nav-main').addClass('on1');
             $(this).attr({class:'btn-xl'})
-        })
+        });
+
         $('.nav-main').click(function(){
             if(event.target==this){
                 $('.nav-main').removeClass('on');
