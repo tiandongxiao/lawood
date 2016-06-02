@@ -27,7 +27,7 @@
     <!--附近律师-->
     <!--律师名片-->
     <div class="tc-m lsmp-main">
-        <div class="bg-fff c-main">
+        <div class="bg-fff c-main" style="height: 355px;">
             <div class="tie">您附近的专业律师<i class="btn-fjls  btn-gb"></i></div>
             <div class="con">
                 <div class="img">
