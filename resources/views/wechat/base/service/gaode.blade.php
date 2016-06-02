@@ -4,9 +4,9 @@
 
     function gdMapInit() {
         map = new AMap.Map('map', {
-            resizeEnable: true,
+            resizeEnable: false,
             jogEnable:false,
-            dragEnable:false
+            dragEnable:true
         });
     }
 
