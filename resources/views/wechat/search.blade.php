@@ -190,8 +190,23 @@
 
         function showPOI(data) {
             var position = data._location;
-            //添加点标记，并使用自己的icon
-            marker = new AMap.Marker({
+//            //添加点标记，并使用自己的icon
+//            marker = new AMap.Marker({
+//                map: map,
+//                clickable:true,
+//                position: [position.getLng(), position.getLat()],
+//                content:"<img style='border-radius: 100%;border: solid 2px white' src='"+data.avatar+"' height='30' width='30'>",
+//                extData:{
+//                    'name':data._name,
+//                    'price': data.price,
+//                    'office':data.office,
+//                    'consult':'good',
+//                    'total':10
+//                }
+//            });
+//            console.log(marker);
+
+            AMap.event.addListener(new AMap.Marker({
                 map: map,
                 clickable:true,
                 position: [position.getLng(), position.getLat()],
@@ -203,10 +218,7 @@
                     'consult':'good',
                     'total':10
                 }
-            });
-            console.log(marker);
-
-            AMap.event.addListener(marker, 'click', function () {
+            }), 'click', function () {
                 var data = this.H.extData;
                 console.log(data);
 
