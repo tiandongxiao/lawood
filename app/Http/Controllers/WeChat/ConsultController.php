@@ -27,10 +27,11 @@ class ConsultController extends Controller
         if(Auth::check()){
             switch (Auth::user()->role){
                 case 'lawyer':
-                    break;
+                    return back();
                 case 'client':
                     break;
             }
         }
+        return view();
     }
 }

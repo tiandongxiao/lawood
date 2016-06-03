@@ -86,7 +86,7 @@
     <footer class="yy-footer po-f">
         <div class="itms itms-left">
             <span class="fx"><i>分享</i></span>
-            @if(Auth::check() && Auth::user()->role != 'lawyer'))
+            @if(Auth::check() && Auth::user()->role != 'lawyer')
             <span class="sc" id="sc"><i>收藏</i></span>
             @endif
         </div>
@@ -97,6 +97,7 @@
                 <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat')}}">返回首页</a>
             @endif
         @else
+            <a class="itms te-cen bg-lan1 fc-fff" href="#" id="In-btn">预约咨询</a>
         @endif
     </footer>
     @endif
