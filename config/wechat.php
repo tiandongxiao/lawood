@@ -1,6 +1,6 @@
 <?php
 return [
-    'debug'     => true,
+    'debug'     => false,
     'use_alias'    => env('WECHAT_USE_ALIAS', false),
     'app_id'       => env('WECHAT_APPID', 'YourAppId'),   # 必填
     'secret'       => env('WECHAT_SECRET', 'YourSecret'), # 必填
@@ -26,5 +26,9 @@ return [
         # 'sub_app_id'      => env('WECHAT_PAYMENT_SUB_APP_ID', ''),
         # 'sub_merchant_id' => env('WECHAT_PAYMENT_SUB_MERCHANT_ID', ''),
         # ...
+    ],
+    'log' => [
+        'level' => 'info',
+        'file'  => '/tmp/easywechat.log',
     ],
 ];
