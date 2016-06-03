@@ -199,7 +199,7 @@
             $('.cblm-main').addClass('on');
             event.preventDefault();
         })
-        $('.cblm-main').tap(function(){
+        $('.cblm-main').click(function(){
             if(event.target==this){
                 $('.cblm-main').removeClass('on');
                 $('.cblm-main').addClass('on1')
