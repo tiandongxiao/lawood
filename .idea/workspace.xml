@@ -39,7 +39,7 @@
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="462">
-                  <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+                  <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
                   <folding />
                 </state>
               </provider>
@@ -608,7 +608,7 @@
       <workItem from="1464585222702" duration="72942000" />
       <workItem from="1464830455797" duration="25284000" />
       <workItem from="1464878366300" duration="5221000" />
-      <workItem from="1464916881329" duration="16835000" />
+      <workItem from="1464916881329" duration="16980000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -733,7 +733,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="888193000" />
+    <option name="totallyTimeSpent" value="888338000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1194,7 +1194,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
-          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+          <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
           <folding />
         </state>
       </provider>
