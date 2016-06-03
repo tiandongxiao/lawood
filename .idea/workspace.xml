@@ -33,16 +33,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="css.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/css/css.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="491" column="29" selection-start-line="491" selection-start-column="29" selection-end-line="491" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="setting.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/setting.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -53,16 +43,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="104" column="32" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
+            <state relative-caret-position="390">
+              <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
               <folding>
                 <element signature="e#5165#5186#0#HTML" expanded="true" />
                 <element signature="e#5245#5280#0#HTML" expanded="true" />
-                <element signature="e#5424#5488#0#HTML" expanded="true" />
-                <element signature="e#5649#5692#0#HTML" expanded="true" />
+                <element signature="e#5355#5374#0#HTML" expanded="true" />
+                <element signature="e#5444#5508#0#HTML" expanded="true" />
+                <element signature="e#5669#5712#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -574,7 +565,7 @@
       <workItem from="1464830455797" duration="25284000" />
       <workItem from="1464878366300" duration="5221000" />
       <workItem from="1464916881329" duration="17981000" />
-      <workItem from="1464940484301" duration="9715000" />
+      <workItem from="1464940484301" duration="9840000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -699,7 +690,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="899054000" />
+    <option name="totallyTimeSpent" value="899179000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1039,14 +1030,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/setting.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/category_select.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1137,24 +1120,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/css/css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="104" column="32" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
-          <folding>
-            <element signature="e#5165#5186#0#HTML" expanded="true" />
-            <element signature="e#5245#5280#0#HTML" expanded="true" />
-            <element signature="e#5424#5488#0#HTML" expanded="true" />
-            <element signature="e#5649#5692#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="262">
+          <caret line="495" column="39" selection-start-line="495" selection-start-column="39" selection-end-line="495" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/css.css">
+    <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/setting.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="491" column="29" selection-start-line="491" selection-start-column="29" selection-end-line="491" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
+          <folding>
+            <element signature="e#5165#5186#0#HTML" expanded="true" />
+            <element signature="e#5245#5280#0#HTML" expanded="true" />
+            <element signature="e#5355#5374#0#HTML" expanded="true" />
+            <element signature="e#5444#5508#0#HTML" expanded="true" />
+            <element signature="e#5669#5712#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
