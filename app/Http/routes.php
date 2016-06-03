@@ -241,8 +241,6 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::post('client/config','WeChat\ClientController@postConfig');
     # end 咨询用户
 
-//    Route::get('user/{id}','WeChat\ClientController@lawyer');
-
     # begin 律师
     Route::get('lawyer/notifies','WeChat\LawyerController@notifies');
     Route::get('lawyer/orders','WeChat\LawyerController@orders');
@@ -260,7 +258,7 @@ Route::group(['prefix' => 'wechat'], function(){
 });
 
 Route::group(['prefix' => 'ajax'], function(){
-    # 律师启动关闭自己服务的操作
+    # 律师 启动||关闭 服务的操作
     Route::post('start','AjaxController@start');
     Route::post('stop','AjaxController@stop');
 

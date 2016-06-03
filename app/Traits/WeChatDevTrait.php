@@ -9,6 +9,7 @@
 namespace App\Traits;
 
 use App\User;
+use Illuminate\Support\Facades\Log;
 
 trait WeChatDevTrait
 {
@@ -47,12 +48,15 @@ trait WeChatDevTrait
     {
         $account = $this->account();
 
-        if(is_null($account))
+        if(is_null($account)){
+            Log::info('regIfNotExist 获取用户微信account失败');
             return null;
+        }
 
         $user = User::where('union_id', $account->union_id)->first();
 
         if(!$user){
+            Log::info('regIfNotExist 用户不存在，需要创建');
             $user = User::create([
                 'avatar'   => $account->avatar,     # 设置头像
                 'union_id' => $account->union_id,   # 绑定Union ID
@@ -74,6 +78,7 @@ trait WeChatDevTrait
     {
         $user = session('wechat.oauth_user');
         if ($user) {
+            Log::info('account 获取成功');
             $accessToken = $this->app->access_token;
             $token = $accessToken->getToken(true);  # 强制重新从微信服务器获取 token.
             $union_id = $this->unionID($user->id, $token, 'PUB');
@@ -85,6 +90,7 @@ trait WeChatDevTrait
 
             return $account;
         }
+        Log::info('account 获取失败');
         return null;
     }
 }
