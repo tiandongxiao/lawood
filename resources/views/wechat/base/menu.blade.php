@@ -194,7 +194,7 @@
 
         @if(Auth::user())
         //打开侧边
-        $('.btn-cb').tap(function(){
+        $('.btn-cb').click(function(){
             $('.cblm-main').removeClass('on1');
             $('.cblm-main').addClass('on');
             event.preventDefault();
