@@ -69,7 +69,7 @@
             <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
             <div class="right">我的订单</div>
         </a>
-        <a class="itms " href="{{url('wechat/lawyer/me')}}">
+        <a class="itms " href="{{url('wechat/user/'.Auth::user()->id)}}">
             <div class="f-left"><img src="/images/nav4.png" width="20" height="20"></div>
             <div class="right">我的主页</div>
         </a>
