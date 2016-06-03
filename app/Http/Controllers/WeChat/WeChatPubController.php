@@ -33,6 +33,9 @@ class WeChatPubController extends Controller
         $this->app = $app;
         $this->broadcast = $app->broadcast;
         $this->notice = $app->notice;
+        if(Auth::check()){
+            Auth::user()->logout();
+        }
         if(!is_null($this->loginUser()))
             $this->user = $this->loginUser();
     }

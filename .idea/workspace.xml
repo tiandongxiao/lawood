@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/wechat.php" afterPath="$PROJECT_DIR$/config/wechat.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +35,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="WeChatPubController.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="WeChatPubController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="651">
-                  <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+                <state relative-caret-position="222">
+                  <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
@@ -66,11 +65,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="WeChatDevTrait.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="WeChatDevTrait.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Traits/WeChatDevTrait.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2541">
-                  <caret line="82" column="6" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
+                <state relative-caret-position="782">
+                  <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
                   <folding>
                     <element signature="e#119#132#0#PHP" expanded="true" />
                   </folding>
@@ -609,7 +608,7 @@
       <workItem from="1464585222702" duration="72942000" />
       <workItem from="1464830455797" duration="25284000" />
       <workItem from="1464878366300" duration="5221000" />
-      <workItem from="1464916881329" duration="16456000" />
+      <workItem from="1464916881329" duration="16715000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -734,7 +733,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="887814000" />
+    <option name="totallyTimeSpent" value="888073000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1182,21 +1181,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Traits/WeChatDevTrait.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2541">
-          <caret line="82" column="6" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
-          <folding>
-            <element signature="e#119#132#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="222">
+          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
+    <entry file="file://$PROJECT_DIR$/app/Traits/WeChatDevTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="782">
+          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+          <folding>
+            <element signature="e#119#132#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
