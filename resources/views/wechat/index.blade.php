@@ -19,30 +19,30 @@
 
         <div class="line-30 pad-0-10 fc-909090 mar-top-30">推荐律师</div>
         <div class="tjls pad-0-10 clearfix">
-            <div class="itms">
+            <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
                 <p>1.4km</p>
-            </div>
-            <div class="itms">
+            </a>
+            <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
                 <p>1.4km</p>
-            </div>
-            <div class="itms">
+            </a>
+            <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
                 <p>1.4km</p>
-            </div>
-            <div class="itms">
+            </a>
+            <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
                 <p>1.4km</p>
-            </div>
-            <div class="itms">
+            </a>
+            <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
                 <p>1.4km</p>
-            </div>
-            <div class="itms">
+            </a>
+            <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
                 <p>1.4km</p>
-            </div>
+            </a>
         </div>
     </section>
 @stop
@@ -72,13 +72,11 @@
 
 
             $('#In-btn').tap(function () {
-
                 if($('#icon-wz').hasClass('on')){
                     if(!major){
                         alert('您没有选择任何咨询门类');
                         return;
                     }
-
                     if(!$('#In-wz').val()){
                         alert('地址不能为空');
                         return;
