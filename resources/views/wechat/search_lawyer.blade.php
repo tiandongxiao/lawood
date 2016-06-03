@@ -13,7 +13,7 @@
                                     <p></p>
                                     <p class="mar-top-10" style="font-size: 15px">{{$lawyer->office}}</p>
                                 </div>
-                                <a class="btn-ckmp" href="#">查看名片</a>
+                                <a class="btn-ckmp" href="{{url('wechat/user/'.$lawyer->id)}}">查看名片</a>
                             </div>
                         @endforeach
                     @else
