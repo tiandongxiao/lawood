@@ -100,7 +100,7 @@
 
     <section class="lstc-main" style="display: none">
         <!--律师咨询费-->
-        <div class="tc-m lszx-main" style="top: 120px; display: block;">
+        <div class="tc-m lszx-main" style="top: 120px; display: block;width: 101%">
             <div class="bg-fff c-main">
                 <div class="top">
                     <div class="tie">
