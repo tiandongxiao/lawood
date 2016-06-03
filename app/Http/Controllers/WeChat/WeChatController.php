@@ -29,7 +29,6 @@ class WeChatController extends Controller
                 $lawyers = User::where('role','lawyer')->where('real_name',$name)->get();
                 return view('wechat.search_lawyer',compact('lawyers'));
         }
-
     }
 
     public function showUser($id)
