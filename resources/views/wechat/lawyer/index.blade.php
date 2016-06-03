@@ -90,16 +90,49 @@
             <span class="sc" id="sc"><i>收藏</i></span>
             @endif
         </div>
-        @if(Auth::check())
-            @if(Auth::user()->role != 'lawyer')
-                <a class="itms te-cen bg-lan1 fc-fff" href="#" id="In-btn">预约咨询</a>
-            @else
-                <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat')}}">返回首页</a>
-            @endif
-        @else
-            <a class="itms te-cen bg-lan1 fc-fff" href="#" id="In-btn">预约咨询</a>
-        @endif
+        <div class="itms te-cen bg-lan1 fc-fff" href="#" id="In-btn">预约咨询</div>
     </footer>
+
+    <section class="lstc-main" style="display: none">
+        <!--律师咨询费-->
+        <div class="tc-m lszx-main" style="top: 233.65px; display: block;">
+            <div class="bg-fff c-main">
+                <div class="top">
+                    <div class="tie" style="top: 233.65px;">
+                        <span style="font-size: 20px;font-weight: lighter;padding-left: 20px;">咨询费</span>
+                        <i class="btn-fjls btn-gb"></i>
+                    </div>
+                    <div class="xx">
+                        <div style="font-size:30px;font-weight: lighter">220 元</div>
+                        <p class="fs-12 line-15 mar-top-15">见面咨询90分钟</p>
+                        <p class="fs-12 line-15 mar-top-5">电话咨询不超过60分钟</p>
+                    </div>
+                </div>
+                <div class="bottom pad-10">
+                    <div class="line-35 fs-16 fc-505050">选择地区</div>
+                    <div class="itms-select">
+                        <div class="f-left">
+                            <select>
+                                <option>北京地区</option>
+                                <option>上海地区</option>
+                                <option>广州地区</option>
+                            </select>
+                        </div>
+                        <div class="right chaochu_1">其他地区预约后只能电话咨询</div>
+                    </div>
+                    <div class="line-35 fs-16 fc-505050">选择相关法律问题</div>
+                    <div class="itms-bd-1 clearfix">
+                        <span class="list-1 on">婚姻</span>
+                        <span class="list-1">房产</span>
+                        <span class="list-1">债务</span>
+                        <span class="list-1">劳动争议</span>
+                    </div>
+                    <div class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 mar-top-20 btn-yjdd">立即咨询</div>
+                </div>
+            </div>
+        </div>
+        <!--律师咨询费-->
+    </section>
     @endif
 @stop
 @section('script')
@@ -120,6 +153,31 @@
             $('#sc').tap(function(){
                 $(this).toggleClass('on');
             });
+
+            //律师咨询
+            $('#In-btn').tap(function(){
+                window.location.href="#";
+                $('.lstc-main').show();
+                $('.tc-m').fadeIn();
+                $('.lsjs-main').addEventListener();
+            });
+            //切换咨询栏目
+            $('.list-1').tap(function(){
+                $('.list-1').removeClass('on');
+                $(this).addClass('on')
+            });
+            //
+            $('.btn-yjdd').tap(function(){
+                $('.lszx-main').css({display:'none'});
+                $('.yjdd-main').fadeIn();
+            });
+
+            $('.btn-gb').tap(function(){
+
+                $('.lstc-main').fadeOut();
+                $('.tc-m').fadeOut();
+            })
+
         })
     </script>
 @stop
