@@ -219,6 +219,7 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('','WeChat\WeChatController@index');
     Route::get('search','WeChat\WeChatController@search');
     Route::get('user/{id}','WeChat\WeChatController@showUser');
+    Route::get('qrcode','WeChat\WeChatController@qrCode');
 
     # begin 注册绑定
     Route::get('chose','WeChat\AuthController@chose');

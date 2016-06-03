@@ -22,7 +22,7 @@ class ConsultController extends Controller
     }
 
     public function placeOrder($id)
-    {
+    {        
         $consult = Item::findOrFail($id);
         if(Auth::check()){
             switch (Auth::user()->role){
@@ -32,6 +32,6 @@ class ConsultController extends Controller
                     break;
             }
         }
-        return view();
+        return view('wechat.qrcode');
     }
 }

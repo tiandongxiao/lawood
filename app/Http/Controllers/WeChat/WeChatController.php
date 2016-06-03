@@ -39,4 +39,9 @@ class WeChatController extends Controller
             return view('wechat.lawyer.index',compact('user'));
         abort(404);
     }
+
+    public function qrCode()
+    {
+        return view('wechat.qrcode');
+    }
 }

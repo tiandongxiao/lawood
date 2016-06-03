@@ -50,7 +50,6 @@
     @include('wechat.base.service.gaode')
     <script>
         $(function(){
-
             // 初始化地图
             gdMapInit();
             locatePosition(function (data) {
