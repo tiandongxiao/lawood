@@ -57,10 +57,9 @@
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="624">
-              <caret line="102" column="83" selection-start-line="102" selection-start-column="83" selection-end-line="102" selection-end-column="83" />
+              <caret line="102" column="77" selection-start-line="102" selection-start-column="77" selection-end-line="102" selection-end-column="77" />
               <folding>
                 <element signature="e#5165#5186#0#HTML" expanded="true" />
-                <element signature="e#5245#5291#0#HTML" expanded="true" />
                 <element signature="e#5435#5499#0#HTML" expanded="true" />
                 <element signature="e#5660#5703#0#HTML" expanded="true" />
               </folding>
@@ -574,7 +573,7 @@
       <workItem from="1464830455797" duration="25284000" />
       <workItem from="1464878366300" duration="5221000" />
       <workItem from="1464916881329" duration="17981000" />
-      <workItem from="1464940484301" duration="9079000" />
+      <workItem from="1464940484301" duration="9147000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -699,7 +698,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="898418000" />
+    <option name="totallyTimeSpent" value="898486000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1148,10 +1147,9 @@
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
-          <caret line="102" column="83" selection-start-line="102" selection-start-column="83" selection-end-line="102" selection-end-column="83" />
+          <caret line="102" column="77" selection-start-line="102" selection-start-column="77" selection-end-line="102" selection-end-column="77" />
           <folding>
             <element signature="e#5165#5186#0#HTML" expanded="true" />
-            <element signature="e#5245#5291#0#HTML" expanded="true" />
             <element signature="e#5435#5499#0#HTML" expanded="true" />
             <element signature="e#5660#5703#0#HTML" expanded="true" />
           </folding>
