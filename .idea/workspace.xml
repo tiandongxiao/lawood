@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/wechat.php" afterPath="$PROJECT_DIR$/config/wechat.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,7 +39,7 @@
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="396">
-                  <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+                  <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
@@ -609,7 +608,7 @@
       <workItem from="1464585222702" duration="72942000" />
       <workItem from="1464830455797" duration="25284000" />
       <workItem from="1464878366300" duration="5221000" />
-      <workItem from="1464916881329" duration="17367000" />
+      <workItem from="1464916881329" duration="17981000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -734,7 +733,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="888725000" />
+    <option name="totallyTimeSpent" value="889339000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1195,7 +1194,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
-          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
           <folding />
         </state>
       </provider>

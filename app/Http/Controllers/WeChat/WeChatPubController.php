@@ -33,9 +33,7 @@ class WeChatPubController extends Controller
         $this->app = $app;
         $this->broadcast = $app->broadcast;
         $this->notice = $app->notice;
-        if(Auth::check()){
-            Auth::logout(Auth::user());
-        }
+
         if(!is_null($this->loginUser()))
             $this->user = $this->loginUser();
     }
@@ -54,16 +52,6 @@ class WeChatPubController extends Controller
 
         Auth::login($user);
         return $user;
-//        if(!Auth::check()){
-//            $user = $this->regIfNotExist();
-//            if(is_null($user))
-//                return null;
-//
-//            Auth::login($user);
-//            return $user;
-//        }
-//        Log::info('我是已登陆的用户');
-//        return Auth::user();
     }
 
     # 微信信息处理中心
