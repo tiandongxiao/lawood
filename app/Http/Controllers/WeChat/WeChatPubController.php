@@ -49,24 +49,12 @@ class WeChatPubController extends Controller
             $user = $this->regIfNotExist();
             if(is_null($user))
                 return null;
-            Auth::login($user);
-        }
-        return Auth::user();
-    }
 
-    /**
-     * 登录并自动导流用户至相关页面
-     *
-     * @return mixed
-     */
-    public function login()
-    {
-        switch ($this->user->role){
-            case 'lawyer':
-                break;
-            case 'client':
-                break;
+            Auth::login($user);
+            return $user;
         }
+        Log::info('我是已登陆的用户');
+        return Auth::user();
     }
 
     # 微信信息处理中心

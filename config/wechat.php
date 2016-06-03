@@ -1,5 +1,6 @@
 <?php
 return [
+    'debug'     => true,
     'use_alias'    => env('WECHAT_USE_ALIAS', false),
     'app_id'       => env('WECHAT_APPID', 'YourAppId'),   # 必填
     'secret'       => env('WECHAT_SECRET', 'YourSecret'), # 必填
