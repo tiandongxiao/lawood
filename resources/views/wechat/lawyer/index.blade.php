@@ -1,6 +1,11 @@
 @extends('wechat.base.app')
 @section('css')
-    <style>body{background:#f8f8f8}</style>
+    <style>
+        body{background:#f8f8f8}
+        .lstc-main {
+            background: rgba(88, 88, 88, 0.92);
+        }
+    </style>
 @stop
 @section('content')
     @if($user)
@@ -95,10 +100,10 @@
 
     <section class="lstc-main" style="display: none">
         <!--律师咨询费-->
-        <div class="tc-m lszx-main" style="top: 233.65px; display: block;">
+        <div class="tc-m lszx-main" style="top: 140px; display: block;">
             <div class="bg-fff c-main">
                 <div class="top">
-                    <div class="tie" style="top: 233.65px;">
+                    <div class="tie">
                         <span style="font-size: 20px;font-weight: lighter;padding-left: 20px;">咨询费</span>
                         <i class="btn-fjls btn-gb"></i>
                     </div>
@@ -156,15 +161,15 @@
 
             //律师咨询
             $('#In-btn').tap(function(){
+                $('.lsjs-main').hide();
                 window.location.href="#";
                 $('.lstc-main').show();
                 $('.tc-m').fadeIn();
-                $('.lsjs-main').addEventListener();
             });
             //切换咨询栏目
             $('.list-1').tap(function(){
                 $('.list-1').removeClass('on');
-                $(this).addClass('on')
+                $(this).addClass('on');
             });
             //
             $('.btn-yjdd').tap(function(){
@@ -173,9 +178,9 @@
             });
 
             $('.btn-gb').tap(function(){
-
                 $('.lstc-main').fadeOut();
                 $('.tc-m').fadeOut();
+                $('.lsjs-main').show();
             })
 
         })
