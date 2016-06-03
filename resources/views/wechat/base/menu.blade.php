@@ -196,15 +196,16 @@
         //打开侧边
         $('.btn-cb').tap(function(){
             $('.cblm-main').removeClass('on1');
-            $('.cblm-main').addClass('on')
+            $('.cblm-main').addClass('on');
+            event.preventDefault();
         })
-        $('.cblm-main').click(function(){
-
+        $('.cblm-main').tap(function(){
             if(event.target==this){
                 $('.cblm-main').removeClass('on');
                 $('.cblm-main').addClass('on1')
             }
-        })
+            event.preventDefault();
+        });
         @if(Auth::user()->role =='lawyer')
         var address = $('input[name=uri]').val();
         $("#In-service").change(function() {
