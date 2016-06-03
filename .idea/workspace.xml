@@ -46,14 +46,13 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
+            <state relative-caret-position="364">
+              <caret line="104" column="30" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
               <folding>
                 <element signature="e#5165#5186#0#HTML" expanded="true" />
                 <element signature="e#5245#5280#0#HTML" expanded="true" />
-                <element signature="e#5355#5374#0#HTML" expanded="true" />
-                <element signature="e#5444#5508#0#HTML" expanded="true" />
-                <element signature="e#5669#5712#0#HTML" expanded="true" />
+                <element signature="e#5424#5488#0#HTML" expanded="true" />
+                <element signature="e#5649#5692#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -565,7 +564,7 @@
       <workItem from="1464830455797" duration="25284000" />
       <workItem from="1464878366300" duration="5221000" />
       <workItem from="1464916881329" duration="17981000" />
-      <workItem from="1464940484301" duration="9840000" />
+      <workItem from="1464940484301" duration="9943000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -690,7 +689,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="899179000" />
+    <option name="totallyTimeSpent" value="899282000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1138,14 +1137,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
+        <state relative-caret-position="364">
+          <caret line="104" column="30" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
           <folding>
             <element signature="e#5165#5186#0#HTML" expanded="true" />
             <element signature="e#5245#5280#0#HTML" expanded="true" />
-            <element signature="e#5355#5374#0#HTML" expanded="true" />
-            <element signature="e#5444#5508#0#HTML" expanded="true" />
-            <element signature="e#5669#5712#0#HTML" expanded="true" />
+            <element signature="e#5424#5488#0#HTML" expanded="true" />
+            <element signature="e#5649#5692#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
