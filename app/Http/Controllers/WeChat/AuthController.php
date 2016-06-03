@@ -65,7 +65,7 @@ class AuthController extends Controller
                 $this->user->update([
                     'phone' => $phone
                 ]);
-                return redirect('wechat/client');
+                return redirect('wechat');
             case 'lawyer':
                 $name = trim($request->get('name'));
                 $this->user->update([
@@ -94,7 +94,6 @@ class AuthController extends Controller
                 $this->user->bindCategory($category);
             }
         }
-
         return redirect('wechat/finish');
     }
 

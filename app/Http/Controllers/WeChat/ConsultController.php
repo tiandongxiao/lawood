@@ -11,10 +11,13 @@ namespace App\Http\Controllers\WeChat;
 
 use App\Http\Controllers\Controller;
 use App\Item;
+use App\Traits\AgentDevTrait;
 use Illuminate\Support\Facades\Auth;
 
 class ConsultController extends Controller
 {
+    use AgentDevTrait;
+
     public function index()
     {
         $consults = Item::consults();
@@ -22,13 +25,20 @@ class ConsultController extends Controller
     }
 
     public function placeOrder($id)
-    {        
+    {
+
         $consult = Item::findOrFail($id);
         if(Auth::check()){
             switch (Auth::user()->role){
                 case 'lawyer':
                     return back();
                 case 'client':
+                    if (Agent::isMobile()) {
+                        # 如果是微信浏览器
+                        if (strpos(Agent::getUserAgent(), 'MicroMessenger') !== false)
+                            return redirect('wxpay/js/' . $id);
+                    }
+                    return redirect('wxpay/native/' . $id);
                     break;
             }
         }
