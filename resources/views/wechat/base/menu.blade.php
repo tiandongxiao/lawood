@@ -194,16 +194,15 @@
 
         @if(Auth::user())
         //打开侧边
-        $('.btn-cb').tap(function(){
+        $('.btn-cb').click(function(){
             $('.cblm-main').removeClass('on1');
             $('.cblm-main').addClass('on')
-        })
+        });
         $('.cblm-main').click(function(){
             if(event.target==this){
                 $('.cblm-main').removeClass('on');
                 $('.cblm-main').addClass('on1')
-            }
-            event.preventDefault();
+            }            
         });
         @if(Auth::user()->role =='lawyer')
         var address = $('input[name=uri]').val();
