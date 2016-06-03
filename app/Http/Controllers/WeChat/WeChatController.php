@@ -18,7 +18,6 @@ class WeChatController extends Controller
     #搜索页
     public function search(Request $request)
     {
-
         switch ($request->get('chose')){
             case 'position':
                 $address  = $request->get('address');
