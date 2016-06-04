@@ -171,12 +171,13 @@
             });
             //切换咨询栏目
             $('.list-1').tap(function(){
-                $('#price').fadeOut();
                 $('.list-1').removeClass('on');
                 $(this).addClass('on');
 
                 var select = $(this).data('price');
                 var address = $('input[name=uri]').val();
+
+                var price_dom = $('#price');
 
                 $.ajax({
                     type: 'POST',
@@ -187,12 +188,14 @@
                     },
                     success: function(result){
                         if(result.code == 'Y'){
-                            $('#price').text(result.data+" 元");
-                            $('#price').fadeIn();
+                            price_dom.fadeOut();
+                            price_dom.text(result.data+" 元");
+                            price_dom.fadeIn();
                             return true;
                         }
-                        $('#price').text("获取数据失败");
-                        $('#price').fadeIn();
+                        price_dom.fadeOut();
+                        price_dom.text("获取数据失败");
+                        price_dom.fadeIn();
                         return false;
                     }
                 });
