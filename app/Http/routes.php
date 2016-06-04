@@ -221,6 +221,8 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('user/{id}','WeChat\WeChatController@showUser');
     Route::get('qrcode','WeChat\WeChatController@qrCode');
 
+//    Route::get('/','WeChat\WeChatController@qrCode');    
+
     # begin 注册绑定
     Route::get('chose','WeChat\AuthController@chose');
     Route::get('bind/{role}','WeChat\AuthController@bind');
@@ -272,7 +274,6 @@ Route::group(['prefix' => 'ajax'], function(){
     Route::post('unread','NotificationController@unread');
 
     Route::post('price','AjaxController@price');
-
 });
 
 Route::resource('price','PriceController');

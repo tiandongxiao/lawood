@@ -18,6 +18,11 @@ class ConsultController extends Controller
 {
     use AgentDevTrait;
 
+    public function __construct()
+    {
+        
+    }
+
     public function index()
     {
         $consults = Item::consults();
@@ -26,7 +31,6 @@ class ConsultController extends Controller
 
     public function placeOrder($id)
     {
-
         $consult = Item::findOrFail($id);
         if(Auth::check()){
             switch (Auth::user()->role){
@@ -43,5 +47,15 @@ class ConsultController extends Controller
             }
         }
         return view('wechat.qrcode');
+    }
+
+    public function selectPlace()
+    {
+        return view('wechat.flow.place_select');
+    }
+
+    public function postSelectPlace()
+    {
+        return view();
     }
 }

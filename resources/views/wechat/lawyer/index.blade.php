@@ -202,8 +202,7 @@
             });
             //
             $('.btn-yjdd').tap(function(){
-                $('.lszx-main').css({display:'none'});
-                $('.yjdd-main').fadeIn();
+                window.location.href="/wechat/";
             });
             $('.btn-gb').tap(function(){
                 $('.lstc-main').fadeOut();
