@@ -174,6 +174,7 @@
                 $('#price').fadeOut();
                 $('.list-1').removeClass('on');
                 $(this).addClass('on');
+
                 var select = $(this).data('price');
                 var address = $('input[name=uri]').val();
 
