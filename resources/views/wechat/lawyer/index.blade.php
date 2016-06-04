@@ -171,7 +171,7 @@
             });
             //切换咨询栏目
             $('.list-1').tap(function(){
-                $('#price').text("");
+                $('#price').text("...");
                 $('.list-1').removeClass('on');
                 $(this).addClass('on');
 
