@@ -127,6 +127,7 @@
                     <div class="line-35 fs-16 fc-505050">选择咨询领域</div>
                     <div class="itms-bd-1 clearfix">
                         {!! csrf_field() !!}
+                        <input type="hidden" name="uri" value="{{url('/')}}">
                         @foreach($user->prices as $price)
                             @if($price == $user->prices[0])
                                 <span class="list-1 on" data-price="{{$price->id}}">{{$price->category->name}}</span>
@@ -174,6 +175,7 @@
                 $('.list-1').removeClass('on');
                 $(this).addClass('on');
                 var select = $(this).data('price');
+                var address = $('input[name=uri]').val();
 
                 $.ajax({
                     type: 'POST',
