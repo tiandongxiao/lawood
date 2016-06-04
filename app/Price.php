@@ -72,5 +72,4 @@ class Price extends Model {
         }
         return null;
     }
-
 }

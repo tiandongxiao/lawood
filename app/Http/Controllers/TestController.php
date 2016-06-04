@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Item;
 use App\Notification;
+use App\Price;
 use App\User;
 use App\UserPolite;
 use App\UserTiming;
@@ -109,10 +110,12 @@ class TestController extends Controller
 
     public function cache()
     {
-        $users = User::where('role','lawyer')->where('active',true)->get();
-        dd($users);
-        if(Cache::has('reg_18301191705'))
-            dd(Cache::get('reg_18301191705'));
+        $price = Price::findOrFail(5);
+        dd($price->consults);
+//        $users = User::where('role','lawyer')->where('active',true)->get();
+//        dd($users);
+//        if(Cache::has('reg_18301191705'))
+//            dd(Cache::get('reg_18301191705'));
 //        $adminRole = Role::where('slug','admin')->first();
 //        $admin = User::where('email','admin@lawood.cn')->first();
 //        $admin->attachRole($adminRole);
