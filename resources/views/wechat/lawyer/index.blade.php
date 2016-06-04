@@ -108,7 +108,7 @@
                         <i class="btn-fjls btn-gb"></i>
                     </div>
                     <div class="xx">
-                        <div style="font-size:30px;font-weight: lighter">{{$lawyer->prices[0]->price}}220 元</div>
+                        <div style="font-size:30px;font-weight: lighter">{{$user->prices[0]->price}}220 元</div>
                         <p class="fs-12 line-15 mar-top-15">见面咨询90分钟</p>
                         <p class="fs-12 line-15 mar-top-5">电话咨询不超过60分钟</p>
                     </div>
