@@ -125,7 +125,7 @@
                         <div class="right chaochu_1">其他地区只能电话咨询</div>
                     </div>
                     <div class="line-35 fs-16 fc-505050">选择咨询领域</div>
-                    <div class="itms-bd-1 clearfix">
+                    <div class="itms-bd-1 clearfix" style="margin-top: -10px;">
                         {!! csrf_field() !!}
                         <input type="hidden" name="uri" value="{{url('/')}}">
                         @foreach($user->prices as $price)
@@ -136,7 +136,7 @@
                             @endif
                         @endforeach
                     </div>
-                    <div class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 mar-top-20 btn-yjdd">立即咨询</div>
+                    <div class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 mar-top-15 btn-yjdd">立即咨询</div>
                 </div>
             </div>
         </div>
