@@ -102,7 +102,7 @@
         <!--律师咨询费-->
         <div class="tc-m lszx-main" style="top: 120px; display: block;">
             <div class="bg-fff c-main" style="overflow: hidden;max-height: 420px;">
-                <div class="top">
+                <div class="top" style="overflow: hidden">
                     <div class="tie">
                         <span style="font-size: 20px;font-weight: lighter;padding-left: 20px;">咨询费</span>
                         <i class="btn-fjls btn-gb"></i>
