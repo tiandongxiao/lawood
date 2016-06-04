@@ -188,7 +188,6 @@
                     },
                     success: function(result){
                         if(result.code == 'Y'){
-                            price_dom.fadeOut();
                             price_dom.text(result.data+" 元");
                             price_dom.fadeIn();
                             return true;
