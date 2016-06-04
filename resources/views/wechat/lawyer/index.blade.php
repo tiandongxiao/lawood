@@ -101,7 +101,7 @@
     <section class="lstc-main" style="display: none">
         <!--律师咨询费-->
         <div class="tc-m lszx-main" style="top: 120px; display: block;">
-            <div class="bg-fff c-main">
+            <div class="bg-fff c-main" style="overflow: hidden;max-height: 420px;">
                 <div class="top">
                     <div class="tie">
                         <span style="font-size: 20px;font-weight: lighter;padding-left: 20px;">咨询费</span>
@@ -114,7 +114,7 @@
                     </div>
                 </div>
                 <div class="bottom pad-10">
-                    <div class="line-35 fs-16 fc-505050">选择地区</div>
+                    <div class="line-35 fc-505050">选择地区</div>
                     <div class="itms-select">
                         <div class="f-left">
                             <select>
@@ -124,7 +124,7 @@
                         </div>
                         <div class="right chaochu_1">其他地区只能电话咨询</div>
                     </div>
-                    <div class="line-35 fs-16 fc-505050">选择咨询领域</div>
+                    <div class="line-35 fc-505050">选择咨询领域</div>
                     <div class="itms-bd-1 clearfix" style="margin-top: -10px;">
                         {!! csrf_field() !!}
                         <input type="hidden" name="uri" value="{{url('/')}}">
@@ -136,7 +136,7 @@
                             @endif
                         @endforeach
                     </div>
-                    <div class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 mar-top-15 btn-yjdd">立即咨询</div>
+                    <div class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 mar-top-20 btn-yjdd">立即咨询</div>
                 </div>
             </div>
         </div>
