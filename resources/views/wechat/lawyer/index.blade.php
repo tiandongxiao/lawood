@@ -130,9 +130,9 @@
                         <input type="hidden" name="uri" value="{{url('/')}}">
                         @foreach($user->prices as $price)
                             @if($price == $user->prices[0])
-                                <span class="list-1 on" style="margin-right: 5px" data-price="{{$price->id}}">{{$price->category->name}}</span>
+                                <span class="list-1 on" style="margin-right: 5px" data-price="{{$price->id}}" data-consult="{{$price->consults[0]->id}}">{{$price->category->name}}</span>
                             @else
-                                <span class="list-1" style="margin-right: 5px" data-price="{{$price->id}}">{{$price->category->name}}</span>
+                                <span class="list-1" style="margin-right: 5px" data-price="{{$price->id}}" data-consult="{{$price->consults[0]->id}}>{{$price->category->name}}</span>
                             @endif
                         @endforeach
                     </div>

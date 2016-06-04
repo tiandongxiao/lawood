@@ -15,7 +15,7 @@ class Item extends ShopItemModel implements Ratingable
     use LikeableTrait;    # 引入收藏系统
     use RatingTrait;      # 引入评级系统
 
-    protected $fillable = ['user_id', 'cart_id', 'shop_id', 'sku', 'price', 'tax', 'shipping', 'currency', 'quantity', 'class', 'reference_id','category_id','location_id','yun_id'];
+    protected $fillable = ['user_id', 'cart_id', 'shop_id', 'sku', 'price', 'tax', 'shipping', 'currency', 'quantity', 'class', 'reference_id','category_id','location_id'];
     
     # 一个咨询服务项只属于一个分类
     public function category()

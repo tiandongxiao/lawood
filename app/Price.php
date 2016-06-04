@@ -59,4 +59,18 @@ class Price extends Model {
         return Category::findOrFail($this->category_id);
     }
 
+    public function getConsultsAttribute()
+    {
+        return $this->user->consults()->where('category_id',$this->category_id)->get();
+    }
+
+    public function consult($poi)
+    {
+        foreach ($this->consults as $consult){
+            if($consult->poi->poi_id == $poi)
+                return $consult;
+        }
+        return null;
+    }
+
 }
