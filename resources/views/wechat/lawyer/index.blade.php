@@ -188,9 +188,11 @@
                     success: function(result){
                         if(result.code == 'Y'){
                             $('#price').text(result.data+" 元");
+                            $('#price').fadeIn();
                             return true;
                         }
                         $('#price').text("获取数据失败");
+                        $('#price').fadeIn();
                         return false;
                     }
                 });
