@@ -108,7 +108,7 @@
                         <i class="btn-fjls btn-gb"></i>
                     </div>
                     <div class="xx">
-                        <div style="font-size:30px;font-weight: lighter">220 元</div>
+                        <div style="font-size:30px;font-weight: lighter">{{$lawyer->prices[0]->price}}220 元</div>
                         <p class="fs-12 line-15 mar-top-15">见面咨询90分钟</p>
                         <p class="fs-12 line-15 mar-top-5">电话咨询不超过60分钟</p>
                     </div>
@@ -123,9 +123,9 @@
                                 <option>广州地区</option>
                             </select>
                         </div>
-                        <div class="right chaochu_1">其他地区预约后只能电话咨询</div>
+                        <div class="right chaochu_1">其他地区只能电话咨询</div>
                     </div>
-                    <div class="line-35 fs-16 fc-505050">选择相关法律问题</div>
+                    <div class="line-35 fs-16 fc-505050">选择咨询领域</div>
                     <div class="itms-bd-1 clearfix">
                         <span class="list-1 on">婚姻</span>
                         <span class="list-1">房产</span>
