@@ -61,6 +61,7 @@ class Price extends Model {
 
     public function getConsultsAttribute()
     {
+        dd($this->user());
         return $this->user->consults()->where('category_id',$this->category_id)->get();
     }
 
