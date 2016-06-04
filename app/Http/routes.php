@@ -271,6 +271,8 @@ Route::group(['prefix' => 'ajax'], function(){
     Route::post('read','NotificationController@read');
     Route::post('unread','NotificationController@unread');
 
+    Route::post('price','NotificationController@price');
+
 });
 
 Route::resource('price','PriceController');

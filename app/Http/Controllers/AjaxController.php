@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Notification;
+use App\Price;
 use App\Self\Notify\NotifyFacade;
 use App\User;
 use Illuminate\Http\Request;
@@ -111,6 +112,19 @@ class AjaxController extends Controller
 
             Cache::forget($key);
             return 'Y';
+        }
+    }
+
+    # * ------------------ 验证性的 ajax 请求 ------------------ * #
+    public function price(Request $request)
+    {
+        if($request->ajax()){
+            $id = $request->get('price');
+            $price = Price::find($id);
+            if($price && $price->price){
+                return response()->json(['code' => 'Y', 'data' => $price->price]);
+            }
+            return response()->json(['code' => 'X', 'data' => null]);
         }
     }
 }
