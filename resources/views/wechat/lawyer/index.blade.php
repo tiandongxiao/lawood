@@ -127,10 +127,13 @@
                     </div>
                     <div class="line-35 fs-16 fc-505050">选择咨询领域</div>
                     <div class="itms-bd-1 clearfix">
-                        <span class="list-1 on">婚姻</span>
-                        <span class="list-1">房产</span>
-                        <span class="list-1">债务</span>
-                        <span class="list-1">劳动争议</span>
+                        @foreach($user->prices as $price)
+                            @if($price == $user->prices[0])
+                                <span class="list-1 on" data-price="{{$price->id}}">{{$price->category->name}}</span>
+                            @else
+                                <span class="list-1" data-price="{{$price->id}}">{{$price->category->name}}</span>
+                            @endif
+                        @endforeach
                     </div>
                     <div class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 mar-top-20 btn-yjdd">立即咨询</div>
                 </div>
