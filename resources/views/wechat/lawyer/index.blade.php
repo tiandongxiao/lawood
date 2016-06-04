@@ -108,7 +108,7 @@
                         <i class="btn-fjls btn-gb"></i>
                     </div>
                     <div class="xx">
-                        <div style="font-size:30px;font-weight: lighter">{{$user->prices[0]->price}}220 元</div>
+                        <div style="font-size:30px;font-weight: lighter"><span id="price">{{$user->prices[0]->price}}</span> 元</div>
                         <p class="fs-12 line-15 mar-top-15">见面咨询90分钟</p>
                         <p class="fs-12 line-15 mar-top-5">电话咨询不超过60分钟</p>
                     </div>
@@ -118,9 +118,8 @@
                     <div class="itms-select">
                         <div class="f-left">
                             <select>
-                                <option>北京地区</option>
-                                <option>上海地区</option>
-                                <option>广州地区</option>
+                                <option value="local">北京地区</option>
+                                <option value="other">其他地区</option>
                             </select>
                         </div>
                         <div class="right chaochu_1">其他地区只能电话咨询</div>
@@ -161,7 +160,6 @@
             $('#sc').tap(function(){
                 $(this).toggleClass('on');
             });
-
             //律师咨询
             $('#In-btn').tap(function(){
                 $('.lsjs-main').hide();
@@ -171,21 +169,43 @@
             });
             //切换咨询栏目
             $('.list-1').tap(function(){
+                $('#price').fadeOut();
                 $('.list-1').removeClass('on');
                 $(this).addClass('on');
+                var select = $(this).data('price');
+                alert(select);
+//                $.ajax({
+//                    type: 'POST',
+//                    url: address+'/ajax/price',
+//                    data: {
+//                        'price' : $('input[name=phone]').val(),
+//                        '_token':$('input[name=_token]').val(),
+//                    },
+//                    success: function(data){
+//                        if(data == 'Y'){
+//                            $('#mobile').parents('.itms').addClass('itms-ok')
+//                            if(!$('#btn-yzm').parents('.itms').hasClass('itms-ok'))
+//                                $('#btn-yzm').show()
+//                            return true;
+//                        }
+//                        form = false;
+//                        $('#In-btn').removeClass('bg-lan1')
+//                        if(!$('#mobile').parents('.itms').hasClass('itms-ok'))
+//                            alert('此号码已被注册');
+//                        return false;
+//                    }
+//                });
             });
             //
             $('.btn-yjdd').tap(function(){
                 $('.lszx-main').css({display:'none'});
                 $('.yjdd-main').fadeIn();
             });
-
             $('.btn-gb').tap(function(){
                 $('.lstc-main').fadeOut();
                 $('.tc-m').fadeOut();
                 $('.lsjs-main').show();
-            })
-
+            });
         })
     </script>
 @stop
