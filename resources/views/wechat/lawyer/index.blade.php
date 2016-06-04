@@ -193,7 +193,7 @@
                             price_dom.fadeIn();
                             return true;
                         }
-                        price_dom.fadeOut();
+
                         price_dom.text("获取数据失败");
                         price_dom.fadeIn();
                         return false;
