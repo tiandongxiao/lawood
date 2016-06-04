@@ -64,9 +64,6 @@ class WxPayController extends Controller
                 $transaction->transaction_id = $notify->transaction_id;
                 $transaction->save();
 
-                $client = $this->client($order);
-                $seller = $this->seller($order);
-
             } else {
                 # 用户支付失败
                 $order = $this->queryShopOrder($notify->out_trade_no);
