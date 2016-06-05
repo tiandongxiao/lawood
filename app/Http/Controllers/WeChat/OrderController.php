@@ -51,10 +51,11 @@ class OrderController extends Controller
 
     public function placeOrder($item_id)
     {
-        $order = $this->buildOrder($item_id);
-        if($order)
-            return view('wechat.flow.place_select');
-        return back();
+        return view('wechat.flow.place_select');
+//        $order = $this->buildOrder($item_id);
+//        if($order)
+//            return view('wechat.flow.place_select');
+//        return back();
     }
 
     public function selectPlace()
