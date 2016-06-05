@@ -205,7 +205,7 @@
                 consult = $('.list-1 .on').text();
                 alert(consult);
                 return;
-                window.location.href="/wechat/order/buy/"+;
+//                window.location.href="/wechat/order/buy/"+;
             });
 
             $('.btn-gb').tap(function(){
