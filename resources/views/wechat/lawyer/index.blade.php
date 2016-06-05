@@ -202,7 +202,7 @@
             });
             // 立即咨询
             $('.btn-yjdd').tap(function(){
-                consult = $('.list-1 .on').text();
+                consult = $('.list-1').hasClass('on').text();
                 alert(consult);
                 return;
 //                window.location.href="/wechat/order/buy/"+;
