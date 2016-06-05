@@ -11,6 +11,7 @@ namespace App\Http\Controllers\WeChat;
 
 use App\Http\Controllers\Controller;
 use App\Traits\ShopDevTrait;
+use Illuminate\Http\Request;
 use Shop;
 use App\Cart;
 use Illuminate\Support\Facades\Log;
@@ -61,9 +62,14 @@ class OrderController extends Controller
         return view('wechat.flow.place_select');
     }
 
-    public function postSelectPlace()
+    public function postSelectPlace(Request $request)
     {
         return view();
+    }
+
+    public function pay()
+    {
+        return view('wechat.flow.pay');
     }
     
 }

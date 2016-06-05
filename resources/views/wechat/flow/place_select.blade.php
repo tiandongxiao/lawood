@@ -3,13 +3,13 @@
 <!--弹出框-->
 <section class="lstc-main">
     <!--约见地点-->
-    <div class="tc-m yjdd-main" style="display: block;">
-        <div class="bg-fff c-main">
-            <div class="tie">选择约见地点<i class="btn-fjls btn-gb"></i><i class="btn-back back-lszx"></i></div>
+    <div class="tc-m yjdd-main" style="display: block;width:100%;left: 0;height: 100%;background-color: white;">
+        <div class="bg-fff c-main" style="max-height: 100%;height: 100%;border-radius: 0;">
+            <div class="tie" style="width:100%;background-color: #00abeb;color: white">选择约见地点</div>
             <div class="con" >
-                <div class="line-40 fc-505050">提示：下列地点仅为推荐，可协商变更</div>
+                <div class="line-40 " style="color: #F39D2E">提示：下列地点仅为推荐，可协商变更</div>
                 <div class="itms">
-                    <div class="f-left"><img src="/images/dd-banner.jpg" width="120" height="80"></div>
+                    <div class="f-left"><img src="/images/dd-banner.jpg" width="110" height="80"></div>
                     <div class="right">
                         <h3 class="chaochu_1">COST咖啡店</h3>
                         <p class="chaochu_1">法律咖啡：人均25元</p>
@@ -19,7 +19,7 @@
                     <div class="itms-radio"><input type="radio" name="dd" class="In-radio" checked></div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="/images/dd-banner.jpg" width="120" height="80"></div>
+                    <div class="f-left"><img src="/images/dd-banner.jpg" width="110" height="80"></div>
                     <div class="right">
                         <h3 class="chaochu_1">COST咖啡店</h3>
                         <p class="chaochu_1">法律咖啡：人均25元</p>
@@ -29,7 +29,7 @@
                     <div class="itms-radio"><input type="radio" name="dd" class="In-radio"></div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="/images/dd-banner.jpg" width="120" height="80"></div>
+                    <div class="f-left"><img src="/images/dd-banner.jpg" width="110" height="80"></div>
                     <div class="right">
                         <h3 class="chaochu_1">COST咖啡店</h3>
                         <p class="chaochu_1">法律咖啡：人均25元</p>
@@ -39,7 +39,7 @@
                     <div class="itms-radio"><input type="radio" name="dd" class="In-radio"></div>
                 </div>
                 <div class="itms">
-                    <div class="f-left"><img src="/images/dd-banner.jpg" width="120" height="80"></div>
+                    <div class="f-left"><img src="/images/dd-banner.jpg" width="110" height="80"></div>
                     <div class="right">
                         <h3 class="chaochu_1">COST咖啡店</h3>
                         <p class="chaochu_1">法律咖啡：人均25元</p>

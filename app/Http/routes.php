@@ -221,9 +221,10 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('user/{id}','WeChat\WeChatController@showUser');
     Route::get('qrcode','WeChat\WeChatController@qrCode');
 
-    Route::get('buy/{id}','WeChat\OrderController@placeOrder');           # 下单返回地点选择列表
-    Route::get('order/place','WeChat\OrderController@selectPlace');  # 绑定选择的地点
+    Route::get('order/buy/{id}','WeChat\OrderController@placeOrder');           # 下单返回地点选择列表
+    Route::get('order/place','WeChat\OrderController@selectPlace');       # 绑定选择的地点
     Route::post('order/place','WeChat\OrderController@postSelectPlace');  # 绑定选择的地点
+    Route::get('order/pay','WeChat\OrderController@pay');                # 绑定选择的地点
 
 
     # begin 注册绑定

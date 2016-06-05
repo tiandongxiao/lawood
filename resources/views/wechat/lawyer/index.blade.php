@@ -200,10 +200,14 @@
                     }
                 });
             });
-            //
+            // 立即咨询
             $('.btn-yjdd').tap(function(){
-                window.location.href="/wechat/";
+                consult = $('.list-1 .on').text();
+                alert(consult);
+                return;
+                window.location.href="/wechat/order/buy/"+;
             });
+
             $('.btn-gb').tap(function(){
                 $('.lstc-main').fadeOut();
                 $('.tc-m').fadeOut();
