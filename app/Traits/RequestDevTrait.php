@@ -44,7 +44,7 @@ trait RequestDevTrait
     {
         if(!$this->client instanceof Client){
             $this->client = new Client();
-        }
+        }        
 
         return json_decode($this->client->request('GET',$uri,[
             'query'=>$params

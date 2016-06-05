@@ -6,6 +6,7 @@ use App\Category;
 use App\Item;
 use App\Notification;
 use App\Price;
+use App\Traits\BaiduMapTrait;
 use App\User;
 use App\UserPolite;
 use App\UserTiming;
@@ -22,6 +23,7 @@ use Bican\Roles\Models\Role;
 
 class TestController extends Controller
 {
+    use BaiduMapTrait;
     public function getMakeCategories()
     {
         $root = Category::where('name','root')->first();
@@ -110,8 +112,14 @@ class TestController extends Controller
 
     public function cache()
     {
-        $price = Price::findOrFail(5);
-        dd($price->consults);
+        $this->searchPublicAround([
+            'query'    => '咖啡',
+            'location' => '31.204055632862,121.41117785465',
+            'radius'   => '1000',
+            'region'   => '上海'
+        ]);
+//        $price = Price::findOrFail(5);
+//        dd($price->consults);
 //        $users = User::where('role','lawyer')->where('active',true)->get();
 //        dd($users);
 //        if(Cache::has('reg_18301191705'))

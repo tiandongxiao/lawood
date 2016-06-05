@@ -51,6 +51,7 @@ class OrderController extends Controller
 
     public function placeOrder($item_id)
     {
+
         return view('wechat.flow.place_select');
 //        $order = $this->buildOrder($item_id);
 //        if($order)
@@ -58,9 +59,10 @@ class OrderController extends Controller
 //        return back();
     }
 
-    public function selectPlace()
+    public function selectPlace(Request $request)
     {
-        return view('wechat.flow.place_select');
+        $address = $request->get('address');
+        return view('wechat.flow.place_select',compact('address'));
     }
 
     public function postSelectPlace(Request $request)

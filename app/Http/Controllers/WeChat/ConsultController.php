@@ -68,8 +68,6 @@ class ConsultController extends Controller
     public function buy($consult_id)
     {
         $order = $this->buildOrder($consult_id);
-        
-
     }
 
     public function selectPlace()

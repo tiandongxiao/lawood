@@ -91,19 +91,25 @@
     }
 
     // Begin  搜索高德地图 公共数据
-    function searchPublicByAround(center,type) {
+    function searchPublicByAround(center,type,onComplete,onError) {
         AMap.service(["AMap.PlaceSearch"], function() {
             var placeSearch = new AMap.PlaceSearch({ //构造地点查询类
-                pageSize: 5,
-                type: '餐饮服务',
+                pageSize: 500,
+                type: type,
                 pageIndex: 1,
-                city: "010", //城市
-                map: map,
-                panel: "panel"
+                extensions: "all"
             });
 
-            placeSearch.searchNearBy('', center, 200, function(status, result) {
-
+            placeSearch.searchNearBy('', center, 20000, function(status, result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    console.log(result);
+                    alert('搜索成功');
+                    //TODO : 解析返回结果,如果设置了map和panel，api将帮助完成点标注和列表
+                    onComplete(result);
+                    return;
+                }
+                alert('搜索失败');
+                onError(result);
             });
         });
     }
