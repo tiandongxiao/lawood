@@ -5,7 +5,7 @@
     <!--约见地点-->
     <div class="tc-m yjdd-main" style="display: block;width:100%;left: 0;height: 100%;background-color: white;">
         <div class="bg-fff c-main" style="max-height: 100%;height: 100%;border-radius: 0;">
-            <div class="tie" style="width:100%;background-color: #00abeb;color: white">选择约见地点</div>
+            <div class="tie" style="width:100%;background-color: #00abeb;color: white;border-radius: 0">选择约见地点</div>
             <div class="con" >
                 <div class="line-40 " style="color: #F39D2E">提示：下列地点仅为推荐，可协商变更</div>
                 <div class="itms">
