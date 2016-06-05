@@ -35,4 +35,10 @@ class Order extends ShopOrderModel
     {
         return Item::find($this->items[0]->reference_id)->user;
     }
+
+    # 每一个订单对应一个地址
+    public function place()
+    {
+        return $this->hasOne(Place::class);
+    }
 }

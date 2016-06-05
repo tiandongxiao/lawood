@@ -1,45 +1,28 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: tiandongxiao
- * Date: 16/05/2016
- * Time: 17:18
+ * User: roger
+ * Date: 2016/6/4
+ * Time: 22:59
  */
 
 namespace App\Http\Controllers\WeChat;
 
 
 use App\Http\Controllers\Controller;
-use App\Item;
-use App\Traits\AgentDevTrait;
 use App\Traits\ShopDevTrait;
-use Illuminate\Support\Facades\Auth;
-
 use Shop;
 use App\Cart;
 use Illuminate\Support\Facades\Log;
 
-class ConsultController extends Controller
+class OrderController extends Controller
 {
-    use AgentDevTrait;
     use ShopDevTrait;
 
-    public function __construct()
-    {
-        
-    }
-
-    public function index()
-    {
-        $consults = Item::consults();
-        return view('wechat.consults',compact('consults'));
-    }
-
-
-    public function buildOrder($id)
+    public function buildOrder($item_id)
     {
         Cart::current()->clear();
-        $this->addItemIntoCart($id);
+        $this->addItemIntoCart($item_id);
 
         # 1 执行Shop的其他操作之前，必须先选择支付方式,这里设置为js方式
         Shop::setGateway('wx_js');
@@ -65,11 +48,12 @@ class ConsultController extends Controller
         return $order;
     }
 
-    public function buy($consult_id)
+    public function placeOrder($item_id)
     {
-        $order = $this->buildOrder($consult_id);
-        
-
+        $order = $this->buildOrder($item_id);
+        if($order)
+            return view('wechat.flow.place_select');
+        return back();
     }
 
     public function selectPlace()
@@ -81,4 +65,5 @@ class ConsultController extends Controller
     {
         return view();
     }
+    
 }
