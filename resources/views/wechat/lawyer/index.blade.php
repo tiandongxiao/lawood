@@ -146,6 +146,8 @@
 @stop
 @section('script')
     <script>
+        var consult; //定义全局变量，用于标记选择
+
         $(function(){
             //下拉上升
             $(document).on('click','.btn-xl',function(){
@@ -169,10 +171,12 @@
                 $('.lstc-main').show();
                 $('.tc-m').fadeIn();
             });
+
             //切换咨询栏目
             $('.list-1').tap(function(){
                 $('.list-1').removeClass('on');
                 $(this).addClass('on');
+                consult = $(this).data('consult');
 
                 var select = $(this).data('price');
                 var address = $('input[name=uri]').val();
@@ -201,8 +205,7 @@
                 });
             });
             // 立即咨询
-            $('.btn-yjdd').tap(function(){
-                consult = $('.list-1').hasClass('on').text();
+            $('.btn-yjdd').tap(function(){                
                 alert(consult);
                 return;
 //                window.location.href="/wechat/order/buy/"+;
