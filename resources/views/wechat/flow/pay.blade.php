@@ -66,4 +66,77 @@
     </section>
 @stop
 @section('script')
+    <script>
+        $(function(){
+            //公布到广场
+            $('.In-check').on('change',function(){
+                if($(this).prop("checked")){
+                    $('.con-1').slideDown();
+                    $('.ts').fadeIn();
+                }else{
+                    $('.con-1').slideUp();
+                    $('.ts').fadeOut();
+                }
+            });
+
+            //表单提交
+            $('#In-btn').tap(function(){
+                //姓名
+                if(!$('#name').val()){
+                    alert('姓名不能为空')
+                    return	false;
+                }else{
+                    var re = /^.{2,20}$/
+                    if (!re.test($('#name').val())) {
+                        alert('请输入正确的姓名(2-20字符)')
+                        return	false;
+                    }
+                }
+                if($('.In-check').prop("checked")){
+                    //发票抬头不能为空
+                    if(!$('#fptt').val()){
+                        alert('发票抬头不能为空');
+                        return	false;
+                    }
+                    //邮寄地址
+                    if(!$('#yjdz').val()){
+                        alert('邮寄地址不能为空');
+                        return	false;
+                    }
+                    //收件人sjr-name
+
+                    if(!$('#sjr-name').val()){
+
+                        alert('收件人姓名不能为空');
+                        return	false;
+                    }else{
+                        var re = /^.{2,20}$/
+                        if (!re.test($('#sjr-name').val())) {
+                            alert('请输入正确的收件人姓名(2-20字符)');
+                            return	false;
+                        }
+                    }
+
+                    //手机号
+                    if(!$('#mobile').val()){
+                        alert('手机号码不能为空');
+                        return	false;
+                    }else{
+                        var re = /^1\d{10}$/
+                        if (!re.test($('#mobile').val())) {
+                            alert('请正确输入手机号码')
+                            return	false;
+                        }
+                    }
+                }
+
+                $("#form").submit();
+            })
+
+        })
+
+
+
+
+    </script>
 @stop
