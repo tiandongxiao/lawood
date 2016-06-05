@@ -205,10 +205,8 @@
                 });
             });
             // 立即咨询
-            $('.btn-yjdd').tap(function(){                
-                alert(consult);
-                return;
-//                window.location.href="/wechat/order/buy/"+;
+            $('.btn-yjdd').tap(function(){
+               window.location.href="/wechat/order/buy/"+consult;
             });
 
             $('.btn-gb').tap(function(){
