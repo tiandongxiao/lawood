@@ -9,46 +9,6 @@
                 <div class="line-40 " style="color: #F39D2E;font-size: 14px;text-align: left;padding-left: 10px;">提示：下列地点仅为推荐，可协商变更</div>
             </div>
             <div class="con" style="margin-top: 30px;">
-                <div class="itms">
-                    <div class="f-left"><img src="/images/dd-banner.jpg" width="110" height="80"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">COST咖啡店</h3>
-                        <p class="chaochu_1">法律咖啡：人均25元</p>
-                        <p class="chaochu_1">地址：北京市海淀区中关村33号</p>
-                        <p class="chaochu_1 mar-top-10">距离200米</p>
-                    </div>
-                    <div class="itms-radio"><input type="radio" name="dd" class="In-radio" checked></div>
-                </div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/dd-banner.jpg" width="110" height="80"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">COST咖啡店</h3>
-                        <p class="chaochu_1">法律咖啡：人均25元</p>
-                        <p class="chaochu_1">地址：北京市海淀区中关村33号</p>
-                        <p class="chaochu_1 mar-top-10">距离200米</p>
-                    </div>
-                    <div class="itms-radio"><input type="radio" name="dd" class="In-radio"></div>
-                </div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/dd-banner.jpg" width="110" height="80"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">COST咖啡店</h3>
-                        <p class="chaochu_1">法律咖啡：人均25元</p>
-                        <p class="chaochu_1">地址：北京市海淀区中关村33号</p>
-                        <p class="chaochu_1 mar-top-10">距离200米</p>
-                    </div>
-                    <div class="itms-radio"><input type="radio" name="dd" class="In-radio"></div>
-                </div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/dd-banner.jpg" width="110" height="80"></div>
-                    <div class="right">
-                        <h3 class="chaochu_1">COST咖啡店</h3>
-                        <p class="chaochu_1">法律咖啡：人均25元</p>
-                        <p class="chaochu_1">地址：北京市海淀区中关村33号</p>
-                        <p class="chaochu_1 mar-top-10">距离200米</p>
-                    </div>
-                    <div class="itms-radio"><input type="radio" name="dd" class="In-radio"></div>
-                </div>
             </div>
         </div>
     </div>
@@ -76,11 +36,20 @@
                 searchPublicByAround(cur_position,"咖啡厅",function (result) {
                     // 搜索成功
                     var pois = result.poiList.pois;
-                    $('.con').empty();
                     for(var i = 0; i < pois.length; i++) {
-
+                        var poi = pois[i];
+                        $('.con').append(
+                            "<div class='itms'>"+
+                                "<div class='f-left'><img src='"+ '/images/dd-banner.jpg' +"' width='110' height='80'></div>"+
+                                "<div class='right'><h3 class='chaochu_1'>"+ poi.name +"</h3>"+
+                                    "<p class='chaochu_1'>法律咖啡：人均"+25+"元</p>"+
+                                    "<p class='chaochu_1'>"+poi.address+"</p>"+
+                                    "<p class='chaochu_1 mar-top-10'>"+"距离"+poi.distance+"米"+"</p>"+
+                                "</div>"+
+                                "<div class='itms-radio'><input type='radio' name='dd' class='In-radio'></div>"+
+                            "</div>"
+                        );
                     }
-
                 },function (result) {
                     // 失败
                     alert('没找到');

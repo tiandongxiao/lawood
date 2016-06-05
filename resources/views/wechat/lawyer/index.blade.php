@@ -167,9 +167,8 @@
             //律师咨询
             $('#In-btn').tap(function(){
                 $('.lsjs-main').hide();
-                window.location.href="#";
                 $('.lstc-main').show();
-                $('.tc-m').fadeIn();
+                $('.tc-m').show();
             });
 
             //切换咨询栏目

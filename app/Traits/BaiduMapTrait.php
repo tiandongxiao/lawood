@@ -41,7 +41,6 @@ trait BaiduMapTrait
             'radius'   => $condition['radius'],
             'query'    => $condition['query'],
             'region'   => $condition['region'],
-            'output'   => 'html',
             'src'      => 'lawood'
         ];
         $result = $this->makeGetRequest($this->URI['search_around'],$params);

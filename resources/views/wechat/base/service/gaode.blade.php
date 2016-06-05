@@ -94,7 +94,7 @@
     function searchPublicByAround(center,type,onComplete,onError) {
         AMap.service(["AMap.PlaceSearch"], function() {
             var placeSearch = new AMap.PlaceSearch({ //构造地点查询类
-                pageSize: 500,
+                pageSize: 4,
                 type: type,
                 pageIndex: 1,
                 extensions: "all"
@@ -102,13 +102,9 @@
 
             placeSearch.searchNearBy('', center, 20000, function(status, result) {
                 if (status === 'complete' && result.info === 'OK') {
-                    console.log(result);
-                    alert('搜索成功');
-                    //TODO : 解析返回结果,如果设置了map和panel，api将帮助完成点标注和列表
                     onComplete(result);
                     return;
                 }
-                alert('搜索失败');
                 onError(result);
             });
         });
@@ -126,9 +122,8 @@
         //加载CloudDataSearch服务插件
         AMap.service(["AMap.CloudDataSearch"], function() {
             search = new AMap.CloudDataSearch('56fa40c9305a2a3288363151', searchOptions);
-            search.searchNearBy(center, 10000000,function (status, result) {
+            search.searchNearBy(center, 10000,function (status, result) {
                 if (status === 'complete' && result.info === 'OK') {
-                    //TODO : 解析返回结果,如果设置了map和panel，api将帮助完成点标注和列表
                     onComplete(result);
                     return;
                 }
