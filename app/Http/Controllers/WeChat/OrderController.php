@@ -10,6 +10,8 @@ namespace App\Http\Controllers\WeChat;
 
 
 use App\Http\Controllers\Controller;
+use App\Order;
+use App\Place;
 use App\Traits\ShopDevTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -67,7 +69,14 @@ class OrderController extends Controller
 
     public function postSelectAddress(Request $request)
     {
-        dd($request->all());
+        $order = Order::findOrFail($request->get('order'));
+        if(!$order->palce)
+            Place::create([
+                'poi_id'    => $request->get('poi'),
+                'order_id'  => $request->get('order'),
+                'address'   => $request->get('address')
+            ]);
+        return redirect('wechat/order/pay/'.$request->get('order'));
 
     }
 
