@@ -119,16 +119,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.18.14",
+            "version": "3.18.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "9398db378231fe723583fb8d7a919c1806f02be3"
+                "reference": "a50c0971d42867ac8184c52c5f35b27255a695b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/aws/aws-sdk-php/9398db378231fe723583fb8d7a919c1806f02be3.zip",
-                "reference": "9398db378231fe723583fb8d7a919c1806f02be3",
+                "url": "https://packagist.phpcomposer.com/files/aws/aws-sdk-php/a50c0971d42867ac8184c52c5f35b27255a695b2.zip",
+                "reference": "a50c0971d42867ac8184c52c5f35b27255a695b2",
                 "shasum": ""
             },
             "require": {
@@ -195,7 +195,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-05-26 20:43:24"
+            "time": "2016-06-02 20:13:40"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -1480,16 +1480,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.22",
+            "version": "1.0.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "bd73a91703969a2d20ab4bfbf971d6c2cbe36612"
+                "reference": "9aca859a303fdca30370f42b8c611d9cf0dedf4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/thephpleague/flysystem/bd73a91703969a2d20ab4bfbf971d6c2cbe36612.zip",
-                "reference": "bd73a91703969a2d20ab4bfbf971d6c2cbe36612",
+                "url": "https://packagist.phpcomposer.com/files/thephpleague/flysystem/9aca859a303fdca30370f42b8c611d9cf0dedf4b.zip",
+                "reference": "9aca859a303fdca30370f42b8c611d9cf0dedf4b",
                 "shasum": ""
             },
             "require": {
@@ -1559,7 +1559,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-04-28 06:53:12"
+            "time": "2016-06-03 19:11:39"
         },
         {
             "name": "league/flysystem-aws-s3-v3",
@@ -2204,16 +2204,16 @@
         },
         {
             "name": "overtrue/socialite",
-            "version": "1.0.10",
+            "version": "1.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/socialite.git",
-                "reference": "4aeba2eab5ed9f40fb03b45360200a5a6a1fb676"
+                "reference": "7acf12b2e6b574ff9ad660624e46888a095411b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/overtrue/socialite/4aeba2eab5ed9f40fb03b45360200a5a6a1fb676.zip",
-                "reference": "4aeba2eab5ed9f40fb03b45360200a5a6a1fb676",
+                "url": "https://packagist.phpcomposer.com/files/overtrue/socialite/7acf12b2e6b574ff9ad660624e46888a095411b3.zip",
+                "reference": "7acf12b2e6b574ff9ad660624e46888a095411b3",
                 "shasum": ""
             },
             "require": {
@@ -2250,20 +2250,20 @@
                 "wechat",
                 "weibo"
             ],
-            "time": "2016-03-27 09:02:11"
+            "time": "2016-06-02 10:04:51"
         },
         {
             "name": "overtrue/wechat",
-            "version": "3.0.19",
+            "version": "3.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/wechat.git",
-                "reference": "ab27301379590c596713b70f0bfb4be22e0f4c11"
+                "reference": "fd85b555ed2a807461d427cac721aa24713b7ee0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/overtrue/wechat/ab27301379590c596713b70f0bfb4be22e0f4c11.zip",
-                "reference": "ab27301379590c596713b70f0bfb4be22e0f4c11",
+                "url": "https://packagist.phpcomposer.com/files/overtrue/wechat/fd85b555ed2a807461d427cac721aa24713b7ee0.zip",
+                "reference": "fd85b555ed2a807461d427cac721aa24713b7ee0",
                 "shasum": ""
             },
             "require": {
@@ -2307,7 +2307,7 @@
                 "weixin",
                 "weixin-sdk"
             ],
-            "time": "2016-05-25 12:33:18"
+            "time": "2016-06-02 09:56:15"
         },
         {
             "name": "paragonie/random_compat",
@@ -2496,12 +2496,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PingPlusPlus/pingpp-php.git",
-                "reference": "ff57dffff784328afad26c05270a5b422cc2d070"
+                "reference": "737c53c8b4ec887a1f953f286e0b178e074ef30f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/PingPlusPlus/pingpp-php/ff57dffff784328afad26c05270a5b422cc2d070.zip",
-                "reference": "ff57dffff784328afad26c05270a5b422cc2d070",
+                "url": "https://packagist.phpcomposer.com/files/PingPlusPlus/pingpp-php/737c53c8b4ec887a1f953f286e0b178e074ef30f.zip",
+                "reference": "737c53c8b4ec887a1f953f286e0b178e074ef30f",
                 "shasum": ""
             },
             "require": {
@@ -2536,7 +2536,7 @@
                 "mobile payment processing",
                 "pingpp"
             ],
-            "time": "2016-05-04 17:14:59"
+            "time": "2016-05-31 05:26:59"
         },
         {
             "name": "pragmarx/datatables",
@@ -2716,23 +2716,23 @@
         },
         {
             "name": "predis/predis",
-            "version": "v1.0.3",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "84060b9034d756b4d79641667d7f9efe1aeb8e04"
+                "reference": "0e17edbefb50c6cbd1acc4a6f6ef06399deb1af2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/84060b9034d756b4d79641667d7f9efe1aeb8e04",
-                "reference": "84060b9034d756b4d79641667d7f9efe1aeb8e04",
+                "url": "https://packagist.phpcomposer.com/files/nrk/predis/0e17edbefb50c6cbd1acc4a6f6ef06399deb1af2.zip",
+                "reference": "0e17edbefb50c6cbd1acc4a6f6ef06399deb1af2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": ">=5.3.9"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.8"
             },
             "suggest": {
                 "ext-curl": "Allows access to Webdis when paired with phpiredis",
@@ -2755,14 +2755,14 @@
                     "homepage": "http://clorophilla.net"
                 }
             ],
-            "description": "Flexible and feature-complete PHP client library for Redis",
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
             "homepage": "http://github.com/nrk/predis",
             "keywords": [
                 "nosql",
                 "predis",
                 "redis"
             ],
-            "time": "2015-07-30 18:34:15"
+            "time": "2016-06-01 22:06:21"
         },
         {
             "name": "psr/http-message",
@@ -3522,16 +3522,16 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v3.0.6",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "74fec3511b62cb934b64bce1d96f06fffa4beafd"
+                "reference": "5751e80d6f94b7c018f338a4a7be0b700d6f3058"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/symfony/filesystem/74fec3511b62cb934b64bce1d96f06fffa4beafd.zip",
-                "reference": "74fec3511b62cb934b64bce1d96f06fffa4beafd",
+                "url": "https://packagist.phpcomposer.com/files/symfony/filesystem/5751e80d6f94b7c018f338a4a7be0b700d6f3058.zip",
+                "reference": "5751e80d6f94b7c018f338a4a7be0b700d6f3058",
                 "shasum": ""
             },
             "require": {
@@ -3540,7 +3540,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -3567,7 +3567,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2016-04-12 18:09:53"
+            "time": "2016-04-12 18:27:47"
         },
         {
             "name": "symfony/finder",
@@ -4224,16 +4224,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.6",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "0047c8366744a16de7516622c5b7355336afae96"
+                "reference": "eca51b7b65eb9be6af88ad7cc91685f1556f5c9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/symfony/yaml/0047c8366744a16de7516622c5b7355336afae96.zip",
-                "reference": "0047c8366744a16de7516622c5b7355336afae96",
+                "url": "https://packagist.phpcomposer.com/files/symfony/yaml/eca51b7b65eb9be6af88ad7cc91685f1556f5c9a.zip",
+                "reference": "eca51b7b65eb9be6af88ad7cc91685f1556f5c9a",
                 "shasum": ""
             },
             "require": {
@@ -4242,7 +4242,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -4269,7 +4269,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-04 07:55:57"
+            "time": "2016-05-26 21:46:24"
         },
         {
             "name": "toplan/laravel-sms",

@@ -82,8 +82,8 @@ class OrderController extends Controller
 
     public function pay(Request $request,$id)
     {
-        dd($request->get($id));
         $order = Order::find($request->get('order'));
+        dd($order);
         return view('wechat.flow.pay');
     }
     
