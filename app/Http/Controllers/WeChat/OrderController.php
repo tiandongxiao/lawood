@@ -74,7 +74,7 @@ class OrderController extends Controller
             Place::create([
                 'poi_id'    => $request->get('poi'),
                 'order_id'  => $request->get('order'),
-                'address'   => $request->get('address')
+                'name'      => $request->get('coffee')
             ]);
         return redirect('wechat/order/pay/'.$request->get('order'));
 
