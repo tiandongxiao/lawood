@@ -27,7 +27,6 @@ class OrderController extends Controller
     {
         Cart::current()->clear();
         $this->addItemIntoCart($item_id);
-        dd(Cart::current()->items);
 
         # 1 执行Shop的其他操作之前，必须先选择支付方式,这里设置为js方式
         Shop::setGateway('wx_js');
@@ -42,7 +41,7 @@ class OrderController extends Controller
 
         # 3 下单
         $order = Shop::placeOrder();
-        dd($order);
+        
 
         Log::info('prePay wx_js placeorder');
 
