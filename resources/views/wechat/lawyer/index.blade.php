@@ -176,6 +176,7 @@
                 $('.list-1').removeClass('on');
                 $(this).addClass('on');
                 consult = $(this).data('consult');
+                alert(consult);
 
                 var select = $(this).data('price');
                 var address = $('input[name=uri]').val();
@@ -204,7 +205,7 @@
                 });
             });
             // 立即咨询
-            $('.btn-yjdd').tap(function(){
+            $('.btn-yjdd').click(function(){
                window.location.href="/wechat/order/place/"+consult;
             });
 
