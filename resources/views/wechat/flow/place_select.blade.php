@@ -67,6 +67,7 @@
             if(address!=""){
                 getResults(address);
             }else{
+                gdMapInit();
                 locatePosition(function (data) {
                     regeocoder(data.position,function (result) {
                         address = result.formattedAddress;
