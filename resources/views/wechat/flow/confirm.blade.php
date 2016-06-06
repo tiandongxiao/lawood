@@ -12,7 +12,8 @@
         </div>
 
         <form id="form" action="{{url('wechat/order/confirm')}}" method="post">
-            <input type="hidden" name="order" value="{{$order}}">
+            <input type="hidden" name="order" value="{{$order->id}}">
+            <input type="hidden" id="switch" name="switch" value="off">
             {!! csrf_field() !!}
             <div class="form bg-fff-box">
                 <div class="itms">
@@ -25,7 +26,7 @@
                     <div class="f-left">我要开发票</div>
                     <div class="right">
                         <div class="ts fc-c0c0c0" style="display:none">邮费用费到付</div>
-                        <input type="checkbox" class="In-check" name="switch">
+                        <input type="checkbox" class="In-check">
                     </div>
                 </div>
                 <div class="con con-1" style="display:none;">
@@ -73,9 +74,11 @@
                 if($(this).prop("checked")){
                     $('.con-1').slideDown();
                     $('.ts').fadeIn();
+                    $('#switch').val('on');
                 }else{
                     $('.con-1').slideUp();
                     $('.ts').fadeOut();
+                    $('#switch').val('off');
                 }
             });
 
