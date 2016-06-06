@@ -205,7 +205,7 @@
             });
             // 立即咨询
             $('.btn-yjdd').tap(function(){
-               window.location.href="/wechat/order/buy/"+consult;
+               window.location.href="/wechat/order/place/"+consult;
             });
 
             $('.btn-gb').tap(function(){

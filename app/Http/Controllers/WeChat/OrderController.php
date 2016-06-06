@@ -12,6 +12,7 @@ namespace App\Http\Controllers\WeChat;
 use App\Http\Controllers\Controller;
 use App\Traits\ShopDevTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Shop;
 use App\Cart;
 use Illuminate\Support\Facades\Log;
@@ -51,7 +52,7 @@ class OrderController extends Controller
 
     public function placeOrder(Request $request,$consult)
     {
-        $address = $request->get('address');
+        $address = Session::get('address');
         return view('wechat.flow.place_select',compact('address'));
 //        $order = $this->buildOrder($item_id);
 //        if($order)

@@ -70,7 +70,6 @@
             }
 
 
-
             //约见地点
             $('#In-next').tap(function(){
                 window.location.href="/wechat/order/pay";
