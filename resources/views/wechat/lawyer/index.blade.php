@@ -146,7 +146,7 @@
 @stop
 @section('script')
     <script>
-        var consult; //定义全局变量，用于标记选择
+        var consult = "{!! $user->prices[0]->consults[0]->id !!}"; //定义全局变量，用于标记选择
 
         $(function(){
             //下拉上升
