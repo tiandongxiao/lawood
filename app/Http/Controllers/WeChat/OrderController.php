@@ -72,12 +72,19 @@ class OrderController extends Controller
     public function postSelectAddress(Request $request)
     {
         $order = Order::findOrFail($request->get('order'));
-        if(!$order->palce)
+        if(!$order->place){
             Place::create([
+                'order_id'  => $order->id,
                 'poi_id'    => $request->get('poi'),
-                'order_id'  => $request->get('order'),
                 'name'      => $request->get('coffee')
             ]);
+        }else{
+            $order->place->update([
+                'poi_id'    => $request->get('poi'),
+                'name'      => $request->get('coffee')
+            ]);
+        }
+
         return redirect('wechat/order/confirm/'.$order->id);
     }
 
