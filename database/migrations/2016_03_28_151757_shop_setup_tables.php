@@ -97,7 +97,7 @@ class ShopSetupTables extends Migration
             $table->string('order_no', 64)->nullable();  # 订单编号
             $table->boolean('refunded')->default(false); # 是否已退款标志位
             $table->boolean('withdrew')->default(false); # 是否已折现标志位
-            $table->string('attach', 64)->nullable();    # 附件数据
+            $table->string('attach')->nullable();        # 附件数据
 
             $table->timestamps();
             $table->foreign('user_id')
