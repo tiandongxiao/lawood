@@ -95,19 +95,28 @@ class OrderController extends Controller
 
         $order = Order::findOrFail($order_id);
 
-        if(is_null($order->user->name)){
+        if(is_null($order->user->real_name)){
             $order->user->update([
-                'name' => $request->get('name')
+                'real_name' => $request->get('name')
+            ]);
+        }
+        if(!$order->receipt){
+            Receipt::create([
+                'order_id' => $order_id,
+                'receiver' => $request->get('receiver'),
+                'phone'    => $request->get('phone'),
+                'address'  => $request->get('address'),
+                'code'     => $request->get('code')
+            ]);
+        }else{
+            $order->receipt->update([
+                'receiver' => $request->get('receiver'),
+                'phone'    => $request->get('phone'),
+                'address'  => $request->get('address'),
+                'code'     => $request->get('code')
             ]);
         }
 
-        Receipt::create([
-            'order_id' => $order_id,
-            'receiver' => $request->get('receiver'),
-            'phone'    => $request->get('phone'),
-            'address'  => $request->get('address'),
-            'code'     => $request->get('code'),
-        ]);
 
 
         return redirect('wxpay/js/'.$order->id);

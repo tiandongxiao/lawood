@@ -175,8 +175,7 @@
             $('.list-1').tap(function(){
                 $('.list-1').removeClass('on');
                 $(this).addClass('on');
-                consult = $(this).data('consult');
-                alert(consult);
+                consult = $(this).data('consult');                
 
                 var select = $(this).data('price');
                 var address = $('input[name=uri]').val();
