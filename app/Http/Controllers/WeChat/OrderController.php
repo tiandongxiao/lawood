@@ -78,7 +78,7 @@ class OrderController extends Controller
                 'order_id'  => $request->get('order'),
                 'name'      => $request->get('coffee')
             ]);
-        return redirect('wxpay/order/confirm/'.$order->id);
+        return redirect('wechat/order/confirm/'.$order->id);
     }
 
     public function confirm($id)
