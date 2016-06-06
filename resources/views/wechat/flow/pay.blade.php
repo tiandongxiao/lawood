@@ -14,15 +14,15 @@
                         switch (res.err_msg){
                             //支付成功
                             case "get_brand_wcpay_request:ok":
-                                window.location.href="{{url('wechat/client/orders')}}";
+                                window.location.href="/wechat/client/orders";
                                 break;
                             //取消支付
                             case "get_brand_wcpay_request:cancel":
-                                window.location.href="{{url('wechat')}}";
+                                window.location.href="/wechat";
                                 break;
                             default:
                                 alert("支付失败");
-                                window.location.href="{{url('wechat')}}";
+                                window.location.href="/wechat";
                                 break;
                         }
                         return null;
