@@ -3,7 +3,7 @@
     <section class="sjxz-main">
         <div class="top">
             <div class="tx"><img src="/images/ls.jpg" width="60" height="60" class="br-50"></div>
-            <div class="fy"><span class="fs-18">{{$order->total()}}</span>元</div>
+            <div class="fy"><span class="fs-18">{{$order->total}}</span>元</div>
             <p class="fc-fff line-40 fs-18">您正在预约</p>
             <p class="fc-a4dfff line-20">{{$order->seller->office}} <font class="fc-fff">{{$order->seller->real_name}}</font> 进行法</p>
             <p class="fc-a4dfff line-20 dd">预约地点暂定{{$order->place->name}}</p>
