@@ -33,43 +33,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="225" column="14" selection-start-line="225" selection-start-column="11" selection-end-line="225" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="143" column="18" selection-start-line="143" selection-start-column="18" selection-end-line="143" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="place_select.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-208">
-              <caret line="7" column="150" selection-start-line="7" selection-start-column="150" selection-end-line="7" selection-end-column="150" />
-              <folding>
-                <element signature="e#451#506#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="237">
-              <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+              <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cart.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Cart.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopCartModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/amsgames/laravel-shop/src/Models/ShopCartModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopCartTrait.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/amsgames/laravel-shop/src/Traits/ShopCartTrait.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-831">
+              <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -929,7 +927,7 @@
       <workItem from="1465018342414" duration="5867000" />
       <workItem from="1465047448755" duration="8297000" />
       <workItem from="1465112215538" duration="19787000" />
-      <workItem from="1465170254727" duration="18221000" />
+      <workItem from="1465170254727" duration="18325000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1054,7 +1052,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="958306000" />
+    <option name="totallyTimeSpent" value="958410000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1137,27 +1135,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/setting.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/wechat/auth/lawyer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="81" column="61" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AjaxController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="128" column="5" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Pois.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-523">
@@ -1511,14 +1488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OrderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
@@ -1527,10 +1496,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/amsgames/laravel-shop/src/Traits/ShopCartTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-831">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/amsgames/laravel-shop/src/Models/ShopCartModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
-          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
           <folding />
         </state>
       </provider>
