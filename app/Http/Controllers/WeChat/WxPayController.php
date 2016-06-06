@@ -115,7 +115,6 @@ class WxPayController extends Controller
         }
 
         return redirect('client/completed');
-        return view('wechat.flow.pay');
     }
 
     public function prePay($id, $gateway)

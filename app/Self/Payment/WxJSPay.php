@@ -61,7 +61,7 @@ class WxJSPay extends PaymentGateway
                 'body'            => '服务费',
                 'detail'          => Str::random(16),
                 'out_trade_no'    => Str::random(16),
-                'total_fee'       => $order->total,
+                'total_fee'       => $order->total*100,
                 'trade_type'      => 'JSAPI',
                 'openid'          => $open_id
             ]);

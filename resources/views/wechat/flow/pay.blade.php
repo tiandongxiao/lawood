@@ -11,11 +11,26 @@
                     {!! $params !!},
                     function(res){
                         WeixinJSBridge.log(res.err_msg);
+                        switch (res.err_msg){
+                            //支付成功
+                            case "get_brand_wcpay_request:ok":
+                                window.location.href="{{url('wechat/client/orders')}}";
+                                break;
+                            //取消支付
+                            case "get_brand_wcpay_request:cancel":
+                                window.location.href="{{url('wechat')}}";
+                                break;
+                            default:
+                                alert("支付失败");
+                                window.location.href="{{url('wechat')}}";
+                                break;
+                        }
 
                         if(res.err_msg == "get_brand_wcpay_request:ok"){
-                            window.location.href="{{url('/')}}";
+                            window.location.href="{{url('wechat')}}";
                         }else{
                             alert('xixi'+res.err_code+res.err_desc+res.err_msg);
+                            if()
                         }
                     }
             );

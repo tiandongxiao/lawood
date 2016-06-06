@@ -21,7 +21,7 @@
     <script>
     //提交审核
     $('#btn-qr').tap(function(){
-        $('.tc-main').fadeOut();
+        $('.tc-main').hide();
         window.location.href="/wechat";
     })
     </script>

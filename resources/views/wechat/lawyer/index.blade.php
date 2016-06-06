@@ -209,8 +209,8 @@
             });
 
             $('.btn-gb').tap(function(){
-                $('.lstc-main').fadeOut();
-                $('.tc-m').fadeOut();
+                $('.lstc-main').hide();
+                $('.tc-m').hide();
                 $('.lsjs-main').show();
             });
         })
