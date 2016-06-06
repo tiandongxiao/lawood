@@ -77,12 +77,11 @@ class OrderController extends Controller
                 'name'      => $request->get('coffee')
             ]);
         return redirect('wechat/order/pay/'.$request->get('order'));
-
     }
 
     public function pay(Request $request,$id)
     {
-        $order = Order::find($request->get('order'));
+        $order = Order::find($id);
         dd($order);
         return view('wechat.flow.pay');
     }
