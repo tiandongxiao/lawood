@@ -107,13 +107,11 @@ class WxPayController extends Controller
      */
     public function JSPay($order_id)
     {
-        $order = Order::findOrFail($order_id);
+        $order = ShopOrder::findOrFail($order_id);
 
         if($order->statusCode == 'pending'){
             $params =  $order->attach;
-            $price = $order->total;
-            Log::info('JSPay '.' price');
-            return view('payment.wxpay.jsapi',compact('order','params','price'));
+            return view('wechat.flow.pay',compact('params'));
         }
 
         return redirect('client/completed');
