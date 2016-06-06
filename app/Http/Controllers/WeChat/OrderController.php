@@ -96,8 +96,6 @@ class OrderController extends Controller
 
     public function postConfirm(Request $request)
     {
-        dd($request->all());
-
         $order_id = $request->get('order');
 
         $order = Order::findOrFail($order_id);
