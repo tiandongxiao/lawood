@@ -65,8 +65,8 @@
             $('#form-xz .hd i').tap(function(){
                 $('#form-xz .hd i').removeClass('on')
                 $(this).addClass('on');
-                $('#form-xz .bd .In-text').css({display:'none'})
-                $('#form-xz .bd .In-text').eq($(this).index()).css({display:'block'})
+                $('#form-xz .bd .In-text').css({display:'none'});
+                $('#form-xz .bd .In-text').eq($(this).index()).css({display:'block'});
             });
 
 
