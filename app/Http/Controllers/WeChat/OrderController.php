@@ -12,6 +12,7 @@ namespace App\Http\Controllers\WeChat;
 use App\Http\Controllers\Controller;
 use App\Order;
 use App\Place;
+use App\Receipt;
 use App\Traits\ShopDevTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -41,7 +42,7 @@ class OrderController extends Controller
 
         # 3 下单
         $order = Shop::placeOrder();
-        
+
 
         Log::info('prePay wx_js placeorder');
 
@@ -77,14 +78,46 @@ class OrderController extends Controller
                 'order_id'  => $request->get('order'),
                 'name'      => $request->get('coffee')
             ]);
-        return redirect('wechat/order/pay/'.$request->get('order'));
+        return redirect('wxpay/js/'.$request->get('order'));
     }
 
-    public function pay(Request $request,$id)
+    public function pay($id)
     {
-        $order = Order::find($id);
-        dd($order);
+        $order = Order::findOrFail($id);
+        return redirect('client/completed');
         return view('wechat.flow.pay');
+    }
+
+    public function confirm($id)
+    {
+        $order = Order::findOrFail($id);
+        return view('wechat.flow.confirm',compact('order'));
+    }
+
+    public function postConfirm(Request $request)
+    {
+        dd($request->all());
+
+        $order_id = $request->get('order');
+
+        $order = Order::findOrFail($order_id);
+
+        if(is_null($order->user->name)){
+            $order->user->update([
+                'name' => $request->get('name')
+            ]);
+        }
+
+        Receipt::create([
+            'order_id' => $order_id,
+            'receiver' => $request->get('receiver'),
+            'phone'    => $request->get('phone'),
+            'address'  => $request->get('address'),
+            'code'     => $request->get('code'),
+        ]);
+
+
+        return redirect('wxpay/js/'.$order->id);
     }
     
 }

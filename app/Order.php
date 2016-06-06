@@ -41,4 +41,9 @@ class Order extends ShopOrderModel
     {
         return $this->hasOne(Place::class);
     }
+
+    public function receipt()
+    {
+        return $this->hasOne(Receipt::class);
+    }
 }

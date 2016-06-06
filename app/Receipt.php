@@ -55,4 +55,9 @@ class Receipt extends Model {
         return $newRules;
     }
 
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
 }

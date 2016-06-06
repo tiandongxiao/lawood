@@ -139,7 +139,7 @@ Route::group(['prefix' => 'wxpay'], function(){
     Route::post('callback', 'WeChat\WxPayController@callback');    # 微信支付回调处理逻辑
     Route::get('native/{id}', 'WeChat\WxPayController@nativePay'); # 微信扫码支付
 
-    Route::get('js/{id}', 'WeChat\WxPayController@JSPay')->middleware(['wechat.oauth']);  # 微信浏览器内部支付方式
+    Route::get('js/{id}', 'WeChat\WxPayController@JSPay');  # 微信浏览器内部支付方式 ->middleware(['wechat.oauth'])
     Route::get('refund/{id}','WeChat\WxPayController@refundByOrderNo'); # 微信退款
 });
 
@@ -223,7 +223,8 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('order/place/{consult}','WeChat\OrderController@placeOrder');  # 下单返回地点选择列表
     Route::get('order/address','WeChat\OrderController@selectAddress');       # 绑定选择的地点
     Route::post('order/address','WeChat\OrderController@postSelectAddress');  # 绑定选择的地点
-    Route::get('order/pay/{id}','WeChat\OrderController@pay');                     # 绑定选择的地点
+    Route::get('order/confirm/{id}','WeChat\OrderController@confirm');        # 绑定选择的地点
+    Route::post('order/confirm','WeChat\OrderController@postConfirm');
 
     # begin 注册绑定
     Route::get('chose','WeChat\AuthController@chose');

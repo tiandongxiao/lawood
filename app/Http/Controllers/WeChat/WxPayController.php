@@ -105,21 +105,19 @@ class WxPayController extends Controller
      * @param $product_id
      * @return 返回用户在线支付商品信息显示界面
      */
-    public function JSPay($item_id)
+    public function JSPay($order_id)
     {
-        $user = $this->regIfNotExist();
-        Auth::login($user);
-
-        $order = $this->prePay($item_id, 'wx_js');
+        $order = Order::findOrFail($order_id);
 
         if($order->statusCode == 'pending'){
             $params =  $order->attach;
             $price = $order->total;
             Log::info('JSPay '.' price');
-            return view('payment.wxpay.jsapi',compact('params','price'));
+            return view('payment.wxpay.jsapi',compact('order','params','price'));
         }
 
         return redirect('client/completed');
+        return view('wechat.flow.pay');
     }
 
     public function prePay($id, $gateway)

@@ -11,44 +11,46 @@
             <p class="fc-fff fs-12">并确定最终的预约信息</p>
         </div>
 
-        <form id="form" action="#">
+        <form id="form" action="{{url('wechat/order/confirm')}}">
+            <input type="hidden" name="order" value="{{$order}}">
+            {!! csrf_field() !!}
             <div class="form bg-fff-box">
                 <div class="itms">
                     <div class="f-left">联 系 人</div>
                     <div class="right">
-                        <input type="text" class="In-text" placeholder="请输入联系人姓名" id="name">
+                        <input type="text" class="In-text" placeholder="请输入联系人姓名" id="name" name="name">
                     </div>
                 </div>
                 <div class="itms">
                     <div class="f-left">我要开发票</div>
                     <div class="right">
                         <div class="ts fc-c0c0c0" style="display:none">邮费用费到付</div>
-                        <input type="checkbox" class="In-check" >
+                        <input type="checkbox" class="In-check" name="switch">
                     </div>
                 </div>
                 <div class="con con-1" style="display:none;">
                     <div class="itms">
                         <div class="f-left">发票抬头</div>
                         <div class="right">
-                            <input type="text" class="In-text" placeholder="请输入发票抬头"  id="fptt">
+                            <input type="text" class="In-text" placeholder="请输入发票抬头"  id="fptt" name="title">
                         </div>
                     </div>
                     <div class="itms">
                         <div class="f-left">邮寄地址</div>
                         <div class="right">
-                            <input type="text" class="In-text" placeholder="请输入邮寄地址" id="yjdz">
+                            <input type="text" class="In-text" placeholder="请输入邮寄地址" id="yjdz" name="address">
                         </div>
                     </div>
                     <div class="itms">
                         <div class="f-left">收件人</div>
                         <div class="right">
-                            <input type="text" class="In-text" placeholder="请输入收件人" id="sjr-name">
+                            <input type="text" class="In-text" placeholder="请输入收件人" id="sjr-name" name="receiver">
                         </div>
                     </div>
                     <div class="itms">
                         <div class="f-left">电话号码</div>
                         <div class="right">
-                            <input type="text" class="In-text" placeholder="请输入电话号码" id="mobile">
+                            <input type="text" class="In-text" placeholder="请输入电话号码" id="mobile" name="phone">
                         </div>
                     </div>
                 </div>
@@ -65,38 +67,6 @@
 @stop
 @section('script')
     <script>
-        //调用微信JS api 支付
-        function jsApiCall()
-        {
-            WeixinJSBridge.invoke(
-                    'getBrandWCPayRequest',
-                    {!! $params !!},
-                    function(res){
-                        WeixinJSBridge.log(res.err_msg);
-
-                        if(res.err_msg == "get_brand_wcpay_request:ok"){
-                            window.location.href="{{url('/')}}";
-                        }else{
-                            alert('xixi'+res.err_code+res.err_desc+res.err_msg);
-                        }
-                    }
-            );
-        }
-
-        function pay()
-        {
-            if (typeof WeixinJSBridge == "undefined"){
-                if( document.addEventListener ){
-                    document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
-                }else if (document.attachEvent){
-                    document.attachEvent('WeixinJSBridgeReady', jsApiCall);
-                    document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
-                }
-            }else{
-                jsApiCall();
-            }
-        }
-
         $(function(){
             //公布到广场
             $('.In-check').on('change',function(){
@@ -136,7 +106,6 @@
                     //收件人sjr-name
 
                     if(!$('#sjr-name').val()){
-
                         alert('收件人姓名不能为空');
                         return	false;
                     }else{
@@ -163,9 +132,5 @@
             })
 
         })
-
-
-
-
     </script>
 @stop
