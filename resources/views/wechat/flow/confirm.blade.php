@@ -11,7 +11,7 @@
             <p class="fc-fff fs-12">并确定最终的预约信息</p>
         </div>
 
-        <form id="form" action="{{url('wechat/order/confirm')}}">
+        <form id="form" action="{{url('wechat/order/confirm')}}" method="post">
             <input type="hidden" name="order" value="{{$order}}">
             {!! csrf_field() !!}
             <div class="form bg-fff-box">
