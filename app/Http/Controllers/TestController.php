@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use App\Place;
@@ -112,12 +113,14 @@ class TestController extends Controller
 
     public function cache()
     {
-        $this->searchPublicAround([
-            'query'    => '咖啡',
-            'location' => '31.204055632862,121.41117785465',
-            'radius'   => '1000',
-            'region'   => '上海'
-        ]);
+        if(Session::has('hello'))
+            dd(Session::get('hello'));
+//        $this->searchPublicAround([
+//            'query'    => '咖啡',
+//            'location' => '31.204055632862,121.41117785465',
+//            'radius'   => '1000',
+//            'region'   => '上海'
+//        ]);
 //        $price = Price::findOrFail(5);
 //        dd($price->consults);
 //        $users = User::where('role','lawyer')->where('active',true)->get();
@@ -137,7 +140,9 @@ class TestController extends Controller
 
     public function putValue()
     {
-        Cache::add('reg_18301191705',random_int(1000, 9999),2);
+        //Cache::add('reg_18301191705',random_int(1000, 9999),2);
+        //session('hello','good');
+        Session::put('hello','good');
     }
 
     public function buildNotifications()

@@ -20,7 +20,6 @@
     @include('wechat.base.service.gaode')
     <script>
         $(function(){
-            var address = "{!! $address !!}";
             function getResults(address) {
                 //初始化地图
                 gdMapInit();
@@ -56,7 +55,21 @@
                     console.log(result);
                 });
             }
-            getResults(address);
+            var address = "{!! Session::get('address') !!}";
+            if(address!=""){
+                getResults(address);
+            }else{
+                locatePosition(function (data) {
+                    regeocoder(data.position,function (result) {
+                        getResults(result.formattedAddress);
+                    });
+                },function () {
+                    // 定位失败
+                    alert('定位失败,您可直接执行下一步');
+                });
+            }
+
+
 
             //约见地点
             $('#In-next').tap(function(){

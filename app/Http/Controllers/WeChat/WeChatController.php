@@ -6,6 +6,7 @@ namespace App\Http\Controllers\WeChat;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class WeChatController extends Controller
 {
@@ -21,6 +22,7 @@ class WeChatController extends Controller
         switch ($request->get('chose')){
             case 'position':
                 $address  = $request->get('address');
+                Session::put('address',$address);
                 $major = $request->get('major');
                 $tab = $request->get('tab');
                 return view('wechat.search',compact('address','major','tab'));
