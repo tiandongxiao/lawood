@@ -55,8 +55,10 @@
                             "</div>"
                         );
                     }
-                    $('#coffee').val(pois[0].name);
-                    $('#poi').val(pois[0].id);
+                    $('.In-radio').click(function () {
+                        $('#coffee').val($(this).data('coffee'));
+                        $('#poi').val($(this).val());
+                    });
                 },function (result) {
                     // 失败
                     alert('没找到');
@@ -78,14 +80,9 @@
                     alert('定位失败,您可直接执行下一步');
                 });
             }
-            $('#In-radio').tap(function () {
-                $('#coffee').val($(this).data('coffee'));
-                $('#poi').val($(this).val());
-            });
 
             //约见地点
             $('#In-next').tap(function(){
-                window.location.href="/wechat/order/pay";
                 $("#form").submit();
             });
         })
