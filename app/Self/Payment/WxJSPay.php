@@ -11,6 +11,7 @@ namespace App\Self\Payment;
 use Amsgames\LaravelShop\Core\PaymentGateway;
 use Amsgames\LaravelShop\Exceptions\CheckoutException;
 use Amsgames\LaravelShop\Exceptions\GatewayException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Log;
 use EasyWeChat\Payment\Order;
@@ -52,8 +53,8 @@ class WxJSPay extends PaymentGateway
                 return true;
             }
 
-            $user = session('wechat.oauth_user'); // 拿到授权用户资料
-            $open_id = $user->getId();
+            $user = Auth::user();
+            $open_id = $user->open_id;
             Log::info('JS支付，openid--'.$open_id);
 
             $wx_order = new Order([
