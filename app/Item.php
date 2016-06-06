@@ -23,7 +23,7 @@ class Item extends ShopItemModel implements Ratingable
         return $this->belongsTo(Category::class);
     }
 
-    # 一个咨询签到只拥有一个地址
+    # 一个咨询只拥有一个地址
     public function location()
     {
         return $this->belongsTo(Location::class);

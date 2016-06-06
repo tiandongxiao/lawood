@@ -14,12 +14,9 @@ class CreatePlacesTable extends Migration
     {
         Schema::create('places', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',128);
-            $table->unsignedSmallInteger('price');
-            $table->string('avatar');
-            $table->string('desc');
-            $table->string('address');
-            $table->string('attach');
+            $table->string('address',128);
+            $table->unsignedInteger('poi_id');
+            $table->unsignedBigInteger('order_id');
             $table->timestamps();
         });
     }

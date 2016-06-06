@@ -190,10 +190,9 @@ Route::group(['prefix' => 'site'], function(){
 });
 
 Route::resource('category','CategoryController');
-# Route::resource('pois','PoisController');             # 地图业务服务兴趣点，不会对其直接进行操作，所以注释掉
-
-Route::resource('place', 'PlaceController');
 Route::resource('notification', 'NotificationController');
+Route::resource('price','PriceController');
+# Route::resource('pois','PoisController');  # 不会对其直接进行操作，所以注释掉
 
 Route::group(['prefix' => 'test'], function(){
     Route::get('blade','TestController@blade');
@@ -221,11 +220,10 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('user/{id}','WeChat\WeChatController@showUser');
     Route::get('qrcode','WeChat\WeChatController@qrCode');
 
-    Route::get('order/buy/{id}','WeChat\OrderController@placeOrder');           # 下单返回地点选择列表
-    Route::get('order/place','WeChat\OrderController@selectPlace');       # 绑定选择的地点
-    Route::post('order/place','WeChat\OrderController@postSelectPlace');  # 绑定选择的地点
-    Route::get('order/pay','WeChat\OrderController@pay');                # 绑定选择的地点
-
+    Route::get('order/place/{consult}','WeChat\OrderController@placeOrder');           # 下单返回地点选择列表
+    Route::get('order/address','WeChat\OrderController@selectAddress');       # 绑定选择的地点
+    Route::post('order/address','WeChat\OrderController@postSelectAddress');  # 绑定选择的地点
+    Route::get('order/pay','WeChat\OrderController@pay');                 # 绑定选择的地点
 
     # begin 注册绑定
     Route::get('chose','WeChat\AuthController@chose');
@@ -277,7 +275,7 @@ Route::group(['prefix' => 'ajax'], function(){
     Route::post('read','NotificationController@read');
     Route::post('unread','NotificationController@unread');
 
+    # 获取价格信息
     Route::post('price','AjaxController@price');
 });
 
-Route::resource('price','PriceController');

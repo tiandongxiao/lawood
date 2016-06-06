@@ -49,25 +49,25 @@ class OrderController extends Controller
         return $order;
     }
 
-    public function placeOrder($item_id)
+    public function placeOrder(Request $request,$consult)
     {
-
-        return view('wechat.flow.place_select');
+        $address = $request->get('address');
+        return view('wechat.flow.place_select',compact('address'));
 //        $order = $this->buildOrder($item_id);
 //        if($order)
 //            return view('wechat.flow.place_select');
 //        return back();
     }
 
-    public function selectPlace(Request $request)
+    public function selectAddress(Request $request)
     {
         $address = $request->get('address');
         return view('wechat.flow.place_select',compact('address'));
     }
 
-    public function postSelectPlace(Request $request)
+    public function postSelectAddress(Request $request)
     {
-        return view();
+
     }
 
     public function pay()

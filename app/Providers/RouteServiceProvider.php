@@ -27,7 +27,6 @@ class RouteServiceProvider extends ServiceProvider
 		$router->model('price', 'App\Price');
 		$router->model('receipt', 'App\Receipt');
 		$router->model('notification', 'App\Notification');
-		$router->model('place', 'App\Place');
 		$router->model('pois', 'App\Pois');
 		$router->model('location', 'App\Location');
         //
