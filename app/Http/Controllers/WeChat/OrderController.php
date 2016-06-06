@@ -41,6 +41,7 @@ class OrderController extends Controller
 
         # 3 下单
         $order = Shop::placeOrder();
+        dd($order);
 
         Log::info('prePay wx_js placeorder');
 
