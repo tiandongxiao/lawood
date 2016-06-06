@@ -80,8 +80,9 @@ class OrderController extends Controller
 
     }
 
-    public function pay()
+    public function pay(Request $request)
     {
+        $order = Order::findOrFail($request->get('order'));
         return view('wechat.flow.pay');
     }
     
