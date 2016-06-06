@@ -36,7 +36,6 @@ class Receipt extends Model {
             'receiver' => 'required|string|max:255',
             'title' => 'required|string|max:80',
             'address' => 'required|string|max:128',
-            'code' => 'required|string|max:15',
             'phone' => 'required|string|max:15',
         ];
 

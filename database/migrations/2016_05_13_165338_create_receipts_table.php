@@ -18,7 +18,7 @@ class CreateReceiptsTable extends Migration
             $table->string('receiver');     # 收件人
             $table->string('title',80);     # 发票抬头
             $table->string('address',128);  # 邮寄地址
-            $table->string('code',15);      # 邮编
+            $table->string('code',15)->nullable();      # 邮编
             $table->string('phone',15);     # 电话号码
             $table->timestamps();
         });
