@@ -52,11 +52,12 @@ class OrderController extends Controller
 
     public function placeOrder(Request $request,$consult)
     {
-        $address = Session::get('address');
-        return view('wechat.flow.place_select',compact('address'));
-//        $order = $this->buildOrder($item_id);
+        return view('wechat.flow.place_select');
+//        $address = Session::get('address');
+//        $order = $this->buildOrder($consult);
+//        Session::put('order',$order->id);
 //        if($order)
-//            return view('wechat.flow.place_select');
+//
 //        return back();
     }
 
@@ -68,6 +69,7 @@ class OrderController extends Controller
 
     public function postSelectAddress(Request $request)
     {
+        
 
     }
 

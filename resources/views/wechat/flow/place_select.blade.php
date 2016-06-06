@@ -12,6 +12,12 @@
             </div>
         </div>
     </div>
+    <form id="form" action="{{url('wechat/order/address')}}" method="post">
+        {!! csrf_field() !!}
+        <input type="hidden" id="order" name="order" value="{{Session::get('order')}}">
+        <input type="hidden" id="coffee" name="coffee" value="">
+        <input type="hidden" id="poi" name="poi" value="">
+    </form>
     <!--约见地点-->
 </section>
 <!--弹出框-->
@@ -45,10 +51,12 @@
                                     "<p class='chaochu_1'>"+poi.address+"</p>"+
                                     "<p class='chaochu_1 mar-top-10'>"+"距离"+poi.distance+"米"+"</p>"+
                                 "</div>"+
-                                "<div class='itms-radio'><input type='radio' name='dd' class='In-radio'></div>"+
+                                "<div class='itms-radio'><input type='radio' name='dd' class='In-radio' data-coffee='"+poi.name+"' value='"+poi.id+"'></div>"+
                             "</div>"
                         );
                     }
+                    $('#coffee').val(pois[0].name);
+                    $('#poi').val(pois[0].id);
                 },function (result) {
                     // 失败
                     alert('没找到');
@@ -61,6 +69,7 @@
             }else{
                 locatePosition(function (data) {
                     regeocoder(data.position,function (result) {
+                        address = result.formattedAddress;
                         getResults(result.formattedAddress);
                     });
                 },function () {
@@ -68,11 +77,15 @@
                     alert('定位失败,您可直接执行下一步');
                 });
             }
-
+            $('#In-radio').tap(function () {
+                $('#coffee').val($(this).data('coffee'));
+                $('#poi').val($(this).val());
+            });
 
             //约见地点
             $('#In-next').tap(function(){
                 window.location.href="/wechat/order/pay";
+                $("#form").submit();
             });
         })
     </script>
