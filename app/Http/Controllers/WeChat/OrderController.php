@@ -78,14 +78,7 @@ class OrderController extends Controller
                 'order_id'  => $request->get('order'),
                 'name'      => $request->get('coffee')
             ]);
-        return redirect('wxpay/js/'.$request->get('order'));
-    }
-
-    public function pay($id)
-    {
-        $order = Order::findOrFail($id);
-        return redirect('client/completed');
-        return view('wechat.flow.pay');
+        return redirect('wxpay/order/confirm/'.$order->id);
     }
 
     public function confirm($id)
