@@ -106,7 +106,6 @@ class OrderController extends Controller
             ]);
         }
 
-        dd($order->receipt);
         if(!$order->receipt){
             Receipt::create([
                 'order_id' => $order_id,
