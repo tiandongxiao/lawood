@@ -105,9 +105,11 @@ class OrderController extends Controller
                 'real_name' => $request->get('name')
             ]);
         }
+        
         if(!$order->receipt){
             Receipt::create([
                 'order_id' => $order_id,
+                'title'    => $request->get('title'),
                 'receiver' => $request->get('receiver'),
                 'phone'    => $request->get('phone'),
                 'address'  => $request->get('address'),
@@ -115,14 +117,13 @@ class OrderController extends Controller
             ]);
         }else{
             $order->receipt->update([
+                'title'    => $request->get('title'),
                 'receiver' => $request->get('receiver'),
                 'phone'    => $request->get('phone'),
                 'address'  => $request->get('address'),
                 'code'     => $request->get('code')
             ]);
         }
-
-
 
         return redirect('wxpay/js/'.$order->id);
     }
