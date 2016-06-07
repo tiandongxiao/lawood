@@ -64,7 +64,7 @@ class WxJSPay extends PaymentGateway
             $wx_order = new Order([
                 'openid'          => $open_id,
                 'trade_type'      => 'JSAPI',
-                'body'            => $order->client->real_name.'-'.$order->seller->real_name,
+                'body'            => $order->client->real_name.'-'.$order->seller->real_name.$order->consult->category->name,
                 'out_trade_no'    => time().rand(10000,99999),
                 'total_fee'       => $order->total,
             ]);
