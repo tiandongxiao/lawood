@@ -141,9 +141,10 @@ class TestController extends Controller
 
     public function putValue()
     {
+        dd(Cache::get('order')->seller);
         //Cache::add('reg_18301191705',random_int(1000, 9999),2);
         //session('hello','good');
-        Session::put('hello','good');
+        //Session::put('hello','good');
     }
 
     public function buildNotifications()
