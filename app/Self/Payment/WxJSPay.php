@@ -68,7 +68,7 @@ class WxJSPay extends PaymentGateway
                 'trade_type'      => 'JSAPI',
                 'openid'          => $open_id
             ]);
-
+            dd($wx_order);
             $result = $this->payment->prepare($wx_order);
 
             if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
