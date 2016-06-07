@@ -61,22 +61,6 @@ class ConsultController extends Controller
             $exception = Shop::exception();
             echo $exception->getMessage();
         }
-
         return $order;
-    }
-
-    public function buy($consult_id)
-    {
-        $order = $this->buildOrder($consult_id);
-    }
-
-    public function selectPlace()
-    {
-        return view('wechat.flow.place_select');
-    }
-
-    public function postSelectPlace()
-    {
-        return view();
     }
 }

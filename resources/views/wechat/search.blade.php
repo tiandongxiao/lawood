@@ -125,7 +125,6 @@
                 $('#total').text(data.total);
                 $('.btn-ljzx').data('consult',data.consult);
 
-
                 $('.lstc-main').show();
                 $('.fjls-main').hide();
                 $('.lsmp-main').show();
@@ -190,29 +189,28 @@
             });
             //查看更多律师
             $('#btn-more').click(function(){
-                $('.lstc-main').fadeIn();
-                $('.fjls-main').fadeIn();
+                $('.lstc-main').show();
+                $('.fjls-main').show();
             });
             //切换栏目，完成搜索
             $('.list').tap(function(){
                 searchDataByMajor(major);
             });
             //返回附近律师
-            $('.back-fjls').tap(function(){
-                $('.lsmp-main').css({display:'none'});
-                $('.fjls-main').fadeIn();
-            });
+//            $('.back-fjls').tap(function(){
+//                $('.lsmp-main').css({display:'none'});
+//                $('.fjls-main').fadeIn();
+//            });
             //律师咨询
             $('.btn-ljzx').tap(function(){
-                //alert($(this).data(consult));
                 $('.lsmp-main').css({display:'none'});
-                $('.lszx-main').fadeIn();
+                $('.lszx-main').show();
             });
-            //返回律师名片
-            $('.back-lsmp').tap(function(){
-                $('.lszx-main').css({display:'none'});
-                $('.lsmp-main').fadeIn();
-            });
+//            //返回律师名片
+//            $('.back-lsmp').tap(function(){
+//                $('.lszx-main').css({display:'none'});
+//                $('.lsmp-main').fadeIn();
+//            });
 
             //关闭弹出框
             $('.lstc-main').click(function(){
@@ -222,8 +220,8 @@
                 }
             });
             $('.btn-gb').tap(function(){
-                $('.lstc-main').fadeOut();
-                $('.tc-m').fadeOut();
+                $('.lstc-main').hide();
+                $('.tc-m').hide();
             })
         });
         highlightChose();
