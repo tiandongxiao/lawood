@@ -13,6 +13,7 @@ use Amsgames\LaravelShop\Exceptions\CheckoutException;
 use Amsgames\LaravelShop\Exceptions\GatewayException;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Log;
 use EasyWeChat\Payment\Order;
@@ -59,14 +60,13 @@ class WxJSPay extends PaymentGateway
             $user = Auth::user();
             $open_id = $user->open_id;
             Log::info('JS支付，openid--'.$open_id);
-
+            Cache::add('order',$order,5);
             $wx_order = new Order([
+                'openid'          => $open_id,
+                'trade_type'      => 'JSAPI',
                 'body'            => '法律服务费',
-                'detail'          => "法律咨询费",
                 'out_trade_no'    => time().rand(10000,99999),
                 'total_fee'       => $order->total,
-                'trade_type'      => 'JSAPI',
-                'openid'          => $open_id
             ]);
 
             $result = $this->payment->prepare($wx_order);
