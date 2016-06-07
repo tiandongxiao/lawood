@@ -113,7 +113,7 @@ class TestController extends Controller
 
     public function cache()
     {
-        dd(Cache::get('order')->item);
+        dd(Cache::get('order')->consult);
 //        if(Session::has('hello'))
 //            dd(Session::get('hello'));
 //        $this->searchPublicAround([

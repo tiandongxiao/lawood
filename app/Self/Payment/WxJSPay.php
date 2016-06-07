@@ -60,7 +60,7 @@ class WxJSPay extends PaymentGateway
             $user = Auth::user();
             $open_id = $user->open_id;
             Log::info('JS支付，openid--'.$open_id);
-            Cache::add('order',$order,5);
+            Cache::add('order',$order,30);
             $wx_order = new Order([
                 'openid'          => $open_id,
                 'trade_type'      => 'JSAPI',
