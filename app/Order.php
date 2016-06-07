@@ -64,7 +64,6 @@ class Order extends ShopOrderModel
     # 获取分类信息
     public function getCategoryAttribute()
     {
-        $category = Category::findOrFail($this->consult->category_id);
-        return $category->name;
+        return $this->consult->category_name;
     }
 }

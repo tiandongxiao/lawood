@@ -45,11 +45,20 @@ class Item extends ShopItemModel implements Ratingable
 
     public function getSellerAttribute()
     {
-        # 如果是律师自身items对象中的一个
+        # 如果是卖方展示的商品项
         if(is_null($this->class))
             return User::find($this->user_id);
-
+        # 如果是买方订单中的商品项
         return Item::find($this->reference_id)->seller;
+    }
+
+    public function getCategoryNameAttribute()
+    {
+        # 如果是卖方展示的商品项
+        if(is_null($this->class))
+            return $this->category->name;
+        # 如果是买方订单中的商品项
+        return Item::find($this->reference_id)->category->name;
     }
 
     # 获取所有服务项（商品项）
