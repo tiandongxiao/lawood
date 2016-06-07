@@ -63,7 +63,7 @@ class WxJSPay extends PaymentGateway
             $wx_order = new Order([
                 'body'            => '法律服务费',
                 'detail'          => "尊敬的顾客，您于".Carbon::now()."预约咨询".$order->seller."律师有关".$order->consult->category->name."方面的法律问题",
-                'out_trade_no'    => uniqid('WX'),
+                'out_trade_no'    => time().rand(10000,99999),
                 'total_fee'       => $order->total,
                 'trade_type'      => 'JSAPI',
                 'openid'          => $open_id
