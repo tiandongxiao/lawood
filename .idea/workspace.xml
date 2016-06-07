@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/ConsultController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/ConsultController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/search.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/search.blade.php" />
     </list>
     <ignored path="base.iws" />
@@ -38,10 +36,10 @@
       <file leaf-file-name="search.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="223" column="34" selection-start-line="223" selection-start-column="34" selection-end-line="223" selection-end-column="34" />
+            <state relative-caret-position="343">
+              <caret line="206" column="43" selection-start-line="206" selection-start-column="43" selection-end-line="206" selection-end-column="43" />
               <folding>
-                <marker date="1465278409582" expanded="true" signature="3822:3880" ph="..." />
+                <marker date="1465278680233" expanded="true" signature="3822:3880" ph="..." />
               </folding>
             </state>
           </provider>
@@ -616,7 +614,7 @@
       <workItem from="1465112215538" duration="19787000" />
       <workItem from="1465170254727" duration="39874000" />
       <workItem from="1465261852452" duration="7079000" />
-      <workItem from="1465277228244" duration="1181000" />
+      <workItem from="1465277228244" duration="1453000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -741,7 +739,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="988219000" />
+    <option name="totallyTimeSpent" value="988491000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1195,10 +1193,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="223" column="34" selection-start-line="223" selection-start-column="34" selection-end-line="223" selection-end-column="34" />
+        <state relative-caret-position="343">
+          <caret line="206" column="43" selection-start-line="206" selection-start-column="43" selection-end-line="206" selection-end-column="43" />
           <folding>
-            <marker date="1465278409582" expanded="true" signature="3822:3880" ph="..." />
+            <marker date="1465278680233" expanded="true" signature="3822:3880" ph="..." />
           </folding>
         </state>
       </provider>
