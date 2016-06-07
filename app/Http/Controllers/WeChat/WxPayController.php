@@ -114,7 +114,7 @@ class WxPayController extends Controller
             return view('wechat.flow.pay',compact('params'));
         }
 
-        return redirect('client/completed');
+        return redirect('client/orders');
     }
 
     public function prePay($id, $gateway)
@@ -131,6 +131,7 @@ class WxPayController extends Controller
             $exception = Shop::exception();
             echo $exception->getMessage();
         }
+
         Log::info('prePay '.$gateway.' checkout');
 
         # 3 下单

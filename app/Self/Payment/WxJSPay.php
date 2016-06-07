@@ -11,11 +11,13 @@ namespace App\Self\Payment;
 use Amsgames\LaravelShop\Core\PaymentGateway;
 use Amsgames\LaravelShop\Exceptions\CheckoutException;
 use Amsgames\LaravelShop\Exceptions\GatewayException;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Log;
 use EasyWeChat\Payment\Order;
 use Illuminate\Support\Str;
+use App\Order as ShopOrder;
 
 class WxJSPay extends PaymentGateway
 {
@@ -40,6 +42,7 @@ class WxJSPay extends PaymentGateway
     public function onCharge($order)
     {
         Log::info(' -- WeChat JS payment gateway is on processing');
+
         $this->initWxPay();
         $this->statusCode = 'pending'; # 将Shop订单状态设置为pending待付款
 
@@ -58,10 +61,10 @@ class WxJSPay extends PaymentGateway
             Log::info('JS支付，openid--'.$open_id);
 
             $wx_order = new Order([
-                'body'            => '服务费',
-                'detail'          => Str::random(16),
-                'out_trade_no'    => Str::random(16),
-                'total_fee'       => $order->total*100,
+                'body'            => '法律服务费',
+                'detail'          => "尊敬的顾客，您于".Carbon::now()."预约咨询".$order->seller."律师有关".$order->consult->category->name."方面的法律问题",
+                'out_trade_no'    => uniqid('WX'),
+                'total_fee'       => $order->total,
                 'trade_type'      => 'JSAPI',
                 'openid'          => $open_id
             ]);
@@ -73,9 +76,10 @@ class WxJSPay extends PaymentGateway
                 # 获取JS支付相关参数
                 $params = $this->payment->configForPayment($result->prepay_id);
 
-                $order->order_no = $wx_order->out_trade_no;
-                $order->attach = $params;
-                $order->save();
+                $order->update([
+                    'order_no' => $wx_order->out_trade_no,
+                    'attach'   => $params
+                ]);
 
                 $this->detail = '订单总金额为：'.($order->total/100).'元,尚未支付';
 

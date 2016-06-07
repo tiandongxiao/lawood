@@ -31,19 +31,33 @@ class Order extends ShopOrderModel
         return true;
     }
 
-    public function getSellerAttribute()
-    {
-        return Item::find($this->items[0]->reference_id)->user;
-    }
-
     # 每一个订单对应一个地址
     public function place()
     {
         return $this->hasOne(Place::class);
     }
 
+    # 一个订单对应一个或0个报销凭证
     public function receipt()
     {
         return $this->hasOne(Receipt::class);
+    }
+
+    # 获取咨询项
+    public function getConsultAttribute()
+    {
+        return $this->items[0];
+    }
+
+    # 获取卖方信息
+    public function getSellerAttribute()
+    {
+        return $this->consult->seller;
+    }
+
+    # 获取买方信息
+    public function getClientAttribute()
+    {
+        return $this->consult->user;
     }
 }
