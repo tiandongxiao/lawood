@@ -198,8 +198,9 @@
             });
             //律师咨询
             $('.btn-ljzx').tap(function(){
-                $('.lsmp-main').css({display:'none'});
+                $('.lsmp-main').hide();
                 $('.lszx-main').show();
+                window.location.href="/wechat/order/place/".$(this).data('consult');
             });
             //关闭弹出框
             $('.lstc-main').click(function(){
