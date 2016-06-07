@@ -111,7 +111,7 @@
                     'name':data._name,
                     'price': data.price,
                     'office':data.office,
-                    'consult':'good',
+                    'consult':data.consult,
                     'total':10
                 }
             }), 'click', function () {
