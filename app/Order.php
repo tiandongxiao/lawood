@@ -72,11 +72,6 @@ class Order extends ShopOrderModel
         if($this->place)
             $this->place->delete();
 
-        $consults = $this->items;
-        foreach($consults as $consult){
-            $consult->delete();
-        }
-
         parent::delete();
     }
 }
