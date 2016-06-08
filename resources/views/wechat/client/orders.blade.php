@@ -12,230 +12,244 @@
         <div class="bd" style="padding-top:40px;">
             <!--未完成-->
             <div class="bd-itms"  style="display:block">
-                <div class="itms bg-fff-box">
-                    <div class="top">
-                        <div class="f-left">下单时间 16:00 11月1日</div>
-                        <div class="f-right">单编号：11222324321</div>
-                    </div>
-                    <div class="con">
-                        <div class="img"><img src="images/tx.png" width="70" height="70"></div>
-                        <div class="xx">
-                            <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                            <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
-                            <p class="jl chaochu_1">距离：0.9km</p>
+                @if($applies)
+                    @foreach($applies as $order)
+                        @if($order->statusCode == 'pending')
+                            <div class="itms bg-fff-box">
+                                <div class="top">
+                                    <div class="f-left">下单时间 16:00 11月1日</div>
+                                    <div class="f-right">单编号：{{$order->order_no}}</div>
+                                </div>
+                                <div class="con">
+                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="xx">
+                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
+                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="jl chaochu_1">距离：0.9km</p>
 
-                            <div class="zxf">
-                                <p>已付咨询费</p>
-                                <p class="jg">220元</p>
+                                        <div class="zxf">
+                                            <p>需付咨询费</p>
+                                            <p class="jg">220元</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="btn-main">
+                                        <span class="btn lan">支付</span>
+                                        <span class="btn">取消订单</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="djs fc-03aaf0 fs-12">正在等待律师接单…</div>
-                        <div class="btn-main">
-                            <span class="btn">取消订单</span>
-                        </div>
-                    </div>
-                </div>
-                <!--列表-->
-                <!--列表-->
-                <div class="itms bg-fff-box">
-                    <div class="top">
-                        <div class="f-left">下单时间 16:00 11月1日</div>
-                        <div class="f-right">单编号：11222324321</div>
-                    </div>
-                    <div class="con">
-                        <div class="img"><img src="images/tx.png" width="70" height="70"></div>
-                        <div class="xx">
-                            <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                            <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
-                            <p class="jl chaochu_1">距离：0.9km</p>
+                        @endif
+                        @if($order->statusCode == 'payed')
+                            <div class="itms bg-fff-box">
+                                <div class="top">
+                                    <div class="f-left">下单时间 16:00 11月1日</div>
+                                    <div class="f-right">单编号：{{$order->order_no}}</div>
+                                </div>
+                                <div class="con">
+                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="xx">
+                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
+                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="jl chaochu_1">距离：0.9km</p>
 
-                            <div class="zxf">
-                                <p>已付咨询费</p>
-                                <p class="jg">220元</p>
+                                        <div class="zxf">
+                                            <p>已付咨询费</p>
+                                            <p class="jg">220元</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="djs fc-03aaf0 fs-12">正在等待律师接单…</div>
+                                    <div class="btn-main">
+                                        <span class="btn">取消订单</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="btn-main">
-                            <span class="btn lan">支付</span>
-                            <span class="btn">取消订单</span>
-                        </div>
-                    </div>
-                </div>
-                <!--列表-->
-                <!--列表-->
-                <div class="itms bg-fff-box">
-                    <div class="top">
-                        <div class="f-left">下单时间 16:00 11月1日</div>
-                        <div class="f-right">单编号：11222324321</div>
-                    </div>
-                    <div class="con">
-                        <div class="img"><img src="images/tx.png" width="70" height="70"></div>
-                        <div class="xx">
-                            <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                            <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
-                            <p class="jl chaochu_1">距离：0.9km</p>
+                        @endif
+                        @if($order->statusCode == 'rejected')
+                            <div class="itms bg-fff-box">
+                                <div class="top">
+                                    <div class="f-left">下单时间 16:00 11月1日</div>
+                                    <div class="f-right">单编号：{{$order->order_no}}</div>
+                                </div>
+                                <div class="con">
+                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="xx">
+                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
+                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="jl chaochu_1">距离：0.9km</p>
 
-                            <div class="zxf">
-                                <p>已付咨询费</p>
-                                <p class="jg">220元</p>
+                                        <div class="zxf">
+                                            <p>已付咨询费</p>
+                                            <p class="jg">220元</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="djs fc-03aaf0 fs-12">律师拒绝接单，费用已退回</div>
+                                    <div class="btn-main">
+                                        <span class="btn lan">重新查找</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="djs fc-03aaf0 fs-12">律师拒绝接单，费用已退回</div>
-                        <div class="btn-main">
-                            <span class="btn lan">重新查找</span>
-                        </div>
-                    </div>
-                </div>
-                <!--列表-->
-                <!--列表-->
-                <div class="itms bg-fff-box">
-                    <div class="top">
-                        <div class="f-left">下单时间 16:00 11月1日</div>
-                        <div class="f-right">单编号：11222324321</div>
-                    </div>
-                    <div class="con">
-                        <div class="img"><img src="images/tx.png" width="70" height="70"></div>
-                        <div class="xx">
-                            <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                            <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
-                            <p class="jl chaochu_1">距离：0.9km</p>
+                        @endif
+                        @if($order->statusCode == 'canceled')
+                            <div class="itms bg-fff-box">
+                                <div class="top">
+                                    <div class="f-left">下单时间 16:00 11月1日</div>
+                                    <div class="f-right">单编号：{{$order->order_no}}</div>
+                                </div>
+                                <div class="con">
+                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="xx">
+                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
+                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="jl chaochu_1">距离：0.9km</p>
 
-                            <div class="zxf">
-                                <p>已付咨询费</p>
-                                <p class="jg">220元</p>
+                                        <div class="zxf">
+                                            <p>已付咨询费</p>
+                                            <p class="jg">220元</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="djs fc-03aaf0 fs-12">订单已取消，费用已退回</div>
+                                    <div class="btn-main">
+                                        <span class="btn lan">重新查找</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="djs fc-03aaf0 fs-12">订单已取消，费用已退回</div>
-                        <div class="btn-main">
-                            <span class="btn lan">重新查找</span>
-                        </div>
-                    </div>
-                </div>
-                <!--列表-->
+                        @endif
+                        @if($order->statusCode == 'expired')
+                            <div class="itms bg-fff-box">
+                                <div class="top">
+                                    <div class="f-left">下单时间 16:00 11月1日</div>
+                                    <div class="f-right">单编号：{{$order->order_no}}</div>
+                                </div>
+                                <div class="con">
+                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="xx">
+                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
+                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="jl chaochu_1">距离：0.9km</p>
 
-                <!--列表-->
-                <div class="itms bg-fff-box">
-                    <div class="top">
-                        <div class="f-left">下单时间 16:00 11月1日</div>
-                        <div class="f-right">单编号：11222324321</div>
-                    </div>
-                    <div class="con">
-                        <div class="img"><img src="images/tx.png" width="70" height="70"></div>
-                        <div class="xx">
-                            <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                            <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
-                            <p class="jl chaochu_1">距离：0.9km</p>
-
-                            <div class="zxf">
-                                <p>已付咨询费</p>
-                                <p class="jg">220元</p>
+                                        <div class="zxf">
+                                            <p>已付咨询费</p>
+                                            <p class="jg">220元</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="djs fc-03aaf0 fs-12">订单过期未接单，费用已退回</div>
+                                    <div class="btn-main">
+                                        <span class="btn lan">重新查找</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="djs fc-03aaf0 fs-12">订单过期未接单，费用已退回</div>
-                        <div class="btn-main">
-                            <span class="btn lan">重新查找</span>
-                        </div>
-                    </div>
-                </div>
-                <!--列表-->
-
+                        @endif
+                    @endforeach
+                @else
+                    <div>您当前没有未完成的订单</div>
+                @endif
             </div>
             <!--未完成-->
             <!--进行中-->
             <div class="bd-itms" >
-                <!--列表-->
-                <div class="itms bg-fff-box">
-                    <div class="top">
-                        <div class="f-left">下单时间 16:00 11月1日</div>
-                        <div class="f-right">单编号：11222324321</div>
-                    </div>
-                    <div class="con">
-                        <div class="img"><img src="images/tx.png" width="70" height="70"></div>
-                        <div class="xx">
-                            <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                            <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
-                            <p class="jl chaochu_1">距离：0.9km</p>
+                @if($ongoings)
+                    @foreach($ongoings as $order)
+                        @if($order->statusCode == 'in_process')
+                            <div class="itms bg-fff-box">
+                                <div class="top">
+                                    <div class="f-left">下单时间 16:00 11月1日</div>
+                                    <div class="f-right">单编号：{{$order->order_no}}</div>
+                                </div>
+                                <div class="con">
+                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="xx">
+                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
+                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="jl chaochu_1">距离：0.9km</p>
 
-                            <div class="zxf">
-                                <p>已付咨询费</p>
-                                <p class="jg">220元</p>
+                                        <div class="zxf">
+                                            <p>已付咨询费</p>
+                                            <p class="jg">220元</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="btn-main">
+                                        <span class="btn lan">打电话</span>
+                                        <span class="btn lan">签到咨询</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="btn-main">
-                            <span class="btn lan">打电话</span>
-                            <span class="btn lan">签到咨询</span>
-                        </div>
-                    </div>
-                </div>
-                <!--列表-->
+                        @endif
+                        @if($order->statusCode == 'accepted')
+                            <div class="itms bg-fff-box">
+                                <div class="top">
+                                    <div class="f-left">下单时间 16:00 11月1日</div>
+                                    <div class="f-right">单编号：{{$order->order_no}}</div>
+                                </div>
+                                <div class="con">
+                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="xx">
+                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
+                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="jl chaochu_1">距离：0.9km</p>
 
+                                        <div class="zxf">
+                                            <p>已付咨询费</p>
+                                            <p class="jg">220元</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="btn-main">
+                                        <span class="btn lan">打电话</span>
+                                        <span class="btn lan">签到咨询</span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                @else
+                    <div>您当前没有进行中的订单</div>
+                @endif
             </div>
             <!--进行中-->
             <!--已完成-->
             <div class="bd-itms">
-                <!--列表-->
-                <div class="itms bg-fff-box">
-                    <div class="top">
-                        <div class="f-left">下单时间 16:00 11月1日</div>
-                        <div class="f-right">单编号：11222324321</div>
-                    </div>
-                    <div class="con">
-                        <div class="img"><img src="images/tx.png" width="70" height="70"></div>
-                        <div class="xx">
-                            <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                            <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
-                            <p class="jl chaochu_1">距离：0.9km</p>
+                @if($completes)
+                    @foreach($completes as $order)
+                        <div class="itms bg-fff-box">
+                            <div class="top">
+                                <div class="f-left">下单时间 16:00 11月1日</div>
+                                <div class="f-right">单编号：{{$order->order_no}}</div>
+                            </div>
+                            <div class="con">
+                                <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                <div class="xx">
+                                    <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
+                                    <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                    <p class="jl chaochu_1">距离：0.9km</p>
 
-                            <div class="zxf">
-                                <p>已付咨询费</p>
-                                <p class="jg">220元</p>
+                                    <div class="zxf">
+                                        <p>已付咨询费</p>
+                                        <p class="jg">220元</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="btn-main">
+                                    <span class="btn lan btn-ljpj">立即评价</span>
+                                    <span class="btn lan btn-xgpj">修改评价</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="btn-main">
-                            <span class="btn lan btn-ljpj">立即评价</span>
-                        </div>
-                    </div>
-                </div>
-                <!--列表-->
-                <!--列表-->
-                <div class="itms bg-fff-box">
-                    <div class="top">
-                        <div class="f-left">下单时间 16:00 11月1日</div>
-                        <div class="f-right">单编号：11222324321</div>
-                    </div>
-                    <div class="con">
-                        <div class="img"><img src="images/tx.png" width="70" height="70"></div>
-                        <div class="xx">
-                            <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                            <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
-                            <p class="jl chaochu_1">距离：0.9km</p>
-
-                            <div class="zxf">
-                                <p>已付咨询费</p>
-                                <p class="jg">220元</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="btn-main">
-                            <span class="btn lan btn-xgpj">修改评价</span>
-                        </div>
-                    </div>
-                </div>
-                <!--列表-->
+                    @endforeach
+                @endif
             </div>
             <!--已完成-->
         </div>
@@ -302,7 +316,7 @@
         </div>
     </section>
     <!--首次评价-->
-    </section>
+
     <!--修改评价-->
     <section class="tc-main pj-main po-f"  style="display:none" id="xgpj">
         <div class="main te-cen"  style="top:20%;">
@@ -333,7 +347,6 @@
 @stop
 @section('script')
     <script>
-
         $(function(){
             //检查版本
             var u = navigator.userAgent, app = navigator.appVersion;
@@ -342,27 +355,22 @@
             //苹果兼容
             if(isiOS){
                 $('.In-text').focus(function(){
-
-                    $('.po-f').addClass('po-a')
-
+                    $('.po-f').addClass('po-a');
                 }).blur(function(){//输入框失焦后还原初始状态
-
                     $('.po-f').removeClass('po-a')
-
                 });
             }
             //切换标记
             $('.lsyx .itms .right span').tap(function(){
-                $(this).siblings().removeClass('on')
-                $(this).addClass('on')
+                $(this).siblings().removeClass('on');
+                $(this).addClass('on');
             });
             //评价
             $('.pj em').click(function(){
                 $(this).siblings().removeClass('on');
-                var EmIndex	= $(this).index()
-                $('.xxts').text($(this).attr('data-sx'))
-                for (var i=0;i<=EmIndex;i++)
-                {
+                var EmIndex	= $(this).index();
+                $('.xxts').text($(this).attr('data-sx'));
+                for (var i=0;i<=EmIndex;i++){
                     $(this).parent('.pj').children('em').eq(i).addClass('on');
                 }
             });
@@ -374,7 +382,6 @@
                 $('#xgpj').fadeIn();
             });
             $('.tc-main').tap(function(){
-
                 if(event.target==this){
                     $('.tc-main').fadeOut();
                 }

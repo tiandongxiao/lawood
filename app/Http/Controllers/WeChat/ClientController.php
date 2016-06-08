@@ -37,7 +37,35 @@ class ClientController extends Controller
 
     public function orders()
     {
-        return view('wechat.client.orders');
+        $orders = $this->user->orders;
+
+        $applies[] = null;   # 未完成
+        $ongoings[] = null;  # 进行中
+        $completes[] = null; # 已完成
+
+        foreach ($orders as $order){
+            switch ($order->statusCode){
+                case 'pending': # 下单未付费
+                case 'payed':   # 用户已付费
+                case 'rejected': # 律师已拒单
+                case 'canceled': # 律师已拒单
+                    $applies[] = $order;
+                    break;
+
+                case 'accepted': # 律师已接单
+                case 'in_process':
+                    $ongoings[] = $order;
+                    break;
+
+                case 'completed':
+                    $completes[] = $order;
+                    break;
+                case 'failed':
+                case 'abandoned':
+                    break;
+            }
+        }
+        return view('wechat.client.orders',compact('applies','ongoings','$ompletes'));
     }
 
     public function signOrder()
