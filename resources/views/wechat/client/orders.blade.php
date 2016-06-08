@@ -21,14 +21,14 @@
                                     <div class="f-right">单编号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
-                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>{{$order->category}}</span></p>
+                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
                                         <div class="zxf">
                                             <p>需付咨询费</p>
-                                            <p class="jg">220元</p>
+                                            <p class="jg">{{$order->total}}元</p>
                                         </div>
                                     </div>
                                 </div>
@@ -47,20 +47,21 @@
                                     <div class="f-right">单编号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
-                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
                                         <div class="zxf">
                                             <p>已付咨询费</p>
-                                            <p class="jg">220元</p>
+                                            <p class="jg">{{$order->total}}元</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="bottom">
                                     <div class="djs fc-03aaf0 fs-12">正在等待律师接单…</div>
                                     <div class="btn-main">
+                                        <span class="btn lan"><a href="tel:{{$order->seller->phone}}">打电话</a></span>
                                         <span class="btn">取消订单</span>
                                     </div>
                                 </div>
@@ -73,14 +74,14 @@
                                     <div class="f-right">单编号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
-                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
                                         <div class="zxf">
                                             <p>已付咨询费</p>
-                                            <p class="jg">220元</p>
+                                            <p class="jg">{{$order->total}}元</p>
                                         </div>
                                     </div>
                                 </div>
@@ -99,14 +100,14 @@
                                     <div class="f-right">单编号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
-                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
                                         <div class="zxf">
                                             <p>已付咨询费</p>
-                                            <p class="jg">220元</p>
+                                            <p class="jg">{{$order->total}}元</p>
                                         </div>
                                     </div>
                                 </div>
@@ -125,14 +126,14 @@
                                     <div class="f-right">单编号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
-                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
                                         <div class="zxf">
                                             <p>已付咨询费</p>
-                                            <p class="jg">220元</p>
+                                            <p class="jg">{{$order->total}}元</p>
                                         </div>
                                     </div>
                                 </div>
@@ -161,20 +162,20 @@
                                     <div class="f-right">单编号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
-                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
                                         <div class="zxf">
                                             <p>已付咨询费</p>
-                                            <p class="jg">220元</p>
+                                            <p class="jg">{{$order->total}}元</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="bottom">
                                     <div class="btn-main">
-                                        <span class="btn lan">打电话</span>
+                                        <span class="btn lan"><a href="tel:{{$order->seller->phone}}">打电话</a></span>
                                         <span class="btn lan">签到咨询</span>
                                     </div>
                                 </div>
@@ -187,20 +188,20 @@
                                     <div class="f-right">单编号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
-                                    <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                    <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                                        <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
                                         <div class="zxf">
                                             <p>已付咨询费</p>
-                                            <p class="jg">220元</p>
+                                            <p class="jg">{{$order->total}}元</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="bottom">
                                     <div class="btn-main">
-                                        <span class="btn lan">打电话</span>
+                                        <span class="btn lan"><a href="tel:{{$order->seller->phone}}">打电话</a></span>
                                         <span class="btn lan">签到咨询</span>
                                     </div>
                                 </div>
@@ -222,14 +223,14 @@
                                 <div class="f-right">单编号：{{$order->order_no}}</div>
                             </div>
                             <div class="con">
-                                <div class="img"><img src="images/tx.png" width="70" height="70"></div>
+                                <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                 <div class="xx">
-                                    <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
-                                    <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
+                                    <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                    <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
                                     <p class="jl chaochu_1">距离：0.9km</p>
                                     <div class="zxf">
                                         <p>已付咨询费</p>
-                                        <p class="jg">220元</p>
+                                        <p class="jg">{{$order->total}}元</p>
                                     </div>
                                 </div>
                             </div>
@@ -250,7 +251,7 @@
     <section class="tc-main pj-main po-f"  style="display:none" id="ljpj">
         <div class="main te-cen"  style="top:6%;">
             <div class="lsxx">
-                <div class="f-left"><img src="images/ls.jpg" width="60" height="60"></div>
+                <div class="f-left"><img src="/images/ls.jpg" width="60" height="60"></div>
                 <div class="right">
                     <div class="name">王树德 律师</div>
                     <div class="dz chaochu_1">北京市朝阳区京师律师事务所</div>
