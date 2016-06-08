@@ -77,6 +77,7 @@ trait WeChatDevTrait
     public function account()
     {
         $user = session('wechat.oauth_user');
+        dd($user);
         if ($user) {
             Log::info('account 获取成功');
             $accessToken = $this->app->access_token;
