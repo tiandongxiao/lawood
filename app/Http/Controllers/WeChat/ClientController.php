@@ -66,6 +66,7 @@ class ClientController extends Controller
                     break;
             }
         }
+        dd($applies);
         return view('wechat.client.orders',compact('applies','ongoings','completes'));
     }
 
