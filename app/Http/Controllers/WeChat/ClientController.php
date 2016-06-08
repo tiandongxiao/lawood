@@ -38,7 +38,7 @@ class ClientController extends Controller
     public function orders()
     {
         $orders = $this->user->orders;
-        dd($orders);
+
 
         $applies[] = null;   # 未完成
         $ongoings[] = null;  # 进行中
@@ -66,7 +66,7 @@ class ClientController extends Controller
                     break;
             }
         }
-        return view('wechat.client.orders',compact('applies','ongoings','$ompletes'));
+        return view('wechat.client.orders',compact('applies','ongoings','completes'));
     }
 
     public function signOrder()
