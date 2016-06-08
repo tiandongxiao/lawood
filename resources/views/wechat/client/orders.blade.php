@@ -386,7 +386,7 @@
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
                 $('.bd-itms').css({display:'none'});
-                $('.bd-itms').eq($(this).index()).fadeIn();
+                $('.bd-itms').eq($(this).index()).show();
             });
         })
     </script>
