@@ -66,4 +66,17 @@ class Order extends ShopOrderModel
     {
         return $this->consult->category_name;
     }
+
+    public function delete()
+    {
+        if($this->place)
+            $this->place->delete();
+
+        $consults = $this->items;
+        foreach($consults as $consult){
+            $consult->delete();
+        }
+
+        parent::delete();
+    }
 }

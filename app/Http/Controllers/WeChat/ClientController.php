@@ -46,6 +46,12 @@ class ClientController extends Controller
         foreach ($orders as $order){
             switch ($order->statusCode){
                 case 'pending': # 下单未付费
+                    if($order->place){
+                        $applies[] = $order;
+                    }else{
+                        $order->delete();
+                    }
+                    break;
                 case 'payed':   # 用户已付费
                 case 'rejected': # 律师已拒单
                 case 'canceled': # 律师已拒单
@@ -65,7 +71,7 @@ class ClientController extends Controller
                     break;
             }
         }
-        
+
         return view('wechat.client.orders',compact('applies','ongoings','completes'));
     }
 
