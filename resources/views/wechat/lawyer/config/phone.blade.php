@@ -22,7 +22,7 @@
             <div class="bottom-btn">
                 <div class="blank100"></div>
                 <div class="con te-cen">
-                    <input type="button" class="In-btn In-btn-1 fc-fff mar-top-10" value="确定" id="In-btn" readonly>
+                    <div class="In-btn In-btn-1 fc-fff mar-top-10" id="In-btn">确定</div>
                 </div>
             </div>
         </form>
