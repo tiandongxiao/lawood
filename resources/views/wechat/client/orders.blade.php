@@ -17,7 +17,7 @@
                         @if($order->statusCode == 'pending')
                             <div class="itms bg-fff-box">
                                 <div class="top">
-                                    <div class="f-left">下单时间 {{$order->updated_at}}</div>
+                                    <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
                                     <div class="f-right">订单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
@@ -43,7 +43,7 @@
                         @if($order->statusCode == 'payed')
                             <div class="itms bg-fff-box">
                                 <div class="top">
-                                    <div class="f-left">下单时间 {{$order->updated_at}}</div>
+                                    <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
                                     <div class="f-right">订单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
@@ -70,7 +70,7 @@
                         @if($order->statusCode == 'rejected')
                             <div class="itms bg-fff-box">
                                 <div class="top">
-                                    <div class="f-left">下单时间 {{$order->updated_at}}</div>
+                                    <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
                                     <div class="f-right">订单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
@@ -96,7 +96,7 @@
                         @if($order->statusCode == 'canceled')
                             <div class="itms bg-fff-box">
                                 <div class="top">
-                                    <div class="f-left">下单时间 {{$order->updated_at}}</div>
+                                    <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
                                     <div class="f-right">订单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
@@ -122,7 +122,7 @@
                         @if($order->statusCode == 'expired')
                             <div class="itms bg-fff-box">
                                 <div class="top">
-                                    <div class="f-left">下单时间 {{$order->updated_at}}</div>
+                                    <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
                                     <div class="f-right">订单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
@@ -158,7 +158,7 @@
                         @if($order->statusCode == 'in_process')
                             <div class="itms bg-fff-box">
                                 <div class="top">
-                                    <div class="f-left">下单时间 {{$order->updated_at}}</div>
+                                    <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
                                     <div class="f-right">订单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
@@ -184,7 +184,7 @@
                         @if($order->statusCode == 'accepted')
                             <div class="itms bg-fff-box">
                                 <div class="top">
-                                    <div class="f-left">下单时间 {{$order->updated_at}}</div>
+                                    <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
                                     <div class="f-right">订单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
