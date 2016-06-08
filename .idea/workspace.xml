@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/css.css" afterPath="$PROJECT_DIR$/public/css/css.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
     </list>
     <ignored path="base.iws" />
@@ -86,31 +87,31 @@
       <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="62" column="58" selection-start-line="62" selection-start-column="58" selection-end-line="62" selection-end-column="58" />
+            <state relative-caret-position="312">
+              <caret line="63" column="102" selection-start-line="63" selection-start-column="102" selection-end-line="63" selection-end-column="102" />
               <folding>
-                <marker date="1465394917093" expanded="false" signature="14471:14483" placeholder="..." />
-                <marker date="1465394917093" expanded="false" signature="14537:14544" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="18398:20077" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="18409:20076" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="18616:18847" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="18653:18731" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="18664:18730" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="18738:18832" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="18749:18831" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="18913:19032" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="18924:19031" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="19082:19409" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="19093:19408" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="19463:19525" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="19474:19524" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="19559:19621" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="19570:19620" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="19654:19782" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="19665:19781" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="19705:19767" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="19833:20065" placeholder="..." />
-                <marker date="1465394917093" expanded="true" signature="19844:19988" placeholder="..." />
+                <marker date="1465395394112" expanded="false" signature="14472:14484" placeholder="..." />
+                <marker date="1465395394112" expanded="false" signature="14538:14545" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="18399:20078" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="18410:20077" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="18617:18848" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="18654:18732" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="18665:18731" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="18739:18833" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="18750:18832" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="18914:19033" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="18925:19032" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="19083:19410" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="19094:19409" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="19464:19526" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="19475:19525" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="19560:19622" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="19571:19621" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="19655:19783" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="19666:19782" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="19706:19768" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="19834:20066" placeholder="..." />
+                <marker date="1465395394112" expanded="true" signature="19845:19989" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -185,7 +186,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthController.php" />
         <option value="$PROJECT_DIR$/config/wechat.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php" />
-        <option value="$PROJECT_DIR$/public/css/css.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" />
         <option value="$PROJECT_DIR$/app/Price.php" />
         <option value="$PROJECT_DIR$/app/Traits/RequestDevTrait.php" />
@@ -223,6 +223,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/LawyerController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_03_28_151757_shop_setup_tables.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/ClientController.php" />
+        <option value="$PROJECT_DIR$/public/css/css.css" />
         <option value="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
       </list>
     </option>
@@ -341,6 +342,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -702,7 +735,7 @@
       <workItem from="1465261852452" duration="7079000" />
       <workItem from="1465277228244" duration="1453000" />
       <workItem from="1465305020703" duration="6821000" />
-      <workItem from="1465354372343" duration="19392000" />
+      <workItem from="1465354372343" duration="19871000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -827,7 +860,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1014704000" />
+    <option name="totallyTimeSpent" value="1015183000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -910,13 +943,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/amsgames/laravel-shop/src/Traits/ShopCartTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-831">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/amsgames/laravel-shop/src/Models/ShopCartModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1293,33 +1319,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="456" column="39" selection-start-line="456" selection-start-column="39" selection-end-line="456" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="62" column="58" selection-start-line="62" selection-start-column="58" selection-end-line="62" selection-end-column="58" />
+        <state relative-caret-position="312">
+          <caret line="63" column="102" selection-start-line="63" selection-start-column="102" selection-end-line="63" selection-end-column="102" />
           <folding>
-            <marker date="1465394917093" expanded="false" signature="14471:14483" placeholder="..." />
-            <marker date="1465394917093" expanded="false" signature="14537:14544" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="18398:20077" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="18409:20076" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="18616:18847" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="18653:18731" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="18664:18730" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="18738:18832" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="18749:18831" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="18913:19032" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="18924:19031" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="19082:19409" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="19093:19408" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="19463:19525" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="19474:19524" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="19559:19621" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="19570:19620" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="19654:19782" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="19665:19781" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="19705:19767" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="19833:20065" placeholder="..." />
-            <marker date="1465394917093" expanded="true" signature="19844:19988" placeholder="..." />
+            <marker date="1465395394112" expanded="false" signature="14472:14484" placeholder="..." />
+            <marker date="1465395394112" expanded="false" signature="14538:14545" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="18399:20078" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="18410:20077" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="18617:18848" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="18654:18732" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="18665:18731" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="18739:18833" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="18750:18832" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="18914:19033" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="18925:19032" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="19083:19410" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="19094:19409" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="19464:19526" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="19475:19525" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="19560:19622" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="19571:19621" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="19655:19783" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="19666:19782" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="19706:19768" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="19834:20066" placeholder="..." />
+            <marker date="1465395394112" expanded="true" signature="19845:19989" placeholder="..." />
           </folding>
         </state>
       </provider>

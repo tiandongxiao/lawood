@@ -61,7 +61,7 @@
                                 <div class="bottom">
                                     <div class="djs fc-03aaf0 fs-12">正在等待律师接单…</div>
                                     <div class="btn-main">
-                                        <span class="btn lan"><a href="tel:{{$order->seller->phone}}">打电话</a></span>
+                                        <span class="btn lan"><a href="tel:{{$order->seller->phone}}">拨打电话</a></span>
                                         <span class="btn">取消订单</span>
                                     </div>
                                 </div>
