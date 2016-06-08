@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/LawyerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/LawyerController.php" />
-    </list>
+    <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="" />
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -110,7 +108,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/LawyerController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="182">
-              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+              <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -828,7 +826,7 @@
       <workItem from="1465261852452" duration="7079000" />
       <workItem from="1465277228244" duration="1453000" />
       <workItem from="1465305020703" duration="6821000" />
-      <workItem from="1465354372343" duration="14469000" />
+      <workItem from="1465354372343" duration="14998000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -953,7 +951,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1009781000" />
+    <option name="totallyTimeSpent" value="1010310000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1441,7 +1439,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/LawyerController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
           <folding />
         </state>
       </provider>

@@ -38,7 +38,7 @@ class LawyerController extends Controller
     public function orders()
     {
         $orders = $this->user->seller_orders;
-        //dd($orders);
+        dd($orders);
         return view('wechat.lawyer.orders');
     }
 
