@@ -49,7 +49,9 @@ class ClientController extends Controller
                     if($order->place && $order->client->real_name){
                         $applies[] = $order;
                     }else{
-                        $order->delete();
+                        $order->update([
+                            'statusCode' => 'abandoned'
+                        ]);
                     }
                     break;
                 case 'payed':   # 用户已付费
