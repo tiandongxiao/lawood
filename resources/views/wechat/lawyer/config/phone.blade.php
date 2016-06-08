@@ -132,7 +132,7 @@
                 if(form){
                     $("#form").submit();
                 }
-            })
+            });
 
             // 发送验证码
             var	Time	=	60;

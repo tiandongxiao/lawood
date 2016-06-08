@@ -46,7 +46,7 @@ class Item extends ShopItemModel implements Ratingable
     public function getSellerAttribute()
     {
         # 如果是卖方展示的商品项
-        if(is_null($this->class))
+        if(is_null($this->order_id))
             return User::find($this->user_id);
         # 如果是买方订单中的商品项
         return Item::find($this->reference_id)->seller;
@@ -64,7 +64,8 @@ class Item extends ShopItemModel implements Ratingable
     # 获取所有服务项（商品项）
     public static function consults()
     {
-        $consults = Item::where('class',null)->get();
+        # 卖方商品项仅供展示,不从属于任何订单
+        $consults = Item::where('order_id',null)->get();
         return $consults;
     }
 
@@ -89,6 +90,7 @@ class Item extends ShopItemModel implements Ratingable
         }
     }
 
+    # 更新POI信息
     public function updatePOI()
     {
         if(!$this->seller->enable)
@@ -104,6 +106,7 @@ class Item extends ShopItemModel implements Ratingable
             $this->poi->updateInfo($data);
     }
 
+    # 更新价格
     public function updatePrice($price)
     {
         $this->update([
@@ -112,6 +115,7 @@ class Item extends ShopItemModel implements Ratingable
         $this->updatePOI();
     }
 
+    # 创建consult
     public static function createConsult(array $data)
     {
         $consult = static::create($data);

@@ -102,9 +102,9 @@ class WeChatOpenController extends Controller
 
         switch ($user->role){
             case 'lawyer':
-                return redirect('lawyer/center')->withErrors('欢迎'.$user->role.'使用我们的法律平台');
+                return redirect('lawyer')->withErrors('欢迎'.$user->role.'使用我们的法律平台');
             case 'client':
-                return redirect('client/center')->withErrors('欢迎咨询用户使用我们的服务');
+                return redirect('client')->withErrors('欢迎咨询用户使用我们的服务');
             case 'none':
                 return redirect('bind/chose');
             default:

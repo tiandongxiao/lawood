@@ -304,8 +304,9 @@ class User extends Model implements AuthenticatableContract,
     # 律师获取自己所有的服务项
     public function getConsultsAttribute()
     {
-        $goods = Item::where('class',null)->where('user_id',$this->id)->get();
-        return $goods;
+        # 卖方商品项是不从属于任何Order订单的,没有这个属性
+        $consults = Item::where('order_id',null)->where('user_id',$this->id)->get();
+        return $consults;
     }
 
     public function getConsultByCategory($cate_id)
@@ -461,5 +462,22 @@ class User extends Model implements AuthenticatableContract,
             case "client":
                 return "咨询用户";
         }
+    }
+
+    public function getSellerOrdersAttribute()
+    {
+        $orders = []; # 定义存储容器
+        $items = $this->consults; # 获取律师所有服务项
+
+        foreach($items as $item){    # 搜索Item数据库中所有购买了律师服务的条目
+            $services = Item::where('reference_id',$item->id)->get();
+            foreach($services as $service){
+                $order = $service->order;  # 每一个条目对应一个Order订单
+                $orders[] = $order;
+            }
+        }
+        $orders = collect($orders);
+
+        return $orders;
     }
 }
