@@ -139,7 +139,7 @@ Route::group(['prefix' => 'wxpay'], function(){
     Route::post('callback', 'WeChat\WxPayController@callback');    # 微信支付回调处理逻辑
     Route::get('native/{id}', 'WeChat\WxPayController@nativePay'); # 微信扫码支付
 
-    Route::get('js/{id}', 'WeChat\WxPayController@JSPay');  # 微信浏览器内部支付方式 ->middleware(['wechat.oauth'])
+    Route::get('js/{id}', 'WeChat\WxPayController@JSPay')->middleware(['wechat.oauth']);  # 微信浏览器内部支付方式 ->middleware(['wechat.oauth'])
     Route::get('refund/{id}','WeChat\WxPayController@refundByOrderNo'); # 微信退款
 });
 
