@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="bottom">
                                     <div class="btn-main">
-                                        <span class="btn lan">支付</span>
+                                        <span class="btn lan"><a href="{{url('wxpay/js/'.$order->id)}}">支付</a></span>
                                         <span class="btn">取消订单</span>
                                     </div>
                                 </div>
