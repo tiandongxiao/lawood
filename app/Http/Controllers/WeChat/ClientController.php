@@ -39,10 +39,9 @@ class ClientController extends Controller
     {
         $orders = $this->user->orders;
 
-
-        $applies[] = null;   # 未完成
-        $ongoings[] = null;  # 进行中
-        $completes[] = null; # 已完成
+        $applies = [];   # 未完成
+        $ongoings = [];  # 进行中
+        $completes = []; # 已完成
 
         foreach ($orders as $order){
             switch ($order->statusCode){
@@ -66,7 +65,7 @@ class ClientController extends Controller
                     break;
             }
         }
-        dd($applies);
+        
         return view('wechat.client.orders',compact('applies','ongoings','completes'));
     }
 
