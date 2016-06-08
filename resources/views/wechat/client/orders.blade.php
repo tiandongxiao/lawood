@@ -147,7 +147,7 @@
                         @endif
                     @endforeach
                 @else
-                    <div style="text-align:center;">您当前没有未完成的订单</div>
+                    <div style="text-align:center;margin-top: 60%">您当前没有未完成的订单</div>
                 @endif
             </div>
             <!--未完成-->
@@ -209,7 +209,7 @@
                         @endif
                     @endforeach
                 @else
-                    <div style="text-align:center;">您当前没有进行中的订单</div>
+                    <div style="text-align:center;margin-top: 60%">您当前没有进行中的订单</div>
                 @endif
             </div>
             <!--进行中-->
@@ -243,7 +243,7 @@
                         </div>
                     @endforeach
                 @else
-                    <div style="text-align:center;">您当前没有进行中的订单</div>
+                    <div style="text-align:center;margin-top: 60%">您当前没有进行中的订单</div>
                 @endif
             </div>
             <!--已完成-->
