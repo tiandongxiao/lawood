@@ -74,6 +74,7 @@ class ShopSetupTables extends Migration
             $table->integer('active')->default(1);
             $table->dateTime('expires_at')->nullable();
             $table->timestamps();
+
             $table->index(['code', 'expires_at']);
             $table->index(['code', 'active']);
             $table->index(['code', 'active', 'expires_at']);
@@ -92,7 +93,6 @@ class ShopSetupTables extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->string('statusCode', 32);
-
 
             $table->string('order_no', 64)->nullable();  # 订单编号
             $table->boolean('refunded')->default(false); # 是否已退款标志位

@@ -38,6 +38,7 @@ class ClientController extends Controller
     public function orders()
     {
         $orders = $this->user->orders;
+        dd($orders);
 
         $applies[] = null;   # 未完成
         $ongoings[] = null;  # 进行中

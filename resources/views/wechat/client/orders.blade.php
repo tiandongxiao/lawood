@@ -26,7 +26,6 @@
                                         <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
                                         <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
-
                                         <div class="zxf">
                                             <p>需付咨询费</p>
                                             <p class="jg">220元</p>
@@ -53,7 +52,6 @@
                                         <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
                                         <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
-
                                         <div class="zxf">
                                             <p>已付咨询费</p>
                                             <p class="jg">220元</p>
@@ -80,7 +78,6 @@
                                         <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
                                         <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
-
                                         <div class="zxf">
                                             <p>已付咨询费</p>
                                             <p class="jg">220元</p>
@@ -107,7 +104,6 @@
                                         <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
                                         <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
-
                                         <div class="zxf">
                                             <p>已付咨询费</p>
                                             <p class="jg">220元</p>
@@ -134,7 +130,6 @@
                                         <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
                                         <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
-
                                         <div class="zxf">
                                             <p>已付咨询费</p>
                                             <p class="jg">220元</p>
@@ -162,7 +157,7 @@
                         @if($order->statusCode == 'in_process')
                             <div class="itms bg-fff-box">
                                 <div class="top">
-                                    <div class="f-left">下单时间 16:00 11月1日</div>
+                                    <div class="f-left">下单时间 {{$order->updated_at}}</div>
                                     <div class="f-right">单编号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
@@ -171,7 +166,6 @@
                                         <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
                                         <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
-
                                         <div class="zxf">
                                             <p>已付咨询费</p>
                                             <p class="jg">220元</p>
@@ -189,7 +183,7 @@
                         @if($order->statusCode == 'accepted')
                             <div class="itms bg-fff-box">
                                 <div class="top">
-                                    <div class="f-left">下单时间 16:00 11月1日</div>
+                                    <div class="f-left">下单时间 {{$order->updated_at}}</div>
                                     <div class="f-right">单编号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
@@ -198,7 +192,6 @@
                                         <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
                                         <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
-
                                         <div class="zxf">
                                             <p>已付咨询费</p>
                                             <p class="jg">220元</p>
@@ -234,7 +227,6 @@
                                     <p class="name chaochu_1">律师 王树德<span>婚姻</span></p>
                                     <p class="dd chaochu_2">预约地点：COST咖啡厅</p>
                                     <p class="jl chaochu_1">距离：0.9km</p>
-
                                     <div class="zxf">
                                         <p>已付咨询费</p>
                                         <p class="jg">220元</p>
