@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Traits/WeChatDevTrait.php" afterPath="$PROJECT_DIR$/app/Traits/WeChatDevTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/LawyerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/LawyerController.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,21 +106,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LawyerController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LawyerController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/LawyerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+            <state relative-caret-position="182">
+              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeChatDevTrait.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WeChatDevTrait.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Traits/WeChatDevTrait.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
+            <state relative-caret-position="150">
+              <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -232,8 +232,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatOpenController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/ClientController.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/LawyerController.php" />
         <option value="$PROJECT_DIR$/app/Traits/WeChatDevTrait.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/LawyerController.php" />
       </list>
     </option>
   </component>
@@ -828,7 +828,7 @@
       <workItem from="1465261852452" duration="7079000" />
       <workItem from="1465277228244" duration="1453000" />
       <workItem from="1465305020703" duration="6821000" />
-      <workItem from="1465354372343" duration="14448000" />
+      <workItem from="1465354372343" duration="14469000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -953,7 +953,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1009760000" />
+    <option name="totallyTimeSpent" value="1009781000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1422,14 +1422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/LawyerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -1440,8 +1432,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Traits/WeChatDevTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
+        <state relative-caret-position="150">
+          <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/LawyerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
           <folding />
         </state>
       </provider>
