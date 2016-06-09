@@ -10,6 +10,7 @@
     <link href="/css/css.css" rel="stylesheet" type="text/css" />
     <title>律屋</title>
     @yield('css')
+    @yield('script-header')
 </head>
 <body>
 @yield('content')

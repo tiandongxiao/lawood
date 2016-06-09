@@ -2,6 +2,9 @@
 @section('css')
     <style>body{background:#f8f8f8}</style>
 @stop
+@section('script-header')
+    <script src="/js/time-djs.js"></script>
+@stop
 @section('content')
     <section class="lsdd-main">
         <div class="hd po-f">
@@ -231,7 +234,6 @@
     <!--取消订单-->
 @stop
 @section('script')
-    <script src="/js/time-djs.js"></script>
     <script>
         $(function(){
             //取消订单
