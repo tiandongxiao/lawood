@@ -38,7 +38,32 @@ class LawyerController extends Controller
     public function orders()
     {
         $orders = $this->user->seller_orders;
-        return view('wechat.lawyer.orders',compact('orders'));
+
+        $applies = [];   # 未完成
+        $ongoings = [];  # 进行中
+        $completes = []; # 已完成
+
+        foreach ($orders as $order){
+            switch ($order->statusCode){
+                case 'payed':   
+                    $applies[] = $order;
+                    break;
+
+                case 'accepted':
+                case 'in_process':
+                    $ongoings[] = $order;
+                    break;
+
+                case 'completed':
+                    $completes[] = $order;
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        return view('wechat.lawyer.orders',compact('applies','ongoings','completes'));
     }
 
     # 律师钱包管理中心
