@@ -231,25 +231,25 @@
     <!--取消订单-->
 @stop
 @section('script')
+    <script src="/js/time-djs.js"></script>
     <script>
         $(function(){
             //取消订单
             $('.btn-hv').tap(function(){
                 $('#qxdd').fadeIn();
 
-            })
+            });
             $('#qxdd .btn').tap(function(){
                 $('#qxdd').fadeOut();
 
-            })
+            });
             //切换
-
             $('.hd .itms').tap(function(){
                 $(this).siblings().removeClass('on')
                 $(this).addClass('on')
                 $('.bd-itms').css({display:'none'})
                 $('.bd-itms').eq($(this).index()).fadeIn();
-            })
+            });
         })
     </script>
 @stop
