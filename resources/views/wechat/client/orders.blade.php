@@ -173,9 +173,17 @@
                                     </div>
                                 </div>
                                 <div class="bottom">
+                                    @if($order->seller_signed)
+                                    <div class="djs fc-03aaf0 fs-12">律师已签到，等待您的签到</div>
+                                    @endif
+                                    @if($order->client_signed)
+                                    <div class="djs fc-03aaf0 fs-12">您已签到，等待律师签到</div>
+                                    @endif
                                     <div class="btn-main">
                                         <span class="btn lan"><a href="tel:{{$order->seller->phone}}">打电话</a></span>
+                                        @if(!$order->client_signed)
                                         <span class="btn lan"><a href="{{url('wechat/order/sign/'.$order->id)}}">咨询签到</a></span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
