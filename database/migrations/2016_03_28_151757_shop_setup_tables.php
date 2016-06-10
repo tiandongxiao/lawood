@@ -94,9 +94,12 @@ class ShopSetupTables extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('statusCode', 32);
 
-            $table->string('order_no', 64)->nullable();  # 订单编号
+            $table->string('order_no', 32)->nullable();  # 订单编号
             $table->boolean('refunded')->default(false); # 是否已退款标志位
+            $table->boolean('payed')->default(false);    # 是否已付款标志位
             $table->boolean('withdrew')->default(false); # 是否已折现标志位
+            $table->boolean('seller_signed')->default(false); # 律师是否已签到标志位
+            $table->boolean('client_signed')->default(false); # 顾客是否已签到标志位
             $table->string('attach')->nullable();        # 附件数据
 
             $table->timestamps();
@@ -111,15 +114,16 @@ class ShopSetupTables extends Migration
                 ->onUpdate('cascade');
             $table->index(['user_id', 'statusCode']);
             $table->index(['id', 'user_id', 'statusCode']);
+            $table->index(['id', 'order_no']); # roger 新增
 
         });
         # Create table for storing transactions
         Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('order_id')->unsigned();
-            $table->string('gateway', 64);
-            $table->string('transaction_id', 64);
-            $table->string('detail', 1024)->nullable();
+            $table->string('gateway', 16);
+            $table->string('transaction_id', 32);
+            $table->string('detail', 128)->nullable();
             $table->string('token')->nullable();
             $table->timestamps();
             $table->foreign('order_id')

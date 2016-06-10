@@ -43,7 +43,6 @@ class OrderController extends Controller
         # 3 下单
         $order = Shop::placeOrder();
 
-
         Log::info('prePay wx_js placeorder');
 
         if ($order->hasFailed) {
@@ -126,6 +125,19 @@ class OrderController extends Controller
         }
 
         return redirect('wxpay/js/'.$order->id);
+    }
+
+    public function accept($id)
+    {
+        $order = Order::findOrFail($id);
+        $order->accept();
+        return back();        
+    }
+
+    public function reject($id)
+    {
+        $order = Order::findOrFail($id);
+        
     }
     
 }

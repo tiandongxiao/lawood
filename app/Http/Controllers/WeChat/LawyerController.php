@@ -19,7 +19,6 @@ class LawyerController extends Controller
         $this->user = Auth::user();
     }
 
-
     # 律师个人主页
     public function show($id)
     {
@@ -45,7 +44,7 @@ class LawyerController extends Controller
 
         foreach ($orders as $order){
             switch ($order->statusCode){
-                case 'payed':   
+                case 'payed':
                     $applies[] = $order;
                     break;
 
@@ -160,15 +159,6 @@ class LawyerController extends Controller
                         $this->user->updatePrice($key,$value);
                 }
                 return redirect('wechat/lawyer/setting');
-
         }
     }
-
-    # 个人主页
-    public function me()
-    {
-        $user = $this->user;
-        return view('wechat.lawyer.me',compact('user'));
-    }
-
 }

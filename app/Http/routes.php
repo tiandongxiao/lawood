@@ -115,7 +115,6 @@ Route::group(['prefix' => 'lawyer'], function(){
 });
 
 
-
 Route::group(['prefix' => 'client'], function(){
     Route::get('','User\ClientController@board');
 
@@ -130,7 +129,7 @@ Route::group(['prefix' => 'client'], function(){
     Route::post('order/feedback','User\ClientController@postFeedback');
     Route::get('order/pay/{id}','User\ClientController@payPendingOrder');
 
-    Route::get('notifies','User\ClientController@notifies');         # 登录用户所有通告消息
+    Route::get('notifies','User\ClientController@notifies');     # 登录用户所有通告消息
     Route::get('notify/read','NotificationController@read');     # 登录用户所有已读通告消息
     Route::get('notify/unread','NotificationController@read');   # 登录用户所有未读通告消息
 });

@@ -63,8 +63,9 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
         if($order->statusCode == 'payed'){
-            $order->statusCode = 'accepted';
-            $order->save();
+            $order->update([
+                'statusCode' => 'accepted'
+            ]);
         }
         return back();
     }
@@ -74,11 +75,13 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
         if($order->statusCode == 'payed'){
-            $order->statusCode = 'rejected';
-            $order->save();
+            $order->update([
+                'statusCode' => 'rejected'
+            ]);
 
             # 拒单后立即退款
             $this->refund($id);
+            
             return back()->withErrors('已拒单');
         }
     }

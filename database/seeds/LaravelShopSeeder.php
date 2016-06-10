@@ -35,6 +35,11 @@ class LaravelShopSeeder extends Seeder
 			'description'       => '顾客取消订单',
 		],
 		[
+			'code' 				=> 'expired',
+			'name' 				=> 'Expired',
+			'description'       => '订单已过期',
+		],
+		[
 			'code' 				=> 'payed',
 			'name' 				=> 'Payed',
 			'description'       => '顾客订单已付款',

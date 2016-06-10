@@ -57,20 +57,24 @@ class WxPayController extends Controller
                 $transaction = $order->transactions[0];
 
                 # 订单状态设置为已支付
-                $order->statusCode='payed';
-                $order->save();
+                $order->update([
+                    'payed'       => true,
+                    'statusCode'  => 'payed'
+                ]);
 
                 # 将真正的transaction_id 赋予transaction对象
-                $transaction->transaction_id = $notify->transaction_id;
-                $transaction->save();
+                $transaction->update([
+                    'transaction_id' => $notify->transaction_id
+                ]);
 
             } else {
                 # 用户支付失败
                 $order = $this->queryShopOrder($notify->out_trade_no);
 
                 # 订单状态设置为支付失败
-                $order->statusCode='failed';
-                $order->save();
+                $order->update([
+                    'statusCode'  => 'failed'
+                ]);
             }            
 
             return true; # 返回处理完成
@@ -121,7 +125,7 @@ class WxPayController extends Controller
     {
         Cart::current()->clear();
         $this->addItemIntoCart($id);
-        Log::info('prePay '.$gateway);
+
 
         # 1 执行Shop的其他操作之前，必须先选择支付方式
         Shop::setGateway($gateway);
@@ -137,7 +141,7 @@ class WxPayController extends Controller
         # 3 下单
         $order = Shop::placeOrder();
 
-        Log::info('prePay '.$gateway.' placeorder');
+
         if ($order->hasFailed) {
             $exception = Shop::exception();
             echo $exception->getMessage();
@@ -186,9 +190,11 @@ class WxPayController extends Controller
             if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
                 # 对Shop Order进行数据更新，改变订单状态
                 $shop_order = ShopOrder::where('order_no',$out_trade_no)->first();
-                $shop_order->statusCode = 'canceled';
-                $shop_order->save();
+                $shop_order->update([
+                    'statusCode' =>'canceled'
+                ]);
             }
+            return back();
         }
         return back()->withErrors('退款失败');
     }
