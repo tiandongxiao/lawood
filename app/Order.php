@@ -127,7 +127,7 @@ class Order extends ShopOrderModel
 
     public function sign()
     {
-        if($this->payed && !$this->refund && $this->statusCode == 'accepted'){
+        if($this->payed && !$this->refunded && $this->statusCode == 'accepted'){
             dd(Auth::user());
 
             $this->update([
