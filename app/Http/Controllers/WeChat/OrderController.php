@@ -147,5 +147,12 @@ class OrderController extends Controller
         $result = $order->cancel();
         return back();
     }
+
+    public function sign($id)
+    {
+        $order = Order::findOrFail($id);
+        $result = $order->sign();
+        return back();
+    }
     
 }
