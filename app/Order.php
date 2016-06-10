@@ -4,6 +4,7 @@ namespace App;
 
 use Amsgames\LaravelShop\Models\ShopOrderModel;
 use EasyWeChat\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 
 class Order extends ShopOrderModel
 {
@@ -115,6 +116,26 @@ class Order extends ShopOrderModel
                     return $result; # lost/fail
             }
         }
+        if($this->statusCode == 'pending'){
+            $this->update([
+                'statusCode' => 'canceled'
+            ]);
+            return 'success';
+        }
+        return 'fail';
+    }
+
+    public function sign()
+    {
+        if($this->payed && !$this->refund && $this->statusCode == 'accepted'){
+            dd(Auth::user());
+
+            $this->update([
+                'statusCode' => 'in_process'
+            ]);
+            return 'success';
+        }
+        return 'fail';
     }
 
     # 退款

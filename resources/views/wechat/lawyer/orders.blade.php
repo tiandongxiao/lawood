@@ -43,8 +43,8 @@
                                         addTimer("leftTime0", 100);
                                     </script>
                                     <div class="btn-main">
-                                        <span class="btn lan">确认接单</span>
-                                        <span class="btn btn-hv">忽略</span>
+                                        <span class="btn lan"><a href="{{url('wechat/order/accept/'.$order->id)}}">确认接单</a></span>
+                                        <span class="btn btn-hv"><a href="{{url('wechat/order/reject/'.$order->id)}}">忽略</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                                 <div class="bottom">
                                     <div class="btn-main">
                                         <a class="btn lan" href="tel:{{$order->client->phone}}">打电话</a>
-                                        <a class="btn lan" href="#">签到咨询</a>
+                                        <a class="btn lan" href="{{url('wechat/order/sign/'.$order->id)}}">咨询签到</a>
                                     </div>
                                 </div>
                             </div>

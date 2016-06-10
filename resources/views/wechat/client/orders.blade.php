@@ -35,7 +35,7 @@
                                 <div class="bottom">
                                     <div class="btn-main">
                                         <span class="btn lan"><a href="{{url('wxpay/js/'.$order->id)}}">支付</a></span>
-                                        <span class="btn">取消订单</span>
+                                        <span class="btn"><a href="{{url('wechat/order/cancel/'.$order->id)}}">取消订单</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                                     <div class="djs fc-03aaf0 fs-12">正在等待律师接单…</div>
                                     <div class="btn-main">
                                         <span class="btn lan"><a href="tel:{{$order->seller->phone}}">拨打电话</a></span>
-                                        <span class="btn">取消订单</span>
+                                        <span class="btn"><a href="{{url('wechat/order/cancel/'.$order->id)}}">取消订单</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
                                 <div class="bottom">
                                     <div class="btn-main">
                                         <span class="btn lan"><a href="tel:{{$order->seller->phone}}">打电话</a></span>
-                                        <span class="btn lan">签到咨询</span>
+                                        <span class="btn lan"><a href="{{url('wechat/order/sign/'.$order->id)}}">咨询签到</a></span>
                                     </div>
                                 </div>
                             </div>
