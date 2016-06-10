@@ -176,7 +176,7 @@
                                 <div class="bottom">
                                     <div class="btn-main">
                                         <span class="btn lan"><a href="tel:{{$order->seller->phone}}">打电话</a></span>
-                                        <span class="btn lan">签到咨询</span>
+                                        <span class="btn lan"><a href="{{url('wechat/order/sign/'.$order->id)}}">咨询签到</a></span>
                                     </div>
                                 </div>
                             </div>
