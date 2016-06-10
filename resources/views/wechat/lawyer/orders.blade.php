@@ -44,7 +44,7 @@
                                     </script>
                                     <div class="btn-main">
                                         <span class="btn lan"><a href="{{url('wechat/order/accept/'.$order->id)}}">确认接单</a></span>
-                                        <span class="btn btn-hv"><a href="{{url('wechat/order/reject/'.$order->id)}}">忽略</a></span>
+                                        <span class="btn btn-hv" data-order="{{$order->id}}">忽略</span>
                                     </div>
                                 </div>
                             </div>
@@ -165,8 +165,8 @@
         <div class="main te-cen"  style="top:40%;">
             <div class="line-30 fc-909090  fs-16 mar-top-20">正在取消订单</div>
             <div class="btn-main mar-top-10">
-                <div class="btn fc-03aaf0">我再想想</div>
-                <div class="btn">取消订单</div>
+                <div class="btn fc-03aaf0" id="nothing">我再想想</div>
+                <div class="btn" id="reject" data-order="">取消订单</div>
             </div>
         </div>
     </section>
@@ -177,12 +177,22 @@
         $(function(){
             //取消订单
             $('.btn-hv').tap(function(){
+                $(this).data('order');
+                alert($(this).data('order'));
+                $('#reject').data('order',$(this).data('order'));
+                alert($('#reject').data('order'));
                 $('#qxdd').fadeIn();
 
             });
-            $('#qxdd .btn').tap(function(){
+            $('#reject').tap(function () {
+                window.location.href = '/wechat/order/reject/'+$(this).data('order');
                 $('#qxdd').fadeOut();
             });
+            $('#nothing').tap(function () {
+                $('#reject').data('order','');
+                $('#qxdd').fadeOut();
+            });
+
             //切换
             $('.hd .itms').tap(function(){
                 $(this).siblings().removeClass('on');
