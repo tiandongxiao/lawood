@@ -179,16 +179,15 @@
             $('.btn-hv').tap(function(){
                 $(this).data('order');
                 $('#reject').data('order',$(this).data('order'));
-                $('#qxdd').fadeIn();
+                $('#qxdd').show();
             });
             $('#reject').tap(function () {
                 window.location.href = '/wechat/order/reject/'+$(this).data('order');
             });
             $('#nothing').tap(function () {
                 $('#reject').data('order','');
-                $('#qxdd').fadeOut();
+                $('#qxdd').hide();
             });
-
             //切换
             $('.hd .itms').tap(function(){
                 $(this).siblings().removeClass('on');
