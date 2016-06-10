@@ -73,7 +73,7 @@ class Order extends ShopOrderModel
     # 接单
     public function accept()
     {
-        if($this->statusCode == 'payed'){
+        if($this->statusCode == 'payed' && $this->payed){
             $this->update([
                 'statusCode' => 'accepted'
             ]);

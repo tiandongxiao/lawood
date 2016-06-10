@@ -88,7 +88,7 @@
                                 <div class="bottom">
                                     <div class="djs fc-03aaf0 fs-12">律师拒绝接单，费用已退回</div>
                                     <div class="btn-main">
-                                        <span class="btn lan">重新查找</span>
+                                        <span class="btn lan"><a href="{{url('wechat')}}">重新查找</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                                 <div class="bottom">
                                     <div class="djs fc-03aaf0 fs-12">订单已取消，费用已退回</div>
                                     <div class="btn-main">
-                                        <span class="btn lan">重新查找</span>
+                                        <span class="btn lan"><a href="{{url('wechat')}}">重新查找</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@
                                 <div class="bottom">
                                     <div class="djs fc-03aaf0 fs-12">订单过期未接单，费用已退回</div>
                                     <div class="btn-main">
-                                        <span class="btn lan">重新查找</span>
+                                        <span class="btn lan"><a href="{{url('wechat')}}">重新查找</a></span>
                                     </div>
                                 </div>
                             </div>
