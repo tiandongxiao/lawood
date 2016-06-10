@@ -81,30 +81,49 @@ class Order extends ShopOrderModel
 
     # 拒单
     public function reject()
-    {        
-        if($this->statusCode == 'payed'){
-            $this->update([
-                'statusCode' => 'rejected'
-            ]);
-
+    {
+        if($this->statusCode == 'payed' && $this->payed){
             # 拒单后立即退款
-            $this->refund();
-
-            return back()->withErrors('已拒单');
+            $result = $this->refund();
+            switch ($result){
+                case 'repeat':
+                case 'success':
+                    $this->update([
+                        'statusCode' => 'rejected'
+                    ]);
+                    return 'success';
+                default:
+                    return $result; # lost/fail
+            }
         }
     }
 
     # 取消订单
     public function cancel()
     {
-
+        if($this->statusCode == 'payed' && $this->payed){
+            # 取消订单后立即退款
+            $result = $this->refund();
+            switch ($result){
+                case 'repeat':
+                case 'success':
+                    $this->update([
+                        'statusCode' => 'canceled'
+                    ]);
+                    return 'success';
+                default:
+                    return $result; # lost/fail
+            }
+        }
     }
 
     # 退款
     public function refund()
     {
-        $this->app = app('wechat');
-        $this->payment = $this->app->payment;
+        if(!$this->app || !$this->payment){
+            $this->app = app('wechat');
+            $this->payment = $this->app->payment;
+        }
 
         if($this->isWxOrderRefunded()){
             return 'repeat';
@@ -120,14 +139,13 @@ class Order extends ShopOrderModel
             if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS'){
 
                 $this->update([
-                    'refunded' => true,
-                    'statusCode'  => 'canceled'
+                    'refunded' => true
                 ]);
                 return 'success';
             }
             return 'fail';
         }
-        return 'unknown';
+        return 'lost'; # 微信订单已丢失
     }
 
     # 根据微信订单号查询微信订单

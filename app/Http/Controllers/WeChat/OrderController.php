@@ -137,7 +137,15 @@ class OrderController extends Controller
     public function reject($id)
     {
         $order = Order::findOrFail($id);
-        
+        $result = $order->reject();
+        return back();
+    }
+
+    public function cancel($id)
+    {
+        $order = Order::findOrFail($id);
+        $result = $order->cancel();
+        return back();
     }
     
 }

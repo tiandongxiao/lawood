@@ -225,6 +225,11 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('order/confirm/{id}','WeChat\OrderController@confirm');        # 绑定选择的地点
     Route::post('order/confirm','WeChat\OrderController@postConfirm');
 
+    Route::get('order/accept/{id}','WeChat\OrderController@accept');
+    Route::get('order/reject/{id}','WeChat\OrderController@reject');
+    Route::get('order/cancel/{id}','WeChat\OrderController@cancel');
+
+
     # begin 注册绑定
     Route::get('chose','WeChat\AuthController@chose');
     Route::get('bind/{role}','WeChat\AuthController@bind');
