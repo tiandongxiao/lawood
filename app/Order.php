@@ -127,13 +127,27 @@ class Order extends ShopOrderModel
 
     public function sign()
     {
-        if($this->payed && !$this->refunded && $this->statusCode == 'accepted'){
-            dd(Auth::user());
-
-            $this->update([
-                'statusCode' => 'in_process'
-            ]);
-            return 'success';
+        if($this->payed && !$this->refunded){
+            if($this->statusCode == 'accepted' || $this->statusCode == 'in_process') {
+                # 检查当前是否登录状态
+                if (Auth::check()) {
+                    switch (Auth::user()->role) {
+                        case 'lawyer':
+                            $this->update([
+                                'seller_signed' => true,
+                                'statusCode' => 'in_process'
+                            ]);
+                            break;
+                        case 'client':
+                            $this->update([
+                                'client_signed' => true,
+                                'statusCode' => 'in_process'
+                            ]);
+                            break;
+                    }
+                    return 'success';
+                }
+            }
         }
         return 'fail';
     }
