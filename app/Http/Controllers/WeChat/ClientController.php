@@ -37,7 +37,7 @@ class ClientController extends Controller
 
     public function orders()
     {
-        $orders = $this->user->orders;
+        $orders = $this->user->orders->reverse();
 
         $applies = [];   # 未完成
         $ongoings = [];  # 进行中

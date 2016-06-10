@@ -36,7 +36,7 @@ class LawyerController extends Controller
     # 律师订单中心
     public function orders()
     {
-        $orders = $this->user->seller_orders;
+        $orders = $this->user->seller_orders->reverse();
 
         $applies = [];   # 未完成
         $ongoings = [];  # 进行中
