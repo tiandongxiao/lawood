@@ -178,15 +178,11 @@
             //取消订单
             $('.btn-hv').tap(function(){
                 $(this).data('order');
-                alert($(this).data('order'));
                 $('#reject').data('order',$(this).data('order'));
-                alert($('#reject').data('order'));
                 $('#qxdd').fadeIn();
-
             });
             $('#reject').tap(function () {
                 window.location.href = '/wechat/order/reject/'+$(this).data('order');
-                $('#qxdd').fadeOut();
             });
             $('#nothing').tap(function () {
                 $('#reject').data('order','');
