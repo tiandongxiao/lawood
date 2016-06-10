@@ -182,6 +182,7 @@
                 $('#qxdd').show();
             });
             $('#reject').tap(function () {
+                $('#qxdd').hide();
                 window.location.href = '/wechat/order/reject/'+$(this).data('order');
             });
             $('#nothing').tap(function () {
