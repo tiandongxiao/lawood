@@ -368,7 +368,7 @@
                 $(this).addClass('on');
             });
             //评价
-            $('.pj em').click(function(){
+            $('.pj em').tap(function(){
                 $(this).siblings().removeClass('on');
                 var EmIndex	= $(this).index();
                 $('.xxts').text($(this).attr('data-sx'));
