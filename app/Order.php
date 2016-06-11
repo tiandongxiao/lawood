@@ -77,7 +77,9 @@ class Order extends ShopOrderModel
             $this->update([
                 'statusCode' => 'accepted'
             ]);
+            return 'success';
         }
+        return 'fail';
     }
 
     # 拒单
@@ -97,6 +99,7 @@ class Order extends ShopOrderModel
                     return $result; # lost/fail
             }
         }
+        return 'fail';
     }
 
     # 取消订单

@@ -105,7 +105,7 @@
                                         <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
                                         <div class="zxf">
-                                            <p>已付咨询费</p>
+                                            <p>已退咨询费</p>
                                             <p class="jg">{{$order->total}}元</p>
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@
                                         <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
                                         <div class="zxf">
-                                            <p>已付咨询费</p>
+                                            <p>已退咨询费</p>
                                             <p class="jg">{{$order->total}}元</p>
                                         </div>
                                     </div>
@@ -323,7 +323,7 @@
     <section class="tc-main pj-main po-f"  style="display:none" id="xgpj">
         <div class="main te-cen"  style="top:20%;">
             <div class="lsxx">
-                <div class="f-left"><img src="images/ls.jpg" width="60" height="60"></div>
+                <div class="f-left"><img src="/images/ls.jpg" width="60" height="60"></div>
                 <div class="right">
                     <div class="name">王树德 律师</div>
                     <div class="dz chaochu_1">北京市朝阳区京师律师事务所</div>
