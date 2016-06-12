@@ -4,11 +4,8 @@ namespace App;
 
 use Amsgames\LaravelShop\Traits\ShopUserTrait;
 
-
-use App\Traits\CategoryDevTrait;
 use App\Traits\UserAnalysisTrait;
-use Ghanem\Rating\Contracts\Ratingable;
-use Ghanem\Rating\Traits\Ratingable as RatingTrait;
+
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -23,18 +20,20 @@ use Bican\Roles\Contracts\HasRoleAndPermission as HasRoleAndPermissionContract;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
 
-use DraperStudio\Commentable\Contracts\Commentable;
-use DraperStudio\Commentable\Traits\Commentable as CommentTrait;
+use Ghanem\Rating\Contracts\Ratingable;
+use Ghanem\Rating\Traits\Ratingable as RatingTrait;
+
+
 
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract,
-                                    Ratingable,
                                     HasRoleAndPermissionContract,
-                                    Commentable
+                                    Ratingable
+
 {
-    use Authenticatable, CanResetPassword, ShopUserTrait, RatingTrait, HasRoleAndPermission, Authorizable ,CommentTrait, UserAnalysisTrait{
+    use Authenticatable, CanResetPassword, ShopUserTrait, HasRoleAndPermission, Authorizable , RatingTrait,UserAnalysisTrait{
         # 为解决冲突的问题
         HasRoleAndPermission::can insteadof Authorizable;
         Authorizable::can as may;
@@ -56,6 +55,7 @@ class User extends Model implements AuthenticatableContract,
         return $this->belongsToMany(Category::class,'user_category');
     }
 
+    # 律师个人档案
     public function profile()
     {
         return $this->hasOne(Profile::class);

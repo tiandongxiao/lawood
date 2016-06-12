@@ -16,4 +16,10 @@ class UserTiming extends Model implements Ratingable
     {
         return $this->belongsTo(User::class);
     }
+
+    public function delete()
+    {
+        $this->ratings->delete();
+        parent::delete();
+    }
 }

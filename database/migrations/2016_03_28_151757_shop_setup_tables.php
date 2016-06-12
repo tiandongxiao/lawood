@@ -94,6 +94,13 @@ class ShopSetupTables extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('statusCode', 32);
 
+            $table->unsignedInteger('seller_id')->nullable();  # 为提升执行效率，较少数据库查询次数
+            $table->string('category',32)->nullable();         # 为提升执行效率，较少数据库查询次数
+            $table->unsignedInteger('rating_id')->nullable();  # 为了解决评级和评论体系不协调的问题
+            $table->unsignedInteger('comment_id')->nullable(); # 为了解决评级和评论体系不协调的问题
+            $table->unsignedInteger('sale_id')->nullable();    # 原始卖品信息
+
+
             $table->string('order_no', 32)->nullable();  # 订单编号
             $table->boolean('refunded')->default(false); # 是否已退款标志位
             $table->boolean('payed')->default(false);    # 是否已付款标志位
@@ -114,7 +121,9 @@ class ShopSetupTables extends Migration
                 ->onUpdate('cascade');
             $table->index(['user_id', 'statusCode']);
             $table->index(['id', 'user_id', 'statusCode']);
-            $table->index(['id', 'order_no']); # roger 新增
+            $table->index(['id', 'order_no']);   # roger 新增
+            $table->index(['seller_id', 'statusCode']);
+            $table->index(['id','seller_id', 'statusCode']);
 
         });
         # Create table for storing transactions

@@ -2,12 +2,18 @@
 
 namespace App;
 
-use Amsgames\LaravelShop\Models\ShopOrderModel;
-use EasyWeChat\Foundation\Application;
+use Ghanem\Rating\Models\Rating;
 use Illuminate\Support\Facades\Auth;
+use Amsgames\LaravelShop\Models\ShopOrderModel;
 
-class Order extends ShopOrderModel
+use DraperStudio\Commentable\Contracts\Commentable;
+use DraperStudio\Commentable\Traits\Commentable as CommentTrait;
+
+
+class Order extends ShopOrderModel implements Commentable
 {
+    use CommentTrait;
+
     protected $fillable = ['user_id', 'statusCode', 'order_no', 'type', 'subject', 'payed', 'refunded', 'seller_signed', 'client_signed', 'attach'];
 
     private $app;
@@ -46,16 +52,22 @@ class Order extends ShopOrderModel
         return $this->hasOne(Receipt::class);
     }
 
-    # 获取咨询项
+    # 获取购买的咨询项
     public function getConsultAttribute()
     {
         return $this->items[0];
     }
 
+    # 获取原始卖品信息
+    public function getSaleAttribute()
+    {
+        return Item::findOrFail($this->sale_id);
+    }    
+
     # 获取卖方信息
     public function getSellerAttribute()
     {
-        return $this->consult->seller;
+        return User::findOrFail($this->seller_id);
     }
 
     # 获取买方信息
@@ -67,7 +79,7 @@ class Order extends ShopOrderModel
     # 获取分类信息
     public function getCategoryAttribute()
     {
-        return $this->consult->category_name;
+        return $this->category;
     }
 
     # 接单
@@ -217,5 +229,37 @@ class Order extends ShopOrderModel
         if($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS')
             return true;
         return false;
+    }
+
+    public function getRatingAttribute()
+    {
+        if($this->rating)
+            return Rating::findOrFail($this->rating);
+        return null;
+    }
+
+    public function getCommentAttribute()
+    {
+        if($this->comments && $this->comments[0])
+            return $this->comments[0];
+        return null;
+    }
+
+    public function fillSaleInfo(Item $sale)
+    {
+        $this->update([
+            'sale_id'     => $sale->id,
+            'seller_id'   => $sale->user->id,
+            'category'    => $sale->category->name
+        ]);
+    }
+
+    public function fillRatingCommentInfo($data)
+    {
+        $this->update([
+            'rating_id'   => $data['rating_id'],
+            'comment_id'  => $data['comment_id'],
+            ''
+        ]);
     }
 }

@@ -263,7 +263,7 @@
                 <div class="f-left"><img src="/images/ls.jpg" width="60" height="60"></div>
                 <div class="right">
                     <div class="name">王树德 律师</div>
-                    <div class="dz chaochu_1">北京市朝阳区京师律师事务所</div>
+                    <div class="dz chaochu_1">京师律师事务所</div>
                     <div class="cs chaochu_1">约见次数：200次</div>
                 </div>
             </div>
@@ -326,7 +326,7 @@
                 <div class="f-left"><img src="/images/ls.jpg" width="60" height="60"></div>
                 <div class="right">
                     <div class="name">王树德 律师</div>
-                    <div class="dz chaochu_1">北京市朝阳区京师律师事务所</div>
+                    <div class="dz chaochu_1">京师律师事务所</div>
                     <div class="cs chaochu_1">约见次数：200次</div>
                 </div>
             </div>
@@ -362,6 +362,7 @@
                     $('.po-f').removeClass('po-a')
                 });
             }
+
             //切换标记
             $('.lsyx .itms .right span').tap(function(){
                 $(this).siblings().removeClass('on');

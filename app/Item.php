@@ -7,7 +7,7 @@ use App\Traits\GaodeMapTrait;
 use Conner\Likeable\LikeableTrait;
 use Ghanem\Rating\Contracts\Ratingable;
 use Ghanem\Rating\Traits\Ratingable as RatingTrait;
-use Symfony\Component\Yaml\Tests\A;
+
 
 class Item extends ShopItemModel implements Ratingable
 {
@@ -43,11 +43,20 @@ class Item extends ShopItemModel implements Ratingable
         parent::delete();
     }
 
+    # 专业度评级系统(只有原始)
+    public function major()
+    {
+        if(!$this->order_id)
+            return $this->hasOne(UserMajor::class);
+        return null;
+    }
+
     public function getSellerAttribute()
     {
         # 如果是卖方展示的商品项
         if(is_null($this->order_id))
             return User::find($this->user_id);
+        
         # 如果是买方订单中的商品项
         return Item::find($this->reference_id)->seller;
     }
@@ -120,5 +129,15 @@ class Item extends ShopItemModel implements Ratingable
     {
         $consult = static::create($data);
         $consult->buildPOI();
+    }
+
+    # 获取原始展示商品项
+    public function getConsultAttribute()
+    {
+        if($this->reference_id){
+            $consult = Item::where('reference_id',$this->reference_id)->first();
+            return $consult;
+        }
+        return null;
     }
 }

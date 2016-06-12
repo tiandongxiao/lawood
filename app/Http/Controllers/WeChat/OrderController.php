@@ -14,6 +14,7 @@ use App\Order;
 use App\Place;
 use App\Receipt;
 use App\Traits\ShopDevTrait;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Shop;
@@ -42,6 +43,7 @@ class OrderController extends Controller
 
         # 3 下单
         $order = Shop::placeOrder();
+        $order->fillSaleInfo($item_id);
 
         Log::info('prePay wx_js placeorder');
 
@@ -153,6 +155,47 @@ class OrderController extends Controller
         $order = Order::findOrFail($id);
         $result = $order->sign();
         return back();
+    }
+
+    public function rating($order_id,$user_id,$score)
+    {
+        $order = Order::findOrFail($order_id);
+        $user = User::findOrFail($user_id);
+        $rating = $order->rating(['rating'=>$score],$user);
+
+        dd($rating);
+    }
+
+    public function updateRating($order_id,$score)
+    {
+        $order = Order::findOrFail($order_id);
+        $rating = $order->updateRating($order->ratings[0]->id, [
+            'rating' => $score
+        ]);
+        
+        dd($rating);
+    }
+
+    public function comment($order_id,$user_id,$data)
+    {
+        $order = Order::findOrFail($order_id);
+        $user = User::findOrFail($user_id);
+
+        $comment = $order->comment([
+            'title' => $data['title'],
+            'body' => $data['body'],
+        ], $user);
+
+        dd($comment);
+    }
+
+    public function updateComment($order_id,$data)
+    {
+        $order = Order::findOrFail($order_id);
+        $comment = $order->updateComment(1, [
+            'title' => $data['title'],
+            'body'  => $data['content']
+        ]);
     }
     
 }
