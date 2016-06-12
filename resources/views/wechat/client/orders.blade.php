@@ -249,7 +249,7 @@
                             </div>
                             <div class="bottom">
                                 <div class="btn-main">
-                                    <span class="btn lan btn-ljpj" data-order="{{$order->id}}" data-lawyer="{{$order->seller->real_name}}" data-office="{{$order->seller->office}}">
+                                    <span class="btn lan btn-ljpj" data-order="{{$order->id}}" data-client="{{$order->client->id}}" data-lawyer="{{$order->seller->real_name}}" data-office="{{$order->seller->office}}">
                                         立即评价
                                     </span>
                                     <span class="btn lan btn-xgpj" data-order="{{$order->id}}" >
@@ -268,7 +268,7 @@
     </section>
 
     <input type="hidden" id="lawyer" value='' />
-    <input type="hidden" id="lawyer-score" value='' />
+    <input type="hidden" id="lawyer-score" value='5'/>
 
     <!--首次评价-->
     <section class="tc-main pj-main po-f"  style="display:none" id="ljpj">
@@ -296,7 +296,7 @@
                 <div class="title"><span>律师印象</span></div>
                 <div class="itms">
                     <div class="f-left">准时：</div>
-                    <input type="hidden" id="time-score" value='' />
+                    <input type="hidden" id="time-score" value='3' />
                     <div class="right" id="time">
                         <span data-score="1">迟到</span>
                         <span data-score="3" class="on">按时</span>
@@ -305,7 +305,7 @@
                 </div>
                 <div class="itms">
                     <div class="f-left">穿着：</div>
-                    <input type="hidden" id="dress-score" value='' />
+                    <input type="hidden" id="dress-score" value='3' />
                     <div class="right" id="dress">
                         <span data-score="1">邋遢</span>
                         <span data-score="3" class="on">一般</span>
@@ -314,7 +314,7 @@
                 </div>
                 <div class="itms">
                     <div class="f-left">专业：</div>
-                    <input type="hidden" id="major-score" value='' />
+                    <input type="hidden" id="major-score" value='3' />
                     <div class="right" id="major">
                         <span data-score="1">业余</span>
                         <span data-score="3" class="on">专业</span>
@@ -323,7 +323,7 @@
                 </div>
                 <div class="itms">
                     <div class="f-left">礼貌：</div>
-                    <input type="hidden" id="polite-score" value='' />
+                    <input type="hidden" id="polite-score" value='3' />
                     <div class="right" id="polite">
                         <span data-score="1">差劲</span>
                         <span data-score="3" class="on">挺好的</span>
@@ -331,12 +331,21 @@
                     </div>
                 </div>
             </div>
-            <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text"></textarea></div>
+            <form id="evaluate" action="{{url('wechat/order/evaluate')}}" method="post">
+                {!! csrf_field() !!}
+                <input type="hidden" name="client" value=""/>
+                <input type="hidden" name="user-score" value="5"/>
+                <input type="hidden" name="time-score" value="3"/>
+                <input type="hidden" name="dress-score" value="3"/>
+                <input type="hidden" name="polite-score" value="3"/>
+                <input type="hidden" name="major-score" value="3"/>
+                <input type="hidden" name="comment" value="">
+                <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text"></textarea></div>
+            </form>
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate-first">
         </div>
     </section>
     <!--首次评价-->
-
     <!--修改评价-->
     <section class="tc-main pj-main po-f"  style="display:none" id="xgpj">
         <div class="main te-cen"  style="top:20%;">
@@ -359,7 +368,13 @@
                 </div>
                 <div class="xxts fs-12 line-20 fc-03aaf0">比较满意，但仍可改善</div>
             </div>
-            <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text"></textarea></div>
+            <form id="update" action="{{url('wechat/order/evaluate/update')}}" method="post">
+                {!! csrf_field() !!}
+                <input type="hidden" name="client" value="" />
+                <input type="hidden" name="user-score" value="5"/>
+                <input type="hidden" name="comment" value="">
+                <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text"></textarea></div>
+            </form>
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate-modify">
         </div>
     </section>
@@ -382,7 +397,6 @@
             }
 
             //切换标记
-
             $('#time span').tap(function () {
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
@@ -404,8 +418,19 @@
                 $('#major-score').val($(this).data('score'));
             });
 
-            //评价
-            $('.pj em').tap(function(){
+            //初次评价
+            $('#ljpj .pj em').tap(function(){
+                $(this).siblings().removeClass('on');
+                var EmIndex	= $(this).index();
+                $('.xxts').text($(this).attr('data-sx'));
+                for (var i=0;i<=EmIndex;i++){
+                    $(this).parent('.pj').children('em').eq(i).addClass('on');
+                }
+                $('#lawyer-score').val(EmIndex+1);
+            });
+
+            //修改评价
+            $('#xgpj .pj em').tap(function(){
                 $(this).siblings().removeClass('on');
                 var EmIndex	= $(this).index();
                 $('.xxts').text($(this).attr('data-sx'));
@@ -446,6 +471,12 @@
                 dress = $('#dress-score').val();
                 polite = $('#polite-score').val();
                 major = $('#major-score').val();
+                var scores = {
+                    'time':$('#time-score').val(),
+                    'dress':$('#dress-score').val(),
+                    'major':$('#major-score').val(),
+                    'polite':$('#polite-score').val()
+                };
 
                 alert('user'+score);
                 alert('Timing'+time);
