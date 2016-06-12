@@ -200,5 +200,14 @@ class OrderController extends Controller
             'body'  => $data['content']
         ]);
     }
-    
+
+    public function evaluate(Request $request)
+    {
+        dd($request);
+    }
+
+    public function evaluateUpdate(Request $request)
+    {
+        dd($request);
+    }
 }
