@@ -382,22 +382,26 @@
             }
 
             //切换标记
-            $('.lsyx .itms .right span').tap(function(){
+
+            $('#time span').tap(function () {
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
-                if($(this).parent('#time')){
-                    $('#time-score').val($(this).data('score'));
-                }
-                if($(this).parent('#dress')){
-                    $('#dress-score').val($(this).data('score'));
-                }
-                if($(this).parent('#major')){
-                    $('#major-score').val($(this).data('score'));
-                }
-                if($(this).parent('#polite')){
-                    $('#polite-score').val($(this).data('score'));
-                }
-
+                $('#time-score').val($(this).data('score'));
+            });
+            $('#dress span').tap(function () {
+                $(this).siblings().removeClass('on');
+                $(this).addClass('on');
+                $('#dress-score').val($(this).data('score'));
+            });
+            $('#polite span').tap(function () {
+                $(this).siblings().removeClass('on');
+                $(this).addClass('on');
+                $('#polite-score').val($(this).data('score'));
+            });
+            $('#major span').tap(function () {
+                $(this).siblings().removeClass('on');
+                $(this).addClass('on');
+                $('#major-score').val($(this).data('score'));
             });
 
             //评价
