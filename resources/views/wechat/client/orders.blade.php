@@ -294,37 +294,37 @@
             </div>
             <div class="lsyx pad-0-10">
                 <div class="title"><span>律师印象</span></div>
-                <div class="itms" id="time">
+                <div class="itms">
                     <div class="f-left">准时：</div>
                     <input type="hidden" id="time-score" value='' />
-                    <div class="right">
+                    <div class="right" id="time">
                         <span>迟到</span>
                         <span class="on">按时</span>
                         <span>提前</span>
                     </div>
                 </div>
-                <div class="itms" id="dress">
+                <div class="itms">
                     <div class="f-left">穿着：</div>
                     <input type="hidden" id="dress-score" value='' />
-                    <div class="right">
+                    <div class="right" id="dress">
                         <span data-score="1">邋遢</span>
                         <span data-score="3" class="on">一般</span>
                         <span data-score="5">职业</span>
                     </div>
                 </div>
-                <div class="itms" id="major">
+                <div class="itms">
                     <div class="f-left">专业：</div>
                     <input type="hidden" id="major-score" value='' />
-                    <div class="right">
+                    <div class="right" id="major">
                         <span data-score="1">业余</span>
                         <span data-score="3" class="on">专业</span>
                         <span data-score="5">资深</span>
                     </div>
                 </div>
-                <div class="itms" id="polite">
+                <div class="itms">
                     <div class="f-left">礼貌：</div>
                     <input type="hidden" id="polite-score" value='' />
-                    <div class="right">
+                    <div class="right" id="polite">
                         <span data-score="1">差劲</span>
                         <span data-score="3" class="on">挺好的</span>
                         <span data-score="5">彬彬有理</span>
@@ -385,16 +385,16 @@
             $('.lsyx .itms .right span').tap(function(){
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
-                if($(this).parents('#time')){
+                if($(this).parent('#time')){
                     $('#time-score').val($(this).data('score'));
                 }
-                if($(this).parents('#dress')){
+                if($(this).parent('#dress')){
                     $('#dress-score').val($(this).data('score'));
                 }
-                if($(this).parents('#major')){
+                if($(this).parent('#major')){
                     $('#major-score').val($(this).data('score'));
                 }
-                if($(this).parents('#polite')){
+                if($(this).parent('#polite')){
                     $('#polite-score').val($(this).data('score'));
                 }
 
