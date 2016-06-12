@@ -10,6 +10,7 @@ namespace App\Http\Controllers\WeChat;
 
 
 use App\Http\Controllers\Controller;
+use App\Item;
 use App\Order;
 use App\Place;
 use App\Receipt;
@@ -27,6 +28,8 @@ class OrderController extends Controller
 
     public function buildOrder($item_id)
     {
+        $sale = Item::findOrFail($item_id);
+
         Cart::current()->clear();
         $this->addItemIntoCart($item_id);
 
@@ -43,7 +46,7 @@ class OrderController extends Controller
 
         # 3 下单
         $order = Shop::placeOrder();
-        $order->fillSaleInfo($item_id);
+        $order->fillSaleInfo($sale);
 
         Log::info('prePay wx_js placeorder');
 

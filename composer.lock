@@ -119,16 +119,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.18.16",
+            "version": "3.18.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5b959dda467752d4db8fa41fe9bbce85cabbe81e"
+                "reference": "6c7849556f556da8615d22e675710c7a086ed5d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/aws/aws-sdk-php/5b959dda467752d4db8fa41fe9bbce85cabbe81e.zip",
-                "reference": "5b959dda467752d4db8fa41fe9bbce85cabbe81e",
+                "url": "https://packagist.phpcomposer.com/files/aws/aws-sdk-php/6c7849556f556da8615d22e675710c7a086ed5d0.zip",
+                "reference": "6c7849556f556da8615d22e675710c7a086ed5d0",
                 "shasum": ""
             },
             "require": {
@@ -195,7 +195,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-06-07 21:16:15"
+            "time": "2016-06-09 23:39:33"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -680,21 +680,21 @@
         },
         {
             "name": "geoip2/geoip2",
-            "version": "v2.4.0",
+            "version": "v2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maxmind/GeoIP2-php.git",
-                "reference": "2edce6957126399039124459174d5dce24edfdae"
+                "reference": "241e4442e0469d70043805ef699290616d53ce41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/maxmind/GeoIP2-php/2edce6957126399039124459174d5dce24edfdae.zip",
-                "reference": "2edce6957126399039124459174d5dce24edfdae",
+                "url": "https://packagist.phpcomposer.com/files/maxmind/GeoIP2-php/241e4442e0469d70043805ef699290616d53ce41.zip",
+                "reference": "241e4442e0469d70043805ef699290616d53ce41",
                 "shasum": ""
             },
             "require": {
                 "maxmind-db/reader": "~1.0",
-                "maxmind/web-service-common": "~0.0.3",
+                "maxmind/web-service-common": "~0.2",
                 "php": ">=5.3.1"
             },
             "require-dev": {
@@ -727,7 +727,7 @@
                 "geolocation",
                 "maxmind"
             ],
-            "time": "2016-04-15 19:49:51"
+            "time": "2016-06-10 22:32:01"
         },
         {
             "name": "ghanem/rating",
@@ -1139,16 +1139,16 @@
         },
         {
             "name": "jaybizzle/crawler-detect",
-            "version": "v1.2.3",
+            "version": "v1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JayBizzle/Crawler-Detect.git",
-                "reference": "ef558efd72963fbcc6c0ef56cd2da841197b73d8"
+                "reference": "99dadbea540442dda9cab1ea5452f0fc8c8a84d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/JayBizzle/Crawler-Detect/ef558efd72963fbcc6c0ef56cd2da841197b73d8.zip",
-                "reference": "ef558efd72963fbcc6c0ef56cd2da841197b73d8",
+                "url": "https://packagist.phpcomposer.com/files/JayBizzle/Crawler-Detect/99dadbea540442dda9cab1ea5452f0fc8c8a84d3.zip",
+                "reference": "99dadbea540442dda9cab1ea5452f0fc8c8a84d3",
                 "shasum": ""
             },
             "require": {
@@ -1183,7 +1183,7 @@
                 "crawlerdetect",
                 "php crawler detect"
             ],
-            "time": "2016-05-19 22:01:17"
+            "time": "2016-06-08 18:37:36"
         },
         {
             "name": "jenssegers/agent",
@@ -1351,16 +1351,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.37",
+            "version": "v5.1.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ecf782a2eef21380ae40b1462f0a792ccfaac060"
+                "reference": "67848753f16a639da6d0871019ae792111941933"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/laravel/framework/ecf782a2eef21380ae40b1462f0a792ccfaac060.zip",
-                "reference": "ecf782a2eef21380ae40b1462f0a792ccfaac060",
+                "url": "https://packagist.phpcomposer.com/files/laravel/framework/67848753f16a639da6d0871019ae792111941933.zip",
+                "reference": "67848753f16a639da6d0871019ae792111941933",
                 "shasum": ""
             },
             "require": {
@@ -1476,7 +1476,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-06-06 15:19:14"
+            "time": "2016-06-10 22:10:07"
         },
         {
             "name": "league/flysystem",
@@ -1660,16 +1660,16 @@
         },
         {
             "name": "maxmind/web-service-common",
-            "version": "v0.0.4",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maxmind/web-service-common-php.git",
-                "reference": "f26fce5281290973beeeca3e33847887177dd138"
+                "reference": "620a1a0ac7e9b6c20ea65bfd7c93367af6433d77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maxmind/web-service-common-php/zipball/f26fce5281290973beeeca3e33847887177dd138",
-                "reference": "f26fce5281290973beeeca3e33847887177dd138",
+                "url": "https://packagist.phpcomposer.com/files/maxmind/web-service-common-php/620a1a0ac7e9b6c20ea65bfd7c93367af6433d77.zip",
+                "reference": "620a1a0ac7e9b6c20ea65bfd7c93367af6433d77",
                 "shasum": ""
             },
             "require": {
@@ -1678,7 +1678,8 @@
                 "php": ">=5.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.6.*"
+                "phpunit/phpunit": "4.*",
+                "squizlabs/php_codesniffer": "2.*"
             },
             "type": "library",
             "autoload": {
@@ -1698,7 +1699,7 @@
             ],
             "description": "Internal MaxMind Web Service API",
             "homepage": "https://github.com/maxmind/mm-web-service-api-php",
-            "time": "2015-07-21 20:07:31"
+            "time": "2016-06-10 22:22:39"
         },
         {
             "name": "mews/captcha",
@@ -5396,22 +5397,22 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "3.0.2",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "45ada3e3fd09789fbfbd6d65b3f0901f0030dc61"
+                "reference": "9270140b940ff02e58ec577c237274e92cd40cdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/phpDocumentor/ReflectionDocBlock/45ada3e3fd09789fbfbd6d65b3f0901f0030dc61.zip",
-                "reference": "45ada3e3fd09789fbfbd6d65b3f0901f0030dc61",
+                "url": "https://packagist.phpcomposer.com/files/phpDocumentor/ReflectionDocBlock/9270140b940ff02e58ec577c237274e92cd40cdd.zip",
+                "reference": "9270140b940ff02e58ec577c237274e92cd40cdd",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5",
                 "phpdocumentor/reflection-common": "^1.0@dev",
-                "phpdocumentor/type-resolver": "^0.1.5",
+                "phpdocumentor/type-resolver": "^0.2.0",
                 "webmozart/assert": "^1.0"
             },
             "require-dev": {
@@ -5437,20 +5438,20 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-06-06 06:44:13"
+            "time": "2016-06-10 09:48:41"
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "0.1.8",
+            "version": "0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "9891754231e55d42f0d16988ffb799af39f31a12"
+                "reference": "b39c7a5b194f9ed7bd0dd345c751007a41862443"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/phpDocumentor/TypeResolver/9891754231e55d42f0d16988ffb799af39f31a12.zip",
-                "reference": "9891754231e55d42f0d16988ffb799af39f31a12",
+                "url": "https://packagist.phpcomposer.com/files/phpDocumentor/TypeResolver/b39c7a5b194f9ed7bd0dd345c751007a41862443.zip",
+                "reference": "b39c7a5b194f9ed7bd0dd345c751007a41862443",
                 "shasum": ""
             },
             "require": {
@@ -5459,7 +5460,7 @@
             },
             "require-dev": {
                 "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^5.2"
+                "phpunit/phpunit": "^5.2||^4.8.24"
             },
             "type": "library",
             "extra": {
@@ -5484,7 +5485,7 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2016-03-28 10:02:29"
+            "time": "2016-06-10 07:14:17"
         },
         {
             "name": "phpspec/php-diff",
