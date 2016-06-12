@@ -334,6 +334,7 @@
             <form id="evaluate" action="{{url('wechat/order/evaluate')}}" method="post">
                 {!! csrf_field() !!}
                 <input type="hidden" name="client" value=""/>
+                <input type="hidden" name="order" value=""/>
                 <input type="hidden" name="user-score" value="5"/>
                 <input type="hidden" name="time-score" value="3"/>
                 <input type="hidden" name="dress-score" value="3"/>
@@ -371,6 +372,7 @@
             <form id="update" action="{{url('wechat/order/evaluate/update')}}" method="post">
                 {!! csrf_field() !!}
                 <input type="hidden" name="client" value="" />
+                <input type="hidden" name="order" value=""/>
                 <input type="hidden" name="user-score" value="5"/>
                 <input type="hidden" name="comment" value="">
                 <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text"></textarea></div>
@@ -396,7 +398,7 @@
                 });
             }
 
-            //切换标记
+            // 切换标记
             $('#time span').tap(function () {
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
@@ -418,7 +420,7 @@
                 $('#major-score').val($(this).data('score'));
             });
 
-            //初次评价
+            // 初次评价
             $('#ljpj .pj em').tap(function(){
                 $(this).siblings().removeClass('on');
                 var EmIndex	= $(this).index();
@@ -429,7 +431,7 @@
                 $('#lawyer-score').val(EmIndex+1);
             });
 
-            //修改评价
+            // 修改评价
             $('#xgpj .pj em').tap(function(){
                 $(this).siblings().removeClass('on');
                 var EmIndex	= $(this).index();
@@ -466,28 +468,11 @@
             });
 
             $('#rate-first').click(function () {
-                score = $('#lawyer-score').val();
-                time = $('#time-score').val();
-                dress = $('#dress-score').val();
-                polite = $('#polite-score').val();
-                major = $('#major-score').val();
-                var scores = {
-                    'time':$('#time-score').val(),
-                    'dress':$('#dress-score').val(),
-                    'major':$('#major-score').val(),
-                    'polite':$('#polite-score').val()
-                };
-
-                alert('user'+score);
-                alert('Timing'+time);
-                alert('Dressing'+dress);
-                alert('Major'+major);
-                alert('Polite'+polite);
-
+                $("#evaluate").submit();
             });
 
             $('#rate-modify').click(function () {
-
+                $("#update").submit();
             });
         })
     </script>

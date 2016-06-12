@@ -230,6 +230,9 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('order/cancel/{id}','WeChat\OrderController@cancel');
     Route::get('order/sign/{id}','WeChat\OrderController@sign');
 
+    Route::get('order/evaluate','WeChat\OrderController@evaluate');
+    Route::get('order/evaluate/update','WeChat\OrderController@evaluateUpdate');
+
 
     # begin 注册绑定
     Route::get('chose','WeChat\AuthController@chose');
