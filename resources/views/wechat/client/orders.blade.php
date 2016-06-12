@@ -268,7 +268,7 @@
     </section>
 
     <input type="hidden" id="lawyer" value='' />
-    <input type="hidden" id="lawyer-rate" value='' />
+    <input type="hidden" id="lawyer-score" value='' />
 
     <!--首次评价-->
     <section class="tc-main pj-main po-f"  style="display:none" id="ljpj">
@@ -284,55 +284,55 @@
             <div class="pjcs pad-0-10">
                 <div class="title"><span>星级评价</span></div>
                 <div class="pj">
-                    <em data-sx="很差劲" class="on"></em>
-                    <em data-sx="差劲" class="on"></em>
-                    <em data-sx="一般" class="on"></em>
-                    <em data-sx="比较满意，但仍可改善"></em>
-                    <em data-sx="非常满意"></em>
+                    <em class="on" data-sx="很差劲"></em>
+                    <em class="on" data-sx="差劲"></em>
+                    <em class="on" data-sx="一般"></em>
+                    <em class="on" data-sx="比较满意，但仍可改善"></em>
+                    <em class="on" data-sx="非常满意"></em>
                 </div>
-                <div class="xxts fs-12 line-20 fc-03aaf0">比较满意，但仍可改善</div>
+                <div class="xxts fs-12 line-20 fc-03aaf0">非常满意</div>
             </div>
             <div class="lsyx pad-0-10">
                 <div class="title"><span>律师印象</span></div>
-                <div class="itms" id="timing">
+                <div class="itms" id="time">
                     <div class="f-left">准时：</div>
-                    <input type="hidden" id="timing-rating" value='' />
+                    <input type="hidden" id="time-score" value='' />
                     <div class="right">
-                        <span>提前</span>
-                        <span class="on">按时</span>
                         <span>迟到</span>
+                        <span class="on">按时</span>
+                        <span>提前</span>
                     </div>
                 </div>
                 <div class="itms">
-                    <div class="f-left" id="dressing">穿着：</div>
-                    <input type="hidden" id="dressing-rating" value='' />
+                    <div class="f-left" id="dress">穿着：</div>
+                    <input type="hidden" id="dress-score" value='' />
                     <div class="right">
-                        <span data-score="5">职业</span>
-                        <span data-score="3" class="on">一般</span>
                         <span data-score="1">邋遢</span>
+                        <span data-score="3" class="on">一般</span>
+                        <span data-score="5">职业</span>
                     </div>
                 </div>
                 <div class="itms" id="major">
                     <div class="f-left">专业：</div>
-                    <input type="hidden" id="major-rating" value='' />
+                    <input type="hidden" id="major-score" value='' />
                     <div class="right">
-                        <span data-score="5">资深</span>
-                        <span data-score="3" class="on">专业</span>
                         <span data-score="1">业余</span>
+                        <span data-score="3" class="on">专业</span>
+                        <span data-score="5">资深</span>
                     </div>
                 </div>
                 <div class="itms" id="polite">
                     <div class="f-left">礼貌：</div>
-                    <input type="hidden" id="polite-rating" value='' />
+                    <input type="hidden" id="polite-score" value='' />
                     <div class="right">
-                        <span data-score="5">给赞</span>
-                        <span data-score="3" class="on">一般</span>
                         <span data-score="1">差劲</span>
+                        <span data-score="3" class="on">挺好的</span>
+                        <span data-score="5">彬彬有理</span>
                     </div>
                 </div>
             </div>
             <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text"></textarea></div>
-            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate">
+            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate-first">
         </div>
     </section>
     <!--首次评价-->
@@ -395,18 +395,18 @@
                 for (var i=0;i<=EmIndex;i++){
                     $(this).parent('.pj').children('em').eq(i).addClass('on');
                 }
-
+                $('#lawyer-score').val(EmIndex+1);
             });
 
             // 弹出评价
             $('.btn-ljpj').tap(function(){
-                order = $(this).data('order');
-
                 $('#ljpj').fadeIn();
+                $('#lawyer-score').val(5);
             });
 
             $('.btn-xgpj').tap(function(){
                 $('#xgpj').fadeIn();
+                $('#lawyer-score').val(5);
             });
 
             $('.tc-main').tap(function(){
@@ -421,6 +421,24 @@
                 $(this).addClass('on');
                 $('.bd-itms').css({display:'none'});
                 $('.bd-itms').eq($(this).index()).show();
+            });
+
+            $('#rate-first').click(function () {
+                score = $('#lawyer-score').val();
+                time = $('#time-score').val();
+                dress = $('#dress-score').val();
+                polite = $('#polite-score').val();
+                major = $('#major-score').val();
+
+                alert(score);
+                alert(time);
+                alert(dress);
+                alert(polite);
+                alert(major);
+            });
+
+            $('#rate-modify').click(function () {
+
             });
         })
     </script>
