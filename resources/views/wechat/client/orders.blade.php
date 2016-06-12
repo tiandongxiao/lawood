@@ -341,7 +341,7 @@
                 <input type="hidden" name="polite-score" value="3"/>
                 <input type="hidden" name="major-score" value="3"/>
                 <input type="hidden" name="comment" value="">
-                <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text"></textarea></div>
+                <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text" name="comments"></textarea></div>
             </form>
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate-first">
         </div>
@@ -375,7 +375,7 @@
                 <input type="hidden" name="order" value=""/>
                 <input type="hidden" name="user-score" value="5"/>
                 <input type="hidden" name="comment" value="">
-                <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text"></textarea></div>
+                <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text" name="comments"></textarea></div>
             </form>
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate-modify">
         </div>
