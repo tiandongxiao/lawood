@@ -203,11 +203,11 @@ class OrderController extends Controller
 
     public function evaluate(Request $request)
     {
-        dd($request);
+        dd($request->all());
     }
 
     public function evaluateUpdate(Request $request)
     {
-        dd($request);
+        dd($request->all());
     }
 }
