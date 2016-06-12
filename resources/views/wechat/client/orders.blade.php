@@ -249,8 +249,12 @@
                             </div>
                             <div class="bottom">
                                 <div class="btn-main">
-                                    <span class="btn lan btn-ljpj">立即评价</span>
-                                    <span class="btn lan btn-xgpj">修改评价</span>
+                                    <span class="btn lan btn-ljpj" data-order="{{$order->id}}" data-lawyer="{{$order->seller->real_name}}" data-office="{{$order->seller->office}}">
+                                        立即评价
+                                    </span>
+                                    <span class="btn lan btn-xgpj" data-order="{{$order->id}}" >
+                                        修改评价
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -262,6 +266,10 @@
             <!--已完成-->
         </div>
     </section>
+
+    <input type="hidden" id="lawyer" value='' />
+    <input type="hidden" id="lawyer-rate" value='' />
+
     <!--首次评价-->
     <section class="tc-main pj-main po-f"  style="display:none" id="ljpj">
         <div class="main te-cen"  style="top:6%;">
@@ -286,8 +294,9 @@
             </div>
             <div class="lsyx pad-0-10">
                 <div class="title"><span>律师印象</span></div>
-                <div class="itms">
+                <div class="itms" id="timing">
                     <div class="f-left">准时：</div>
+                    <input type="hidden" id="timing-rating" value='' />
                     <div class="right">
                         <span>提前</span>
                         <span class="on">按时</span>
@@ -295,32 +304,35 @@
                     </div>
                 </div>
                 <div class="itms">
-                    <div class="f-left">穿着：</div>
+                    <div class="f-left" id="dressing">穿着：</div>
+                    <input type="hidden" id="dressing-rating" value='' />
                     <div class="right">
-                        <span>职业</span>
-                        <span class="on">随意</span>
-                        <span>邋遢</span>
+                        <span data-score="5">职业</span>
+                        <span data-score="3" class="on">一般</span>
+                        <span data-score="1">邋遢</span>
                     </div>
                 </div>
-                <div class="itms">
+                <div class="itms" id="major">
                     <div class="f-left">专业：</div>
+                    <input type="hidden" id="major-rating" value='' />
                     <div class="right">
-                        <span>给赞</span>
-                        <span class="on">一般</span>
-                        <span>差劲</span>
+                        <span data-score="5">资深</span>
+                        <span data-score="3" class="on">专业</span>
+                        <span data-score="1">业余</span>
                     </div>
                 </div>
-                <div class="itms">
+                <div class="itms" id="polite">
                     <div class="f-left">礼貌：</div>
+                    <input type="hidden" id="polite-rating" value='' />
                     <div class="right">
-                        <span>给赞</span>
-                        <span class="on">一般</span>
-                        <span>差劲</span>
+                        <span data-score="5">给赞</span>
+                        <span data-score="3" class="on">一般</span>
+                        <span data-score="1">差劲</span>
                     </div>
                 </div>
             </div>
             <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text"></textarea></div>
-            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="In-btn">
+            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate">
         </div>
     </section>
     <!--首次评价-->
@@ -348,7 +360,7 @@
                 <div class="xxts fs-12 line-20 fc-03aaf0">比较满意，但仍可改善</div>
             </div>
             <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text"></textarea></div>
-            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="In-btn">
+            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate-modify">
         </div>
     </section>
     <!--修改评价-->
@@ -374,6 +386,7 @@
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
             });
+
             //评价
             $('.pj em').tap(function(){
                 $(this).siblings().removeClass('on');
@@ -382,19 +395,26 @@
                 for (var i=0;i<=EmIndex;i++){
                     $(this).parent('.pj').children('em').eq(i).addClass('on');
                 }
+
             });
+
             // 弹出评价
             $('.btn-ljpj').tap(function(){
+                order = $(this).data('order');
+
                 $('#ljpj').fadeIn();
             });
+
             $('.btn-xgpj').tap(function(){
                 $('#xgpj').fadeIn();
             });
+
             $('.tc-main').tap(function(){
                 if(event.target==this){
                     $('.tc-main').fadeOut();
                 }
             });
+
             //切换
             $('.hd .itms').tap(function(){
                 $(this).siblings().removeClass('on');
