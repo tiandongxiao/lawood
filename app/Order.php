@@ -14,7 +14,7 @@ class Order extends ShopOrderModel implements Commentable
 {
     use CommentTrait;
 
-    protected $fillable = ['user_id', 'statusCode', 'order_no', 'type', 'subject', 'payed', 'refunded', 'seller_signed', 'client_signed', 'attach'];
+    protected $fillable = ['user_id', 'statusCode', 'order_no', 'type', 'subject', 'payed', 'refunded', 'seller_signed', 'client_signed', 'attach','seller_id','sale_id','category'];
 
     private $app;
     private $payment;
