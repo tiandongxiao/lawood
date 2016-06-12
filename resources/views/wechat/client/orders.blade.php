@@ -298,9 +298,9 @@
                     <div class="f-left">准时：</div>
                     <input type="hidden" id="time-score" value='' />
                     <div class="right" id="time">
-                        <span>迟到</span>
-                        <span class="on">按时</span>
-                        <span>提前</span>
+                        <span data-score="1">迟到</span>
+                        <span data-score="3" class="on">按时</span>
+                        <span data-score="5">提前</span>
                     </div>
                 </div>
                 <div class="itms">
@@ -447,11 +447,12 @@
                 polite = $('#polite-score').val();
                 major = $('#major-score').val();
 
-                alert(score);
-                alert(time);
-                alert(dress);
-                alert(polite);
-                alert(major);
+                alert('user'+score);
+                alert('Timing'+time);
+                alert('Dressing'+dress);
+                alert('Major'+major);
+                alert('Polite'+polite);
+
             });
 
             $('#rate-modify').click(function () {
