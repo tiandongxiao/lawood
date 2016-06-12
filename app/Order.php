@@ -76,12 +76,6 @@ class Order extends ShopOrderModel implements Commentable
         return $this->consult->user;
     }
 
-    # 获取分类信息
-    public function getCategoryAttribute()
-    {
-        return $this->category;
-    }
-
     # 接单
     public function accept()
     {
