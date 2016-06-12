@@ -303,8 +303,8 @@
                         <span>提前</span>
                     </div>
                 </div>
-                <div class="itms">
-                    <div class="f-left" id="dress">穿着：</div>
+                <div class="itms" id="dress">
+                    <div class="f-left">穿着：</div>
                     <input type="hidden" id="dress-score" value='' />
                     <div class="right">
                         <span data-score="1">邋遢</span>
@@ -385,6 +385,19 @@
             $('.lsyx .itms .right span').tap(function(){
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
+                if($(this).parents('#time')){
+                    $('#time-score').val($(this).data('score'));
+                }
+                if($(this).parents('#dress')){
+                    $('#dress-score').val($(this).data('score'));
+                }
+                if($(this).parents('#major')){
+                    $('#major-score').val($(this).data('score'));
+                }
+                if($(this).parents('#polite')){
+                    $('#polite-score').val($(this).data('score'));
+                }
+
             });
 
             //评价
