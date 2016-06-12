@@ -104,21 +104,19 @@
                                         <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
                                         <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
                                         <p class="jl chaochu_1">距离：0.9km</p>
+                                        @if($order->payed)
                                         <div class="zxf">
-                                            @if($order->payed)
                                             <p>已退咨询费</p>
                                             <p class="jg">{{$order->total}}元</p>
-                                            @else
-                                            <p>未支付订单</p>
-                                            @endif
                                         </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="bottom">
                                     @if($order->payed)
                                         <div class="djs fc-03aaf0 fs-12">订单已取消，费用已退回</div>
                                     @else
-                                        <div class="djs fc-03aaf0 fs-12">订单已取消</div>
+                                        <div class="djs fc-03aaf0 fs-12">订单已取消，未支付订单</div>
                                     @endif
                                     <div class="btn-main">
                                         <span class="btn lan"><a href="{{url('wechat')}}">重新查找</a></span>
