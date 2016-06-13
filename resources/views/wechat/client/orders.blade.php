@@ -461,11 +461,12 @@
                     success: function(result){
                         if(result.code == 'Y'){
                             var rating = result.data.rating;
+                            var em = $('#xgpj .pj em');
                             $('#m-score').val(rating);
-                            $('#xgpj .pj em').removeClass('on');
-                            $('#xgpj .xxts').text($('#xgpj .pj em').eq(rating-1).attr('data-sx'));
+                            em.removeClass('on');
+                            $('#xgpj .xxts').text(em.eq(rating-1).attr('data-sx'));
                             for (var i=0;i<=rating;i++){
-                                $('#xgpj .pj em').eq(i).addClass('on');
+                                em.eq(i).addClass('on');
                             }
                             $('#m-comment').val(result.data.comment);
                             $('#xgpj').fadeIn();
