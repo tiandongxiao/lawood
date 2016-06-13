@@ -5,7 +5,7 @@ namespace App;
 use Ghanem\Rating\Models\Rating;
 use Illuminate\Support\Facades\Auth;
 use Amsgames\LaravelShop\Models\ShopOrderModel;
-use PhpParser\Comment;
+use DraperStudio\Commentable\Models\Comment;
 
 
 class Order extends ShopOrderModel
