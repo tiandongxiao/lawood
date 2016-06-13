@@ -370,7 +370,7 @@
                 <input type="hidden" name="order" id="m-order" value=""/>
                 <input type="hidden" name="user-score" id="m-score" value="5"/>
                 <div class="pjyj  pad-0-10 mar-top-10">
-                    <textarea placeholder="其他意见和建议" class="In-text" name="comment"></textarea>
+                    <textarea placeholder="其他意见和建议" class="In-text" name="comment" id="m-comment"></textarea>
                 </div>
             </form>
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate-modify">
