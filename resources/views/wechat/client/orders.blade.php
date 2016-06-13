@@ -465,7 +465,7 @@
                             $('#m-score').val(rating);
                             em.removeClass('on');
                             $('#xgpj .xxts').text(em.eq(rating-1).attr('data-sx'));
-                            for (var i=0;i<=rating;i++){
+                            for (var i=0;i<=rating-1;i++){
                                 em.eq(i).addClass('on');
                             }
                             $('#m-comment').val(result.data.comment);
