@@ -51,7 +51,8 @@
 
 @if(Auth::user())
 <!--侧边-->
-<section class="cblm-main po-f" ><div class="main">
+<section class="cblm-main po-f" >
+    <div class="main">
     @if(Auth::user()->role == 'lawyer')
         <a class="itms itms-tx bor-bot">
             <div class="f-left"><img src="{{Auth::user()->avatar}}" width="60" height="60" ></div>
@@ -131,8 +132,36 @@
             </div>
             <div class="right">设置</div>
         </a>
+    @elseif(Auth::user()->role == 'none')
+        <div class="itms itms-tx bor-bot">
+            <div class="f-left"><img src="{{Auth::user()->avatar}}" width="60" height="60" ></div>
+            <div class="right">{{Auth::user()->real_name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span></div>
+        </div>
+        <a class="itms" href="{{url('wechat')}}">
+            <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
+            <div class="right">律屋主页</div>
+        </a>
+        <a class="itms" href="{{url('wechat/client/notifies')}}">
+            <div class="f-left"><img src="/images/nav2.png" width="20" height="20"></div>
+            <div class="right">消息通知</div>
+        </a>
+        <a class="itms" href="{{url('wechat/client/orders')}}">
+            <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
+            <div class="right">我的订单</div>
+        </a>
+        <a class="itms bor-bot" href="{{url('wechat/client/orders')}}">
+            <div class="f-left"><img src="/images/nav4.png" width="20" height="20"></div>
+            <div class="right">我的收藏</div>
+        </a>
+        <a class="itms bor-bot" href="{{url('wechat/client/setting')}}">
+            <div class="f-left">
+                <img src="/images/nav7.png" width="20" height="20">
+            </div>
+            <div class="right">设置</div>
+        </a>
     @endif
-</div></section>
+    </div>
+</section>
 <!--侧边-->
 @endif
 

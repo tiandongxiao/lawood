@@ -454,15 +454,13 @@ class User extends Model implements AuthenticatableContract,
 
     public function getStatusAttribute()
     {
-        if($this->role == "lawyer"&& $this->active)
-            return "认证律师";
         switch ($this->role){
-            case "lawyer":
-                if($this->active)
-                    return "认证律师";
-                return "审核中";
-            case "client":
-                return "咨询用户";
+            case 'lawyer':
+                return $this->active?'认证律师':'审核中';
+            case 'client':
+                return '咨询用户';
+            case 'none':
+                return '游客';
         }
     }
 
