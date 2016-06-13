@@ -494,11 +494,11 @@
                 $('.bd-itms').eq($(this).index()).show();
             });
 
-            $('#rate-first').click(function () {
+            $('#rate-first').tap(function () {
                 $("#evaluate").submit();
             });
 
-            $('#rate-modify').click(function () {
+            $('#rate-modify').tap(function () {
                 $("#modify").submit();
             });
         })
