@@ -365,6 +365,7 @@
             </div>
             <form id="modify" action="{{url('wechat/order/evaluate/update')}}" method="post">
                 {!! csrf_field() !!}
+                <input type="hidden" name="uri" value="{{url('/')}}">
                 <input type="hidden" name="client" id="m-client" value="" />
                 <input type="hidden" name="order" id="m-order" value=""/>
                 <input type="hidden" name="user-score" id="m-score" value="5"/>
@@ -442,6 +443,7 @@
                 $('#e-client').val($(this).data('client'));
             });
             $('.btn-xgpj').tap(function(){
+                var address = $('input[name=uri]').val();
                 var order_id = $(this).data('order');
                 $.ajax({
                     type: 'POST',
