@@ -457,9 +457,9 @@
                             var rating = result.data.rating;
                             $('#m-score').val(rating);
                             var EmIndex	= $(this).index();
-                            $('#xgpj .xxts').text($('#xgpj .pj em').index(rating-1).attr('data-sx'));
+                            $('#xgpj .xxts').text($('#xgpj .pj em').eq(rating-1).attr('data-sx'));
                             for (var i=0;i<=rating;i++){
-                                $(this).parent('.pj').children('em').eq(i).addClass('on');
+                                $('#xgpj .pj').children('em').eq(i).addClass('on');
                             }
                             $('#m-comment').val(result.data.comment);
                             $('#xgpj').fadeIn();
