@@ -56,7 +56,7 @@
                 $('.bd-itms').css({display:'none'});
                 $('.bd-itms').eq($(this).index()).show();
             });
-            $('#In-btn').tap(function () {
+            $('.In-btn').tap(function () {
                 window.location.href="/wechat";
             });
         })
