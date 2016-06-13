@@ -160,47 +160,6 @@ class OrderController extends Controller
         return back();
     }
 
-    public function rating($order_id,$user_id,$score)
-    {
-        $order = Order::findOrFail($order_id);
-        $user = User::findOrFail($user_id);
-        $rating = $order->rating(['rating'=>$score],$user);
-
-        dd($rating);
-    }
-
-    public function updateRating($order_id,$score)
-    {
-        $order = Order::findOrFail($order_id);
-        $rating = $order->updateRating($order->ratings[0]->id, [
-            'rating' => $score
-        ]);
-        
-        dd($rating);
-    }
-
-    public function comment($order_id,$user_id,$data)
-    {
-        $order = Order::findOrFail($order_id);
-        $user = User::findOrFail($user_id);
-
-        $comment = $order->comment([
-            'title' => $data['title'],
-            'body' => $data['body'],
-        ], $user);
-
-        dd($comment);
-    }
-
-    public function updateComment($order_id,$data)
-    {
-        $order = Order::findOrFail($order_id);
-        $comment = $order->updateComment(1, [
-            'title' => $data['title'],
-            'body'  => $data['content']
-        ]);
-    }
-
     public function evaluate(Request $request)
     {
         $order = Order::findOrFail(trim($request->get('order')));
