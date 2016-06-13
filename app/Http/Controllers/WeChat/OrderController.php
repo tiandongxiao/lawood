@@ -219,8 +219,7 @@ class OrderController extends Controller
     }
 
     public function evaluateUpdate(Request $request)
-    {
-        dd($request->all());
+    {        
         $order = Order::findOrFail(trim($request->get('order')));
         $order->updateEvaluate([
             'client_id'  => trim($request->get('client')),

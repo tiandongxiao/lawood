@@ -297,12 +297,19 @@ class Order extends ShopOrderModel
     {
         if($this->rating_id && $this->comment_id){
             if($this->user_id == $data['client_id']) {
-                $this->seller->updateRating($this->rating_id, [
+
+                $this->rating->update([
                     'rating' => $data['user_score']
                 ]);
-                $this->seller->updateComment($this->comment_id, [
+                $this->comment->update([
                     'body' => $data['comment']
                 ]);
+//                $this->seller->updateRating($this->rating_id, [
+//                    'rating' => $data['user_score']
+//                ]);
+//                $this->seller->updateComment($this->comment_id, [
+//                    'body' => $data['comment']
+//                ]);
             }
         }
     }
