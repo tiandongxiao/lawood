@@ -12,6 +12,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Cache;
+use App\Order;
 
 
 class AjaxController extends Controller
@@ -129,7 +130,7 @@ class AjaxController extends Controller
     }
 
     public function evaluate(Request $request)
-    {        
+    {
         if($request->ajax()){
             $id = $request->get('order');
             $order = Order::find($id);
@@ -137,7 +138,7 @@ class AjaxController extends Controller
             if($order){
                 $data = [ ];
                 if($order->rating){
-                    $data['rating'] = $order->rating->score;
+                    $data['rating'] = $order->rating->rating;
                 }
                 if($order->comment){
                     $data['comment'] = $order->comment->body;
