@@ -4,7 +4,7 @@
 @stop
 @section('content')
     <section class="lssz-main">
-        <div style="text-align:center;margin-top: 45%">您当前没有已完成的订单</div>
+        <div style="text-align:center;margin-top: 60%">您当前不能使用设置系统</div>
         <div class="bottom-btn">
             <div class="blank100" style="height:120px;"></div>
             <div class="con te-cen">
