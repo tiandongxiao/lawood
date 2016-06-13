@@ -215,7 +215,7 @@ class OrderController extends Controller
             $time_score   = trim($request->get('time-score'));
             $dress_score  = trim($request->get('dress-score'));
             $polite_score = trim($request->get('polite-score'));
-            $major_score  = trim($request->get('major_score'));
+            $major_score  = trim($request->get('major-score'));
             $comment_content = trim($request->get('comment'));
             
             # 给卖方人评级打分
