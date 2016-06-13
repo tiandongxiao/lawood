@@ -1,4 +1,7 @@
 @extends('wechat.base.app')
+@section('css')
+    <style>body{background:#f8f8f8}</style>
+@stop
 @section('content')
     <section class="xxtz-main pad-0-10">
         {!! csrf_field() !!}
