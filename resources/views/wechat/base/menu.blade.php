@@ -149,9 +149,9 @@
             <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
             <div class="right">我的订单</div>
         </a>
-        <a class="itms" href="{{url('wechat/chose')}}">
+        <a class="itms bor-bot" href="{{url('wechat/chose')}}">
             <div class="f-left"><img src="/images/nav4.png" width="20" height="20"></div>
-            <div class="right">加入律屋</div>
+            <div class="right" style="color: #df8a13">加入律屋</div>
         </a>
     @endif
     </div>
