@@ -153,6 +153,12 @@
                     @endforeach
                 @else
                     <div style="text-align:center;margin-top: 60%">您当前没有未完成的订单</div>
+                    <div class="bottom-btn">
+                        <div class="blank100" style="height:120px;"></div>
+                        <div class="con te-cen">
+                            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 back-home" value="返回首页">
+                        </div>
+                    </div>
                 @endif
             </div>
             <!--未完成-->
@@ -223,6 +229,12 @@
                     @endforeach
                 @else
                     <div style="text-align:center;margin-top: 60%">您当前没有进行中的订单</div>
+                    <div class="bottom-btn">
+                        <div class="blank100" style="height:120px;"></div>
+                        <div class="con te-cen">
+                            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 back-home" value="返回首页">
+                        </div>
+                    </div>
                 @endif
             </div>
             <!--进行中-->
@@ -264,6 +276,12 @@
                     @endforeach
                 @else
                     <div style="text-align:center;margin-top: 60%">您当前没有已完成的订单</div>
+                    <div class="bottom-btn">
+                        <div class="blank100" style="height:120px;"></div>
+                        <div class="con te-cen">
+                            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 back-home" value="返回首页">
+                        </div>
+                    </div>
                 @endif
             </div>
             <!--已完成-->
@@ -400,6 +418,10 @@
             $('.In-text').tap(function(){
                 $(this).val('');
                 $(this).focus();
+            });
+
+            $('.back-home').tap(function () {
+                window.location.href="/wechat";
             });
 
             // timing rating

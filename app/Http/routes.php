@@ -252,6 +252,7 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('client/setting','WeChat\ClientController@setting');
     Route::get('client/config/{key}','WeChat\ClientController@config');
     Route::post('client/config','WeChat\ClientController@postConfig');
+    Route::get('client/collection','WeChat\ClientController@collection');
     # end 咨询用户
 
     # begin 律师
