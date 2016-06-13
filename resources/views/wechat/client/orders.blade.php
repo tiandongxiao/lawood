@@ -398,11 +398,8 @@
             }
 
             $('.In-text').tap(function(){
-                $(this).focus(function(){
-                    $('.po-f').addClass('po-a');
-                }).blur(function(){//输入框失焦后还原初始状态
-                    $('.po-f').removeClass('po-a')
-                });
+                $(this).empty();
+                $(this).focus();
             });
 
             // timing rating
