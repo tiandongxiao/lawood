@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +32,7 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.710373">
+    <splitter split-orientation="horizontal" split-proportion="0.44055945">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="true">
@@ -95,8 +95,8 @@
           <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="400">
-                  <caret line="221" column="9" selection-start-line="221" selection-start-column="9" selection-end-line="221" selection-end-column="9" />
+                <state relative-caret-position="556">
+                  <caret line="227" column="11" selection-start-line="227" selection-start-column="11" selection-end-line="227" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
@@ -231,9 +231,9 @@
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php" />
         <option value="$PROJECT_DIR$/app/Order.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php" />
       </list>
     </option>
   </component>
@@ -560,7 +560,7 @@
       <workItem from="1465558345774" duration="14200000" />
       <workItem from="1465609394672" duration="13568000" />
       <workItem from="1465693586463" duration="36645000" />
-      <workItem from="1465781293381" duration="12044000" />
+      <workItem from="1465781293381" duration="12141000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -685,7 +685,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1111741000" />
+    <option name="totallyTimeSpent" value="1111838000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1122,14 +1122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="221" column="9" selection-start-line="221" selection-start-column="9" selection-end-line="221" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -1164,6 +1156,14 @@
             <marker date="1465793536757" expanded="true" signature="25889:26119" placeholder="..." />
             <marker date="1465793536757" expanded="true" signature="25900:26044" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="227" column="11" selection-start-line="227" selection-start-column="11" selection-end-line="227" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
