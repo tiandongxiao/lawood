@@ -53,8 +53,9 @@
             $('.hd .itms').tap(function(){
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
-                $('.bd-itms').css({display:'none'});
-                $('.bd-itms').eq($(this).index()).show();
+                var items = $('.bd-itms');
+                items.hide();
+                items.eq($(this).index()).show();
             });
             $('.In-btn').tap(function () {
                 window.location.href="/wechat";
