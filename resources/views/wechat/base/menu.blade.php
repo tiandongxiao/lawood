@@ -141,7 +141,7 @@
             <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
             <div class="right">律屋主页</div>
         </a>
-        <a class="itms" href="{{url('wx/notifies')}}">
+        <a class="itms" href="{{url('wx/messages')}}">
             <div class="f-left"><img src="/images/nav2.png" width="20" height="20"></div>
             <div class="right">消息通知</div>
         </a>
