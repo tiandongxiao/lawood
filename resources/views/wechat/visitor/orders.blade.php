@@ -13,16 +13,34 @@
             <!--未完成-->
             <div class="bd-itms"  style="display:block">
                 <div style="text-align:center;margin-top: 60%">您当前没有未完成的订单</div>
+                <div class="bottom-btn">
+                    <div class="blank100" style="height:120px;"></div>
+                    <div class="con te-cen">
+                        <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10" value="返回首页" id="In-btn">
+                    </div>
+                </div>
             </div>
             <!--未完成-->
             <!--进行中-->
             <div class="bd-itms" >
                 <div style="text-align:center;margin-top: 60%">您当前没有进行中的订单</div>
+                <div class="bottom-btn">
+                    <div class="blank100" style="height:120px;"></div>
+                    <div class="con te-cen">
+                        <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10" value="返回首页" id="In-btn">
+                    </div>
+                </div>
             </div>
             <!--进行中-->
             <!--已完成-->
             <div class="bd-itms">
                 <div style="text-align:center;margin-top: 60%">您当前没有已完成的订单</div>
+                <div class="bottom-btn">
+                    <div class="blank100" style="height:120px;"></div>
+                    <div class="con te-cen">
+                        <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10" value="返回首页" id="In-btn">
+                    </div>
+                </div>
             </div>
             <!--已完成-->
         </div>
@@ -36,6 +54,9 @@
             $(this).addClass('on');
             $('.bd-itms').css({display:'none'});
             $('.bd-itms').eq($(this).index()).show();
+        });
+        $('#In-btn').click(function () {
+            window.location.href="/wechat";
         });
     </script>
 @stop
