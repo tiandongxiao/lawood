@@ -404,30 +404,35 @@
 
             // timing rating
             $('#time span').tap(function () {
+                $('.In-text').blur();
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
                 $('#e-time').val($(this).data('score'));
             });
             // dressing rating
             $('#dress span').tap(function () {
+                $('.In-text').blur();
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
                 $('#e-dress').val($(this).data('score'));
             });
             // polite rating
             $('#polite span').tap(function () {
+                $('.In-text').blur();
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
                 $('#e-polite').val($(this).data('score'));
             });
             // major rating
             $('#major span').tap(function () {
+                $('.In-text').blur();
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
                 $('#e-major').val($(this).data('score'));
             });
             // 初次评价
             $('#ljpj .pj em').tap(function(){
+                $('.In-text').blur();
                 $(this).siblings().removeClass('on');
                 var EmIndex	= $(this).index();
                 $('.xxts').text($(this).attr('data-sx'));
@@ -438,6 +443,7 @@
             });
             // 修改评价
             $('#xgpj .pj em').tap(function(){
+                $('.In-text').blur();
                 $(this).siblings().removeClass('on');
                 var EmIndex	= $(this).index();
                 $('.xxts').text($(this).attr('data-sx'));
@@ -500,10 +506,12 @@
             });
 
             $('#rate-first').tap(function () {
+                $('.In-text').blur();
                 $("#evaluate").submit();
             });
 
             $('#rate-modify').tap(function () {
+                $('.In-text').blur();
                 $("#modify").submit();
             });
         })
