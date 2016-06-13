@@ -208,15 +208,15 @@ class User extends Model implements AuthenticatableContract,
 
         # build dressing rating
         if(is_null($this->dressing))
-            UserDressing::create(['user_id',$this->id]);
+            UserDressing::create(['user_id'=>$this->id]);
 
         # build timing rating
         if(is_null($this->timing))
-            UserTiming::create(['user_id',$this->id]);
+            UserTiming::create(['user_id'=>$this->id]);
 
         # build polite rating
         if(is_null($this->polite))
-            UserPolite::create(['user_id',$this->id]);
+            UserPolite::create(['user_id'=>$this->id]);
     }
 
     # 增加一个新的业务类别
