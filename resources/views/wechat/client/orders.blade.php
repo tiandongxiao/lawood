@@ -252,7 +252,7 @@
                                     <span class="btn lan btn-ljpj" data-order="{{$order->id}}" data-client="{{$order->client->id}}" data-lawyer="{{$order->seller->real_name}}" data-office="{{$order->seller->office}}">
                                         立即评价
                                     </span>
-                                    <span class="btn lan btn-xgpj" data-order="{{$order->id}}" >
+                                    <span class="btn lan btn-xgpj" data-order="{{$order->id}}" data-client="{{$order->client->id}}">
                                         修改评价
                                     </span>
                                 </div>
