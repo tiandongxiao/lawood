@@ -403,6 +403,10 @@
                 $('.po-f').removeClass('po-a')
             });
 
+            $('.In-text').tap(function(){
+                $(this).focus();
+            });
+
             // timing rating
             $('#time span').tap(function () {
                 $(this).siblings().removeClass('on');
