@@ -398,7 +398,7 @@
             }
 
             $('.In-text').tap(function(){
-                $(this).empty();
+                $(this).val('');
                 $(this).focus();
             });
 
