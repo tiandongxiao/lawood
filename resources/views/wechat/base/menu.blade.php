@@ -141,19 +141,13 @@
             <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
             <div class="right">律屋主页</div>
         </a>
-        <a class="itms" href="{{url('wechat/client/notifies')}}">
+        <a class="itms" href="{{url('wx/notifies')}}">
             <div class="f-left"><img src="/images/nav2.png" width="20" height="20"></div>
             <div class="right">消息通知</div>
         </a>
-        <a class="itms" href="{{url('wechat/client/orders')}}">
+        <a class="itms" href="{{url('wx/orders')}}">
             <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
             <div class="right">我的订单</div>
-        </a>
-        <a class="itms bor-bot" href="{{url('wechat/client/setting')}}">
-            <div class="f-left">
-                <img src="/images/nav7.png" width="20" height="20">
-            </div>
-            <div class="right">设置</div>
         </a>
     @endif
     </div>
