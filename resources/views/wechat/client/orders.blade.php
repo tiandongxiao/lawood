@@ -462,10 +462,10 @@
                         if(result.code == 'Y'){
                             var rating = result.data.rating;
                             $('#m-score').val(rating);
-                            var EmIndex	= $(this).index();
+                            $('#xgpj .pj em').removeClass('on');
                             $('#xgpj .xxts').text($('#xgpj .pj em').eq(rating-1).attr('data-sx'));
                             for (var i=0;i<=rating;i++){
-                                $('#xgpj .pj').children('em').eq(i).addClass('on');
+                                $('#xgpj .pj em').eq(i).addClass('on');
                             }
                             $('#m-comment').val(result.data.comment);
                             $('#xgpj').fadeIn();
