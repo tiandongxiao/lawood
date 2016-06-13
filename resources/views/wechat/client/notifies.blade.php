@@ -1,7 +1,7 @@
 @extends('wechat.base.app')
 @section('content')
     <section class="xxtz-main pad-0-10">
-        @if($notifies)
+        @if($notifies->count())
             @foreach($notifies as $notify)
                 @if($notify->read)
                     <div class="itms bg-fff-box hui">
