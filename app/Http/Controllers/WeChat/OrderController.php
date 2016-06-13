@@ -202,7 +202,7 @@ class OrderController extends Controller
     }
 
     public function evaluate(Request $request)
-    {        
+    {
         $order_id = trim($request->get('order'));
         $client_id = trim($request->get('client'));
         $order = Order::findOrFail($order_id);
@@ -223,7 +223,7 @@ class OrderController extends Controller
                 'rating' => $user_score
             ],$client);
 
-            $comment = $order->comment([
+            $comment = $seller->comment([
                 'title' => '',
                 'body' => $comment_content,
             ], $client);
