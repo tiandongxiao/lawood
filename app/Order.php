@@ -224,7 +224,7 @@ class Order extends ShopOrderModel
     public function getRatingAttribute()
     {
         if($this->rating_id)
-            return Rating::findOrFail($this->rating);
+            return Rating::findOrFail($this->rating_id);
         return null;
     }
 
