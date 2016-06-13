@@ -135,7 +135,7 @@
     @elseif(Auth::user()->role == 'none')
         <div class="itms itms-tx bor-bot">
             <div class="f-left"><img src="{{Auth::user()->avatar}}" width="60" height="60" ></div>
-            <div class="right">{{Auth::user()->real_name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span></div>
+            <div class="right">{{Auth::user()->name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span></div>
         </div>
         <a class="itms" href="{{url('wechat')}}">
             <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
@@ -148,10 +148,6 @@
         <a class="itms" href="{{url('wechat/client/orders')}}">
             <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
             <div class="right">我的订单</div>
-        </a>
-        <a class="itms bor-bot" href="{{url('wechat/client/orders')}}">
-            <div class="f-left"><img src="/images/nav4.png" width="20" height="20"></div>
-            <div class="right">我的收藏</div>
         </a>
         <a class="itms bor-bot" href="{{url('wechat/client/setting')}}">
             <div class="f-left">

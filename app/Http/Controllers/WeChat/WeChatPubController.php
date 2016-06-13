@@ -189,59 +189,67 @@ class WeChatPubController extends Controller
                 if(is_null($this->user->phone))
                     return view('wechat.auth.client');
                 break;
-            case 'none':
-                return redirect('wechat/chose');
+            default:
+                break;
         }
     }
 
+    # 寻找律师
     public function find()
     {
-        if($this->routeUser())
-            return $this->routeUser();
+        $route = $this->routeUser();
+        if($route)
+            return $route;
 
-        switch ($this->user->role){
-            case 'lawyer':
-            case 'client':
-                return redirect('wechat');
-        }
+        return redirect('wechat');
     }
-    
+   
+    # 订单系统
     public function orders()
     {
-        if($this->routeUser())
-            return $this->routeUser();
+        $route = $this->routeUser();
+        if($route)
+            return $route;
 
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/orders');
             case 'client':
                 return redirect('wechat/client/orders');
+            case 'none':
+                return view('wechat.visitor.orders');
         }
     }
 
     public function messages()
     {
-        if($this->routeUser())
-            return $this->routeUser();
+        $route = $this->routeUser();
+        if($route)
+            return $route;
 
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/notifies');
             case 'client':
                 return redirect('wechat/client/notifies');
+            case 'none':
+                return view('wechat.visitor.notifies');
         }
     }
 
     public function settings()
     {
-        if($this->routeUser())
-            return $this->routeUser();
+        $route = $this->routeUser();
+        if($route)
+            return $route;
 
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/setting');
             case 'client':
                 return redirect('wechat/client/setting');
+            case 'none':
+                return view('wechat.visitor.setting');
         }
     }
 
@@ -252,7 +260,7 @@ class WeChatPubController extends Controller
         if(!$user){
             $user = User::create([
                 'union_id'  =>  $account->unionid,
-                'open_id'   =>  $account->openid
+                'open_id'   =>  $account->openid,
             ]);
         }
 
