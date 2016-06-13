@@ -51,9 +51,9 @@
         $(function () {
             //切换
             $('.hd .itms').tap(function(){
+                var items = $('.bd-itms');
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
-                var items = $('.bd-itms');
                 items.hide();
                 items.eq($(this).index()).show();
             });
