@@ -129,17 +129,13 @@ class AjaxController extends Controller
     }
 
     public function evaluate(Request $request)
-    {
-        dd($request->all());
+    {        
         if($request->ajax()){
             $id = $request->get('order');
             $order = Order::find($id);
 
             if($order){
-                $data = [
-                    'rating'  => '',
-                    'comment' => ''
-                ];
+                $data = [ ];
                 if($order->rating){
                     $data['rating'] = $order->rating->score;
                 }

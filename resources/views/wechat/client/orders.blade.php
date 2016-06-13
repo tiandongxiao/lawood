@@ -454,7 +454,13 @@
                     },
                     success: function(result){
                         if(result.code == 'Y'){
-                            $('#m-score').val(result.data.rating);
+                            var rating = result.data.rating;
+                            $('#m-score').val(rating);
+                            var EmIndex	= $(this).index();
+                            $('#xgpj .xxts').text($('#xgpj .pj em').index(rating-1).attr('data-sx'));
+                            for (var i=0;i<=rating;i++){
+                                $(this).parent('.pj').children('em').eq(i).addClass('on');
+                            }
                             $('#m-comment').val(result.data.comment);
                             $('#xgpj').fadeIn();
                             return true;
