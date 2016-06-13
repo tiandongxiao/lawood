@@ -394,22 +394,25 @@
                 });
             }
 
-            // 切换标记
+            // timing rating
             $('#time span').tap(function () {
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
                 $('#e-time').val($(this).data('score'));
             });
+            // dressing rating
             $('#dress span').tap(function () {
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
                 $('#e-dress').val($(this).data('score'));
             });
+            // polite rating
             $('#polite span').tap(function () {
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
                 $('#e-polite').val($(this).data('score'));
             });
+            // major rating
             $('#major span').tap(function () {
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
@@ -442,7 +445,10 @@
                 $('#e-order').val($(this).data('order'));
                 $('#e-client').val($(this).data('client'));
             });
+
             $('.btn-xgpj').tap(function(){
+                $('#m-order').val($(this).data('order'));
+                $('#m-client').val($(this).data('client'));
                 var address = $('input[name=uri]').val();
                 var order_id = $(this).data('order');
                 $.ajax({
