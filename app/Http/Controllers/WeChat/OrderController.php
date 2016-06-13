@@ -203,7 +203,7 @@ class OrderController extends Controller
 
     public function evaluate(Request $request)
     {
-//        dd($request->all());
+        dd($request->all());
         $order_id = trim($request->get('order'));
         $client_id = trim($request->get('client'));
         $order = Order::findOrFail($order_id);

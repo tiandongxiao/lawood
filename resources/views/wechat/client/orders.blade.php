@@ -324,7 +324,7 @@
                     </div>
                 </div>
             </div>
-            <form id="evaluate" action="{{url('wechat/order/evaluate')}}">
+            <form id="evaluate" action="{{url('wechat/order/evaluate')}}" method="post">
                 {!! csrf_field() !!}
                 <input type="hidden" name="client" id="e-client" value=""/>
                 <input type="hidden" name="order" id="e-order" value=""/>
@@ -363,7 +363,7 @@
                 </div>
                 <div class="xxts fs-12 line-20 fc-03aaf0">比较满意，但仍可改善</div>
             </div>
-            <form id="modify" action="{{url('wechat/order/evaluate/update')}}">
+            <form id="modify" action="{{url('wechat/order/evaluate/update')}}" method="post">
                 {!! csrf_field() !!}
                 <input type="hidden" name="client" id="m-client" value="" />
                 <input type="hidden" name="order" id="m-order" value=""/>
@@ -441,6 +441,8 @@
             $('.btn-ljpj').tap(function(){
                 $('#ljpj').fadeIn();
                 $('#e-score').val(5);
+                $('#e-order').val($(this).data('order'));
+                $('#e-client').val($(this).data('client'));
             });
 
             $('.btn-xgpj').tap(function(){
