@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Order.php" afterPath="$PROJECT_DIR$/app/Order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,33 +34,33 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3997478">
+    <splitter split-orientation="horizontal" split-proportion="0.49335644">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="608">
-                  <caret line="440" column="42" selection-start-line="440" selection-start-column="42" selection-end-line="440" selection-end-column="42" />
+                <state relative-caret-position="-1568">
+                  <caret line="404" column="57" selection-start-line="404" selection-start-column="57" selection-end-line="404" selection-end-column="57" />
                   <folding>
-                    <marker date="1465785363848" expanded="true" signature="21627:25568" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="21638:25567" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="21845:22076" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="21882:21960" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="21893:21959" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="21967:22061" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="21978:22060" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="23014:23387" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="23025:23386" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="23873:24091" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="23884:24090" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="24126:24899" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="24150:24898" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="24933:25061" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="24944:25060" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="24984:25046" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="25113:25343" placeholder="..." />
-                    <marker date="1465785363848" expanded="true" signature="25124:25268" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="21627:25564" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="21638:25563" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="21845:22076" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="21882:21960" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="21893:21959" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="21967:22061" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="21978:22060" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="23013:23386" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="23024:23385" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="23870:24088" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="23881:24087" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="24122:24895" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="24146:24894" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="24929:25057" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="24940:25056" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="24980:25042" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="25109:25339" placeholder="..." />
+                    <marker date="1465788036918" expanded="true" signature="25120:25264" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -126,11 +128,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Order.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Order.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Order.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="6604">
-                  <caret line="254" column="29" selection-start-line="254" selection-start-column="29" selection-end-line="254" selection-end-column="29" />
+                <state relative-caret-position="356">
+                  <caret line="65" column="50" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
                   <folding>
                     <element signature="e#23#55#0#PHP" expanded="true" />
                   </folding>
@@ -145,8 +147,8 @@
           <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="114">
-                  <caret line="204" column="10" selection-start-line="204" selection-start-column="10" selection-end-line="204" selection-end-column="10" />
+                <state relative-caret-position="850">
+                  <caret line="228" column="11" selection-start-line="228" selection-start-column="11" selection-end-line="228" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
@@ -247,11 +249,11 @@
         <option value="$PROJECT_DIR$/database/migrations/2016_03_28_151757_shop_setup_tables.php" />
         <option value="$PROJECT_DIR$/app/Item.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" />
-        <option value="$PROJECT_DIR$/app/Order.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php" />
+        <option value="$PROJECT_DIR$/app/Order.php" />
       </list>
     </option>
   </component>
@@ -476,7 +478,7 @@
       <workItem from="1465558345774" duration="14200000" />
       <workItem from="1465609394672" duration="13568000" />
       <workItem from="1465693586463" duration="36645000" />
-      <workItem from="1465781293381" duration="5833000" />
+      <workItem from="1465781293381" duration="8655000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -601,7 +603,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1105530000" />
+    <option name="totallyTimeSpent" value="1108352000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -617,7 +619,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17136887" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09561128" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13867822" sideWeight="0.5345787" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32966483" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -952,16 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6604">
-          <caret line="254" column="29" selection-start-line="254" selection-start-column="29" selection-end-line="254" selection-end-column="29" />
-          <folding>
-            <element signature="e#23#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/auth/client.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -1046,36 +1038,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="440" column="42" selection-start-line="440" selection-start-column="42" selection-end-line="440" selection-end-column="42" />
+        <state relative-caret-position="-1568">
+          <caret line="404" column="57" selection-start-line="404" selection-start-column="57" selection-end-line="404" selection-end-column="57" />
           <folding>
-            <marker date="1465785363848" expanded="true" signature="21627:25568" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="21638:25567" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="21845:22076" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="21882:21960" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="21893:21959" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="21967:22061" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="21978:22060" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="23014:23387" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="23025:23386" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="23873:24091" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="23884:24090" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="24126:24899" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="24150:24898" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="24933:25061" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="24944:25060" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="24984:25046" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="25113:25343" placeholder="..." />
-            <marker date="1465785363848" expanded="true" signature="25124:25268" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="21627:25564" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="21638:25563" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="21845:22076" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="21882:21960" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="21893:21959" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="21967:22061" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="21978:22060" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="23013:23386" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="23024:23385" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="23870:24088" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="23881:24087" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="24122:24895" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="24146:24894" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="24929:25057" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="24940:25056" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="24980:25042" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="25109:25339" placeholder="..." />
+            <marker date="1465788036918" expanded="true" signature="25120:25264" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="204" column="10" selection-start-line="204" selection-start-column="10" selection-end-line="204" selection-end-column="10" />
+        <state relative-caret-position="850">
+          <caret line="228" column="11" selection-start-line="228" selection-start-column="11" selection-end-line="228" selection-end-column="11" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="65" column="50" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
+          <folding>
+            <element signature="e#23#55#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

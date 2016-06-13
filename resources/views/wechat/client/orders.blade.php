@@ -414,7 +414,6 @@
                 $(this).addClass('on');
                 $('#e-major').val($(this).data('score'));
             });
-
             // 初次评价
             $('#ljpj .pj em').tap(function(){
                 $(this).siblings().removeClass('on');
@@ -425,7 +424,6 @@
                 }
                 $('#e-score').val(EmIndex+1);
             });
-
             // 修改评价
             $('#xgpj .pj em').tap(function(){
                 $(this).siblings().removeClass('on');
@@ -436,7 +434,6 @@
                 }
                 $('#m-score').val(EmIndex+1);
             });
-
             // 弹出评价
             $('.btn-ljpj').tap(function(){
                 $('#ljpj').fadeIn();
@@ -444,7 +441,6 @@
                 $('#e-order').val($(this).data('order'));
                 $('#e-client').val($(this).data('client'));
             });
-
             $('.btn-xgpj').tap(function(){
                 var order_id = $(this).data('order');
                 $.ajax({

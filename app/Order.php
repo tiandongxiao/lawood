@@ -252,20 +252,58 @@ class Order extends ShopOrderModel
         ]);
     }
 
-    public function evaluate()
+    public function evaluate($data)
     {
+        if($this->rating_id || $this->comment_id)
+            return;
 
+        if($this->user_id == $data['client_id']) {
+            $client = $this->client;
+
+            # 给卖方人评级打分
+            $seller = $this->seller;
+            $rating = $seller->rating([
+                'rating' => $data['user_score']
+            ], $client);
+
+            $comment = $seller->comment([
+                'body' => $data['comment']
+            ], $client);
+
+            $this->fillEvaluateInfo([
+                'rating_id' => $rating->id,
+                'comment_id' => $comment->id
+            ]);
+
+            $seller->timing->rating([
+                'rating' => $data['time_score']
+            ], $client);
+
+            $seller->dressing->rating([
+                'rating' => $data['dress_score']
+            ], $client);
+
+            $seller->polite->rating([
+                'rating' => $data['polite_score']
+            ], $client);
+
+            $this->sale->rating([
+                'rating' => $data['major_score']
+            ], $client);
+        }
     }
 
     public function updateEvaluate($data)
     {
         if($this->rating_id && $this->comment_id){
-            $this->seller->updateRating($this->rating_id,[
-                'rating' => $data['user_score']
-            ]);
-            $this->seller->updateComment($this->comment_id,[
-                'body' => $data['comment']
-            ]);
+            if($this->user_id == $data['client_id']) {
+                $this->seller->updateRating($this->rating_id, [
+                    'rating' => $data['user_score']
+                ]);
+                $this->seller->updateComment($this->comment_id, [
+                    'body' => $data['comment']
+                ]);
+            }
         }
     }
 }
