@@ -337,7 +337,7 @@
                 <input type="hidden" name="polite-score" id="e-polite" value="3"/>
                 <input type="hidden" name="major-score" id="e-major" value="3"/>
                 <div class="pjyj  pad-0-10 mar-top-10">
-                    <input placeholder="其他意见和建议" class="In-text" name="comment">
+                    <textarea placeholder="其他意见和建议" class="In-text" name="comment"></textarea>
                 </div>
             </form>
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate-first">
@@ -373,7 +373,7 @@
                 <input type="hidden" name="order" id="m-order" value=""/>
                 <input type="hidden" name="user-score" id="m-score" value="5"/>
                 <div class="pjyj  pad-0-10 mar-top-10">
-                    <input placeholder="其他意见和建议" class="In-text" name="comment" id="m-comment"/>
+                    <textarea placeholder="其他意见和建议" class="In-text" name="comment" id="m-comment"></textarea>
                 </div>
             </form>
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate-modify">
@@ -385,17 +385,23 @@
     <script>
         $(function(){
             //检查版本
-//            var u = navigator.userAgent, app = navigator.appVersion;
-//            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-//
-//            //苹果兼容
-//            if(isiOS){
-//                $('.In-text').focus(function(){
-//                    $('.po-f').addClass('po-a');
-//                }).blur(function(){//输入框失焦后还原初始状态
-//                    $('.po-f').removeClass('po-a')
-//                });
-//            }
+            var u = navigator.userAgent, app = navigator.appVersion;
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+            //苹果兼容
+            if(isiOS){
+                $('.In-text').focus(function(){
+                    $('.po-f').addClass('po-a');
+                }).blur(function(){//输入框失焦后还原初始状态
+                    $('.po-f').removeClass('po-a')
+                });
+            }
+
+            $('.In-text').focus(function(){
+                $('.po-f').addClass('po-a');
+            }).blur(function(){//输入框失焦后还原初始状态
+                $('.po-f').removeClass('po-a')
+            });
 
             // timing rating
             $('#time span').tap(function () {
