@@ -489,7 +489,7 @@
             });
 
             $('#rate-modify').click(function () {
-                $("#update").submit();
+                $("#modify").submit();
             });
         })
     </script>
