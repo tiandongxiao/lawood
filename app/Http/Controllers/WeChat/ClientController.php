@@ -120,4 +120,9 @@ class ClientController extends Controller
 
         return back();
     }
+
+    public function collection()
+    {
+        return view('wechat.client.collection');
+    }
 }
