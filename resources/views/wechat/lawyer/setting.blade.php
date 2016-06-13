@@ -44,9 +44,17 @@
             <div class="blank100" style="height:120px;"></div>
             <div class="con te-cen">
                 <p class="fs-14 fc-03aaf0">律师简介在电脑上登陆律屋网修改</p>
+                <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10" value="返回首页" id="In-btn">
             </div>
         </div>
     </section>
 @stop
 @section('script')
+    <script>
+        $(function () {
+            $('#In-btn').click(function () {
+                window.location.href="/wechat";
+            });
+        })
+    </script>
 @stop
