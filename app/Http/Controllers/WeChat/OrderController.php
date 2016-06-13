@@ -223,8 +223,7 @@ class OrderController extends Controller
                 'rating' => $user_score
             ],$client);
 
-            $comment = $seller->comment([
-                'title' => '',
+            $comment = $seller->comment([                
                 'body' => $comment_content,
             ], $client);
             

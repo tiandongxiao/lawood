@@ -125,8 +125,8 @@
           <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="452">
-                  <caret line="226" column="30" selection-start-line="226" selection-start-column="30" selection-end-line="226" selection-end-column="30" />
+                <state relative-caret-position="426">
+                  <caret line="225" column="45" selection-start-line="225" selection-start-column="45" selection-end-line="225" selection-end-column="45" />
                   <folding />
                 </state>
               </provider>
@@ -425,7 +425,7 @@
       <workItem from="1465558345774" duration="14200000" />
       <workItem from="1465609394672" duration="13568000" />
       <workItem from="1465693586463" duration="36645000" />
-      <workItem from="1465781293381" duration="4254000" />
+      <workItem from="1465781293381" duration="4292000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -550,7 +550,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1103951000" />
+    <option name="totallyTimeSpent" value="1103989000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1021,8 +1021,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="226" column="30" selection-start-line="226" selection-start-column="30" selection-end-line="226" selection-end-column="30" />
+        <state relative-caret-position="426">
+          <caret line="225" column="45" selection-start-line="225" selection-start-column="45" selection-end-line="225" selection-end-column="45" />
           <folding />
         </state>
       </provider>
