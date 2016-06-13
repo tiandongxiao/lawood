@@ -6,7 +6,7 @@
     <section class="xxtz-main pad-0-10">
         {!! csrf_field() !!}
         <input type="hidden" name="uri" value="{{url('/')}}">
-        @if($notifies)
+        @if($notifies->count())
             @foreach($notifies as $notify)
                 @if($notify->read)
                     <div class="itms bg-fff-box hui">
