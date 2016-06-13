@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +39,7 @@
           <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
+                <state relative-caret-position="452">
                   <caret line="367" column="38" selection-start-line="367" selection-start-column="38" selection-end-line="367" selection-end-column="38" />
                   <folding>
                     <marker date="1465790661054" expanded="true" signature="21697:25692" placeholder="..." />
@@ -152,6 +153,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AjaxController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="348">
+                  <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="chose_role.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/auth/chose_role.blade.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -162,11 +173,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="lawyer.blade.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="lawyer.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/wechat/auth/lawyer.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="227">
-                  <caret line="9" column="65" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="65" />
+                <state relative-caret-position="123">
+                  <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -175,8 +186,8 @@
           <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="461">
-                  <caret line="235" column="0" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
+                <state relative-caret-position="564">
+                  <caret line="289" column="44" selection-start-line="289" selection-start-column="44" selection-end-line="289" selection-end-column="44" />
                   <folding />
                 </state>
               </provider>
@@ -266,12 +277,12 @@
         <option value="$PROJECT_DIR$/app/UserMajor.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_03_28_151757_shop_setup_tables.php" />
         <option value="$PROJECT_DIR$/app/Item.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php" />
         <option value="$PROJECT_DIR$/app/Order.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
       </list>
     </option>
   </component>
@@ -598,7 +609,7 @@
       <workItem from="1465558345774" duration="14200000" />
       <workItem from="1465609394672" duration="13568000" />
       <workItem from="1465693586463" duration="36645000" />
-      <workItem from="1465781293381" duration="9167000" />
+      <workItem from="1465781293381" duration="9337000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -723,7 +734,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1108864000" />
+    <option name="totallyTimeSpent" value="1109034000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1075,22 +1086,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="235" column="0" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AjaxController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="139" column="35" selection-start-line="139" selection-start-column="35" selection-end-line="139" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1167,17 +1162,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/wechat/auth/lawyer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="9" column="65" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="452">
           <caret line="367" column="38" selection-start-line="367" selection-start-column="38" selection-end-line="367" selection-end-column="38" />
           <folding>
             <marker date="1465790661054" expanded="true" signature="21697:25692" placeholder="..." />
@@ -1199,6 +1186,30 @@
             <marker date="1465790661054" expanded="true" signature="25237:25467" placeholder="..." />
             <marker date="1465790661054" expanded="true" signature="25248:25392" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/wechat/auth/lawyer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="289" column="44" selection-start-line="289" selection-start-column="44" selection-end-line="289" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AjaxController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>

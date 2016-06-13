@@ -130,6 +130,7 @@ class AjaxController extends Controller
 
     public function evaluate(Request $request)
     {
+        dd($request->all());
         if($request->ajax()){
             $id = $request->get('order');
             $order = Order::find($id);

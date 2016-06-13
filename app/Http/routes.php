@@ -286,5 +286,8 @@ Route::group(['prefix' => 'ajax'], function(){
 
     # 获取价格信息
     Route::post('price','AjaxController@price');
+
+    Route::post('evaluate','AjaxController@evaluate');
+
 });
 
