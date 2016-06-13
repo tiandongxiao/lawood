@@ -7,6 +7,8 @@ use Amsgames\LaravelShop\Traits\ShopUserTrait;
 use App\Traits\UserAnalysisTrait;
 
 
+use DraperStudio\Commentable\Contracts\Commentable;
+use DraperStudio\Commentable\Traits\Commentable as CommentTrait;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -30,10 +32,11 @@ class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract,
                                     HasRoleAndPermissionContract,
-                                    Ratingable
+                                    Ratingable,
+                                    Commentable
 
 {
-    use Authenticatable, CanResetPassword, ShopUserTrait, HasRoleAndPermission, Authorizable , RatingTrait,UserAnalysisTrait{
+    use Authenticatable, CanResetPassword, ShopUserTrait, HasRoleAndPermission, Authorizable , RatingTrait,CommentTrait, UserAnalysisTrait{
         # 为解决冲突的问题
         HasRoleAndPermission::can insteadof Authorizable;
         Authorizable::can as may;

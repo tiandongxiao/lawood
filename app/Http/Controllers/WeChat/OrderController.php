@@ -203,11 +203,67 @@ class OrderController extends Controller
 
     public function evaluate(Request $request)
     {
-        dd($request->all());
+//        dd($request->all());
+        $order_id = trim($request->get('order'));
+        $client_id = trim($request->get('client'));
+        $order = Order::findOrFail($order_id);
+
+        if($order->user_id == $client_id){
+            $client = User::findOrFail($client_id);
+
+            $user_score   = trim($request->get('user-score'));
+            $time_score   = trim($request->get('time-score'));
+            $dress_score  = trim($request->get('dress-score'));
+            $polite_score = trim($request->get('polite-score'));
+            $major_score  = trim($request->get('major_score'));
+            $comment_content = trim($request->get('comment'));
+            
+            # 给卖方人评级打分
+            $seller = $order->seller;
+            $rating = $seller->rating([
+                'rating' => $user_score
+            ],$client);
+
+            $comment = $order->comment([
+                'title' => '',
+                'body' => $comment_content,
+            ], $client);
+            
+            $order->fillEvaluateInfo([
+                'rating_id'  => $rating->id,
+                'comment_id' => $comment->id
+            ]);
+
+            $seller->timing->rating([
+                'rating' => $time_score
+            ],$client);
+
+            $seller->dressing->rating([
+                'rating' => $dress_score
+            ],$client);
+
+            $seller->polite->rating([
+                'rating' => $polite_score
+            ],$client);
+
+            $order->sale->rating([
+                'rating' => $major_score
+            ],$client);
+        }
+        return back();
     }
 
     public function evaluateUpdate(Request $request)
     {
+        $order_id = trim($request->get('order'));
+        $order = Order::findOrFail($order_id);
+        $client_id = trim($request->get('client'));
+        if($order->user_id == $client_id){
+            $order->updateEvaluate([
+                'user_score' => trim($request->get('user-score')),
+                'comment'    => trim($request->get('comment'))
+            ]);
+        }
         dd($request->all());
     }
 }

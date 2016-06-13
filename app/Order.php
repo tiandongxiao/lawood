@@ -5,16 +5,12 @@ namespace App;
 use Ghanem\Rating\Models\Rating;
 use Illuminate\Support\Facades\Auth;
 use Amsgames\LaravelShop\Models\ShopOrderModel;
-
-use DraperStudio\Commentable\Contracts\Commentable;
-use DraperStudio\Commentable\Traits\Commentable as CommentTrait;
+use PhpParser\Comment;
 
 
-class Order extends ShopOrderModel implements Commentable
+class Order extends ShopOrderModel
 {
-    use CommentTrait;
-
-    protected $fillable = ['user_id', 'statusCode', 'order_no', 'type', 'subject', 'payed', 'refunded', 'seller_signed', 'client_signed', 'attach','seller_id','sale_id','category'];
+    protected $fillable = ['user_id', 'statusCode', 'order_no', 'type', 'subject', 'payed', 'refunded', 'seller_signed', 'client_signed', 'attach','seller_id','sale_id','category','rating_id','comment_id'];
 
     private $app;
     private $payment;
@@ -227,15 +223,15 @@ class Order extends ShopOrderModel implements Commentable
 
     public function getRatingAttribute()
     {
-        if($this->rating)
+        if($this->rating_id)
             return Rating::findOrFail($this->rating);
         return null;
     }
 
     public function getCommentAttribute()
     {
-        if($this->comments && $this->comments[0])
-            return $this->comments[0];
+        if($this->comment_id)
+            return Comment::findOrFail($this->comment_id);
         return null;
     }
 
@@ -248,12 +244,28 @@ class Order extends ShopOrderModel implements Commentable
         ]);
     }
 
-    public function fillRatingCommentInfo($data)
+    public function fillEvaluateInfo($data)
     {
         $this->update([
             'rating_id'   => $data['rating_id'],
-            'comment_id'  => $data['comment_id'],
-            ''
+            'comment_id'  => $data['comment_id']
         ]);
+    }
+
+    public function evaluate()
+    {
+
+    }
+
+    public function updateEvaluate($data)
+    {
+        if($this->rating_id && $this->comment_id){
+            $this->seller->updateRating($this->rating_id,[
+                'rating' => $data['user_score']
+            ]);
+            $this->seller->updateComment($this->comment_id,[
+                'body' => $data['comment']
+            ]);
+        }
     }
 }

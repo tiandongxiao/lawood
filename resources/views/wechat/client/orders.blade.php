@@ -267,9 +267,6 @@
         </div>
     </section>
 
-    <input type="hidden" id="lawyer" value='' />
-    <input type="hidden" id="lawyer-score" value='5'/>
-
     <!--首次评价-->
     <section class="tc-main pj-main po-f"  style="display:none" id="ljpj">
         <div class="main te-cen"  style="top:6%;">
@@ -296,7 +293,6 @@
                 <div class="title"><span>律师印象</span></div>
                 <div class="itms">
                     <div class="f-left">准时：</div>
-                    <input type="hidden" id="time-score" value='3' />
                     <div class="right" id="time">
                         <span data-score="1">迟到</span>
                         <span data-score="3" class="on">按时</span>
@@ -305,7 +301,6 @@
                 </div>
                 <div class="itms">
                     <div class="f-left">穿着：</div>
-                    <input type="hidden" id="dress-score" value='3' />
                     <div class="right" id="dress">
                         <span data-score="1">邋遢</span>
                         <span data-score="3" class="on">一般</span>
@@ -314,7 +309,6 @@
                 </div>
                 <div class="itms">
                     <div class="f-left">专业：</div>
-                    <input type="hidden" id="major-score" value='3' />
                     <div class="right" id="major">
                         <span data-score="1">业余</span>
                         <span data-score="3" class="on">专业</span>
@@ -323,7 +317,6 @@
                 </div>
                 <div class="itms">
                     <div class="f-left">礼貌：</div>
-                    <input type="hidden" id="polite-score" value='3' />
                     <div class="right" id="polite">
                         <span data-score="1">差劲</span>
                         <span data-score="3" class="on">挺好的</span>
@@ -333,15 +326,16 @@
             </div>
             <form id="evaluate" action="{{url('wechat/order/evaluate')}}" method="post">
                 {!! csrf_field() !!}
-                <input type="hidden" name="client" value=""/>
-                <input type="hidden" name="order" value=""/>
-                <input type="hidden" name="user-score" value="5"/>
-                <input type="hidden" name="time-score" value="3"/>
-                <input type="hidden" name="dress-score" value="3"/>
-                <input type="hidden" name="polite-score" value="3"/>
-                <input type="hidden" name="major-score" value="3"/>
-                <input type="hidden" name="comment" value="">
-                <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text" name="comments"></textarea></div>
+                <input type="hidden" name="client" id="e-client" value=""/>
+                <input type="hidden" name="order" id="e-order" value=""/>
+                <input type="hidden" name="user-score" id="e-score" value="5"/>
+                <input type="hidden" name="time-score" id="e-time" value="3"/>
+                <input type="hidden" name="dress-score" id="e-dress" value="3"/>
+                <input type="hidden" name="polite-score" id="e-polite" value="3"/>
+                <input type="hidden" name="major-score" id="e-major" value="3"/>
+                <div class="pjyj  pad-0-10 mar-top-10">
+                    <textarea placeholder="其他意见和建议" class="In-text" name="comment"></textarea>
+                </div>
             </form>
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate-first">
         </div>
@@ -369,13 +363,14 @@
                 </div>
                 <div class="xxts fs-12 line-20 fc-03aaf0">比较满意，但仍可改善</div>
             </div>
-            <form id="update" action="{{url('wechat/order/evaluate/update')}}" method="post">
+            <form id="modify" action="{{url('wechat/order/evaluate/update')}}" method="post">
                 {!! csrf_field() !!}
-                <input type="hidden" name="client" value="" />
-                <input type="hidden" name="order" value=""/>
-                <input type="hidden" name="user-score" value="5"/>
-                <input type="hidden" name="comment" value="">
-                <div class="pjyj  pad-0-10 mar-top-10"><textarea placeholder="其他意见和建议" class="In-text" name="comments"></textarea></div>
+                <input type="hidden" name="client" id="m-client" value="" />
+                <input type="hidden" name="order" id="m-order" value=""/>
+                <input type="hidden" name="user-score" id="m-score" value="5"/>
+                <div class="pjyj  pad-0-10 mar-top-10">
+                    <textarea placeholder="其他意见和建议" class="In-text" name="comment"></textarea>
+                </div>
             </form>
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate-modify">
         </div>
@@ -402,22 +397,22 @@
             $('#time span').tap(function () {
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
-                $('#time-score').val($(this).data('score'));
+                $('#e-time').val($(this).data('score'));
             });
             $('#dress span').tap(function () {
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
-                $('#dress-score').val($(this).data('score'));
+                $('#e-dress').val($(this).data('score'));
             });
             $('#polite span').tap(function () {
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
-                $('#polite-score').val($(this).data('score'));
+                $('#e-polite').val($(this).data('score'));
             });
             $('#major span').tap(function () {
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
-                $('#major-score').val($(this).data('score'));
+                $('#e-major').val($(this).data('score'));
             });
 
             // 初次评价
@@ -428,7 +423,7 @@
                 for (var i=0;i<=EmIndex;i++){
                     $(this).parent('.pj').children('em').eq(i).addClass('on');
                 }
-                $('#lawyer-score').val(EmIndex+1);
+                $('#e-score').val(EmIndex+1);
             });
 
             // 修改评价
@@ -439,18 +434,34 @@
                 for (var i=0;i<=EmIndex;i++){
                     $(this).parent('.pj').children('em').eq(i).addClass('on');
                 }
-                $('#lawyer-score').val(EmIndex+1);
+                $('#m-score').val(EmIndex+1);
             });
 
             // 弹出评价
             $('.btn-ljpj').tap(function(){
                 $('#ljpj').fadeIn();
-                $('#lawyer-score').val(5);
+                $('#e-score').val(5);
             });
 
             $('.btn-xgpj').tap(function(){
-                $('#xgpj').fadeIn();
-                $('#lawyer-score').val(5);
+                var order_id = $(this).data('order');
+                $.ajax({
+                    type: 'POST',
+                    url: address+'/ajax/evaluate',
+                    data: {
+                        '_token':$('input[name=_token]').val(),
+                        'order':order_id
+                    },
+                    success: function(result){
+                        if(result.code == 'Y'){
+                            $('#m-score').val(result.data.rating);
+                            $('#m-comment').val(result.data.comment);
+                            $('#xgpj').fadeIn();
+                            return true;
+                        }
+                        return false;
+                    }
+                });
             });
 
             $('.tc-main').tap(function(){

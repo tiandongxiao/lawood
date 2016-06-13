@@ -127,4 +127,27 @@ class AjaxController extends Controller
             return response()->json(['code' => 'X', 'data' => null]);
         }
     }
+
+    public function evaluate(Request $request)
+    {
+        if($request->ajax()){
+            $id = $request->get('order');
+            $order = Order::find($id);
+
+            if($order){
+                $data = [
+                    'rating'  => '',
+                    'comment' => ''
+                ];
+                if($order->rating){
+                    $data['rating'] = $order->rating->score;
+                }
+                if($order->comment){
+                    $data['comment'] = $order->comment->body;
+                }
+                return response()->json(['code' => 'Y', 'data' => $data]);
+            }
+            return response()->json(['code' => 'X', 'data' => null]);
+        }
+    }
 }
