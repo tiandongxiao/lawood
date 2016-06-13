@@ -48,15 +48,17 @@
 @stop
 @section('script')
     <script>
-        //切换
-        $('.hd .itms').tap(function(){
-            $(this).siblings().removeClass('on');
-            $(this).addClass('on');
-            $('.bd-itms').css({display:'none'});
-            $('.bd-itms').eq($(this).index()).show();
-        });
-        $('#In-btn').click(function () {
-            window.location.href="/wechat";
-        });
+        $(function () {
+            //切换
+            $('.hd .itms').tap(function(){
+                $(this).siblings().removeClass('on');
+                $(this).addClass('on');
+                $('.bd-itms').css({display:'none'});
+                $('.bd-itms').eq($(this).index()).show();
+            });
+            $('#In-btn').tap(function () {
+                window.location.href="/wechat";
+            });
+        })
     </script>
 @stop
