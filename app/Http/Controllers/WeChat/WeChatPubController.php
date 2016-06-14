@@ -65,7 +65,6 @@ class WeChatPubController extends Controller
                     switch ($message->Event) {
                         case 'subscribe':   # 关注事件
                             $account = $userApi->get($message->FromUserName);
-                            dd($account);
                             $this->regBySubscribe($account);
                             Log::info($account->nickname.'关注了我们的公众号');
                             return null;
