@@ -49,11 +49,13 @@
             <div class="pad-0-10">
                 @if($orders->count()))
                     @foreach($orders as $order)
+                    @if($order->rating_id)
                         <div class="itms">
                             <div class="f-left"><img src="{{$order->client->avatar}}" width="50" height="50"></div>
                             <div class="right">
                                 <div class="name">
                                     <p>{{$order->client->name}}</p>
+
                                     <div class="pj">
                                         @if($order->rating->rating == 1)
                                             <em class="on"></em><em></em><em></em><em></em><em></em>
@@ -72,6 +74,7 @@
                                 <div class="fc-909090 fs-12">{{$order->comment->body}}</div>
                             </div>
                         </div>
+                    @endif
                     @endforeach
                 @else
                     <p>当前没有客户进行评价</p>
