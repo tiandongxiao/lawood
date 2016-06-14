@@ -48,7 +48,6 @@ trait WeChatDevTrait
     {
         $account = $this->account();
 
-
         if(is_null($account)){
             Log::info('regIfNotExist 获取用户微信account失败');
             return null;
@@ -62,6 +61,7 @@ trait WeChatDevTrait
                 'avatar'   => $account->avatar,     # 设置头像
                 'union_id' => $account->union_id,   # 绑定Union ID
                 'open_id'  => $account->open_id,    # 绑定公众号 open_id,不是开放平台 open_id
+                'name'     => $account->nickname,   # 昵称
             ]);
         }
 
@@ -78,18 +78,23 @@ trait WeChatDevTrait
     public function account()
     {
         $user = session('wechat.oauth_user');
-        dd($user);
 
         if ($user) {
             Log::info('account 获取成功');
-            $accessToken = $this->app->access_token;
-            $token = $accessToken->getToken(true);  # 强制重新从微信服务器获取 token.
-            $union_id = $this->unionID($user->id, $token, 'PUB');
-
+            if($user['unionid']){
+                $union_id = $user['unionid'];
+            }else{
+                $accessToken = $this->app->access_token;
+                $token = $accessToken->getToken(true);  # 强制重新从微信服务器获取 token.
+                $union_id = $this->unionID($user->id, $token, 'PUB');
+            }
             $account = collect();
             $account->open_id = $user->getId();
             $account->union_id = $union_id;
             $account->avatar = $user['avatar'];
+            $account->name = $user['name'];
+            $account->nickname = $user['nickname'];
+            $account->sex = $user['sex'];
 
             return $account;
         }

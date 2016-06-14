@@ -56,7 +56,9 @@
     @if(Auth::user()->role == 'lawyer')
         <a class="itms itms-tx bor-bot">
             <div class="f-left"><img src="{{Auth::user()->avatar}}" width="60" height="60" ></div>
-            <div class="right">{{Auth::user()->real_name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span></div>
+            <div class="right">
+                {{Auth::user()->real_name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span>
+            </div>
         </a>
         <a class="itms" href="{{url('wechat')}}">
             <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
@@ -108,7 +110,13 @@
     @elseif(Auth::user()->role == 'client')
         <div class="itms itms-tx bor-bot">
             <div class="f-left"><img src="{{Auth::user()->avatar}}" width="60" height="60" ></div>
-            <div class="right">{{Auth::user()->real_name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span></div>
+            <div class="right">
+                @if(Auth::user()->real_name)
+                    {{Auth::user()->real_name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span>
+                @else
+                    {{Auth::user()->name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span>
+                @endif
+            </div>
         </div>
         <a class="itms" href="{{url('wechat')}}">
             <div class="f-left"><img src="/images/nav1.png" width="20" height="20"></div>
@@ -135,7 +143,9 @@
     @elseif(Auth::user()->role == 'none')
         <div class="itms itms-tx bor-bot">
             <div class="f-left"><img src="{{Auth::user()->avatar}}" width="60" height="60" ></div>
-            <div class="right">{{Auth::user()->name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span></div>
+            <div class="right">
+                {{Auth::user()->name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span>
+            </div>
         </div>
         <a class="itms bor-bot" href="{{url('wechat/chose')}}">
             <div class="f-left"><img src="/images/nav4.png" width="20" height="20"></div>
