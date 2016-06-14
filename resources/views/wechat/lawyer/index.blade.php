@@ -27,13 +27,19 @@
             <div class="fc-bcbcbc line-30">执业证号：{{$user->licence}}</div>
             <div class="nf fc-bcbcbc bor-top">
                 <span>执业年限：7年</span>
-                <span>约见次数：130次</span>
+                <span>约见次数：{{$user->service_count}} 次</span>
             </div>
         </div>
         <div class="lsjj">
             <div class="bg-fff-box">
                 <div class="te-cen line-40 fc-03aaf0 fs-16">律师简介</div>
-                <div class="jj pad-10 fs-12 fc-909090" id="jj-con">    王树德,北京市京师律师事务所律师,全国律师协会会员、北京律师协会会员,北京房产纠纷专业律师。王树德律师曾在中铁房地产集团有限公司、中铁二十二局集团有限公司担任高管,深谙公司管理和运作程序,现仍担任王树德,北京市京师律师事务所律师,全国律师协会会员、北京律师协会会员,北京房产纠纷专业律师。王树德律师曾在中铁房地产集团有限公司、中铁二十二局集团有限公司担任高管,深谙公司管理和运王树德,北京市京师律师事务所律师,全国律师协会会员、北京律师协会会员,北京房产纠纷专业律师。王树德律师曾在中铁房地产集团有限公司、中铁二十二局集团有限公司担任高管,深谙公司管理和运。王树德,北京市京师律师事务所律师,全国律师协会会员、北京律师协会会员,北京房产纠纷专业律师。王树德律师曾在中铁房地产集团有限公司、中铁二十二局集团有限公司担任高管,深谙公司管理和运作程序,现仍担任王树德,北京市京师律师事务所律师,全国律师协会会员、北京律师协会会员,北京房产纠纷专业律师。王树德律师曾在中铁房地产集团有限公司、中铁二十二局集团有限公司担任高管,深谙公司管理和运王树德,北京市京师律师事务所律师,全国律师协会会员、北京律师协会会员,北京房产纠纷专业律师。王树德律师曾在中铁房地产集团有限公司、中铁二十二局集团有限公司担任高管,深谙公司管理和运</div>
+                <div class="jj pad-10 fs-12 fc-909090" id="jj-con">
+                    @if($user->profile && $user->profile->description)
+                        {{$user->profile->description}}
+                    @else
+                        律师尚未完善个人简介
+                    @endif
+                </div>
             </div>
             <div class="btn-xl"></div>
         </div>
@@ -41,50 +47,35 @@
         <div class="khpj mar-top-10 bg-fff-box">
             <div class="te-cen line-40 fc-03aaf0 fs-16">客户评价</div>
             <div class="pad-0-10">
-                <div class="itms">
-                    <div class="f-left"><img src="/images/ls.jpg" width="50" height="50"></div>
-                    <div class="right">
-                        <div class="name">
-                            <p>七匹狼</p>
-                            <div class="pj"><em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em></div>
+                @if($orders->count()))
+                    @foreach($orders as $order)
+                        <div class="itms">
+                            <div class="f-left"><img src="{{$order->client->avatar}}" width="50" height="50"></div>
+                            <div class="right">
+                                <div class="name">
+                                    <p>{{$order->client->name}}</p>
+                                    <div class="pj">
+                                        @if($order->rating->rating == 1)
+                                            <em class="on"></em><em></em><em></em><em></em><em></em>
+                                        @elseif($order->rating->rating == 2)
+                                            <em class="on"></em><em class="on"></em><em></em><em></em><em></em>
+                                        @elseif($order->rating->rating == 3)
+                                            <em class="on"></em><em class="on"></em><em class="on"></em><em></em><em></em>
+                                        @elseif($order->rating->rating == 4)
+                                            <em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em><em></em>
+                                        @elseif($order->rating->rating == 5)
+                                            <em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="fc-d2d2d2 line-25 fs-12">{{$order->rating->updated_at->diffForHumans()}}</div>
+                                <div class="fc-909090 fs-12">{{$order->comment->body}}</div>
+                            </div>
                         </div>
-                        <div class="fc-d2d2d2 line-25 fs-12">2016-02-20 14:03</div>
-                        <div class="fc-909090 fs-12">王树德,北京市京师律师事务所律师,全国律师协会会员京律师协会会员,北京房产纠纷专业律师。</div>
-                    </div>
-                </div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/ls.jpg" width="50" height="50"></div>
-                    <div class="right">
-                        <div class="name">
-                            <p>七匹狼</p>
-                            <div class="pj"><em class="on"></em><em class="on"></em><em class="on"></em><em></em><em></em></div>
-                        </div>
-                        <div class="fc-d2d2d2 line-25 fs-12">2016-02-20 14:03</div>
-                        <div class="fc-909090 fs-12">王树德,北京市京师律师事务所律师,全国律师协会会员京律师协会会员,北京房产纠纷专业律师。</div>
-                    </div>
-                </div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/ls.jpg" width="50" height="50"></div>
-                    <div class="right">
-                        <div class="name">
-                            <p>七匹狼</p>
-                            <div class="pj"><em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em></div>
-                        </div>
-                        <div class="fc-d2d2d2 line-25 fs-12">2016-02-20 14:03</div>
-                        <div class="fc-909090 fs-12">王树德,北京市京师律师事务所律师,全国律师协会会员京律师协会会员,北京房产纠纷专业律师。</div>
-                    </div>
-                </div>
-                <div class="itms">
-                    <div class="f-left"><img src="/images/ls.jpg" width="50" height="50"></div>
-                    <div class="right">
-                        <div class="name">
-                            <p>七匹狼</p>
-                            <div class="pj"><em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em></div>
-                        </div>
-                        <div class="fc-d2d2d2 line-25 fs-12">2016-02-20 14:03</div>
-                        <div class="fc-909090 fs-12">王树德,北京市京师律师事务所律师,全国律师协会会员京律师协会会员,北京房产纠纷专业律师。</div>
-                    </div>
-                </div>
+                    @endforeach
+                @else
+                    <p>当前没有客户进行评价</p>
+                @endif
             </div>
         </div>
     </section>
@@ -95,7 +86,7 @@
             <span class="sc" id="sc"><i>收藏</i></span>
             @endif
         </div>
-        <div class="itms te-cen bg-lan1 fc-fff" href="#" id="In-btn">预约咨询</div>
+        <div class="itms te-cen bg-lan1 fc-fff" id="In-btn">预约咨询</div>
     </footer>
 
     <section class="lstc-main" style="display: none">

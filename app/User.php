@@ -477,8 +477,14 @@ class User extends Model implements AuthenticatableContract,
 //                $orders[] = $order;
 //            }
 //        }
-//        $orders = collect($orders);
+//        $orders = collect($orders);        
         $orders = Order::where('seller_id',$this->id)->get();
         return $orders;
+    }
+
+    public function getServiceCountAttribute()
+    {
+        $result = Order::where('seller_id',$this->id)->where('statusCode','completed')->count();
+        return $result?$result:0;
     }
 }
