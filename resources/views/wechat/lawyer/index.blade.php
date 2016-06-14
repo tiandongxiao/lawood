@@ -71,8 +71,7 @@
                                             <em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em>
                                         @endif
                                     </div>
-                                </div>
-                                <div class="fc-d2d2d2 line-25 fs-12">{{$order->rating->updated_at->diffForHumans()}}</div>
+                                </div>                                
                                 <div class="fc-909090 fs-12">{{$order->comment->body}}</div>
                             </div>
                         </div>
