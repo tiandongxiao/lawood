@@ -304,12 +304,6 @@ class Order extends ShopOrderModel
                 $this->comment->update([
                     'body' => $data['comment']
                 ]);
-//                $this->seller->updateRating($this->rating_id, [
-//                    'rating' => $data['user_score']
-//                ]);
-//                $this->seller->updateComment($this->comment_id, [
-//                    'body' => $data['comment']
-//                ]);
             }
         }
     }

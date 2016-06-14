@@ -466,18 +466,19 @@ class User extends Model implements AuthenticatableContract,
 
     public function getSellerOrdersAttribute()
     {
-        $orders = []; # 定义存储容器
-        $items = $this->consults; # 获取律师所有服务项
+//        $orders = []; # 定义存储容器
 
-        foreach($items as $item){    # 搜索Item数据库中所有购买了律师服务的条目
-            $services = Item::where('reference_id',$item->id)->get();
-            foreach($services as $service){
-                $order = $service->order;  # 每一个条目对应一个Order订单
-                $orders[] = $order;
-            }
-        }
-        $orders = collect($orders);
-
+//        $items = $this->consults; # 获取律师所有服务项
+//
+//        foreach($items as $item){    # 搜索Item数据库中所有购买了律师服务的条目
+//            $services = Item::where('reference_id',$item->id)->get();
+//            foreach($services as $service){
+//                $order = $service->order;  # 每一个条目对应一个Order订单
+//                $orders[] = $order;
+//            }
+//        }
+//        $orders = collect($orders);
+        $orders = Order::where('seller_id',$this->id)->get();
         return $orders;
     }
 }
