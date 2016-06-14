@@ -47,7 +47,7 @@ trait WeChatDevTrait
     public function regIfNotExist()
     {
         $account = $this->account();
-        dd($account);
+
 
         if(is_null($account)){
             Log::info('regIfNotExist 获取用户微信account失败');
@@ -78,6 +78,7 @@ trait WeChatDevTrait
     public function account()
     {
         $user = session('wechat.oauth_user');
+        dd($user);
 
         if ($user) {
             Log::info('account 获取成功');
