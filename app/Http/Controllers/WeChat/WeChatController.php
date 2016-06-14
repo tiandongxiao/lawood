@@ -16,7 +16,7 @@ class WeChatController extends Controller
         return view('wechat.index');
     }
 
-    #搜索页
+    # 搜索页
     public function search(Request $request)
     {
         switch ($request->get('chose')){

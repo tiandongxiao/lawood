@@ -108,7 +108,6 @@ class ClientController extends Controller
                 return redirect('wechat/client/setting');
             default:
                 return redirect('wechat/client/setting');
-
         }
     }
 
