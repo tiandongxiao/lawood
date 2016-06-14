@@ -56,7 +56,7 @@
                             <div class="f-left"><img src="{{$order->client->avatar}}" width="50" height="50"></div>
                             <div class="right">
                                 <div class="name">
-                                    <p>{{$order->client->name}} [{{$order->rating->updated_at->diffForHumans()}}]</p>
+                                    <p>{{$order->client->name}}  <span class="fc-d2d2d2">{{$order->rating->updated_at->diffForHumans()}}</span></p>
 
                                     <div class="pj">
                                         @if($order->rating->rating == 1)
