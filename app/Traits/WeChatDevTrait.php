@@ -63,14 +63,20 @@ trait WeChatDevTrait
                 'open_id'  => $account->open_id,    # 绑定公众号 open_id,不是开放平台 open_id
                 'name'     => $account->nickname,   # 昵称
             ]);
+        }else{
+            $changed = false;
+            # 检查用户的公众账号open_id是否绑定
+            if(!$user->open_id){
+                $user->open_id = $account->open_id;
+                $changed = true;
+            }
+            if($user->name != $account->nickname){
+                $user->name = $account->nickname;
+                $changed = true;
+            }
+            if($changed)
+                $user->save();
         }
-
-        # 检查用户的公众账号open_id是否绑定
-        if(!$user->open_id){
-            $user->open_id = $account->open_id;
-            $user->save();
-        }
-
         return $user;
     }
 
