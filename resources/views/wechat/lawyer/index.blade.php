@@ -37,7 +37,7 @@
                     @if($user->profile && $user->profile->description)
                         {{$user->profile->description}}
                     @else
-                        律师尚未完善个人简介
+                        <p style="text-align: center">律师尚未完善个人简介</p>
                     @endif
                 </div>
             </div>
@@ -47,7 +47,7 @@
         <div class="khpj mar-top-10 bg-fff-box">
             <div class="te-cen line-40 fc-03aaf0 fs-16">客户评价</div>
             <div class="pad-0-10">
-                @if($orders->count()))
+                @if($orders->count())
                     @foreach($orders as $order)
                     @if($order->rating_id)
                         <div class="itms">
@@ -77,7 +77,7 @@
                     @endif
                     @endforeach
                 @else
-                    <p>当前没有客户进行评价</p>
+                    <p style="text-align: center">当前没有客户进行评价</p>
                 @endif
             </div>
         </div>
