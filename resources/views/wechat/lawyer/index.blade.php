@@ -41,7 +41,9 @@
                     @endif
                 </div>
             </div>
+            @if($user->profile && $user->profile->description)
             <div class="btn-xl"></div>
+            @endif
         </div>
 
         <div class="khpj mar-top-10 bg-fff-box">
