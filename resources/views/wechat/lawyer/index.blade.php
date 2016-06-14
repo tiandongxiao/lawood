@@ -51,7 +51,7 @@
             <div class="pad-0-10">
                 @if($orders->count())
                     @foreach($orders as $order)
-                    @if($order->rating_id)
+                    @if($order->comment_id)
                         <div class="itms">
                             <div class="f-left"><img src="{{$order->client->avatar}}" width="50" height="50"></div>
                             <div class="right">
@@ -71,7 +71,7 @@
                                             <em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em>
                                         @endif
                                     </div>
-                                </div>                                
+                                </div>
                                 <div class="fc-909090 fs-12">{{$order->comment->body}}</div>
                             </div>
                         </div>

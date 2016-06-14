@@ -399,8 +399,8 @@ transform:scale(0.8,0.8);
 .yy-footer 	{ left:0; bottom:0; height:40px; line-height:40px; background:#ffffff; border-top:1px solid #c0c0c0; width:100%;}
 .yy-footer 	.itms	{ display:block; width:50%; float:left;}
 .yy-footer 	.itms-left	span	{ width:40%; padding:0 5%; display:block; float:left; height:30px; line-height:30px; position:relative; top:5px; color:#909090; text-align:center; position:relative;}
-.yy-footer 	.itms-left	.fx		i	{ font-style:normal; padding-left:30px; background:url(../images/fc.png) left center no-repeat; background-size:25px 25px;}
-.yy-footer 	.itms-left	.sc		i	{ font-style:normal; padding-left:25px; background:url(../images/sc.png) left center no-repeat; background-size:20px 20px;}
+.yy-footer 	.itms-left	.fx		i	{ font-style:normal; padding-left:30px; background:url(../images/fc.png) left center no-repeat; background-size:24px 24px;}
+.yy-footer 	.itms-left	.sc		i	{ font-style:normal; padding-left:25px; background:url(../images/sc.png) left center no-repeat; background-size:19px 19px;}
 .yy-footer 	.itms-left	.sc.on		i	{ background-image:url(../images/sc-on.png)}
 .yy-footer 	.itms-left	.sc:before	{ width:1px; height:25px; background:#efefef; content:''; display:block; position:absolute; left:0%; top:5px;}
 
