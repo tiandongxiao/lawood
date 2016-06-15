@@ -503,6 +503,17 @@ class User extends Model implements AuthenticatableContract,
         return 0;
     }
 
+    public function getNotDrewOrdersAttribute()
+    {
+        $orders = Order::where('seller_id',$this->id)
+            ->where('statusCode','completed')
+            ->where('withdrew',false)->get();
+        if($orders->count()){
+            return $orders;
+        }
+        return null;
+    }
+
     public function getOrdersByStatus($statusCode)
     {
         $orders = Order::where('seller_id',$this->id)

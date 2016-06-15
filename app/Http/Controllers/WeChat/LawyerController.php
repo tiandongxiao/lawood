@@ -84,9 +84,16 @@ class LawyerController extends Controller
         $phone = trim($request->get('phone'));
         $card = trim($request->get('card'));
         $code = trim($request->get('code'));
-        if($name=='' || $phone=='' || $card=='' || $code='')
+
+        if($phone != $this->user->phone || $name != $this->user->real_name)
             return back();
-        dd('valued');
+        $orders = $this->user->not_drew_orders;
+        dd($orders);
+//        if($code == Cache::get('check_'.$phone)){
+//            $orders = $this->user->not_drew_orders;
+//            dd($orders);
+//        }
+        return back();
     }
 
     # 订单签到
