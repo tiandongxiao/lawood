@@ -487,4 +487,28 @@ class User extends Model implements AuthenticatableContract,
         $result = Order::where('seller_id',$this->id)->where('statusCode','completed')->count();
         return $result?$result:0;
     }
+
+    public function getIncomingAttribute()
+    {
+        $orders = Order::where('seller_id',$this->id)
+            ->where('statusCode','completed')
+            ->where('withdrew',false)->get();
+        if($orders->count()){
+            $sum = 0;
+            foreach ($orders as $order){
+                $sum += $order->total;
+            }
+            return $sum;
+        }
+        return 0;
+    }
+
+    public function getOrdersByStatus($statusCode)
+    {
+        $orders = Order::where('seller_id',$this->id)
+            ->where('statusCode',$statusCode)->get();
+        if($orders->count())
+            return $orders;
+        return null;
+    }
 }

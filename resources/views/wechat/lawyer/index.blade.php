@@ -84,7 +84,7 @@
     <footer class="yy-footer po-f">
         <div class="itms itms-left">
             @if(Auth::check() && Auth::user()->role != 'lawyer')
-            <span class="fx"><i>分享</i></span>            
+            <span class="fx"><i>分享</i></span>
             <span class="sc" id="sc"><i>收藏</i></span>
             @endif
         </div>

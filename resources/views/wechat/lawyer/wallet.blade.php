@@ -1,10 +1,9 @@
 @extends('wechat.base.app')
 @section('content')
-
     <section class="wdqb-main">
         <div class="top">
             <div class="f-left">我的余额</div>
-            <div class="right">￥<span>1200.00</span></div>
+            <div class="right fs-24">￥<span>{{$incoming}}</span></div>
         </div>
         <div class="bg-f8f8f8 clearfix pad-10-0">
             <a href="{{url('wechat/lawyer/draw')}}" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16 line-40" >全部提现</a>
@@ -17,70 +16,55 @@
         <div class="bd">
             <!--全部-->
             <div class="bd-itms" style="display:block;">
-                <div class="itms">
-                    <div class="f-left">
-                        <h3>收入－马娟</h3>
-                        <p>2016-03-31</p>
-                    </div>
-                    <div class="right">＋300.00</div>
-                </div>
-                <div class="itms">
-                    <div class="f-left">
-                        <h3>收入－马娟</h3>
-                        <p>2016-03-31</p>
-                    </div>
-                    <div class="right">＋300.00</div>
-                </div>
-                <div class="itms">
-                    <div class="f-left">
-                        <h3>提现</h3>
-                        <p>2016-03-31</p>
-                    </div>
-                    <div class="right">-300.00</div>
-                </div>
-                <div class="itms">
-                    <div class="f-left">
-                        <h3>提现</h3>
-                        <p>2016-03-31</p>
-                    </div>
-                    <div class="right">-300.00</div>
-                </div>
+                @foreach($orders as $order)
+                    @if(!$order->withdrew)
+                        <div class="itms">
+                            <div class="f-left">
+                                <h3>收入－{{$order->client->real_name}}</h3>
+                                <p class="mar-top-10">{{$order->updated_at}}</p>
+                            </div>
+                            <div class="right">＋{{$order->total}}</div>
+                        </div>
+                    @else
+                        <div class="itms">
+                            <div class="f-left">
+                                <h3>提现</h3>
+                                <p class="mar-top-10">{{$order->updated_at}}</p>
+                            </div>
+                            <div class="right">- {{$order->total}}</div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
             <!--全部-->
             <!--收入-->
             <div class="bd-itms">
-                <div class="itms">
-                    <div class="f-left">
-                        <h3>收入－马娟</h3>
-                        <p>2016-03-31</p>
-                    </div>
-                    <div class="right">＋300.00</div>
-                </div>
-                <div class="itms">
-                    <div class="f-left">
-                        <h3>收入－马娟</h3>
-                        <p>2016-03-31</p>
-                    </div>
-                    <div class="right">＋300.00</div>
-                </div>
+                @foreach($orders as $order)
+                    @if(!$order->withdrew)
+                        <div class="itms">
+                            <div class="f-left">
+                                <h3>收入－{{$order->client->real_name}}</h3>
+                                <p class="mar-top-10">{{$order->updated_at}}</p>
+                            </div>
+                            <div class="right">＋{{$order->total}}</div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
             <!--收入-->
             <!--提现-->
             <div class="bd-itms">
-                <div class="itms">
-                    <div class="f-left">
-                        <h3>提现</h3>
-                        <p>2016-03-31</p>
-                    </div>
-                    <div class="right">-300.00</div>
-                </div>
-                <div class="itms">
-                    <div class="f-left">
-                        <h3>提现</h3>
-                        <p>2016-03-31</p>
-                    </div>
-                    <div class="right">-300.00</div>
-                </div>
+                @foreach($orders as $order)
+                    @if($order->withdrew)
+                        <div class="itms">
+                            <div class="f-left">
+                                <h3>提现</h3>
+                                <p class="mar-top-10">{{$order->updated_at}}</p>
+                            </div>
+                            <div class="right">- {{$order->total}}</div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
             <!--提现-->
         </div>
@@ -90,9 +74,9 @@
     <script>
         $(function(){
             $('.hd .itms').tap(function(){
-                $(this).siblings().removeClass('on')
-                $(this).addClass('on')
-                $('.bd-itms').css({display:'none'})
+                $(this).siblings().removeClass('on');
+                $(this).addClass('on');
+                $('.bd-itms').css({display:'none'});
                 $('.bd-itms').eq($(this).index()).fadeIn();
             })
         })

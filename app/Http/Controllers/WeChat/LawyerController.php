@@ -61,14 +61,15 @@ class LawyerController extends Controller
                     break;
             }
         }
-
         return view('wechat.lawyer.orders',compact('applies','ongoings','completes'));
     }
 
     # 律师钱包管理中心
     public function wallet()
     {
-        return view('wechat.lawyer.wallet');
+        $incoming = $this->user->incoming;
+        $orders = $this->user->getOrdersByStatus('completed');
+        return view('wechat.lawyer.wallet',compact('incoming','orders'));
     }
 
     # 律师提现
