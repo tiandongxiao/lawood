@@ -44,6 +44,7 @@
         $(function(){
             //发送验证码
             var	Time	=	60;
+            var timer;
             $('#btn-yzm').tap(function(){
                 if($('#btn-yzm').attr('fs') == 'true'){
                     var address = $('input[name=uri]').val();
@@ -80,7 +81,7 @@
                     $('#btn-yzm').addClass('on');
                     $('#btn-yzm').val(Time+'s后重新发送');
                     Time--;
-                    setTimeout(show_Time,1000);
+                    timer = setTimeout(show_Time,1000);
                     $('#btn-yzm').attr({'fs':'false'})
                 }
             };
