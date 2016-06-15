@@ -533,18 +533,15 @@ class User extends Model implements AuthenticatableContract,
                         'withdrew' => true
                     ]);
                 }
-            }
-
-            $result = 'success';
-            if($orders){
+                $result = 'success';
                 foreach ($orders as $order){
                     if($order->withdrew == false){
                         $result = 'fail';
                         break;
                     }
                 }
+                return $result;
             }
-            return $result;
         }
 
         return 'invalid';
