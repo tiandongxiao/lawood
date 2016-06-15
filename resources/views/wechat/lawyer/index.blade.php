@@ -26,8 +26,7 @@
             <div class="fc-bcbcbc mar-top-20">{{$user->office}}</div>
             <div class="fc-bcbcbc line-30">执业证号：{{$user->licence}}</div>
             <div class="nf fc-bcbcbc bor-top">
-                <span>执业年限：7年</span>
-                <span>约见次数：{{$user->service_count}} 次</span>
+                <span style="text-align: center">约见次数：{{$user->service_count}} 次</span>
             </div>
         </div>
         <div class="lsjj">
@@ -57,7 +56,6 @@
                             <div class="right">
                                 <div class="name">
                                     <p>{{$order->client->name}}  <span class="fc-d2d2d2">{{$order->rating->updated_at->diffForHumans()}}</span></p>
-
                                     <div class="pj">
                                         @if($order->rating->rating == 1)
                                             <em class="on"></em><em></em><em></em><em></em><em></em>
@@ -85,8 +83,8 @@
     </section>
     <footer class="yy-footer po-f">
         <div class="itms itms-left">
-            <span class="fx"><i>分享</i></span>
             @if(Auth::check() && Auth::user()->role != 'lawyer')
+            <span class="fx"><i>分享</i></span>            
             <span class="sc" id="sc"><i>收藏</i></span>
             @endif
         </div>
