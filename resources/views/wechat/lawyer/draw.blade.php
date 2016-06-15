@@ -31,7 +31,7 @@
                 <div class="blank160"></div>
                 <div class="con te-cen">
                     <p class="fs-20 fc-c0c0c0 fw-normal">为保证提现无误</p>
-                    <p class="fs-14 fc-c0c0c0">请保证注册名与卡号一致</p>
+                    <p class="fs-14 fc-c0c0c0 mar-top-10">请保证注册名与卡号一致</p>
                     <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10" value="确认提现" id="In-btn">
                 </div>
             </div>
