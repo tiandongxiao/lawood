@@ -522,4 +522,31 @@ class User extends Model implements AuthenticatableContract,
             return $orders;
         return null;
     }
+
+    public function withdraw()
+    {
+        if($this->role == 'lawyer'){
+            $orders = $this->not_drew_orders;
+            if($orders){
+                foreach ($orders as $order){
+                    $order->update([
+                        'withdrew' => true
+                    ]);
+                }
+            }
+
+            $result = 'success';
+            if($orders){
+                foreach ($orders as $order){
+                    if($order->withdrew == false){
+                        $result = 'fail';
+                        break;
+                    }
+                }
+            }
+            return $result;
+        }
+
+        return 'invalid';
+    }
 }

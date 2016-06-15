@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 class LawyerController extends Controller
 {
@@ -84,34 +85,27 @@ class LawyerController extends Controller
         $phone = trim($request->get('phone'));
         $card = trim($request->get('card'));
         $code = trim($request->get('code'));
-
+        if(!$name|| !$phone || !$card || !$code)
+            return back();
         if($phone != $this->user->phone || $name != $this->user->real_name)
             return back();
-        $orders = $this->user->not_drew_orders;
-        if($orders){
-            foreach ($orders as $order){
-                $order->update([
-                    'withdrew' => true
-                ]);
+        if($code == Cache::get('check_'.$phone)){
+            $result = $this->user->withdraw();
+            switch ($result){
+                case 'success':
+                    dd('success');
+                    break;
+                case 'fail':
+                    dd('fail');
+                    break;
+                case 'invalid':
+                    dd('invalid');
+                    break;
             }
         }
 
-//        if($code == Cache::get('check_'.$phone)){
-//            $orders = $this->user->not_drew_orders;
-//            dd($orders);
-//        }
-        $result = true;
-        if($orders){
-            foreach ($orders as $order){
-                if($order->withdrew == false){
-                    $result = false;
-                    break;
-                }
-            }
-        }
-        if($result)
-            dd('成功');
-        dd('失败');
+
+
         return redirect('wechat/lawyer/wallet');
     }
 
