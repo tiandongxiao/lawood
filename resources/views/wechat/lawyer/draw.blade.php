@@ -184,7 +184,7 @@
                     $('#btn-yzm').attr({'fs':'false'})
                 }
             };
-        })
+
             //表单提交
             $('#In-btn').tap(function(){
                 //姓名
