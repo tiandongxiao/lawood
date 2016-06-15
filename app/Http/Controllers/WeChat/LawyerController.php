@@ -80,7 +80,7 @@ class LawyerController extends Controller
 
     public function postDraw(Request $request)
     {
-
+        dd($request->all());
     }
 
     # 订单签到

@@ -4,7 +4,7 @@
 </style>
 @section('content')
     <section class="lssz-main">
-        <form  action="#" id="form">
+        <form  action="{{url('wechat/lawyer/draw')}}" id="form">
             <div class="form-list bg-fff-box">
                 <div class="itms">
                     <div class="f-left">真实姓名</div>

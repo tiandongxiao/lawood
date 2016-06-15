@@ -36,8 +36,6 @@
                             </div>
                         @endif
                     @endforeach
-                @else
-                    <div style="text-align:center;margin-top: 60%">当前没有支取记录</div>
                 @endif
             </div>
             <!--全部-->
@@ -55,8 +53,6 @@
                             </div>
                         @endif
                     @endforeach
-                @else
-                    <div style="text-align:center;margin-top: 60%">当前没有收入记录</div>
                 @endif
             </div>
             <!--收入-->
