@@ -1,4 +1,7 @@
 @extends('wechat.base.app')
+<style>
+    body{background:#f8f8f8}
+</style>
 @section('content')
     <section class="lssz-main">
         <form  action="#" id="form">
