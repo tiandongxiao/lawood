@@ -153,7 +153,7 @@
 				if(form){
 					$("#form").submit();
 				}
-			})
+			});
 
 			//发送验证码
 			var	Time	=	60;
@@ -187,7 +187,7 @@
 					sendMsg()
 					show_Time()
 				}
-			})
+			});
 
 			function show_Time(){ //加时函数
 				if(Time == 0){
@@ -201,15 +201,15 @@
 					timer = setTimeout(show_Time,1000);
 					$('#btn-yzm').attr({'fs':'false'})
 				}
-			};
+			}
 
 			//个人协议
 			$('#yhyx').tap(function(){
 				$('#zcxy').fadeIn();
-			})
+			});
 			$('#xy-back').tap(function(){
 				$('#zcxy').fadeOut();
-			})
+			});
 		})
 //H5图像	
 $("#file_toget").change(function(){

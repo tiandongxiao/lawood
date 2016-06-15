@@ -80,13 +80,13 @@ class LawyerController extends Controller
 
     public function postDraw(Request $request)
     {
-//        $name = trim($request->get('name'));
-//        $phone = trim($request->get('phone'));
-//        $card = trim($request->get('card'));
-//        $code = trim($request->get('code'));
-//
-//        if($phone != $this->user->phone || $name != $this->user->real_name)
-//            return back();
+        $name = trim($request->get('name'));
+        $phone = trim($request->get('phone'));
+        $card = trim($request->get('card'));
+        $code = trim($request->get('code'));
+
+        if($phone != $this->user->phone || $name != $this->user->real_name)
+            return back();
         $orders = $this->user->not_drew_orders;
         if($orders){
             foreach ($orders as $order){
@@ -109,7 +109,9 @@ class LawyerController extends Controller
                 }
             }
         }
-
+        if($result)
+            dd('成功');
+        dd('失败');
         return redirect('wechat/lawyer/wallet');
     }
 

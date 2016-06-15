@@ -38,8 +38,8 @@
                 if(!$('#mobile').val()){
                     form = false;
                     $('#In-btn').removeClass('bg-lan1')
-                    $('#mobile').parents('.itms').removeClass('itms-ok')
-                    $('#btn-yzm').parents('.itms').removeClass('itms-ok')
+                    $('#mobile').parents('.itms').removeClass('itms-ok');
+                    $('#btn-yzm').parents('.itms').removeClass('itms-ok');
                     $('#yzm').val('');
                     $('#btn-yzm').hide()
                 }else{
@@ -47,10 +47,10 @@
                     if (!re.test($('#mobile').val())) {
                         form = false;
                         $('#In-btn').removeClass('bg-lan1')
-                        $('#mobile').parents('.itms').removeClass('itms-ok')
-                        $('#btn-yzm').parents('.itms').removeClass('itms-ok')
+                        $('#mobile').parents('.itms').removeClass('itms-ok');
+                        $('#btn-yzm').parents('.itms').removeClass('itms-ok');
                         $('#yzm').val('');
-                        $('#btn-yzm').hide()
+                        $('#btn-yzm').hide();
                         return false;
                     }
                     var address = $('input[name=uri]').val();
@@ -163,8 +163,8 @@
                             }
                         });
                     }
-                    sendMsg()
-                    show_Time()
+                    sendMsg();
+                    show_Time();
                 }
             })
 

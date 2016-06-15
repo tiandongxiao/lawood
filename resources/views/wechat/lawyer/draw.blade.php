@@ -6,6 +6,7 @@
     <section class="lssz-main">
         <form  action="{{url('wechat/lawyer/draw')}}" id="form" method="post">
             {!! csrf_field() !!}
+            <input type="hidden" name="uri" value="{{url('/')}}">
             <div class="form-list bg-fff-box">
                 <div class="itms">
                     <div class="f-left">真实姓名</div>
@@ -41,11 +42,132 @@
 @section('script')
     <script>
         $(function(){
-            //发送验证码
+
+            $('.In-text').bind('input propertychange', function() {
+                //手机号
+                if(!$('#mobile').val()){
+                    form = false;
+                    $('#In-btn').removeClass('bg-lan1')
+                    $('#mobile').parents('.itms').removeClass('itms-ok')
+                    $('#btn-yzm').parents('.itms').removeClass('itms-ok')
+                    $('#yzm').val('');
+                    $('#btn-yzm').hide()
+                }else{
+                    var re = /^1\d{10}$/
+                    if (!re.test($('#mobile').val())) {
+                        form = false;
+                        $('#In-btn').removeClass('bg-lan1')
+                        $('#mobile').parents('.itms').removeClass('itms-ok')
+                        $('#btn-yzm').parents('.itms').removeClass('itms-ok')
+                        $('#yzm').val('');
+                        $('#btn-yzm').hide()
+                        return false;
+                    }
+                    var address = $('input[name=uri]').val();
+                    function checkPhone(){
+                        $.ajax({
+                            type: 'POST',
+                            url: address+'/ajax/phone',
+                            data: {
+                                'phone':$('input[name=phone]').val(),
+                                '_token':$('input[name=_token]').val(),
+                            },
+                            success: function(data){
+                                if(data == 'Y'){
+                                    $('#mobile').parents('.itms').addClass('itms-ok')
+                                    if(!$('#btn-yzm').parents('.itms').hasClass('itms-ok'))
+                                        $('#btn-yzm').show()
+                                    return true;
+                                }
+                                form = false;
+                                $('#In-btn').removeClass('bg-lan1')
+                                if(!$('#mobile').parents('.itms').hasClass('itms-ok'))
+                                    alert('此号码已被注册');
+                                return false;
+                            }
+                        });
+                    }
+                    checkPhone();
+                }
+
+                //判断验证码
+                if(!$('#yzm').val()){
+                    form	= false;
+                    $('#In-btn').removeClass('bg-lan1')
+                    $('#btn-yzm').parents('.itms').removeClass('itms-ok')
+                    return false;
+                }else{
+                    var re =  /\d{4}$/
+                    if (!re.test($('#yzm').val())) {
+                        form = false;
+                        $('#In-btn').removeClass('bg-lan1')
+                        $('#btn-yzm').parents('.itms').removeClass('itms-ok')
+                        return false;
+                    }
+
+                    var address = $('input[name=uri]').val();
+                    $.ajax({
+                        type: 'POST',
+                        url: address+'/ajax/code',
+                        data: {
+                            'type':'reset',
+                            'code':$('input[name=code]').val(),
+                            'phone':$('input[name=phone]').val(),
+                            '_token':$('input[name=_token]').val(),
+                        },
+                        success: function(data){
+                            switch (data){
+                                case 'Y':
+                                    $('#btn-yzm').hide()
+                                    $('#btn-yzm').parents('.itms').addClass('itms-ok')
+                                    form = true;
+                                    $('#In-btn').addClass('bg-lan1')
+                                    return true;
+                                case 'N':
+                                case 'E':
+                                    form = false;
+                                    $('#In-btn').removeClass('bg-lan1')
+                                    $('#mobile').parents('.itms').removeClass('itms-ok')
+                                    alert('验证码错误');
+                                    $('#yzm').val('');
+                                    return false;
+                            }
+                        }
+                    })
+                }
+            });
+
+            // 发送验证码
             var	Time	=	60;
+            var timer;
+
             $('#btn-yzm').tap(function(){
+                if(!$('#mobile').parents('.itms').hasClass('itms-ok'))
+                    return false;
+
                 if($('#btn-yzm').attr('fs') == 'true'){
-                    show_Time()
+                    var address = $('input[name=uri]').val();
+                    function sendMsg(){
+                        $.ajax({
+                            type: 'POST',
+                            url: address+'/ajax/sms',
+                            data: {
+                                'phone':$('input[name=phone]').val(),
+                                '_token':$('input[name=_token]').val(),
+                                'do' : 'reset'
+                            },
+                            success: function(data){
+                                Time = 60;
+                                clearTimeout(timer);
+                                $('#btn-yzm').attr({'fs':'true'})
+                                $('#btn-yzm').val('再发一次');
+                                $('#btn-yzm').removeClass('on');
+                                alert(data.info)
+                            }
+                        });
+                    }
+                    sendMsg();
+                    show_Time();
                 }
             })
 
@@ -58,48 +180,38 @@
                     $('#btn-yzm').addClass('on');
                     $('#btn-yzm').val(Time+'s后重新发送');
                     Time--;
-                    setTimeout(show_Time,1000);
+                    timer = setTimeout(show_Time,1000);
                     $('#btn-yzm').attr({'fs':'false'})
                 }
             };
+        })
             //表单提交
             $('#In-btn').tap(function(){
                 //姓名
                 if(!$('#name').val()){
-                    alert('姓名不能为空')
+                    alert('姓名不能为空');
                     return	false;
                 }else{
                     var re = /^.{2,20}$/
                     if (!re.test($('#name').val())) {
-                        alert('请输入正确的姓名(2-20字符)')
+                        alert('请输入正确的姓名(2-20字符)');
                         return	false;
                     }
                 }
                 //手机号
                 if(!$('#mobile').val()){
-                    alert('手机号码不能为空')
+                    alert('手机号码不能为空');
                     return	false;
                 }else{
                     var re = /^1\d{10}$/
                     if (!re.test($('#mobile').val())) {
-                        alert('请正确输入手机号码')
-                        return	false;
-                    }
-                }
-                //判断验证码
-                if(!$('#yzm').val()){
-                    alert('短信验证码不能为空')
-                    return	false;
-                }else{
-                    var re =  /\d{4}$/
-                    if (!re.test($('#yzm').val())) {
-                        alert('请输入正确的短信验证码')
+                        alert('请正确输入手机号码');
                         return	false;
                     }
                 }
                 //判断银行卡
                 if(!$('#yhk').val()){
-                    alert('银行卡卡号不能为空')
+                    alert('银行卡卡号不能为空');
                     return	false;
                 }
                 $("#form").submit();

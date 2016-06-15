@@ -51,6 +51,7 @@ class AjaxController extends Controller
             switch ($request->get('do')){
                 case 'reg':
                 case 'reset':
+                case 'check':
                     $data['do'] = $request->get('do');
                     $data['tpl'] = '74240';  # 短信模板
                     $data['content'] = array((string)random_int(1000, 9999)); # 要求必须是数组
@@ -67,6 +68,7 @@ class AjaxController extends Controller
                 switch ($data['do']){
                     case 'reg':
                     case 'reset':
+                    case 'check':
                         Cache::add($data['do'].'_'.$phone, $data['content'][0], 1);
                         return response()->json(['code' => 200, 'info' => '验证码发送成功']);
                     default:
@@ -76,6 +78,7 @@ class AjaxController extends Controller
             switch ($data['do']){
                 case 'reg':
                 case 'reset':
+                case 'check':
                     return response()->json(['code' => 400, 'info' => '验证码发送失败']);
                 default:
                     return response()->json(['code' => 400, 'info' => '信息发送失败']);
