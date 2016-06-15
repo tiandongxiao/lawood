@@ -88,7 +88,11 @@
             <span class="sc" id="sc"><i>收藏</i></span>
             @endif
         </div>
+        @if(Auth::check() && Auth::user()->role != 'lawyer')
         <div class="itms te-cen bg-lan1 fc-fff" id="In-btn">预约咨询</div>
+        @else
+        <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat')}}">返回首页</a>
+        @endif
     </footer>
 
     <section class="lstc-main" style="display: none">
