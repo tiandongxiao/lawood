@@ -16,55 +16,67 @@
         <div class="bd">
             <!--全部-->
             <div class="bd-itms" style="display:block;">
-                @foreach($orders as $order)
-                    @if(!$order->withdrew)
-                        <div class="itms">
-                            <div class="f-left">
-                                <h3>收入－{{$order->client->real_name}}</h3>
-                                <p class="mar-top-10">{{$order->updated_at}}</p>
+                @if($orders)
+                    @foreach($orders as $order)
+                        @if(!$order->withdrew)
+                            <div class="itms">
+                                <div class="f-left">
+                                    <h3>收入－{{$order->client->real_name}}</h3>
+                                    <p class="mar-top-10">{{$order->updated_at}}</p>
+                                </div>
+                                <div class="right">＋{{$order->total}}</div>
                             </div>
-                            <div class="right">＋{{$order->total}}</div>
-                        </div>
-                    @else
-                        <div class="itms">
-                            <div class="f-left">
-                                <h3>提现</h3>
-                                <p class="mar-top-10">{{$order->updated_at}}</p>
+                        @else
+                            <div class="itms">
+                                <div class="f-left">
+                                    <h3>提现</h3>
+                                    <p class="mar-top-10">{{$order->updated_at}}</p>
+                                </div>
+                                <div class="right">- {{$order->total}}</div>
                             </div>
-                            <div class="right">- {{$order->total}}</div>
-                        </div>
-                    @endif
-                @endforeach
+                        @endif
+                    @endforeach
+                @else
+                    <div style="text-align:center;margin-top: 60%">当前没有支取记录</div>
+                @endif
             </div>
             <!--全部-->
             <!--收入-->
             <div class="bd-itms">
-                @foreach($orders as $order)
-                    @if(!$order->withdrew)
-                        <div class="itms">
-                            <div class="f-left">
-                                <h3>收入－{{$order->client->real_name}}</h3>
-                                <p class="mar-top-10">{{$order->updated_at}}</p>
+                @if($orders)
+                    @foreach($orders as $order)
+                        @if(!$order->withdrew)
+                            <div class="itms">
+                                <div class="f-left">
+                                    <h3>收入－{{$order->client->real_name}}</h3>
+                                    <p class="mar-top-10">{{$order->updated_at}}</p>
+                                </div>
+                                <div class="right">＋{{$order->total}}</div>
                             </div>
-                            <div class="right">＋{{$order->total}}</div>
-                        </div>
-                    @endif
-                @endforeach
+                        @endif
+                    @endforeach
+                @else
+                    <div style="text-align:center;margin-top: 60%">当前没有收入记录</div>
+                @endif
             </div>
             <!--收入-->
             <!--提现-->
             <div class="bd-itms">
-                @foreach($orders as $order)
-                    @if($order->withdrew)
-                        <div class="itms">
-                            <div class="f-left">
-                                <h3>提现</h3>
-                                <p class="mar-top-10">{{$order->updated_at}}</p>
+                @if($orders)
+                    @foreach($orders as $order)
+                        @if($order->withdrew)
+                            <div class="itms">
+                                <div class="f-left">
+                                    <h3>提现</h3>
+                                    <p class="mar-top-10">{{$order->updated_at}}</p>
+                                </div>
+                                <div class="right">- {{$order->total}}</div>
                             </div>
-                            <div class="right">- {{$order->total}}</div>
-                        </div>
-                    @endif
-                @endforeach
+                        @endif
+                    @endforeach
+                @else
+                    <div style="text-align:center;margin-top: 60%">您当前没有任何收支记录</div>
+                @endif
             </div>
             <!--提现-->
         </div>
