@@ -9,20 +9,20 @@
             <div class="form-list bg-fff-box">
                 <div class="itms">
                     <div class="f-left">真实姓名</div>
-                    <div class="right"><input type="text" placeholder="请输入真实姓名" class="In-text" id="name"></div>
+                    <div class="right"><input type="text" placeholder="请输入真实姓名" class="In-text" id="name" name="name"></div>
                 </div>
                 <div class="itms">
                     <div class="f-left">银行卡号</div>
-                    <div class="right"><input type="tel" placeholder="请输入银行卡号" class="In-text" id="yhk"></div>
+                    <div class="right"><input type="tel" placeholder="请输入银行卡号" class="In-text" id="yhk" name="card"></div>
                 </div>
                 <div class="itms">
                     <div class="f-left">手机号码</div>
-                    <div class="right"><input type="tel" placeholder="请输入手机号码" class="In-text" id="mobile">></div>
+                    <div class="right"><input type="tel" placeholder="请输入手机号码" class="In-text" id="mobile" name="phone"></div>
                 </div>
                 <div class="itms">
                     <div class="f-left">验 证 码</div>
                     <div class="right">
-                        <input type="tel" placeholder="请输入短信验证码" class="In-text"  id="yzm" >
+                        <input type="tel" placeholder="请输入短信验证码" class="In-text"  id="yzm" name="code">
                         <input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true">
                     </div>
                 </div>
