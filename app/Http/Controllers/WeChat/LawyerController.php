@@ -84,7 +84,7 @@ class LawyerController extends Controller
         $phone = trim($request->get('phone'));
         $card = trim($request->get('card'));
         $code = trim($request->get('code'));
-        if(!$name || !$phone || !$card || !$code)
+        if($name=='' || $phone=='' || $card=='' || $code='')
             return back();
         dd('valued');
     }
