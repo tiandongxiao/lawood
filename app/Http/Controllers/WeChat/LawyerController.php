@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\WeChat;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -90,17 +91,35 @@ class LawyerController extends Controller
         if($phone != $this->user->phone || $name != $this->user->real_name)
             return back();
         if($code == Cache::get('check_'.$phone)){
+            $incoming = $this->user->incoming;
             $result = $this->user->withdraw();
             switch ($result){
                 case 'success':
-                    dd('success');
-                    break;
+                    $data = [
+                        'type'  => 'success',
+                        'title' => '提款成功',
+                        'body'  => '尊敬的'.$this->user->real_name.'律师，您的提款申请已成功提交，共计'.$incoming.'元，我们将尽快处理，并在月底统一结算',
+                        'url'   => url('wechat/lawyer/wallet')
+                    ];
+                    return view('wechat.info',compact('data'));
                 case 'fail':
-                    dd('fail');
-                    break;
+                    $data = [
+                        'type'  => 'fail',
+                        'title' => '提款失败',
+                        'body'  => '尊敬的'.$this->user->real_name.'律师，您的提款申请提交失败，请稍后再试',
+                        'url'   => url('wechat/lawyer/draw')
+                    ];
+                    return view('wechat.info',compact('data'));
                 case 'invalid':
-                    dd('invalid');
-                    break;
+                    $data = [
+                        'type'  => 'invalid',
+                        'title' => '无效请求',
+                        'body'  => '抱歉，您提交的信息有误，不能进行提款',
+                        'url'   => url('wechat/lawyer/draw')
+                    ];
+                    return view('wechat.info',compact('data'));
+                default:
+                    return null;
             }
         }
 
