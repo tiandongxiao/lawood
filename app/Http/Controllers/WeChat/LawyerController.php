@@ -100,7 +100,17 @@ class LawyerController extends Controller
 //            $orders = $this->user->not_drew_orders;
 //            dd($orders);
 //        }
-        return back();
+        $result = true;
+        if($orders){
+            foreach ($orders as $order){
+                if($order->withdrew == false){
+                    $result = false;
+                    break;
+                }
+            }
+        }
+
+        return redirect('wechat/lawyer/wallet');
     }
 
     # 订单签到
