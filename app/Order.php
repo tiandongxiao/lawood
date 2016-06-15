@@ -10,7 +10,7 @@ use DraperStudio\Commentable\Models\Comment;
 
 class Order extends ShopOrderModel
 {
-    protected $fillable = ['user_id', 'statusCode', 'order_no', 'type', 'subject', 'payed', 'refunded', 'seller_signed', 'client_signed', 'attach','seller_id','sale_id','category','rating_id','comment_id'];
+    protected $fillable = ['user_id', 'statusCode', 'order_no', 'type', 'subject', 'payed', 'refunded', 'seller_signed', 'client_signed', 'attach','seller_id','sale_id','category','rating_id','comment_id','withdrew','allow_draw'];
 
     private $app;
     private $payment;
