@@ -88,11 +88,14 @@ class LawyerController extends Controller
 //        if($phone != $this->user->phone || $name != $this->user->real_name)
 //            return back();
         $orders = $this->user->not_drew_orders;
-        $orders->each(function ($order){
-            $order->update([
-                'withdrew' => true
-            ]);
-        });        
+        if($orders){
+            foreach ($orders as $order){
+                $order->update([
+                    'withdrew' => true
+                ]);
+            }
+        }
+
 //        if($code == Cache::get('check_'.$phone)){
 //            $orders = $this->user->not_drew_orders;
 //            dd($orders);
