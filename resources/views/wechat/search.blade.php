@@ -46,7 +46,6 @@
                     </div>
                 </div>
                 <div class="bq">
-                    <span class="ren" id="total">39人咨询过</span>
                     <span class="jl" id="distance">0.5km</span>
                 </div>
             </div>
@@ -124,7 +123,6 @@
                 $('#office').text(data.office);
                 $('#distance').text(data._distance);
                 $('#detail_info').attr('href',"/wechat/user/"+data.user+"?consult="+data.consult);
-                $('#total').text(data.counter);
                 $('.btn-ljzx').data('consult',data.consult);
 
                 $('.lstc-main').show();
