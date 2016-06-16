@@ -86,10 +86,10 @@
       <file leaf-file-name="collection.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/collection.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="24" column="85" selection-start-line="24" selection-start-column="85" selection-end-line="24" selection-end-column="85" />
+            <state relative-caret-position="572">
+              <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
               <folding>
-                <element signature="e#1228#1269#0#HTML" expanded="true" />
+                <element signature="e#1407#1446#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -668,7 +668,7 @@
       <workItem from="1465867748307" duration="2854000" />
       <workItem from="1465886289282" duration="9557000" />
       <workItem from="1465969636114" duration="11693000" />
-      <workItem from="1465993127903" duration="33379000" />
+      <workItem from="1465993127903" duration="33459000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -793,7 +793,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1186661000" />
+    <option name="totallyTimeSpent" value="1186741000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -805,7 +805,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1918" height="1028" extended-state="0" />
+    <frame x="-8" y="0" width="1918" height="1028" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1263,10 +1263,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/collection.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="24" column="85" selection-start-line="24" selection-start-column="85" selection-end-line="24" selection-end-column="85" />
+        <state relative-caret-position="572">
+          <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
           <folding>
-            <element signature="e#1228#1269#0#HTML" expanded="true" />
+            <element signature="e#1407#1446#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

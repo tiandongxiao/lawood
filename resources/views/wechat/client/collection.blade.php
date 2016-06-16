@@ -20,7 +20,7 @@
                             </div>
                         @endforeach
                     @else
-                        <div style="text-align:center;margin-top: 60%">您当前没有收藏任何咨询项</div>
+                        <div style="text-align:center;margin-top: 60%;background:#f8f8f8">您当前没有收藏任何咨询项</div>
                         <div class="bottom-btn">
                             <div class="blank100" style="height:120px;background:#f8f8f8"></div>
                             <div class="con te-cen">
