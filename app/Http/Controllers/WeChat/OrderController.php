@@ -26,6 +26,14 @@ class OrderController extends Controller
 {
     use ShopDevTrait;
 
+    private $user;
+
+    public function __construct()
+    {
+        $this->middleware('auth',['except'=>'placeOrder']);
+        $this->user = Auth::user();
+    }
+
     public function buildOrder($item_id)
     {
         $sale = Item::findOrFail($item_id);
@@ -60,10 +68,18 @@ class OrderController extends Controller
 
     public function placeOrder($consult)
     {
-        $order = $this->buildOrder($consult);
-        Session::put('order',$order->id);
-        if($order)
-            return view('wechat.flow.place_select');
+        if(!Auth::check()){
+            //return view('wechat.flow.lawood');
+            return back();
+        }
+
+        if($this->user->role != 'lawyer'){
+            $order = $this->buildOrder($consult);
+            Session::put('order',$order->id);
+            if($order)
+                return view('wechat.flow.place_select');
+        }
+
         return back();
     }
 

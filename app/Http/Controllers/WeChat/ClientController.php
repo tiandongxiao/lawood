@@ -122,6 +122,7 @@ class ClientController extends Controller
 
     public function collection()
     {
-        return view('wechat.client.collection');
+        $collects = $this->user->collects;
+        return view('wechat.client.collection',compact('collects'));
     }
 }

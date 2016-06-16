@@ -577,7 +577,7 @@ class User extends Model implements AuthenticatableContract,
     }
 
     # 获取已收藏的项目
-    public function getLikedAttribute()
+    public function getCollectsAttribute()
     {
         $consults = Item::whereLiked($this->id) // find only articles where user liked them
         ->with('likeCounter') // highly suggested to allow eager load
