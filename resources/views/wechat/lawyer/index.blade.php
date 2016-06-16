@@ -168,6 +168,7 @@
                 $(this).toggleClass('on');
                 var consult = $(this).data('consult');
                 var client = $(this).data('consult');
+                var address = $('input[name=uri]').val();
                 if($(this).hasClass('on')){
                     $.ajax({
                         type: 'POST',
