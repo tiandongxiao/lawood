@@ -1,7 +1,4 @@
 @extends('wechat.base.app')
-@section('css')
-    <style>body{background:#f8f8f8}</style>
-@stop
 @section('content')
     <section class="lstc-main wdsc-main">
         <div class="fjls-main">
@@ -20,9 +17,9 @@
                             </div>
                         @endforeach
                     @else
-                        <div style="text-align:center;margin-top: 60%;background:#f8f8f8">您当前没有收藏任何咨询项</div>
+                        <div style="text-align:center;margin-top: 60%;">您当前没有收藏任何咨询项</div>
                         <div class="bottom-btn">
-                            <div class="blank100" style="height:120px;background:#f8f8f8"></div>
+                            <div class="blank100" style="height:120px;"></div>
                             <div class="con te-cen">
                                 <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 back-home" value="返回首页">
                             </div>
