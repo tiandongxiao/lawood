@@ -39,7 +39,13 @@
                     </div>
                 </div>
                 <div class="name">
+                    @if(!Auth::check())
                     <div class="f-right" ><span class="btn-ljzx">立即咨询</span></div>
+                    @else
+                        @if(Auth::user()->role != 'lawyer')
+                            <div class="f-right" ><span class="btn-ljzx">立即咨询</span></div>
+                        @endif
+                    @endif
                     <div class="left">
                         <h3 class="chaochu_1" ><span id="name">王树德</span>	<span>律师</span></h3>
                         <p class="chaochu_1" id="office">北京市朝阳区京师律师事务所</p>
