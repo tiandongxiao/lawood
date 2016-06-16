@@ -119,16 +119,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.18.17",
+            "version": "3.18.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "6c7849556f556da8615d22e675710c7a086ed5d0"
+                "reference": "68b9d0b7e007782bc0f2633cdf5a4a6bf08aaafc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/aws/aws-sdk-php/6c7849556f556da8615d22e675710c7a086ed5d0.zip",
-                "reference": "6c7849556f556da8615d22e675710c7a086ed5d0",
+                "url": "https://packagist.phpcomposer.com/files/aws/aws-sdk-php/68b9d0b7e007782bc0f2633cdf5a4a6bf08aaafc.zip",
+                "reference": "68b9d0b7e007782bc0f2633cdf5a4a6bf08aaafc",
                 "shasum": ""
             },
             "require": {
@@ -195,7 +195,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-06-09 23:39:33"
+            "time": "2016-06-14 20:35:03"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -1351,16 +1351,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.38",
+            "version": "v5.1.39",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "67848753f16a639da6d0871019ae792111941933"
+                "reference": "cb6c650cbb25c27fa9a4eddd07c6a78dd87554ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/laravel/framework/67848753f16a639da6d0871019ae792111941933.zip",
-                "reference": "67848753f16a639da6d0871019ae792111941933",
+                "url": "https://packagist.phpcomposer.com/files/laravel/framework/cb6c650cbb25c27fa9a4eddd07c6a78dd87554ea.zip",
+                "reference": "cb6c650cbb25c27fa9a4eddd07c6a78dd87554ea",
                 "shasum": ""
             },
             "require": {
@@ -1476,7 +1476,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-06-10 22:10:07"
+            "time": "2016-06-14 01:20:12"
         },
         {
             "name": "league/flysystem",
@@ -1660,16 +1660,16 @@
         },
         {
             "name": "maxmind/web-service-common",
-            "version": "v0.2.0",
+            "version": "v0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maxmind/web-service-common-php.git",
-                "reference": "620a1a0ac7e9b6c20ea65bfd7c93367af6433d77"
+                "reference": "436bebacf4e74651b383435822c472f3e0f2a28a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/maxmind/web-service-common-php/620a1a0ac7e9b6c20ea65bfd7c93367af6433d77.zip",
-                "reference": "620a1a0ac7e9b6c20ea65bfd7c93367af6433d77",
+                "url": "https://packagist.phpcomposer.com/files/maxmind/web-service-common-php/436bebacf4e74651b383435822c472f3e0f2a28a.zip",
+                "reference": "436bebacf4e74651b383435822c472f3e0f2a28a",
                 "shasum": ""
             },
             "require": {
@@ -1699,7 +1699,7 @@
             ],
             "description": "Internal MaxMind Web Service API",
             "homepage": "https://github.com/maxmind/mm-web-service-api-php",
-            "time": "2016-06-10 22:22:39"
+            "time": "2016-06-13 19:55:20"
         },
         {
             "name": "mews/captcha",
@@ -3523,7 +3523,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v3.1.0",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -4225,16 +4225,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.1.0",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "eca51b7b65eb9be6af88ad7cc91685f1556f5c9a"
+                "reference": "c5a7e7fc273c758b92b85dcb9c46149ccda89623"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/symfony/yaml/eca51b7b65eb9be6af88ad7cc91685f1556f5c9a.zip",
-                "reference": "eca51b7b65eb9be6af88ad7cc91685f1556f5c9a",
+                "url": "https://packagist.phpcomposer.com/files/symfony/yaml/c5a7e7fc273c758b92b85dcb9c46149ccda89623.zip",
+                "reference": "c5a7e7fc273c758b92b85dcb9c46149ccda89623",
                 "shasum": ""
             },
             "require": {
@@ -4270,7 +4270,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-05-26 21:46:24"
+            "time": "2016-06-14 11:18:07"
         },
         {
             "name": "toplan/laravel-sms",
