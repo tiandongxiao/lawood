@@ -176,7 +176,6 @@
 
                 var select = $(this).data('price');
                 var address = $('input[name=uri]').val();
-
                 var price_dom = $('#price');
 
                 $.ajax({

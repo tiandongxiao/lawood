@@ -10,7 +10,7 @@ use DraperStudio\Commentable\Models\Comment;
 
 class Order extends ShopOrderModel
 {
-    protected $fillable = ['user_id', 'statusCode', 'order_no', 'type', 'subject', 'payed', 'refunded', 'seller_signed', 'client_signed', 'attach','seller_id','sale_id','category','rating_id','comment_id','withdrew','allow_draw'];
+    protected $fillable = ['user_id', 'statusCode', 'order_no', 'type', 'subject', 'payed', 'refunded', 'seller_signed', 'client_signed', 'attach','seller_id','sale_id','category','rating_id','comment_id','withdrew','allow_draw','bill_id'];
 
     private $app;
     private $payment;
@@ -306,5 +306,10 @@ class Order extends ShopOrderModel
                 ]);
             }
         }
+    }
+
+    public function bill()
+    {
+        return $this->belongsTo(Bill::class);
     }
 }

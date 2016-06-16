@@ -528,11 +528,17 @@ class User extends Model implements AuthenticatableContract,
         if($this->role == 'lawyer'){
             $orders = $this->not_drew_orders;
             if($orders){
+                $bill = Bill::create([
+                    'user_id' => $this->id
+                ]);
+                $sum = 0;
                 foreach ($orders as $order){
                     $order->update([
                         'withdrew' => true
                     ]);
+                    $sum += $order->total;
                 }
+                # 判断是否所有订单状态都为提款成功，失败的集体回滚
                 $result = 'success';
                 foreach ($orders as $order){
                     if($order->withdrew == false){
@@ -540,10 +546,33 @@ class User extends Model implements AuthenticatableContract,
                         break;
                     }
                 }
+                if($result == 'success'){
+                    $bill = Bill::create([
+                        'user_id' => $this->id,
+                        'amount'  => $sum
+                    ]);
+                    foreach ($orders as $order){
+                        $order->update([
+                            'bill_id' => $bill->id
+                        ]);
+                    }
+                }else{
+                    # 如果失败，重置所有订单相关提款状态为[未提款]
+                    foreach ($orders as $order){
+                        $order->update([
+                            'withdrew' => false
+                        ]);
+                    }
+                }
                 return $result;
             }
         }
 
         return 'invalid';
+    }
+
+    public function bills()
+    {
+        return $this->hasMany(Bill::class);
     }
 }

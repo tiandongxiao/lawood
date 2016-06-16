@@ -292,3 +292,5 @@ Route::group(['prefix' => 'ajax'], function(){
 
 });
 
+
+Route::resource('bill','BillController');
