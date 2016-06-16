@@ -165,7 +165,6 @@
             });
             //收藏
             $('#sc').tap(function(){
-                $(this).toggleClass('on');
                 var consult = $(this).data('consult');
                 var client = $(this).data('client');
                 var address = $('input[name=uri]').val();
@@ -181,10 +180,9 @@
                         },
                         success: function(result){
                             if(result.code == 'Y'){
-                                alert('like success');
+                                $(this).toggleClass('on');
                                 return true;
                             }
-                            alert('like fail');
                             return false;
                         }
                     });
@@ -200,10 +198,9 @@
                         },
                         success: function(result){
                             if(result.code == 'Y'){
-                                alert('unlike success');
+                                $(this).toggleClass('on');
                                 return true;
                             }
-                            alert('unlike fail');
                             return false;
                         }
                     });
