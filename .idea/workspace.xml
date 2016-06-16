@@ -100,8 +100,8 @@
           <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="624">
-                  <caret line="201" column="57" selection-start-line="201" selection-start-column="57" selection-end-line="201" selection-end-column="57" />
+                <state relative-caret-position="286">
+                  <caret line="89" column="68" selection-start-line="89" selection-start-column="68" selection-end-line="89" selection-end-column="68" />
                   <folding />
                 </state>
               </provider>
@@ -461,7 +461,7 @@
       <workItem from="1465867748307" duration="2854000" />
       <workItem from="1465886289282" duration="9557000" />
       <workItem from="1465969636114" duration="11693000" />
-      <workItem from="1465993127903" duration="25702000" />
+      <workItem from="1465993127903" duration="25898000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -586,7 +586,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1178984000" />
+    <option name="totallyTimeSpent" value="1179180000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1044,8 +1044,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="201" column="57" selection-start-line="201" selection-start-column="57" selection-end-line="201" selection-end-column="57" />
+        <state relative-caret-position="286">
+          <caret line="89" column="68" selection-start-line="89" selection-start-column="68" selection-end-line="89" selection-end-column="68" />
           <folding />
         </state>
       </provider>

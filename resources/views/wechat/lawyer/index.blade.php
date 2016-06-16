@@ -86,7 +86,7 @@
             <span class="fx"><i>分享</i></span>
             @if(Auth::check() && Auth::user()->role != 'lawyer')
                 @if($consult)
-                    @if($consult->liked())
+                    @if($consult->liked(Auth::user()->id))
                         <span class="sc on" id="sc" data-consult="{{$consult->id}}" data-client="{{Auth::user()->id}}"><i>收藏</i></span>
                     @else
                         <span class="sc" id="sc" data-consult="{{$consult->id}}" data-client="{{Auth::user()->id}}"><i>收藏</i></span>
