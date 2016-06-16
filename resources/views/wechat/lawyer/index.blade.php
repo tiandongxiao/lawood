@@ -87,9 +87,9 @@
             @if(Auth::check() && Auth::user()->role != 'lawyer')
                 @if($consult)
                     @if($consult->liked())
-                        <span class="sc on" id="sc" data-consult="{{$consult}}" data-client="{{Auth::user()->id}}"><i>收藏</i></span>
+                        <span class="sc on" id="sc" data-consult="{{$consult->id}}" data-client="{{Auth::user()->id}}"><i>收藏</i></span>
                     @else
-                        <span class="sc" id="sc" data-consult="{{$consult}}" data-client="{{Auth::user()->id}}"><i>收藏</i></span>
+                        <span class="sc" id="sc" data-consult="{{$consult->id}}" data-client="{{Auth::user()->id}}"><i>收藏</i></span>
                     @endif
                 @endif
             @endif
@@ -167,7 +167,7 @@
             $('#sc').tap(function(){
                 $(this).toggleClass('on');
                 var consult = $(this).data('consult');
-                var client = $(this).data('consult');
+                var client = $(this).data('client');
                 var address = $('input[name=uri]').val();
                 if($(this).hasClass('on')){
                     $.ajax({
