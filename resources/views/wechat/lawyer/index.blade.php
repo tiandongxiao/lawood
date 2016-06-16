@@ -95,13 +95,17 @@
             @endif
         </div>
         @if(!$consult)
-            <div class="itms te-cen bg-lan1 fc-fff" id="In-btn">预约咨询</div>
+            @if(Auth::check() && Auth::user()->role == 'lawyer')
+                <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat')}}">返回首页</a>
+            @else
+                <div class="itms te-cen bg-lan1 fc-fff" id="In-btn">预约咨询</div>
+            @endif
         @else
             @if(!Auth::check())
                 <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat/order/place/'.$consult->id)}}">预约咨询</a>
             @else
                 @if(Auth::user()->role != 'lawyer')
-                <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat/order/place/'.$consult->id)}}">预约咨询</a>
+                    <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat/order/place/'.$consult->id)}}">预约咨询</a>
                 @else
                     <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat')}}">返回首页</a>
                 @endif
