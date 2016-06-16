@@ -194,8 +194,8 @@
                         data: {
                             'consult' : consult,
                             'client'  : client,
-                            'operate' : 'like',
-                            '_token':$('input[name=_token]').val(),
+                            'operate' : 'unlike',
+                            '_token':$('input[name=_token]').val()
                         },
                         success: function(result){
                             if(result.code == 'Y'){
