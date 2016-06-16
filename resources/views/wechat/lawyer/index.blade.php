@@ -85,7 +85,13 @@
         <div class="itms itms-left">
             <span class="fx"><i>分享</i></span>
             @if(Auth::check() && Auth::user()->role != 'lawyer')
-            <span class="sc" id="sc"><i>收藏</i></span>
+                @if($consult)
+                    @if($consult->liked())
+                        <span class="sc on" id="sc" data-consult="{{$consult}}" data-client="{{Auth::user()->id}}"><i>收藏</i></span>
+                    @else
+                        <span class="sc" id="sc" data-consult="{{$consult}}" data-client="{{Auth::user()->id}}"><i>收藏</i></span>
+                    @endif
+                @endif
             @endif
         </div>
         @if(Auth::check() && Auth::user()->role != 'lawyer')
@@ -160,6 +166,47 @@
             //收藏
             $('#sc').tap(function(){
                 $(this).toggleClass('on');
+                var consult = $(this).data('consult');
+                var client = $(this).data('consult');
+                if($(this).hasClass('on')){
+                    $.ajax({
+                        type: 'POST',
+                        url: address+'/ajax/consult_liked',
+                        data: {
+                            'consult' : consult,
+                            'client'  : client,
+                            'operate' : 'unlike',
+                            '_token':$('input[name=_token]').val(),
+                        },
+                        success: function(result){
+                            if(result.code == 'Y'){
+
+                                return true;
+                            }
+
+                            return false;
+                        }
+                    });
+                }else{
+                    $.ajax({
+                        type: 'POST',
+                        url: address+'/ajax/consult_liked',
+                        data: {
+                            'consult' : consult,
+                            'client'  : client,
+                            'operate' : 'like',
+                            '_token':$('input[name=_token]').val(),
+                        },
+                        success: function(result){
+                            if(result.code == 'Y'){
+
+                                return true;
+                            }
+
+                            return false;
+                        }
+                    });
+                }
             });
             //律师咨询
             $('#In-btn').tap(function(){

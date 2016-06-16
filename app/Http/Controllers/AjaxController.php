@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
 use App\Notification;
 use App\Price;
 use App\Self\Notify\NotifyFacade;
@@ -151,4 +152,51 @@ class AjaxController extends Controller
             return response()->json(['code' => 'X', 'data' => null]);
         }
     }
+
+    public function consult_liked(Request $request)
+    {
+        if($request->ajax()){
+            $client_id = trim($request->get('client'));
+            $consult_id = trim($request->get('consult'));
+            $operate = trim($request->get('operate'));
+
+            $client = null;
+            $consult = null;
+
+            if($client_id){
+                $client = User::find($client_id);
+            }
+            if($consult_id){
+                $consult = Item::find($consult_id);
+            }
+
+            if($client && $consult){
+                switch ($operate){
+                    case 'like':
+                        $consult->like($client->id);
+                        $data = [
+                            'operate' => 'like'
+                        ];
+                        if($consult->liked($client->id)){
+                            return response()->json(['code' => 'Y', 'data' => $data]);
+                        }else{
+                            return response()->json(['code' => 'X', 'data' => $data]);
+                        }
+                        break;
+                    case 'unlike':
+                        $consult->unlike($client->id);
+                        $data = [
+                            'operate' => 'unlike'
+                        ];
+                        if(!$consult->liked($client->id)){
+                            return response()->json(['code' => 'Y', 'data' => $data]);
+                        }else{
+                            return response()->json(['code' => 'X', 'data' => $data]);
+                        }
+                        break;
+                }
+            }
+        }
+    }
+
 }

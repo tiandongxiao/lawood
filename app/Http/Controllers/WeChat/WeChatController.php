@@ -4,6 +4,7 @@ namespace App\Http\Controllers\WeChat;
 
 
 use App\Http\Controllers\Controller;
+use App\Item;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -33,13 +34,19 @@ class WeChatController extends Controller
         }
     }
 
-    public function showUser($id)
+    public function showUser(Request $request,$id)
     {
         $user = User::findOrFail($id);
 
         if($user->role == 'lawyer'){
+            # 通过order获取用户评论和评分
             $orders = $user->seller_orders;
-            return view('wechat.lawyer.index',compact('user','orders'));
+            $consult_id = $request->get('consult'); #获取consult id
+            $consult = null;
+            if($consult_id){
+                $consult = Item::find($consult_id);
+            }
+            return view('wechat.lawyer.index',compact('user','orders','consult'));
         }
 
         abort(404);

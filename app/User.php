@@ -575,4 +575,15 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany(Bill::class);
     }
+
+    # 获取已收藏的项目
+    public function getLikedAttribute()
+    {
+        $consults = Item::whereLiked($this->id) // find only articles where user liked them
+        ->with('likeCounter') // highly suggested to allow eager load
+        ->get();
+        if($consults->count())
+            return $consults;
+        return null;
+    }
 }

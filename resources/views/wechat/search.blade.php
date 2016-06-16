@@ -122,7 +122,7 @@
                 $('#price').text(data.price);
                 $('#office').text(data.office);
                 $('#distance').text(data._distance);
-                $('#total').text(data.total);
+                $('#total').text(data.counter);
                 $('.btn-ljzx').data('consult',data.consult);
 
                 $('.lstc-main').show();
@@ -148,13 +148,13 @@
                                 "<h3 class='chaochu_1'>"+ data[i]._name +" 律师</h3>"+
                                 "<p class='chaochu_1'><span><img src='/images/icon-q.png' width='20' height='20' class='img'>"+ data[i].price+"元</span>　　<span><img src='/images/icon-w.png' width='20' height='20' class='img'>" + data[i]._distance + "米</span></p>"+
                             "</div>"+
-                            "<div class='btn-ckmp' data-user='"+data[i].user+"'>查看名片</div>"+
+                            "<div class='btn-ckmp' data-user='"+data[i].user+"' data-consult='"+data[i].consult+"'>查看名片</div>"+
                         "</div>"
                     );
                 }
                 // 查看名片
                 $('.btn-ckmp').tap(function(){
-                    window.location.href="/wechat/user/"+$(this).data('user');
+                    window.location.href="/wechat/user/"+$(this).data('user')+"?consult="+$(this).data('consult');
                 });
             },function (result) {
                 // 失败
