@@ -20,7 +20,7 @@
                             </div>
                         @endforeach
                     @else
-                        <div style="text-align:center;margin-top: 60%">您当前没有已完成的订单</div>
+                        <div style="text-align:center;margin-top: 60%">您当前没有收藏任何咨询项</div>
                         <div class="bottom-btn">
                             <div class="blank100" style="height:120px;"></div>
                             <div class="con te-cen">
