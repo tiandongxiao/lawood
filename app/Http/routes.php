@@ -289,6 +289,7 @@ Route::group(['prefix' => 'ajax'], function(){
     Route::post('price','AjaxController@price');
 
     Route::post('evaluate','AjaxController@evaluate');
+    Route::post('consult_liked','AjaxController@consult_liked');
 
 });
 
