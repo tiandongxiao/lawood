@@ -100,7 +100,7 @@
             @if(!Auth::check())
                 <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat/order/place/'.$consult->id)}}">预约咨询</a>
             @else
-                @if(Auth::user()->role != 'lawyer'))
+                @if(Auth::user()->role != 'lawyer')
                 <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat/order/place/'.$consult->id)}}">预约咨询</a>
                 @else
                     <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat')}}">返回首页</a>
