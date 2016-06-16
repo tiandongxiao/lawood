@@ -122,6 +122,7 @@
                 $('#price').text(data.price);
                 $('#office').text(data.office);
                 $('#distance').text(data._distance);
+                $('#detail_info').attr('href',"/wechat/user/"+data.user+"?consult="+data.consult);
                 $('#total').text(data.counter);
                 $('.btn-ljzx').data('consult',data.consult);
 
