@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Session;
 use Shop;
 use App\Cart;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
