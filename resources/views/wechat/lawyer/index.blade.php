@@ -94,10 +94,18 @@
                 @endif
             @endif
         </div>
-        @if(Auth::check() && Auth::user()->role != 'lawyer')
-        <div class="itms te-cen bg-lan1 fc-fff" id="In-btn">预约咨询</div>
+        @if(!$consult)
+            <div class="itms te-cen bg-lan1 fc-fff" id="In-btn">预约咨询</div>
         @else
-        <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat')}}">返回首页</a>
+            @if(!Auth::check())
+                <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat/order/place/'.$consult->id)}}">预约咨询</a>
+            @else
+                @if(Auth::user()->role != 'lawyer'))
+                <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat/order/place/'.$consult->id)}}">预约咨询</a>
+                @else
+                    <a class="itms te-cen bg-lan1 fc-fff" href="{{url('wechat')}}">返回首页</a>
+                @endif
+            @endif
         @endif
     </footer>
 
@@ -150,7 +158,6 @@
 @section('script')
     <script>
         var consult = "{!! $user->prices[0]->consults[0]->id !!}"; //定义全局变量，用于标记选择
-
         $(function(){
             //下拉上升
             $(document).on('click','.btn-xl',function(){
