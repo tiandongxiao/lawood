@@ -165,6 +165,7 @@
             });
             //收藏
             $('#sc').tap(function(){
+                var __this = $(this);
                 var consult = $(this).data('consult');
                 var client = $(this).data('client');
                 var address = $('input[name=uri]').val();
@@ -180,7 +181,7 @@
                         },
                         success: function(result){
                             if(result.code == 'Y'){
-                                $(this).toggleClass('on');
+                                __this.toggleClass('on');
                                 return true;
                             }
                             return false;
@@ -198,7 +199,7 @@
                         },
                         success: function(result){
                             if(result.code == 'Y'){
-                                $(this).toggleClass('on');
+                                __this.toggleClass('on');
                                 return true;
                             }
                             return false;
