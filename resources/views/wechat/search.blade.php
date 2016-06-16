@@ -112,6 +112,7 @@
                     'price': data.price,
                     'office':data.office,
                     'consult':data.consult,
+                    'user': data.user,
                     'total':10
                 }
             }), 'click', function () {
