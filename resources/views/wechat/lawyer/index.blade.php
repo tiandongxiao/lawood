@@ -180,10 +180,10 @@
                         },
                         success: function(result){
                             if(result.code == 'Y'){
-
+                                alert('like success');
                                 return true;
                             }
-
+                            alert('like fail');
                             return false;
                         }
                     });
@@ -199,10 +199,10 @@
                         },
                         success: function(result){
                             if(result.code == 'Y'){
-
+                                alert('unlike success');
                                 return true;
                             }
-
+                            alert('unlike fail');
                             return false;
                         }
                     });
