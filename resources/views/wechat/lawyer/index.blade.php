@@ -194,7 +194,7 @@
                         data: {
                             'consult' : consult,
                             'client'  : client,
-                            'operate' : 'unlike',
+                            'operate' : 'like',
                             '_token':$('input[name=_token]').val()
                         },
                         success: function(result){

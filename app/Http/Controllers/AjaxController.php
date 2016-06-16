@@ -174,28 +174,23 @@ class AjaxController extends Controller
                 switch ($operate){
                     case 'like':
                         $consult->like($client->id);
-                        $data = [
-                            'operate' => 'like'
-                        ];
                         if($consult->liked($client->id)){
-                            return response()->json(['code' => 'Y', 'data' => $data]);
+                            return response()->json(['code' => 'Y', 'data' => $operate]);
                         }else{
-                            return response()->json(['code' => 'X', 'data' => $data]);
+                            return response()->json(['code' => 'X', 'data' => $operate]);
                         }
                         break;
                     case 'unlike':
                         $consult->unlike($client->id);
-                        $data = [
-                            'operate' => 'unlike'
-                        ];
                         if(!$consult->liked($client->id)){
-                            return response()->json(['code' => 'Y', 'data' => $data]);
+                            return response()->json(['code' => 'Y', 'data' => $operate]);
                         }else{
-                            return response()->json(['code' => 'X', 'data' => $data]);
+                            return response()->json(['code' => 'X', 'data' => $operate]);
                         }
                         break;
                 }
             }
+            return response()->json(['code' => 'X', 'data' => $operate]);
         }
     }
 
