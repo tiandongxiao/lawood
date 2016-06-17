@@ -27,12 +27,12 @@
 @section('script')
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
-        wx.config(<?php echo $js->config(array('onMenuShareQQ', 'onMenuShareWeibo','onMenuShareAppMessage'), true) ?>);
+        wx.config(<?php echo $js->config(array('onMenuShareQQ', 'onMenuShareWeibo','onMenuShareAppMessage'), false) ?>);
     </script>
     <script>
         wx.ready(function(){
             $('#onMenuShareQQ').click(function(){
-                wx.onMenuShareAppMessage({
+                wx.onMenuShareQQ({
                     title: "{!! $user->real_name !!} 律师", // 分享标题
                     desc: '来律屋，寻找您身边的律师，体验高效，快捷，专业的法律服务！', // 分享描述
                     link: "{!! url('wechat/user/'.$user->id) !!}", // 分享链接
