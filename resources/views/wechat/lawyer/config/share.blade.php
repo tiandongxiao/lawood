@@ -40,21 +40,24 @@
                 }
             });
 
-                {{--wx.onMenuShareQQ({--}}
-                    {{--title: "{!! $user->real_name !!} 律师", // 分享标题--}}
-                    {{--desc: '来律屋，寻找您身边的律师，体验高效，快捷，专业的法律服务！', // 分享描述--}}
-                    {{--link: "{!! url('wechat/user/'.$user->id) !!}", // 分享链接--}}
-                    {{--imgUrl: 'http://203.195.235.76/jssdk/images/p2166127561.jpg', // 分享图标--}}
-                    {{--success: function () {--}}
-                        {{--// 用户确认分享后执行的回调函数--}}
-                        {{--alert('分享成功');--}}
-                    {{--},--}}
-                    {{--cancel: function () {--}}
-                        {{--// 用户取消分享后执行的回调函数--}}
-                        {{--alert('取消分享');--}}
-                    {{--}--}}
-                {{--});--}}
-                {{--alert('已注册获取“发送给朋友”状态事件');--}}
+            wx.onMenuShareAppMessage({
+                title: 'asdfasdfasdf', // 分享标题
+                desc: 'asdfasdfasdfasdf', // 分享描述
+                link: '{!! url('wechat/user/'.$user->id) !!}', // 分享链接
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                imgUrl: 'http://demo.open.weixin.qq.com/jssdk/images/p2166127561.jpg',
+                trigger: function (res) {
+                    // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+                    alert('用户点击发送给朋友');
+                },
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
 
         });
     </script>
