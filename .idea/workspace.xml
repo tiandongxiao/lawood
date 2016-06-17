@@ -269,7 +269,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="-14" />
+    <option name="y" value="94" />
     <option name="width" value="1918" />
     <option name="height" value="1028" />
   </component>
@@ -720,7 +721,7 @@
       <workItem from="1465867748307" duration="2854000" />
       <workItem from="1465886289282" duration="9557000" />
       <workItem from="1465969636114" duration="13608000" />
-      <workItem from="1466147826759" duration="5073000" />
+      <workItem from="1466147826759" duration="5675000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -845,7 +846,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1160270000" />
+    <option name="totallyTimeSpent" value="1160872000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -857,7 +858,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1918" height="1028" extended-state="0" />
+    <frame x="-14" y="94" width="1918" height="1028" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
