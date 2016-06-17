@@ -31,22 +31,30 @@
     </script>
     <script>
         wx.ready(function(){
+            wx.checkJsApi({
+                jsApiList: ['onMenuShareQQ'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+                success: function(res) {
+                    alert('good');
+                    // 以键值对的形式返回，可用的api值true，不可用为false
+                    // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+                }
+            });
 
-                wx.onMenuShareQQ({
-                    title: "{!! $user->real_name !!} 律师", // 分享标题
-                    desc: '来律屋，寻找您身边的律师，体验高效，快捷，专业的法律服务！', // 分享描述
-                    link: "{!! url('wechat/user/'.$user->id) !!}", // 分享链接
-                    imgUrl: 'http://203.195.235.76/jssdk/images/p2166127561.jpg', // 分享图标
-                    success: function () {
-                        // 用户确认分享后执行的回调函数
-                        alert('分享成功');
-                    },
-                    cancel: function () {
-                        // 用户取消分享后执行的回调函数
-                        alert('取消分享');
-                    }
-                });
-                alert('已注册获取“发送给朋友”状态事件');
+                {{--wx.onMenuShareQQ({--}}
+                    {{--title: "{!! $user->real_name !!} 律师", // 分享标题--}}
+                    {{--desc: '来律屋，寻找您身边的律师，体验高效，快捷，专业的法律服务！', // 分享描述--}}
+                    {{--link: "{!! url('wechat/user/'.$user->id) !!}", // 分享链接--}}
+                    {{--imgUrl: 'http://203.195.235.76/jssdk/images/p2166127561.jpg', // 分享图标--}}
+                    {{--success: function () {--}}
+                        {{--// 用户确认分享后执行的回调函数--}}
+                        {{--alert('分享成功');--}}
+                    {{--},--}}
+                    {{--cancel: function () {--}}
+                        {{--// 用户取消分享后执行的回调函数--}}
+                        {{--alert('取消分享');--}}
+                    {{--}--}}
+                {{--});--}}
+                {{--alert('已注册获取“发送给朋友”状态事件');--}}
 
         });
     </script>
