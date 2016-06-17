@@ -12,9 +12,8 @@
                             <div class="itms">
                                 <div class="f-left"><img src="{{$consult->seller->avatar}}" width="30px" height="30px"></div>
                                 <div class="right">
-                                    <h3 class="chaochu_1"><span class="fc-03aaf0">{{$consult->seller->real_name}} 律师</span>　　{{$consult->category->name}}</h3>
-                                    <p class="chaochu_1">{{$consult->seller->office}}</p>
-                                    <p class=" fc-03aaf0 mar-top-10">咨询费：{{$consult->price}}元</p>
+                                    <h3 class="chaochu_1 mar-top-5"><span class="fc-03aaf0">{{$consult->seller->real_name}} 律师</span>　　{{$consult->category->name}}</h3>
+                                    <p class=" fc-03aaf0 mar-top-5">咨询费：{{$consult->price}}元</p>
                                 </div>
                                 <a class="btn-ckmp" href="{{url('wechat/user/'.$consult->seller->id.'?consult='.$consult->id)}}">查看名片</a>
                             </div>
