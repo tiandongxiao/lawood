@@ -15,7 +15,7 @@
             <div class="bottom-btn">
                 <div class="blank100"></div>
                 <div class="con te-cen">
-                    <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10" value="分享二维码" id="In-btn">
+                    <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10" value="分享二维码" id="onMenuShareQQ">
                 </div>
             </div>
             @else
@@ -25,4 +25,8 @@
     </section>
 @stop
 @section('script')
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        wx.config(<?php echo $js->config(array('onMenuShareQQ', 'onMenuShareWeibo'), true) ?>);
+    </script>
 @stop

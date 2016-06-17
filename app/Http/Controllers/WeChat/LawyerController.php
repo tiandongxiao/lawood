@@ -160,7 +160,8 @@ class LawyerController extends Controller
                 return view('wechat.lawyer.config.price',compact('items'));
             case 'share':
                 $user = $this->user;
-                return view('wechat.lawyer.config.share',compact('user'));
+                $js = app('wechat')->js;
+                return view('wechat.lawyer.config.share',compact('user','js'));
         }
     }
 
