@@ -43,7 +43,7 @@
                     <div class="f-right" ><span class="btn-ljzx">立即咨询</span></div>
                     @else
                         @if(Auth::user()->role != 'lawyer')
-                            <div class="f-right" style="top: 20px;"><span class="btn-ljzx">立即咨询</span></div>
+                            <div class="f-right" ><span class="btn-ljzx" style="top: 25px;">立即咨询</span></div>
                         @endif
                     @endif
                     <div class="left">
