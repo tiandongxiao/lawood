@@ -142,13 +142,15 @@
           <file leaf-file-name="search.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="66">
-                  <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
+                <state relative-caret-position="396">
+                  <caret line="45" column="66" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
                   <folding>
-                    <marker date="1466164493543" expanded="true" signature="4031:4089" ph="..." />
-                    <marker date="1466164493543" expanded="true" signature="5818:5853" ph="..." />
-                    <marker date="1466164493543" expanded="true" signature="5946:5963" ph="..." />
-                    <marker date="1466164493543" expanded="true" signature="6271:6279" ph="..." />
+                    <element signature="n#style#0;n#div#0;n#div#1;n#section#1;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#1;n#section#1;n#!!top" expanded="true" />
+                    <marker date="1466164922643" expanded="true" signature="4045:4103" ph="..." />
+                    <marker date="1466164922643" expanded="true" signature="5832:5867" ph="..." />
+                    <marker date="1466164922643" expanded="true" signature="5960:5977" ph="..." />
+                    <marker date="1466164922643" expanded="true" signature="6285:6293" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -636,7 +638,7 @@
       <workItem from="1465886289282" duration="9557000" />
       <workItem from="1465969636114" duration="13608000" />
       <workItem from="1466147826759" duration="8490000" />
-      <workItem from="1466162215087" duration="2280000" />
+      <workItem from="1466162215087" duration="2708000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -761,7 +763,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1165967000" />
+    <option name="totallyTimeSpent" value="1166395000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1218,13 +1220,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
+        <state relative-caret-position="396">
+          <caret line="45" column="66" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
           <folding>
-            <marker date="1466164493543" expanded="true" signature="4031:4089" ph="..." />
-            <marker date="1466164493543" expanded="true" signature="5818:5853" ph="..." />
-            <marker date="1466164493543" expanded="true" signature="5946:5963" ph="..." />
-            <marker date="1466164493543" expanded="true" signature="6271:6279" ph="..." />
+            <element signature="n#style#0;n#div#0;n#div#1;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#1;n#section#1;n#!!top" expanded="true" />
+            <marker date="1466164922643" expanded="true" signature="4045:4103" ph="..." />
+            <marker date="1466164922643" expanded="true" signature="5832:5867" ph="..." />
+            <marker date="1466164922643" expanded="true" signature="5960:5977" ph="..." />
+            <marker date="1466164922643" expanded="true" signature="6285:6293" ph="..." />
           </folding>
         </state>
       </provider>
