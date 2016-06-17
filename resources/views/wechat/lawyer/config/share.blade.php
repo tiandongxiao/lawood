@@ -33,6 +33,7 @@
         $(function(){
             //切换默认
             $('#onMenuShareQQ').tap(function(){
+                alert('good');
                 wx.onMenuShareAppMessage({
                     title: "{!! $user->real_name !!} 律师", // 分享标题
                     desc: '来律屋，寻找您身边的律师，体验高效，快捷，专业的法律服务！', // 分享描述
