@@ -109,7 +109,7 @@
 
     @elseif(Auth::user()->role == 'client')
         <div class="itms itms-tx bor-bot">
-            <div class="f-left"><img src="{{Auth::user()->avatar}}" width="60" height="60" ></div>
+            <div class="f-left"><img src="{{Auth::user()->avatar}}" width="60" height="60"></div>
             <div class="right">
                 @if(Auth::user()->real_name)
                     {{Auth::user()->real_name}} <span style="color: #df8a13">[{{Auth::user()->status}}]</span>

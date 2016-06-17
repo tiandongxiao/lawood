@@ -158,6 +158,9 @@ class LawyerController extends Controller
                 # 通过桥接的价格来处理当前的问题，只是权宜之计
                 $items = $this->user->prices;
                 return view('wechat.lawyer.config.price',compact('items'));
+            case 'share':
+                $user = $this->user;
+                return view('wechat.lawyer.config.share',compact('user'));
         }
     }
 
