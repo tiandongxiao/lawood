@@ -29,4 +29,25 @@
     <script type="text/javascript" charset="utf-8">
         wx.config(<?php echo $js->config(array('onMenuShareQQ', 'onMenuShareWeibo'), false) ?>);
     </script>
+    <script>
+        $(function(){
+            //切换默认
+            $('#onMenuShareQQ').tap(function(){
+                wx.onMenuShareAppMessage({
+                    title: "{!! $user->real_name !!} 律师", // 分享标题
+                    desc: '来律屋，寻找您身边的律师，体验高效，快捷，专业的法律服务！', // 分享描述
+                    link: "{!! url('wechat/user/'.$user->id) !!}", // 分享链接
+                    imgUrl: '', // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                        alert('分享成功');
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                        alert('取消分享');
+                    }
+                });
+            });
+        })
+    </script>
 @stop
