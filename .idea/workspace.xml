@@ -49,7 +49,7 @@
             <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/config/share.blade.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="185">
-                  <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+                  <caret line="36" column="60" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
                   <folding />
                 </state>
               </provider>
@@ -269,8 +269,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-14" />
-    <option name="y" value="94" />
+    <option name="x" value="-22" />
+    <option name="y" value="216" />
     <option name="width" value="1918" />
     <option name="height" value="1028" />
   </component>
@@ -721,7 +721,7 @@
       <workItem from="1465867748307" duration="2854000" />
       <workItem from="1465886289282" duration="9557000" />
       <workItem from="1465969636114" duration="13608000" />
-      <workItem from="1466147826759" duration="6675000" />
+      <workItem from="1466147826759" duration="6876000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -846,7 +846,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1161872000" />
+    <option name="totallyTimeSpent" value="1162073000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -858,7 +858,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-14" y="94" width="1918" height="1028" extended-state="0" />
+    <frame x="-22" y="216" width="1918" height="1028" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1299,7 +1299,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/config/share.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
-          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+          <caret line="36" column="60" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
           <folding />
         </state>
       </provider>
