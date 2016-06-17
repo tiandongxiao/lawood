@@ -154,7 +154,7 @@
                                 "<h3 class='chaochu_1' style='padding-top: 0px;padding-left: 4px;'>"+ data[i]._name +" 律师</h3>"+
                                 "<p class='chaochu_1' style='padding-top: 5px;'><span><img src='/images/icon-q.png' width='20' height='20' class='img'>"+ data[i].price+"元</span>　　<span><img src='/images/icon-w.png' width='20' height='20' class='img'>" + data[i]._distance + "米</span></p>"+
                             "</div>"+
-                            "<div class='btn-ckmp' data-user='"+data[i].user+"' data-consult='"+data[i].consult+"'>查看名片</div>"+
+                            "<div class='btn-ckmp' style='top:22px' data-user='"+data[i].user+"' data-consult='"+data[i].consult+"'>查看名片</div>"+
                         "</div>"
                     );
                 }
