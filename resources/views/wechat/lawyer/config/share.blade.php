@@ -30,26 +30,49 @@
         wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareQQ', 'onMenuShareWeibo','onMenuShareAppMessage'), false) ?>);
     </script>
     <script>
-        wx.ready(function(){
-            wx.onMenuShareAppMessage({
-                title: 'asdfasdfasdf', // 分享标题
-                desc: 'asdfasdfasdfasdf', // 分享描述
-                link: '{!! url('wechat/user/'.$user->id) !!}', // 分享链接
-                type: '', // 分享类型,music、video或link，不填默认为link
-                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                imgUrl: 'http://demo.open.weixin.qq.com/jssdk/images/p2166127561.jpg',
-                trigger: function (res) {
-                    // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
-                    alert('用户点击发送给朋友');
-                },
-                success: function () {
-                    // 用户确认分享后执行的回调函数
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                }
-            });
+        $(function(){
+            //切换默认
+            $('#onMenuShareQQ').tap(function(){
+                function shareWithFriend() {
+                    WeixinJSBridge.invoke('sendAppMessage',
+                        {
+                            "appid": 'wxece8375442c7704d',
+                            "img_url": 'http://demo.open.weixin.qq.com/jssdk/images/p2166127561.jpg',
+                            "img_width": "200",
+                            "img_height": "200",
+                            "link": '{!! url('wechat/user/'.$user->id) !!}',
+                            "desc": 'why is you again',
+                            "title": 'me laile'
+                        }, function(res) {
 
-        });
+                        }
+                    )
+                }
+                shareWithFriend();
+            })
+        })
+
+
+        {{--wx.ready(function(){--}}
+            {{--wx.onMenuShareAppMessage({--}}
+                {{--title: 'asdfasdfasdf', // 分享标题--}}
+                {{--desc: 'asdfasdfasdfasdf', // 分享描述--}}
+                {{--link: '{!! url('wechat/user/'.$user->id) !!}', // 分享链接--}}
+                {{--type: '', // 分享类型,music、video或link，不填默认为link--}}
+                {{--dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空--}}
+                {{--imgUrl: 'http://demo.open.weixin.qq.com/jssdk/images/p2166127561.jpg',--}}
+                {{--trigger: function (res) {--}}
+                    {{--// 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回--}}
+                    {{--alert('用户点击发送给朋友');--}}
+                {{--},--}}
+                {{--success: function () {--}}
+                    {{--// 用户确认分享后执行的回调函数--}}
+                {{--},--}}
+                {{--cancel: function () {--}}
+                    {{--// 用户取消分享后执行的回调函数--}}
+                {{--}--}}
+            {{--});--}}
+
+        {{--});--}}
     </script>
 @stop
