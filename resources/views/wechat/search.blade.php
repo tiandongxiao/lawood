@@ -35,7 +35,7 @@
                     <a href="" class="link-more" id="detail_info">点击查看详情</a>
                     <div class="zxf">
                         <p class="top">咨询费</p>
-                        <p class="bottom"><span id="price">220</span><font class="fs-18">元</font></p>
+                        <p class="bottom" style="top: -4px;"><span id="price">220</span><span class="fs-18">元</span></p>
                     </div>
                 </div>
                 <div class="name">
