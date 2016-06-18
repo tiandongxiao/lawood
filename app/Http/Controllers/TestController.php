@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+
 use App\Item;
-use App\Notification;
-use App\Price;
-use App\Traits\BaiduMapTrait;
 use App\User;
-use App\UserPolite;
 use App\UserTiming;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -19,26 +15,9 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use App\Place;
 use \Notify;
-use Bican\Roles\Models\Role;
-
 
 class TestController extends Controller
 {
-    use BaiduMapTrait;
-    public function getMakeCategories()
-    {
-        $root = Category::where('name','root')->first();
-        dd($root->tree());
-    }
-
-    public function drawCategory()
-    {
-        $root = Category::where('name','root')->first();
-        // $root = Category::findOrFail(0)->first();
-        $nodes = $root->tree()[0]['nodes'];
-        return view('index',compact('nodes'));
-    }
-
     public function getHttpLocation()
     {
         //$this->createTable();

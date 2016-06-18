@@ -93,13 +93,11 @@ class WxPayController extends Controller
     public function nativePay($item_id)
     {
         $order = $this->prePay($item_id, 'wx_native');
-
         if($order->statusCode == 'pending'){
             $url = $order->attach;
             $price = $order->total;
             return view('payment.wxpay.native',compact('url','price'));
         }
-
         return redirect('client/completed');
     }
 

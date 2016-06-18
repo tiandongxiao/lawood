@@ -10,8 +10,7 @@
             <p class="fs-16 fc-03aaf0  mar-top-20 line-20">{{$user->real_name}}</p>
             <p class=" line-30">{{$user->office}}</p>
             <p class=" mar-top-20 line-30 fs-13">约见次数：{{$user->service_count}}次</p>
-            <div class="mar-top-30"><img src="/images/ewm.png" width="160" height="160"></div>
-
+            <div class="mar-top-30">{!! QrCode::encoding('UTF-8')->size(400)->generate(url('wechat/user/'.$user->id)) !!}</div>
             <div class="bottom-btn">
                 <div class="blank100"></div>
                 <div class="con te-cen">
