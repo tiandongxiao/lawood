@@ -8,7 +8,7 @@
             @if($user)
             <img src="{{$user->avatar}}" width="70" height="70" class="br-100 mar-top-30">
             <p class="fs-16 fc-03aaf0  mar-top-20 line-20">{{$user->real_name}}</p>
-            <div class="mar-top-15">{!! QrCode::encoding('UTF-8')->size(275)->merge($user->avatar)->generate(url('wechat/user/'.$user->id)) !!}</div>
+            <div class="mar-top-15">{!! QrCode::encoding('UTF-8')->size(275)->merge($user->avatar.'')->generate(url('wechat/user/'.$user->id)) !!}</div>
             <div class="bottom-btn">
                 <div class="blank100"></div>
                 <div class="con te-cen">
