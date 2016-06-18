@@ -15,7 +15,7 @@
             <div class="bottom-btn">
                 <div class="blank100"></div>
                 <div class="con te-cen">
-                    <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10" value="分享二维码" id="onMenuShareQQ">
+                    <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 back-home" value="返回首页" >
                 </div>
             </div>
             @else
@@ -44,5 +44,10 @@
         wx.error(function (res) {
             alert(res.errMsg);
         });
+        $(function(){
+            $('.back-home').tap(function () {
+                window.location.href="/wechat";
+            });
+        })
     </script>
 @stop

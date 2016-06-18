@@ -81,7 +81,7 @@
         </div>
     </section>
     <footer class="yy-footer po-f">
-        <div class="itms itms-left">            
+        <div class="itms itms-left">
             @if(Auth::check() && Auth::user()->role != 'lawyer')
                 @if($consult)
                     @if($consult->liked(Auth::user()->id))
