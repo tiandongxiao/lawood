@@ -160,6 +160,26 @@
     @endif
 @stop
 @section('script')
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        wx.config(<?php echo $js->config(array('onMenuShareQQ', 'onMenuShareTimeline','onMenuShareAppMessage'), false) ?>);
+    </script>
+    <script>
+        wx.ready(function () {
+            var shareData = {
+                title: '{!! $user->real_name !!} 律师名片',
+                desc: '{!! $user->real_name !!} 律师主页',
+                link: '{!! url('wechat/user/'.$user->id) !!}',
+                imgUrl: '{!! $user->avatar !!}'
+            };
+            wx.onMenuShareAppMessage(shareData);
+            wx.onMenuShareTimeline(shareData);
+            wx.onMenuShareQQ(shareData);
+        });
+        wx.error(function (res) {
+            alert(res.errMsg);
+        });
+    </script>
     <script>
         var consult = "{!! $user->prices[0]->consults[0]->id !!}"; //定义全局变量，用于标记选择
         $(function(){
