@@ -103,7 +103,12 @@
                                         @if($order->payed)
                                         <div class="zxf">
                                             <p>已退咨询费</p>
-                                            <p class="jg">{{$order->total}}元</p>
+                                            <p class="jg">{{$order->total}} <span style="font-weight: normal">元</span></p>
+                                        </div>
+                                        @else
+                                        <div class="zxf">
+                                            <p>未支付费用</p>
+                                            <p class="jg">0 <span style="font-weight: normal">元</span></p>
                                         </div>
                                         @endif
                                     </div>
@@ -243,7 +248,8 @@
                             <div class="con">
                                 <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                 <div class="xx">
-                                    <p class="name chaochu_1 mar-top-15">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                    <p class="name chaochu_1 mar-top-5">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                    <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                     <div class="zxf">
                                         <p>已付咨询费</p>
                                         <p class="jg">{{$order->total}}元</p>
