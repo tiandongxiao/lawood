@@ -2,9 +2,7 @@
 @section('css')
     <style>
         body{background:#f8f8f8}
-        .lstc-main {
-            background: rgba(88, 88, 88, 0.92);
-        }
+        .lstc-main {background: rgba(88, 88, 88, 0.92); }
     </style>
 @stop
 @section('content')
@@ -26,7 +24,8 @@
             <div class="fc-bcbcbc mar-top-20">{{$user->office}}</div>
             <div class="fc-bcbcbc line-30">执业证号：{{$user->licence}}</div>
             <div class="nf fc-bcbcbc bor-top">
-                <span style="text-align: center">约见次数：{{$user->service_count}} 次</span>
+                <span>加入时间：{{$user->created_at->diffForHumans()}} </span>
+                <span>约见次数：{{$user->service_count}} 次</span>
             </div>
         </div>
         <div class="lsjj">
