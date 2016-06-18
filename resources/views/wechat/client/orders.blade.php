@@ -18,7 +18,7 @@
                             <div class="itms bg-fff-box">
                                 <div class="top">
                                     <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
-                                    <div class="f-right">订单号：{{$order->order_no}}</div>
+                                    <div class="f-right">单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
@@ -43,7 +43,7 @@
                             <div class="itms bg-fff-box">
                                 <div class="top">
                                     <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
-                                    <div class="f-right">订单号：{{$order->order_no}}</div>
+                                    <div class="f-right">单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
@@ -68,7 +68,7 @@
                             <div class="itms bg-fff-box">
                                 <div class="top">
                                     <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
-                                    <div class="f-right">订单号：{{$order->order_no}}</div>
+                                    <div class="f-right">单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
@@ -93,7 +93,7 @@
                             <div class="itms bg-fff-box">
                                 <div class="top">
                                     <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
-                                    <div class="f-right">订单号：{{$order->order_no}}</div>
+                                    <div class="f-right">单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
@@ -129,7 +129,7 @@
                             <div class="itms bg-fff-box">
                                 <div class="top">
                                     <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
-                                    <div class="f-right">订单号：{{$order->order_no}}</div>
+                                    <div class="f-right">单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
@@ -170,7 +170,7 @@
                             <div class="itms bg-fff-box">
                                 <div class="top">
                                     <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
-                                    <div class="f-right">订单号：{{$order->order_no}}</div>
+                                    <div class="f-right">单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
@@ -203,7 +203,7 @@
                             <div class="itms bg-fff-box">
                                 <div class="top">
                                     <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
-                                    <div class="f-right">订单号：{{$order->order_no}}</div>
+                                    <div class="f-right">单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
@@ -243,7 +243,7 @@
                         <div class="itms bg-fff-box">
                             <div class="top">
                                 <div class="f-left">下单时间 16:00 11月1日</div>
-                                <div class="f-right">订单号：{{$order->order_no}}</div>
+                                <div class="f-right">单号：{{$order->order_no}}</div>
                             </div>
                             <div class="con">
                                 <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
