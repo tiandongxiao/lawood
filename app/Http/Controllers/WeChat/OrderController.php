@@ -91,8 +91,7 @@ class OrderController extends Controller
     }
 
     public function postSelectAddress(Request $request)
-    {
-        dd($request->all());
+    {        
         $order = Order::findOrFail($request->get('order'));
         if(!$order->place){
             Place::create([
