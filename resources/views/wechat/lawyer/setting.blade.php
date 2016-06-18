@@ -5,7 +5,7 @@
 @section('content')
     <section class="lssz-main">
         <div class="form-list bg-fff-box">
-            <a class="itms itms-link mar-top-10" href="{{url('wechat/lawyer/config/phone')}}">
+            <a class="itms itms-link" href="{{url('wechat/lawyer/config/phone')}}">
                 <div class="f-left">手机号码</div>
                 <div class="f-right">{{Auth::user()->phone}}</div>
             </a>

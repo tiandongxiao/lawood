@@ -82,6 +82,11 @@
     </section>
     <footer class="yy-footer po-f">
         <div class="itms itms-left">
+            @if($user->enable)
+                <span><i>欢迎咨询</i></span>
+            @else
+                <span><i>暂停接单</i></span>
+            @endif
             @if(Auth::check() && Auth::user()->role != 'lawyer')
                 @if($consult)
                     @if($consult->liked(Auth::user()->id))
