@@ -31,6 +31,7 @@
                 gdMapInit();
                 geocoder(address,function (position) {
                     cur_position = position;
+                    console.log(cur_position);
                     searchDataByMajor();
                 },function () {
                     alert('转化失败');
