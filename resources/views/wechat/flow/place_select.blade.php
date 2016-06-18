@@ -51,7 +51,7 @@
                                     "<p class='chaochu_1'>"+poi.address+"</p>"+
                                     "<p class='chaochu_1 mar-top-10'>"+"距离"+poi.distance+"米"+"</p>"+
                                 "</div>"+
-                                "<div class='itms-radio'><input type='radio' name='dd' class='In-radio' data-coffee='"+poi.name+"' value='"+poi._id+"'></div>"+
+                                "<div class='itms-radio'><input type='radio' name='dd' class='In-radio' data-coffee='"+poi.name+"' value='"+poi.id+"'></div>"+
                             "</div>"
                         );
                     }
