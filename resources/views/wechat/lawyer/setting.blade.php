@@ -5,18 +5,10 @@
 @section('content')
     <section class="lssz-main">
         <div class="form-list bg-fff-box">
-            <div class="itms">
-                <div class="f-left">真实姓名</div>
-                <div class="f-right">{{Auth::user()->real_name}}</div>
-            </div>
-            <a class="itms itms-link" href="{{url('wechat/lawyer/config/phone')}}">
+            <a class="itms itms-link mar-top-10" href="{{url('wechat/lawyer/config/phone')}}">
                 <div class="f-left">手机号码</div>
                 <div class="f-right">{{Auth::user()->phone}}</div>
             </a>
-            <div class="itms">
-                <div class="f-left">律师证号</div>
-                <div class="f-right">{{Auth::user()->licence}}</div>
-            </div>
             <a class="itms itms-link" href="{{url('wechat/lawyer/config/office')}}">
                 <div class="f-left">律所名称</div>
                 <div class="f-right">{{Auth::user()->office}}</div>
