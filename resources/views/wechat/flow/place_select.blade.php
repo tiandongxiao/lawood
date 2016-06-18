@@ -41,6 +41,7 @@
                 searchPublicByAround(cur_position,"咖啡厅",function (result) {
                     // 搜索成功
                     var pois = result.poiList.pois;
+                    console.log(pois);
                     for(var i = 0; i < pois.length; i++) {
                         var poi = pois[i];
                         $('.con').append(
