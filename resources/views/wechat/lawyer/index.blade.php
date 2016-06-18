@@ -75,14 +75,13 @@
                     @endif
                     @endforeach
                 @else
-                    <p style="text-align: center">当前没有客户进行评价</p>
+                    <p style="text-align: center">当前没有客户评价信息</p>
                 @endif
             </div>
         </div>
     </section>
     <footer class="yy-footer po-f">
-        <div class="itms itms-left">
-            <span class="fx"><i>分享</i></span>
+        <div class="itms itms-left">            
             @if(Auth::check() && Auth::user()->role != 'lawyer')
                 @if($consult)
                     @if($consult->liked(Auth::user()->id))
