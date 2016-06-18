@@ -83,9 +83,9 @@
     <footer class="yy-footer po-f">
         <div class="itms itms-left">
             @if($user->enable)
-                <span><i>欢迎咨询</i></span>
+                <span style="color: #df8a13">欢迎咨询</span>
             @else
-                <span><i>暂停接单</i></span>
+                <span style="color: #b94a48">暂停接单</span>
             @endif
             @if(Auth::check() && Auth::user()->role != 'lawyer')
                 @if($consult)
