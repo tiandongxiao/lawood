@@ -22,8 +22,8 @@
                 @endif
             </div>
             <div class="fc-bcbcbc mar-top-20">{{$user->office}}</div>
-            <div class="fc-bcbcbc line-30">执业证号：{{$user->licence}}</div>
-            <div class="nf fc-bcbcbc bor-top">
+            <div class="fc-bcbcbc line-30 mar-top-10">执业证号：{{$user->licence}}</div>
+            <div class="nf fc-bcbcbc bor-top mar-top-10">
                 <span>加入时间：{{$user->created_at->diffForHumans()}} </span>
                 <span>约见次数：{{$user->service_count}} 次</span>
             </div>
