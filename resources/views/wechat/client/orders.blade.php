@@ -23,9 +23,8 @@
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>{{$order->category}}</span></p>
-                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
-                                        <p class="jl chaochu_1">距离：0.9km</p>
+                                        <p class="name chaochu_1 mar-top-5">律师 {{$order->seller->real_name}}<span>{{$order->category}}</span></p>
+                                        <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                         <div class="zxf">
                                             <p>需付咨询费</p>
                                             <p class="jg">{{$order->total}}元</p>
@@ -49,9 +48,8 @@
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
-                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
-                                        <p class="jl chaochu_1">距离：0.9km</p>
+                                        <p class="name chaochu_1 mar-top-5">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                        <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                         <div class="zxf">
                                             <p>已付咨询费</p>
                                             <p class="jg">{{$order->total}}元</p>
@@ -75,9 +73,8 @@
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
-                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
-                                        <p class="jl chaochu_1">距离：0.9km</p>
+                                        <p class="name chaochu_1 mar-top-5">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                        <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                         <div class="zxf">
                                             <p>已付咨询费</p>
                                             <p class="jg">{{$order->total}}元</p>
@@ -101,9 +98,8 @@
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
-                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
-                                        <p class="jl chaochu_1">距离：0.9km</p>
+                                        <p class="name chaochu_1 mar-top-5">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                        <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                         @if($order->payed)
                                         <div class="zxf">
                                             <p>已退咨询费</p>
@@ -133,9 +129,8 @@
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
-                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
-                                        <p class="jl chaochu_1">距离：0.9km</p>
+                                        <p class="name chaochu_1 mar-top-5">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                        <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                         <div class="zxf">
                                             <p>已退咨询费</p>
                                             <p class="jg">{{$order->total}}元</p>
@@ -175,9 +170,8 @@
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
-                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
-                                        <p class="jl chaochu_1">距离：0.9km</p>
+                                        <p class="name chaochu_1 mar-top-5">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                        <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                         <div class="zxf">
                                             <p>已付咨询费</p>
                                             <p class="jg">{{$order->total}}元</p>
@@ -209,9 +203,8 @@
                                 <div class="con">
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
-                                        <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
-                                        <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
-                                        <p class="jl chaochu_1">距离：0.9km</p>
+                                        <p class="name chaochu_1 mar-top-5">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                        <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                         <div class="zxf">
                                             <p>已付咨询费</p>
                                             <p class="jg">{{$order->total}}元</p>
@@ -250,9 +243,7 @@
                             <div class="con">
                                 <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                 <div class="xx">
-                                    <p class="name chaochu_1">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
-                                    <p class="dd chaochu_2">预约地点：{{$order->place->name}}</p>
-                                    <p class="jl chaochu_1">距离：0.9km</p>
+                                    <p class="name chaochu_1 mar-top-15">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
                                     <div class="zxf">
                                         <p>已付咨询费</p>
                                         <p class="jg">{{$order->total}}元</p>
