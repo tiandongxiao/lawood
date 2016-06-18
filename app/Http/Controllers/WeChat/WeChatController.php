@@ -46,7 +46,8 @@ class WeChatController extends Controller
             if($consult_id){
                 $consult = Item::find($consult_id);
             }
-            return view('wechat.lawyer.index',compact('user','orders','consult'));
+            $js = app('wechat')->js;
+            return view('wechat.lawyer.index',compact('user','orders','consult','js'));
         }
 
         abort(404);
