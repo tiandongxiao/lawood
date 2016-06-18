@@ -15,6 +15,7 @@ class CreateBillsTable extends Migration
         Schema::create('bills', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable();
+            $table->string('name',32)->nullable();
             $table->smallInteger('amount')->default(0);
             $table->boolean('done')->default(false);
             $table->timestamps();

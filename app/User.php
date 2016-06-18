@@ -549,6 +549,7 @@ class User extends Model implements AuthenticatableContract,
                 if($result == 'success'){
                     $bill = Bill::create([
                         'user_id' => $this->id,
+                        'name'    => $this->real_name,
                         'amount'  => $sum
                     ]);
                     foreach ($orders as $order){
