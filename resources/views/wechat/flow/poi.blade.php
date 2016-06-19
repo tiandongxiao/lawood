@@ -29,10 +29,10 @@
             });
         }
 
-        function getResult() {
+        function getResult(poi_id) {
             //初始化地图
             gdMapInit();
-            cloudSearchById(1,function (result) {
+            cloudSearchById(poi_id,function (result) {
                 alert('success');
             },function (result) {
                 alert('fail');
@@ -55,6 +55,8 @@
         }
 
         $(function(){
+            poi_id = '{!! $id !!}}';
+            getResult(poi_id);
             //返回中心点
             $('.btn-pl').tap(function(){
                 setCenter(cur_position);
