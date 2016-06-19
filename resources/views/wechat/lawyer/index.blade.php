@@ -47,7 +47,7 @@
         <div class="khpj mar-top-10 bg-fff-box">
             <div class="te-cen line-40 fc-03aaf0 fs-16">客户评价</div>
             <div class="pad-0-10">
-                @if($orders->count()>0)
+                @if($orders->count())
                     @foreach($orders as $order)
                     @if($order->comment_id)
                         <div class="itms">
