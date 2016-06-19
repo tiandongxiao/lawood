@@ -112,7 +112,9 @@
 
     function searchPublicById(id,onComplete,onError) {
         AMap.service(["AMap.PlaceSearch"], function() {
-            var placeSearch = new AMap.PlaceSearch();
+            var placeSearch = new AMap.PlaceSearch({
+                extensions: "all"
+            });
 
             placeSearch.getDetails(id, function(status, result) {
                 if (status === 'complete' && result.info === 'OK') {
