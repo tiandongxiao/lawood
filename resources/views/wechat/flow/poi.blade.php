@@ -16,6 +16,7 @@
             //初始化地图
             gdMapInit();
             searchPublicById(poi_id,function (result) {
+                console.log(result);
                 alert('success');
             },function (result) {
                 alert('fail');
