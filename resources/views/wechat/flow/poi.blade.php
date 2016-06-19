@@ -17,7 +17,9 @@
             gdMapInit();
             searchPublicById(poi_id,function (result) {
                 console.log(result);
-                alert('success');
+                poi = result.poiList.pois[0];
+                setCenter(poi.positon);
+                //alert('success');
             },function (result) {
                 alert('fail');
             })
