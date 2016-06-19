@@ -18,7 +18,7 @@
             searchPublicById(poi_id,function (result) {
                 console.log(result);
                 poi = result.poiList.pois[0];
-                setCenter(poi.positon);
+                setCenter(poi.location);
                 //alert('success');
             },function (result) {
                 alert('fail');
