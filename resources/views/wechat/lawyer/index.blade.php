@@ -49,7 +49,7 @@
             <div class="pad-0-10">
                 @if($orders->count())
                     @foreach($orders as $order)
-                    @if($order->comment_id)
+                        @if($order->comment_id)
                         <div class="itms">
                             <div class="f-left"><img src="{{$order->client->avatar}}" width="50" height="50"></div>
                             <div class="right">
@@ -72,9 +72,7 @@
                                 <div class="fc-909090 fs-12">{{$order->comment->body}}</div>
                             </div>
                         </div>
-                    @else
-                        <p style="text-align: center">当前没有客户评价信息</p>
-                    @endif
+                        @endif
                     @endforeach
                 @else
                     <p style="text-align: center">当前没有客户评价信息</p>
