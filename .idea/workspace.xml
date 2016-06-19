@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,6 +43,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -53,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -180,7 +190,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/lawyer/config/share.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/lawyer/setting.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_04_26_142355_create_places_table.php" />
         <option value="$PROJECT_DIR$/app/Place.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php" />
@@ -193,6 +202,7 @@
         <option value="$PROJECT_DIR$/resources/views/wechat/base/service/gaode.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/flow/poi.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php" />
       </list>
     </option>
   </component>
@@ -212,10 +222,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="603" />
-    <option name="y" value="192" />
-    <option name="width" value="2101" />
-    <option name="height" value="778" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="2576" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -299,6 +309,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechat" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lawyer" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -669,7 +705,7 @@
       <workItem from="1466226383006" duration="4624000" />
       <workItem from="1466235450184" duration="4115000" />
       <workItem from="1466252593834" duration="13681000" />
-      <workItem from="1466299836722" duration="5291000" />
+      <workItem from="1466299836722" duration="6138000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -794,7 +830,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1194423000" />
+    <option name="totallyTimeSpent" value="1195270000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -806,11 +842,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="603" y="192" width="2101" height="778" extended-state="0" />
+    <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.122488976" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20151034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13867822" sideWeight="0.5345787" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32966483" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1173,16 +1209,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="64" column="56" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
-          <folding>
-            <element signature="e#4202#4224#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/config/share.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -1261,6 +1287,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="251" column="168" selection-start-line="251" selection-start-column="168" selection-end-line="251" selection-end-column="168" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
           <folding />
         </state>
       </provider>
