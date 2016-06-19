@@ -109,6 +109,24 @@
             });
         });
     }
+
+    function searchPublicById(id,onComplete,onError) {
+        AMap.service(["AMap.PlaceSearch"], function() {
+            var placeSearch = new AMap.PlaceSearch({ //构造地点查询类
+                pageSize: 4,
+                pageIndex: 1,
+                extensions: "all"
+            });
+
+            placeSearch.getDetails(id, function(status, result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    onComplete(result);
+                    return;
+                }
+                onError(result);
+            });
+        });
+    }
     // Ended  搜索高德地图 公共数据
 
     // Begin 搜索自创建地图 私有数据
