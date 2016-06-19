@@ -72,6 +72,8 @@
                                 <div class="fc-909090 fs-12">{{$order->comment->body}}</div>
                             </div>
                         </div>
+                    @else
+                        <p style="text-align: center">当前没有客户评价信息</p>
                     @endif
                     @endforeach
                 @else
