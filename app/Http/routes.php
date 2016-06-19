@@ -232,6 +232,7 @@ Route::group(['prefix' => 'wechat'], function(){
 
     Route::post('order/evaluate','WeChat\OrderController@evaluate');
     Route::post('order/evaluate/update','WeChat\OrderController@evaluateUpdate');
+    Route::post('order/poi/{id}','WeChat\OrderController@showPOI');
 
 
     # begin 注册绑定

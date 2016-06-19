@@ -91,7 +91,7 @@ class OrderController extends Controller
     }
 
     public function postSelectAddress(Request $request)
-    {        
+    {
         $order = Order::findOrFail($request->get('order'));
         if(!$order->place){
             Place::create([
@@ -204,5 +204,10 @@ class OrderController extends Controller
         ]);
 
         return back();
+    }
+
+    public function showPOI($id)
+    {
+        return view('wechat.flow.poi',compact('id'));
     }
 }
