@@ -112,11 +112,7 @@
 
     function searchPublicById(id,onComplete,onError) {
         AMap.service(["AMap.PlaceSearch"], function() {
-            var placeSearch = new AMap.PlaceSearch({ //构造地点查询类
-                pageSize: 4,
-                pageIndex: 1,
-                extensions: "all"
-            });
+            var placeSearch = new AMap.PlaceSearch();
 
             placeSearch.getDetails(id, function(status, result) {
                 if (status === 'complete' && result.info === 'OK') {
