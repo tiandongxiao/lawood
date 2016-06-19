@@ -1,7 +1,7 @@
 @extends('wechat.base.app')
 @section('content')
 <!--地图定位-->
-<section class="dtdw-main">
+<section class="dtdw-main" style="top:0px">
     <div class="map" id="map" style="height: 100%"></div>
     <div class="lvzy-main">
         <a class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16 line-40" > 返回 </a>

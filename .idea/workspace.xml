@@ -76,9 +76,11 @@
       <file leaf-file-name="poi.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/poi.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
-              <folding />
+            <state relative-caret-position="99">
+              <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+              <folding>
+                <element signature="e#87#102#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -667,7 +669,7 @@
       <workItem from="1466226383006" duration="4624000" />
       <workItem from="1466235450184" duration="4115000" />
       <workItem from="1466252593834" duration="13681000" />
-      <workItem from="1466299836722" duration="4561000" />
+      <workItem from="1466299836722" duration="4701000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -792,7 +794,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1193693000" />
+    <option name="totallyTimeSpent" value="1193833000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1255,9 +1257,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/poi.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
-          <folding />
+        <state relative-caret-position="99">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+          <folding>
+            <element signature="e#87#102#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
