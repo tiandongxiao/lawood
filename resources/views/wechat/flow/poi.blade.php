@@ -38,7 +38,7 @@
         }
 
         $(function(){
-            poi_id = '{!! $id !!}}';
+            poi_id = '{!! $id !!}';
             getResult(poi_id);
             //返回中心点
             $('.btn-pl').tap(function(){
