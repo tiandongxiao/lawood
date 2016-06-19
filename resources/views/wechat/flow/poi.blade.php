@@ -12,16 +12,32 @@
 @section('script')
     @include('wechat.base.service.gaode')
     <script>
-        function getResults(address,major) {
+        //根据数据id查询数据详情
+        function cloudSearchById($id,onComplete,onError){
+            map.clearMap();
+            var search;
+            map.plugin(["AMap.CloudDataSearch"], function() {
+                search = new AMap.CloudDataSearch();  //构造云数据检索类
+
+                search.searchById($id,function(status, result) {
+                    if (status === 'complete' && result.info === 'OK') {
+                        onComplete(result);
+                        return;
+                    }
+                    onError(result);
+                });  //根据id查询
+            });
+        }
+
+        function getResult() {
             //初始化地图
             gdMapInit();
-            geocoder(address,function (position) {
-                cur_position = position;
-                setCenter(cur_position);
-                searchDataByMajor();
-            },function () {
-                alert('转化失败');
-            });
+            cloudSearchById(1,function (result) {
+                alert('success');
+            },function (result) {
+                alert('fail');
+            })
+
         }
 
         function setCenter(position) {
