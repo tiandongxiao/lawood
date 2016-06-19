@@ -4,7 +4,13 @@
 <section class="dtdw-main" style="top:0px">
     <div class="map" id="map" style="height: 100%"></div>
     <div class="lvzy-main">
-        <a class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16 line-40" > 返回 </a>
+        @if(Auth::check())
+            @if(Auth::user()->role == 'lawyer')
+                <a class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16 line-40" href="{{url('wechat/lawyer/orders')}}"> 返回 </a>
+            @else
+                <a class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16 line-40" href="{{url('wechat/client/orders')}}"> 返回 </a>
+            @endif
+        @endif
     </div>
 </section>
 <!--地图定位-->
