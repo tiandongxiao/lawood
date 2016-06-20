@@ -220,7 +220,7 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('qrcode','WeChat\WeChatController@qrCode');
 
     Route::get('order/place/{consult}','WeChat\OrderController@placeOrder');  # 下单返回地点选择列表
-    Route::get('order/address','WeChat\OrderController@selectAddress');       # 绑定选择的地点
+    Route::get('order/address/{id}','WeChat\OrderController@selectAddress');       # 绑定选择的地点
     Route::post('order/address','WeChat\OrderController@postSelectAddress');  # 绑定选择的地点
     Route::get('order/confirm/{id}','WeChat\OrderController@confirm');        # 绑定选择的地点
     Route::post('order/confirm','WeChat\OrderController@postConfirm');

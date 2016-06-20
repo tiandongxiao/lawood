@@ -76,18 +76,16 @@ class OrderController extends Controller
 
         if($this->user->role != 'lawyer'){
             $order = $this->buildOrder($consult);
-            Session::put('order',$order->id);
             if($order)
-                return view('wechat.flow.place_select');
+                return redirect('wechat/order/address/'.$order->id);
         }
 
         return back();
     }
 
-    public function selectAddress(Request $request)
+    public function selectAddress($order_id)
     {
-        $address = $request->get('address');
-        return view('wechat.flow.place_select',compact('address'));
+        return view('wechat.flow.place_select',compact('order_id'));
     }
 
     public function postSelectAddress(Request $request)

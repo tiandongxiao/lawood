@@ -14,7 +14,7 @@
     </div>
     <form id="form" action="{{url('wechat/order/address')}}" method="post">
         {!! csrf_field() !!}
-        <input type="hidden" id="order" name="order" value="{{Session::get('order')}}">
+        <input type="hidden" id="order" name="order" value="{{$order_id}}">
         <input type="hidden" id="coffee" name="coffee" value="">
         <input type="hidden" id="poi" name="poi" value="">
     </form>

@@ -112,6 +112,12 @@ class WxPayController extends Controller
         $order = ShopOrder::findOrFail($order_id);
 
         if($order->statusCode == 'pending'){
+            if(!$order->place)
+                return redirect('wechat/order/address/'.$order->id);
+
+            if(!$order->receipt)
+                return redirect('wechat/order/confirm/'.$order->id);
+
             $params =  $order->attach;
             return view('wechat.flow.pay',compact('params'));
         }

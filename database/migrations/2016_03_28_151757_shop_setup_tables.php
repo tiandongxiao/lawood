@@ -104,8 +104,9 @@ class ShopSetupTables extends Migration
             $table->boolean('refunded')->default(false); # 是否已退款标志位
             $table->boolean('payed')->default(false);    # 是否已付款标志位
             $table->unsignedInteger('bill_id')->nullable(); # 记录账单信息
-            $table->boolean('withdrew')->default(false); # 是否已折现标志位
-            $table->boolean('allow_draw')->default(false); # 是否允许提现
+            $table->boolean('withdrew')->default(false);      # 是否已折现标志位
+            $table->boolean('allow_draw')->default(false);    # 是否允许提现
+            $table->boolean('allow_cancel')->default(false);  # 是否允许取消
             $table->boolean('seller_signed')->default(false); # 律师是否已签到标志位
             $table->boolean('client_signed')->default(false); # 顾客是否已签到标志位
             $table->string('attach')->nullable();        # 附件数据

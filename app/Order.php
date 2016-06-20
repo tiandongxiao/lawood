@@ -10,7 +10,7 @@ use DraperStudio\Commentable\Models\Comment;
 
 class Order extends ShopOrderModel
 {
-    protected $fillable = ['user_id', 'statusCode', 'order_no', 'type', 'subject', 'payed', 'refunded', 'seller_signed', 'client_signed', 'attach','seller_id','sale_id','category','rating_id','comment_id','withdrew','allow_draw','bill_id'];
+    protected $fillable = ['user_id', 'statusCode', 'order_no', 'type', 'subject', 'payed', 'refunded', 'seller_signed', 'client_signed', 'attach','seller_id','sale_id','category','rating_id','comment_id','withdrew','allow_draw','allow_cancel','bill_id'];
 
     private $app;
     private $payment;
@@ -69,7 +69,7 @@ class Order extends ShopOrderModel
     # 获取买方信息
     public function getClientAttribute()
     {
-        return $this->consult->user;
+        return $this->user;
     }
 
     # 接单
