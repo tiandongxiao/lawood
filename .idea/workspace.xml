@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Order.php" afterPath="$PROJECT_DIR$/app/Order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_03_28_151757_shop_setup_tables.php" afterPath="$PROJECT_DIR$/database/migrations/2016_03_28_151757_shop_setup_tables.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WeChat/ClientController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WeChat/ClientController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,11 +44,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ClientController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/ClientController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="WxPayController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="393">
               <caret line="118" column="68" selection-start-line="118" selection-start-column="68" selection-end-line="118" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="81" column="57" selection-start-line="81" selection-start-column="57" selection-end-line="81" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -69,7 +84,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="place_select.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="place_select.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="49">
@@ -109,16 +124,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AllowOrderBeWithdrew.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Jobs/AllowOrderBeWithdrew.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AllowOrderBeCanceled.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Jobs/AllowOrderBeCanceled.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -127,16 +132,6 @@
               <folding>
                 <element signature="e#28#45#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Order.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Order.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="45" column="27" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="27" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -184,7 +179,6 @@
         <option value="$PROJECT_DIR$/resources/views/wechat/visitor/orders.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/client/notifies.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/ClientController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/WeChatPubController.php" />
         <option value="$PROJECT_DIR$/app/Traits/WeChatDevTrait.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/lawyer/wallet.blade.php" />
@@ -207,7 +201,6 @@
         <option value="$PROJECT_DIR$/resources/views/wechat/base/service/gaode.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/flow/poi.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
         <option value="$PROJECT_DIR$/app/Jobs/CancelOrder.php" />
         <option value="$PROJECT_DIR$/app/Jobs/CancelPayedOrder.php" />
         <option value="$PROJECT_DIR$/app/Jobs/CancelPendingOrder.php" />
@@ -219,6 +212,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/ClientController.php" />
       </list>
     </option>
   </component>
@@ -759,7 +754,7 @@
       <workItem from="1466299836722" duration="7842000" />
       <workItem from="1466330847690" duration="233000" />
       <workItem from="1466398095936" duration="1856000" />
-      <workItem from="1466404662635" duration="3660000" />
+      <workItem from="1466404662635" duration="4773000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -884,7 +879,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1202723000" />
+    <option name="totallyTimeSpent" value="1203836000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -900,10 +895,11 @@
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24270834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13867822" sideWeight="0.5345787" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32966483" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35886213" sideWeight="0.4654213" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4626219" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16739607" sideWeight="0.4973939" order="10" side_tool="false" content_ui="tabs" />
@@ -917,7 +913,6 @@
       <window_info id="REST Client" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.63203466" sideWeight="0.4654213" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1122,13 +1117,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/ClientController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2626">
-          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Place.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -1248,14 +1236,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="127" column="58" selection-start-line="127" selection-start-column="51" selection-end-line="127" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1330,10 +1310,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="81" column="57" selection-start-line="81" selection-start-column="57" selection-end-line="81" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
           <caret line="16" column="75" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WeChat/ClientController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
           <folding />
         </state>
       </provider>

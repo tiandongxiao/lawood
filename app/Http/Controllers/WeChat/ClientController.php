@@ -46,13 +46,7 @@ class ClientController extends Controller
         foreach ($orders as $order){
             switch ($order->statusCode){
                 case 'pending': # 下单未付费
-                    if($order->place && $order->client->real_name){
-                        $applies[] = $order;
-                    }else{
-                        $order->update([
-                            'statusCode' => 'abandoned'
-                        ]);
-                    }
+                    $applies[] = $order;
                     break;
                 case 'payed':   # 用户已付费
                 case 'rejected': # 律师已拒单
