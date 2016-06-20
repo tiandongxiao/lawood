@@ -222,8 +222,9 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('order/place/{consult}','WeChat\OrderController@placeOrder');  # 下单返回地点选择列表
     Route::get('order/address/{id}','WeChat\OrderController@selectAddress');       # 绑定选择的地点
     Route::post('order/address','WeChat\OrderController@postSelectAddress');  # 绑定选择的地点
-    Route::get('order/confirm/{id}','WeChat\OrderController@confirm');        # 绑定选择的地点
-    Route::post('order/confirm','WeChat\OrderController@postConfirm');
+    Route::get('order/receipt/{id}','WeChat\OrderController@receipt');        # 绑定选择的地点
+    Route::post('order/receipt','WeChat\OrderController@postReceipt');
+    Route::get('order/confirm','WeChat\OrderController@confirm');
 
     Route::get('order/accept/{id}','WeChat\OrderController@accept');
     Route::get('order/reject/{id}','WeChat\OrderController@reject');

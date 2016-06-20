@@ -104,16 +104,16 @@ class OrderController extends Controller
             ]);
         }
 
-        return redirect('wechat/order/confirm/'.$order->id);
+        return redirect('wechat/order/receipt/'.$order->id);
     }
 
-    public function confirm($id)
+    public function receipt($id)
     {
         $order = Order::findOrFail($id);
-        return view('wechat.flow.confirm',compact('order'));
+        return view('wechat.flow.receipt',compact('order'));
     }
 
-    public function postConfirm(Request $request)
+    public function postReceipt(Request $request)
     {
         $order_id = $request->get('order');
 
@@ -145,6 +145,12 @@ class OrderController extends Controller
         }
 
         return redirect('wxpay/js/'.$order->id);
+    }
+
+    public function confirm($id)
+    {
+        $order = Order::findOrFail($id);
+        return view('wechat.flow.confirm',compact('order'));
     }
 
     public function accept($id)
