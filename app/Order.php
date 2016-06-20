@@ -179,6 +179,7 @@ class Order extends ShopOrderModel
             $this->app = app('wechat');
             $this->payment = $this->app->payment;
         }
+        usleep(10);
 
         if($this->isWxOrderRefunded()){
             return 'repeat';
