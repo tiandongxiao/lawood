@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="bottom">
                                     <div class="btn-main">
-                                        <span class="btn lan"><a href="{{url('wxpay/js/'.$order->id)}}">支付</a></span>
+                                        <span class="btn lan"><a href="{{url('wxpay/js/'.$order->id)}}">继续下单</a></span>
                                         <span class="btn"><a href="{{url('wechat/order/cancel/'.$order->id)}}">取消订单</a></span>
                                     </div>
                                 </div>
