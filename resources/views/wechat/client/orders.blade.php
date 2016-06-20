@@ -358,12 +358,7 @@
     <section class="tc-main pj-main po-f"  style="display:none" id="xgpj">
         <div class="main te-cen"  style="top:20%;">
             <div class="lsxx">
-                <div class="f-left"><img src="/images/ls.jpg" width="60" height="60"></div>
-                <div class="right">
-                    <div class="name">王树德 律师</div>
-                    <div class="dz chaochu_1">京师律师事务所</div>
-                    <div class="cs chaochu_1">约见次数：200次</div>
-                </div>
+                <p style="text-align: center">王树德 律师</p>
             </div>
             <div class="pjcs pad-0-10">
                 <div class="title"><span>星级评价</span></div>
