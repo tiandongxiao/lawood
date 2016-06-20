@@ -179,9 +179,6 @@
             wx.onMenuShareTimeline(shareData);
             wx.onMenuShareQQ(shareData);
         });
-        wx.error(function (res) {
-            alert(res.errMsg);
-        });
     </script>
     <script>
         var consult = "{!! $user->prices[0]->consults[0]->id !!}"; //定义全局变量，用于标记选择
