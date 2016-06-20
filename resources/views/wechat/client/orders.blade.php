@@ -357,11 +357,11 @@
     <!--修改评价-->
     <section class="tc-main pj-main po-f"  style="display:none" id="xgpj">
         <div class="main te-cen"  style="top:20%;">
-            <div class="lsxx">
-                <p style="text-align: center">王树德 律师</p>
-            </div>
+            {{--<div class="lsxx">--}}
+                {{--<p style="text-align: center">王树德 律师</p>--}}
+            {{--</div>--}}
             <div class="pjcs pad-0-10">
-                <div class="title"><span>星级评价</span></div>
+                <div class="title"><span>王树德 律师</span></div>
                 <div class="pj">
                     <em data-sx="很差劲" class="on"></em>
                     <em data-sx="差劲" class="on"></em>
