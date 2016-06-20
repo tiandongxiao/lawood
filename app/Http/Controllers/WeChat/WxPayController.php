@@ -62,8 +62,12 @@ class WxPayController extends Controller
                     'payed'       => true,
                     'statusCode'  => 'payed'
                 ]);
-                $job = (new CancelPayedOrder($order))->delay(120);
+
+                $job = new CancelPayedOrder($order);
+                $job->delay(120);
+                Log::info('cancel job id is :'.$job->id);
                 $this->dispatch($job);
+
 
                 # 将真正的transaction_id 赋予transaction对象
                 $transaction->update([
