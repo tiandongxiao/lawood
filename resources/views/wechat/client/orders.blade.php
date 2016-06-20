@@ -302,6 +302,19 @@
                 </div>
                 <div class="xxts fs-12 line-20 fc-03aaf0">非常满意</div>
             </div>
+            <form id="evaluate" action="{{url('wechat/order/evaluate')}}" method="post">
+                {!! csrf_field() !!}
+                <input type="hidden" name="client" id="e-client" value=""/>
+                <input type="hidden" name="order" id="e-order" value=""/>
+                <input type="hidden" name="user-score" id="e-score" value="5"/>
+                <input type="hidden" name="time-score" id="e-time" value="3"/>
+                <input type="hidden" name="dress-score" id="e-dress" value="3"/>
+                <input type="hidden" name="polite-score" id="e-polite" value="3"/>
+                <input type="hidden" name="major-score" id="e-major" value="3"/>
+                <div class="pjyj  pad-0-10 mar-top-10">
+                    <textarea placeholder="意见和建议" class="In-text" name="comment"></textarea>
+                </div>
+            </form>
             <div class="lsyx pad-0-10">
                 <div class="title"><span>律师印象</span></div>
                 <div class="itms">
@@ -337,19 +350,6 @@
                     </div>
                 </div>
             </div>
-            <form id="evaluate" action="{{url('wechat/order/evaluate')}}" method="post">
-                {!! csrf_field() !!}
-                <input type="hidden" name="client" id="e-client" value=""/>
-                <input type="hidden" name="order" id="e-order" value=""/>
-                <input type="hidden" name="user-score" id="e-score" value="5"/>
-                <input type="hidden" name="time-score" id="e-time" value="3"/>
-                <input type="hidden" name="dress-score" id="e-dress" value="3"/>
-                <input type="hidden" name="polite-score" id="e-polite" value="3"/>
-                <input type="hidden" name="major-score" id="e-major" value="3"/>
-                <div class="pjyj  pad-0-10 mar-top-10">
-                    <textarea placeholder="其他意见和建议" class="In-text" name="comment"></textarea>
-                </div>
-            </form>
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate-first">
         </div>
     </section>
@@ -357,11 +357,11 @@
     <!--修改评价-->
     <section class="tc-main pj-main po-f"  style="display:none" id="xgpj">
         <div class="main te-cen"  style="top:20%;">
-            {{--<div class="lsxx">--}}
-                {{--<p style="text-align: center">王树德 律师</p>--}}
-            {{--</div>--}}
+            <div class="lsxx">
+                <p style="text-align: center">王树德 律师</p>
+            </div>
             <div class="pjcs pad-0-10">
-                <div class="title"><span>王树德 律师</span></div>
+                <div class="title"><span>星级评价</span></div>
                 <div class="pj">
                     <em data-sx="很差劲" class="on"></em>
                     <em data-sx="差劲" class="on"></em>
