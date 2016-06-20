@@ -19,8 +19,11 @@ return [
     'payment' => [
         'merchant_id'  => env('WECHAT_PAYMENT_MERCHANT_ID', 'your-mch-id'),
         'key'          => env('WECHAT_PAYMENT_KEY', 'key-for-signature'),
-        'cert_path'    => env('WECHAT_PAYMENT_CERT_PATH', 'path/to/your/cert.pem'), # XXX: 绝对路径！！！！
-        'key_path'     => env('WECHAT_PAYMENT_KEY_PATH', 'path/to/your/key'),      # XXX: 绝对路径！！！！
+//        'cert_path'    => env('WECHAT_PAYMENT_CERT_PATH', 'path/to/your/cert.pem'), # XXX: 绝对路径！！！！
+//        'key_path'     => env('WECHAT_PAYMENT_KEY_PATH', 'path/to/your/key'),      # XXX: 绝对路径！！！！
+        'cert_path'    => 'http://www.exingdong.com/cer/wx/apiclient_cert.pem', # XXX: 绝对路径！！！！
+        'key_path'     => 'http://www.exingdong.com/cer/wx/apiclient_key.pem',      # XXX: 绝对路径！！！！
+
         'notify_url'   => env('WECHAT_NOTIFY_URL','notify_url'),
         # 'device_info'     => env('WECHAT_PAYMENT_DEVICE_INFO', ''),
         # 'sub_app_id'      => env('WECHAT_PAYMENT_SUB_APP_ID', ''),
