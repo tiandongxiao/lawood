@@ -65,7 +65,7 @@ class WxPayController extends Controller
 
                 $job = new CancelPayedOrder($order);
                 $job->delay(120);
-                Log::info('cancel job id is :');
+
                 $this->dispatch($job);
 
 

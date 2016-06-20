@@ -33,10 +33,7 @@ class CancelPayedOrder extends Job implements SelfHandling, ShouldQueue
     public function handle()
     {
         if($this->order->statusCode == 'payed'){
-            $result = $this->order->cancel();
-            if($result == 'success'){
-                $this->order->refund();
-            }
+            $this->order->cancel();
         }
     }
 }
