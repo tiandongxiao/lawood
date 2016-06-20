@@ -116,7 +116,7 @@ class WxPayController extends Controller
                 return redirect('wechat/order/address/'.$order->id);
 
             if(!$order->receipt)
-                return redirect('wechat/order/confirm/'.$order->id);
+                return redirect('wechat/order/receipt/'.$order->id);
 
             $params =  $order->attach;
             return view('wechat.flow.pay',compact('params'));
