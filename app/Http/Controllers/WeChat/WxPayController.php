@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\WeChat;
 
 use App\Item;
+use App\Jobs\CancelPayedOrder;
 use App\Traits\ShopDevTrait;
 use App\Traits\WeChatDevTrait;
 use App\Transaction;
@@ -61,6 +62,8 @@ class WxPayController extends Controller
                     'payed'       => true,
                     'statusCode'  => 'payed'
                 ]);
+                $job = (new CancelPayedOrder($order))->delay(120);
+                $this->dispatch($job);
 
                 # 将真正的transaction_id 赋予transaction对象
                 $transaction->update([
