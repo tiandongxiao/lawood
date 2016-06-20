@@ -78,8 +78,8 @@
           <file leaf-file-name="wechat.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config/wechat.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="24" column="67" selection-start-line="24" selection-start-column="67" selection-end-line="24" selection-end-column="67" />
+                <state relative-caret-position="359">
+                  <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -89,7 +89,7 @@
             <entry file="file://$PROJECT_DIR$/.env">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="780">
-                  <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+                  <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
                   <folding />
                 </state>
               </provider>
@@ -143,7 +143,7 @@
             <entry file="file://$PROJECT_DIR$/.env">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="587">
-                  <caret line="30" column="48" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="48" />
+                  <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
                   <folding />
                 </state>
               </provider>
@@ -178,7 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/UserTiming.php" />
         <option value="$PROJECT_DIR$/app/UserDressing.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_06_12_100524_create_user_majors_table.php" />
         <option value="$PROJECT_DIR$/app/UserMajor.php" />
@@ -228,6 +227,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/WxPayController.php" />
         <option value="$PROJECT_DIR$/app/Jobs/CancelPayedOrder.php" />
         <option value="$PROJECT_DIR$/app/Order.php" />
+        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/config/wechat.php" />
       </list>
     </option>
@@ -783,7 +783,7 @@
       <workItem from="1466299836722" duration="7842000" />
       <workItem from="1466330847690" duration="233000" />
       <workItem from="1466398095936" duration="1856000" />
-      <workItem from="1466404662635" duration="14691000" />
+      <workItem from="1466404662635" duration="14953000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -908,7 +908,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1213754000" />
+    <option name="totallyTimeSpent" value="1214016000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1364,15 +1364,15 @@
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
-          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+          <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/wechat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="67" selection-start-line="24" selection-start-column="67" selection-end-line="24" selection-end-column="67" />
+        <state relative-caret-position="359">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
           <folding />
         </state>
       </provider>
