@@ -46,8 +46,8 @@
       <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="191" column="40" selection-start-line="191" selection-start-column="40" selection-end-line="191" selection-end-column="40" />
+            <state relative-caret-position="509">
+              <caret line="193" column="60" selection-start-line="193" selection-start-column="60" selection-end-line="193" selection-end-column="60" />
               <folding>
                 <element signature="e#10193#10215#0#HTML" expanded="true" />
                 <element signature="e#10256#10293#0#HTML" expanded="true" />
@@ -57,7 +57,7 @@
                 <element signature="e#10591#10612#0#HTML" expanded="true" />
                 <element signature="e#10639#10663#0#HTML" expanded="true" />
                 <element signature="e#10744#10768#0#HTML" expanded="true" />
-                <element signature="e#10851#10875#0#HTML" expanded="true" />
+                <element signature="e#10856#10880#0#HTML" expanded="true" />
                 <element signature="e#10963#10987#0#HTML" expanded="true" />
               </folding>
             </state>
@@ -415,7 +415,7 @@
       <workItem from="1466330847690" duration="233000" />
       <workItem from="1466398095936" duration="1856000" />
       <workItem from="1466404662635" duration="18143000" />
-      <workItem from="1466434281624" duration="16247000" />
+      <workItem from="1466434281624" duration="16425000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -540,7 +540,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1233453000" />
+    <option name="totallyTimeSpent" value="1233631000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -998,8 +998,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="191" column="40" selection-start-line="191" selection-start-column="40" selection-end-line="191" selection-end-column="40" />
+        <state relative-caret-position="509">
+          <caret line="193" column="60" selection-start-line="193" selection-start-column="60" selection-end-line="193" selection-end-column="60" />
           <folding>
             <element signature="e#10193#10215#0#HTML" expanded="true" />
             <element signature="e#10256#10293#0#HTML" expanded="true" />
@@ -1009,7 +1009,7 @@
             <element signature="e#10591#10612#0#HTML" expanded="true" />
             <element signature="e#10639#10663#0#HTML" expanded="true" />
             <element signature="e#10744#10768#0#HTML" expanded="true" />
-            <element signature="e#10851#10875#0#HTML" expanded="true" />
+            <element signature="e#10856#10880#0#HTML" expanded="true" />
             <element signature="e#10963#10987#0#HTML" expanded="true" />
           </folding>
         </state>
