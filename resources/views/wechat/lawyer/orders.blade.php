@@ -243,16 +243,15 @@
             $('.back-home').tap(function () {
                 window.location.href="/wechat";
             });
-            $('.btn-receipt').tap(function () {
-                $('.lstc-main').show();
-            });
             $('.btn-gb').tap(function () {
-                $('.lstc-main').hide();
+                $('#receipt-area').hide();
+                $('.lsdd-main').show();
             });
             $('#refresh').tap(function () {
                 window.location.href = '/wechat/lawyer/orders';
             });
             $('.receipt').tap(function () {
+                $('.lsdd-main').hide();
                 $('#receipt-area').show();
             })
         })
