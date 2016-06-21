@@ -190,8 +190,8 @@
                 <div class="tie" style="width: 100%">发票信息<i class="btn-fjls  btn-gb"></i></div>
                 <div style="text-align: center;margin-top: 5px"><img id="avatar" src="/images/user1-128x128.jpg" width="80px" height="80px" style="border-radius: 10px;"></div>
                 <div style="padding: 25px">
-                    <div style="margin-top: 8px"><span>收 件 人：</span>&nbsp;<span id="address">王国营</span></div>
-                    <div style="margin-top: 8px"><span>电话号码：</span><span id="address">18511892536</span></div>
+                    <div style="margin-top: 8px"><span>收 件 人：</span>&nbsp;<span id="receiver">王国营</span></div>
+                    <div style="margin-top: 8px"><span>电话号码：</span><span id="phone">18511892536</span></div>
                     <div style="margin-top: 8px"><span>发票抬头：</span><span id="title">北京易行动科技有限公司</span></div>
                     <div style="margin-top: 8px"><span>邮寄地址：</span><span id="address" style="line-height: 30px;color: #DEB887">北京市朝阳区望京宝星国际小区108楼7单元20A</span></div>
                 </div>
