@@ -3,7 +3,7 @@
     <style>
         body{background:#f8f8f8}
         .tie{
-            width:100%; height:50px; line-height:50px; text-align:center; color:#686868; border-bottom:1px solid #f8f8f8; z-index:100; background:#fff;
+            width:100%; height:50px; line-height:50px; text-align:center; color:#686868;  z-index:100; background:#fff;
             padding:5px 0; border-top-left-radius:10px; border-top-right-radius:10px; font-size:16px;margin-top: -10px;
         }
         .tie .btn-gb{
@@ -308,7 +308,7 @@
             <div class="tie">王树德 律师<i class="btn-gb" id="gb-comment"></i></div>
 
             <div class="pjcs pad-0-10">
-                <div class="title"><span>星级评价</span></div>
+                <div class="title" style="margin-top: -20px"><span>星级评价</span></div>
                 <div class="pj">
                     <em class="on" data-sx="很差劲"></em>
                     <em class="on" data-sx="差劲"></em>
@@ -375,7 +375,7 @@
         <div class="main te-cen"  style="top:20%;">
             <div class="tie">王树德 律师<i class="btn-gb" id="gb-update"></i></div>
             <div class="pjcs pad-0-10">
-                <div class="title"><span>星级评价</span></div>
+                <div class="title" style="margin-top: -20px"><span>星级评价</span></div>
                 <div class="pj">
                     <em data-sx="很差劲" class="on"></em>
                     <em data-sx="差劲" class="on"></em>
