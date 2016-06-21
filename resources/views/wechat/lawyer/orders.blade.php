@@ -208,7 +208,7 @@
                 <div style="padding: 25px">
                     {!! csrf_field() !!}
                     <input type="hidden" name="uri" value="{{url('/')}}">
-                    <div style="margin-top: 8px"><span>收 &nbsp;件 &nbsp;人：</span>&nbsp;&nbsp;<span id="receiver">王国营</span></div>
+                    <div style="margin-top: 8px"><span>收 &nbsp;件 &nbsp;人：</span><span id="receiver">王国营</span></div>
                     <div style="margin-top: 8px"><span>电话号码：</span><span id="phone">18511892536</span></div>
                     <div style="margin-top: 8px"><span>发票抬头：</span><span id="title">北京易行动科技有限公司</span></div>
                     <div style="margin-top: 8px"><span>邮寄地址：</span><span id="address" style="line-height: 25px;color: #DEB887">北京市朝阳区望京宝星国际小区108楼7单元20A</span></div>

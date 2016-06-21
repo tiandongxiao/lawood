@@ -114,8 +114,9 @@ class OrderController extends Controller
     }
 
     public function postReceipt(Request $request)
-    {        
+    {
         $order_id = $request->get('order');
+        $i_receipt = $request->get('switch');
 
         $order = Order::findOrFail($order_id);
 
@@ -124,9 +125,8 @@ class OrderController extends Controller
                 'real_name' => $request->get('name')
             ]);
         }
-        $needed = $request->get('switch');
 
-        if($needed == 'on'){
+        if($i_receipt == 'on'){
             if(!$order->receipt){
                 Receipt::create([
                     'order_id' => $order_id,
