@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="bottom">
                                     @if($order->receipt)
-                                        <div class="djs fc-03aaf0 fs-12" id="receipt" data-order="{{$order->id}}">需开发票</div>
+                                        <div class="djs fc-03aaf0 fs-12 receipt" data-order="{{$order->id}}">需开发票</div>
                                     @else
                                         <div class="djs fc-03aaf0 fs-12">无需开发票</div>
                                     @endif
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="bottom">
                                     @if($order->receipt)
-                                        <div class="djs fc-03aaf0 fs-12" id="receipt" data-order="{{$order->id}}">需开发票</div>
+                                        <div class="djs fc-03aaf0 fs-12 receipt" data-order="{{$order->id}}">需开发票</div>
                                     @else
                                         <div class="djs fc-03aaf0 fs-12">无需开发票</div>
                                     @endif
@@ -163,7 +163,7 @@
                             </div>
                             <div class="bottom">
                                 @if($order->receipt)
-                                    <div class="djs fc-03aaf0 fs-12" id="receipt" data-order="{{$order->id}}">需开发票</div>
+                                    <div class="djs fc-03aaf0 fs-12 receipt"  data-order="{{$order->id}}">需开发票</div>
                                 @else
                                     <div class="djs fc-03aaf0 fs-12">无需开发票</div>
                                 @endif
@@ -252,7 +252,7 @@
             $('#refresh').tap(function () {
                 window.location.href = '/wechat/lawyer/orders';
             });
-            $('#receipt').tap(function () {
+            $('.receipt').tap(function () {
                 $('#receipt-area').show();
             })
         })
