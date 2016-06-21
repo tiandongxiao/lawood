@@ -156,6 +156,16 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="bottom">
+                                @if($order->receipt)
+                                    <div class="djs fc-03aaf0 fs-12">需开发票</div>
+                                @else
+                                    <div class="djs fc-03aaf0 fs-12">无需开发票</div>
+                                @endif
+                                <div class="btn-main">
+                                    <a class="btn lan" href="tel:{{$order->client->phone}}">打电话</a>
+                                </div>
+                            </div>
                         </div>
                     @endforeach
                 @else
