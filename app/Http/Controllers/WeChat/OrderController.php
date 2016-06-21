@@ -115,12 +115,12 @@ class OrderController extends Controller
 
     public function postReceipt(Request $request)
     {
-        $order_id = $request->get('order');
-        $i_receipt = $request->get('switch');
+        $order_id = trim($request->get('order'));
+        $i_receipt = trim($request->get('switch'));
 
         $order = Order::findOrFail($order_id);
 
-        if(is_null($order->user->real_name)){
+        if(!$order->user->real_name){
             $order->user->update([
                 'real_name' => $request->get('name')
             ]);
