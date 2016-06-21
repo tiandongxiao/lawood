@@ -38,9 +38,6 @@
             wx.onMenuShareTimeline(shareData);
             wx.onMenuShareQQ(shareData);
         });
-        wx.error(function (res) {
-            alert(res.errMsg);
-        });
         $(function(){
             $('.back-home').tap(function () {
                 window.location.href="/wechat";
