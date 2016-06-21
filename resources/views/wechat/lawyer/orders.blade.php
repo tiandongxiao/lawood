@@ -28,7 +28,7 @@
                                     <div class="img"><img src="{{$order->client->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
                                         <p class="name chaochu_1 mar-top-5">客户 {{$order->client->real_name}}<span>{{$order->category}}</span></p>
-                                        <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
+                                        <p class="dd chaochu_2 mar-top-15">预约地点：<a href="{{url('wechat/order/poi/'.$order->place->poi_id)}}" style="color: #BE5C00;">{{$order->place->name}}</a></p>
                                         <div class="zxf">
                                             <p>已付咨询费</p>
                                             <p class="jg">{{$order->total}}元</p>
@@ -75,7 +75,7 @@
                                     <div class="img"><img src="{{$order->client->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
                                         <p class="name chaochu_1 mar-top-5">客户 {{$order->client->real_name}}<span>{{$order->category}}</span></p>
-                                        <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
+                                        <p class="dd chaochu_2 mar-top-15">预约地点：<a href="{{url('wechat/order/poi/'.$order->place->poi_id)}}" style="color: #BE5C00;">{{$order->place->name}}</a></p>
                                         <div class="zxf">
                                             <p>已付咨询费</p>
                                             <p class="jg">{{$order->total}}元</p>
@@ -108,7 +108,7 @@
                                     <div class="img"><img src="{{$order->client->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
                                         <p class="name chaochu_1 mar-top-5">客户 {{$order->client->real_name}}<span>{{$order->category}}</span></p>
-                                        <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
+                                        <p class="dd chaochu_2 mar-top-15">预约地点：<a href="{{url('wechat/order/poi/'.$order->place->poi_id)}}" style="color: #BE5C00;">{{$order->place->name}}</a></p>
                                         <div class="zxf">
                                             <p>已付咨询费</p>
                                             <p class="jg">{{$order->total}}元</p>
