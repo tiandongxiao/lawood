@@ -438,7 +438,7 @@ transform:scale(0.8,0.8);
 
 /*22-律师订单*/
 .lsdd-main		.hd	{ width:80%; left:0; top:0; background:#fff; height:40px; line-height:40px; padding:0 10%; z-index:5; box-shadow:0px 5px 5px #f2f2f2;}
-.lsdd-main		.hd	.itms	{ width:32%; height:39px; line-height:39px; display:block; float:left; text-align:center; position:relative;}
+.lsdd-main		.hd	.itms	{ width:33%; height:39px; line-height:39px; display:block; float:left; text-align:center; position:relative;}
 .lsdd-main		.hd	.itms.on	span	{ border-bottom:2px solid #03aaf0; color:#03aaf0; height:38px; line-height:38px; display:inline-block; padding:0 5px;}
 .lsdd-main		.bd	.bd-itms	{ display:none;}
 .lsdd-main		.bd	.itms	{ margin-top:10px; padding:0 10px;}
