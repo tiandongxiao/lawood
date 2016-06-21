@@ -185,7 +185,7 @@
     <!--取消订单-->
     <section class="lstc-main"   style="display:none;">
         <!--律师名片-->
-        <div class="tc-m lsmp-main" style="display: block">
+        <div class="tc-m lsmp-main" style="display: block;bottom: 120px;">
             <div class="bg-fff c-main" style="height: 375px;">
                 <div class="tie">发票信息<i class="btn-fjls  btn-gb"></i></div>
                 <div class="con">
