@@ -14,11 +14,11 @@
 @section('content')
     <section class="lsdd-main">
         <div class="hd po-f">
-            <div id="go_home" style="position: absolute;left: 5px; top: -2px;"><img src="/images/nav5.png" width="25px" height="25px"></div>
+            <div id="go_home" style="position: absolute;left: 5px; top: -3px;"><img src="/images/nav5.png" width="25px" height="25px"></div>
             <div class="itms on"><span>未完成</span></div>
             <div class="itms"><span>进行中</span></div>
             <div class="itms"><span>已完成</span></div>
-            <div id="refresh" style="position: absolute;right: 5px; top: -2px;"><img src="/images/nav5.png" width="25px" height="25px"></div>
+            <div id="refresh" style="position: absolute;right: 5px; top: -3px;"><img src="/images/nav5.png" width="25px" height="25px"></div>
         </div>
         <div class="bd" style="padding-top:40px;">
             <!--未完成-->
