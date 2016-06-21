@@ -133,7 +133,6 @@
                 }
                 $("#form").submit();
             })
-
         })
     </script>
 @stop

@@ -194,4 +194,28 @@ class AjaxController extends Controller
         }
     }
 
+    public function receipt(Request $request)
+    {
+        if($request->ajax()){
+            $user_id = trim($request->get('user'));
+            $order_id = trim($request->get('order'));
+            $order = Order::find($order_id);
+            if($order && $order->receipt){
+                if($order->user->id == $user_id){
+                    $receipt = $order->receipt;
+                    $data = [
+                        'info'      => 'success',
+                        'avatar'    =>  $order->user->avatar,
+                        'title'     =>  $receipt->title,
+                        'receiver'  =>  $receipt->receiver,
+                        'address'   =>  $receipt->address,
+                        'phone'     =>  $receipt->phone
+                    ];
+                    return response()->json(['code' => 'Y', 'data' => $data]);
+                }
+            }
+            return response()->json(['code' => 'X', 'data' => ['info'=>'failed']]);
+        }
+    }
+
 }

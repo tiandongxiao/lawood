@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="bottom">
                                     @if($order->receipt)
-                                        <div class="djs fc-03aaf0 fs-12 receipt" data-order="{{$order->id}}">需开发票</div>
+                                        <div class="djs fc-03aaf0 fs-12 receipt" data-user="{{$order->user->id}}" data-order="{{$order->id}}">需开发票</div>
                                     @else
                                         <div class="djs fc-03aaf0 fs-12">无需开发票</div>
                                     @endif
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="bottom">
                                     @if($order->receipt)
-                                        <div class="djs fc-03aaf0 fs-12 receipt" data-order="{{$order->id}}">需开发票</div>
+                                        <div class="djs fc-03aaf0 fs-12 receipt" data-user="{{$order->user->id}}" data-order="{{$order->id}}">需开发票</div>
                                     @else
                                         <div class="djs fc-03aaf0 fs-12">无需开发票</div>
                                     @endif
@@ -163,7 +163,7 @@
                             </div>
                             <div class="bottom">
                                 @if($order->receipt)
-                                    <div class="djs fc-03aaf0 fs-12 receipt"  data-order="{{$order->id}}">需开发票</div>
+                                    <div class="djs fc-03aaf0 fs-12 receipt"  data-user="{{$order->user->id}}" data-order="{{$order->id}}">需开发票</div>
                                 @else
                                     <div class="djs fc-03aaf0 fs-12">无需开发票</div>
                                 @endif
@@ -206,6 +206,7 @@
                 <div class="tie" style="width: 100%">发票信息<i class="btn-fjls  btn-gb"></i></div>
                 <div style="text-align: center;margin-top: 5px"><img id="avatar" src="/images/user1-128x128.jpg" width="80px" height="80px" style="border-radius: 10px;"></div>
                 <div style="padding: 25px">
+                    {!! csrf_field() !!}
                     <div style="margin-top: 8px"><span>收 &nbsp;件 &nbsp;人：</span>&nbsp;&nbsp;<span id="receiver">王国营</span></div>
                     <div style="margin-top: 8px"><span>电话号码：</span><span id="phone">18511892536</span></div>
                     <div style="margin-top: 8px"><span>发票抬头：</span><span id="title">北京易行动科技有限公司</span></div>
@@ -251,8 +252,33 @@
                 window.location.href = '/wechat/lawyer/orders';
             });
             $('.receipt').tap(function () {
-                $('.lsdd-main').hide();
-                $('#receipt-area').show();
+                var user_id = $(this).data('user');
+                var order_id = $(this).data('order');
+
+                $.ajax({
+                    type: 'POST',
+                    url: address+'/ajax/receipt',
+                    data: {
+                        'user':user_id,
+                        'order':order_id,
+                        '_token':$('input[name=_token]').val()
+                    },
+                    success: function(result){
+                        if(result.code == 'Y'){
+                            $('#avatar').attr("src",result.data.avatar);
+                            $('#receiver').text(result.data.receiver);
+                            $('#phone').text(result.data.phone);
+                            $('#title').text(result.data.title);
+                            $('#address').text(result.data.address);
+                            $('.lsdd-main').hide();
+                            $('#receipt-area').show();
+                            return true;
+                        }
+
+                        return false;
+                    }
+                });
+
             })
         })
     </script>
