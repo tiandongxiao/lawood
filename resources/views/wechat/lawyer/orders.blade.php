@@ -185,34 +185,14 @@
     <!--取消订单-->
     <section class="lstc-main"   style="display:none;">
         <!--律师名片-->
-        <div class="tc-m lsmp-main">
+        <div class="tc-m lsmp-main" style="display: block">
             <div class="bg-fff c-main" style="height: 375px;">
-                <div class="tie">您附近的专业律师<i class="btn-fjls  btn-gb"></i></div>
+                <div class="tie">发票信息<i class="btn-fjls  btn-gb"></i></div>
                 <div class="con">
-                    <div class="img">
-                        <img src="/images/mp-banner.png" width="100%">
-                        <a href="" class="link-more" id="detail_info">点击查看详情</a>
-                        <div class="zxf">
-                            <p class="top">咨询费</p>
-                            <p class="bottom" style="top: -4px;"><span id="price">220</span><span class="fs-18">元</span></p>
-                        </div>
-                    </div>
-                    <div class="name">
-                        @if(!Auth::check())
-                            <div class="f-right" ><span class="btn-ljzx">立即咨询</span></div>
-                        @else
-                            @if(Auth::user()->role != 'lawyer')
-                                <div class="f-right" ><span class="btn-ljzx" style="top: 25px;">立即咨询</span></div>
-                            @endif
-                        @endif
-                        <div class="left">
-                            <h3 class="chaochu_1" ><span id="name">王树德</span>	<span>律师</span></h3>
-                            <p class="chaochu_1" id="office">北京市朝阳区京师律师事务所</p>
-                        </div>
-                    </div>
-                    <div class="bq">
-                        <span class="jl" id="distance">0.5km</span>
-                    </div>
+                    <p><span>收件人：</span> <span id="address">啊手动阀</span></p>
+                    <p><span>发票抬头：</span> <span id="title">啊手动阀手动阀</span></p>
+                    <p><span>邮寄地址：</span> <span id="address">啊手动阀手动阀手动阀</span></p>
+                    <p><span>电话号码：</span> <span id="address">啊手动阀手动阀手动阀</span></p>
                 </div>
             </div>
         </div>
@@ -245,6 +225,12 @@
             });
             $('.back-home').tap(function () {
                 window.location.href="/wechat";
+            });
+            $('.btn-receipt').tap(function () {
+                $('.lstc-main').show();
+            });
+            $('.btn-gb').tap(function () {
+                $('.lstc-main').hide();
             });
         })
     </script>
