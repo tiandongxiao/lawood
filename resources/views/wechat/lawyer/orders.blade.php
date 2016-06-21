@@ -11,6 +11,7 @@
             <div class="itms on"><span>未完成</span></div>
             <div class="itms"><span>进行中</span></div>
             <div class="itms"><span>已完成</span></div>
+            <div id="refresh" style="position: absolute;right: 5px;"><img src="/images/refresh-simple.png" width="30px" height="30px"></div>
         </div>
         <div class="bd" style="padding-top:40px;">
             <!--未完成-->
@@ -232,6 +233,9 @@
             });
             $('.btn-gb').tap(function () {
                 $('.lstc-main').hide();
+            });
+            $('#refresh').tap(function () {
+                window.location.href = '/wechat/client/orders';
             });
         })
     </script>
