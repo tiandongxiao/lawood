@@ -459,8 +459,8 @@ transform:scale(0.8,0.8);
 .lsdd-main		.bd	.itms	.bottom		.djs	{ height:45px; line-height:45px; float:left;}	
 .lsdd-main		.bd	.itms	.bottom		.djs	b	{ font-weight:normal; color:#03aaf0;}
 .lsdd-main		.bd	.itms	.bottom		.btn-main		{ float:right; }
-.lsdd-main		.bd	.itms	.bottom		.btn-main 	.btn	{ display:block; width:80px; height:25px; line-height:25px; float:left; text-align:center; border:1px solid #c0c0c0; color:#909090; position:relative; top:10px; margin:0 5px; border-radius:8px;}
-.lsdd-main		.bd	.itms	.bottom		.btn-main 	.btn.lan	{ background:#03aaf0; color:#fff;border: none}
+.lsdd-main		.bd	.itms	.bottom		.btn-main 	.btn	{ display:block; width:80px; height:25px; line-height:26px; float:left; text-align:center; border:1px solid #c0c0c0; color:#909090; position:relative; top:10px; margin:0 5px; border-radius:8px;}
+.lsdd-main		.bd	.itms	.bottom		.btn-main 	.btn.lan	{ background:#03aaf0; color:#fff;border: 1px solid #03aaf0}
 
 
 /*25-咨询管理*/
