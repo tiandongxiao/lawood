@@ -195,8 +195,7 @@ class AjaxController extends Controller
     }
 
     public function receipt(Request $request)
-    {
-        dd($request->all());
+    {        
         if($request->ajax()){
             $user_id = trim($request->get('user'));
             $order_id = trim($request->get('order'));
