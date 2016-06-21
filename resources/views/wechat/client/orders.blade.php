@@ -17,8 +17,8 @@
             <div class="itms on"><span>未完成</span></div>
             <div class="itms"><span>进行中</span></div>
             <div class="itms"><span>已完成</span></div>
-            <div id="go_home" style="position: absolute;left: 5px; top: -2px;"><img src="/images/nav5.png" width="30px" height="30px"></div>
-            <div id="refresh" style="position: absolute;right: 5px; top: -2px;"><img src="/images/refresh-simple.png" width="30px" height="30px"></div>
+            <div id="go_home" style="position: absolute;left: 5px;"><img src="/images/nav5.png" width="30px" height="30px"></div>
+            <div id="refresh" style="position: absolute;right: 5px;"><img src="/images/refresh-simple.png" width="30px" height="30px"></div>
         </div>
         <div class="bd" style="padding-top:40px;">
             <!--未完成-->
