@@ -482,10 +482,10 @@
             });
             // 弹出评价
             $('.btn-ljpj').tap(function(){
-                $('#ljpj').fadeIn();
                 $('#e-score').val(5);
                 $('#e-order').val($(this).data('order'));
                 $('#e-client').val($(this).data('client'));
+                $('#ljpj').show();
             });
 
             $('.btn-xgpj').tap(function(){
