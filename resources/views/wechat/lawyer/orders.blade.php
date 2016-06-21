@@ -250,7 +250,7 @@
                 $('.lstc-main').hide();
             });
             $('#refresh').tap(function () {
-                window.location.href = '/wechat/client/orders';
+                window.location.href = '/wechat/lawyer/orders';
             });
         })
     </script>
