@@ -547,7 +547,7 @@
                 $('#xgpj').hide();
             });
             $('#go_home').tap(function () {
-                window.location.href = '/wechat';
+                window.location.href = '/wechat/client';
             });
             $('#refresh').tap(function () {
                 window.location.href = '/wechat/client/orders';
