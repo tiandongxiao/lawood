@@ -337,15 +337,15 @@
                     <div class="f-left">准时：</div>
                     <div class="right" id="time">
                         <span data-score="1">迟到</span>
-                        <span data-score="3" class="on">按时</span>
+                        <span data-score="3" class="on">准时</span>
                         <span data-score="5">提前</span>
                     </div>
                 </div>
                 <div class="itms">
                     <div class="f-left">穿着：</div>
                     <div class="right" id="dress">
-                        <span data-score="1">邋遢</span>
-                        <span data-score="3" class="on">一般</span>
+                        <span data-score="1">随意</span>
+                        <span data-score="3" class="on">得体</span>
                         <span data-score="5">职业</span>
                     </div>
                 </div>
@@ -358,11 +358,11 @@
                     </div>
                 </div>
                 <div class="itms">
-                    <div class="f-left">礼貌：</div>
+                    <div class="f-left">态度：</div>
                     <div class="right" id="polite">
-                        <span data-score="1">差劲</span>
-                        <span data-score="3" class="on">挺好的</span>
-                        <span data-score="5">彬彬有理</span>
+                        <span data-score="1">随意</span>
+                        <span data-score="3" class="on">温和</span>
+                        <span data-score="5">礼貌</span>
                     </div>
                 </div>
             </div>
