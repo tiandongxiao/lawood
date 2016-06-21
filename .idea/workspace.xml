@@ -46,10 +46,14 @@
       <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="191" column="34" selection-start-line="191" selection-start-column="34" selection-end-line="191" selection-end-column="34" />
+            <state relative-caret-position="613">
+              <caret line="194" column="49" selection-start-line="194" selection-start-column="49" selection-end-line="194" selection-end-column="49" />
               <folding>
                 <element signature="e#10193#10215#0#HTML" expanded="true" />
+                <element signature="e#10420#10439#0#HTML" expanded="true" />
+                <element signature="e#10518#10537#0#HTML" expanded="true" />
+                <element signature="e#10618#10637#0#HTML" expanded="true" />
+                <element signature="e#10723#10742#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -406,7 +410,7 @@
       <workItem from="1466330847690" duration="233000" />
       <workItem from="1466398095936" duration="1856000" />
       <workItem from="1466404662635" duration="18143000" />
-      <workItem from="1466434281624" duration="14521000" />
+      <workItem from="1466434281624" duration="14605000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -531,7 +535,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1231727000" />
+    <option name="totallyTimeSpent" value="1231811000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -989,10 +993,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="191" column="34" selection-start-line="191" selection-start-column="34" selection-end-line="191" selection-end-column="34" />
+        <state relative-caret-position="613">
+          <caret line="194" column="49" selection-start-line="194" selection-start-column="49" selection-end-line="194" selection-end-column="49" />
           <folding>
             <element signature="e#10193#10215#0#HTML" expanded="true" />
+            <element signature="e#10420#10439#0#HTML" expanded="true" />
+            <element signature="e#10518#10537#0#HTML" expanded="true" />
+            <element signature="e#10618#10637#0#HTML" expanded="true" />
+            <element signature="e#10723#10742#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
