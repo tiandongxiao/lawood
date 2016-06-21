@@ -189,10 +189,10 @@
             <div class="bg-fff c-main" style="height: 375px;">
                 <div class="tie">发票信息<i class="btn-fjls  btn-gb"></i></div>
                 <div class="con">
-                    <div><div style="float: left">收件人：</div> <div id="address" style="float: left">啊手动阀</div></div>
-                    <div><div>发票抬头：</div> <div id="title">啊手动阀手动阀</div></div>
-                    <div><div>邮寄地址：</div> <div id="address">啊手动阀手动阀手动阀</div></div>
-                    <div><div>电话号码：</div> <div id="address">啊手动阀手动阀手动阀</div></div>
+                    <div><div>收件人：</div> <span id="address">啊手动阀</span></div>
+                    <div><div>发票抬头：</div> <span id="title">啊手动阀手动阀</span></div>
+                    <div><div>邮寄地址：</div> <span id="address">啊手动阀手动阀手动阀</span></div>
+                    <div><div>电话号码：</div> <span id="address">啊手动阀手动阀手动阀</span></div>
                 </div>
             </div>
         </div>
