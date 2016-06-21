@@ -202,7 +202,7 @@
     <section class="lstc-main"   style="display:none;" id="receipt-area">
         <!--发票信息-->
         <div class="tc-m lsmp-main" style="display: block;bottom: 150px">
-            <div class="bg-fff c-main" style="height: 335px; bottom: 150px;">
+            <div class="bg-fff c-main" style="height: 335px;">
                 <div class="tie" style="width: 100%">发票信息<i class="btn-fjls  btn-gb"></i></div>
                 <div style="text-align: center;margin-top: 5px"><img id="avatar" src="/images/user1-128x128.jpg" width="80px" height="80px" style="border-radius: 10px;"></div>
                 <div style="padding: 25px">
