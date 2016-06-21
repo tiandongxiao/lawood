@@ -46,8 +46,8 @@
       <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-312">
-              <caret line="39" column="78" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
+            <state relative-caret-position="572">
+              <caret line="208" column="71" selection-start-line="208" selection-start-column="71" selection-end-line="208" selection-end-column="71" />
               <folding>
                 <element signature="e#444#482#0#HTML" expanded="true" />
                 <element signature="e#11590#11626#0#HTML" expanded="true" />
@@ -57,10 +57,10 @@
                 <element signature="e#11942#11970#0#HTML" expanded="true" />
                 <element signature="e#11999#12020#0#HTML" expanded="true" />
                 <element signature="e#12047#12070#0#HTML" expanded="true" />
-                <element signature="e#12158#12181#0#HTML" expanded="true" />
-                <element signature="e#12267#12290#0#HTML" expanded="true" />
-                <element signature="e#12376#12399#0#HTML" expanded="true" />
-                <element signature="e#12437#12477#0#HTML" expanded="true" />
+                <element signature="e#12164#12187#0#HTML" expanded="true" />
+                <element signature="e#12273#12296#0#HTML" expanded="true" />
+                <element signature="e#12382#12405#0#HTML" expanded="true" />
+                <element signature="e#12443#12483#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -455,7 +455,7 @@
       <workItem from="1466330847690" duration="233000" />
       <workItem from="1466398095936" duration="1856000" />
       <workItem from="1466404662635" duration="18143000" />
-      <workItem from="1466434281624" duration="22197000" />
+      <workItem from="1466434281624" duration="22810000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -580,7 +580,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1239403000" />
+    <option name="totallyTimeSpent" value="1240016000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1037,8 +1037,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-312">
-          <caret line="39" column="78" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
+        <state relative-caret-position="572">
+          <caret line="208" column="71" selection-start-line="208" selection-start-column="71" selection-end-line="208" selection-end-column="71" />
           <folding>
             <element signature="e#444#482#0#HTML" expanded="true" />
             <element signature="e#11590#11626#0#HTML" expanded="true" />
@@ -1048,10 +1048,10 @@
             <element signature="e#11942#11970#0#HTML" expanded="true" />
             <element signature="e#11999#12020#0#HTML" expanded="true" />
             <element signature="e#12047#12070#0#HTML" expanded="true" />
-            <element signature="e#12158#12181#0#HTML" expanded="true" />
-            <element signature="e#12267#12290#0#HTML" expanded="true" />
-            <element signature="e#12376#12399#0#HTML" expanded="true" />
-            <element signature="e#12437#12477#0#HTML" expanded="true" />
+            <element signature="e#12164#12187#0#HTML" expanded="true" />
+            <element signature="e#12273#12296#0#HTML" expanded="true" />
+            <element signature="e#12382#12405#0#HTML" expanded="true" />
+            <element signature="e#12443#12483#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
