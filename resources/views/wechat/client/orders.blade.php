@@ -17,6 +17,7 @@
             <div class="itms on"><span>未完成</span></div>
             <div class="itms"><span>进行中</span></div>
             <div class="itms"><span>已完成</span></div>
+            <div id="refresh" style="position: absolute;right: 15px;">刷新</div>
         </div>
         <div class="bd" style="padding-top:40px;">
             <!--未完成-->
