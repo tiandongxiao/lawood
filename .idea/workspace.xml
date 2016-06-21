@@ -46,13 +46,12 @@
       <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
-              <caret line="195" column="39" selection-start-line="195" selection-start-column="39" selection-end-line="195" selection-end-column="39" />
+            <state relative-caret-position="535">
+              <caret line="191" column="82" selection-start-line="191" selection-start-column="82" selection-end-line="191" selection-end-column="82" />
               <folding>
-                <element signature="e#10194#10231#0#HTML" expanded="true" />
-                <element signature="e#10436#10487#0#HTML" expanded="true" />
-                <element signature="e#10564#10615#0#HTML" expanded="true" />
-                <element signature="e#10694#10745#0#HTML" expanded="true" />
+                <element signature="e#10193#10215#0#HTML" expanded="true" />
+                <element signature="e#10420#10439#0#HTML" expanded="true" />
+                <element signature="e#10469#10488#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,7 +60,7 @@
       <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9516">
+            <state relative-caret-position="-8112">
               <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
               <folding>
                 <element signature="e#684#732#0#HTML" expanded="true" />
@@ -409,7 +408,7 @@
       <workItem from="1466330847690" duration="233000" />
       <workItem from="1466398095936" duration="1856000" />
       <workItem from="1466404662635" duration="18143000" />
-      <workItem from="1466434281624" duration="13455000" />
+      <workItem from="1466434281624" duration="14316000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -534,7 +533,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1230661000" />
+    <option name="totallyTimeSpent" value="1231522000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -977,7 +976,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9516">
+        <state relative-caret-position="-8112">
           <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
           <folding>
             <element signature="e#684#732#0#HTML" expanded="true" />
@@ -992,13 +991,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="195" column="39" selection-start-line="195" selection-start-column="39" selection-end-line="195" selection-end-column="39" />
+        <state relative-caret-position="535">
+          <caret line="191" column="82" selection-start-line="191" selection-start-column="82" selection-end-line="191" selection-end-column="82" />
           <folding>
-            <element signature="e#10194#10231#0#HTML" expanded="true" />
-            <element signature="e#10436#10487#0#HTML" expanded="true" />
-            <element signature="e#10564#10615#0#HTML" expanded="true" />
-            <element signature="e#10694#10745#0#HTML" expanded="true" />
+            <element signature="e#10193#10215#0#HTML" expanded="true" />
+            <element signature="e#10420#10439#0#HTML" expanded="true" />
+            <element signature="e#10469#10488#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

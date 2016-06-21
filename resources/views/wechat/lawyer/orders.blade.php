@@ -183,17 +183,16 @@
         </div>
     </section>
     <!--取消订单-->
-
     <section class="lstc-main"   style="display:none;">
         <!--律师名片-->
-        <div class="tc-m lsmp-main" style="display: block;bottom: 120px;">
+        <div class="tc-m lsmp-main" style="display: block">
             <div class="bg-fff c-main" style="height: 375px;">
                 <div class="tie">发票信息<i class="btn-fjls  btn-gb"></i></div>
                 <div class="con">
-                    <p><span  style="width: 50px;border-right: solid 1px #39cccc">收件人：</span> <span id="address">啊手动阀</span></p>
-                    <p><span style="width: 50px;border-right: solid 1px #39cccc">发票抬头：</span> <span id="title">啊手动阀手动阀</span></p>
-                    <p><span style="width: 50px;border-right: solid 1px #39cccc">邮寄地址：</span> <span id="address">啊手动阀手动阀手动阀</span></p>
-                    <p><span style="width: 50px;border-right: solid 1px #39cccc">电话号码：</span> <span id="address">啊手动阀手动阀手动阀</span></p>
+                    <div><div style="float: left">收件人：</div> <div id="address" style="float: left">啊手动阀</div></div>
+                    <div><div>发票抬头：</div> <div id="title">啊手动阀手动阀</div></div>
+                    <div><div>邮寄地址：</div> <div id="address">啊手动阀手动阀手动阀</div></div>
+                    <div><div>电话号码：</div> <div id="address">啊手动阀手动阀手动阀</div></div>
                 </div>
             </div>
         </div>
