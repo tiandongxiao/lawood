@@ -125,7 +125,7 @@ class OrderController extends Controller
                 'real_name' => $request->get('name')
             ]);
         }
-
+        Log::info('订单'.$order->id.'的发票开关为'.$i_receipt);
         if($i_receipt == 'on'){
             if(!$order->receipt){
                 Receipt::create([
