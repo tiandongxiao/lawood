@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="bottom">
                                     @if($order->receipt)
-                                        <div class="djs fc-03aaf0 fs-12">需开发票</div>
+                                        <div class="djs fc-03aaf0 fs-12" id="receipt" data-order="{{$order->id}}">需开发票</div>
                                     @else
                                         <div class="djs fc-03aaf0 fs-12">无需开发票</div>
                                     @endif
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="bottom">
                                     @if($order->receipt)
-                                        <div class="djs fc-03aaf0 fs-12">需开发票</div>
+                                        <div class="djs fc-03aaf0 fs-12" id="receipt" data-order="{{$order->id}}">需开发票</div>
                                     @else
                                         <div class="djs fc-03aaf0 fs-12">无需开发票</div>
                                     @endif
@@ -163,7 +163,7 @@
                             </div>
                             <div class="bottom">
                                 @if($order->receipt)
-                                    <div class="djs fc-03aaf0 fs-12">需开发票</div>
+                                    <div class="djs fc-03aaf0 fs-12" id="receipt" data-order="{{$order->id}}">需开发票</div>
                                 @else
                                     <div class="djs fc-03aaf0 fs-12">无需开发票</div>
                                 @endif
@@ -199,7 +199,7 @@
         </div>
     </section>
     <!--取消订单-->
-    <section class="lstc-main"   style="display:none;">
+    <section class="lstc-main"   style="display:none;" id="receipt-area">
         <!--发票信息-->
         <div class="tc-m lsmp-main" style="display: block">
             <div class="bg-fff c-main" style="height: 335px; bottom: 150px;">
@@ -252,6 +252,9 @@
             $('#refresh').tap(function () {
                 window.location.href = '/wechat/lawyer/orders';
             });
+            $('#receipt').tap(function () {
+                $('#receipt-area').show();
+            })
         })
     </script>
 @stop
