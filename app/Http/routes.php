@@ -293,6 +293,8 @@ Route::group(['prefix' => 'ajax'], function(){
     Route::post('evaluate','AjaxController@evaluate');
     Route::post('consult_liked','AjaxController@consult_liked');
 
+    Route::post('receipt','AjaxController@receipt');
+
 });
 
 

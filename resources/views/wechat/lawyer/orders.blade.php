@@ -207,6 +207,7 @@
                 <div style="text-align: center;margin-top: 5px"><img id="avatar" src="/images/user1-128x128.jpg" width="80px" height="80px" style="border-radius: 10px;"></div>
                 <div style="padding: 25px">
                     {!! csrf_field() !!}
+                    <input type="hidden" name="uri" value="{{url('/')}}">
                     <div style="margin-top: 8px"><span>收 &nbsp;件 &nbsp;人：</span>&nbsp;&nbsp;<span id="receiver">王国营</span></div>
                     <div style="margin-top: 8px"><span>电话号码：</span><span id="phone">18511892536</span></div>
                     <div style="margin-top: 8px"><span>发票抬头：</span><span id="title">北京易行动科技有限公司</span></div>
@@ -252,6 +253,7 @@
                 window.location.href = '/wechat/lawyer/orders';
             });
             $('.receipt').tap(function () {
+                var address = $('input[name=uri]').val();
                 var user_id = $(this).data('user');
                 var order_id = $(this).data('order');
 
