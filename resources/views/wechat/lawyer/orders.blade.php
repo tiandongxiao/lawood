@@ -186,13 +186,14 @@
     <section class="lstc-main"   style="display:none;">
         <!--律师名片-->
         <div class="tc-m lsmp-main" style="display: block">
-            <div class="bg-fff c-main" style="height: 375px;">
+            <div class="bg-fff c-main" style="height: 300px; bottom: 150px;">
                 <div class="tie">发票信息<i class="btn-fjls  btn-gb"></i></div>
-                <div class="con">
-                    <div><div style="float: left">收件人：</div> <span id="address">啊手动阀</span></div>
-                    <div><div style="float: left">发票抬头：</div> <span id="title">啊手动阀手动阀</span></div>
-                    <div><div style="float: left">邮寄地址：</div> <span id="address">啊手动阀手动阀手动阀</span></div>
-                    <div><div style="float: left">电话号码：</div> <span id="address">啊手动阀手动阀手动阀</span></div>
+                <div class="avatar" style="align-content: center"><img src="/images/user1-128x128.jpg"></div>
+                <div class="receipt">
+                    <div><div style="float: left;margin-top: 10px;width: 70px">收件人：</div> <span id="address">啊手动阀</span></div>
+                    <div><div style="float: left;margin-top: 10px;width: 70px">发票抬头：</div> <span id="title">啊手动阀手动阀</span></div>
+                    <div><div style="float: left;margin-top: 10px;width: 70px">邮寄地址：</div> <span id="address">啊手动阀手动阀手动阀</span></div>
+                    <div><div style="float: left;margin-top: 10px;width: 70px">电话号码：</div> <span id="address">啊手动阀手动阀手动阀</span></div>
                 </div>
             </div>
         </div>
