@@ -511,7 +511,7 @@
                                 em.eq(i).addClass('on');
                             }
                             $('#m-comment').val(result.data.comment);
-                            $('#xgpj').fadeIn();
+                            $('#xgpj').show();
                             return true;
                         }
                         return false;
@@ -529,7 +529,7 @@
             $('.hd .itms').tap(function(){
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
-                $('.bd-itms').css({display:'none'});
+                $('.bd-itms').hide();
                 $('.bd-itms').eq($(this).index()).show();
             });
 
