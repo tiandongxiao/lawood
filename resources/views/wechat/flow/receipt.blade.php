@@ -85,12 +85,12 @@
             $('#In-btn').tap(function(){
                 //姓名
                 if(!$('#name').val()){
-                    alert('姓名不能为空')
+                    alert('姓名不能为空');
                     return	false;
                 }else{
-                    var re = /^.{2,20}$/
+                    var re = /^.{2,20}$/;
                     if (!re.test($('#name').val())) {
-                        alert('请输入正确的姓名(2-20字符)')
+                        alert('请输入正确的姓名(2-20字符)');
                         return	false;
                     }
                 }
@@ -110,7 +110,7 @@
                         alert('收件人姓名不能为空');
                         return	false;
                     }else{
-                        var re = /^.{2,20}$/
+                        var re = /^.{2,20}$/;
                         if (!re.test($('#sjr-name').val())) {
                             alert('请输入正确的收件人姓名(2-20字符)');
                             return	false;
@@ -121,9 +121,9 @@
                         alert('手机号码不能为空');
                         return	false;
                     }else{
-                        var re = /^1\d{10}$/
+                        var re = /^1\d{10}$/;
                         if (!re.test($('#mobile').val())) {
-                            alert('请正确输入手机号码')
+                            alert('请正确输入手机号码');
                             return	false;
                         }
                     }

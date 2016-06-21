@@ -146,7 +146,7 @@ class OrderController extends Controller
                 ]);
             }
         }
-
+        Log::info('订单'.$order->id.'的发票开关为'.$i_receipt.' -- ending');
         return redirect('wxpay/js/'.$order->id);
     }
 
