@@ -188,12 +188,12 @@
         <div class="tc-m lsmp-main" style="display: block">
             <div class="bg-fff c-main" style="height: 300px; bottom: 150px;">
                 <div class="tie">发票信息<i class="btn-fjls  btn-gb"></i></div>
-                <div class="avatar" style="align-content: center"><img src="/images/user1-128x128.jpg"></div>
+                <div class="avatar" style="align-content: center"><img src="/images/user1-128x128.jpg" width="80px" height="80px" style="border-radius: 10px;"></div>
                 <div class="receipt">
-                    <div><div style="float: left;margin-top: 10px;width: 70px">收件人：</div> <span id="address">啊手动阀</span></div>
-                    <div><div style="float: left;margin-top: 10px;width: 70px">发票抬头：</div> <span id="title">啊手动阀手动阀</span></div>
-                    <div><div style="float: left;margin-top: 10px;width: 70px">邮寄地址：</div> <span id="address">啊手动阀手动阀手动阀</span></div>
-                    <div><div style="float: left;margin-top: 10px;width: 70px">电话号码：</div> <span id="address">啊手动阀手动阀手动阀</span></div>
+                    <div style="margin-top: 10px"><span>收件人：</span> <span id="address">啊手动阀</span></div>
+                    <div style="margin-top: 10px"><span>发票抬头：</span> <span id="title">啊手动阀手动阀</span></div>
+                    <div style="margin-top: 10px"><span>邮寄地址：</span> <span id="address">啊手动阀手动阀手动阀</span></div>
+                    <div style="margin-top: 10px"><span>电话号码：</span> <span id="address">啊手动阀手动阀手动阀</span></div>
                 </div>
             </div>
         </div>
