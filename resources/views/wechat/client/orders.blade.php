@@ -305,10 +305,8 @@
     <!--首次评价-->
     <section class="tc-main pj-main po-f"  style="display:none" id="ljpj">
         <div class="main te-cen"  style="top:6%;">
-            <div class="tie">您附近的专业律师<i class="btn-gb" id="gb-comment"></i></div>
-            <div class="lsxx" >
-                <p style="text-align: center">王树德 律师</p>
-            </div>
+            <div class="tie">王树德 律师<i class="btn-gb" id="gb-comment"></i></div>
+
             <div class="pjcs pad-0-10">
                 <div class="title"><span>星级评价</span></div>
                 <div class="pj">
@@ -375,10 +373,7 @@
     <!--修改评价-->
     <section class="tc-main pj-main po-f"  style="display:none" id="xgpj">
         <div class="main te-cen"  style="top:20%;">
-            <div class="tie">您附近的专业律师<i class="btn-gb" id="gb-update"></i></div>
-            <div class="lsxx">
-                <p style="text-align: center">王树德 律师</p>
-            </div>
+            <div class="tie">王树德 律师<i class="btn-gb" id="gb-update"></i></div>
             <div class="pjcs pad-0-10">
                 <div class="title"><span>星级评价</span></div>
                 <div class="pj">
