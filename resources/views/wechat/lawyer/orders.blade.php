@@ -190,7 +190,7 @@
                 <div class="tie" style="width: 100%">发票信息<i class="btn-fjls  btn-gb"></i></div>
                 <div class="avatar" style="text-align: center;margin-top: 5px"><img src="/images/user1-128x128.jpg" width="80px" height="80px" style="border-radius: 10px;"></div>
                 <div class="receipt" style="padding: 25px">
-                    <div style="margin-top: 10px"><span>收 件 人：</span> <span id="address">啊手动阀</span></div>
+                    <div style="margin-top: 10px"><span>收 件 人：</span> &nbsp;<span id="address">啊手动阀</span></div>
                     <div style="margin-top: 10px"><span>电话号码：</span> <span id="address">啊手动阀手动阀手动阀</span></div>
                     <div style="margin-top: 10px"><span>发票抬头：</span> <span id="title">啊手动阀手动阀</span></div>
                     <div style="margin-top: 10px"><span>邮寄地址：</span> <span id="address">啊手动阀手动阀手动阀</span></div>
