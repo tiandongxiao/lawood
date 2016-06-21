@@ -47,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="584">
-              <caret line="211" column="108" selection-start-line="211" selection-start-column="108" selection-end-line="211" selection-end-column="108" />
+              <caret line="211" column="103" selection-start-line="211" selection-start-column="103" selection-end-line="211" selection-end-column="103" />
               <folding>
                 <element signature="e#444#482#0#HTML" expanded="true" />
                 <element signature="e#11590#11626#0#HTML" expanded="true" />
@@ -454,7 +454,7 @@
       <workItem from="1466330847690" duration="233000" />
       <workItem from="1466398095936" duration="1856000" />
       <workItem from="1466404662635" duration="18143000" />
-      <workItem from="1466434281624" duration="23546000" />
+      <workItem from="1466434281624" duration="24147000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -579,7 +579,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1240752000" />
+    <option name="totallyTimeSpent" value="1241353000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1037,7 +1037,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="584">
-          <caret line="211" column="108" selection-start-line="211" selection-start-column="108" selection-end-line="211" selection-end-column="108" />
+          <caret line="211" column="103" selection-start-line="211" selection-start-column="103" selection-end-line="211" selection-end-column="103" />
           <folding>
             <element signature="e#444#482#0#HTML" expanded="true" />
             <element signature="e#11590#11626#0#HTML" expanded="true" />
