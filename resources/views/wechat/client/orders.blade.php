@@ -1,6 +1,15 @@
 @extends('wechat.base.app')
 @section('css')
-    <style>body{background:#f8f8f8}</style>
+    <style>
+        body{background:#f8f8f8}
+        .tie{
+            width:100%; height:50px; line-height:50px; text-align:center; color:#686868; border-bottom:1px solid #f8f8f8; z-index:100; background:#fff;
+            padding:5px 0; border-top-left-radius:10px; border-top-right-radius:10px; font-size:16px;margin-top: -10px;
+        }
+        .tie .btn-gb{
+            width:45px; height:45px; position:absolute; right:5px; top:5px; background:url(../images/gb.png) center center no-repeat;background-size:22px 22px;
+        }
+    </style>
 @stop
 @section('content')
     <section class="lsdd-main">
@@ -296,6 +305,7 @@
     <!--首次评价-->
     <section class="tc-main pj-main po-f"  style="display:none" id="ljpj">
         <div class="main te-cen"  style="top:6%;">
+            <div class="tie">您附近的专业律师<i class="btn-gb"></i></div>
             <div class="lsxx" >
                 <p style="text-align: center">王树德 律师</p>
             </div>
@@ -365,6 +375,7 @@
     <!--修改评价-->
     <section class="tc-main pj-main po-f"  style="display:none" id="xgpj">
         <div class="main te-cen"  style="top:20%;">
+            <div class="tie">您附近的专业律师<i class="btn-gb"></i></div>
             <div class="lsxx">
                 <p style="text-align: center">王树德 律师</p>
             </div>
