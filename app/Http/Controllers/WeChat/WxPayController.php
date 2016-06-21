@@ -114,17 +114,18 @@ class WxPayController extends Controller
      * @param $product_id
      * @return 返回用户在线支付商品信息显示界面
      */
-    public function JSPay($order_id)
+    public function JSPay(Request $request,$order_id)
     {
         $order = ShopOrder::findOrFail($order_id);
 
         if($order->statusCode == 'pending'){
             if(!$order->place)
                 return redirect('wechat/order/address/'.$order->id);
-
-            if(!$order->receipt)
-                return redirect('wechat/order/receipt/'.$order->id);
-
+            # 若有此变量，则跳过发票设置，（OrderController-postReceipt最后一行携带的参数）
+            if(!$request->get('receipt')){
+                if(!$order->receipt)
+                    return redirect('wechat/order/receipt/'.$order->id);
+            }
             $params =  $order->attach;
             return view('wechat.flow.pay',compact('params'));
         }
