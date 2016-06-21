@@ -26,7 +26,7 @@
                     <div class="f-left">我要开发票</div>
                     <div class="right">
                         <div class="ts fc-c0c0c0" style="display:none">邮费用费到付</div>
-                        <input type="checkbox" class="In-check">
+                        <input type="checkbox" class="In-check" name="needed">
                     </div>
                 </div>
                 <div class="con con-1" style="display:none;">
