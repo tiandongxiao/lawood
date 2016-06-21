@@ -3,7 +3,7 @@
     <section class="sjxz-main">
         <div class="top">
             <div class="tx"><img src="{{$order->seller->avatar}}" width="60" height="60" class="br-50"></div>
-            <div class="fy"><span class="fs-18">{{$order->total}}</span>元</div>
+            <div class="fy"><span class="fs-18" style="padding-left: 12px;">{{$order->total}}</span>元</div>
             <p class="fc-fff line-40 fs-18">您正在预约</p>
             <p class="fc-a4dfff line-20">{{$order->seller->office}} <span class="fc-fff">{{$order->seller->real_name}}</span> 律师进行 <span class="fc-fff">{{$order->category}}</span> 相关法律咨询</p>
             <p class="fc-a4dfff line-20 dd">预约地点暂定 <span class="fc-fff">{{$order->place->name}}</span></p>
