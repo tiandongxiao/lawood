@@ -14,6 +14,7 @@
 @section('content')
     <section class="lsdd-main">
         <div class="hd po-f">
+            <div id="go_home" style="position: absolute;left: 5px;"><img src="/images/nav5.png" width="30px" height="30px"></div>
             <div class="itms on"><span>未完成</span></div>
             <div class="itms"><span>进行中</span></div>
             <div class="itms"><span>已完成</span></div>
@@ -544,6 +545,9 @@
             });
             $('#gb-update').tap(function() {
                 $('#xgpj').hide();
+            });
+            $('#go_home').tap(function () {
+                window.location.href = '/wechat';
             });
             $('#refresh').tap(function () {
                 window.location.href = '/wechat/client/orders';
