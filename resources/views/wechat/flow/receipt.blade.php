@@ -26,7 +26,7 @@
                     <div class="f-left">我要开发票</div>
                     <div class="right">
                         <div class="ts fc-c0c0c0" style="display:none">邮费用费到付</div>
-                        <input type="checkbox" class="In-check" name="needed">
+                        <input type="checkbox" class="In-check">
                     </div>
                 </div>
                 <div class="con con-1" style="display:none;">
@@ -69,7 +69,6 @@
 @section('script')
     <script>
         $(function(){
-            //公布到广场
             $('.In-check').on('change',function(){
                 if($(this).prop("checked")){
                     $('.con-1').slideDown();
@@ -107,7 +106,6 @@
                         return	false;
                     }
                     //收件人sjr-name
-
                     if(!$('#sjr-name').val()){
                         alert('收件人姓名不能为空');
                         return	false;
@@ -118,7 +116,6 @@
                             return	false;
                         }
                     }
-
                     //手机号
                     if(!$('#mobile').val()){
                         alert('手机号码不能为空');

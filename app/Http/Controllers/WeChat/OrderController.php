@@ -114,8 +114,7 @@ class OrderController extends Controller
     }
 
     public function postReceipt(Request $request)
-    {
-        dd($request->all());
+    {        
         $order_id = $request->get('order');
 
         $order = Order::findOrFail($order_id);
@@ -125,24 +124,27 @@ class OrderController extends Controller
                 'real_name' => $request->get('name')
             ]);
         }
+        $needed = $request->get('switch');
 
-        if(!$order->receipt){
-            Receipt::create([
-                'order_id' => $order_id,
-                'title'    => $request->get('title'),
-                'receiver' => $request->get('receiver'),
-                'phone'    => $request->get('phone'),
-                'address'  => $request->get('address'),
-                'code'     => $request->get('code')
-            ]);
-        }else{
-            $order->receipt->update([
-                'title'    => $request->get('title'),
-                'receiver' => $request->get('receiver'),
-                'phone'    => $request->get('phone'),
-                'address'  => $request->get('address'),
-                'code'     => $request->get('code')
-            ]);
+        if($needed == 'on'){
+            if(!$order->receipt){
+                Receipt::create([
+                    'order_id' => $order_id,
+                    'title'    => $request->get('title'),
+                    'receiver' => $request->get('receiver'),
+                    'phone'    => $request->get('phone'),
+                    'address'  => $request->get('address'),
+                    'code'     => $request->get('code')
+                ]);
+            }else{
+                $order->receipt->update([
+                    'title'    => $request->get('title'),
+                    'receiver' => $request->get('receiver'),
+                    'phone'    => $request->get('phone'),
+                    'address'  => $request->get('address'),
+                    'code'     => $request->get('code')
+                ]);
+            }
         }
 
         return redirect('wxpay/js/'.$order->id);
