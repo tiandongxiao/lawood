@@ -545,6 +545,9 @@
             $('#gb-update').tap(function() {
                 $('#xgpj').hide();
             });
+            $('#refresh').tap(function () {
+                window.location.href = '/wechat/client/orders';
+            });
         })
     </script>
 @stop
