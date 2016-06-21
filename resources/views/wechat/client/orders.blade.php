@@ -385,8 +385,6 @@
                 </div>
                 <div class="xxts fs-12 line-20 fc-03aaf0">比较满意，但仍可改善</div>
             </div>
-            <br/>
-            <div class="title"><span>文字评论</span></div>
             <form id="modify" action="{{url('wechat/order/evaluate/update')}}" method="post">
                 {!! csrf_field() !!}
                 <input type="hidden" name="uri" value="{{url('/')}}">
@@ -394,7 +392,7 @@
                 <input type="hidden" name="order" id="m-order" value=""/>
                 <input type="hidden" name="user-score" id="m-score" value="5"/>
                 <div class="pjyj  pad-0-10 mar-top-10">
-                    <textarea class="In-text" name="comment" id="m-comment"></textarea>
+                    <textarea class="In-text" name="comment" id="m-comment" style="height: 55px;"></textarea>
                 </div>
             </form>
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10"  value="提交" id="rate-modify">
