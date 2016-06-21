@@ -183,39 +183,41 @@
         </div>
     </section>
     <!--取消订单-->
-    <!--律师名片-->
-    <div class="tc-m lsmp-main">
-        <div class="bg-fff c-main" style="height: 375px;">
-            <div class="tie">您附近的专业律师<i class="btn-fjls  btn-gb"></i></div>
-            <div class="con">
-                <div class="img">
-                    <img src="/images/mp-banner.png" width="100%">
-                    <a href="" class="link-more" id="detail_info">点击查看详情</a>
-                    <div class="zxf">
-                        <p class="top">咨询费</p>
-                        <p class="bottom" style="top: -4px;"><span id="price">220</span><span class="fs-18">元</span></p>
+    <section class="lstc-main"   style="display:none;">
+        <!--律师名片-->
+        <div class="tc-m lsmp-main">
+            <div class="bg-fff c-main" style="height: 375px;">
+                <div class="tie">您附近的专业律师<i class="btn-fjls  btn-gb"></i></div>
+                <div class="con">
+                    <div class="img">
+                        <img src="/images/mp-banner.png" width="100%">
+                        <a href="" class="link-more" id="detail_info">点击查看详情</a>
+                        <div class="zxf">
+                            <p class="top">咨询费</p>
+                            <p class="bottom" style="top: -4px;"><span id="price">220</span><span class="fs-18">元</span></p>
+                        </div>
                     </div>
-                </div>
-                <div class="name">
-                    @if(!Auth::check())
-                        <div class="f-right" ><span class="btn-ljzx">立即咨询</span></div>
-                    @else
-                        @if(Auth::user()->role != 'lawyer')
-                            <div class="f-right" ><span class="btn-ljzx" style="top: 25px;">立即咨询</span></div>
+                    <div class="name">
+                        @if(!Auth::check())
+                            <div class="f-right" ><span class="btn-ljzx">立即咨询</span></div>
+                        @else
+                            @if(Auth::user()->role != 'lawyer')
+                                <div class="f-right" ><span class="btn-ljzx" style="top: 25px;">立即咨询</span></div>
+                            @endif
                         @endif
-                    @endif
-                    <div class="left">
-                        <h3 class="chaochu_1" ><span id="name">王树德</span>	<span>律师</span></h3>
-                        <p class="chaochu_1" id="office">北京市朝阳区京师律师事务所</p>
+                        <div class="left">
+                            <h3 class="chaochu_1" ><span id="name">王树德</span>	<span>律师</span></h3>
+                            <p class="chaochu_1" id="office">北京市朝阳区京师律师事务所</p>
+                        </div>
                     </div>
-                </div>
-                <div class="bq">
-                    <span class="jl" id="distance">0.5km</span>
+                    <div class="bq">
+                        <span class="jl" id="distance">0.5km</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--律师名片-->
+        <!--律师名片-->
+    </section>
 @stop
 @section('script')
     <script>
