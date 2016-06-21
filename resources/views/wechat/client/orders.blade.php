@@ -7,7 +7,7 @@
             padding:5px 0; border-top-left-radius:10px; border-top-right-radius:10px; font-size:16px;margin-top: -10px;
         }
         .tie .btn-gb{
-            width:45px; height:45px; position:absolute; right:5px; top:5px; background:url(../images/gb.png) center center no-repeat;background-size:22px 22px;
+            width:45px; height:45px; position:absolute; right:5px; top:5px; background:url('images/gb.png') center center no-repeat;background-size:22px 22px;
         }
     </style>
 @stop
