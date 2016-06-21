@@ -331,7 +331,7 @@
                     <textarea placeholder="意见和建议" class="In-text" name="comment"></textarea>
                 </div>
             </form>
-            <div class="lsyx pad-0-10">
+            <div class="lsyx pad-0-10" style="margin-bottom: 20px">
                 <div class="title"><span>律师印象</span></div>
                 <div class="itms">
                     <div class="f-left">准时：</div>
