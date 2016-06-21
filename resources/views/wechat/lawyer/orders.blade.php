@@ -36,11 +36,11 @@
                                     </div>
                                 </div>
                                 <div class="bottom">
-                                    <div class="djs"  id="leftTime0">正在加载中</div>
-                                    <script type="text/javascript">
-                                        //第一个为倒计时传人ID 第二个为倒计时限制时间
-                                        addTimer("leftTime0", 100);
-                                    </script>
+                                    @if($order->receipt)
+                                        <div class="djs fc-03aaf0 fs-12">需开发票</div>
+                                    @else
+                                        <div class="djs fc-03aaf0 fs-12">无需开发票</div>
+                                    @endif
                                     <div class="btn-main">
                                         <span class="btn lan"><a href="{{url('wechat/order/accept/'.$order->id)}}">确认接单</a></span>
                                         <span class="btn btn-hv" data-order="{{$order->id}}">忽略</span>
@@ -116,6 +116,11 @@
                                     </div>
                                 </div>
                                 <div class="bottom">
+                                    @if($order->receipt)
+                                        <div class="djs fc-03aaf0 fs-12">需开发票</div>
+                                    @else
+                                        <div class="djs fc-03aaf0 fs-12">无需开发票</div>
+                                    @endif
                                     <div class="btn-main">
                                         <a class="btn lan" href="tel:{{$order->client->phone}}">打电话</a>
                                         <a class="btn lan" href="{{url('wechat/order/sign/'.$order->id)}}">咨询签到</a>
