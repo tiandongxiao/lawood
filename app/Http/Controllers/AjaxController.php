@@ -54,7 +54,7 @@ class AjaxController extends Controller
                 case 'reset':
                 case 'check':
                     $data['do'] = $request->get('do');
-                    $data['tpl'] = '74240';  # 短信模板
+                    $data['tpl'] = '95072';  # 短信模板
                     $key = $data['do'].'_'.$phone;
                     if(!Cache::has($key)){
                         $data['content'] = array((string)random_int(1000, 9999)); # 要求必须是数组
@@ -65,7 +65,7 @@ class AjaxController extends Controller
                     break;
                 default:
                     $data['do'] = $request->get('do');
-                    $data['tpl'] = '74240';
+                    $data['tpl'] = '95072';
                     $data['content'] = '';
                     break;
             }
