@@ -177,11 +177,11 @@
                                 'do': 'reg'
                             },
                             success: function(data){
-                                Time = 60;
-                                clearTimeout(timer);
-                                $('#btn-yzm').attr({'fs':'true'});
-                                $('#btn-yzm').val('再发一次');
-                                $('#btn-yzm').removeClass('on');
+//                                Time = 60;
+//                                clearTimeout(timer);
+//                                $('#btn-yzm').attr({'fs':'true'});
+//                                $('#btn-yzm').val('再发一次');
+//                                $('#btn-yzm').removeClass('on');
                                 alert(data.info)
                             }
                         });
