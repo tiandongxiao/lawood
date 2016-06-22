@@ -49,7 +49,6 @@
             //表单判断
             $('.In-text').bind('input propertychange', function() {
                 //form = true;
-                //姓名
                 if(!$('#name').val()){
                     form = false;
                     $('#In-btn').removeClass('bg-lan1');
@@ -80,30 +79,29 @@
                         return false;
                     }
 
-                    function checkPhone(){
-                        $.ajax({
-                            type: 'POST',
-                            url: address+'/ajax/phone',
-                            data: {
-                                'phone' : $('input[name=phone]').val(),
-                                '_token':$('input[name=_token]').val(),
-                            },
-                            success: function(data){
-                                if(data == 'Y'){
-                                    $('#mobile').parents('.itms').addClass('itms-ok');
-                                    if(!$('#btn-yzm').parents('.itms').hasClass('itms-ok'));
-                                        $('#btn-yzm').show()
-                                    return true;
-                                }
-                                form = false;
-                                $('#In-btn').removeClass('bg-lan1');
-                                if(!$('#mobile').parents('.itms').hasClass('itms-ok'));
-                                    alert('此号码已被注册');
-                                return false;
+
+                    $.ajax({
+                        type: 'POST',
+                        url: address+'/ajax/phone',
+                        data: {
+                            'phone' : $('input[name=phone]').val(),
+                            '_token':$('input[name=_token]').val()
+                        },
+                        success: function(data){
+                            if(data == 'Y'){
+                                $('#mobile').parents('.itms').addClass('itms-ok');
+                                if(!$('#btn-yzm').parents('.itms').hasClass('itms-ok'))
+                                    $('#btn-yzm').show();
+                                return true;
                             }
-                        });
-                    }
-                    checkPhone();
+                            form = false;
+                            $('#In-btn').removeClass('bg-lan1');
+                            if(!$('#mobile').parents('.itms').hasClass('itms-ok'))
+                                alert('此号码已被注册');
+                            return false;
+                        }
+                    });
+
                 }
 
                 //判断验证码
@@ -113,7 +111,7 @@
                     $('#btn-yzm').parents('.itms').removeClass('itms-ok');
                     return false;
                 }else{
-                    var re =  /\d{4}$/
+                    var re =  /\d{4}$/;
                     if (!re.test($('#yzm').val())) {
                         form = false;
                         $('#In-btn').removeClass('bg-lan1');
