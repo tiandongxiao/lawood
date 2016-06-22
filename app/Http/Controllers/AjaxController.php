@@ -55,7 +55,13 @@ class AjaxController extends Controller
                 case 'check':
                     $data['do'] = $request->get('do');
                     $data['tpl'] = '74240';  # 短信模板
-                    $data['content'] = array((string)random_int(1000, 9999)); # 要求必须是数组
+                    $key = $data['do'].'_'.$phone;
+                    if(!Cache::has($key)){
+                        $data['content'] = array((string)random_int(1000, 9999)); # 要求必须是数组
+                    }else{
+                        $code = Cache::get($key);
+                        $data['content'] = array($code); # 要求必须是数组
+                    }
                     break;
                 default:
                     $data['do'] = $request->get('do');
@@ -70,7 +76,9 @@ class AjaxController extends Controller
                     case 'reg':
                     case 'reset':
                     case 'check':
-                        Cache::add($data['do'].'_'.$phone, $data['content'][0], 1);
+                        $key = $data['do'].'_'.$phone;
+                        if(!Cache::has($key))
+                            Cache::add($key, $data['content'][0], 30);
                         return response()->json(['code' => 'Y', 'info' => '验证码发送成功']);
                     default:
                         return response()->json(['code' => 'Y', 'info' => '信息发送成功']);
@@ -90,7 +98,6 @@ class AjaxController extends Controller
     public function phone(Request $request)
     {
         $phone = $request->get('phone');
-        Log::info('进行验证的手机号码 - '.$phone);
         if($request->ajax()){
             $record = User::where('phone',$phone)->first();
             if(is_null($record))
@@ -105,7 +112,6 @@ class AjaxController extends Controller
             $type =  $request->get('type');
             $phone = $request->get('phone');
             $key = $type.'_'.$phone;
-            Log::info($key);
 
             if(!Cache::has($key))
                 return 'E';
