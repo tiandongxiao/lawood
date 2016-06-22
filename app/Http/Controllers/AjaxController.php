@@ -71,18 +71,18 @@ class AjaxController extends Controller
                     case 'reset':
                     case 'check':
                         Cache::add($data['do'].'_'.$phone, $data['content'][0], 1);
-                        return response()->json(['code' => 200, 'info' => '验证码发送成功']);
+                        return response()->json(['code' => 'Y', 'info' => '验证码发送成功']);
                     default:
-                        return response()->json(['code' => 200, 'info' => '信息发送成功']);
+                        return response()->json(['code' => 'Y', 'info' => '信息发送成功']);
                 }
             }
             switch ($data['do']){
                 case 'reg':
                 case 'reset':
                 case 'check':
-                    return response()->json(['code' => 400, 'info' => '验证码发送失败']);
+                    return response()->json(['code' => 'X', 'info' => '验证码发送失败']);
                 default:
-                    return response()->json(['code' => 400, 'info' => '信息发送失败']);
+                    return response()->json(['code' => 'X', 'info' => '信息发送失败']);
             }
         }
     }
