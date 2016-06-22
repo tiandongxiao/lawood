@@ -121,7 +121,6 @@ class AjaxController extends Controller
             if($request->get('code') != $value)
                 return 'X';
 
-            Cache::forget($key);
             return 'Y';
         }
     }
