@@ -80,7 +80,6 @@
                         return false;
                     }
 
-
                     $.ajax({
                         type: 'POST',
                         url: address+'/ajax/phone',

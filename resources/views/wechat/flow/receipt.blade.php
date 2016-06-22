@@ -1,4 +1,7 @@
 @extends('wechat.base.app')
+@section('css')
+    <style>body{background:#f8f8f8}</style>
+@stop
 @section('content')
     <section class="sjxz-main">
         <div class="top">
