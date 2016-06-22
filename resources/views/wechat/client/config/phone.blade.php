@@ -32,6 +32,7 @@
     <script>
         $(function(){
             var form = false;
+            var address = $('input[name=uri]').val();
             //表单判断
             $('.In-text').bind('input propertychange', function() {
                 //手机号
@@ -53,7 +54,7 @@
                         $('#btn-yzm').hide()
                         return false;
                     }
-                    var address = $('input[name=uri]').val();
+
                     function checkPhone(){
                         $.ajax({
                             type: 'POST',
@@ -95,7 +96,6 @@
                         return false;
                     }
 
-                    var address = $('input[name=uri]').val();
                     $.ajax({
                         type: 'POST',
                         url: address+'/ajax/code',
@@ -153,12 +153,14 @@
                                 '_token':$('input[name=_token]').val(),
                                 'do' : 'reset'
                             },
-                            success: function(data){
-                                Time = 60;
-                                clearTimeout(timer);
-                                $('#btn-yzm').attr({'fs':'true'})
-                                $('#btn-yzm').val('再发一次');
-                                $('#btn-yzm').removeClass('on');
+                            success: function(result){
+                                if(result.code == 'X'){
+                                    Time = 60;
+                                    clearTimeout(timer);
+                                    $('#btn-yzm').attr({'fs':'true'});
+                                    $('#btn-yzm').val('再发一次');
+                                    $('#btn-yzm').removeClass('on');
+                                }
                                 alert(data.info)
                             }
                         });
