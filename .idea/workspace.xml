@@ -58,12 +58,11 @@
       <file leaf-file-name="basic.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/auth/basic.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="32" column="71" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
+            <state relative-caret-position="291">
+              <caret line="31" column="67" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="67" />
               <folding>
                 <element signature="e#1202#1223#0#HTML" expanded="true" />
                 <element signature="e#1579#1600#0#HTML" expanded="true" />
-                <element signature="e#1663#1689#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -826,7 +825,7 @@
       <workItem from="1466330847690" duration="233000" />
       <workItem from="1466398095936" duration="1856000" />
       <workItem from="1466404662635" duration="18143000" />
-      <workItem from="1466434281624" duration="44855000" />
+      <workItem from="1466434281624" duration="45015000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -951,7 +950,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1262061000" />
+    <option name="totallyTimeSpent" value="1262221000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1434,12 +1433,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/auth/basic.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="32" column="71" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
+        <state relative-caret-position="291">
+          <caret line="31" column="67" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="67" />
           <folding>
             <element signature="e#1202#1223#0#HTML" expanded="true" />
             <element signature="e#1579#1600#0#HTML" expanded="true" />
-            <element signature="e#1663#1689#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
