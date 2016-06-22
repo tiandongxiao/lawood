@@ -181,13 +181,13 @@ class WeChatPubController extends Controller
         switch ($this->user->role){
             case 'lawyer':
                 if(is_null($this->user->phone))
-                    return view('wechat.auth.lawyer');
+                    return view('wechat.auth.basic');
                 if(is_null($this->user->office))
                     return redirect('wechat/profile');
                 break;
             case 'client':
                 if(is_null($this->user->phone))
-                    return view('wechat.auth.client');
+                    return view('wechat.auth.basic');
                 break;
             default:
                 break;

@@ -191,7 +191,7 @@
                     sendMsg();
                     show_Time();
                 }
-            })
+            });
 
             function show_Time(){ //加时函数
                 if(Time == 0){
