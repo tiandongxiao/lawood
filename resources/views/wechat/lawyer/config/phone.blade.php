@@ -32,28 +32,30 @@
     <script>
         $(function(){
             var form = false;
+            var address = $('input[name=uri]').val();
+            var btn_yzm = $('#btn-yzm');
             //表单判断
             $('.In-text').bind('input propertychange', function() {
                 //手机号
                 if(!$('#mobile').val()){
                     form = false;
-                    $('#In-btn').removeClass('bg-lan1')
+                    $('#In-btn').removeClass('bg-lan1');
                     $('#mobile').parents('.itms').removeClass('itms-ok');
-                    $('#btn-yzm').parents('.itms').removeClass('itms-ok');
+                    btn_yzm.parents('.itms').removeClass('itms-ok');
                     $('#yzm').val('');
-                    $('#btn-yzm').hide()
+                    btn_yzm.hide()
                 }else{
-                    var re = /^1\d{10}$/
+                    var re = /^1\d{10}$/;
                     if (!re.test($('#mobile').val())) {
                         form = false;
-                        $('#In-btn').removeClass('bg-lan1')
+                        $('#In-btn').removeClass('bg-lan1');
                         $('#mobile').parents('.itms').removeClass('itms-ok');
-                        $('#btn-yzm').parents('.itms').removeClass('itms-ok');
+                        btn_yzm.parents('.itms').removeClass('itms-ok');
                         $('#yzm').val('');
-                        $('#btn-yzm').hide();
+                        btn_yzm.hide();
                         return false;
                     }
-                    var address = $('input[name=uri]').val();
+
                     function checkPhone(){
                         $.ajax({
                             type: 'POST',
@@ -64,9 +66,9 @@
                             },
                             success: function(data){
                                 if(data == 'Y'){
-                                    $('#mobile').parents('.itms').addClass('itms-ok')
-                                    if(!$('#btn-yzm').parents('.itms').hasClass('itms-ok'))
-                                        $('#btn-yzm').show()
+                                    $('#mobile').parents('.itms').addClass('itms-ok');
+                                    if(!btn_yzm.parents('.itms').hasClass('itms-ok'))
+                                        btn_yzm.show();
                                     return true;
                                 }
                                 form = false;
@@ -83,19 +85,19 @@
                 //判断验证码
                 if(!$('#yzm').val()){
                     form	= false;
-                    $('#In-btn').removeClass('bg-lan1')
-                    $('#btn-yzm').parents('.itms').removeClass('itms-ok')
+                    $('#In-btn').removeClass('bg-lan1');
+                    btn_yzm.parents('.itms').removeClass('itms-ok');
                     return false;
                 }else{
-                    var re =  /\d{4}$/
+                    var re =  /\d{4}$/;
                     if (!re.test($('#yzm').val())) {
                         form = false;
-                        $('#In-btn').removeClass('bg-lan1')
-                        $('#btn-yzm').parents('.itms').removeClass('itms-ok')
+                        $('#In-btn').removeClass('bg-lan1');
+                        btn_yzm.parents('.itms').removeClass('itms-ok');
                         return false;
                     }
 
-                    var address = $('input[name=uri]').val();
+
                     $.ajax({
                         type: 'POST',
                         url: address+'/ajax/code',
@@ -108,16 +110,16 @@
                         success: function(data){
                             switch (data){
                                 case 'Y':
-                                    $('#btn-yzm').hide()
-                                    $('#btn-yzm').parents('.itms').addClass('itms-ok')
+                                    btn_yzm.hide();
+                                    btn_yzm.parents('.itms').addClass('itms-ok');
                                     form = true;
-                                    $('#In-btn').addClass('bg-lan1')
+                                    $('#In-btn').addClass('bg-lan1');
                                     return true;
                                 case 'N':
                                 case 'E':
                                     form = false;
-                                    $('#In-btn').removeClass('bg-lan1')
-                                    $('#mobile').parents('.itms').removeClass('itms-ok')
+                                    $('#In-btn').removeClass('bg-lan1');
+                                    $('#mobile').parents('.itms').removeClass('itms-ok');
                                     alert('验证码错误');
                                     $('#yzm').val('');
                                     return false;
@@ -138,11 +140,11 @@
             var	Time	=	60;
             var timer;
 
-            $('#btn-yzm').tap(function(){
+            btn_yzm.tap(function(){
                 if(!$('#mobile').parents('.itms').hasClass('itms-ok'))
                     return false;
 
-                if($('#btn-yzm').attr('fs') == 'true'){
+                if(btn_yzm.attr('fs') == 'true'){
                     var address = $('input[name=uri]').val();
                     function sendMsg(){
                         $.ajax({
@@ -153,13 +155,16 @@
                                 '_token':$('input[name=_token]').val(),
                                 'do' : 'reset'
                             },
-                            success: function(data){
-                                Time = 60;
-                                clearTimeout(timer);
-                                $('#btn-yzm').attr({'fs':'true'})
-                                $('#btn-yzm').val('再发一次');
-                                $('#btn-yzm').removeClass('on');
-                                alert(data.info)
+                            success: function(result){
+                                if(result.code == 'X'){
+                                    Time = 60;
+                                    clearTimeout(timer);
+                                    btn_yzm.attr({'fs':'true'});
+                                    btn_yzm.val('再发一次');
+                                    btn_yzm.removeClass('on');
+                                    btn_yzm.show();
+                                }
+                                alert(data.info);
                             }
                         });
                     }
@@ -170,15 +175,15 @@
 
             function show_Time(){ //加时函数
                 if(Time == 0){
-                    $('#btn-yzm').attr({'fs':'true'})
-                    $('#btn-yzm').val('再发一次');
-                    $('#btn-yzm').removeClass('on');
+                    btn_yzm.attr({'fs':'true'})
+                    btn_yzm.val('再发一次');
+                    btn_yzm.removeClass('on');
                 }else{
-                    $('#btn-yzm').addClass('on');
-                    $('#btn-yzm').val(Time+'s后重新发送');
+                    btn_yzm.addClass('on');
+                    btn_yzm.val(Time+'s后重新发送');
                     Time--;
                     timer = setTimeout(show_Time,1000);
-                    $('#btn-yzm').attr({'fs':'false'})
+                    btn_yzm.attr({'fs':'false'})
                 }
             };
         })
