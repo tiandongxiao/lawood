@@ -117,15 +117,8 @@ class OrderController extends Controller
     {
         $order_id = trim($request->get('order'));
         $i_receipt = trim($request->get('switch'));
-
         $order = Order::findOrFail($order_id);
 
-        if(!$order->user->real_name){
-            $order->user->update([
-                'real_name' => $request->get('name')
-            ]);
-        }
-        Log::info('订单'.$order->id.'的发票开关为'.$i_receipt);
         if($i_receipt == 'on'){
             if(!$order->receipt){
                 Receipt::create([
@@ -146,7 +139,6 @@ class OrderController extends Controller
                 ]);
             }
         }
-        Log::info('订单'.$order->id.'的发票开关为'.$i_receipt.' -- ending');
         return redirect('wxpay/js/'.$order->id.'?receipt=y');
     }
 

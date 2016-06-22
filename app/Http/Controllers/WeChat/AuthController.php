@@ -51,7 +51,7 @@ class AuthController extends Controller
             if ($role_name == 'lawyer')
                 $this->user->buildLawyer();
 
-            return view('wechat.auth.' . $role_name);
+            return view('wechat.auth.basic');
         }
         return back();
     }
@@ -59,21 +59,20 @@ class AuthController extends Controller
     public function postBind(Request $request)
     {
         $phone = trim($request->get('phone'));
-
-        switch ($this->user->role){
-            case 'client':
-                $this->user->update([
-                    'phone' => $phone
-                ]);
-                return redirect('wechat');
-            case 'lawyer':
-                $name = trim($request->get('name'));
-                $this->user->update([
-                    'phone'     => $phone,
-                    'real_name' => $name
-                ]);
-                return redirect('wechat/profile');
+        $name = trim($request->get('name'));
+        if($phone && $name){
+            $this->user->update([
+                'phone' => $phone,
+                'real_name' => $name
+            ]);
+            switch ($this->user->role){
+                case 'client':
+                    return redirect('wechat');
+                case 'lawyer':
+                    return redirect('wechat/profile');
+            }
         }
+        return back();
     }
 
     public function profile()
@@ -83,10 +82,10 @@ class AuthController extends Controller
 
     public function postProfile(Request $request)
     {
-        $this->user->office = $request->get('office');
-        $this->user->licence = $request->get('licence');
-        $this->user->home = $request->get('home');
-        $this->user->work = $request->get('work');
+        $this->user->office = trim($request->get('office'));
+        $this->user->licence = trim($request->get('licence'));
+        $this->user->home = trim($request->get('home'));
+        $this->user->work = trim($request->get('work'));
 
         $categories = $request->get('range');
         if ($categories) {

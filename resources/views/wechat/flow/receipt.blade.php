@@ -17,12 +17,6 @@
             {!! csrf_field() !!}
             <div class="form bg-fff-box">
                 <div class="itms">
-                    <div class="f-left">联 系 人</div>
-                    <div class="right">
-                        <input type="text" class="In-text" placeholder="请输入联系人姓名" id="name" name="name">
-                    </div>
-                </div>
-                <div class="itms">
                     <div class="f-left">我要开发票</div>
                     <div class="right">
                         <div class="ts fc-c0c0c0" style="display:none">邮费用费到付</div>
@@ -83,17 +77,17 @@
 
             //表单提交
             $('#In-btn').tap(function(){
-                //姓名
-                if(!$('#name').val()){
-                    alert('姓名不能为空');
-                    return	false;
-                }else{
-                    var re = /^.{2,20}$/;
-                    if (!re.test($('#name').val())) {
-                        alert('请输入正确的姓名(2-20字符)');
-                        return	false;
-                    }
-                }
+//                //姓名
+//                if(!$('#name').val()){
+//                    alert('姓名不能为空');
+//                    return	false;
+//                }else{
+//                    var re = /^.{2,20}$/;
+//                    if (!re.test($('#name').val())) {
+//                        alert('请输入正确的姓名(2-20字符)');
+//                        return	false;
+//                    }
+//                }
                 if($('.In-check').prop("checked")){
                     //发票抬头不能为空
                     if(!$('#fptt').val()){

@@ -121,11 +121,13 @@ class WxPayController extends Controller
         if($order->statusCode == 'pending'){
             if(!$order->place)
                 return redirect('wechat/order/address/'.$order->id);
+
             # 若有此变量，则跳过发票设置，（OrderController-postReceipt最后一行携带的参数）
             if(!$request->get('receipt')){
                 if(!$order->receipt)
                     return redirect('wechat/order/receipt/'.$order->id);
             }
+            
             $params =  $order->attach;
             return view('wechat.flow.pay',compact('params'));
         }
