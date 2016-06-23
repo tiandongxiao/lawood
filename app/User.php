@@ -523,7 +523,7 @@ class User extends Model implements AuthenticatableContract,
         return null;
     }
 
-    public function withdraw()
+    public function withdraw($bank_account)
     {
         if($this->role == 'lawyer'){
             $orders = $this->not_drew_orders;
@@ -545,9 +545,10 @@ class User extends Model implements AuthenticatableContract,
                 }
                 if($result == 'success'){
                     $bill = Bill::create([
-                        'user_id' => $this->id,
-                        'name'    => $this->real_name,
-                        'amount'  => $sum
+                        'user_id'  => $this->id,
+                        'name'     => $this->real_name,
+                        'account'  => $bank_account,
+                        'amount'   => $sum
                     ]);
                     foreach ($orders as $order){
                         $order->update([

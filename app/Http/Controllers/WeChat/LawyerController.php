@@ -84,15 +84,15 @@ class LawyerController extends Controller
     {
         $name = trim($request->get('name'));
         $phone = trim($request->get('phone'));
-        $card = trim($request->get('card'));
+        $account = trim($request->get('card'));
         $code = trim($request->get('code'));
-        if(!$name|| !$phone || !$card || !$code)
+        if(!$name|| !$phone || !$account || !$code)
             return back();
         if($phone != $this->user->phone || $name != $this->user->real_name)
             return back();
         if($code == Cache::get('check_'.$phone)){
             $incoming = $this->user->incoming;
-            $result = $this->user->withdraw();
+            $result = $this->user->withdraw($account);
             switch ($result){
                 case 'success':
                     $data = [
