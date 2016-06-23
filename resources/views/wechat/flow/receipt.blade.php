@@ -80,17 +80,6 @@
 
             //表单提交
             $('#In-btn').tap(function(){
-//                //姓名
-//                if(!$('#name').val()){
-//                    alert('姓名不能为空');
-//                    return	false;
-//                }else{
-//                    var re = /^.{2,20}$/;
-//                    if (!re.test($('#name').val())) {
-//                        alert('请输入正确的姓名(2-20字符)');
-//                        return	false;
-//                    }
-//                }
                 if($('.In-check').prop("checked")){
                     //发票抬头不能为空
                     if(!$('#fptt').val()){

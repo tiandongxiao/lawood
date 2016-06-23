@@ -4,7 +4,11 @@
 @endsection
 @section('content')
     <section class="zc-main">
-        <div class="banner"><img src="/images/zc-banner.png" width="100%"></div>
+        @if(Auth::user()->role == 'client')
+            <div class="banner"><img src="/images/mp-banner.png" width="100%"></div>
+        @else
+            <div class="banner"><img src="/images/zc-banner.png" width="100%"></div>
+        @endif
         <form  action="{{url('wechat/bind')}}" id="form" method="POST">
             {!! csrf_field() !!}
             <input type="hidden" name="uri" value="{{url('/')}}">
