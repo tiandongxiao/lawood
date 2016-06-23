@@ -73,6 +73,7 @@ class OrderController extends Controller
             //return view('wechat.flow.lawood');
             return back();
         }
+        
 
         if($this->user->role != 'lawyer'){
             $order = $this->buildOrder($consult);

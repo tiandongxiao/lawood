@@ -122,22 +122,6 @@ class WeChatPubController extends Controller
         return $this->app->server->serve();
     }
 
-//    private function sendTplMessage($open_id, $message)
-//    {
-//        $userId = $account->openid;
-//        $templateId = 'MCG5frr7twN4Wl8O8ZgRoMTB_hB61hUhIMeNTsKhJsc';
-//        $url = url('wx/orders');
-//        $color = '#FF0000';
-//        $data = array(
-//            'first'      =>  "恭喜您完成注册的第一部分",
-//            'keyword1'   =>  $account->nickname,
-//            "keyword2"   =>  Carbon::now(),
-//            "keyword3"   =>  $account->nickname,
-//            "remark"     =>  "<a href='".$url."'>下一步</a>",
-//        );
-//        $messageId = $this->notice->to($userId)->uses($templateId)->andUrl($url)->withColor($color)->data($data)->send();
-//    }
-
     # 生成微信公众号菜单
     public function menu()
     {
@@ -161,12 +145,7 @@ class WeChatPubController extends Controller
                         "type" => "view",
                         "name" => "消息中心",
                         "url"  => url('wx/messages')
-                    ],
-                    [
-                        "type" => "view",
-                        "name" => "设置中心",
-                        "url" => url('wx/settings')
-                    ],
+                    ]
                 ],
             ],
         ];
@@ -176,41 +155,15 @@ class WeChatPubController extends Controller
         dd('OK');
     }
 
-    public function routeUser()
-    {
-        switch ($this->user->role){
-            case 'lawyer':
-                if(!$this->user->phone)
-                    return view('wechat.auth.basic');
-                if(!$this->user->office)
-                    return redirect('wechat/profile');
-                break;
-            case 'client':
-                if(!$this->user->phone)
-                    return view('wechat.auth.basic');
-                break;
-            default:
-                break;
-        }
-    }
-
     # 寻找律师
     public function find()
     {
-        $route = $this->routeUser();
-        if($route)
-            return $route;
-
         return redirect('wechat');
     }
    
     # 订单系统
     public function orders()
     {
-        $route = $this->routeUser();
-        if($route)
-            return $route;
-
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/orders');
@@ -218,15 +171,13 @@ class WeChatPubController extends Controller
                 return redirect('wechat/client/orders');
             case 'none':
                 return view('wechat.visitor.orders');
+            default:
+                return null;
         }
     }
 
     public function messages()
     {
-        $route = $this->routeUser();
-        if($route)
-            return $route;
-
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/notifies');
@@ -234,15 +185,13 @@ class WeChatPubController extends Controller
                 return redirect('wechat/client/notifies');
             case 'none':
                 return view('wechat.visitor.notifies');
+            default:
+                return null;
         }
     }
 
     public function settings()
     {
-        $route = $this->routeUser();
-        if($route)
-            return $route;
-
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/setting');
@@ -250,6 +199,8 @@ class WeChatPubController extends Controller
                 return redirect('wechat/client/setting');
             case 'none':
                 return view('wechat.visitor.setting');
+            default:
+                return null;
         }
     }
 

@@ -202,15 +202,15 @@
             function show_Time(){ //加时函数
                 if(Time == 0){
                     Time = 60;
-                    $('#btn-yzm').attr({'fs':'true'});
-                    $('#btn-yzm').val('再发一次');
-                    $('#btn-yzm').removeClass('on');
+                    btn_yzm.attr({'fs':'true'});
+                    btn_yzm.val('再发一次');
+                    btn_yzm.removeClass('on');
                 }else{
-                    $('#btn-yzm').addClass('on');
-                    $('#btn-yzm').val(Time+'s后重新发送');
+                    btn_yzm.addClass('on');
+                    btn_yzm.val(Time+'s后重新发送');
                     Time--;
                     timer = setTimeout(show_Time,1000);
-                    $('#btn-yzm').attr({'fs':'false'});
+                    btn_yzm.attr({'fs':'false'});
                 }
             }
 
