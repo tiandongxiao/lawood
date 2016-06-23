@@ -8,15 +8,19 @@
             <h5>{{$bill->id}}</h5>
         </li>
         <li class="list-group-item">
-            <h4>User Id</h4>
+            <h4>用户ID</h4>
             <h5>{{$bill->user_id}}</h5>
         </li>
         <li class="list-group-item">
-            <h4>Created At</h4>
+            <h4>是否处理</h4>
+            <h5>{{$bill->done}}</h5>
+        </li>
+        <li class="list-group-item">
+            <h4>创建时间</h4>
             <h5>{{$bill->created_at}}</h5>
         </li>
         <li class="list-group-item">
-            <h4>Updated At</h4>
+            <h4>更新时间</h4>
             <h5>{{$bill->updated_at}}</h5>
         </li>
     </ul>
