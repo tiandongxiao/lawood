@@ -96,7 +96,7 @@
                     @endif
                 @endif
             @else
-                <span><a href="{{url('wechat/lawyer/config/share')}}"><img src="/images/qrcode-48.png" width="32"></a></span>
+                <span><a href="{{url('wechat/lawyer/config/share')}}"><img src="/images/qrcode-48.png" width="28"></a></span>
             @endif
         </div>
         @if(!$consult)
