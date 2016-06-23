@@ -130,7 +130,7 @@ class LawyerController extends Controller
                         'title' => '提款成功',
                         'body'  => '尊敬的'.$this->user->real_name.'律师，您的提款申请已成功提交，共计'.$incoming.'元，我们将尽快处理，并在月底统一结算',
                         'url'   => url('wechat/lawyer/wallet'),
-                        'button' => '确定'
+                        'button' => '我的钱包'
                     ];
                     return view('wechat.flow.info',compact('data'));
                 case 'fail':
@@ -147,8 +147,8 @@ class LawyerController extends Controller
                         'type'  => 'invalid',
                         'title' => '无效请求',
                         'body'  => '抱歉，您不是律师，不能进行提款',
-                        'url'   => url('wechat/lawyer/draw'),
-                        'button' => '重试'
+                        'url'   => url('wechat'),
+                        'button' => '返回首页'
                     ];
                     return view('wechat.flow.info',compact('data'));
             }
@@ -158,8 +158,8 @@ class LawyerController extends Controller
             'type'  => 'invalid',
             'title' => '无效请求',
             'body'  => '抱歉，您账户余额为 0 ，不能进行提现操作',
-            'url'   => url('wechat'),
-            'button' => '首页'
+            'url'   => url('wechat/lawyer/wallet'),
+            'button' => '我的钱包'
         ];
         return view('wechat.flow.info',compact('data'));
     }
