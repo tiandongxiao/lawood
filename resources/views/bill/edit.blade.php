@@ -1,5 +1,4 @@
-@extends('vendor.crud.single-page-templates.common.app')
-
+@extends('tpl.admin.app')
 @section('content')
     <h2>Update Bill: {{$bill->user_id}}</h2>
     <form action="/bill/{{$bill->id}}" method="post">
