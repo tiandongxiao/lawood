@@ -7,6 +7,7 @@
             color: white;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
+            margin-top: 5px;
         }
         .content{
             padding:40px;
@@ -15,7 +16,7 @@
     </style>
 @stop
 @section('content')
-    <section class="info-area" style="height: 100%;">
+    <section class="info-area" style="height: 100%;padding: 2px">
         @if($data)
             <div style="text-align: center">
                 @if($data['type'] == 'success')
