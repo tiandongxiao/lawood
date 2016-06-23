@@ -86,10 +86,29 @@ class LawyerController extends Controller
         $phone = trim($request->get('phone'));
         $account = trim($request->get('card'));
         $code = trim($request->get('code'));
-        if(!$name|| !$phone || !$account || !$code)
-            return back();
-        if($phone != $this->user->phone || $name != $this->user->real_name)
-            return back();
+
+        if(!$name|| !$phone || !$account || !$code){
+            $data = [
+                'type'  => 'invalid',
+                'title' => '无效请求',
+                'body'  => '抱歉，您提交的信息有误，不能进行提款',
+                'url'   => url('wechat/lawyer/draw'),
+                'button' => '重试'
+            ];
+            return view('wechat.flow.info',compact('data'));
+        }
+
+        if($phone != $this->user->phone || $name != $this->user->real_name){
+            $data = [
+                'type'  => 'invalid',
+                'title' => '无效请求',
+                'body'  => '抱歉，您提供的信息与注册信息不匹配，请重新输入',
+                'url'   => url('wechat/lawyer/draw'),
+                'button' => '重试'
+            ];
+            return view('wechat.flow.info',compact('data'));
+        }
+
         if($code == Cache::get('check_'.$phone)){
             $incoming = $this->user->incoming;
             $result = $this->user->withdraw($account);
