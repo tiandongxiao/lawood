@@ -126,7 +126,6 @@ class WeChatPubController extends Controller
     public function menu()
     {
         $menu = $this->app->menu;
-
         $buttons = [
             [
                 "type" => "view",
@@ -149,21 +148,44 @@ class WeChatPubController extends Controller
                 ],
             ],
         ];
-
         $menu->add($buttons);
+        dd('setting menu OK');
+    }
 
-        dd('OK');
+    public function routeUser()
+    {
+        switch ($this->user->role){
+            case 'lawyer':
+                if(!$this->user->phone)
+                    return view('wechat.auth.basic');
+                if(!$this->user->office)
+                    return redirect('wechat/profile');
+                break;
+            case 'client':
+                if(!$this->user->phone)
+                    return view('wechat.auth.basic');
+                break;
+        }
+        return null;
     }
 
     # 寻找律师
     public function find()
     {
+        $route = $this->routeUser();
+        if(!is_null($route))
+            return $route;
+
         return redirect('wechat');
     }
    
     # 订单系统
     public function orders()
     {
+        $route = $this->routeUser();
+        if(!is_null($route))
+            return $route;
+
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/orders');
@@ -178,6 +200,10 @@ class WeChatPubController extends Controller
 
     public function messages()
     {
+        $route = $this->routeUser();
+        if(!is_null($route))
+            return $route;
+
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/notifies');
@@ -192,6 +218,10 @@ class WeChatPubController extends Controller
 
     public function settings()
     {
+        $route = $this->routeUser();
+        if(!is_null($route))
+            return $route;
+
         switch ($this->user->role){
             case 'lawyer':
                 return redirect('wechat/lawyer/setting');

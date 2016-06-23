@@ -38,25 +38,6 @@ class AuthController extends Controller
         return view('wechat.auth.chose');
     }
 
-    public function routeUser()
-    {
-        switch ($this->user->role){
-            case 'lawyer':
-                if(!$this->user->phone)
-                    return view('wechat.auth.basic');
-                if(!$this->user->office)
-                    return redirect('wechat/profile');
-                break;
-            case 'client':
-                if(!$this->user->phone)
-                    return view('wechat.auth.basic');
-                break;
-            default:
-                return view('wechat.auth.chose');
-        }
-        return null;
-    }
-
     public function bind($role_name)
     {
         if(in_array($role_name, ['client','lawyer'])) {
