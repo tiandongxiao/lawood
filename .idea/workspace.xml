@@ -67,8 +67,11 @@
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/lawood.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
-              <caret line="9" column="108" selection-start-line="9" selection-start-column="108" selection-end-line="9" selection-end-column="108" />
-              <folding />
+              <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
+              <folding>
+                <element signature="e#365#412#0#HTML" expanded="true" />
+                <element signature="e#452#497#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -879,7 +882,7 @@
       <workItem from="1466398095936" duration="1856000" />
       <workItem from="1466404662635" duration="18143000" />
       <workItem from="1466434281624" duration="53516000" />
-      <workItem from="1466662706073" duration="1879000" />
+      <workItem from="1466662706073" duration="2101000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1004,7 +1007,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1272601000" />
+    <option name="totallyTimeSpent" value="1272823000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1452,8 +1455,11 @@
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/lawood.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="9" column="108" selection-start-line="9" selection-start-column="108" selection-end-line="9" selection-end-column="108" />
-          <folding />
+          <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
+          <folding>
+            <element signature="e#365#412#0#HTML" expanded="true" />
+            <element signature="e#452#497#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
