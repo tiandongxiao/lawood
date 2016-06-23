@@ -32,60 +32,14 @@
 	    <tbody>
 	    	@forelse ( $records as $record )
 		    	<tr>
-					<td>
-						{{ $record->id }}
-						</td>
-					<td>
-						<span class="editable"
-							  data-type="number"
-							  data-name="user_id"
-							  data-value="{{ $record->user_id }}"
-							  data-pk="{{ $record->{$record->getKeyName()} }}"
-							  data-url="/bill/{{ $record->{$record->getKeyName()} }}"
-							  >{{ $record->user_id }}</span>
-						</td>
-					<td>
-						<span class="editable"
-							  data-type="string"
-							  data-name="name"
-							  data-value="{{ $record->name }}"
-							  data-pk="{{ $record->{$record->getKeyName()} }}"
-							  data-url="/bill/{{ $record->{$record->getKeyName()} }}"
-						>{{ $record->name }}</span>
-					</td>
-					<td>
-						<span class="editable"
-							  data-type="number"
-							  data-name="amount"
-							  data-value="{{ $record->amount }}"
-							  data-pk="{{ $record->{$record->getKeyName()} }}"
-							  data-url="/bill/{{ $record->{$record->getKeyName()} }}"
-						>{{ $record->amount }}</span>
-					</td>
-					<td>
-						<span class="editable"
-							  data-type="string"
-							  data-name="account"
-							  data-value="{{ $record->account }}"
-							  data-pk="{{ $record->{$record->getKeyName()} }}"
-							  data-url="/bill/{{ $record->{$record->getKeyName()} }}"
-						>{{ $record->account }}</span>
-					</td>
-					<td>
-						<span class="editable"
-							  data-type="number"
-							  data-name="done"
-							  data-value="{{ $record->done }}"
-							  data-pk="{{ $record->{$record->getKeyName()} }}"
-							  data-url="/bill/{{ $record->{$record->getKeyName()} }}"
-						>{{ $record->done }}</span>
-					</td>
-					<td>
-						{{ $record->created_at }}
-						</td>
-					<td>
-						{{ $record->updated_at }}
-						</td>
+					<td>{{ $record->id }}</td>
+					<td>{{ $record->user_id }}</td>
+					<td>{{ $record->name }}</td>
+					<td>{{ $record->amount }}</td>
+					<td>{{ $record->account }}</td>
+					<td>{{ $record->done }}	</td>
+					<td>{{ $record->created_at }}</td>
+					<td>{{ $record->updated_at }}</td>
 					@include( 'vendor.crud.single-page-templates.common.actions', [ 'url' => 'bill', 'record' => $record ] )
 		    	</tr>
 			@empty
