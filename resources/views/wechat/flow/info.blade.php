@@ -10,7 +10,7 @@
             margin-top: 1px;
         }
         .content{
-            padding:35px;
+            padding:30px;
             height: 130px;
         }
     </style>
