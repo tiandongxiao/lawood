@@ -70,8 +70,7 @@ class OrderController extends Controller
     public function placeOrder($consult)
     {
         if(!Auth::check()){
-            //return view('wechat.flow.lawood');
-            return back();
+            return view('wechat.flow.lawood');            
         }
 
         if($this->user->role =='none')
