@@ -7,7 +7,7 @@
             color: white;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
-            margin-top: 5px;
+            margin-top: 3px;
         }
         .content{
             padding:40px;
