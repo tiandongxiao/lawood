@@ -1,22 +1,34 @@
 @extends('wechat.base.app')
+@section('css')
+    <style>
+        .title{
+            height: 130px;
+            line-height: 130px;
+        }
+        .content{
+            padding:45px;
+            height: 150px;
+        }
+    </style>
+@stop
 @section('content')
-    <section class="info-area">
+    <section class="info-area" style="height: 100%;">
         @if($data)
-            <div class="title">
+            <div style="text-align: center">
                 @if($data['type'] == 'success')
-                    <div style="background-color: #00a65a">{{$data['title']}}</div>
+                    <div class="title" style="background-color: #00a65a">{{$data['title']}}</div>
                 @elseif($data['type'] == 'fail')
-                    <div style="background-color: #2c3b41">{{$data['title']}}</div>
+                    <div class="title" style="background-color: #2c3b41">{{$data['title']}}</div>
                 @elseif($data['type'] == 'invalid')
-                    <div style="background-color: #880000">{{$data['title']}}</div>
+                    <div class="title" style="background-color: #880000">{{$data['title']}}</div>
                 @elseif($data['type'] == 'warning')
-                    <div style="background-color: #BE5C00">{{$data['title']}}</div>
+                    <div class="title" style="background-color: #BE5C00">{{$data['title']}}</div>
                 @endif
             </div>
-            <div class="body">
+            <div class="content">
                 {{$data['body']}}
             </div>
-            <div class="button">
+            <div class="button" style="text-align: center;bottom: 100px">
                 <span><a href="{{$data['url']}}">{{$data['button']}}</a></span>
             </div>
         @endif
