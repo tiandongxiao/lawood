@@ -42,12 +42,12 @@
 @section('script')
     <script>
         $(function(){
-            //发送验证码
-            var	Time	=	60;
+            var address = $('input[name=uri]').val();
+            var btn_yzm = $('#btn-yzm');
+            var	Time=60;
             var timer;
-            $('#btn-yzm').tap(function(){
-                if($('#btn-yzm').attr('fs') == 'true'){
-                    var address = $('input[name=uri]').val();
+            btn_yzm.tap(function(){
+                if(btn_yzm.attr('fs') == 'true'){
                     function sendMsg(){
                         $.ajax({
                             type: 'POST',
@@ -57,13 +57,15 @@
                                 '_token':$('input[name=_token]').val(),
                                 'do' : 'check'
                             },
-                            success: function(data){
-                                Time = 60;
-                                clearTimeout(timer);
-                                $('#btn-yzm').attr({'fs':'true'})
-                                $('#btn-yzm').val('再发一次');
-                                $('#btn-yzm').removeClass('on');
-                                alert(data.info)
+                            success: function(result){
+                                if(result.code == 'X'){
+                                    Time = 60;
+                                    clearTimeout(timer);
+                                    btn_yzm.attr({'fs':'true'})
+                                    btn_yzm.val('再发一次');
+                                    btn_yzm.removeClass('on');
+                                }
+                                alert(result.info)
                             }
                         });
                     }
@@ -74,15 +76,15 @@
 
             function show_Time(){ //加时函数
                 if(Time == 0){
-                    $('#btn-yzm').attr({'fs':'true'});
-                    $('#btn-yzm').val('再发一次');
-                    $('#btn-yzm').removeClass('on');
+                    btn_yzm.attr({'fs':'true'});
+                    btn_yzm.val('再发一次');
+                    btn_yzm.removeClass('on');
                 }else{
-                    $('#btn-yzm').addClass('on');
-                    $('#btn-yzm').val(Time+'s后重新发送');
+                    btn_yzm.addClass('on');
+                    btn_yzm.val(Time+'s后重新发送');
                     Time--;
                     timer = setTimeout(show_Time,1000);
-                    $('#btn-yzm').attr({'fs':'false'})
+                    btn_yzm.attr({'fs':'false'})
                 }
             };
             //表单提交
