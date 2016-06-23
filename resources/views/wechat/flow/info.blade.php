@@ -28,8 +28,8 @@
             <div class="content">
                 {{$data['body']}}
             </div>
-            <div class="button" style="text-align: center;bottom: 100px">
-                <span><a href="{{$data['url']}}">{{$data['button']}}</a></span>
+            <div class="button" style="text-align: center">
+                <span><a style="color: #00abeb;font-size: 14px" href="{{$data['url']}}">{{$data['button']}}</a></span>
             </div>
         @endif
     </section>

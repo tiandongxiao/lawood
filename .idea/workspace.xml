@@ -56,8 +56,8 @@
       <file leaf-file-name="info.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/info.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-182">
-              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            <state relative-caret-position="416">
+              <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
               <folding>
                 <element signature="e#292#313#0#HTML" expanded="true" />
                 <element signature="e#351#377#0#HTML" expanded="true" />
@@ -65,7 +65,7 @@
                 <element signature="e#613#646#0#HTML" expanded="true" />
                 <element signature="e#763#796#0#HTML" expanded="true" />
                 <element signature="e#913#946#0#HTML" expanded="true" />
-                <element signature="e#1133#1173#0#HTML" expanded="true" />
+                <element signature="e#1133#1159#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -244,8 +244,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="549" />
-    <option name="y" value="182" />
+    <option name="x" value="126" />
+    <option name="y" value="84" />
     <option name="width" value="1918" />
     <option name="height" value="1028" />
   </component>
@@ -772,7 +772,7 @@
       <workItem from="1466398095936" duration="1856000" />
       <workItem from="1466404662635" duration="18143000" />
       <workItem from="1466434281624" duration="53516000" />
-      <workItem from="1466662706073" duration="20350000" />
+      <workItem from="1466662706073" duration="20488000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -897,7 +897,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1291072000" />
+    <option name="totallyTimeSpent" value="1291210000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -909,7 +909,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="549" y="182" width="1918" height="1028" extended-state="0" />
+    <frame x="126" y="84" width="1918" height="1028" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1383,8 +1383,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/info.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-182">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="416">
+          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
           <folding>
             <element signature="e#292#313#0#HTML" expanded="true" />
             <element signature="e#351#377#0#HTML" expanded="true" />
@@ -1392,7 +1392,7 @@
             <element signature="e#613#646#0#HTML" expanded="true" />
             <element signature="e#763#796#0#HTML" expanded="true" />
             <element signature="e#913#946#0#HTML" expanded="true" />
-            <element signature="e#1133#1173#0#HTML" expanded="true" />
+            <element signature="e#1133#1159#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
