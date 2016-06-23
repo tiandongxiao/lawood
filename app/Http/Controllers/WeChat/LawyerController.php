@@ -102,7 +102,7 @@ class LawyerController extends Controller
                         'url'   => url('wechat/lawyer/wallet'),
                         'button' => '确定'
                     ];
-                    return view('wechat.info',compact('data'));
+                    return view('wechat.flow.info',compact('data'));
                 case 'fail':
                     $data = [
                         'type'  => 'fail',
@@ -111,7 +111,7 @@ class LawyerController extends Controller
                         'url'   => url('wechat/lawyer/draw'),
                         'button' => '重试'
                     ];
-                    return view('wechat.info',compact('data'));
+                    return view('wechat.flow.info',compact('data'));
                 case 'invalid':
                     $data = [
                         'type'  => 'invalid',
@@ -120,7 +120,7 @@ class LawyerController extends Controller
                         'url'   => url('wechat/lawyer/draw'),
                         'button' => '重试'
                     ];
-                    return view('wechat.info',compact('data'));
+                    return view('wechat.flow.info',compact('data'));
                 default:
                     return null;
             }
