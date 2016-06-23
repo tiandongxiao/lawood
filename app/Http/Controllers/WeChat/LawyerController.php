@@ -109,54 +109,59 @@ class LawyerController extends Controller
             return view('wechat.flow.info',compact('data'));
         }
 
-        if($code == Cache::get('check_'.$phone)){
-            $incoming = $this->user->incoming;
-            if($incoming > 0){
-                $result = $this->user->withdraw($account);
-                switch ($result){
-                    case 'success':
-                        $data = [
-                            'type'  => 'success',
-                            'title' => '提款成功',
-                            'body'  => '尊敬的'.$this->user->real_name.'律师，您的提款申请已成功提交，共计'.$incoming.'元，我们将尽快处理，并在月底统一结算',
-                            'url'   => url('wechat/lawyer/wallet'),
-                            'button' => '确定'
-                        ];
-                        return view('wechat.flow.info',compact('data'));
-                    case 'fail':
-                        $data = [
-                            'type'  => 'fail',
-                            'title' => '提款失败',
-                            'body'  => '尊敬的'.$this->user->real_name.'律师，抱歉的通知您，因未知原因您的提款申请提交失败，请稍后再试',
-                            'url'   => url('wechat/lawyer/draw'),
-                            'button' => '重试'
-                        ];
-                        return view('wechat.flow.info',compact('data'));
-                    default:
-                        $data = [
-                            'type'  => 'invalid',
-                            'title' => '无效请求',
-                            'body'  => '抱歉，您不是律师，不能进行提款',
-                            'url'   => url('wechat/lawyer/draw'),
-                            'button' => '重试'
-                        ];
-                        return view('wechat.flow.info',compact('data'));
-                }
-            }
-
+        if($code != Cache::get('check_'.$phone)){
             $data = [
                 'type'  => 'invalid',
-                'title' => '无效请求',
-                'body'  => '抱歉，您账户余额为 0 ，不能进行提现操作',
+                'title' => '验证码错误',
+                'body'  => '抱歉，验证码不匹配，请重新输入',
                 'url'   => url('wechat/lawyer/draw'),
                 'button' => '重试'
             ];
             return view('wechat.flow.info',compact('data'));
         }
 
+        $incoming = $this->user->incoming;
+        if($incoming > 0){
+            $result = $this->user->withdraw($account);
+            switch ($result){
+                case 'success':
+                    $data = [
+                        'type'  => 'success',
+                        'title' => '提款成功',
+                        'body'  => '尊敬的'.$this->user->real_name.'律师，您的提款申请已成功提交，共计'.$incoming.'元，我们将尽快处理，并在月底统一结算',
+                        'url'   => url('wechat/lawyer/wallet'),
+                        'button' => '确定'
+                    ];
+                    return view('wechat.flow.info',compact('data'));
+                case 'fail':
+                    $data = [
+                        'type'  => 'fail',
+                        'title' => '提款失败',
+                        'body'  => '尊敬的'.$this->user->real_name.'律师，抱歉的通知您，因未知原因您的提款申请提交失败，请稍后再试',
+                        'url'   => url('wechat/lawyer/draw'),
+                        'button' => '重试'
+                    ];
+                    return view('wechat.flow.info',compact('data'));
+                default:
+                    $data = [
+                        'type'  => 'invalid',
+                        'title' => '无效请求',
+                        'body'  => '抱歉，您不是律师，不能进行提款',
+                        'url'   => url('wechat/lawyer/draw'),
+                        'button' => '重试'
+                    ];
+                    return view('wechat.flow.info',compact('data'));
+            }
+        }
 
-
-        return redirect('wechat/lawyer/wallet');
+        $data = [
+            'type'  => 'invalid',
+            'title' => '无效请求',
+            'body'  => '抱歉，您账户余额为 0 ，不能进行提现操作',
+            'url'   => url('wechat/lawyer/draw'),
+            'button' => '重试'
+        ];
+        return view('wechat.flow.info',compact('data'));
     }
 
     # 订单签到
