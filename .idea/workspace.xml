@@ -56,8 +56,8 @@
       <file leaf-file-name="info.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/info.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+            <state relative-caret-position="234">
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
               <folding>
                 <element signature="e#432#483#0#HTML" expanded="true" />
                 <element signature="e#521#547#0#HTML" expanded="true" />
@@ -773,7 +773,7 @@
       <workItem from="1466398095936" duration="1856000" />
       <workItem from="1466404662635" duration="18143000" />
       <workItem from="1466434281624" duration="53516000" />
-      <workItem from="1466662706073" duration="22051000" />
+      <workItem from="1466662706073" duration="22169000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -898,7 +898,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1292773000" />
+    <option name="totallyTimeSpent" value="1292891000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1384,8 +1384,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/info.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+        <state relative-caret-position="234">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
             <element signature="e#432#483#0#HTML" expanded="true" />
             <element signature="e#521#547#0#HTML" expanded="true" />
