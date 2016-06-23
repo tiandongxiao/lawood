@@ -69,13 +69,11 @@ class OrderController extends Controller
 
     public function placeOrder($consult)
     {
-        if(!Auth::check()){
-            return view('wechat.flow.lawood');            
-        }
+        if(!Auth::check())
+            return view('wechat.flow.lawood');
 
         if($this->user->role =='none')
-            return redirect('wechat/chose');
-
+            return redirect('wechat/bind/client');
 
         if($this->user->role != 'lawyer'){
             $order = $this->buildOrder($consult);
