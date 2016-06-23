@@ -66,8 +66,8 @@
       <file leaf-file-name="lawood.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/lawood.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+            <state relative-caret-position="260">
+              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
               <folding>
                 <element signature="e#264#288#0#HTML" expanded="true" />
                 <element signature="e#360#409#0#HTML" expanded="true" />
@@ -883,7 +883,7 @@
       <workItem from="1466398095936" duration="1856000" />
       <workItem from="1466404662635" duration="18143000" />
       <workItem from="1466434281624" duration="53516000" />
-      <workItem from="1466662706073" duration="3662000" />
+      <workItem from="1466662706073" duration="3730000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1008,7 +1008,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1274384000" />
+    <option name="totallyTimeSpent" value="1274452000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1455,8 +1455,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/lawood.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        <state relative-caret-position="260">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
           <folding>
             <element signature="e#264#288#0#HTML" expanded="true" />
             <element signature="e#360#409#0#HTML" expanded="true" />
