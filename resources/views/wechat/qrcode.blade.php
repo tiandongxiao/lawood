@@ -1,8 +1,30 @@
 @extends('wechat.base.app')
+@section('css')
+    <style>body{background:#f8f8f8}</style>
+@stop
 @section('content')
-    <div class="te-cen mar-top-40">
-        <h3 class="fc-03aaf0" style="font-size: 20px;font-weight: lighter">欢迎您来到律屋</h3>
-        <img class="mar-top-50" src="/images/ewm.png" width="65%" height="65%"/>
-        <p class="mar-top-40" style="color: #df8a13">微信扫描二维码  加入我们</p>
-    </div>
+    <section class="lssz-main">
+        <div class="te-cen">
+            <p class="fs-16 fc-03aaf0  mar-top-20 line-20">律屋在线</p>
+            <div class="mar-top-15">
+                <img src="/images/ewm.png" width="275px" height="275">
+                <p>微信中长按二维码或微信搜索'律屋'加入我们</p>
+            </div>
+            <div class="bottom-btn">
+                <div class="blank100"></div>
+                <div class="con te-cen">
+                    <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 back-home" value="返回首页" >
+                </div>
+            </div>
+        </div>
+    </section>
+@stop
+@section('script')
+    <script>
+        $(function(){
+            $('.back-home').tap(function () {
+                window.location.href="/wechat";
+            });
+        })
+    </script>
 @stop
