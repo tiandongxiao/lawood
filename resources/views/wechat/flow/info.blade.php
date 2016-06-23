@@ -6,7 +6,7 @@
             line-height: 130px;
         }
         .content{
-            padding:45px;
+            padding:40px;
             height: 150px;
         }
     </style>
