@@ -4,7 +4,7 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('','WeChat\WeChatController@index');
     Route::get('search','WeChat\WeChatController@search');
     Route::get('user/{id}','WeChat\WeChatController@showUser');
-    Route::get('lawood','WeChat\WeChatController@lawood');
+    Route::get('logo','WeChat\WeChatController@logo');
 
     Route::get('order/place/{consult}','WeChat\OrderController@placeOrder');  # 下单返回地点选择列表
     Route::get('order/address/{id}','WeChat\OrderController@selectAddress');  # 绑定选择的地点
