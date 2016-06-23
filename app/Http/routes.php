@@ -1,5 +1,83 @@
 <?php
 
+Route::group(['prefix' => 'wechat'], function(){
+    Route::get('','WeChat\WeChatController@index');
+    Route::get('search','WeChat\WeChatController@search');
+    Route::get('user/{id}','WeChat\WeChatController@showUser');
+    Route::get('lawood','WeChat\WeChatController@lawood');
+
+    Route::get('order/place/{consult}','WeChat\OrderController@placeOrder');  # 下单返回地点选择列表
+    Route::get('order/address/{id}','WeChat\OrderController@selectAddress');  # 绑定选择的地点
+    Route::post('order/address','WeChat\OrderController@postSelectAddress');  # 绑定选择的地点
+    Route::get('order/receipt/{id}','WeChat\OrderController@receipt');        # 绑定选择的地点
+    Route::post('order/receipt','WeChat\OrderController@postReceipt');
+    Route::get('order/confirm','WeChat\OrderController@confirm');
+
+    Route::get('order/accept/{id}','WeChat\OrderController@accept');
+    Route::get('order/reject/{id}','WeChat\OrderController@reject');
+    Route::get('order/cancel/{id}','WeChat\OrderController@cancel');
+    Route::get('order/sign/{id}','WeChat\OrderController@sign');
+
+    Route::post('order/evaluate','WeChat\OrderController@evaluate');
+    Route::post('order/evaluate/update','WeChat\OrderController@evaluateUpdate');
+    Route::get('order/poi/{id}','WeChat\OrderController@showPOI');
+
+    # begin 注册绑定
+    Route::get('chose','WeChat\AuthController@chose');
+    Route::get('bind/{role}','WeChat\AuthController@bind');
+    Route::post('bind','WeChat\AuthController@postBind');
+    Route::get('profile','WeChat\AuthController@profile');
+    Route::post('profile','WeChat\AuthController@postProfile');
+    Route::get('finish','WeChat\AuthController@finish');
+    # end 注册绑定
+
+    # begin 咨询用户
+    Route::get('client/notifies','WeChat\ClientController@notifies');
+    Route::get('client/orders','WeChat\ClientController@orders');
+    Route::get('client/order/sign/{id}','WeChat\ClientController@signOrder');
+    Route::get('client/setting','WeChat\ClientController@setting');
+    Route::get('client/config/{key}','WeChat\ClientController@config');
+    Route::post('client/config','WeChat\ClientController@postConfig');
+    Route::get('client/collection','WeChat\ClientController@collection');
+    # end 咨询用户
+
+    # begin 律师
+    Route::get('lawyer/notifies','WeChat\LawyerController@notifies');
+    Route::get('lawyer/orders','WeChat\LawyerController@orders');
+    Route::get('lawyer/wallet','WeChat\LawyerController@wallet');
+    Route::get('lawyer/draw','WeChat\LawyerController@draw');
+    Route::post('lawyer/draw','WeChat\LawyerController@postDraw');
+    Route::get('lawyer/order/sign/{id}','WeChat\LawyerController@signOrder');
+    Route::get('lawyer/setting','WeChat\LawyerController@setting');
+    Route::get('lawyer/config/{key}','WeChat\LawyerController@config');
+    Route::post('lawyer/config','WeChat\LawyerController@postConfig');
+    Route::post('lawyer/start','WeChat\LawyerController@start');
+    Route::post('lawyer/stop','WeChat\LawyerController@stop');
+    # end 律师
+});
+
+Route::group(['prefix' => 'ajax'], function(){
+    # 律师 启动||关闭 服务的操作
+    Route::post('start','AjaxController@start');
+    Route::post('stop','AjaxController@stop');
+
+    # 验证性的 ajax 操作
+    Route::post('phone','AjaxController@phone');
+    Route::post('sms','AjaxController@sms');
+    Route::post('code','AjaxController@code');
+
+    # Notification 读取状态设置
+    Route::post('read','NotificationController@read');
+    Route::post('unread','NotificationController@unread');
+
+    Route::post('price','AjaxController@price');        # 获取价格信息
+    Route::post('evaluate','AjaxController@evaluate');  # 获取评价信息
+    Route::post('consult_liked','AjaxController@consult_liked'); # 律师收藏取消收藏操作
+    Route::post('receipt','AjaxController@receipt');    # 获取发票信息
+
+});
+
+
 Route::get('/', 'HomeController@index');
 Route::get('about', 'HomeController@about');
 
@@ -191,6 +269,8 @@ Route::group(['prefix' => 'site'], function(){
 Route::resource('category','CategoryController');
 Route::resource('notification', 'NotificationController');
 Route::resource('price','PriceController');
+Route::resource('receipt','ReceiptController');
+Route::resource('bill','BillController');
 # Route::resource('pois','PoisController');  # 不会对其直接进行操作，所以注释掉
 
 Route::group(['prefix' => 'test'], function(){
@@ -211,91 +291,4 @@ Route::group(['prefix' => 'test'], function(){
     Route::get('call','TestController@call');
 });
 
-Route::resource('receipt','ReceiptController');
 
-Route::group(['prefix' => 'wechat'], function(){
-    Route::get('','WeChat\WeChatController@index');
-    Route::get('search','WeChat\WeChatController@search');
-    Route::get('user/{id}','WeChat\WeChatController@showUser');
-    Route::get('qrcode','WeChat\WeChatController@qrCode');
-
-    Route::get('order/place/{consult}','WeChat\OrderController@placeOrder');  # 下单返回地点选择列表
-    Route::get('order/address/{id}','WeChat\OrderController@selectAddress');       # 绑定选择的地点
-    Route::post('order/address','WeChat\OrderController@postSelectAddress');  # 绑定选择的地点
-    Route::get('order/receipt/{id}','WeChat\OrderController@receipt');        # 绑定选择的地点
-    Route::post('order/receipt','WeChat\OrderController@postReceipt');
-    Route::get('order/confirm','WeChat\OrderController@confirm');
-
-    Route::get('order/accept/{id}','WeChat\OrderController@accept');
-    Route::get('order/reject/{id}','WeChat\OrderController@reject');
-    Route::get('order/cancel/{id}','WeChat\OrderController@cancel');
-    Route::get('order/sign/{id}','WeChat\OrderController@sign');
-
-    Route::post('order/evaluate','WeChat\OrderController@evaluate');
-    Route::post('order/evaluate/update','WeChat\OrderController@evaluateUpdate');
-    Route::get('order/poi/{id}','WeChat\OrderController@showPOI');
-
-
-    # begin 注册绑定
-    Route::get('chose','WeChat\AuthController@chose');
-    Route::get('bind/{role}','WeChat\AuthController@bind');
-    Route::post('bind','WeChat\AuthController@postBind');
-    Route::get('profile','WeChat\AuthController@profile');
-    Route::post('profile','WeChat\AuthController@postProfile');
-    Route::get('finish','WeChat\AuthController@finish');
-    # end 注册绑定
-
-    Route::get('consults','WeChat\ConsultController@index');
-
-    # begin 咨询用户
-    Route::get('client/notifies','WeChat\ClientController@notifies');
-    Route::get('client/orders','WeChat\ClientController@orders');
-    Route::get('client/order/sign/{id}','WeChat\ClientController@signOrder');
-    Route::get('client/setting','WeChat\ClientController@setting');
-    Route::get('client/config/{key}','WeChat\ClientController@config');
-    Route::post('client/config','WeChat\ClientController@postConfig');
-    Route::get('client/collection','WeChat\ClientController@collection');
-    # end 咨询用户
-
-    # begin 律师
-    Route::get('lawyer/notifies','WeChat\LawyerController@notifies');
-    Route::get('lawyer/orders','WeChat\LawyerController@orders');
-    Route::get('lawyer/wallet','WeChat\LawyerController@wallet');
-    Route::get('lawyer/draw','WeChat\LawyerController@draw');
-    Route::post('lawyer/draw','WeChat\LawyerController@postDraw');
-    Route::get('lawyer/order/sign/{id}','WeChat\LawyerController@signOrder');
-    Route::get('lawyer/setting','WeChat\LawyerController@setting');
-    Route::get('lawyer/config/{key}','WeChat\LawyerController@config');
-    Route::post('lawyer/config','WeChat\LawyerController@postConfig');
-    Route::get('lawyer/me','WeChat\LawyerController@me');
-    Route::post('lawyer/start','WeChat\LawyerController@start');
-    Route::post('lawyer/stop','WeChat\LawyerController@stop');
-    # end 律师
-});
-
-Route::group(['prefix' => 'ajax'], function(){
-    # 律师 启动||关闭 服务的操作
-    Route::post('start','AjaxController@start');
-    Route::post('stop','AjaxController@stop');
-
-    # 验证性的 ajax 操作
-    Route::post('phone','AjaxController@phone');
-    Route::post('sms','AjaxController@sms'); 
-    Route::post('code','AjaxController@code');
-
-    # Notification 读取状态设置
-    Route::post('read','NotificationController@read');
-    Route::post('unread','NotificationController@unread');
-
-    # 获取价格信息
-    Route::post('price','AjaxController@price');
-
-    Route::post('evaluate','AjaxController@evaluate');
-    Route::post('consult_liked','AjaxController@consult_liked');
-
-    Route::post('receipt','AjaxController@receipt');
-
-});
-
-
-Route::resource('bill','BillController');

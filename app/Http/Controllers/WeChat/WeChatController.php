@@ -53,8 +53,8 @@ class WeChatController extends Controller
         abort(404);
     }
 
-    public function qrCode()
+    public function lawood()
     {
-        return view('wechat.qrcode');
+        return view('wechat.flow.lawood');
     }
 }
