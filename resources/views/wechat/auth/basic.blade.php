@@ -51,6 +51,7 @@
             var form = false;
             var address = $('input[name=uri]').val();
             var btn_yzm = $('#btn-yzm');
+            var reg;
             //表单判断
             $('.In-text').bind('input propertychange', function() {
                 //form = true;
@@ -58,8 +59,8 @@
                     form = false;
                     $('#In-btn').removeClass('bg-lan1');
                 }else{
-                    var re = /^.{2,20}$/;
-                    if (!re.test($('#name').val())) {
+                    reg = /^.{2,20}$/;
+                    if (!reg.test($('#name').val())) {
                         form = false;
                         $('#In-btn').removeClass('bg-lan1');
                     }
@@ -73,8 +74,8 @@
                     $('#yzm').val('');
                     btn_yzm.hide();
                 }else{
-                    var re = /^1\d{10}$/;
-                    if (!re.test($('#mobile').val())) {
+                    reg  = /^1\d{10}$/;
+                    if (!reg.test($('#mobile').val())) {
                         form = false;
                         $('#In-btn').removeClass('bg-lan1');
                         $('#mobile').parents('.itms').removeClass('itms-ok');
@@ -115,8 +116,8 @@
                     btn_yzm.parents('.itms').removeClass('itms-ok');
                     return false;
                 }else{
-                    var re =  /\d{4}$/;
-                    if (!re.test($('#yzm').val())) {
+                    reg =  /\d{4}$/;
+                    if (!reg.test($('#yzm').val())) {
                         form = false;
                         $('#In-btn').removeClass('bg-lan1');
                         btn_yzm.parents('.itms').removeClass('itms-ok');
