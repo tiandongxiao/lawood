@@ -57,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/info.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
-              <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+              <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
               <folding>
                 <element signature="e#432#483#0#HTML" expanded="true" />
                 <element signature="e#521#547#0#HTML" expanded="true" />
@@ -65,8 +65,8 @@
                 <element signature="e#783#816#0#HTML" expanded="true" />
                 <element signature="e#933#966#0#HTML" expanded="true" />
                 <element signature="e#1083#1116#0#HTML" expanded="true" />
-                <element signature="e#1337#1363#0#HTML" expanded="true" />
-                <element signature="e#1394#1432#0#HTML" expanded="true" />
+                <element signature="e#1348#1374#0#HTML" expanded="true" />
+                <element signature="e#1405#1443#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -773,7 +773,7 @@
       <workItem from="1466398095936" duration="1856000" />
       <workItem from="1466404662635" duration="18143000" />
       <workItem from="1466434281624" duration="53516000" />
-      <workItem from="1466662706073" duration="21650000" />
+      <workItem from="1466662706073" duration="22051000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -898,7 +898,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1292372000" />
+    <option name="totallyTimeSpent" value="1292773000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1385,7 +1385,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/info.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
-          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
           <folding>
             <element signature="e#432#483#0#HTML" expanded="true" />
             <element signature="e#521#547#0#HTML" expanded="true" />
@@ -1393,8 +1393,8 @@
             <element signature="e#783#816#0#HTML" expanded="true" />
             <element signature="e#933#966#0#HTML" expanded="true" />
             <element signature="e#1083#1116#0#HTML" expanded="true" />
-            <element signature="e#1337#1363#0#HTML" expanded="true" />
-            <element signature="e#1394#1432#0#HTML" expanded="true" />
+            <element signature="e#1348#1374#0#HTML" expanded="true" />
+            <element signature="e#1405#1443#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -10,7 +10,7 @@
             margin-top: 2px;
         }
         .content{
-            padding:40px;
+            padding:35px;
             height: 130px;
         }
     </style>
@@ -30,7 +30,7 @@
                 @endif
             </div>
             <div>
-                <div class="content">
+                <div class="content mar-top-10">
                     {{$data['body']}}
                 </div>
                 <div class="button" style="text-align: center">
