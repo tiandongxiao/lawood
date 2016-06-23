@@ -82,6 +82,11 @@
     </section>
     <footer class="yy-footer po-f">
         <div class="itms itms-left">
+            @if($user->enable)
+                <span style="color: #df8a13">欢迎咨询</span>
+            @else
+                <span style="color: #b94a48">暂停接单</span>
+            @endif
             @if(Auth::check() && Auth::user()->role != 'lawyer')
                 @if($consult)
                     @if($consult->liked(Auth::user()->id))
@@ -92,11 +97,6 @@
                 @endif
             @else
                 <span><a href="{{url('wechat/lawyer/config/share')}}"><img src="/images/qrcode-48.png" width="28"></a></span>
-            @endif
-            @if($user->enable)
-                <span style="color: #df8a13">欢迎咨询</span>
-            @else
-                <span style="color: #b94a48">暂停接单</span>
             @endif
         </div>
         @if(!$consult)
