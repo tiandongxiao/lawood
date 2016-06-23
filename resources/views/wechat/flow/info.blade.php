@@ -17,7 +17,7 @@
     </style>
 @stop
 @section('content')
-    <section class="info-area" style="position:absolute;height: 100%;width:100%;padding: 1px">
+    <section class="info-area" style="position:absolute;height: 100%;width:100%;padding: 2px;overflow: hidden">
         @if($data)
             <div style="text-align: center">
                 @if($data['type'] == 'success')

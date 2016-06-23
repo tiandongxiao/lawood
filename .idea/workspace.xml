@@ -76,17 +76,17 @@
       <file leaf-file-name="info.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/info.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            <state relative-caret-position="208">
+              <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
               <folding>
-                <element signature="e#463#525#0#HTML" expanded="true" />
-                <element signature="e#563#589#0#HTML" expanded="true" />
-                <element signature="e#678#711#0#HTML" expanded="true" />
-                <element signature="e#825#858#0#HTML" expanded="true" />
-                <element signature="e#975#1008#0#HTML" expanded="true" />
-                <element signature="e#1125#1158#0#HTML" expanded="true" />
-                <element signature="e#1390#1416#0#HTML" expanded="true" />
-                <element signature="e#1447#1485#0#HTML" expanded="true" />
+                <element signature="e#463#542#0#HTML" expanded="true" />
+                <element signature="e#580#606#0#HTML" expanded="true" />
+                <element signature="e#695#728#0#HTML" expanded="true" />
+                <element signature="e#842#875#0#HTML" expanded="true" />
+                <element signature="e#992#1025#0#HTML" expanded="true" />
+                <element signature="e#1142#1175#0#HTML" expanded="true" />
+                <element signature="e#1407#1433#0#HTML" expanded="true" />
+                <element signature="e#1464#1502#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -744,7 +744,7 @@
       <workItem from="1466398095936" duration="1856000" />
       <workItem from="1466404662635" duration="18143000" />
       <workItem from="1466434281624" duration="53516000" />
-      <workItem from="1466662706073" duration="25982000" />
+      <workItem from="1466662706073" duration="26079000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -869,7 +869,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1296704000" />
+    <option name="totallyTimeSpent" value="1296801000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1367,17 +1367,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/info.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        <state relative-caret-position="208">
+          <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
           <folding>
-            <element signature="e#463#525#0#HTML" expanded="true" />
-            <element signature="e#563#589#0#HTML" expanded="true" />
-            <element signature="e#678#711#0#HTML" expanded="true" />
-            <element signature="e#825#858#0#HTML" expanded="true" />
-            <element signature="e#975#1008#0#HTML" expanded="true" />
-            <element signature="e#1125#1158#0#HTML" expanded="true" />
-            <element signature="e#1390#1416#0#HTML" expanded="true" />
-            <element signature="e#1447#1485#0#HTML" expanded="true" />
+            <element signature="e#463#542#0#HTML" expanded="true" />
+            <element signature="e#580#606#0#HTML" expanded="true" />
+            <element signature="e#695#728#0#HTML" expanded="true" />
+            <element signature="e#842#875#0#HTML" expanded="true" />
+            <element signature="e#992#1025#0#HTML" expanded="true" />
+            <element signature="e#1142#1175#0#HTML" expanded="true" />
+            <element signature="e#1407#1433#0#HTML" expanded="true" />
+            <element signature="e#1464#1502#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
