@@ -7,7 +7,7 @@
         <div class="te-cen">
             <p class="fs-16 fc-03aaf0  mar-top-20 line-20">欢迎来到律屋在线</p>
             <div style="margin-top: 45px">
-                <img src="/images/ewm.png" width="200px" height="200" style="padding: 10px;border: dotted 1px #00a7d0 ">
+                <img src="/images/ewm.png" width="200px" height="200" style="padding: 10px;border: dashed 1px #00a7d0 ">
                 <p class="mar-top-20" style="font-weight: lighter;font-size: 12px;">微信长按二维码或微信搜索'律屋'加入我们</p>
             </div>
             <div class="bottom-btn">
