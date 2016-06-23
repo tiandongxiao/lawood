@@ -158,8 +158,8 @@ class LawyerController extends Controller
             'type'  => 'invalid',
             'title' => '无效请求',
             'body'  => '抱歉，您账户余额为 0 ，不能进行提现操作',
-            'url'   => url('wechat/lawyer/draw'),
-            'button' => '重试'
+            'url'   => url('wechat'),
+            'button' => '首页'
         ];
         return view('wechat.flow.info',compact('data'));
     }
