@@ -5,6 +5,8 @@
             height: 130px;
             line-height: 130px;
             color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
         }
         .content{
             padding:40px;
