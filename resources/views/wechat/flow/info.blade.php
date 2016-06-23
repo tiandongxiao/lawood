@@ -16,7 +16,7 @@
     </style>
 @stop
 @section('content')
-    <section class="info-area" style="height: 100%;padding: 2px">
+    <section class="info-area" style="position:absolute;height: 100%;padding: 2px">
         @if($data)
             <div style="text-align: center">
                 @if($data['type'] == 'success')
@@ -29,7 +29,7 @@
                     <div class="title" style="background-color: #BE5C00">{{$data['title']}}</div>
                 @endif
             </div>
-            <div style="border:solid 1px #cccccc">
+            <div style="border:solid 1px #cccccc;border-top: none;border-bottom: none">
                 <div class="content">
                     {{$data['body']}}
                 </div>
