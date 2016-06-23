@@ -528,9 +528,6 @@ class User extends Model implements AuthenticatableContract,
         if($this->role == 'lawyer'){
             $orders = $this->not_drew_orders;
             if($orders){
-                $bill = Bill::create([
-                    'user_id' => $this->id
-                ]);
                 $sum = 0;
                 foreach ($orders as $order){
                     $order->update([
@@ -549,7 +546,7 @@ class User extends Model implements AuthenticatableContract,
                 if($result == 'success'){
                     $bill = Bill::create([
                         'user_id' => $this->id,
-//                        'name'    => $this->real_name,
+                        'name'    => $this->real_name,
                         'amount'  => $sum
                     ]);
                     foreach ($orders as $order){
@@ -580,9 +577,9 @@ class User extends Model implements AuthenticatableContract,
     # 获取已收藏的项目
     public function getCollectsAttribute()
     {
-        $consults = Item::whereLiked($this->id) // find only articles where user liked them
-        ->with('likeCounter') // highly suggested to allow eager load
-        ->get();
+        # highly suggested to allow eager load
+        $consults = Item::whereLiked($this->id)->with('likeCounter')->get();
+
         if($consults->count())
             return $consults;
         return null;
