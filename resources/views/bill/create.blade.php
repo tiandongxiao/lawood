@@ -4,8 +4,7 @@
             <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                     <i class="fa fa-plus"></i>
-                    Add a New Bill                
-                </a>
+                    Add a New Bill                </a>
             </h4>
         </div>
         <div id="collapseOne" class="panel-collapse collapse">

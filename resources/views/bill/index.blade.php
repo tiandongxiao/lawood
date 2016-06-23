@@ -1,5 +1,4 @@
 @extends('tpl.admin.app')
-
 @section('content')
 	<h2>Bills</h2>
 	<table class="table table-striped grid-view-tbl">

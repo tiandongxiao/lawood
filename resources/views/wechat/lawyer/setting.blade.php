@@ -28,9 +28,6 @@
             <a class="itms itms-link" href="{{url('wechat/lawyer/config/price')}}">
                 <div class="f-left">设定咨询费</div>
             </a>
-            <a class="itms itms-link" href="{{url('wechat/lawyer/config/share')}}">
-                <div class="f-left">我的二维码</div>
-            </a>
         </div>
         <div class="bottom-btn">
             <div class="blank100" style="height:120px;"></div>
