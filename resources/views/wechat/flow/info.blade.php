@@ -29,11 +29,13 @@
                     <div class="title" style="background-color: #BE5C00">{{$data['title']}}</div>
                 @endif
             </div>
-            <div class="content">
-                {{$data['body']}}
-            </div>
-            <div class="button" style="text-align: center">
-                <span><a style="color: #00abeb;font-size: 14px" href="{{$data['url']}}">{{$data['button']}}</a></span>
+            <div style="border:solid 1px #cccccc">
+                <div class="content">
+                    {{$data['body']}}
+                </div>
+                <div class="button" style="text-align: center">
+                    <span><a style="color: #00abeb;font-size: 14px" href="{{$data['url']}}">{{$data['button']}}</a></span>
+                </div>
             </div>
         @endif
     </section>
