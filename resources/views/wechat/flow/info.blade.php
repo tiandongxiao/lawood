@@ -17,7 +17,7 @@
                 {{$data['body']}}
             </div>
             <div class="button">
-                <a href="{{$data['url']}}">{{$data['button']}}</a>
+                <span><a href="{{$data['url']}}">{{$data['button']}}</a></span>
             </div>
         @endif
     </section>
