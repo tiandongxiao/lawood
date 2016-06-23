@@ -87,16 +87,18 @@
             @else
                 <span style="color: #b94a48">暂停接单</span>
             @endif
-            @if(Auth::check() && Auth::user()->role != 'lawyer')
-                @if($consult)
-                    @if($consult->liked(Auth::user()->id))
-                        <span class="sc on" id="sc" data-consult="{{$consult->id}}" data-client="{{Auth::user()->id}}"><i>收藏</i></span>
-                    @else
-                        <span class="sc" id="sc" data-consult="{{$consult->id}}" data-client="{{Auth::user()->id}}"><i>已收藏</i></span>
+            @if(Auth::check())
+                @if(Auth::user()->role != 'lawyer')
+                    @if($consult)
+                        @if($consult->liked(Auth::user()->id))
+                            <span class="sc on" id="sc" data-consult="{{$consult->id}}" data-client="{{Auth::user()->id}}"><i>收藏</i></span>
+                        @else
+                            <span class="sc" id="sc" data-consult="{{$consult->id}}" data-client="{{Auth::user()->id}}"><i>已收藏</i></span>
+                        @endif
                     @endif
+                @else
+                    <span><a href="{{url('wechat/lawyer/config/share')}}"><img src="/images/qrcode-48.png" width="28"></a></span>
                 @endif
-            @else
-                <span><a href="{{url('wechat/lawyer/config/share')}}"><img src="/images/qrcode-48.png" width="28"></a></span>
             @endif
         </div>
         @if(!$consult)
