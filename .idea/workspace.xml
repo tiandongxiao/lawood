@@ -56,11 +56,11 @@
       <file leaf-file-name="place_select.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+            <state relative-caret-position="389">
+              <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
               <folding>
-                <marker date="1466685895186" expanded="true" signature="2055:2699" placeholder="..." />
-                <marker date="1466685895186" expanded="true" signature="2237:2502" placeholder="..." />
+                <marker date="1466686049695" expanded="true" signature="2055:2710" placeholder="..." />
+                <marker date="1466686049695" expanded="true" signature="2237:2513" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -666,7 +666,7 @@
       <workItem from="1466398095936" duration="1856000" />
       <workItem from="1466404662635" duration="18143000" />
       <workItem from="1466434281624" duration="53516000" />
-      <workItem from="1466662706073" duration="14113000" />
+      <workItem from="1466662706073" duration="14241000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -791,7 +791,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1284835000" />
+    <option name="totallyTimeSpent" value="1284963000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1134,8 +1134,8 @@
         <state relative-caret-position="389">
           <caret line="93" column="126" selection-start-line="93" selection-start-column="126" selection-end-line="93" selection-end-column="126" />
           <folding>
-            <element signature="e#4135#4157#0#HTML" expanded="true" />
-            <element signature="e#4210#4232#0#HTML" expanded="true" />
+            <element signature="e#4135#4157#0#HTML" expanded="false" />
+            <element signature="e#4210#4232#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1177,7 +1177,7 @@
         <state relative-caret-position="364">
           <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1272,11 +1272,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+        <state relative-caret-position="389">
+          <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
           <folding>
-            <marker date="1466685895186" expanded="true" signature="2055:2699" placeholder="..." />
-            <marker date="1466685895186" expanded="true" signature="2237:2502" placeholder="..." />
+            <marker date="1466686049695" expanded="true" signature="2055:2710" placeholder="..." />
+            <marker date="1466686049695" expanded="true" signature="2237:2513" placeholder="..." />
           </folding>
         </state>
       </provider>

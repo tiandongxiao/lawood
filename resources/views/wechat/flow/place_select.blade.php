@@ -49,8 +49,8 @@
                             "<div class='itms'>"+
                                 "<div class='f-left'><img src='"+ '/images/dd-banner.jpg' +"' width='110' height='80'></div>"+
                                 "<div class='right'><h3 class='chaochu_1'>"+ poi.name +"</h3>"+
-                                    "<p class='chaochu_1'>"+poi.address+"</p>"+
-                                    "<p class='chaochu_1 mar-top-10'>"+"距离："+poi.distance+"米"+"</p>"+
+                                    "<p class='chaochu_1 mar-top-15'>"+poi.address+"</p>"+
+                                    "<p class='chaochu_1 mar-top-15'>"+"距离："+poi.distance+"米"+"</p>"+
                                 "</div>"+
                                 "<div class='itms-radio'><input type='radio' name='dd' class='In-radio' data-coffee='"+poi.name+"' value='"+poi.id+"'></div>"+
                             "</div>"
