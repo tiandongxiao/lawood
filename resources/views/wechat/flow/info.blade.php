@@ -7,7 +7,7 @@
             color: white;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
-            margin-top: 3px;
+            margin-top: 2px;
         }
         .content{
             padding:40px;
@@ -29,7 +29,7 @@
                     <div class="title" style="background-color: #BE5C00">{{$data['title']}}</div>
                 @endif
             </div>
-            <div style="border:solid 1px #cccccc;border-top: none;border-bottom: none">
+            <div>
                 <div class="content">
                     {{$data['body']}}
                 </div>
