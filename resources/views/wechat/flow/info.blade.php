@@ -19,7 +19,7 @@
 @section('content')
     <section class="info-area" style="position:absolute;height: 100%;width:100%">
         @if($data)
-            <div style="text-align: center">
+            <div style="text-align: center;padding: 1px">
                 @if($data['type'] == 'success')
                     <div class="title" style="background-color: #00a65a">{{$data['title']}}</div>
                 @elseif($data['type'] == 'fail')
