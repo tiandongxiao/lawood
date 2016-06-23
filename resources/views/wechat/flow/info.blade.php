@@ -30,7 +30,7 @@
                 @endif
             </div>
             <div>
-                <div class="content mar-top-10">
+                <div class="content mar-top-20">
                     {{$data['body']}}
                 </div>
                 <div class="button" style="text-align: center">
