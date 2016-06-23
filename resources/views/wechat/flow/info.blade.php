@@ -12,7 +12,7 @@
         .content{
             padding:25px;
             height: 130px;
-            line-height: 20px;
+            line-height: 25px;
         }
     </style>
 @stop
