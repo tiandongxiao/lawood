@@ -4,6 +4,7 @@
         .title{
             height: 130px;
             line-height: 130px;
+            color: white;
         }
         .content{
             padding:40px;
