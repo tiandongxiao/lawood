@@ -12,6 +12,7 @@
     {{ method_field('DELETE') }}
     <button style="outline: none;background: transparent;border: none;"
             onclick="return confirm('Are You Sure?')"
-            type="submit" class="fa fa-remove text-danger"></button>
+            type="submit" class="fa fa-remove text-danger">
+    </button>
 </form>
 </td>
