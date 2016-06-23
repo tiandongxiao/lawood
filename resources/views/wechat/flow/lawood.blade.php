@@ -6,7 +6,7 @@
     <section class="lssz-main">
         <div class="te-cen">
             <p class="fs-16 fc-03aaf0  mar-top-20 line-20">欢迎来到律屋在线</p>
-            <div class="mar-top-15" style="margin-top: 40px">
+            <div style="margin-top: 40px">
                 <img src="/images/ewm.png" width="200px" height="200" style="padding: 10px;border: dotted 1px #00a7d0 ">
                 <p class="mar-top-30" style="font-weight: lighter;font-size: 12px;">微信长按二维码或微信搜索'律屋'加入我们</p>
             </div>
