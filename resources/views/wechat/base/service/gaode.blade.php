@@ -152,7 +152,7 @@
         var search;
         var searchOptions = {
             keywords: keyword,
-            filter:"recommend:yes+recommend_value[1,]",
+            filter:'recommend:yes+recommend_value[1,]',
             pageSize: 6,
             orderBy: 'recommend_value:ASC'
         };
