@@ -98,12 +98,8 @@
                 city = cityName;
             },function (info) {
                 city = '北京市';
-                alert(info);
             });
             $('.list').tap(function(){
-                major = $(this).text();
-                alert(major);
-                alert(city);
                 searchPrivateByDistrict(city,major,function (result) {
                     // 搜索成功
                     console.log(result);
