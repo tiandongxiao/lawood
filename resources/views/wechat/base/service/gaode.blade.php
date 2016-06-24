@@ -94,13 +94,13 @@
     function searchPublicByAround(center,type,onComplete,onError) {
         AMap.service(["AMap.PlaceSearch"], function() {
             var placeSearch = new AMap.PlaceSearch({ //构造地点查询类
-                pageSize: 4,
+                pageSize: 2,
                 type: type,
                 pageIndex: 1,
                 extensions: "all"
             });
 
-            placeSearch.searchNearBy('', center, 20000, function(status, result) {
+            placeSearch.searchNearBy('', center, 200, function(status, result) {
                 if (status === 'complete' && result.info === 'OK') {
                     onComplete(result);
                     return;
@@ -147,5 +147,18 @@
             });
         });
     }
-    // Ended 搜索自创建地图 私有数据
+    
+    function getCity(onComplete,onError) {
+        map.plugin(["AMap.CitySearch"], function() {            
+            var search = new AMap.CitySearch();            
+            search.getLocalCity(function (status,result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    onComplete(result.info);
+                    return;
+                }
+                onError(result.info);
+            });
+        });
+    }
+
 </script>

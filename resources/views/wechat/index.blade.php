@@ -50,17 +50,6 @@
     @include('wechat.base.service.gaode')
     <script>
         $(function(){
-            // 初始化地图
-            gdMapInit();
-            locatePosition(function (data) {
-                regeocoder(data.position,function (result) {
-                    console.log(result);
-                    $('#In-wz').val(result.formattedAddress);
-                });
-            },function () {
-                // 定位失败
-                $('#In-wz').val('定位失败，请输入您的位置');
-            });
             //切换查找条件
             $('#form-xz .hd i').tap(function(){
                 $('#form-xz .hd i').removeClass('on')
@@ -91,6 +80,23 @@
                     query = 'chose=name&'+'name='+$('#In-xm').val();
                     window.location.href="/wechat/search?"+query;
                 }
+            });
+
+            // 地图放在最后一部分，以免影响菜单操作
+            gdMapInit();            
+            locatePosition(function (data) {
+                regeocoder(data.position,function (result) {
+                    console.log(result);
+                    $('#In-wz').val(result.formattedAddress);
+                });
+            },function () {
+                // 定位失败
+                $('#In-wz').val('定位失败，请输入您的位置');
+            });
+            getCity(function (cityName) {
+                alert(cityName);
+            },function (info) {
+                alert(info);
             });
         })
     </script>
