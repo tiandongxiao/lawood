@@ -41,6 +41,8 @@ class ShopSetupTables extends Migration
             # 为商品添加分类项和地址项，以实现更好的解耦和生成云地图时获取相关信息
             $table->unsignedInteger('category_id')->nullable();  # 关联category，一个商品单只属于一个category
             $table->unsignedInteger('location_id')->nullable();  # 关联location，一个商品单只属于一个location
+            $table->boolean('recommend')->default(false);
+            $table->smallInteger('recommend_value')->default(0);
 
             $table->timestamps();
 

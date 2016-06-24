@@ -13,22 +13,27 @@ use App\Item as Consult;
 
 trait RecommendDevTrait
 {
-    private $city;
-    private $major;
-
-    public function getCity()
+    public function enableRecommend($value)
     {
-
+        $this->update([
+            'recommend' => true,
+            'recommend_value' => $value
+        ]);
+        $this->updatePOI();
     }
 
-    public function getMajor()
+    public function disableRecommend()
     {
-
+        $this->update([
+            'recommend' => false,
+            'recommend_value' => 0
+        ]);
+        $this->updatePOI();
     }
 
-    public function getRecommendsAttribute()
+    public function setRecommendValue($value)
     {
-
-        Consult::where('city','');
+        
     }
+    
 }

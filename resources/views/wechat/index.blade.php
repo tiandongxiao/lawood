@@ -83,6 +83,7 @@
             });
 
             // 地图放在最后一部分，以免影响菜单操作
+            var city;
             gdMapInit();            
             locatePosition(function (data) {
                 regeocoder(data.position,function (result) {
@@ -94,9 +95,18 @@
                 $('#In-wz').val('定位失败，请输入您的位置');
             });
             getCity(function (cityName) {
-                //alert(cityName);
+                city = cityName;
             },function (info) {
+                city = '北京市';
                 alert(info);
+            });
+            $('.list').tap(function(){
+                major = $(this).text();
+                searchPrivateByDistrict(city,major,function (result) {
+                    // 搜索成功
+                },function (result) {
+                    alert(result.info);
+                });
             });
         })
     </script>

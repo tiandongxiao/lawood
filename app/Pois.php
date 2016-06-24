@@ -64,7 +64,9 @@ class Pois extends Model
             'price'       =>  $item->price,
             'consult'     =>  $item->id,
             'user'        =>  $item->seller->id,
-            'counter'     =>  $item->seller->service_count
+            'counter'     =>  $item->seller->service_count,
+            'recommend'   =>  $item->recommend?'yes':'no',
+            'recommend_value' => $item->recommend_value
         ]);
 
         $this->poi_id = $poi_id;

@@ -148,6 +148,27 @@
         });
     }
     
+    function searchPrivateByDistrict(district,keyword,onComplete,onError) {
+        var search;
+        var searchOptions = {
+            keywords: keyword,
+            filter:"recommend:yes",
+            pageSize: 6,
+            orderBy: 'recommend_weight:ASC'
+        };
+        //加载CloudDataSearch服务插件
+        AMap.service(["AMap.CloudDataSearch"], function() {
+            search = new AMap.CloudDataSearch('56fa40c9305a2a3288363151', searchOptions);
+            search.searchByDistrict(district, 10000,function (status, result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    onComplete(result);
+                    return;
+                }
+                onError(result);
+            });
+        });
+    }
+    
     function getCity(onComplete,onError) {
         map.plugin(["AMap.CitySearch"], function() {            
             var search = new AMap.CitySearch();            

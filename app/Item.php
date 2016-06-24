@@ -15,7 +15,7 @@ class Item extends ShopItemModel implements Ratingable
     use LikeableTrait;    # 引入收藏系统
     use RatingTrait;      # 引入评级系统
 
-    protected $fillable = ['user_id', 'cart_id', 'shop_id', 'sku', 'price', 'tax', 'shipping', 'currency', 'quantity', 'class', 'reference_id','category_id','location_id'];
+    protected $fillable = ['user_id', 'cart_id', 'shop_id', 'sku', 'price', 'tax', 'shipping', 'currency', 'quantity', 'class', 'reference_id','category_id','location_id','recommend','recommend_value'];
     
     # 一个咨询服务项只属于一个分类
     public function category()
@@ -104,16 +104,19 @@ class Item extends ShopItemModel implements Ratingable
     {
         if(!$this->seller->enable)
             return;
-
-        $data = [
-            '_name'    => $this->seller->real_name,
-            '_address' => $this->location->address,
-            'price'    => $this->price,
-            'avatar'   => $this->seller->avatar,
-            'counter'  => $this->seller->service_count
-        ];
-        if($this->poi)
+        
+        if($this->poi){
+            $data = [
+                '_name'     => $this->seller->real_name,
+                '_address'  => $this->location->address,
+                'price'     => $this->price,
+                'avatar'    => $this->seller->avatar,
+                'counter'   => $this->seller->service_count,
+                'recommend' => $this->recommend?'yes':'no',
+                'recommend_value' => $this->recommend_value
+            ];
             $this->poi->updateInfo($data);
+        }
     }
 
     # 更新价格
@@ -140,5 +143,31 @@ class Item extends ShopItemModel implements Ratingable
             return $consult;
         }
         return null;
+    }
+
+    public function enableRecommend()
+    {
+        $this->update([
+            'recommend' => true
+        ]);
+        $this->updatePOI();
+    }
+
+    public function modifyRecommendValue($value)
+    {
+        $this->update([
+            'recommend_value' => $value
+        ]);
+        if($this->recommend)
+            $this->updatePOI();
+    }
+
+    public function disableRecommend()
+    {
+        $this->update([
+            'recommend' => false,
+            'recommend_value' => 0
+        ]);
+        $this->updatePOI();
     }
 }
