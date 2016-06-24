@@ -5,8 +5,8 @@
         .itms:nth-child(2n)	.banner {
             position: absolute;left:5px;width: 97.2%;height: 25px;line-height: 26px;bottom: 1px;background: rgba(148,85,40,0.6);color: whitesmoke
         }
-        .banner-lawyer{padding-left: 8px;}
-        .banner-major{float: right;padding-right: 8px}
+        .banner-lawyer{padding-left: 6px;}
+        .banner-major{float: right;padding-right: 6px}
     </style>
 @stop
 @section('content')
