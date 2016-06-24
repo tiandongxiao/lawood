@@ -154,7 +154,7 @@
             keywords: keyword,
             filter:'recommend:yes+recommend_value[1,]',
             pageSize: 6,
-            orderBy: 'recommend_value:ASC'
+            orderBy: 'recommend_value:DESC'
         };
         //加载CloudDataSearch服务插件
         AMap.service(["AMap.CloudDataSearch"], function() {
