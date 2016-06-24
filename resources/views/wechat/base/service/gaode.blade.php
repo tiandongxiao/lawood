@@ -153,6 +153,7 @@
             var search = new AMap.CitySearch();            
             search.getLocalCity(function (status,result) {
                 if (status === 'complete' && result.info === 'OK') {
+                    console.log(result);
                     onComplete(result.info);
                     return;
                 }
