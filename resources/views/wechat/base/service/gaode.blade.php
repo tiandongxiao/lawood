@@ -159,7 +159,7 @@
         //加载CloudDataSearch服务插件
         AMap.service(["AMap.CloudDataSearch"], function() {
             search = new AMap.CloudDataSearch('56fa40c9305a2a3288363151', searchOptions);
-            search.searchByDistrict(district, 10000,function (status, result) {
+            search.searchByDistrict(district,function (status, result) {
                 if (status === 'complete' && result.info === 'OK') {
                     onComplete(result);
                     return;
