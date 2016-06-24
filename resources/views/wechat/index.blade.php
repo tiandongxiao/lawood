@@ -1,12 +1,12 @@
 @extends('wechat.base.menu')
 @section('css')
     <style>
-        .itms .banner{position: absolute;width: 97.2%;height: 25px;line-height: 25px;bottom: 1px;background: rgba(148,85,40,0.6);color: whitesmoke}
+        .itms .banner{position: absolute;width: 97.2%;height: 25px;line-height: 26px;bottom: 1px;background: rgba(148,85,40,0.6);color: whitesmoke}
         .itms:nth-child(2n)	.banner {
-            position: absolute;left:5px;width: 97.2%;height: 25px;line-height: 25px;bottom: 1px;background: rgba(148,85,40,0.6);color: whitesmoke
+            position: absolute;left:5px;width: 97.2%;height: 25px;line-height: 26px;bottom: 1px;background: rgba(148,85,40,0.6);color: whitesmoke
         }
-        .banner-lawyer{padding-left: 10px;}
-        .banner-major{float: right;padding-right: 10px}
+        .banner-lawyer{padding-left: 8px;}
+        .banner-major{float: right;padding-right: 8px}
     </style>
 @stop
 @section('content')
