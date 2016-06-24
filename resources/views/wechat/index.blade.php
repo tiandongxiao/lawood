@@ -104,6 +104,7 @@
                 major = $(this).text();
                 searchPrivateByDistrict(city,major,function (result) {
                     // 搜索成功
+                    console.log(result);
                 },function (result) {
                     alert(result.info);
                 });
