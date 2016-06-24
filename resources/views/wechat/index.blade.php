@@ -34,10 +34,6 @@
             </a>
             <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
-                <p>1.4km</p>
-            </a>
-            <a class="itms" href="{{url('wechat/user/6')}}">
-                <div class="img"><img src="/images/ls.jpg" width="100%"></div>
                 <div class="banner">
                     <span class="banner-lawyer">王树德律师</span><span class="banner-major">婚姻家庭</span>
                 </div>
@@ -50,7 +46,15 @@
             </a>
             <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
-                <p>1.4km</p>
+                <div class="banner">
+                    <span class="banner-lawyer">王树德律师</span><span class="banner-major">婚姻家庭</span>
+                </div>
+            </a>
+            <a class="itms" href="{{url('wechat/user/6')}}">
+                <div class="img"><img src="/images/ls.jpg" width="100%"></div>
+                <div class="banner">
+                    <span class="banner-lawyer">王树德律师</span><span class="banner-major">婚姻家庭</span>
+                </div>
             </a>
             <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
