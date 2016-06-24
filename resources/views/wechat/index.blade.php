@@ -122,6 +122,7 @@
                 city = '北京市';
             });
             $('.list').tap(function(){
+                alert(city+major);
                 searchPrivateByDistrict(city,major,function (result) {
                     // 搜索成功
                     console.log(result);
