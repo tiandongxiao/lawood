@@ -6,15 +6,15 @@
     <section class="lssz-main">
         <div class="te-cen">
             @if($user)
-            <img src="{{$user->avatar}}" width="70" height="70" class="br-100 mar-top-20">
-            <p class="fs-16 fc-03aaf0  mar-top-20 line-20">{{$user->real_name}}</p>
-            <div class="mar-top-15">{!! QrCode::encoding('UTF-8')->size(275)->generate(url('wechat/user/'.$user->id)) !!}</div>
-            <div class="bottom-btn">
-                <div class="blank100"></div>
-                <div class="con te-cen">
-                    <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 back-home" value="返回首页" >
+                <img src="{{$user->avatar}}" width="70" height="70" class="br-15 mar-top-20">
+                <p class="fs-16 fc-03aaf0  mar-top-20 line-20">{{$user->real_name}}</p>
+                <div class="mar-top-15">{!! QrCode::encoding('UTF-8')->size(250)->generate(url('wechat/user/'.$user->id)) !!}</div>
+                <div class="bottom-btn">
+                    <div class="blank100"></div>
+                    <div class="con te-cen">
+                        <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 back-home" value="返回首页" >
+                    </div>
                 </div>
-            </div>
             @else
                 <div style="text-align: center;margin-top: 60%">获取失败</div>
             @endif
