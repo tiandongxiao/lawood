@@ -126,7 +126,7 @@
                     // 搜索成功
                     console.log(result);
                 },function (result) {
-                    alert(result.info);
+                    alert('说的是我吗');
                 });
             });
         })
