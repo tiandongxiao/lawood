@@ -16,8 +16,8 @@
         <form>
             <div class="itms-form" id="form-xz">
                 <div class="bd">
-                    <input type="text" placeholder="请输入律师姓名" id="In-xm" class="In-text">
-                    <input type="text" placeholder="请输入我的位置" id="In-wz" class="In-text" style="display:none">
+                    <input type="text" placeholder="请输入律师姓名" id="In-xm" class="In-text" style="width: 180px">
+                    <input type="text" placeholder="请输入我的位置" id="In-wz" class="In-text" style="width: 180px;display:none">
                 </div>
                 <div class="hd">
                     <i class="icon-xm on" id="icon-xm"></i>
