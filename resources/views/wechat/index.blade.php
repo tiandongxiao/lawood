@@ -27,7 +27,7 @@
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16" value="找律师" id="In-btn">
         </form>
 
-        <div class="line-30 pad-0-10 fc-909090 mar-top-30">推荐律师</div>
+        <div class="line-30 pad-0-10 fc-909090 mar-top-30" style="text-align: center"><span style="color: white">推荐律师</span></div>
         <div class="tjls pad-0-10 clearfix">
             <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
