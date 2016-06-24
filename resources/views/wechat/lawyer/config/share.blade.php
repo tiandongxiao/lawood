@@ -6,7 +6,7 @@
     <section class="lssz-main">
         <div class="te-cen">
             @if($user)
-                <img src="{{$user->avatar}}" width="70" height="70" class="br-15 mar-top-20">
+                <img src="{{$user->avatar}}" width="70" height="70" class="mar-top-20" style="border-radius: 10px">
                 <p class="fs-16 fc-03aaf0  mar-top-20 line-20">{{$user->real_name}}</p>
                 <div class="mar-top-15">{!! QrCode::encoding('UTF-8')->size(250)->generate(url('wechat/user/'.$user->id)) !!}</div>
                 <div class="bottom-btn">
