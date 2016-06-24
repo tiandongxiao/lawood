@@ -112,7 +112,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/base/service/gaode.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="483">
-              <caret line="155" column="40" selection-start-line="155" selection-start-column="40" selection-end-line="155" selection-end-column="40" />
+              <caret line="155" column="44" selection-start-line="155" selection-start-column="44" selection-end-line="155" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -733,7 +733,7 @@
       <workItem from="1466404662635" duration="18143000" />
       <workItem from="1466434281624" duration="53516000" />
       <workItem from="1466662706073" duration="28156000" />
-      <workItem from="1466731350595" duration="7088000" />
+      <workItem from="1466731350595" duration="7156000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -858,7 +858,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1305966000" />
+    <option name="totallyTimeSpent" value="1306034000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1318,7 +1318,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/base/service/gaode.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
-          <caret line="155" column="40" selection-start-line="155" selection-start-column="40" selection-end-line="155" selection-end-column="40" />
+          <caret line="155" column="44" selection-start-line="155" selection-start-column="44" selection-end-line="155" selection-end-column="44" />
           <folding />
         </state>
       </provider>
