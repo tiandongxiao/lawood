@@ -94,7 +94,7 @@
                 $('#In-wz').val('定位失败，请输入您的位置');
             });
             getCity(function (cityName) {
-                alert(cityName);
+                //alert(cityName);
             },function (info) {
                 alert(info);
             });
