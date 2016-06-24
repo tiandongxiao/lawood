@@ -1,4 +1,11 @@
 @extends('wechat.base.menu')
+@section('css')
+    <style>
+    .banner{position: absolute;width: 97.2%;height: 25px;line-height: 25px;bottom: 1px;background: rgba(148,85,40,0.6)}
+    .banner-lawyer{padding-left: 10px;}
+    .banner-major{float: right;padding-right: 10px}
+    </style>
+@stop
 @section('content')
     <section class="lvzy-main" style="padding-top: 100px">
         <h3 class="tie" style="font-size: 20px;font-weight: lighter">律屋共有<span class="fc-03aaf0"> 456 </span>名律师</h3>
@@ -21,7 +28,9 @@
         <div class="tjls pad-0-10 clearfix">
             <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
-                <p>1.4km</p>
+                <div class="banner">
+                    <span class="banner-lawyer">王树德律师</span><span class="banner-major">婚姻家庭</span>
+                </div>
             </a>
             <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
@@ -29,7 +38,15 @@
             </a>
             <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
-                <p>1.4km</p>
+                <div class="banner">
+                    <span class="banner-lawyer">王树德律师</span><span class="banner-major">婚姻家庭</span>
+                </div>
+            </a>
+            <a class="itms" href="{{url('wechat/user/6')}}">
+                <div class="img"><img src="/images/ls.jpg" width="100%"></div>
+                <div class="banner">
+                    <span class="banner-lawyer">王树德律师</span><span class="banner-major">婚姻家庭</span>
+                </div>
             </a>
             <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
@@ -37,11 +54,9 @@
             </a>
             <a class="itms" href="{{url('wechat/user/6')}}">
                 <div class="img"><img src="/images/ls.jpg" width="100%"></div>
-                <p>1.4km</p>
-            </a>
-            <a class="itms" href="{{url('wechat/user/6')}}">
-                <div class="img"><img src="/images/ls.jpg" width="100%"></div>
-                <p>1.4km</p>
+                <div class="banner">
+                    <span class="banner-lawyer">王树德律师</span><span class="banner-major">婚姻家庭</span>
+                </div>
             </a>
         </div>
     </section>
