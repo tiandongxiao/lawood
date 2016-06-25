@@ -28,43 +28,7 @@
         </form>
 
         <div class="line-30 pad-0-10 fc-909090 mar-top-50" style="text-align: center"><span style="color: rgba(255,152,0,0.78);font-size: 16px">推 荐 律 师</span></div>
-        <div class="tjls pad-0-10  mar-top-20 clearfix">
-            <a class="itms" href="{{url('wechat/user/6')}}">
-                <div class="img"><img src="/images/ls.jpg" width="100%"></div>
-                <div class="banner">
-                    <span class="banner-lawyer">王树德律师</span><span class="banner-major">婚姻家庭</span>
-                </div>
-            </a>
-            <a class="itms" href="{{url('wechat/user/6')}}">
-                <div class="img"><img src="/images/ls.jpg" width="100%"></div>
-                <div class="banner">
-                    <span class="banner-lawyer">王树德律师</span><span class="banner-major">婚姻家庭</span>
-                </div>
-            </a>
-            <a class="itms" href="{{url('wechat/user/6')}}">
-                <div class="img"><img src="/images/ls.jpg" width="100%"></div>
-                <div class="banner">
-                    <span class="banner-lawyer">王树德律师</span><span class="banner-major">婚姻家庭</span>
-                </div>
-            </a>
-            <a class="itms" href="{{url('wechat/user/6')}}">
-                <div class="img"><img src="/images/ls.jpg" width="100%"></div>
-                <div class="banner">
-                    <span class="banner-lawyer">王树德律师</span><span class="banner-major">婚姻家庭</span>
-                </div>
-            </a>
-            <a class="itms" href="{{url('wechat/user/6')}}">
-                <div class="img"><img src="/images/ls.jpg" width="100%"></div>
-                <div class="banner">
-                    <span class="banner-lawyer">王树德律师</span><span class="banner-major">婚姻家庭</span>
-                </div>
-            </a>
-            <a class="itms" href="{{url('wechat/user/6')}}">
-                <div class="img"><img src="/images/ls.jpg" width="100%"></div>
-                <div class="banner">
-                    <span class="banner-lawyer">王树德律师</span><span class="banner-major">婚姻家庭</span>
-                </div>
-            </a>
+        <div class="tjls pad-0-10  mar-top-20 clearfix" id="recommend-list">
         </div>
         <br/>
     </section>
@@ -126,6 +90,18 @@
                 searchPrivateByDistrict(city,major,function (result) {
                     // 搜索成功
                     console.log(result);
+                    var data = result.datas;
+                    for(var i = 0; i < data.length; i++){
+                        $('#recommend-list').append(
+                            "<a class='itms' href='/wechat/user/"+data.user+"'>"+
+                                "<div class='img'><img src='"+data.avatar+"' width='100%'></div>"+
+                                "<div class='banner'>"+
+                                    "<span class='banner-lawyer'>"+data._name+"律师</span><span class='banner-major'>"+data.category+"</span>"+
+                                "</div>"+
+                            "</a>"
+                        );
+                    }
+
                 },function (result) {
 //                    alert('说的是我吗');
                 });
