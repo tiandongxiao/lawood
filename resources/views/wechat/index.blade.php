@@ -12,7 +12,6 @@
 @section('content')
     <section class="lvzy-main" style="padding-top: 100px">
         <h3 class="tie" style="font-size: 20px;font-weight: lighter">律屋共有<span class="fc-03aaf0"> 456 </span>名律师</h3>
-        <p class="sx mar-top-20">输入<span class="fc-03aaf0">律师姓名</span>或者<span class="fc-03aaf0">您的位置</span>即可快速查找</p>
         <form>
             <div class="itms-form" id="form-xz">
                 <div class="bd">
@@ -24,7 +23,8 @@
                     <i class="icon-wz" id="icon-wz"></i>
                 </div>
             </div>
-            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10 fs-16" value="找律师" id="In-btn">
+            <p class="sx mar-top-20">输入<span class="fc-03aaf0">律师姓名</span>或者<span class="fc-03aaf0">您的位置</span>即可快速查找</p>
+            <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-30 fs-16" value="找律师" id="In-btn">
         </form>
 
         <div class="line-30 pad-0-10 fc-909090 mar-top-50" style="text-align: center"><span style="color: rgba(255,152,0,0.78);font-size: 16px">推 荐 律 师</span></div>
