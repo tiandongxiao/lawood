@@ -93,10 +93,10 @@
                     var data = result.datas;
                     for(var i = 0; i < data.length; i++){
                         $('#recommend-list').append(
-                            "<a class='itms' href='/wechat/user/"+data.user+"'>"+
-                                "<div class='img'><img src='"+data.avatar+"' width='100%'></div>"+
+                            "<a class='itms' href='/wechat/user/"+data[i].user+"'>"+
+                                "<div class='img'><img src='"+data[i].avatar+"' width='100%'></div>"+
                                 "<div class='banner'>"+
-                                    "<span class='banner-lawyer'>"+data._name+"律师</span><span class='banner-major'>"+data.category+"</span>"+
+                                    "<span class='banner-lawyer'>"+data[i]._name+"律师</span><span class='banner-major'>"+data[i].category+"</span>"+
                                 "</div>"+
                             "</a>"
                         );
