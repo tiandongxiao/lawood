@@ -76,16 +76,29 @@
                 regeocoder(data.position,function (result) {
                     console.log(result);
                     $('#In-wz').val(result.formattedAddress);
+                    var province = result.addressComponent.province;
+                    switch (province){
+                        case '北京市':
+                        case '上海市':
+                        case '天津市':
+                        case '重庆市':
+                            city = province;
+                            break;
+                        default :
+                            city = province.district;
+                            break;
+                    }
                 });
             },function () {
+                city = '北京市';
                 // 定位失败
                 $('#In-wz').val('定位失败，请输入您的位置');
             });
-            getCity(function (cityName) {
-                city = cityName;
-            },function (info) {
-                city = '北京市';
-            });
+//            getCity(function (cityName) {
+//                city = cityName;
+//            },function (info) {
+//                city = '北京市';
+//            });
             $('.list').tap(function(){
                 searchPrivateByDistrict(city,major,function (result) {
                     // 搜索成功
