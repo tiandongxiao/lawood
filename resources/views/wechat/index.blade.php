@@ -27,7 +27,7 @@
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-30 fs-16" value="找律师" id="In-btn">
         </form>
 
-        <div class="line-30 pad-0-10 fc-909090 mar-top-50" style="text-align: center"><span style="color: rgba(255,152,0,0.78);font-size: 16px">推 荐 律 师</span></div>
+        <div class="line-30 pad-0-10 fc-909090 mar-top-50" id="recommend-title" style="text-align: center;display: none"><span style="color: rgba(255,152,0,0.78);font-size: 16px">推 荐 律 师</span></div>
         <div class="tjls pad-0-10  mar-top-20 clearfix" id="recommend-list">
         </div>
         <br/>
@@ -103,8 +103,12 @@
                             "</a>"
                         );
                     }
+                    $('#recommend-title').show();
+                    recommendList.show();
 
                 },function (result) {
+                    $('#recommend-title').hide();
+                    $('#recommend-list').hide();
 //                    alert('说的是我吗');
                 });
             });
