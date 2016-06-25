@@ -91,8 +91,10 @@
                     // 搜索成功
                     console.log(result);
                     var data = result.datas;
+                    var recommendList = $('#recommend-list');
+                    recommendList.empty();
                     for(var i = 0; i < data.length; i++){
-                        $('#recommend-list').append(
+                        recommendList.append(
                             "<a class='itms' href='/wechat/user/"+data[i].user+"'>"+
                                 "<div class='img'><img src='"+data[i].avatar+"' width='100%'></div>"+
                                 "<div class='banner'>"+
