@@ -39,6 +39,9 @@
     @include('wechat.base.service.gaode')
     <script>
         $(function(){
+            var city;
+            var address;
+
             //切换查找条件
             $('#form-xz .hd i').tap(function(){
                 $('#form-xz .hd i').removeClass('on')
@@ -54,11 +57,11 @@
                         alert('您没有选择任何咨询门类');
                         return;
                     }
-                    if(!$('#In-wz').val()){
-                        alert('地址不能为空');
+                    if(!$('#In-wz').val() && $('#In-wz').val()!="定位中..."){
+                        alert('尚未完成定位');
                         return;
                     }
-                    query = 'chose=position&'+'major='+major+'&tab='+tabName+'&address='+$('#In-wz').val();
+                    query = 'chose=position&'+'major='+major+'&tab='+tabName+'&address='+address;
                     window.location.href="/wechat/search?"+query;
                 }
                 if($('#icon-xm').hasClass('on')){
@@ -72,12 +75,12 @@
             });
 
             // 地图放在最后一部分，以免影响菜单操作
-            var city;
             gdMapInit();            
             locatePosition(function (data) {
                 regeocoder(data.position,function (result) {
                     console.log(result);
-                    $('#In-wz').val(result.formattedAddress);
+                    address = result.formattedAddress;
+                    $('#In-wz').val(address);
                     var province = result.addressComponent.province;
                     switch (province){
                         case '北京市':
@@ -112,7 +115,7 @@
                     recommendList.empty();
                     for(var i = 0; i < data.length; i++){
                         recommendList.append(
-                            "<a class='itms' href='/wechat/user/"+data[i].user+"?consult="+data[i].consult+"'>"+
+                            "<a class='itms' href='/wechat/user/"+data[i].user+"?consult="+data[i].consult+"&address="+address+"'>"+
                                 "<div class='img'><img src='"+data[i].avatar+"' width='100%'></div>"+
                                 "<div class='banner'>"+
                                     "<span class='banner-lawyer'>"+data[i]._name+"律师</span><span class='banner-major'>"+data[i].price+"元</span>"+
