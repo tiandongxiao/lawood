@@ -41,7 +41,11 @@ class WeChatController extends Controller
         if($user->role == 'lawyer'){
             # 通过order获取用户评论和评分
             $orders = $user->seller_orders;
-            $consult_id = $request->get('consult'); #获取consult id
+            $consult_id = trim($request->get('consult')); #获取consult id
+            $address = $request->get('address');
+            if($address && !Session::has('address')){
+                Session::put('address',$address);
+            }
             $consult = null;
             if($consult_id){
                 $consult = Item::find($consult_id);
