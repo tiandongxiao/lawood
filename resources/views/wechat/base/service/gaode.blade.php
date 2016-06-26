@@ -100,7 +100,7 @@
                 extensions: "all"
             });
 
-            placeSearch.searchNearBy('', center, 200, function(status, result) {
+            placeSearch.searchNearBy('', center, 4000, function(status, result) {
                 if (status === 'complete' && result.info === 'OK') {
                     onComplete(result);
                     return;
