@@ -1,9 +1,9 @@
 @extends('wechat.base.menu')
 @section('css')
     <style>
-        .itms .banner{position: absolute;width: 97.2%;height: 25px;line-height: 26px;bottom: 1px;background: rgba(148,85,40,0.6);color: whitesmoke}
+        .itms .banner{position: absolute;width: 97.1%;height: 25px;line-height: 26px;bottom: 1px;background: rgba(148,85,40,0.6);color: whitesmoke}
         .itms:nth-child(2n)	.banner {
-            position: absolute;left:5px;width: 97.2%;height: 25px;line-height: 26px;bottom: 1px;background: rgba(148,85,40,0.6);color: whitesmoke
+            position: absolute;right:0;width: 97.1%;height: 25px;line-height: 26px;bottom: 1px;background: rgba(148,85,40,0.6);color: whitesmoke
         }
         .banner-lawyer{padding-left: 6px;}
         .banner-major{float: right;padding-right: 6px}
@@ -17,7 +17,7 @@
             <div class="itms-form" id="form-xz">
                 <div class="bd">
                     <input type="text" placeholder="请输入律师姓名" id="In-xm" class="In-text" style="width: 185px">
-                    <input type="text" placeholder="请输入我的位置" id="In-wz" class="In-text" style="width: 185px;display:none">
+                    <input type="text" placeholder="定位中..." id="In-wz" class="In-text" style="width: 185px;display:none">
                 </div>
                 <div class="hd">
                     <i class="icon-xm on" id="icon-xm"></i>
@@ -27,7 +27,9 @@
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-30 fs-16" value="找律师" id="In-btn">
         </form>
 
-        <div class="line-30 pad-0-10 fc-909090 mar-top-50" id="recommend-title" style="text-align: center;display: none"><span style="color: rgba(255,152,0,0.78);font-size: 16px">推 荐 律 师</span></div>
+        <div class="line-30 pad-0-10 fc-909090 mar-top-50" id="recommend-title" style="text-align: center;display: none">
+            <span style="color: rgba(255,152,0,0.78);font-size: 16px">推 荐 律 师</span>
+        </div>
         <div class="tjls pad-0-10  mar-top-20 clearfix" id="recommend-list">
         </div>
         <br/>
@@ -100,6 +102,8 @@
 //                city = '北京市';
 //            });
             $('.list').tap(function(){
+                $('#recommend-title').hide();
+                $('#recommend-list').hide();
                 searchPrivateByDistrict(city,major,function (result) {
                     // 搜索成功
                     console.log(result);
@@ -108,16 +112,16 @@
                     recommendList.empty();
                     for(var i = 0; i < data.length; i++){
                         recommendList.append(
-                            "<a class='itms' href='/wechat/user/"+data[i].user+"'>"+
+                            "<a class='itms' href='/wechat/user/"+data[i].user+"?consult="+data[i].consult+"'>"+
                                 "<div class='img'><img src='"+data[i].avatar+"' width='100%'></div>"+
                                 "<div class='banner'>"+
-                                    "<span class='banner-lawyer'>"+data[i]._name+"律师</span><span class='banner-major'>"+data[i].category+"</span>"+
+                                    "<span class='banner-lawyer'>"+data[i]._name+"律师</span><span class='banner-major'>"+data[i].price+"元</span>"+
                                 "</div>"+
                             "</a>"
                         );
                     }
                     $('#recommend-title').show();
-                    recommendList.show();
+                    recommendList.fadeIn();
 
                 },function (result) {
                     $('#recommend-title').hide();
