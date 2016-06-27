@@ -312,4 +312,49 @@ class Order extends ShopOrderModel
     {
         return $this->belongsTo(Bill::class);
     }
+
+    public function enableCommission()
+    {
+        $this->update([
+            'commission' => false
+        ]);
+    }
+
+    public function disableCommission()
+    {
+        $this->update([
+            'commission' => true
+        ]);
+    }
+
+    public function getCommissionStrategy()
+    {
+
+    }
+
+    public function drawAmount()
+    {
+        # 如果抽佣策略生效
+        if($this->commission)
+            return $this->applyCommissionStrategy();
+        return $this->total;
+    }
+
+    public function applyCommissionStrategy()
+    {
+        $strategy = collect();
+        if($this->strategy){
+            $strategy = $this->strategy;
+        }else{
+            $common_strategy=collect();
+            $strategy = $common_strategy;
+        }
+        switch ($strategy->type){
+            case 'ratio':
+                return $this->total * $strategy->ratio;
+                break;
+            default:
+                break;
+        }
+    }
 }

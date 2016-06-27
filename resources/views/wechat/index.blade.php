@@ -16,12 +16,12 @@
         <form>
             <div class="itms-form" id="form-xz">
                 <div class="bd">
-                    <input type="text" placeholder="请输入律师姓名" id="In-xm" class="In-text" style="width: 185px">
-                    <input type="text" placeholder="定位中..." id="In-wz" class="In-text" style="width: 185px;display:none">
+                    <input type="text" placeholder="请输入律师姓名" id="In-xm" class="In-text" style="width: 185px;display: none">
+                    <input type="text" placeholder="定位中..." id="In-wz" class="In-text" style="width: 185px;">
                 </div>
                 <div class="hd">
-                    <i class="icon-xm on" id="icon-xm"></i>
-                    <i class="icon-wz" id="icon-wz"></i>
+                    <i class="icon-xm" id="icon-xm"></i>
+                    <i class="icon-wz on" id="icon-wz"></i>
                 </div>
             </div>
             <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-30 fs-16" value="找律师" id="In-btn">
@@ -40,7 +40,10 @@
     <script>
         $(function(){
             var city;
-            var address;
+            var address={
+                'type'  : 'input',
+                'full'  : null
+            };
 
             //切换查找条件
             $('#form-xz .hd i').tap(function(){
@@ -50,18 +53,36 @@
                 icon.hide();
                 icon.eq($(this).index()).show();
             });
+            $('#In-wz').focus(function() {
+                $('#In-wz').attr('placeholder','请输入您的位置');
+                $(this).val('');
+                console.log('获得焦点');
+                address.type = 'input';
+            });
 
             $('#In-btn').tap(function () {
                 if($('#icon-wz').hasClass('on')){
+                    var query;
                     if(!major){
                         alert('您没有选择任何咨询门类');
                         return;
                     }
-                    if(!$('#In-wz').val() && $('#In-wz').val()!="定位中..."){
+
+                    if(!$('#In-wz').val() && $('#In-wz').attr('placeholder')!="定位中..."){
                         alert('尚未完成定位');
                         return;
                     }
-                    query = 'chose=position&'+'major='+major+'&tab='+tabName+'&address='+address;
+
+                    switch (address.type){
+                        case 'auto':
+                        case 'locate':
+                            query = 'chose=position&'+'major='+major+'&tab='+tabName+'&address='+address.full;
+                            break;
+                        case 'input':
+                            query = 'chose=position&'+'major='+major+'&tab='+tabName+'&address='+$('#In-wz').val();
+                            break;
+                    }
+
                     window.location.href="/wechat/search?"+query;
                 }
                 if($('#icon-xm').hasClass('on')){
@@ -79,8 +100,11 @@
             locatePosition(function (data) {
                 regeocoder(data.position,function (result) {
                     console.log(result);
-                    address = result.formattedAddress;
-                    $('#In-wz').val(address);
+                    address.type = 'locate';
+                    component = result.addressComponent;
+                    address.full = result.formattedAddress;
+                    $('#In-wz').val(component.district+component.street+component.township);
+
                     var province = result.addressComponent.province;
                     switch (province){
                         case '北京市':
@@ -97,13 +121,22 @@
             },function () {
                 city = '北京市';
                 // 定位失败
-                $('#In-wz').val('定位失败，请输入您的位置');
+                $('#In-wz').attr('placeholder','定位失败，请输入您的位置');
             });
-//            getCity(function (cityName) {
-//                city = cityName;
-//            },function (info) {
-//                city = '北京市';
-//            });
+
+            AMap.plugin(['AMap.Autocomplete','AMap.PlaceSearch'],function(){
+                var autoOptions = {
+                    input: "In-wz"
+                };
+                autocomplete= new AMap.Autocomplete(autoOptions);
+                AMap.event.addListener(autocomplete, "select", function(e){
+                    var poi = e.poi;
+                    address.type = 'auto';
+                    address.full = poi.district+poi.address+poi.name;
+                    console.log(e);
+                });
+            });
+
             $('.list').tap(function(){
                 $('#recommend-title').hide();
                 $('#recommend-list').hide();
@@ -129,7 +162,6 @@
                 },function (result) {
                     $('#recommend-title').hide();
                     $('#recommend-list').hide();
-//                    alert('说的是我吗');
                 });
             });
         })

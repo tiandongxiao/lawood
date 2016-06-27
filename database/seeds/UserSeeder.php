@@ -18,18 +18,8 @@ class UserSeeder extends Seeder
             [
                 'email' 	 => 'admin@lawood.cn',
                 'password' 	 => bcrypt('20022002'),
-                'role'       => 'admin',
-            ],
-            [
-                'email' 	 => 'lawyer@lawood.cn',
-                'password' 	 => bcrypt('20022002'),
-                'role'       => 'lawyer',
-            ],
-            [
-                'email' 	 => 'client@lawood.cn',
-                'password' 	 => bcrypt('20022002'),
-                'role'       => 'client',
-            ],
+                'role'       => 'admin'
+            ]
         ]);
     }
 }

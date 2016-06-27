@@ -169,5 +169,5 @@ class Item extends ShopItemModel implements Ratingable
             'recommend_value' => 0
         ]);
         $this->updatePOI();
-    }
+    }    
 }

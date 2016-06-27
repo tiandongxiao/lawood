@@ -19,6 +19,8 @@ class CreateCategoriesTable extends Migration
             $table->string('name', 80);
             $table->string('node', 1024);
             $table->string('tab_name',40);
+            $table->decimal('ratio',2,1);
+
             $table->index('parent_id');
             $table->index('name');
             $table->index('node');

@@ -21,28 +21,32 @@
     <div class="btn-xl"></div>
     <div class="hd">
         @foreach($category->nodes as $node)
-            @if($node['tab_name']=='ms')
-                <div class="itms-hd on">{{$node['name']}}</div>
-            @else
-                <div class="itms-hd">{{$node['name']}}</div>
+            @if($node['tab_name'] != 'spark')
+                @if($node['tab_name']=='ms')
+                    <div class="itms-hd on">{{$node['name']}}</div>
+                @else
+                    <div class="itms-hd">{{$node['name']}}</div>
+                @endif
             @endif
         @endforeach
     </div>
 
     <div class="bd">
         @foreach($category->nodes as $node)
-            @if($node['tab_name']=='ms')
-                <div class="itms-bd clearfix show">
-                    @foreach($node['nodes'] as $item)
-                        <span class="list">{{$item['name']}}</span>
-                    @endforeach
-                </div>
-            @else
-                <div class="itms-bd clearfix">
-                    @foreach($node['nodes'] as $item)
-                        <span class="list">{{$item['name']}}</span>
-                    @endforeach
-                </div>
+            @if($node['tab_name'] != 'spark')
+                @if($node['tab_name']=='ms')
+                    <div class="itms-bd clearfix show">
+                        @foreach($node['nodes'] as $item)
+                            <span class="list">{{$item['name']}}</span>
+                        @endforeach
+                    </div>
+                @else
+                    <div class="itms-bd clearfix">
+                        @foreach($node['nodes'] as $item)
+                            <span class="list">{{$item['name']}}</span>
+                        @endforeach
+                    </div>
+                @endif
             @endif
         @endforeach
     </div>
@@ -174,7 +178,7 @@
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="/js/tap.js"></script>
 <script>
-    var major,tabName;
+    var major,tabName="民商类";
     $(function(){
         $('.dtdw-main').height($('body').height()-100)
         $('.tc-m').css({top:$('body').height()*0.95-400});
