@@ -27,7 +27,7 @@
     <!--附近律师-->
     <!--律师名片-->
     <div class="tc-m lsmp-main">
-        <div class="bg-fff c-main" style="height: 375px;">
+        <div class="bg-fff c-main" style="height: 350px;">
             <div class="tie">您附近的专业律师<i class="btn-fjls  btn-gb"></i></div>
             <div class="con">
                 <div class="img">
@@ -50,9 +50,6 @@
                         <h3 class="chaochu_1" ><span id="name">王树德</span>	<span>律师</span></h3>
                         <p class="chaochu_1" id="office">北京市朝阳区京师律师事务所</p>
                     </div>
-                </div>
-                <div class="bq">
-                    <span class="jl" id="distance">0.5km</span>
                 </div>
             </div>
         </div>
@@ -127,7 +124,6 @@
                 $('#name').text(data.name);
                 $('#price').text(data.price);
                 $('#office').text(data.office);
-                $('#distance').text(data._distance);
                 $('#detail_info').attr('href',"/wechat/user/"+data.user+"?consult="+data.consult);
                 $('.btn-ljzx').data('consult',data.consult);
 
