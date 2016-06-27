@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/wechat/base/spark.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/wechat/spark/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Item.php" afterPath="$PROJECT_DIR$/app/Item.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Order.php" afterPath="$PROJECT_DIR$/app/Order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_03_28_215331_create_categories_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_03_28_215331_create_categories_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/CategoriesSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/CategoriesSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/UserSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/UserSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/base/menu.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/base/menu.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/index.blade.php" />
     </list>
     <ignored path="base.iws" />
@@ -55,11 +46,12 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="19" column="100" selection-start-line="19" selection-start-column="100" selection-end-line="19" selection-end-column="100" />
+            <state relative-caret-position="234">
+              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
               <folding>
-                <element signature="e#1015#1049#0#HTML" expanded="true" />
-                <marker date="1467016315733" expanded="true" signature="6309:6691" placeholder="..." />
+                <element signature="e#1054#1088#0#HTML" expanded="true" />
+                <element signature="e#1177#1198#0#HTML" expanded="true" />
+                <marker date="1467016730837" expanded="true" signature="6348:6730" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -564,7 +556,7 @@
       <workItem from="1466434281624" duration="53516000" />
       <workItem from="1466662706073" duration="28156000" />
       <workItem from="1466731350595" duration="38895000" />
-      <workItem from="1466989121845" duration="19690000" />
+      <workItem from="1466989121845" duration="20048000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -689,7 +681,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1357463000" />
+    <option name="totallyTimeSpent" value="1357821000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -701,7 +693,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1161,11 +1153,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="19" column="100" selection-start-line="19" selection-start-column="100" selection-end-line="19" selection-end-column="100" />
+        <state relative-caret-position="234">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding>
-            <element signature="e#1015#1049#0#HTML" expanded="true" />
-            <marker date="1467016315733" expanded="true" signature="6309:6691" placeholder="..." />
+            <element signature="e#1054#1088#0#HTML" expanded="true" />
+            <element signature="e#1177#1198#0#HTML" expanded="true" />
+            <marker date="1467016730837" expanded="true" signature="6348:6730" placeholder="..." />
           </folding>
         </state>
       </provider>

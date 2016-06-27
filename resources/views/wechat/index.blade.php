@@ -7,6 +7,7 @@
         }
         .banner-lawyer{padding-left: 6px;}
         .banner-major{float: right;padding-right: 6px}
+        .amap-sug-result{border: none}
     </style>
 @stop
 @section('content')
