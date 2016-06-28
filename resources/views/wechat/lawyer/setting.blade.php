@@ -19,7 +19,7 @@
             </a>
             <a class="itms itms-link" href="{{url('wechat/lawyer/config/home')}}">
                 <div class="f-left">居住区域</div>
-                <div class="f-right">{{Auth::user()->home_address}}</div>
+                <div class="f-right" style="overflow: hidden">{{Auth::user()->home_address}}</div>
             </a>
             <a class="itms itms-link" href="{{url('wechat/lawyer/config/major')}}">
                 <div class="f-left">专业选择</div>
