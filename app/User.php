@@ -512,7 +512,7 @@ class User extends Model implements AuthenticatableContract,
         if($orders->count()){
             $sum = 0;
             foreach ($orders as $order){
-                $sum += $order->total;
+                $sum += $order->drawAmount();
             }
             return $sum;
         }
