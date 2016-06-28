@@ -24,7 +24,7 @@
                                     <h3>收入－{{$order->client->real_name}}</h3>
                                     <p class="mar-top-10">{{$order->updated_at}}</p>
                                 </div>
-                                <div class="right">＋{{$order->total}}</div>
+                                <div class="right">＋{{$order->drawAmount()}}</div>
                             </div>
                         @else
                             <div class="itms">
@@ -32,7 +32,7 @@
                                     <h3>提现</h3>
                                     <p class="mar-top-10">{{$order->updated_at}}</p>
                                 </div>
-                                <div class="right">- {{$order->total}}</div>
+                                <div class="right">- {{$order->drawAmount()}}</div>
                             </div>
                         @endif
                     @endforeach
@@ -49,7 +49,7 @@
                                     <h3>收入－{{$order->client->real_name}}</h3>
                                     <p class="mar-top-10">{{$order->updated_at}}</p>
                                 </div>
-                                <div class="right">＋{{$order->total}}</div>
+                                <div class="right">＋{{$order->drawAmount()}}</div>
                             </div>
                         @endif
                     @endforeach
@@ -66,7 +66,7 @@
                                     <h3>提现</h3>
                                     <p class="mar-top-10">{{$order->updated_at}}</p>
                                 </div>
-                                <div class="right">- {{$order->total}}</div>
+                                <div class="right">- {{$order->drawAmount()}}</div>
                             </div>
                         @endif
                     @endforeach
