@@ -86,7 +86,8 @@ class OrderController extends Controller
 
     public function selectAddress($order_id)
     {
-        return view('wechat.flow.place_select',compact('order_id'));
+        $order  = Order::findOrFail($order_id);
+        return view('wechat.flow.place_select',compact('order'));
     }
 
     public function postSelectAddress(Request $request)
