@@ -12,7 +12,7 @@
                     <div class="itms">
                         <div class="f-left">{{$item->category->name}}</div>
                         <label class="right zxf">
-                            <input type="text"  class="In-text" name="{{$item->category->id}}"  value="{{$item->price}}">
+                            <input type="number"  class="In-text" name="{{$item->category->id}}"  value="{{$item->price}}">
                             <span class="dw">元/小时</span>
                         </label>
                     </div>
