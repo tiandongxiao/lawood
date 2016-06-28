@@ -14,7 +14,7 @@
                     <div class='right'>
                         <h3 class='chaochu_1'>{{$order->seller->office}}</h3>
                         <p class='chaochu_1 mar-top-15'>{{$order->seller->work->address}}</p>
-                        <p class='chaochu_1 mar-top-15'>距离：米</p>
+                        <p class='chaochu_1 mar-top-15' style="color: #a8614e">律师工作地点</p>
                     </div>
                     <div class='itms-radio'><input type='radio' name='dd' class='In-radio' data-type="office" data-place='{{$order->seller->office}}' value='{{$order->seller->work->poi_id}}'></div>
                 </div>
