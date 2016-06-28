@@ -70,7 +70,7 @@
                     }
 
                     if(!$('#In-wz').val() && $('#In-wz').attr('placeholder')!="定位中..."){
-                        alert('尚未完成定位');
+                        alert('没有指定要搜索的地址');
                         return;
                     }
 
