@@ -62,11 +62,11 @@
                                     "<p class='chaochu_1 mar-top-15'>"+poi.address+"</p>"+
                                     "<p class='chaochu_1 mar-top-15'>"+"距离："+poi.distance+"米"+"</p>"+
                                 "</div>"+
-                                "<div class='itms-radio'><input type='radio' name='dd' class='In-radio' data-coffee='"+poi.name+"' value='"+poi.id+"'></div>"+
+                                "<div class='itms-radio'><input type='radio' name='dd' class='In-radio radio-coffee' data-coffee='"+poi.name+"' value='"+poi.id+"'></div>"+
                             "</div>"
                         );
                     }
-                    $('.In-radio').click(function () {
+                    $('.radio-coffee').click(function () {
                         $('#place').val($(this).data('place'));
                         $('#type').val($(this).data('type'));
                         $('#poi').val($(this).val());
