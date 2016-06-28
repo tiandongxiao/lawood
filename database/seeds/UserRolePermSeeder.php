@@ -132,31 +132,7 @@ class UserRolePermSeeder extends Seeder
                     'category.delete',
                     'category.edit'
                 ]   # 专属权限
-            ],
-            [
-                'email' 	 => 'lawyer@lawood.cn',
-                'password' 	 => bcrypt('20022002'),
-                'role'       => 'lawyer',
-
-                # 为用户关联其他信息
-                'roles'      => ['lawyer'],   # 角色信息
-                'permissions'=> [
-                    'category.bind',
-                    'category.unbind',
-                    'location.create',
-                    'location.delete',
-                    'consult.build'
-                ]   # 专属权限
-            ],
-            [
-                'email' 	 => 'client@lawood.cn',
-                'password' 	 => bcrypt('20022002'),
-                'role'       => 'client',
-
-                # 为用户关联其他信息
-                'roles'      => ['client'],   # 角色信息
-                'permissions'=> []             # 专属权限
-            ],
+            ]
         ]);
 
         $users->each(function($item){
