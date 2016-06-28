@@ -23,6 +23,7 @@
     </section>
 @stop
 @section('script')
+    @include('wechat.base.service.gaode')
     <script>
         $(function(){
             var address={
