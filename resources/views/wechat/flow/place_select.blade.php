@@ -11,7 +11,8 @@
             <div class="con" style="margin-top: 30px;">
                 <div class='itms'>
                     <div class='f-left'><img src='/images/dd-banner.jpg' width='110' height='80'></div>
-                    <div class='right'><h3 class='chaochu_1'>{{$order->seller->office}}</h3>
+                    <div class='right'>
+                        <h3 class='chaochu_1'>{{$order->seller->office}}</h3>
                         <p class='chaochu_1 mar-top-15'>{{$order->seller->work->address}}</p>
                         <p class='chaochu_1 mar-top-15'>距离：米</p>
                     </div>
