@@ -14,6 +14,7 @@ class CreatePlacesTable extends Migration
     {
         Schema::create('places', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('type',16);
             $table->string('name',64)->nullable();  # 店名
             $table->string('poi_id',16)->nullable();
             $table->unsignedBigInteger('order_id');

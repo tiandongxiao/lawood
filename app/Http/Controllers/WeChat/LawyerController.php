@@ -223,7 +223,13 @@ class LawyerController extends Controller
 
             case 'work':
                 $work = trim($request->get('work'));
+                $poi_id = trim($request->get('work-poi'));
                 $this->user->work = $work;
+                if($poi_id){
+                    $this->user->work->update([
+                        'poi_id' => $poi_id
+                    ]);
+                }
                 return redirect('wechat/lawyer/setting');
 
             case 'home':

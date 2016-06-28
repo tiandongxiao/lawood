@@ -2,22 +2,15 @@
 
 namespace App\Http\Controllers\WeChat;
 
-use App\Category;
-use App\Item;
-use App\Location;
-use App\Profile;
+
 use App\Traits\CategoryDevTrait;
-use App\User;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 use Bican\Roles\Models\Role;
-use App\Http\Requests\PhoneRegRequest;
-use App\Http\Requests\ProfileRegRequest;
+
 
 class AuthController extends Controller
 {
@@ -86,6 +79,14 @@ class AuthController extends Controller
         $this->user->licence = trim($request->get('licence'));
         $this->user->home = trim($request->get('home'));
         $this->user->work = trim($request->get('work'));
+        $poi = trim($request->get('work-poi'));
+        if($poi){
+            $this->user->work->update([
+                'poi_id' => $poi
+            ]);
+        }
+
+
 
         $categories = $request->get('range');
         if ($categories) {

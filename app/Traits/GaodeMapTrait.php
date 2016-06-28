@@ -31,7 +31,10 @@ trait GaodeMapTrait
         'search_around'  => 'http://yuntuapi.amap.com/datasearch/around? parameters',
         'search_polygon' => 'http://yuntuapi.amap.com/datasearch/polygon? parameters',
         'search_id'      => 'http://yuntuapi.amap.com/datasearch/id? parameters',
-        'search_filter'  => 'http://yuntuapi.amap.com/datamanage/data/list?parameters'
+        'search_filter'  => 'http://yuntuapi.amap.com/datamanage/data/list?parameters',
+
+        ################################## URI API #####################################
+        'uri_search'   => 'http://m.amap.com/? parameters',
     ];
     
     # 高德地图表格映射
@@ -237,6 +240,22 @@ trait GaodeMapTrait
             'key'      => $this->key,
             'tableid'  => $this->tables['front'],
             'filter'   => isset($condition['filter'])?$condition['filter']:null,
+            'sortrule' => isset($condition['sortrule'])?$condition['sortrule']:null,
+            'limit'    => isset($condition['limit'])?$condition['limit']:null,
+            'page'     => isset($condition['page'])?$condition['page']:null
+        ];
+        $result = $this->makeGetRequest($this->URI['search_filter'],$params);
+
+        if($result->status == 1){
+            return $result->datas;
+        }
+        return null;
+    }
+
+    public function searchUri($condition)
+    {
+        $params = [
+            'filter'   => isset($condition['key'])?$condition['key']:null,
             'sortrule' => isset($condition['sortrule'])?$condition['sortrule']:null,
             'limit'    => isset($condition['limit'])?$condition['limit']:null,
             'page'     => isset($condition['page'])?$condition['page']:null

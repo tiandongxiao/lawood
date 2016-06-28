@@ -9,13 +9,22 @@
                 <div class="line-40 " style="color: #F39D2E;font-size: 14px;text-align: left;padding-left: 10px;">提示：下列地点仅为推荐，可协商变更</div>
             </div>
             <div class="con" style="margin-top: 30px;">
+                <div class='itms'>
+                    <div class='f-left'><img src='/images/dd-banner.jpg' width='110' height='80'></div>
+                    <div class='right'><h3 class='chaochu_1'>{{$order->seller->office}}</h3>
+                        <p class='chaochu_1 mar-top-15'>{{$order->seller->work->address}}</p>
+                        <p class='chaochu_1 mar-top-15'>距离：米</p>
+                    </div>
+                    <div class='itms-radio'><input type='radio' name='dd' class='In-radio' data-type="office" data-place='{{$order->seller->office}}' value='{{$order->seller->work->poi_id}}'></div>
+                </div>
             </div>
         </div>
     </div>
     <form id="form" action="{{url('wechat/order/address')}}" method="post">
         {!! csrf_field() !!}
         <input type="hidden" id="order" name="order" value="{{$order_id}}">
-        <input type="hidden" id="coffee" name="coffee" value="">
+        <input type="hidden" id="type" name="type" value="">
+        <input type="hidden" id="name" name="place" value="">
         <input type="hidden" id="poi" name="poi" value="">
     </form>
     <!--约见地点-->
@@ -57,7 +66,8 @@
                         );
                     }
                     $('.In-radio').click(function () {
-                        $('#coffee').val($(this).data('coffee'));
+                        $('#place').val($(this).data('place'));
+                        $('#type').val($(this).data('type'));
                         $('#poi').val($(this).val());
                     });
                 },function (result) {

@@ -17,6 +17,7 @@ class CreateLocationsTable extends Migration
             $table->integer('user_id')->unsigned()->nullable();
             $table->string('type',20);
             $table->string('address');
+            $table->string('poi_id'); # 高德地图公共POI ID
             $table->timestamps();
 
             $table->foreign('user_id')
