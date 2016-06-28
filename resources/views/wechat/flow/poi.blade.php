@@ -41,7 +41,7 @@
                 position: [position.getLng(), position.getLat()],
                 icon: new AMap.Icon({
                     size: new AMap.Size(32, 32),  //图标大小
-                    image: "/images/coffee.png"
+                    image: "/images/coffee.svg"
                 })
             });
         }
