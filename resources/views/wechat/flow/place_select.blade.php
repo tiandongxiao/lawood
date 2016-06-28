@@ -95,6 +95,10 @@
 
             //约见地点
             $('#In-next').tap(function(){
+                if(!$('#place').val()){
+                    alert('请先选择一个约见地点');
+                    return;
+                }
                 $("#form").submit();
             });
         })
