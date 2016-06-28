@@ -1,6 +1,9 @@
 @extends('wechat.base.app')
 @section('css')
-    <style>body{background:#f8f8f8}</style>
+    <style>
+        body{background:#f8f8f8}
+        .scly-main	.hd	.itms-hd{width: 24%;}
+    </style>
 @stop
 @section('content')
     @inject('category','App\Category')
