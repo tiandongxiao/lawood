@@ -94,7 +94,7 @@
     function searchPublicByAround(center,type,onComplete,onError) {
         AMap.service(["AMap.PlaceSearch"], function() {
             var placeSearch = new AMap.PlaceSearch({ //构造地点查询类
-                pageSize: 2,
+                pageSize: 1,
                 type: type,
                 pageIndex: 1,
                 extensions: "all"

@@ -97,12 +97,12 @@ class OrderController extends Controller
             Place::create([
                 'order_id'  => $order->id,
                 'poi_id'    => $request->get('poi'),
-                'name'      => $request->get('coffee')
+                'name'      => $request->get('place')
             ]);
         }else{
             $order->place->update([
                 'poi_id'    => $request->get('poi'),
-                'name'      => $request->get('coffee')
+                'name'      => $request->get('place')
             ]);
         }
 

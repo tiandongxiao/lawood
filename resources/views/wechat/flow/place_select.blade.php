@@ -25,7 +25,7 @@
         {!! csrf_field() !!}
         <input type="hidden" id="order" name="order" value="{{$order->id}}">
         <input type="hidden" id="type" name="type" value="">
-        <input type="hidden" id="name" name="place" value="">
+        <input type="hidden" id="place" name="place" value="">
         <input type="hidden" id="poi" name="poi" value="">
     </form>
     <!--约见地点-->
