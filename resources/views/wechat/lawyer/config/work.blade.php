@@ -9,7 +9,7 @@
             <input type="hidden" name="key" value="work">
             <div class="mar-top-10 clearfix bg-fff-box">
                 <div class="top">
-                    <input type="text" class="In-text" placeholder="请输入您的单位所在区域" id="In-lsdz" name="work">
+                    <input type="text" class="In-text" placeholder="请输入您的单位所在区域" id="In-lsdz" name="work" style="width: 85%;text-align: left">
                     <input type="hidden" name="work-poi" id="work-poi">
                     <input type="button" value="取消" class="btn-but">
                 </div>
