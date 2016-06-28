@@ -14,6 +14,7 @@ class Order extends ShopOrderModel
 
     private $app;
     private $payment;
+    private $commission = true;
 
     # 订单是否已退款
     public function isRefunded()
