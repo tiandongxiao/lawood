@@ -26,8 +26,8 @@
                         <td>{{$user->phone}}</td>
                         <td>{{$user->office}}</td>
                         <td>{{$user->licence}}</td>
-                        <td>{{$user->home}}</td>
-                        <td>{{$user->work}}</td>
+                        <td>{{$user->home_address}}</td>
+                        <td>{{$user->work_address}}</td>
                         @if($user->active)
                             <td>Yes</td>
                         @else
