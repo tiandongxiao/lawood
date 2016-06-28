@@ -97,6 +97,7 @@ class ShopSetupTables extends Migration
             $table->string('statusCode', 32);
 
             $table->unsignedInteger('seller_id')->nullable();  # 为提升执行效率，较少数据库查询次数
+            $table->unsignedInteger('category_id')->nullable();# 为提升执行效率，较少数据库查询次数
             $table->string('category',32)->nullable();         # 为提升执行效率，较少数据库查询次数
             $table->unsignedInteger('rating_id')->nullable();  # 为了解决评级和评论体系不协调的问题
             $table->unsignedInteger('comment_id')->nullable(); # 为了解决评级和评论体系不协调的问题

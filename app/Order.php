@@ -10,7 +10,7 @@ use DraperStudio\Commentable\Models\Comment;
 
 class Order extends ShopOrderModel
 {
-    protected $fillable = ['user_id', 'statusCode', 'order_no', 'type', 'subject', 'payed', 'refunded', 'seller_signed', 'client_signed', 'attach','seller_id','sale_id','category','rating_id','comment_id','withdrew','allow_draw','allow_cancel','bill_id'];
+    protected $fillable = ['user_id', 'statusCode', 'order_no', 'type', 'subject', 'payed', 'refunded', 'seller_signed', 'client_signed', 'attach','seller_id','sale_id','category_id','category','rating_id','comment_id','withdrew','allow_draw','allow_cancel','bill_id'];
 
     private $app;
     private $payment;
@@ -240,6 +240,7 @@ class Order extends ShopOrderModel
         $this->update([
             'sale_id'     => $sale->id,
             'seller_id'   => $sale->user->id,
+            'category_id' => $sale->category->id,
             'category'    => $sale->category->name
         ]);
     }
@@ -327,34 +328,14 @@ class Order extends ShopOrderModel
         ]);
     }
 
-    public function getCommissionStrategy()
-    {
-
-    }
-
     public function drawAmount()
     {
         # 如果抽佣策略生效
-        if($this->commission)
-            return $this->applyCommissionStrategy();
-        return $this->total;
-    }
+        if($this->commission){
+            $category = Category::findOrFail($this->category_id);
+            return ($this->total * $category->ratio);
+        }
 
-    public function applyCommissionStrategy()
-    {
-        $strategy = collect();
-        if($this->strategy){
-            $strategy = $this->strategy;
-        }else{
-            $common_strategy=collect();
-            $strategy = $common_strategy;
-        }
-        switch ($strategy->type){
-            case 'ratio':
-                return $this->total * $strategy->ratio;
-                break;
-            default:
-                break;
-        }
+        return $this->total;
     }
 }
