@@ -15,11 +15,11 @@
             </a>
             <a class="itms itms-link" href="{{url('wechat/lawyer/config/work')}}">
                 <div class="f-left">工作区域</div>
-                <div class="f-right" style="width: 75%;overflow: hidden">{{Auth::user()->work_address}}</div>
+                <div class="f-right" style="width: 75%;overflow: hidden;height: 50px;text-align: right">{{Auth::user()->work_address}}</div>
             </a>
             <a class="itms itms-link" href="{{url('wechat/lawyer/config/home')}}">
                 <div class="f-left">居住区域</div>
-                <div class="f-right" style="width: 75%;overflow: hidden">{{Auth::user()->home_address}}</div>
+                <div class="f-right" style="width: 75%;overflow: hidden;height: 50px;text-align: right">{{Auth::user()->home_address}}</div>
             </a>
             <a class="itms itms-link" href="{{url('wechat/lawyer/config/major')}}">
                 <div class="f-left">专业选择</div>
