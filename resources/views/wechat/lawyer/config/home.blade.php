@@ -9,7 +9,7 @@
             <input type="hidden" name="key" value="home">
             <div class="mar-top-10 clearfix bg-fff-box">
                 <div class="top">
-                    <input type="tel" class="In-text" placeholder="请输入您的居住区域" id="In-lsdz" name="home">
+                    <input type="text" class="In-text" placeholder="请输入您的居住区域" id="In-lsdz" name="home">
                     <input type="button" value="取消" class="btn-but">
                 </div>
             </div>
