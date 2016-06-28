@@ -101,6 +101,11 @@
                 }
                 $("#form").submit();
             });
+            $('.In-radio').click(function () {
+                $('#place').val($(this).data('place'));
+                $('#type').val($(this).data('type'));
+                $('#poi').val($(this).val());
+            });
         })
     </script>
 @stop
