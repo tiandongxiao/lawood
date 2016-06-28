@@ -144,7 +144,7 @@
 
                 if(address.type == 'auto'){
                     $('#work-address').val(address.full);
-                }                
+                }
 
                 $("#form").submit();
             });

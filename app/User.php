@@ -170,7 +170,7 @@ class User extends Model implements AuthenticatableContract,
         }
     }
 
-    public function getHomeAttribute()
+    public function getHomeAddressAttribute()
     {
         $home = $this->locations()->where('type','home')->first();
         if($home)
@@ -178,11 +178,27 @@ class User extends Model implements AuthenticatableContract,
         return null;
     }
 
-    public function getWorkAttribute()
+    public function getWorkAddressAttribute()
     {
         $work = $this->locations()->where('type','work')->first();
         if($work)
             return $work->address;
+        return null;
+    }
+
+    public function getHomeAttribute()
+    {
+        $home = $this->locations()->where('type','home')->first();
+        if($home)
+            return $home;
+        return null;
+    }
+
+    public function getWorkAttribute()
+    {
+        $work = $this->locations()->where('type','work')->first();
+        if($work)
+            return $work;
         return null;
     }
 
