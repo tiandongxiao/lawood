@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php" />
     </list>
     <ignored path="base.iws" />
@@ -46,11 +47,11 @@
       <file leaf-file-name="place_select.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-419">
-              <caret line="68" column="58" selection-start-line="68" selection-start-column="58" selection-end-line="68" selection-end-column="58" />
+            <state relative-caret-position="595">
+              <caret line="102" column="15" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="15" />
               <folding>
-                <marker date="1467107319879" expanded="true" signature="2804:3472" placeholder="..." />
-                <marker date="1467107319879" expanded="true" signature="2986:3262" placeholder="..." />
+                <marker date="1467107881790" expanded="true" signature="2804:3477" placeholder="..." />
+                <marker date="1467107881790" expanded="true" signature="2986:3262" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -958,7 +959,7 @@
       <workItem from="1466434281624" duration="53516000" />
       <workItem from="1466662706073" duration="28156000" />
       <workItem from="1466731350595" duration="38895000" />
-      <workItem from="1466989121845" duration="49162000" />
+      <workItem from="1466989121845" duration="49716000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1083,7 +1084,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1386935000" />
+    <option name="totallyTimeSpent" value="1387489000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1099,7 +1100,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32135418" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09583333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13867822" sideWeight="0.5345787" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32966483" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1588,11 +1589,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-419">
-          <caret line="68" column="58" selection-start-line="68" selection-start-column="58" selection-end-line="68" selection-end-column="58" />
+        <state relative-caret-position="595">
+          <caret line="102" column="15" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="15" />
           <folding>
-            <marker date="1467107319879" expanded="true" signature="2804:3472" placeholder="..." />
-            <marker date="1467107319879" expanded="true" signature="2986:3262" placeholder="..." />
+            <marker date="1467107881790" expanded="true" signature="2804:3477" placeholder="..." />
+            <marker date="1467107881790" expanded="true" signature="2986:3262" placeholder="..." />
           </folding>
         </state>
       </provider>
