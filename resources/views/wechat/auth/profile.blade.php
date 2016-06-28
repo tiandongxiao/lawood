@@ -22,7 +22,7 @@
                 <div class="itms" >
                     <div class="f-left">律师证号</div>
                     <div class="right">
-                        <input type="text" class="In-text" placeholder="" name="licence" id="licence">
+                        <input type="number" class="In-text" placeholder="" name="licence" id="licence">
                     </div>
                 </div >
                 <div class="itms">

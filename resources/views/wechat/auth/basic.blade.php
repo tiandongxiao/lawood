@@ -23,7 +23,7 @@
                 </div>
                 <div class="itms">
                     <div class="f-left">验 证 码</div>
-                    <div class="right"><input type="text" placeholder="短信验证码" class="In-text" id="yzm" name="code"></div>
+                    <div class="right"><input type="number" placeholder="短信验证码" class="In-text" id="yzm" name="code"></div>
                     <input type="button" value="获取验证码"  class="btn-yzm" id="btn-yzm"  fs="true" style="display: none" readonly>
                 </div>
             </div>
