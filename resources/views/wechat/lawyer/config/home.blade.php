@@ -50,7 +50,7 @@
             });
             AMap.plugin(['AMap.Autocomplete','AMap.PlaceSearch'],function(){
                 var autoOptions = {
-                    input: "work-address"
+                    input: "In-lsdz"
                 };
                 autocomplete= new AMap.Autocomplete(autoOptions);
                 AMap.event.addListener(autocomplete, "select", function(e){
