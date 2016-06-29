@@ -43,7 +43,7 @@ Route::group(['prefix' => 'wechat'], function(){
 
     # begin 律师
     Route::get('lawyer/notifies','WeChat\LawyerController@notifies');
-    Route::get('lawyer/orders','WeChat\LawyerController@orders');
+    Route::get('lawyer/orders/tab','WeChat\LawyerController@orders');
     Route::get('lawyer/wallet','WeChat\LawyerController@wallet');
     Route::get('lawyer/draw','WeChat\LawyerController@draw');
     Route::post('lawyer/draw','WeChat\LawyerController@postDraw');
