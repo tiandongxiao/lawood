@@ -3,6 +3,9 @@
     <style>
         body{background:#f8f8f8}
         .lstc-main {background: rgba(88, 88, 88, 0.92); }
+        .fc-yellow-law {
+            color: rgba(255, 152, 0, 0.67) !important;
+        }
     </style>
 @stop
 @section('content')
@@ -136,18 +139,8 @@
                     </div>
                 </div>
                 <div class="bottom pad-10">
-                    <div class="line-35 fc-505050">选择地区</div>
-                    <div class="itms-select">
-                        <div class="f-left">
-                            <select>
-                                <option value="local">北京地区</option>
-                                <option value="other">其他地区</option>
-                            </select>
-                        </div>
-                        <div class="right chaochu_1">其他地区只能电话咨询</div>
-                    </div>
-                    <div class="line-35 fc-505050">选择咨询领域</div>
-                    <div class="itms-bd-1 clearfix" style="margin-top: -10px;">
+                    <div class="line-35 .fc-yellow-law" style="text-align: center;">选择咨询领域</div>
+                    <div class="itms-bd-1 clearfix">
                         {!! csrf_field() !!}
                         <input type="hidden" name="uri" value="{{url('/')}}">
                         @foreach($user->prices as $price)
@@ -158,7 +151,7 @@
                             @endif
                         @endforeach
                     </div>
-                    <div class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 mar-top-20 btn-yjdd">立即咨询</div>
+                    <div class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 mar-top-50 btn-yjdd">立即咨询</div>
                 </div>
             </div>
         </div>
