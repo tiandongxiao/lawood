@@ -8,6 +8,7 @@ use App\Item;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Log;
 
 class WeChatController extends Controller
 {
@@ -23,6 +24,7 @@ class WeChatController extends Controller
         switch ($request->get('chose')){
             case 'position':
                 $address  = $request->get('address');
+                Log::info('search function address is '.$address);
                 Session::put('address',$address);
                 $major = $request->get('major');
                 $tab = $request->get('tab');
