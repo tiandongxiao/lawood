@@ -1,6 +1,7 @@
 @extends('wechat.base.app')
 @section('css')
     <style>
+        body{background:#f8f8f8}
         .wdsc-main	.fjls-main	.c-main	.itms	.f-left {padding: 8px 5px;}
         .lstc-main	.fjls-main	.c-main	.itms	.f-left	img {border-radius: 10%;}
         .lstc-main	.fjls-main	.c-main	.itms	.right {padding-left: 70px;}
@@ -26,14 +27,13 @@
                     @else
                         <p class="te-cen" style="margin-top: 100px">查无此律师</p>
                     @endif
-                    <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 margin-bottom"  value="返回" />
                 </div>
             </div>
         </div>
         <div class="bottom-btn">
             <div class="blank100"></div>
             <div class="con te-cen">
-                <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10" value="确定" id="In-btn" readonly>
+                <input type="button" class="In-btn In-btn-1 bg-lan1 fc-fff mar-top-10" value="返回" id="In-btn" readonly>
             </div>
         </div>
     </section>
