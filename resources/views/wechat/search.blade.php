@@ -3,7 +3,7 @@
 <style>
     .dtdw-main {top: 0px;}
     .lstc-main .tc-m { bottom: 25px;}
-    .lstc-main .tc-m .c-main { max-height: 550px;min-height: 400px;}
+    .lstc-main .tc-m .c-main { max-height: 550px;}
     .dtdw-main	.btn-pl {top: 115px;}
 </style>
 @stop
