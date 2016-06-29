@@ -219,9 +219,9 @@
     <script>
         $(function(){
             var tab_name='ongoing';
-            @if($tab)
-                tab_name = '{!! $tab !!}';
-            @endif
+            {{--@if($tab)--}}
+                {{--tab_name = '{!! $tab !!}';--}}
+            {{--@endif--}}
 
             function showTab() {
                 $('.hd .itms').each(function () {
