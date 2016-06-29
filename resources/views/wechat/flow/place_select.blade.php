@@ -71,7 +71,7 @@
                     });
                 });
             }
-            var address = "{!! Session::get('address') !!}";
+            var address = {!! Session::get('address') !!}
             getResults(address);
             //约见地点
             $('#In-next').tap(function(){

@@ -2,15 +2,12 @@
 @section('css')
     <style>body{background:#f8f8f8}</style>
 @stop
-@section('script-header')
-    <script src="/js/time-djs.js"></script>
-@stop
 @section('content')
     <section class="lsdd-main">
         <div class="hd po-f">
-            <div class="itms on"><span>未完成</span></div>
-            <div class="itms"><span>进行中</span></div>
-            <div class="itms"><span>已完成</span></div>
+            <div class="itms on" data-tab='init'><span>未完成</span></div>
+            <div class="itms" data-tab="ongoing"><span>进行中</span></div>
+            <div class="itms" data-tab="done"><span>已完成</span></div>
             <div id="refresh" style="position: absolute;right: 5px;"><img src="/images/refresh-simple.png" width="30px" height="30px"></div>
         </div>
         <div class="bd" style="padding-top:40px;">
@@ -221,6 +218,7 @@
 @section('script')
     <script>
         $(function(){
+            var tabName = {!! $tab !!}
             //取消订单
             $('.btn-hv').tap(function(){
                 $(this).data('order');
