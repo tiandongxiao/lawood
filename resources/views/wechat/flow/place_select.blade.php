@@ -43,8 +43,6 @@
                     cur_position = position;
                     console.log(cur_position);
                     searchCoffee();
-                },function () {
-                    alert('转化失败');
                 });
             }
 
@@ -71,30 +69,10 @@
                         $('#type').val($(this).data('type'));
                         $('#poi').val($(this).val());
                     });
-                },function (result) {
-                    // 失败
-                    alert('没找到');
-                    console.log(result);
                 });
             }
             var address = "{!! Session::get('address') !!}";
-            if(address!=""){
-                alert('youde');
-                getResults(address);
-            }else{
-                alert('空白');
-                gdMapInit();
-                locatePosition(function (data) {
-                    regeocoder(data.position,function (result) {
-                        address = result.formattedAddress;
-                        getResults(result.formattedAddress);
-                    });
-                },function () {
-                    // 定位失败
-                    alert('定位失败,您可直接执行下一步');
-                });
-            }
-
+            getResults(address);
             //约见地点
             $('#In-next').tap(function(){
                 if(!$('#place').val()){
