@@ -63,8 +63,8 @@
       <file leaf-file-name="search_lawyer.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/search_lawyer.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+            <state relative-caret-position="130">
+              <caret line="5" column="76" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -967,7 +967,7 @@
       <workItem from="1466434281624" duration="53516000" />
       <workItem from="1466662706073" duration="28156000" />
       <workItem from="1466731350595" duration="38895000" />
-      <workItem from="1466989121845" duration="61052000" />
+      <workItem from="1466989121845" duration="61229000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1092,7 +1092,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1398825000" />
+    <option name="totallyTimeSpent" value="1399002000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1598,8 +1598,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/search_lawyer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        <state relative-caret-position="130">
+          <caret line="5" column="76" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
           <folding />
         </state>
       </provider>

@@ -1,14 +1,9 @@
 @extends('wechat.base.app')
 @section('css')
     <style>
-        .wdsc-main	.fjls-main	.c-main	.itms	.f-left {
-            padding: 8px 5px;
-        }
-        .lstc-main	.fjls-main	.c-main	.itms	.f-left	img {
-            border-radius: 10%;
-            width: 50px !important;
-            height: 50px !important;
-        }
+        .wdsc-main	.fjls-main	.c-main	.itms	.f-left {padding: 8px 5px;}
+        .lstc-main	.fjls-main	.c-main	.itms	.f-left	img {border-radius: 10%;}
+        .lstc-main	.fjls-main	.c-main	.itms	.right {padding-left: 70px;}
     </style>
 @stop
 @section('content')
