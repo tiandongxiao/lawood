@@ -72,7 +72,10 @@
                 });
             }
             var address = {!! Session::get('address') !!}
-            getResults(address);
+            if(address != ''){
+                getResults(address);
+            }
+
             //约见地点
             $('#In-next').tap(function(){
                 if(!$('#place').val()){
