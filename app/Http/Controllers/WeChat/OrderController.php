@@ -186,6 +186,12 @@ class OrderController extends Controller
         }
     }
 
+    public function abandon(Request $request,$id)
+    {
+        $order = Order::findOrFail($id);
+
+    }
+
     public function evaluate(Request $request)
     {
         $order = Order::findOrFail(trim($request->get('order')));

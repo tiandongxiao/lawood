@@ -339,4 +339,11 @@ class Order extends ShopOrderModel
 
         return $this->total;
     }
+
+    public function abandon()
+    {
+        $this->update([
+                'statusCode' => 'abandoned'
+        ]);
+    }
 }

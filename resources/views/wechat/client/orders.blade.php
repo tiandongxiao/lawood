@@ -98,6 +98,7 @@
                                 <div class="bottom">
                                     <div class="djs fc-03aaf0 fs-12">律师拒绝接单，费用已退回</div>
                                     <div class="btn-main">
+                                        <span class="btn lan"><a href="{{url('wechat/order/delete/'.$order->id)}}">删除下单</a></span>
                                         <span class="btn lan"><a href="{{url('wechat')}}">重新查找</a></span>
                                     </div>
                                 </div>
@@ -400,6 +401,7 @@
         </div>
     </section>
     <!--修改评价-->
+
 @stop
 @section('script')
     <script>
