@@ -78,6 +78,7 @@
                 });
             }
             var address = "{!! Session::get('address') !!}";
+            alert(address);
             if(address!=""){
                 getResults(address);
             }else{
