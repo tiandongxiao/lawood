@@ -1,4 +1,4 @@
-{{--<script src="http://webapi.amap.com/maps?v=1.3&key=b6f97a31076e886a1236312d87e8b35e"></script>--}}
+<script src="http://webapi.amap.com/maps?v=1.3&key=b6f97a31076e886a1236312d87e8b35e"></script>
 <script>
     var map, cur_location, keyword, cloudDataLayer;
 
