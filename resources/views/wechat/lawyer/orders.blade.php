@@ -12,7 +12,7 @@
         </div>
         <div class="bd" style="padding-top:40px;">
             <!--未完成-->
-            <div class="bd-itms" style="display:block">
+            <div class="bd-itms" style="display: block">
                 @if($applies)
                     @foreach($applies as $order)
                         @if($order->statusCode == 'payed')
@@ -218,7 +218,24 @@
 @section('script')
     <script>
         $(function(){
-            var tabName = {!! $tab !!}
+            var tab_name='ongoing';
+            @if($tab)
+                tab_name = '{!! $tab !!}';
+            @endif
+
+            function showTab() {
+                $('.hd .itms').each(function () {
+                    if($(this).data('tab') == tab_name){
+                        alert(tab_name);
+                        $(this).siblings().removeClass('on');
+                        $(this).addClass('on');
+                        $('.bd-itms').hide();
+                        $('.bd-itms').eq($(this).index()).show();
+                    }
+                })
+            }
+            showTab();
+
             //取消订单
             $('.btn-hv').tap(function(){
                 $(this).data('order');
@@ -237,7 +254,7 @@
             $('.hd .itms').tap(function(){
                 $(this).siblings().removeClass('on');
                 $(this).addClass('on');
-                $('.bd-itms').css({display:'none'});
+                $('.bd-itms').hide();
                 $('.bd-itms').eq($(this).index()).show();
             });
             $('.back-home').tap(function () {
