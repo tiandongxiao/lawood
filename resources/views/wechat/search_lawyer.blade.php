@@ -1,4 +1,16 @@
 @extends('wechat.base.app')
+@section('css')
+    <style>
+        .wdsc-main	.fjls-main	.c-main	.itms	.f-left {
+            padding: 8px 5px;
+        }
+        .lstc-main	.fjls-main	.c-main	.itms	.f-left	img {
+            border-radius: 10%;
+            width: 50px !important;
+            height: 50px !important;
+        }
+    </style>
+@stop
 @section('content')
     <section class="lstc-main wdsc-main">
         <div class="fjls-main">
