@@ -7,6 +7,7 @@ use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 
 class LawyerController extends Controller
 {
@@ -44,9 +45,11 @@ class LawyerController extends Controller
         $ongoings = [];  # 进行中
         $completes = []; # 已完成
         $tab_name = $request->get('tab');
+        Log::info('传入的tab为'.$tab_name);
         $tab = 'init';
         if($tab_name){
-            $tab = $tab_name; 
+
+            $tab = $tab_name;
         }
 
 
