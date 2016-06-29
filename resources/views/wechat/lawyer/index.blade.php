@@ -150,7 +150,7 @@
                             @endif
                         @endforeach
                     </div>
-                    <div class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 mar-top-50 btn-yjdd">立即咨询</div>
+                    <div class="In-btn In-btn-1 bg-lan1 fc-fff line-40 fs-16 btn-yjdd" style="margin-top: 60px">立即咨询</div>
                 </div>
             </div>
         </div>
