@@ -37,7 +37,7 @@ class LawyerController extends Controller
     }
 
     # 律师订单中心
-    public function orders($tab='init')
+    public function orders(Request $request,$tab='init')
     {
         $orders = $this->user->seller_orders->reverse();
 
@@ -46,6 +46,10 @@ class LawyerController extends Controller
         $completes = []; # 已完成
 
         Log::info('传入的tab为'.$tab);
+        $haha = $request->get('haha');
+        if($haha){
+            dd($haha);
+        }
 
         foreach ($orders as $order){
             switch ($order->statusCode){

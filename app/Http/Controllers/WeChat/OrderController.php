@@ -162,9 +162,9 @@ class OrderController extends Controller
     public function reject($id)
     {
         $order = Order::findOrFail($id);
-        $result = $order->reject();        
+        $result = $order->reject();
         Log::info('我拒绝了一个订单');
-        return redirect('wechat/lawyer/orders/done');
+        return redirect('wechat/lawyer/orders/done'.'?haha=good');
     }
 
     public function cancel($id)
