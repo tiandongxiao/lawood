@@ -72,7 +72,7 @@
             <div class="f-left"><img src="/images/nav2.png" width="20" height="20"></div>
             <div class="right">消息通知</div>
         </a>
-        <a class="itms bor-bot" href="{{url('wechat/lawyer/orders/init')}}">
+        <a class="itms bor-bot" href="{{url('wechat/lawyer/orders')}}">
             <div class="f-left"><img src="/images/nav3.png" width="20" height="20"></div>
             <div class="right">我的订单</div>
         </a>

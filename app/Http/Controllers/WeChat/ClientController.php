@@ -35,13 +35,17 @@ class ClientController extends Controller
         return view('wechat.client.notifies',compact('notifies'));
     }
 
-    public function orders()
+    public function orders(Request $request)
     {
         $orders = $this->user->orders->reverse();
 
         $applies = [];   # 未完成
         $ongoings = [];  # 进行中
         $completes = []; # 已完成
+
+        $tab = $request->get('tab');
+        if(!$tab)
+            $tab = 'applies';
 
         foreach ($orders as $order){
             switch ($order->statusCode){
@@ -68,7 +72,7 @@ class ClientController extends Controller
             }
         }
 
-        return view('wechat.client.orders',compact('applies','ongoings','completes'));
+        return view('wechat.client.orders',compact('applies','ongoings','completes','tab'));
     }
 
     public function signOrder()

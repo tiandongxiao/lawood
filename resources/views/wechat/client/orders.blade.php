@@ -14,14 +14,14 @@
 @section('content')
     <section class="lsdd-main">
         <div class="hd po-f">
-            <div class="itms on"><span>未完成</span></div>
-            <div class="itms"><span>进行中</span></div>
-            <div class="itms"><span>已完成</span></div>
+            <div class="itms" data-tab="applies"><span>未完成</span></div>
+            <div class="itms" data-tab="in_process"><span>进行中</span></div>
+            <div class="itms" data-tab="completed"><span>已完成</span></div>
             <div id="refresh" style="position: absolute;right: 5px;"><img src="/images/refresh-simple.png" width="30px" height="30px"></div>
         </div>
         <div class="bd" style="padding-top:40px;">
             <!--未完成-->
-            <div class="bd-itms"  style="display:block">
+            <div class="bd-itms">
                 @if($applies)
                     @foreach($applies as $order)
                         @if($order->statusCode == 'pending')
@@ -404,18 +404,37 @@
 @section('script')
     <script>
         $(function(){
-            //检查版本
-            var u = navigator.userAgent, app = navigator.appVersion;
-            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            function appleFit() {
+                //检查版本
+                var u = navigator.userAgent, app = navigator.appVersion;
+                var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 
-            //苹果兼容
-            if(isiOS){
-                $('.In-text').focus(function(){
-                    $('.po-f').addClass('po-a');
-                }).blur(function(){//输入框失焦后还原初始状态
-                    $('.po-f').removeClass('po-a');
-                });
+                //苹果兼容
+                if(isiOS){
+                    $('.In-text').focus(function(){
+                        $('.po-f').addClass('po-a');
+                    }).blur(function(){//输入框失焦后还原初始状态
+                        $('.po-f').removeClass('po-a');
+                    });
+                }
             }
+            appleFit();
+            var tab_name='init';
+            @if($tab)
+               tab_name = '{!! $tab !!}';
+            @endif
+
+            function showTab() {
+                $('.hd .itms').each(function () {
+                    if($(this).data('tab') == tab_name){
+                        $(this).siblings().removeClass('on');
+                        $(this).addClass('on');
+                        $('.bd-itms').hide();
+                        $('.bd-itms').eq($(this).index()).show();
+                    }
+                })
+            }
+            showTab();
 
             $('.In-text').tap(function(){
                 $(this).val('');

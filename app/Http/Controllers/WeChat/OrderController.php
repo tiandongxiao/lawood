@@ -156,29 +156,34 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
         $order->accept();
-        return back();        
+        return redirect('wechat/lawyer/orders'.'?tab=ongoing');
     }
 
     public function reject($id)
     {
         $order = Order::findOrFail($id);
-        $result = $order->reject();
+        $order->reject();
         Log::info('我拒绝了一个订单');
-        return redirect('wechat/lawyer/orders/done'.'?haha=good');
+        return redirect('wechat/lawyer/orders'.'?tab=init');
     }
 
     public function cancel($id)
     {
         $order = Order::findOrFail($id);
         $result = $order->cancel();
-        return back();
+        return redirect('wechat/client/orders'.'?tab=init');
     }
 
     public function sign($id)
     {
         $order = Order::findOrFail($id);
-        $result = $order->sign();
-        return back();
+        $order->sign();
+        switch ($this->user->role){
+            case 'lawyer':
+                return redirect('wechat/lawyer/orders'.'?tab='.$order->statusCode);
+            case 'client':
+                return redirect('wechat/client/orders'.'?tab='.$order->statusCode);
+        }
     }
 
     public function evaluate(Request $request)
