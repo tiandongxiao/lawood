@@ -147,12 +147,12 @@
                     recommendList.empty();
                     for(var i = 0; i < data.length; i++){
                         recommendList.append(
-                                "<a class='itms' href='/wechat/user/"+data[i].user+"?consult="+data[i].consult+"&address="+$('#In-wz').val()+"'>"+
+                            "<a class='itms' href='/wechat/user/"+data[i].user+"?consult="+data[i].consult+"&address="+$('#In-wz').val()+"'>"+
                                 "<div class='img'><img src='"+data[i].avatar+"' width='100%'></div>"+
                                 "<div class='banner'>"+
                                 "<span class='banner-lawyer'>"+data[i]._name+"律师</span><span class='banner-major'>"+data[i].price+"元</span>"+
-                                "</div>"+
-                                "</a>"
+                                "</div>"+ 
+                            "</a>"
                         );
                     }
                     $('#recommend-title').show();
@@ -163,8 +163,6 @@
                     $('#recommend-list').hide();
                 });
             });
-
-
         })
     </script>
 @stop
