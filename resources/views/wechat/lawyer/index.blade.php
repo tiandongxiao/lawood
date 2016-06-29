@@ -125,7 +125,7 @@
     <section class="lstc-main" style="display: none">
         <!--律师咨询费-->
         <div class="tc-m lszx-main" style="top: 120px; display: block;">
-            <div class="bg-fff c-main" style="overflow: hidden;height:380px;max-height: 420px;border-color: #24A7DF;">
+            <div class="bg-fff c-main" style="overflow: hidden;height:375px;max-height: 420px;border-color: #24A7DF;">
                 <div class="top">
                     <div class="tie">
                         <span style="font-size: 20px;font-weight: lighter;padding-left: 20px;">咨询费</span>
