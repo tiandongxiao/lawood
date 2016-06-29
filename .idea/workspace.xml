@@ -48,11 +48,11 @@
       <file leaf-file-name="place_select.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+            <state relative-caret-position="558">
+              <caret line="82" column="14" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
               <folding>
-                <marker date="1467183902255" expanded="true" signature="2727:3400" placeholder="..." />
-                <marker date="1467183902255" expanded="true" signature="2909:3185" placeholder="..." />
+                <marker date="1467184007840" expanded="true" signature="2727:3400" placeholder="..." />
+                <marker date="1467184007840" expanded="true" signature="2909:3185" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -949,7 +949,7 @@
       <workItem from="1466434281624" duration="53516000" />
       <workItem from="1466662706073" duration="28156000" />
       <workItem from="1466731350595" duration="38895000" />
-      <workItem from="1466989121845" duration="67766000" />
+      <workItem from="1466989121845" duration="67870000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1074,7 +1074,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1405539000" />
+    <option name="totallyTimeSpent" value="1405643000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1579,11 +1579,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+        <state relative-caret-position="558">
+          <caret line="82" column="14" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
           <folding>
-            <marker date="1467183902255" expanded="true" signature="2727:3400" placeholder="..." />
-            <marker date="1467183902255" expanded="true" signature="2909:3185" placeholder="..." />
+            <marker date="1467184007840" expanded="true" signature="2727:3400" placeholder="..." />
+            <marker date="1467184007840" expanded="true" signature="2909:3185" placeholder="..." />
           </folding>
         </state>
       </provider>
