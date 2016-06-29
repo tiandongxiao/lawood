@@ -164,7 +164,7 @@ class OrderController extends Controller
         $order = Order::findOrFail($id);
         $result = $order->reject();
         $tab = 'done';
-        return back(compact('tab'));
+        return back()->with('tab',$tab);
     }
 
     public function cancel($id)
