@@ -218,10 +218,10 @@
 @section('script')
     <script>
         $(function(){
-            var tab_name='done';
-            {{--@if($tab)--}}
-                {{--tab_name = '{!! $tab !!}';--}}
-            {{--@endif--}}
+            var tab_name='init';
+            @if($tab)
+                tab_name = '{!! $tab !!}';
+            @endif
 
             function showTab() {
                 $('.hd .itms').each(function () {
