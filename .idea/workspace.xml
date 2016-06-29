@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,13 +33,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="338">
               <caret line="127" column="73" selection-start-line="127" selection-start-column="73" selection-end-line="127" selection-end-column="73" />
               <folding>
                 <element signature="e#7863#7887#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="place_select.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="492">
+              <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+              <folding>
+                <marker date="1467181102981" expanded="true" signature="2794:3467" placeholder="..." />
+                <marker date="1467181102981" expanded="true" signature="2976:3252" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -122,21 +135,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1718">
-              <caret line="95" column="40" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
-              <folding>
-                <marker date="1467019093889" expanded="true" signature="3945:4003" placeholder="..." />
-                <marker date="1467019093889" expanded="true" signature="5679:5714" placeholder="..." />
-                <marker date="1467019093889" expanded="true" signature="5807:5824" placeholder="..." />
-                <marker date="1467019093889" expanded="true" signature="6132:6140" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="poi.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/poi.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -215,7 +213,6 @@
         <option value="$PROJECT_DIR$/resources/views/wechat/auth/profile.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_03_28_151757_shop_setup_tables.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php" />
         <option value="$PROJECT_DIR$/database/seeds/UserRolePermSeeder.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php" />
         <option value="$PROJECT_DIR$/app/Order.php" />
@@ -225,6 +222,7 @@
         <option value="$PROJECT_DIR$/resources/views/wechat/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/search_lawyer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php" />
       </list>
     </option>
   </component>
@@ -969,7 +967,7 @@
       <workItem from="1466434281624" duration="53516000" />
       <workItem from="1466662706073" duration="28156000" />
       <workItem from="1466731350595" duration="38895000" />
-      <workItem from="1466989121845" duration="64128000" />
+      <workItem from="1466989121845" duration="64968000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1094,7 +1092,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1401901000" />
+    <option name="totallyTimeSpent" value="1402741000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1110,7 +1108,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11354167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.190625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13867822" sideWeight="0.5345787" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32966483" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1407,17 +1405,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1375">
-          <caret line="102" column="15" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="15" />
-          <folding>
-            <marker date="1467107881790" expanded="true" signature="2804:3477" placeholder="..." />
-            <marker date="1467107881790" expanded="true" signature="2986:3262" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/UserSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1604,6 +1591,17 @@
           <caret line="127" column="73" selection-start-line="127" selection-start-column="73" selection-end-line="127" selection-end-column="73" />
           <folding>
             <element signature="e#7863#7887#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/wechat/flow/place_select.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+          <folding>
+            <marker date="1467181102981" expanded="true" signature="2794:3467" placeholder="..." />
+            <marker date="1467181102981" expanded="true" signature="2976:3252" placeholder="..." />
           </folding>
         </state>
       </provider>

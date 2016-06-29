@@ -42,13 +42,13 @@
                 geocoder(address,function (position) {
                     cur_position = position;
                     console.log(cur_position);
-                    searchDataByMajor();
+                    searchCoffee();
                 },function () {
                     alert('转化失败');
                 });
             }
 
-            function searchDataByMajor() { //仍然使用当前位置
+            function searchCoffee() { //仍然使用当前位置
                 searchPublicByAround(cur_position,"咖啡厅",function (result) {
                     // 搜索成功
                     var pois = result.poiList.pois;
@@ -78,6 +78,7 @@
                 });
             }
             var address = "{!! Session::get('address') !!}";
+            alert(address);
             if(address!=""){
                 getResults(address);
             }else{
