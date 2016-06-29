@@ -1,4 +1,11 @@
 @extends('wechat.base.menu')
+@section('css')
+<style>
+    .dtdw-main {top: 0px;}
+    .lstc-main .tc-m { bottom: 25px;}
+    .lstc-main .tc-m .c-main { max-height: 550px;min-height: 400px;}
+</style>
+@stop
 @section('content')
 <!--地图定位-->
 <section class="dtdw-main">

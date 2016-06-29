@@ -180,17 +180,6 @@
 <script>
     var major,tabName="民商类";
     $(function(){
-//        $('.dtdw-main').height($('body').height()-100);
-//        $('.tc-m').css({top:$('body').height()*0.95-400});
-//        $('.tie').css({top:$('body').height()*0.95-400});
-//        $('.btn-ddxz').css({top:$('body').height()*0.95-65});
-//        $(window).resize(function() {
-//            $('.dtdw-main').height($('body').height()-100)
-//            $('.tc-m').css({top:$('body').height()*0.95-400});
-//            $('.tie').css({top:$('body').height()*0.95-400});
-//            $('.btn-ddxz').css({top:$('body').height()*0.95-65});
-//        });
-
         //切换栏目
         $('.itms-hd').tap(function(){
             $('.itms-hd').removeClass('on');
@@ -199,7 +188,6 @@
             $('.itms-bd').removeClass('show');
             $('.itms-bd').removeClass('on');
             $('.itms-bd').eq($(this).index()).addClass('on');
-
         });
 
         //栏目下拉上升
