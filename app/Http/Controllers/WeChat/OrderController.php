@@ -164,7 +164,8 @@ class OrderController extends Controller
         $order = Order::findOrFail($id);
         $result = $order->reject();
         $tab = 'done';
-        return back()->with('tab',$tab);
+        Log::info('我拒绝了一个订单');
+        return redirect('wechat/lawyer/orders')->with('tab',$tab);
     }
 
     public function cancel($id)
