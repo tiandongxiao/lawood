@@ -16,8 +16,8 @@
         <form style="margin-top: 30px">
             <div class="itms-form" id="form-xz">
                 <div class="bd">
-                    <input type="text" placeholder="请输入律师姓名" id="In-xm" class="In-text" style="width: 185px;display: none;line-height: normal;padding-top: 1px">
-                    <input type="text" placeholder="定位中..." id="In-wz" class="In-text" style="width: 185px;line-height: normal;padding-top: 1px">
+                    <input type="text" placeholder="请输入律师姓名" id="In-xm" class="In-text" style="width: 185px;display: none;line-height: normal;padding-top: 2px">
+                    <input type="text" placeholder="定位中..." id="In-wz" class="In-text" style="width: 185px;line-height: normal;padding-top: 2px">
                 </div>
                 <div class="hd">
                     <i class="icon-xm" id="icon-xm"></i>
