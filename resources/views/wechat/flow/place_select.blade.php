@@ -78,10 +78,11 @@
                 });
             }
             var address = "{!! Session::get('address') !!}";
-            alert(address);
             if(address!=""){
+                alert('youde');
                 getResults(address);
             }else{
+                alert('空白');
                 gdMapInit();
                 locatePosition(function (data) {
                     regeocoder(data.position,function (result) {
