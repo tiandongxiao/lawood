@@ -218,7 +218,7 @@
 @section('script')
     <script>
         $(function(){
-            var tab_name='ongoing';
+            var tab_name='done';
             {{--@if($tab)--}}
                 {{--tab_name = '{!! $tab !!}';--}}
             {{--@endif--}}
@@ -226,7 +226,6 @@
             function showTab() {
                 $('.hd .itms').each(function () {
                     if($(this).data('tab') == tab_name){
-                        alert(tab_name);
                         $(this).siblings().removeClass('on');
                         $(this).addClass('on');
                         $('.bd-itms').hide();
