@@ -139,7 +139,7 @@
                     </div>
                 </div>
                 <div class="bottom pad-10">
-                    <div class="line-35 .fc-yellow-law" style="text-align: center;">选择咨询领域</div>
+                    <div class="line-35 fc-yellow-law">选择咨询领域</div>
                     <div class="itms-bd-1 clearfix">
                         {!! csrf_field() !!}
                         <input type="hidden" name="uri" value="{{url('/')}}">
