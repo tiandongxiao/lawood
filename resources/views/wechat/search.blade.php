@@ -106,7 +106,6 @@
             },function () {
                 alert('转化失败');
             });
-            //showCloudData();
         }
 
         function showPOI(data) {
@@ -178,7 +177,7 @@
         }
 
         function setCenter(position) {
-            map.setZoom(14);
+            map.setZoom(13);
             map.setCenter(position);
             //添加点标记，并使用自己的icon
             new AMap.Marker({
