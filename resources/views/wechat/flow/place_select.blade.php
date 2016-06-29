@@ -71,7 +71,7 @@
                     });
                 });
             }
-            var address = {!! Session::get('address') !!}
+            var address = '{!! Session::get('address') !!}';
             if(address != ''){
                 getResults(address);
             }
