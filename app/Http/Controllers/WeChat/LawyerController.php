@@ -43,6 +43,7 @@ class LawyerController extends Controller
         $applies = [];   # 未完成
         $ongoings = [];  # 进行中
         $completes = []; # 已完成
+        $tab = 'init';
 
         foreach ($orders as $order){
             switch ($order->statusCode){
@@ -63,7 +64,7 @@ class LawyerController extends Controller
                     break;
             }
         }
-        return view('wechat.lawyer.orders',compact('applies','ongoings','completes'));
+        return view('wechat.lawyer.orders',compact('applies','ongoings','completes','tab'));
     }
 
     # 律师钱包管理中心

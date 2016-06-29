@@ -163,7 +163,8 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
         $result = $order->reject();
-        return back();
+        $tab = 'done';
+        return back(compact('tab'));
     }
 
     public function cancel($id)
