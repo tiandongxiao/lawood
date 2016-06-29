@@ -156,7 +156,7 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
         $order->accept();
-        return redirect('wechat/lawyer/orders'.'?tab=ongoing');
+        return redirect('wechat/lawyer/orders'.'?tab=in_process');
     }
 
     public function reject($id)
@@ -164,14 +164,14 @@ class OrderController extends Controller
         $order = Order::findOrFail($id);
         $order->reject();
         Log::info('我拒绝了一个订单');
-        return redirect('wechat/lawyer/orders'.'?tab=init');
+        return redirect('wechat/lawyer/orders');
     }
 
     public function cancel($id)
     {
         $order = Order::findOrFail($id);
         $result = $order->cancel();
-        return redirect('wechat/client/orders'.'?tab=init');
+        return redirect('wechat/client/orders');
     }
 
     public function sign($id)
