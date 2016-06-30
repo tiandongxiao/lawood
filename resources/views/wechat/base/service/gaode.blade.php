@@ -128,12 +128,12 @@
     // Ended  搜索高德地图 公共数据
 
     // Begin 搜索自创建地图 私有数据
-    function searchPrivateByAround(center,keyword,order_by,onComplete,onError) { //center = [116.405467, 39.907761];
+    function searchPrivateByAround(center,keyword,onComplete,onError) { //center = [116.405467, 39.907761];
         var search;
         var searchOptions = {
             keywords: keyword,
-            pageSize: 50,
-            orderBy: order_by
+            pageSize: 5,
+            orderBy: '_id:ASC'
         };
         //加载CloudDataSearch服务插件
         AMap.service(["AMap.CloudDataSearch"], function() {
@@ -181,4 +181,5 @@
             });
         });
     }
+
 </script>

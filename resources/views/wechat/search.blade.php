@@ -76,6 +76,7 @@
 
         function highlightChose() {
             $('.list').each(function () {
+
                 if($(this).text() == major){
                     // 分类显示逻辑
                     $('.itms-hd').removeClass('on');
@@ -90,18 +91,18 @@
                     $(this).addClass('on');
 
                     // 数据逻辑
-                    getResults();
+                    getResults(address);
                 }
             });
         }
 
-        function getResults() {
+        function getResults(address) {
             //初始化地图
             gdMapInit();
             geocoder(address,function (position) {
                 cur_position = position;
                 setCenter(cur_position);
-                searchDataByMajor('id:ASC');
+                searchDataByMajor();
             },function () {
                 alert('转化失败');
             });
@@ -139,8 +140,8 @@
             });
         }
 
-        function searchDataByMajor(order_by) { //仍然使用当前位置
-            searchPrivateByAround(cur_position,major,order_by,function (result) {
+        function searchDataByMajor() { //仍然使用当前位置
+            searchPrivateByAround(cur_position,major,function (result) {
                 // 搜索成功
                 var dom = $('.fjls-main .con');
                 console.log(result.datas);
@@ -178,7 +179,7 @@
         function setCenter(position) {
             map.setZoom(13);
             map.setCenter(position);
-            // 添加点标记，并使用自己的icon
+            //添加点标记，并使用自己的icon
             new AMap.Marker({
                 map: map,
                 position: [position.getLng(), position.getLat()],
@@ -191,10 +192,8 @@
 
         $(function(){
             highlightChose();
-            // 筛选
+            //筛选
             $('.itms-nav').tap(function(){
-                //searchDataByMajor('price:DESC');
-                searchDataByMajor('_distance:DESC');
                 if($(this).attr('class') == 'itms-nav'){
                     $('.itms-nav').removeClass('on');
                     $('.itms-nav').removeClass('on1');
