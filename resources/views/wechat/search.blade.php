@@ -91,18 +91,18 @@
                     $(this).addClass('on');
 
                     // 数据逻辑
-                    getResults(address);
+                    getResults();
                 }
             });
         }
 
-        function getResults(address) {
+        function getResults() {
             //初始化地图
             gdMapInit();
             geocoder(address,function (position) {
                 cur_position = position;
                 setCenter(cur_position);
-                searchDataByMajor();
+                searchDataByMajor('_distance:ASC');
             },function () {
                 alert('转化失败');
             });
@@ -140,8 +140,8 @@
             });
         }
 
-        function searchDataByMajor() { //仍然使用当前位置
-            searchPrivateByAround(cur_position,major,function (result) {
+        function searchDataByMajor(order_by) { //仍然使用当前位置
+            searchPrivateByAround(cur_position,major,order_by,function (result) {
                 // 搜索成功
                 var dom = $('.fjls-main .con');
                 console.log(result.datas);
@@ -179,7 +179,7 @@
         function setCenter(position) {
             map.setZoom(13);
             map.setCenter(position);
-            //添加点标记，并使用自己的icon
+            // 添加点标记，并使用自己的icon
             new AMap.Marker({
                 map: map,
                 position: [position.getLng(), position.getLat()],
@@ -192,8 +192,9 @@
 
         $(function(){
             highlightChose();
-            //筛选
+            // 筛选
             $('.itms-nav').tap(function(){
+                searchDataByMajor('price:DESC');
                 if($(this).attr('class') == 'itms-nav'){
                     $('.itms-nav').removeClass('on');
                     $('.itms-nav').removeClass('on1');

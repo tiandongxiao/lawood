@@ -49,7 +49,6 @@ class LawyerController extends Controller
         if(!$tab)
             $tab = 'applies';
 
-
         foreach ($orders as $order){
             switch ($order->statusCode){
                 case 'payed':
