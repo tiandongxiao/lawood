@@ -96,13 +96,13 @@
       <file leaf-file-name="search.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="242" column="59" selection-start-line="242" selection-start-column="59" selection-end-line="242" selection-end-column="59" />
+            <state relative-caret-position="413">
+              <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
               <folding>
-                <marker date="1467303183495" expanded="true" signature="4217:4275" placeholder="..." />
-                <marker date="1467303183495" expanded="true" signature="6846:6881" placeholder="..." />
-                <marker date="1467303183495" expanded="true" signature="6974:6991" placeholder="..." />
-                <marker date="1467303183495" expanded="true" signature="7299:7307" placeholder="..." />
+                <marker date="1467303256061" expanded="true" signature="4213:4271" placeholder="..." />
+                <marker date="1467303256061" expanded="true" signature="6842:6877" placeholder="..." />
+                <marker date="1467303256061" expanded="true" signature="6970:6987" placeholder="..." />
+                <marker date="1467303256061" expanded="true" signature="7295:7303" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -938,7 +938,7 @@
       <workItem from="1466989121845" duration="80905000" />
       <workItem from="1467198793477" duration="5693000" />
       <workItem from="1467275540731" duration="9741000" />
-      <workItem from="1467296488291" duration="5888000" />
+      <workItem from="1467296488291" duration="5961000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1063,7 +1063,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1440000000" />
+    <option name="totallyTimeSpent" value="1440073000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1450,13 +1450,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="242" column="59" selection-start-line="242" selection-start-column="59" selection-end-line="242" selection-end-column="59" />
+        <state relative-caret-position="413">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
           <folding>
-            <marker date="1467303183495" expanded="true" signature="4217:4275" placeholder="..." />
-            <marker date="1467303183495" expanded="true" signature="6846:6881" placeholder="..." />
-            <marker date="1467303183495" expanded="true" signature="6974:6991" placeholder="..." />
-            <marker date="1467303183495" expanded="true" signature="7299:7307" placeholder="..." />
+            <marker date="1467303256061" expanded="true" signature="4213:4271" placeholder="..." />
+            <marker date="1467303256061" expanded="true" signature="6842:6877" placeholder="..." />
+            <marker date="1467303256061" expanded="true" signature="6970:6987" placeholder="..." />
+            <marker date="1467303256061" expanded="true" signature="7295:7303" placeholder="..." />
           </folding>
         </state>
       </provider>

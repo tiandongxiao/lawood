@@ -26,7 +26,7 @@
             <div class="tie tie-1">
                 <p>您附近的专业律师</p><i class="btn-fjls btn-gb"></i>
                 <div class="itms-nav" id="price-sort"><span>价格筛选</span></div>
-                <div class="itms-nav on on1" id="distance-sort"><span>距离筛选</span></div>
+                <div class="itms-nav on" id="distance-sort"><span>距离筛选</span></div>
             </div>
             <div class="con">
             </div>
