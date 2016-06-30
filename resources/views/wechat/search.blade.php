@@ -76,7 +76,6 @@
 
         function highlightChose() {
             $('.list').each(function () {
-
                 if($(this).text() == major){
                     // 分类显示逻辑
                     $('.itms-hd').removeClass('on');
@@ -102,7 +101,7 @@
             geocoder(address,function (position) {
                 cur_position = position;
                 setCenter(cur_position);
-                searchDataByMajor('_distance:ASC');
+                searchDataByMajor('id:ASC');
             },function () {
                 alert('转化失败');
             });
