@@ -91,12 +91,12 @@
                     $(this).addClass('on');
 
                     // 数据逻辑
-                    getResults(address,major);
+                    getResults(address);
                 }
             });
         }
 
-        function getResults(address,major) {
+        function getResults(address) {
             //初始化地图
             gdMapInit();
             geocoder(address,function (position) {
@@ -195,16 +195,14 @@
             //筛选
             $('.itms-nav').tap(function(){
                 if($(this).attr('class') == 'itms-nav'){
-                    $('.itms-nav').removeClass('on')
-                    $('.itms-nav').removeClass('on1')
-                    $(this).addClass('on')
+                    $('.itms-nav').removeClass('on');
+                    $('.itms-nav').removeClass('on1');
+                    $(this).addClass('on');
                 }else{
-
-                    $('.itms-nav').removeClass('on')
-                    $('.itms-nav').removeClass('on1')
-                    $(this).addClass('on')
-                    $(this).addClass('on1')
-
+                    $('.itms-nav').removeClass('on');
+                    $('.itms-nav').removeClass('on1');
+                    $(this).addClass('on');
+                    $(this).addClass('on1');
                 }
             });
             //返回中心点
@@ -236,6 +234,5 @@
                 $('.tc-m').hide();
             })
         });
-
     </script>
 @stop      

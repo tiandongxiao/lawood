@@ -118,8 +118,8 @@
                     }
                 });
             },function () {
-                city = '北京市';
                 // 定位失败
+                city = '北京市';
                 $('#In-wz').attr('placeholder','定位失败，请输入您的位置');
             });
 
@@ -132,7 +132,6 @@
                     var poi = e.poi;
                     address.type = 'auto';
                     address.full = poi.district+poi.address+poi.name;
-                    console.log(e);
                 });
             });
 
@@ -151,7 +150,7 @@
                                 "<div class='img'><img src='"+data[i].avatar+"' width='100%'></div>"+
                                 "<div class='banner'>"+
                                 "<span class='banner-lawyer'>"+data[i]._name+"律师</span><span class='banner-major'>"+data[i].price+"元</span>"+
-                                "</div>"+ 
+                                "</div>"+
                             "</a>"
                         );
                     }
