@@ -194,7 +194,8 @@
             highlightChose();
             // 筛选
             $('.itms-nav').tap(function(){
-                searchDataByMajor('price:DESC');
+                //searchDataByMajor('price:DESC');
+                searchDataByMajor('_distance:DESC');
                 if($(this).attr('class') == 'itms-nav'){
                     $('.itms-nav').removeClass('on');
                     $('.itms-nav').removeClass('on1');
