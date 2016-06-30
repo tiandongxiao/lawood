@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/base/service/gaode.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/base/service/gaode.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/search.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/search.blade.php" />
     </list>
     <ignored path="base.iws" />
@@ -98,13 +96,13 @@
       <file leaf-file-name="search.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
+            <state relative-caret-position="367">
+              <caret line="242" column="59" selection-start-line="242" selection-start-column="59" selection-end-line="242" selection-end-column="59" />
               <folding>
-                <marker date="1467302936887" expanded="true" signature="4217:4275" placeholder="..." />
-                <marker date="1467302936887" expanded="true" signature="6846:6881" placeholder="..." />
-                <marker date="1467302936887" expanded="true" signature="6974:6991" placeholder="..." />
-                <marker date="1467302936887" expanded="true" signature="7299:7307" placeholder="..." />
+                <marker date="1467303183495" expanded="true" signature="4217:4275" placeholder="..." />
+                <marker date="1467303183495" expanded="true" signature="6846:6881" placeholder="..." />
+                <marker date="1467303183495" expanded="true" signature="6974:6991" placeholder="..." />
+                <marker date="1467303183495" expanded="true" signature="7299:7307" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -940,7 +938,7 @@
       <workItem from="1466989121845" duration="80905000" />
       <workItem from="1467198793477" duration="5693000" />
       <workItem from="1467275540731" duration="9741000" />
-      <workItem from="1467296488291" duration="5642000" />
+      <workItem from="1467296488291" duration="5888000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1065,7 +1063,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1439754000" />
+    <option name="totallyTimeSpent" value="1440000000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1452,13 +1450,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
+        <state relative-caret-position="367">
+          <caret line="242" column="59" selection-start-line="242" selection-start-column="59" selection-end-line="242" selection-end-column="59" />
           <folding>
-            <marker date="1467302936887" expanded="true" signature="4217:4275" placeholder="..." />
-            <marker date="1467302936887" expanded="true" signature="6846:6881" placeholder="..." />
-            <marker date="1467302936887" expanded="true" signature="6974:6991" placeholder="..." />
-            <marker date="1467302936887" expanded="true" signature="7299:7307" placeholder="..." />
+            <marker date="1467303183495" expanded="true" signature="4217:4275" placeholder="..." />
+            <marker date="1467303183495" expanded="true" signature="6846:6881" placeholder="..." />
+            <marker date="1467303183495" expanded="true" signature="6974:6991" placeholder="..." />
+            <marker date="1467303183495" expanded="true" signature="7299:7307" placeholder="..." />
           </folding>
         </state>
       </provider>

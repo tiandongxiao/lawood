@@ -242,13 +242,13 @@
                         distance_sort = 'desc';
                         searchDataByMajor('distance_desc');
                         $('.itms-nav').removeClass('on on1');
-                        $(this).addClass('on');
+                        $(this).addClass('on on1');
                         break;
                     case 'desc':
                         distance_sort = 'asc';
                         searchDataByMajor('distance_asc');
                         $('.itms-nav').removeClass('on on1');
-                        $(this).addClass('on on1');
+                        $(this).addClass('on');
                         break;
                 }
             });
