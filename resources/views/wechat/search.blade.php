@@ -25,8 +25,8 @@
         <div class="bg-fff c-main" >
             <div class="tie tie-1">
                 <p>您附近的专业律师</p><i class="btn-fjls btn-gb"></i>
-                <div class="itms-nav"><span>价格筛选</span></div>
-                <div class="itms-nav"><span>距离筛选</span></div>
+                <div class="itms-nav" id="price-sort"><span>价格筛选</span></div>
+                <div class="itms-nav on on1" id="distance-sort"><span>距离筛选</span></div>
             </div>
             <div class="con">
             </div>
@@ -73,6 +73,8 @@
         address = "{!! $address !!}";
         tabName = "{!! $tab !!}";
         var cur_position;
+        var price_sort = 'asc';
+        var distance_sort = 'asc';
 
         function highlightChose() {
             $('.list').each(function () {
@@ -102,7 +104,7 @@
             geocoder(address,function (position) {
                 cur_position = position;
                 setCenter(cur_position);
-                searchDataByMajor();
+                searchDataByMajor('distance_asc');
             },function () {
                 alert('转化失败');
             });
@@ -140,13 +142,37 @@
             });
         }
 
-        function searchDataByMajor() { //仍然使用当前位置
+        function searchDataByMajor(order_by) { //仍然使用当前位置
             searchPrivateByAround(cur_position,major,function (result) {
                 // 搜索成功
                 var dom = $('.fjls-main .con');
                 console.log(result.datas);
                 dom.empty();
                 var data = result.datas;
+                switch (order_by){
+                    case 'price_asc':
+                        data.sort(function (a,b) {
+                            return (a.price-b.price);
+                        });
+                        break;
+                    case 'price_desc':
+                        data.sort(function (a,b) {
+                            return (b.price-a.price);
+                        });
+                        break;
+                    case 'distance_asc':
+                        data.sort(function (a,b) {
+                            return (a._distance-b._distance);
+                        });
+                        break;
+                    case 'distance_desc':
+                        data.sort(function (a,b) {
+                            return (b._distance-a._distance);
+                        });
+                        break;
+                }
+
+
                 $('#btn-more').text("您附近有 "+data.length+" 位相关律师  (点击查看)");
                 for(var i = 0; i < data.length; i++){
                     showPOI(data[i]);
@@ -193,16 +219,37 @@
         $(function(){
             highlightChose();
             //筛选
-            $('.itms-nav').tap(function(){
-                if($(this).attr('class') == 'itms-nav'){
-                    $('.itms-nav').removeClass('on');
-                    $('.itms-nav').removeClass('on1');
-                    $(this).addClass('on');
-                }else{
-                    $('.itms-nav').removeClass('on');
-                    $('.itms-nav').removeClass('on1');
-                    $(this).addClass('on');
-                    $(this).addClass('on1');
+            $('#price-sort').tap(function () {
+                switch (price_sort){
+                    case 'asc':
+                        price_sort = 'desc';
+                        searchDataByMajor('price_desc');
+                        $('.itms-nav').removeClass('on on1');
+                        $(this).addClass('on on1');
+                        break;
+                    case 'desc':
+                        price_sort = 'asc';
+                        searchDataByMajor('price_asc');
+                        $('.itms-nav').removeClass('on on1');
+                        $(this).addClass('on');
+                        break;
+                }
+
+            });
+            $('#distance-sort').tap(function () {
+                switch (distance_sort){
+                    case 'asc':
+                        distance_sort = 'desc';
+                        searchDataByMajor('distance_desc');
+                        $('.itms-nav').removeClass('on on1');
+                        $(this).addClass('on');
+                        break;
+                    case 'desc':
+                        distance_sort = 'asc';
+                        searchDataByMajor('distance_asc');
+                        $('.itms-nav').removeClass('on on1');
+                        $(this).addClass('on on1');
+                        break;
                 }
             });
             //返回中心点
@@ -216,7 +263,7 @@
             });
             //切换栏目，完成搜索
             $('.list').tap(function(){
-                searchDataByMajor(major);
+                searchDataByMajor('price:ASC');
             });
             //律师咨询
             $('.btn-ljzx').tap(function(){

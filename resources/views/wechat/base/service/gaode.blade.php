@@ -132,8 +132,8 @@
         var search;
         var searchOptions = {
             keywords: keyword,
-            pageSize: 5,
-            orderBy: '_id:ASC'
+            pageSize: 5
+//            orderBy: order_by
         };
         //加载CloudDataSearch服务插件
         AMap.service(["AMap.CloudDataSearch"], function() {
