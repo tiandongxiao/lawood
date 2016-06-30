@@ -93,10 +93,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3978">
+            <state relative-caret-position="283">
               <caret line="153" column="42" selection-start-line="153" selection-start-column="42" selection-end-line="153" selection-end-column="42" />
               <folding>
                 <marker date="1467198966879" expanded="true" signature="6295:6674" placeholder="..." />
@@ -105,16 +105,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+            <state relative-caret-position="413">
+              <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
               <folding>
-                <marker date="1467217316376" expanded="true" signature="4106:4164" placeholder="..." />
-                <marker date="1467217316376" expanded="true" signature="5840:5875" placeholder="..." />
-                <marker date="1467217316376" expanded="true" signature="5968:5985" placeholder="..." />
-                <marker date="1467217316376" expanded="true" signature="6293:6301" placeholder="..." />
+                <marker date="1467250966604" expanded="true" signature="4106:4164" placeholder="..." />
+                <marker date="1467250966604" expanded="true" signature="5840:5875" placeholder="..." />
+                <marker date="1467250966604" expanded="true" signature="5968:5985" placeholder="..." />
+                <marker date="1467250966604" expanded="true" signature="6293:6301" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -963,7 +963,7 @@
       <workItem from="1466662706073" duration="28156000" />
       <workItem from="1466731350595" duration="38895000" />
       <workItem from="1466989121845" duration="80905000" />
-      <workItem from="1467198793477" duration="2604000" />
+      <workItem from="1467198793477" duration="3900000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -1088,7 +1088,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1421282000" />
+    <option name="totallyTimeSpent" value="1422578000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1104,7 +1104,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19322917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21145834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13867822" sideWeight="0.5345787" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32966483" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1517,25 +1517,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/wechat/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3978">
-          <caret line="153" column="42" selection-start-line="153" selection-start-column="42" selection-end-line="153" selection-end-column="42" />
+        <state relative-caret-position="413">
+          <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
           <folding>
-            <marker date="1467198966879" expanded="true" signature="6295:6674" placeholder="..." />
+            <marker date="1467250966604" expanded="true" signature="4106:4164" placeholder="..." />
+            <marker date="1467250966604" expanded="true" signature="5840:5875" placeholder="..." />
+            <marker date="1467250966604" expanded="true" signature="5968:5985" placeholder="..." />
+            <marker date="1467250966604" expanded="true" signature="6293:6301" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/wechat/search.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/wechat/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+        <state relative-caret-position="283">
+          <caret line="153" column="42" selection-start-line="153" selection-start-column="42" selection-end-line="153" selection-end-column="42" />
           <folding>
-            <marker date="1467217316376" expanded="true" signature="4106:4164" placeholder="..." />
-            <marker date="1467217316376" expanded="true" signature="5840:5875" placeholder="..." />
-            <marker date="1467217316376" expanded="true" signature="5968:5985" placeholder="..." />
-            <marker date="1467217316376" expanded="true" signature="6293:6301" placeholder="..." />
+            <marker date="1467198966879" expanded="true" signature="6295:6674" placeholder="..." />
           </folding>
         </state>
       </provider>

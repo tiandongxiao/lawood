@@ -191,6 +191,22 @@
         }
 
         $(function(){
+            highlightChose();
+            //筛选
+            $('.itms-nav').tap(function(){
+                if($(this).attr('class') == 'itms-nav'){
+                    $('.itms-nav').removeClass('on')
+                    $('.itms-nav').removeClass('on1')
+                    $(this).addClass('on')
+                }else{
+
+                    $('.itms-nav').removeClass('on')
+                    $('.itms-nav').removeClass('on1')
+                    $(this).addClass('on')
+                    $(this).addClass('on1')
+
+                }
+            });
             //返回中心点
             $('.btn-pl').tap(function(){
                 setCenter(cur_position);
@@ -220,6 +236,6 @@
                 $('.tc-m').hide();
             })
         });
-        highlightChose();
+
     </script>
 @stop      
