@@ -15,7 +15,7 @@
                     @if($lawyers->count())
                         @foreach($lawyers as $lawyer)
                             <div class="itms">
-                                <div class="f-left"><img src="/images/ls.jpg"></div>
+                                <div class="f-left"><img src="{{$lawyer->avatar}}"></div>
                                 <div class="right">
                                     <h3 class="chaochu_1"><span class="fc-03aaf0" style="font-size: 16px">{{$lawyer->real_name}}</span>　[律师]</h3>
                                     <p></p>
