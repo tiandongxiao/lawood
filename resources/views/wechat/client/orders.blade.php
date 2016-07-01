@@ -90,7 +90,7 @@
                                         <p class="name chaochu_1 mar-top-5">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
                                         <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                         <div class="zxf">
-                                            <p>已付咨询费</p>
+                                            <p>已退咨询费</p>
                                             <p class="jg">{{$order->total}}元</p>
                                         </div>
                                     </div>
