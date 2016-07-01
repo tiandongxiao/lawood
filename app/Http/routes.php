@@ -17,6 +17,7 @@ Route::group(['prefix' => 'wechat'], function(){
     Route::get('order/reject/{id}','WeChat\OrderController@reject');
     Route::get('order/cancel/{id}','WeChat\OrderController@cancel');
     Route::get('order/sign/{id}','WeChat\OrderController@sign');
+    Route::get('order/abandon/{id}','WeChat\OrderController@abandon');
 
     Route::post('order/evaluate','WeChat\OrderController@evaluate');
     Route::post('order/evaluate/update','WeChat\OrderController@evaluateUpdate');

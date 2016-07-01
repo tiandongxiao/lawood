@@ -98,7 +98,7 @@
                                 <div class="bottom">
                                     <div class="djs fc-03aaf0 fs-12">律师拒绝接单，费用已退回</div>
                                     <div class="btn-main">
-                                        <span class="btn lan"><a href="{{url('wechat/order/delete/'.$order->id)}}">删除下单</a></span>
+                                        <span class="btn lan"><a href="{{url('wechat/order/abandon/'.$order->id)}}">删除订单</a></span>
                                         <span class="btn lan"><a href="{{url('wechat')}}">重新查找</a></span>
                                     </div>
                                 </div>
@@ -139,6 +139,7 @@
                                         <div class="djs fc-03aaf0 fs-12">订单已取消，未支付订单</div>
                                     @endif
                                     <div class="btn-main">
+                                        <span class="btn lan"><a href="{{url('wechat/order/abandon/'.$order->id)}}">删除订单</a></span>
                                         <span class="btn lan"><a href="{{url('wechat')}}">重新查找</a></span>
                                     </div>
                                 </div>
@@ -164,6 +165,7 @@
                                 <div class="bottom">
                                     <div class="djs fc-03aaf0 fs-12">订单过期未接单，费用已退回</div>
                                     <div class="btn-main">
+                                        <span class="btn lan"><a href="{{url('wechat/order/abandon/'.$order->id)}}">删除订单</a></span>
                                         <span class="btn lan"><a href="{{url('wechat')}}">重新查找</a></span>
                                     </div>
                                 </div>

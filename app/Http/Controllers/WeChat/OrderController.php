@@ -189,6 +189,8 @@ class OrderController extends Controller
     public function abandon(Request $request,$id)
     {
         $order = Order::findOrFail($id);
+        $order->abandon();
+        return redirect('wechat/client/orders'.'?tab=applies');
 
     }
 
