@@ -403,7 +403,6 @@
         </div>
     </section>
     <!--修改评价-->
-
 @stop
 @section('script')
     <script>
@@ -506,7 +505,6 @@
                 $('#e-client').val($(this).data('client'));
                 $('#ljpj').show();
             });
-
             $('.btn-xgpj').tap(function(){
                 $('#m-order').val($(this).data('order'));
                 $('#m-client').val($(this).data('client'));
@@ -537,13 +535,11 @@
                     }
                 });
             });
-
             $('.tc-main').tap(function(){
                 if(event.target==this){
                     $('.tc-main').fadeOut();
                 }
             });
-
             //切换
             $('.hd .itms').tap(function(){
                 $(this).siblings().removeClass('on');
@@ -551,25 +547,19 @@
                 $('.bd-itms').hide();
                 $('.bd-itms').eq($(this).index()).show();
             });
-
             $('#rate-first').tap(function () {
                 $('.In-text').blur();
                 $("#evaluate").submit();
             });
-
             $('#rate-modify').tap(function () {
                 $('.In-text').blur();
                 $("#modify").submit();
             });
-
             $('#gb-comment').tap(function() {
                 $('#ljpj').hide();
             });
             $('#gb-update').tap(function() {
                 $('#xgpj').hide();
-            });
-            $('#go_home').tap(function () {
-                window.location.href = '/wechat/client';
             });
             $('#refresh').tap(function () {
                 window.location.href = '/wechat/client/orders';
