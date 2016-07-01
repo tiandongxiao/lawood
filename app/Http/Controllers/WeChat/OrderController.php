@@ -67,9 +67,9 @@ class OrderController extends Controller
         \Notify::sendMessage($order->seller->phone,[
             'type'    => 'query',
             'content' => [
-                $order->seller->real_name,
-                $order->user->real_name,
-                $order->category
+                '1' => $order->seller->real_name,
+                '2' => $order->user->real_name,
+                '3' => $order->category
             ]
         ]);
 
