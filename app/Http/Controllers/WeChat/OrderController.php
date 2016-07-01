@@ -64,7 +64,6 @@ class OrderController extends Controller
             echo $exception->getMessage();
         }
 
-
         return $order;
     }
 
@@ -156,14 +155,33 @@ class OrderController extends Controller
     public function accept($id)
     {
         $order = Order::findOrFail($id);
-        $order->accept();
+        $result = $order->accept();
+        if ($result == 'success'){
+            \Notify::sendMessage($order->user->phone,[
+                'type'    => 'accept',
+                'content' => [
+                    $order->seller->real_name
+                ]
+            ]);
+        }
         return redirect('wechat/lawyer/orders'.'?tab=in_process');
     }
 
     public function reject($id)
     {
         $order = Order::findOrFail($id);
-        $order->reject();
+        $result = $order->reject();
+
+        if ($result == 'success'){
+            \Notify::sendMessage($order->user->phone,[
+                'type'    => 'reject',
+                'content' => [
+                    $order->seller->real_name,
+                    $order->category
+                ]
+            ]);
+        }
+
         Log::info('我拒绝了一个订单');
         return redirect('wechat/lawyer/orders');
     }
@@ -172,18 +190,43 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
         $result = $order->cancel();
+
+        if ($result == 'success'){
+            \Notify::sendMessage($order->user->phone,[
+                'type'    => 'cancel',
+                'content' => [
+                    $order->order_no
+                ]
+            ]);
+        }
+
         return redirect('wechat/client/orders');
     }
 
     public function sign($id)
     {
         $order = Order::findOrFail($id);
-        $order->sign();
-        switch ($this->user->role){
-            case 'lawyer':
-                return redirect('wechat/lawyer/orders'.'?tab='.$order->statusCode);
-            case 'client':
-                return redirect('wechat/client/orders'.'?tab='.$order->statusCode);
+        $result = $order->sign();
+        if($result == 'success'){
+            switch ($this->user->role){
+                case 'lawyer':
+                    \Notify::sendMessage($order->user->phone,[
+                        'type'    => 'sign.lawyer',
+                        'content' => [
+                            $order->seller->real_name
+                        ]
+                    ]);
+                    return redirect('wechat/lawyer/orders'.'?tab='.$order->statusCode);
+                case 'client':
+                    \Notify::sendMessage($order->seller->phone,[
+                        'type'    => 'sign.client',
+                        'content' => [
+                            $order->seller->real_name,
+                            $order->user->real_name
+                        ]
+                    ]);
+                    return redirect('wechat/client/orders'.'?tab='.$order->statusCode);
+            }
         }
     }
 

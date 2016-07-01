@@ -235,7 +235,7 @@ class Notify
                 $tpl = '97789';
                 break;
             case 'cancel':
-                $tpl ='97804';
+                $tpl ='97844';
                 break;
             case 'reject':
                 $tpl = '97811';
