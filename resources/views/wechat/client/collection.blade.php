@@ -10,7 +10,7 @@
                     @if($collects)
                         @foreach($collects as $consult)
                             <div class="itms">
-                                <div class="f-left"><img src="{{$consult->seller->avatar}}" width="30px" height="30px"></div>
+                                <div class="f-left"><img src="{{$consult->user->avatar}}" width="30px" height="30px"></div>
                                 <div class="right">
                                     <h3 class="chaochu_1 mar-top-10"><span class="fc-03aaf0">{{$consult->seller->real_name}} 律师</span>　　{{$consult->category->name}}</h3>
                                     <p class=" fc-03aaf0" style="margin-top: 8px;">咨询费：{{$consult->price}}元</p>

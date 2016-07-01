@@ -305,11 +305,9 @@
                             $('#receipt-area').show();
                             return true;
                         }
-
                         return false;
                     }
                 });
-
             })
         })
     </script>
