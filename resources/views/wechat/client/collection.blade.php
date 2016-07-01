@@ -2,7 +2,7 @@
 @section('css')
     <style>
         body{background:#f8f8f8}
-        .wdsc-main .fjls-main .c-main .itms	.f-left {padding: 12px 0;}
+        .wdsc-main .fjls-main .c-main .itms	.f-left {padding: 10px 0;}
         .lstc-main .fjls-main .c-main .itms .right h3 {padding-top: 0px;}
     </style>
 @stop
