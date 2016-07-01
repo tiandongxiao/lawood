@@ -64,6 +64,15 @@ class WxPayController extends Controller
                     'statusCode'  => 'payed'
                 ]);
 
+                \Notify::sendMessage($order->seller->phone,[
+                    'type'    => 'query',
+                    'content' => [
+                        $order->seller->real_name,
+                        $order->user->real_name,
+                        $order->category
+                    ]
+                ]);
+
                 $job = new CancelPayedOrder($order);
                 $job->delay(120);
 
