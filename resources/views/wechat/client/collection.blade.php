@@ -1,6 +1,10 @@
 @extends('wechat.base.app')
 @section('css')
-    <style>body{background:#f8f8f8}</style>
+    <style>
+        body{background:#f8f8f8}
+        .wdsc-main .fjls-main .c-main .itms	.f-left {padding: 12px 0;}
+        .lstc-main .fjls-main .c-main .itms .right h3 {padding-top: 0px;}
+    </style>
 @stop
 @section('content')
     <section class="lstc-main wdsc-main">
