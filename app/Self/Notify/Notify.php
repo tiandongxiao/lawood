@@ -219,27 +219,68 @@ class Notify
     }
 
     /**
-     * 发送消息总接口
+     * 短信模版消息
      *
      * @param $info
      * @return bool
      */
     public function sendMessage($phone,$data)
     {
-        \PhpSms::queue(false);
-
-        switch($data['method']){
-            case 'sms':
-                return $this->sendSMS($phone,$data);
-
-            case 'voice':
-                return $this->sendVoice($phone,$data);
-
-            case 'notify':
-                return $this->sendNotifySMS($phone,$data);
-
-            default:
+        $tpl = null;
+        switch ($data['type']){
+            case 'query':
+                $tpl = '95164';
                 break;
+            case 'accept':
+                $tpl = '97789';
+                break;
+            case 'cancel':
+                $tpl ='97804';
+                break;
+            case 'reject':
+                $tpl = '97811';
+                break;
+            case 'expire':
+                break;
+            case 'sign.client':
+                $tpl = '97803';
+                break;
+            case 'sign.lawyer':
+                $tpl = '97801';
+                break;
+
         }
+        if($tpl){
+            $result = \PhpSms::make()->to($phone)->template('YunTongXun', $tpl)->data($data['content'])->send();
+            if($result['success'])
+                return true;
+        }
+
+        return false;
     }
+
+    /**
+     * 发送消息总接口
+     *
+     * @param $info
+     * @return bool
+     */
+//    public function sendMessage($phone,$data)
+//    {
+//        \PhpSms::queue(false);
+//
+//        switch($data['method']){
+//            case 'sms':
+//                return $this->sendSMS($phone,$data);
+//
+//            case 'voice':
+//                return $this->sendVoice($phone,$data);
+//
+//            case 'notify':
+//                return $this->sendNotifySMS($phone,$data);
+//
+//            default:
+//                break;
+//        }
+//    }
 }

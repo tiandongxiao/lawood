@@ -4,6 +4,7 @@ namespace App\Http\Controllers\WeChat;
 
 use App\Item;
 use App\Jobs\CancelPayedOrder;
+use App\Self\Notify\Notify;
 use App\Traits\ShopDevTrait;
 use App\Traits\WeChatDevTrait;
 use App\Transaction;

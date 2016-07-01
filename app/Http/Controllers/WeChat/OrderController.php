@@ -64,6 +64,15 @@ class OrderController extends Controller
             echo $exception->getMessage();
         }
 
+        \Notify::sendMessage($order->seller->phone,[
+            'type'    => 'query',
+            'content' => [
+                $order->seller->real_name,
+                $order->user->real_name,
+                $order->category
+            ]
+        ]);
+
         return $order;
     }
 
