@@ -25,7 +25,7 @@
                             </div>
                         @endforeach
                     @else
-                        <p class="te-cen" style="margin-top: 100px">查无此律师</p>
+                        <p class="te-cen" style="margin-top: 200px;background:#f8f8f8;font-size: 14px;">查无此律师</p>
                     @endif
                 </div>
             </div>
