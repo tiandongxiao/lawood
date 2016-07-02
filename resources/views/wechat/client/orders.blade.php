@@ -349,9 +349,9 @@
                     <em class="on" data-sx="差劲"></em>
                     <em class="on" data-sx="一般"></em>
                     <em class="on" data-sx="比较满意，但仍可改善"></em>
-                    <em class="on" data-sx="非常满意"></em>
+                    <em data-sx="非常满意"></em>
                 </div>
-                <div class="xxts fs-12 line-20 fc-03aaf0 mar-top-15">非常满意</div>
+                <div class="xxts fs-12 line-20 fc-03aaf0 mar-top-15">比较满意，但仍可改善</div>
             </div>
             <form id="evaluate" action="{{url('wechat/order/evaluate')}}" method="post">
                 {!! csrf_field() !!}
