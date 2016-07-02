@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Order.php" afterPath="$PROJECT_DIR$/app/Order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php" />
     </list>
     <ignored path="base.iws" />
@@ -37,11 +37,11 @@
       <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="148" column="42" selection-start-line="148" selection-start-column="42" selection-end-line="148" selection-end-column="42" />
+            <state relative-caret-position="529">
+              <caret line="145" column="74" selection-start-line="145" selection-start-column="74" selection-end-line="145" selection-end-column="74" />
               <folding>
-                <element signature="e#13396#13432#0#HTML" expanded="true" />
-                <marker date="1467444247308" expanded="true" signature="18081:18095" placeholder="{...}" />
+                <element signature="e#13398#13434#0#HTML" expanded="true" />
+                <marker date="1467444755731" expanded="true" signature="18083:18097" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -50,8 +50,8 @@
       <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-104">
-              <caret line="248" column="61" selection-start-line="248" selection-start-column="51" selection-end-line="248" selection-end-column="61" />
+            <state relative-caret-position="310">
+              <caret line="266" column="77" selection-start-line="266" selection-start-column="77" selection-end-line="266" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -209,11 +209,11 @@
         <option value="$PROJECT_DIR$/database/seeds/LaravelShopSeeder.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/LawyerController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/ClientController.php" />
-        <option value="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WeChat/OrderController.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/auth/profile.blade.php" />
         <option value="$PROJECT_DIR$/app/Order.php" />
+        <option value="$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php" />
       </list>
     </option>
@@ -795,7 +795,7 @@
       <workItem from="1466989121845" duration="80905000" />
       <workItem from="1467198793477" duration="5693000" />
       <workItem from="1467275540731" duration="9741000" />
-      <workItem from="1467296488291" duration="28069000" />
+      <workItem from="1467296488291" duration="28506000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -920,7 +920,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1462181000" />
+    <option name="totallyTimeSpent" value="1462618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1328,19 +1328,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-104">
-          <caret line="248" column="61" selection-start-line="248" selection-start-column="51" selection-end-line="248" selection-end-column="61" />
+        <state relative-caret-position="310">
+          <caret line="266" column="77" selection-start-line="266" selection-start-column="77" selection-end-line="266" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="148" column="42" selection-start-line="148" selection-start-column="42" selection-end-line="148" selection-end-column="42" />
+        <state relative-caret-position="529">
+          <caret line="145" column="74" selection-start-line="145" selection-start-column="74" selection-end-line="145" selection-end-column="74" />
           <folding>
-            <element signature="e#13396#13432#0#HTML" expanded="true" />
-            <marker date="1467444247308" expanded="true" signature="18081:18095" placeholder="{...}" />
+            <element signature="e#13398#13434#0#HTML" expanded="true" />
+            <marker date="1467444755731" expanded="true" signature="18083:18097" placeholder="{...}" />
           </folding>
         </state>
       </provider>

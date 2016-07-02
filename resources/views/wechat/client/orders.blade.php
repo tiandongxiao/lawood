@@ -264,7 +264,7 @@
                                     </div>
                                 </div>
                                 <div class="bottom">
-                                    <div class="djs fc-03aaf0 fs-12">咨询中...</div>
+                                    <div class="djs fc-03aaf0 fs-12">业务咨询中...</div>
                                     <div class="btn-main">
                                         <span class="btn lan"><a href="{{url('wechat/order/complete/'.$order->id)}}">咨询完成</a></span>
                                     </div>

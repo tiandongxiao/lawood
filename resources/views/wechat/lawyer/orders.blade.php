@@ -143,7 +143,7 @@
                                     </div>
                                 </div>
                                 <div class="bottom">
-                                    <div class="djs fc-03aaf0 fs-12">咨询中...</div>
+                                    <div class="djs fc-03aaf0 fs-12">业务咨询中...</div>
                                     <div class="btn-main">
                                         <a class="btn lan" href="tel:{{$order->client->phone}}">打电话</a>
                                     </div>
