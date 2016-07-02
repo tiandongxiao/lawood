@@ -229,7 +229,7 @@ class Notify
         $tpl = null;
         switch ($data['type']){
             case 'query':
-                $tpl = '95164';
+                $tpl = '97904';
                 break;
             case 'accept':
                 $tpl = '97849';

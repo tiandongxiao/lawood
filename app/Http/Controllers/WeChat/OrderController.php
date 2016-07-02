@@ -160,6 +160,7 @@ class OrderController extends Controller
             \Notify::sendMessage($order->user->phone,[
                 'type'    => 'accept',
                 'content' => [
+                    $order->category,
                     $order->seller->real_name
                 ]
             ]);

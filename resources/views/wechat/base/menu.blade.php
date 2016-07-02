@@ -226,7 +226,7 @@
         cblm.click(function(){
             if(event.target==this){
                 cblm.removeClass('on');
-                cblm.addClass('on1')
+                cblm.addClass('on1');
             }
         });
 
