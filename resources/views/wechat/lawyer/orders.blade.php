@@ -62,39 +62,6 @@
             <div class="bd-itms">
                 @if($ongoings)
                     @foreach($ongoings as $order)
-                        @if($order->statusCode == 'in_process')
-                            <div class="itms bg-fff-box">
-                                <div class="top">
-                                    <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
-                                    <div class="f-right">单号：{{$order->order_no}}</div>
-                                </div>
-                                <div class="con">
-                                    <div class="img"><img src="{{$order->client->avatar}}" width="70" height="70"></div>
-                                    <div class="xx">
-                                        <p class="name chaochu_1 mar-top-5">客户 {{$order->client->real_name}}<span>{{$order->category}}</span></p>
-                                        <p class="dd chaochu_2 mar-top-15">预约地点：<a href="{{url('wechat/order/poi/'.$order->place->poi_id)}}" style="color: #BE5C00;">{{$order->place->name}}</a></p>
-                                        <div class="zxf">
-                                            <p>已付咨询费</p>
-                                            <p class="jg">{{$order->total}}元</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bottom">
-                                    @if($order->seller_signed)
-                                    <div class="djs fc-03aaf0 fs-12">您已签到，等待顾客签到</div>
-                                    @endif
-                                    @if($order->client_signed)
-                                    <div class="djs fc-03aaf0 fs-12">顾客已签到，等待您的签到</div>
-                                    @endif
-                                    <div class="btn-main">
-                                        <a class="btn lan" href="tel:{{$order->client->phone}}">打电话</a>
-                                        @if(!$order->seller_signed)
-                                            <a class="btn lan" href="{{url('wechat/order/sign/'.$order->id)}}">咨询签到</a>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
                         @if($order->statusCode == 'accepted')
                             <div class="itms bg-fff-box">
                                 <div class="top">
@@ -121,6 +88,64 @@
                                     <div class="btn-main">
                                         <a class="btn lan" href="tel:{{$order->client->phone}}">打电话</a>
                                         <a class="btn lan" href="{{url('wechat/order/sign/'.$order->id)}}">咨询签到</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        @if($order->statusCode == 'signed')
+                            <div class="itms bg-fff-box">
+                                <div class="top">
+                                    <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
+                                    <div class="f-right">单号：{{$order->order_no}}</div>
+                                </div>
+                                <div class="con">
+                                    <div class="img"><img src="{{$order->client->avatar}}" width="70" height="70"></div>
+                                    <div class="xx">
+                                        <p class="name chaochu_1 mar-top-5">客户 {{$order->client->real_name}}<span>{{$order->category}}</span></p>
+                                        <p class="dd chaochu_2 mar-top-15">预约地点：<a href="{{url('wechat/order/poi/'.$order->place->poi_id)}}" style="color: #BE5C00;">{{$order->place->name}}</a></p>
+                                        <div class="zxf">
+                                            <p>已付咨询费</p>
+                                            <p class="jg">{{$order->total}}元</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    @if($order->seller_signed)
+                                        <div class="djs fc-03aaf0 fs-12">您已签到，等待顾客签到</div>
+                                    @endif
+                                    @if($order->client_signed)
+                                        <div class="djs fc-03aaf0 fs-12">顾客已签到，等待您的签到</div>
+                                    @endif
+                                    <div class="btn-main">
+                                        <a class="btn lan" href="tel:{{$order->client->phone}}">打电话</a>
+                                        @if(!$order->seller_signed)
+                                            <a class="btn lan" href="{{url('wechat/order/sign/'.$order->id)}}">咨询签到</a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        @if($order->statusCode == 'in_process')
+                            <div class="itms bg-fff-box">
+                                <div class="top">
+                                    <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
+                                    <div class="f-right">单号：{{$order->order_no}}</div>
+                                </div>
+                                <div class="con">
+                                    <div class="img"><img src="{{$order->client->avatar}}" width="70" height="70"></div>
+                                    <div class="xx">
+                                        <p class="name chaochu_1 mar-top-5">客户 {{$order->client->real_name}}<span>{{$order->category}}</span></p>
+                                        <p class="dd chaochu_2 mar-top-15">预约地点：<a href="{{url('wechat/order/poi/'.$order->place->poi_id)}}" style="color: #BE5C00;">{{$order->place->name}}</a></p>
+                                        <div class="zxf">
+                                            <p>已付咨询费</p>
+                                            <p class="jg">{{$order->total}}元</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="djs fc-03aaf0 fs-12">咨询中...</div>
+                                    <div class="btn-main">
+                                        <a class="btn lan" href="tel:{{$order->client->phone}}">打电话</a>
                                     </div>
                                 </div>
                             </div>

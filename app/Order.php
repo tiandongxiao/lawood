@@ -150,7 +150,7 @@ class Order extends ShopOrderModel
                         ]);
                     }
                     break;
-                case 'in_process':
+                case 'signed':
                     if($role == 'lawyer'){
                         $this->update([
                             'seller_signed' => true,
@@ -180,7 +180,7 @@ class Order extends ShopOrderModel
         ]);
         if($this->statusCode == 'completed')
             return 'success';
-        return 'fail';       
+        return 'fail';
     }
 
     # 退款
