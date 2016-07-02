@@ -233,7 +233,7 @@ class OrderController extends Controller
     public function complete(Request $request,$id)
     {
         $order = Order::findOrFail($id);
-        $order->comolete();
+        $order->complete();
         return redirect('wechat/client/orders'.'?tab=completed');
 
     }
