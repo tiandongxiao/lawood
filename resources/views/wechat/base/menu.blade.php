@@ -261,7 +261,7 @@
                     },
                     success: function (data) {
                         if(data == 'Y'){
-
+                            $("#status-text").html("暂停接单");
                             return;
                         }
                         if(data == 'X'){
