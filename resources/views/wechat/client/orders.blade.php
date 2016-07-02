@@ -351,7 +351,7 @@
                     <em class="on" data-sx="比较满意，但仍可改善"></em>
                     <em class="on" data-sx="非常满意"></em>
                 </div>
-                <div class="xxts fs-12 line-20 fc-03aaf0 mar-top-10">非常满意</div>
+                <div class="xxts fs-12 line-20 fc-03aaf0 mar-top-15">非常满意</div>
             </div>
             <form id="evaluate" action="{{url('wechat/order/evaluate')}}" method="post">
                 {!! csrf_field() !!}
@@ -410,15 +410,14 @@
         <div class="main te-cen"  style="top:20%;">
             <div class="tie">王树德 律师<i class="btn-gb" id="gb-update"></i></div>
             <div class="pjcs pad-0-10">
-                <div class="title" style="margin-top: -20px"><span>星级评价</span></div>
-                <div class="pj">
+                <div class="pj" style="width: 70%">
                     <em data-sx="很差劲" class="on"></em>
                     <em data-sx="差劲" class="on"></em>
                     <em data-sx="一般" class="on"></em>
                     <em data-sx="比较满意，但仍可改善"></em>
                     <em data-sx="非常满意"></em>
                 </div>
-                <div class="xxts fs-12 line-20 fc-03aaf0">比较满意，但仍可改善</div>
+                <div class="xxts fs-12 line-20 fc-03aaf0 mar-top-15">比较满意，但仍可改善</div>
             </div>
             <form id="modify" action="{{url('wechat/order/evaluate/update')}}" method="post">
                 {!! csrf_field() !!}
