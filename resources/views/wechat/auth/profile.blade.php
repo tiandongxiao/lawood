@@ -83,7 +83,11 @@
     @include('wechat.base.service.gaode')
     <script>
         $(function(){
-            var address={
+            var home_address={
+                'type'  : 'input',
+                'full'  : null
+            };
+            var work_address={
                 'type'  : 'input',
                 'full'  : null
             };
@@ -103,6 +107,7 @@
             });
             // 个数
             $('.list').tap(function(){
+                $('.In-text').blur();
                 if($('.list.on').size()	>	3){
                     if($(this).attr('class') ==	'list on'){
                         $(this).removeClass('on');
@@ -144,9 +149,17 @@
                     alert('证件信息不能为空');
                     return	false;
                 }
+                if($('.list.on').size() == 0){
+                    alert('您没有选择咨询业务范围');
+                    return	false;
+                }
 
-                if(address.type == 'auto'){
+                if(work_address.type == 'auto'){
                     $('#work-address').val(address.full);
+                }
+
+                if(home_address.type == 'auto'){
+                    $('#home-address').val(address.full);
                 }
 
                 $("#form").submit();
@@ -162,7 +175,18 @@
                     address.type = 'auto';
                     address.full = poi.district+poi.address+poi.name;
                     $('#work-poi').val(poi.id);
-                    console.log(e);
+                });
+            });
+            AMap.plugin(['AMap.Autocomplete','AMap.PlaceSearch'],function(){
+                var autoOptions = {
+                    input: "home-address"
+                };
+                autocomplete= new AMap.Autocomplete(autoOptions);
+                AMap.event.addListener(autocomplete, "select", function(e){
+                    var poi = e.poi;
+                    home_address.type = 'auto';
+                    home_address.full = poi.district+poi.address+poi.name;
+                    $('#home-poi').val(poi.id);
                 });
             });
         })
