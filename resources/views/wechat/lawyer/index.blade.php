@@ -16,6 +16,9 @@
             border-top-right-radius: 6px;
             border-bottom-right-radius: 6px;
         }
+        .lsjs-main	.xx	.bq	span {
+            font-size: 15px;
+        }
     </style>
 @stop
 @section('content')
