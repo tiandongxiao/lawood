@@ -241,9 +241,12 @@
                         '_token':$('input[name=_token]').val(),
                     },
                     success: function (data) {
-                        if(data == 'X'){
-                            $("#In-service").removeAttr("checked");
+                        if(data == 'Y'){
                             $("#status-text").html("服务中...");
+                            return;
+                        }
+                        if(data == 'X'){
+                            $("#In-service").removeAttr("checked");                            
                         }
                     }
                 })
@@ -256,9 +259,12 @@
                         '_token':$('input[name=_token]').val(),
                     },
                     success: function (data) {
+                        if(data == 'Y'){
+                            $("#status-text").html("暂停服务...");
+                            return;
+                        }
                         if(data == 'X'){
                             $("#In-service").attr("checked",'true');
-                            $("#status-text").html("暂停服务...");
                         }
                     }
                 })

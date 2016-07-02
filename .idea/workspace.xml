@@ -62,8 +62,8 @@
       <file leaf-file-name="menu.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/base/menu.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="258" column="40" selection-start-line="258" selection-start-column="40" selection-end-line="258" selection-end-column="40" />
+            <state relative-caret-position="425">
+              <caret line="248" column="68" selection-start-line="248" selection-start-column="68" selection-end-line="248" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -797,7 +797,7 @@
       <workItem from="1466989121845" duration="80905000" />
       <workItem from="1467198793477" duration="5693000" />
       <workItem from="1467275540731" duration="9741000" />
-      <workItem from="1467296488291" duration="31765000" />
+      <workItem from="1467296488291" duration="32433000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -922,7 +922,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1465877000" />
+    <option name="totallyTimeSpent" value="1466545000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1351,8 +1351,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/base/menu.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="258" column="40" selection-start-line="258" selection-start-column="40" selection-end-line="258" selection-end-column="40" />
+        <state relative-caret-position="425">
+          <caret line="248" column="68" selection-start-line="248" selection-start-column="68" selection-end-line="248" selection-end-column="68" />
           <folding />
         </state>
       </provider>
