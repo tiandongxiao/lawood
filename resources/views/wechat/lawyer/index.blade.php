@@ -5,6 +5,17 @@
         .lstc-main {background: rgba(88, 88, 88, 0.92); }
         .fc-yellow-law {color: rgba(255, 152, 0, 0.67) !important;}
         .lszx-main	.c-main	.bottom	.itms-bd-1	.list-1{font-size: 13px;}
+        。times{
+            position: absolute;
+            color: aliceblue;
+            background: rgba(243, 102, 46, 0.91);
+            top: 25px;
+            width: 100px;
+            height: 25px;
+            line-height: 25px;
+            border-top-right-radius: 14px;
+            border-bottom-right-radius: 14px;
+        }
     </style>
 @stop
 @section('content')
@@ -12,6 +23,7 @@
     <section class="lsjs-main" style="padding-bottom:50px;">
         <div class="lsimg te-cen">
             <img src="/images/banner.png" width="100%">
+            <div class="times">{{$user->service_count}}位用户咨询过</div>
             <p class="name">{{$user->real_name}}</p>
             <p class="sx">律师</p>
         </div>
