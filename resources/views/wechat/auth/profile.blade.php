@@ -155,11 +155,11 @@
                 }
 
                 if(work_address.type == 'auto'){
-                    $('#work-address').val(address.full);
+                    $('#work-address').val(work_address.full);
                 }
 
                 if(home_address.type == 'auto'){
-                    $('#home-address').val(address.full);
+                    $('#home-address').val(home_address.full);
                 }
 
                 $("#form").submit();
@@ -172,8 +172,8 @@
                 autocomplete= new AMap.Autocomplete(autoOptions);
                 AMap.event.addListener(autocomplete, "select", function(e){
                     var poi = e.poi;
-                    address.type = 'auto';
-                    address.full = poi.district+poi.address+poi.name;
+                    work_address.type = 'auto';
+                    work_address.full = poi.district+poi.address+poi.name;
                     $('#work-poi').val(poi.id);
                 });
             });
