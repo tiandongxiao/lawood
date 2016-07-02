@@ -260,7 +260,7 @@ class OrderController extends Controller
             'comment' => trim($request->get('comment'))
         ]);
 
-        return back();
+        return redirect('wechat/client/orders'.'?tab=completed');
     }
 
     public function evaluateUpdate(Request $request)
@@ -272,7 +272,7 @@ class OrderController extends Controller
             'comment'    => trim($request->get('comment'))
         ]);
 
-        return back();
+        return redirect('wechat/client/orders'.'?tab=completed');
     }
 
     public function showPOI($id)

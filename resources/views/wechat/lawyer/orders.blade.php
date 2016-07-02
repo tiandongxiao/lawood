@@ -65,7 +65,7 @@
                         @if($order->statusCode == 'accepted')
                             <div class="itms bg-fff-box">
                                 <div class="top">
-                                    <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
+                                    <div class="f-left">接单时间 {{$order->updated_at->diffForHumans()}}</div>
                                     <div class="f-right">单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
@@ -95,7 +95,7 @@
                         @if($order->statusCode == 'signed')
                             <div class="itms bg-fff-box">
                                 <div class="top">
-                                    <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
+                                    <div class="f-left">签到时间 {{$order->updated_at->diffForHumans()}}</div>
                                     <div class="f-right">单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
@@ -128,7 +128,7 @@
                         @if($order->statusCode == 'in_process')
                             <div class="itms bg-fff-box">
                                 <div class="top">
-                                    <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
+                                    <div class="f-left">开始时间 {{$order->updated_at->diffForHumans()}}</div>
                                     <div class="f-right">单号：{{$order->order_no}}</div>
                                 </div>
                                 <div class="con">
@@ -169,7 +169,7 @@
                     @foreach($completes as $order)
                         <div class="itms bg-fff-box">
                             <div class="top">
-                                <div class="f-left">下单时间 {{$order->updated_at->diffForHumans()}}</div>
+                                <div class="f-left">完成时间 {{$order->updated_at->diffForHumans()}}</div>
                                 <div class="f-right">单号：{{$order->order_no}}</div>
                             </div>
                             <div class="con">
