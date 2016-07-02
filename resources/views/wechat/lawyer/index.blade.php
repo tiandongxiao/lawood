@@ -5,7 +5,7 @@
         .lstc-main {background: rgba(88, 88, 88, 0.92); }
         .fc-yellow-law {color: rgba(255, 152, 0, 0.67) !important;}
         .lszx-main	.c-main	.bottom	.itms-bd-1	.list-1{font-size: 13px;}
-        。times{
+        .times{
             position: absolute;
             color: aliceblue;
             background: rgba(243, 102, 46, 0.91);
