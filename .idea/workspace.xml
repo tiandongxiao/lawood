@@ -59,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
-              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
               <folding>
                 <element signature="e#6342#6420#0#HTML" expanded="true" />
               </folding>
@@ -234,8 +234,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="528" />
-    <option name="y" value="199" />
+    <option name="x" value="245" />
+    <option name="y" value="19" />
     <option name="width" value="1924" />
     <option name="height" value="1056" />
   </component>
@@ -526,7 +526,7 @@
       <workItem from="1467198793477" duration="5693000" />
       <workItem from="1467275540731" duration="9741000" />
       <workItem from="1467296488291" duration="40400000" />
-      <workItem from="1467469571571" duration="1287000" />
+      <workItem from="1467469571571" duration="1896000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -651,7 +651,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1475799000" />
+    <option name="totallyTimeSpent" value="1476408000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -663,7 +663,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="528" y="199" width="1924" height="1056" extended-state="0" />
+    <frame x="245" y="19" width="1924" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1063,7 +1063,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
           <folding>
             <element signature="e#6342#6420#0#HTML" expanded="true" />
           </folding>

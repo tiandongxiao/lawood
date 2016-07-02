@@ -9,7 +9,7 @@
             position: absolute;
             color: aliceblue;
             background: rgba(234, 107, 56, 0.70);
-            top: 18px;
+            top: 15px;
             width: 120px;
             height: 25px;
             line-height: 26px;
