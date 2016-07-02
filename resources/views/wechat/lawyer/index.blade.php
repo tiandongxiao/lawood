@@ -10,9 +10,9 @@
             color: aliceblue;
             background: rgba(243, 102, 46, 0.91);
             top: 25px;
-            width: 100px;
+            width: 120px;
             height: 25px;
-            line-height: 25px;
+            line-height: 26px;
             border-top-right-radius: 14px;
             border-bottom-right-radius: 14px;
         }
