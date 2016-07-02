@@ -243,7 +243,7 @@
                     success: function (data) {
                         if(data == 'X'){
                             $("#In-service").removeAttr("checked");
-                            $("#status-text").text("服务中...");
+                            $("#status-text").html("服务中...");
                         }
                     }
                 })
@@ -258,7 +258,7 @@
                     success: function (data) {
                         if(data == 'X'){
                             $("#In-service").attr("checked",'true');
-                            $("#status-text").text("暂停服务...");
+                            $("#status-text").html("暂停服务...");
                         }
                     }
                 })
