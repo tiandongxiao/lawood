@@ -9,6 +9,11 @@
         .tie .btn-gb{
             width:45px; height:45px; position:absolute; right:5px; top:5px; background:url({{url('images/gb.png')}}) center center no-repeat;background-size:22px 22px;
         }
+        .pj-main .pjcs .pj em{
+            width: 20%;
+            height: 30px;
+            background-size: 30px 30px;            
+        }
     </style>
 @stop
 @section('content')
@@ -338,8 +343,7 @@
             <div class="tie">王树德 律师<i class="btn-gb" id="gb-comment"></i></div>
 
             <div class="pjcs pad-0-10">
-                <div class="title" style="margin-top: -20px"><span>星级评价</span></div>
-                <div class="pj">
+                <div class="pj" style="width: 70%">
                     <em class="on" data-sx="很差劲"></em>
                     <em class="on" data-sx="差劲"></em>
                     <em class="on" data-sx="一般"></em>
