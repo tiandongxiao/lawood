@@ -232,6 +232,7 @@
         @if(Auth::user()->role =='lawyer')
         var address = $('input[name=uri]').val();
         $("#In-service").change(function() {
+            $("#status-text").html("......");
             if ($('#In-service').is(':checked')){
                 $.ajax({
                     type: 'POST',
@@ -260,7 +261,7 @@
                     },
                     success: function (data) {
                         if(data == 'Y'){
-                            $("#status-text").html("暂停服务");
+
                             return;
                         }
                         if(data == 'X'){
