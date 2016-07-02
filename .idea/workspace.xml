@@ -49,8 +49,8 @@
       <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="459" column="72" selection-start-line="459" selection-start-column="72" selection-end-line="459" selection-end-column="72" />
+            <state relative-caret-position="460">
+              <caret line="383" column="92" selection-start-line="383" selection-start-column="92" selection-end-line="383" selection-end-column="92" />
               <folding>
                 <element signature="e#22808#22826#0#HTML" expanded="true" />
                 <element signature="e#26144#26162#0#HTML" expanded="true" />
@@ -430,7 +430,7 @@
       <workItem from="1466989121845" duration="80905000" />
       <workItem from="1467198793477" duration="5693000" />
       <workItem from="1467275540731" duration="9741000" />
-      <workItem from="1467296488291" duration="39049000" />
+      <workItem from="1467296488291" duration="39270000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -555,7 +555,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1473161000" />
+    <option name="totallyTimeSpent" value="1473382000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -989,8 +989,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="459" column="72" selection-start-line="459" selection-start-column="72" selection-end-line="459" selection-end-column="72" />
+        <state relative-caret-position="460">
+          <caret line="383" column="92" selection-start-line="383" selection-start-column="92" selection-end-line="383" selection-end-column="92" />
           <folding>
             <element signature="e#22808#22826#0#HTML" expanded="true" />
             <element signature="e#26144#26162#0#HTML" expanded="true" />

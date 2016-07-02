@@ -40,7 +40,7 @@
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
                                         <p class="chaochu_1 mar-top-5">
-                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">律师 {{$order->seller->real_name}}</a> <span>{{$order->category}}</span>
+                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">{{$order->seller->real_name}} 律师</a> <span>{{$order->category}}</span>
                                         </p>
                                         @if($order->place)
                                             <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
@@ -71,7 +71,7 @@
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
                                         <p class="chaochu_1 mar-top-5">
-                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">律师 {{$order->seller->real_name}}</a> <span>{{$order->category}}</span>
+                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">{{$order->seller->real_name}} 律师</a> <span>{{$order->category}}</span>
                                         </p>
                                         <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                         <div class="zxf">
@@ -98,7 +98,7 @@
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
                                         <p class="chaochu_1 mar-top-5">
-                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">律师 {{$order->seller->real_name}}</a> <span>{{$order->category}}</span>
+                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">{{$order->seller->real_name}} 律师</a> <span>{{$order->category}}</span>
                                         </p>
                                         <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                         <div class="zxf">
@@ -126,7 +126,7 @@
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
                                         <p class="chaochu_1 mar-top-5">
-                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">律师 {{$order->seller->real_name}}</a> <span>{{$order->category}}</span>
+                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">{{$order->seller->real_name}} 律师</a> <span>{{$order->category}}</span>
                                         </p>
                                         @if($order->place)
                                             <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
@@ -169,7 +169,7 @@
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
                                         <p class="chaochu_1 mar-top-5">
-                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">律师 {{$order->seller->real_name}}</a> <span>{{$order->category}}</span>
+                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">{{$order->seller->real_name}} 律师</a> <span>{{$order->category}}</span>
                                         </p>
                                         <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                         <div class="zxf">
@@ -213,7 +213,7 @@
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
                                         <p class="chaochu_1 mar-top-5">
-                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">律师 {{$order->seller->real_name}}</a> <span>{{$order->category}}</span>
+                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">{{$order->seller->real_name}} 律师</a> <span>{{$order->category}}</span>
                                         </p>
                                         <p class="dd chaochu_2 mar-top-15">预约地点：<a href="{{url('wechat/order/poi/'.$order->place->poi_id)}}" style="color: #BE5C00;">{{$order->place->name}}</a></p>
                                         <div class="zxf">
@@ -241,7 +241,7 @@
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
                                         <p class="chaochu_1 mar-top-5">
-                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">律师 {{$order->seller->real_name}}</a> <span>{{$order->category}}</span>
+                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">{{$order->seller->real_name}} 律师</a> <span>{{$order->category}}</span>
                                         </p>
                                         <p class="dd chaochu_2 mar-top-15">预约地点：<a href="{{url('wechat/order/poi/'.$order->place->poi_id)}}" style="color: #BE5C00;">{{$order->place->name}}</a></p>
                                         <div class="zxf">
@@ -276,7 +276,7 @@
                                     <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                     <div class="xx">
                                         <p class="chaochu_1 mar-top-5">
-                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">律师 {{$order->seller->real_name}}</a> <span>{{$order->category}}</span>
+                                            <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">{{$order->seller->real_name}} 律师</a> <span>{{$order->category}}</span>
                                         </p>
                                         <p class="dd chaochu_2 mar-top-15">预约地点：<a href="{{url('wechat/order/poi/'.$order->place->poi_id)}}" style="color: #BE5C00;">{{$order->place->name}}</a></p>
                                         <div class="zxf">
@@ -318,7 +318,7 @@
                                 <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                 <div class="xx">
                                     <p class="chaochu_1 mar-top-5">
-                                        <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">律师 {{$order->seller->real_name}}</a> <span>{{$order->category}}</span>
+                                        <a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">{{$order->seller->real_name}} 律师</a> <span>{{$order->category}}</span>
                                     </p>
                                     <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                     <div class="zxf">
