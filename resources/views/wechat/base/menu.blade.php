@@ -88,11 +88,9 @@
             <div class="itms bor-bot">
                 <div class="f-left"><img src="/images/nav6.png" width="20" height="20"></div>
                 @if(Auth::user()->enable)
-                    <div class="right">停用</div>
-                    <div class="ts">停用后律屋将停止</br>对您推荐</div>
+                    <div class="right" id="status-text">服务中...</div>
                 @else
-                    <div class="right">开启</div>
-                    <div class="ts">开启后咨询用户才</br>可找到您</div>
+                    <div class="right" id="status-text">暂停接单</div>
                 @endif
                 <input type="hidden" name="uri" value="{{url('/')}}">
                 <input type="hidden" name="user" value="{{Auth::user()->id}}">
@@ -245,6 +243,7 @@
                     success: function (data) {
                         if(data == 'X'){
                             $("#In-service").removeAttr("checked");
+                            $("#status-text").text("服务中...");
                         }
                     }
                 })
@@ -259,6 +258,7 @@
                     success: function (data) {
                         if(data == 'X'){
                             $("#In-service").attr("checked",'true');
+                            $("#status-text").text("暂停服务...");
                         }
                     }
                 })
