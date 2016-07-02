@@ -169,7 +169,7 @@
                     @foreach($completes as $order)
                         <div class="itms bg-fff-box">
                             <div class="top">
-                                <div class="f-left">完成时间 {{$order->updated_at->diffForHumans()}}</div>
+                                <div class="f-left">完成时间 {{$order->updated_at}}</div>
                                 <div class="f-right">单号：{{$order->order_no}}</div>
                             </div>
                             <div class="con">
