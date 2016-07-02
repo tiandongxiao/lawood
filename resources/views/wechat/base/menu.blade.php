@@ -216,16 +216,17 @@
         });
 
         @if(Auth::user())
+        var cblm = $('.cblm-main');
         //打开侧边
         $('.btn-cb').click(function(){
-            $('.cblm-main').removeClass('on1');
-            $('.cblm-main').addClass('on');
+            cblm.removeClass('on1');
+            cblm.addClass('on');
             event.preventDefault();
         });
-        $('.cblm-main').click(function(){
+        cblm.click(function(){
             if(event.target==this){
-                $('.cblm-main').removeClass('on');
-                $('.cblm-main').addClass('on1')
+                cblm.removeClass('on');
+                cblm.addClass('on1')
             }
         });
 
