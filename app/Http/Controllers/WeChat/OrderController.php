@@ -216,7 +216,7 @@ class OrderController extends Controller
                             $order->seller->real_name
                         ]
                     ]);
-                    return redirect('wechat/lawyer/orders'.'?tab='.$order->statusCode);
+                    return redirect('wechat/lawyer/orders'.'?tab=in_process');
                 case 'client':
                     \Notify::sendMessage($order->seller->phone,[
                         'type'    => 'sign.client',
@@ -225,9 +225,17 @@ class OrderController extends Controller
                             $order->user->real_name
                         ]
                     ]);
-                    return redirect('wechat/client/orders'.'?tab='.$order->statusCode);
+                    return redirect('wechat/client/orders'.'?tab=in_process');
             }
         }
+    }
+
+    public function complete(Request $request,$id)
+    {
+        $order = Order::findOrFail($id);
+        $order->comolete();
+        return redirect('wechat/client/orders'.'?tab=completed');
+
     }
 
     public function abandon(Request $request,$id)

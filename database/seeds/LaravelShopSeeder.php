@@ -55,9 +55,14 @@ class LaravelShopSeeder extends Seeder
 			'description'       => '律师已拒单',
 		],
 		[
+			'code' 				=> 'signed',
+			'name' 				=> 'Signed',
+			'description'       => '已签到状态',
+		],
+		[
 			'code' 				=> 'in_process',
 			'name' 				=> 'In process',
-			'description'       => '一方已签到',
+			'description'       => '咨询进行中',
 		],
 		[
 			'code' 				=> 'completed',

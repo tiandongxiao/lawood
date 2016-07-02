@@ -56,6 +56,7 @@ class LawyerController extends Controller
                     break;
 
                 case 'accepted':
+                case 'signed':
                 case 'in_process':
                     $ongoings[] = $order;
                     break;

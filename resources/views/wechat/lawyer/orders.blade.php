@@ -5,7 +5,7 @@
 @section('content')
     <section class="lsdd-main">
         <div class="hd po-f">
-            <div class="itms" data-tab='applies'><span>未完成</span></div>
+            <div class="itms" data-tab='applies'><span>未受理</span></div>
             <div class="itms" data-tab="in_process"><span>进行中</span></div>
             <div class="itms" data-tab="completed"><span>已完成</span></div>
             <div id="refresh" style="position: absolute;right: 5px;"><img src="/images/refresh-simple.png" width="30px" height="30px"></div>

@@ -59,6 +59,7 @@ class ClientController extends Controller
                     break;
 
                 case 'accepted': # 律师已接单
+                case 'signed':
                 case 'in_process':
                     $ongoings[] = $order;
                     break;

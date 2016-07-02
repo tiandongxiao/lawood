@@ -140,13 +140,13 @@ class Order extends ShopOrderModel
                     if($role == 'lawyer'){
                         $this->update([
                             'seller_signed' => true,
-                            'statusCode' => 'in_process'
+                            'statusCode' => 'signed'
                         ]);
                     }
                     if($role == 'client'){
                         $this->update([
                             'client_signed' => true,
-                            'statusCode' => 'in_process'
+                            'statusCode' => 'signed'
                         ]);
                     }
                     break;
@@ -163,7 +163,7 @@ class Order extends ShopOrderModel
                     }
                     if($this->seller_signed && $this->client_signed)
                         $this->update([
-                            'statusCode' => 'completed'
+                            'statusCode' => 'in_process'
                         ]);
                     break;
 
@@ -171,6 +171,16 @@ class Order extends ShopOrderModel
             return 'success';
         }
         return 'fail';
+    }
+
+    public function complete()
+    {
+        $this->update([
+            'statusCode' => 'completed'
+        ]);
+        if($this->statusCode == 'completed')
+            return 'success';
+        return 'fail';       
     }
 
     # 退款

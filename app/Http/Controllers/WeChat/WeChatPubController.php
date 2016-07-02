@@ -133,13 +133,13 @@ class WeChatPubController extends Controller
                 "url"  => url('wx/find')
             ],
             [
+                "type" => "view",
+                "name" => "订单中心",
+                "url"  => url('wx/orders')
+            ],
+            [
                 "name"       => "个人中心",
                 "sub_button" => [
-                    [
-                        "type" => "view",
-                        "name" => "订单中心",
-                        "url"  => url('wx/orders')
-                    ],
                     [
                         "type" => "view",
                         "name" => "消息中心",
