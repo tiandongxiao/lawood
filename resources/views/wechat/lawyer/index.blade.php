@@ -37,10 +37,6 @@
             </div>
             <div class="fc-bcbcbc mar-top-20">{{$user->office}}</div>
             <div class="fc-bcbcbc line-30 mar-top-5">执业证号：{{$user->licence}}</div>
-            <div class="nf fc-bcbcbc bor-top" style="padding-top: 12px;">
-                <span>加入时间：{{$user->created_at->diffForHumans()}} </span>
-                <span>约见次数：{{$user->service_count}} 次</span>
-            </div>
         </div>
         <div class="lsjj">
             <div class="bg-fff-box">
