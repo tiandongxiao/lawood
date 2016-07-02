@@ -8,13 +8,13 @@
         .times{
             position: absolute;
             color: aliceblue;
-            background: rgba(243, 102, 46, 0.91);
+            background: rgba(234, 107, 56, 0.70);
             top: 25px;
             width: 120px;
             height: 25px;
             line-height: 26px;
-            border-top-right-radius: 14px;
-            border-bottom-right-radius: 14px;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
         }
     </style>
 @stop
