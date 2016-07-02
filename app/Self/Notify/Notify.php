@@ -232,7 +232,7 @@ class Notify
                 $tpl = '95164';
                 break;
             case 'accept':
-                $tpl = '97789';
+                $tpl = '97849';
                 break;
             case 'cancel':
                 $tpl ='97844';
