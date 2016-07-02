@@ -246,7 +246,7 @@
                             return;
                         }
                         if(data == 'X'){
-                            $("#In-service").removeAttr("checked");                            
+                            $("#In-service").removeAttr("checked");
                         }
                     }
                 })
@@ -260,7 +260,7 @@
                     },
                     success: function (data) {
                         if(data == 'Y'){
-                            $("#status-text").html("暂停服务...");
+                            $("#status-text").html("暂停服务");
                             return;
                         }
                         if(data == 'X'){
