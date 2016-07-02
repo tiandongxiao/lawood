@@ -201,7 +201,7 @@ class OrderController extends Controller
             ]);
         }
 
-        return redirect('wechat/client/orders');
+        return redirect('wechat/client/orders?tab=applies');
     }
 
     public function sign($id)

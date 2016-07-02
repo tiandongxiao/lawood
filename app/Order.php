@@ -175,11 +175,13 @@ class Order extends ShopOrderModel
 
     public function complete()
     {
-        $this->update([
-            'statusCode' => 'completed'
-        ]);
-        if($this->statusCode == 'completed')
-            return 'success';
+        if($this->statusCode == 'in_process'){
+            $this->update([
+                'statusCode' => 'completed'
+            ]);
+            if($this->statusCode == 'completed')
+                return 'success';
+        }
         return 'fail';
     }
 
