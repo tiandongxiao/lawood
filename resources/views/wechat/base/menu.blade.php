@@ -238,7 +238,7 @@
                     url: address + '/ajax/start',
                     data: {
                         'user':$('input[name=user]').val(),
-                        '_token':$('input[name=_token]').val(),
+                        '_token':$('input[name=_token]').val()
                     },
                     success: function (data) {
                         if(data == 'Y'){
@@ -256,7 +256,7 @@
                     url: address + '/ajax/stop',
                     data: {
                         'user':$('input[name=user]').val(),
-                        '_token':$('input[name=_token]').val(),
+                        '_token':$('input[name=_token]').val()
                     },
                     success: function (data) {
                         if(data == 'Y'){
