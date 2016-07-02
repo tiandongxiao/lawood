@@ -301,7 +301,7 @@
                             <div class="con">
                                 <div class="img"><img src="{{$order->seller->avatar}}" width="70" height="70"></div>
                                 <div class="xx">
-                                    <p class="name chaochu_1 mar-top-5">律师 {{$order->seller->real_name}}<span>婚姻</span></p>
+                                    <p class="chaochu_1 mar-top-5"><a class="name" href="{{url('wechat/user/'.$order->seller->id)}}">律师 {{$order->seller->real_name}}</a><span>婚姻</span></p>
                                     <p class="dd chaochu_2 mar-top-15">预约地点：{{$order->place->name}}</p>
                                     <div class="zxf">
                                         <p>已付咨询费</p>
