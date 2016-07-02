@@ -12,7 +12,8 @@
         .pj-main .pjcs .pj em{
             width: 20%;
             height: 30px;
-            background-size: 30px 30px;            
+            background-size: 30px 30px;
+            margin: 0px;
         }
     </style>
 @stop
@@ -350,7 +351,7 @@
                     <em class="on" data-sx="比较满意，但仍可改善"></em>
                     <em class="on" data-sx="非常满意"></em>
                 </div>
-                <div class="xxts fs-12 line-20 fc-03aaf0">非常满意</div>
+                <div class="xxts fs-12 line-20 fc-03aaf0 mar-top-10">非常满意</div>
             </div>
             <form id="evaluate" action="{{url('wechat/order/evaluate')}}" method="post">
                 {!! csrf_field() !!}
