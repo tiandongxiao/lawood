@@ -26,7 +26,7 @@
     <section class="lsjs-main" style="padding-bottom:50px;">
         <div class="lsimg te-cen">
             <img src="/images/banner.png" width="100%">
-            <div class="times">{{$user->service_count}}位用户咨询过</div>
+            <div class="times">{{$user->service_count}} 位用户咨询过</div>
             <p class="name">{{$user->real_name}}</p>
             <p class="sx">律师</p>
         </div>
