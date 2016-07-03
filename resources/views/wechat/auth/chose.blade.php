@@ -3,7 +3,7 @@
     <style>
         body{background:#03aaf0}
         .dl-main .logo-index {
-            margin: 25% 0;
+            margin: 30% 0;
         }
         .dl-main .bottom-index {
             bottom: 25%;
