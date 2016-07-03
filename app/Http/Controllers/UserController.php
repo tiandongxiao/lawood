@@ -148,7 +148,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->update(['active'=>true]);
         $user->start();
-        \Notify::sendMessage($this->user->phone,[
+        \Notify::sendMessage($user->phone,[
             'type'    => 'apply.pass',
             'content' => [
                 $this->user->real_name
