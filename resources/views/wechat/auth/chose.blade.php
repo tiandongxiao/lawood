@@ -14,7 +14,7 @@
     <section class="dl-main">
         <div class="logo-index"><img style="width: 70%" src="/images/logo.png"></div>
         <div class="fc-fff bottom-index">
-            <a href="{{url('wechat/bind/client')}}">个人注册</a>　|　<a href="{{url('wechat/bind/lawyer')}}">律师注册</a>
+            <a href="{{url('wechat/bind/client')}}">咨询用户</a>　|　<a href="{{url('wechat/bind/lawyer')}}">律师注册</a>
         </div>
     </section>
 @endsection
