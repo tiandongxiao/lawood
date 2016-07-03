@@ -151,7 +151,7 @@ class UserController extends Controller
         \Notify::sendMessage($user->phone,[
             'type'    => 'apply.pass',
             'content' => [
-                $this->user->real_name
+                $user->real_name
             ]
         ]);
         return back();
