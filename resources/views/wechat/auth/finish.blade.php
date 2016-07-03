@@ -1,10 +1,12 @@
 @extends('wechat.base.app')
 @section('css')
-    <style>body{background:#03aaf0}</style>
+    <style>body{background:#03aaf0}
+        .dl-main .logo-index {margin: 30% 0;}
+    </style>
 @endsection
 @section('content')
     <section class="dl-main">
-        <div class="logo-index"><img src="/images/logo.png"></div>
+        <div class="logo-index"><img style="width: 70%" src="/images/logo.png"></div>
     </section>
     <!--提交审核-->
     <section class="tc-main	tjsh-main">
