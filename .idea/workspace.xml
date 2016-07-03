@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php" />
-    </list>
+    <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="" />
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -58,8 +56,8 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
+            <state relative-caret-position="528">
+              <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
               <folding>
                 <element signature="e#6416#6494#0#HTML" expanded="true" />
               </folding>
@@ -234,10 +232,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-258" />
+    <option name="x" value="-7" />
     <option name="y" value="39" />
     <option name="width" value="1924" />
-    <option name="height" value="676" />
+    <option name="height" value="898" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -526,7 +524,7 @@
       <workItem from="1467198793477" duration="5693000" />
       <workItem from="1467275540731" duration="9741000" />
       <workItem from="1467296488291" duration="40400000" />
-      <workItem from="1467469571571" duration="3369000" />
+      <workItem from="1467469571571" duration="3972000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -651,7 +649,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1477881000" />
+    <option name="totallyTimeSpent" value="1478484000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -663,7 +661,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-258" y="39" width="1924" height="676" extended-state="0" />
+    <frame x="-7" y="39" width="1924" height="898" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1062,8 +1060,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
+        <state relative-caret-position="528">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
           <folding>
             <element signature="e#6416#6494#0#HTML" expanded="true" />
           </folding>
