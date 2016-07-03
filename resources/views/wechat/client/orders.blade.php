@@ -11,8 +11,8 @@
         }
         .pj-main .pjcs .pj em{
             width: 20%;
-            height: 25px;
-            background-size: 25px 25px;
+            height: 20px;
+            background-size: 20px 20px;
             margin: 0;
         }
     </style>
