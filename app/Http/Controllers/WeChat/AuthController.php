@@ -86,8 +86,6 @@ class AuthController extends Controller
             ]);
         }
 
-
-
         $categories = $request->get('range');
         if ($categories) {
             foreach ($categories as $category) {
@@ -100,6 +98,12 @@ class AuthController extends Controller
     public function finish()
     {
         $this->user->buildConsults();
+        \Notify::sendMessage($this->user->phone,[
+            'type'    => 'apply.submit',
+            'content' => [
+                $this->user->real_name
+            ]
+        ]);
         return view('wechat.auth.finish');
     }
 }
