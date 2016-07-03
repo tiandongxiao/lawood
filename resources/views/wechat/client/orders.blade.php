@@ -387,35 +387,35 @@
             <div class="lsyx pad-0-10" style="margin-bottom: 20px">
                 <div class="title"><span>律师印象</span></div>
                 <div class="itms">
-                    <div class="f-left">准时：</div>
+                    <div class="f-left">准 时：</div>
                     <div class="right" id="time">
-                        <span data-score="1">迟到</span>
-                        <span data-score="3" class="on">准时</span>
-                        <span data-score="5">提前</span>
+                        <span data-score="1">迟 到</span>
+                        <span data-score="3" class="on">准 时</span>
+                        <span data-score="5">提 前</span>
                     </div>
                 </div>
                 <div class="itms">
-                    <div class="f-left">穿着：</div>
+                    <div class="f-left">穿 着：</div>
                     <div class="right" id="dress">
-                        <span data-score="1">随意</span>
-                        <span data-score="3" class="on">得体</span>
-                        <span data-score="5">职业</span>
+                        <span data-score="1">随 意</span>
+                        <span data-score="3" class="on">得 体</span>
+                        <span data-score="5">职 业</span>
                     </div>
                 </div>
                 <div class="itms">
-                    <div class="f-left">专业：</div>
+                    <div class="f-left">专 业：</div>
                     <div class="right" id="major">
-                        <span data-score="1">业余</span>
-                        <span data-score="3" class="on">专业</span>
-                        <span data-score="5">资深</span>
+                        <span data-score="1">业 余</span>
+                        <span data-score="3" class="on">专 业</span>
+                        <span data-score="5">资 深</span>
                     </div>
                 </div>
                 <div class="itms">
-                    <div class="f-left">态度：</div>
+                    <div class="f-left">态 度：</div>
                     <div class="right" id="polite">
-                        <span data-score="1">随意</span>
-                        <span data-score="3" class="on">温和</span>
-                        <span data-score="5">礼貌</span>
+                        <span data-score="1">随 意</span>
+                        <span data-score="3" class="on">温 和</span>
+                        <span data-score="5">礼 貌</span>
                     </div>
                 </div>
             </div>
