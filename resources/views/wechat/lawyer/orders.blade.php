@@ -281,8 +281,7 @@
                 $('#reject').data('order',$(this).data('order'));
                 $('#qxdd').show();
             });
-            $('#reject').tap(function () {
-                $('#qxdd').hide();
+            $('#reject').tap(function () {                
                 window.location.href = '/wechat/order/reject/'+$(this).data('order');
             });
             $('#nothing').tap(function () {

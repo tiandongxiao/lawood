@@ -456,8 +456,8 @@
         <div class="main te-cen"  style="top:40%;">
             <div class="line-30 fc-909090  fs-16 mar-top-20">正在取消订单</div>
             <div class="btn-main mar-top-10">
-                <div class="btn fc-03aaf0" id="nothing" style="line-height: 40px">我再想想</div>
-                <div class="btn" id="cancel" data-order="" data-client="" style="line-height: 40px">取消订单</div>
+                <div class="btn fc-03aaf0" id="nothing" style="line-height: 36px">我再想想</div>
+                <div class="btn" id="cancel" data-order="" data-client="" style="line-height: 36px">取消订单</div>
             </div>
         </div>
     </section>
@@ -632,7 +632,6 @@
                 $('#qxdd').show();
             });
             cancel.tap(function () {
-                $('#qxdd').hide();
                 window.location.href = '/wechat/order/cancel/'+$(this).data('order')+'?client='+$(this).data('client');
             });
             $('#nothing').tap(function () {
