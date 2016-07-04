@@ -10,6 +10,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Bican\Roles\Models\Role;
+use Illuminate\Support\Facades\Session;
 
 
 class AuthController extends Controller
@@ -60,6 +61,9 @@ class AuthController extends Controller
             ]);
             switch ($this->user->role){
                 case 'client':
+                    if(Session::has('place_url')){
+                        return redirect(session('place_url'));
+                    }
                     return redirect('wechat');
                 case 'lawyer':
                     return redirect('wechat/profile');

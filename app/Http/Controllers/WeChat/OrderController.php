@@ -72,8 +72,10 @@ class OrderController extends Controller
         if(!Auth::check())
             return view('wechat.flow.lawood');
 
-        if($this->user->role =='none')
+        if($this->user->role =='none'){
+            Session::put('place_url','/wechat/order/place/'.$consult);
             return redirect('wechat/bind/client');
+        }
 
         if($this->user->role != 'lawyer'){
             $order = $this->buildOrder($consult);
