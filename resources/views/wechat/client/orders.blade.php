@@ -56,7 +56,7 @@
                                 <div class="bottom">
                                     <div class="btn-main">
                                         <span class="btn lan"><a href="{{url('wxpay/js/'.$order->id)}}">继续下单</a></span>
-                                        <span class="btn" id="btn-cancel" data-order="{{$order->id}}" data-client="{{$order->user->id}}">取消订单</span>
+                                        <span class="btn btn-cancel" data-order="{{$order->id}}" data-client="{{$order->user->id}}">取消订单</span>
                                     </div>
                                 </div>
                             </div>
