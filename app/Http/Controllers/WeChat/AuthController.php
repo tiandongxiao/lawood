@@ -62,7 +62,9 @@ class AuthController extends Controller
             switch ($this->user->role){
                 case 'client':
                     if(Session::has('place_url')){
-                        return redirect(session('place_url'));
+                        $url = session('place_url');
+                        session()->forget('place_url');
+                        return redirect($url);
                     }
                     return redirect('wechat');
                 case 'lawyer':
