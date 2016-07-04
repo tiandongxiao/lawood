@@ -208,14 +208,13 @@
             <!--已完成-->
         </div>
     </section>
-
     <!--取消订单-->
     <section class="tc-main"  style="display:none" id="qxdd">
         <div class="main te-cen"  style="top:40%;">
             <div class="line-30 fc-909090 fs-16 mar-top-20" id="text-area">拒绝此咨询订单</div>
             <div class="btn-main mar-top-10">
                 <div class="btn fc-03aaf0" id="nothing">我再想想</div>
-                <div class="btn" id="reject" data-order="">取消订单</div>
+                <div class="btn" id="reject" data-order="">拒绝预约</div>
             </div>
         </div>
     </section>
