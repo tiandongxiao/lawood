@@ -83,7 +83,7 @@
                                 <div class="bottom">
                                     <div class="djs fc-03aaf0 fs-12">正在等待律师接单…</div>
                                     <div class="btn-main">
-                                        <span class="btn"><a href="{{url('wechat/order/cancel/'.$order->id)}}">取消订单</a></span>
+                                        <span class="btn btn-cancel" data-order="{{$order->id}}" data-client="{{$order->user->id}}">取消订单</span>
                                     </div>
                                 </div>
                             </div>
