@@ -61,6 +61,7 @@ class AuthController extends Controller
             ]);
             switch ($this->user->role){
                 case 'client':
+                    # 若是之前有未竟之订单，继续其流程
                     if(Session::has('place_url')){
                         $url = session('place_url');
                         session()->forget('place_url');
