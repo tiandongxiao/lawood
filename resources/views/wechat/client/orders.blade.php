@@ -56,7 +56,7 @@
                                 <div class="bottom">
                                     <div class="btn-main">
                                         <span class="btn lan"><a href="{{url('wxpay/js/'.$order->id)}}">继续下单</a></span>
-                                        <span class="btn"><a href="{{url('wechat/order/cancel/'.$order->id)}}">取消订单</a></span>
+                                        <span class="btn" id="btn-cancel" data-order="{{$order->id}}" data-client="{{$order->user->id}}">取消订单</span>
                                     </div>
                                 </div>
                             </div>
@@ -451,6 +451,17 @@
         </div>
     </section>
     <!--修改评价-->
+    <!--取消订单-->
+    <section class="tc-main"  style="display:none" id="qxdd">
+        <div class="main te-cen"  style="top:40%;">
+            <div class="line-30 fc-909090  fs-16 mar-top-20">正在取消订单</div>
+            <div class="btn-main mar-top-10">
+                <div class="btn fc-03aaf0" id="nothing">我再想想</div>
+                <div class="btn" id="cancel" data-order="" data-client="">取消订单</div>
+            </div>
+        </div>
+    </section>
+    <!--取消订单-->
 @stop
 @section('script')
     <script>
@@ -611,6 +622,17 @@
             });
             $('#refresh').tap(function () {
                 window.location.href = '/wechat/client/orders';
+            });
+            //取消订单
+            $('.btn-cancel').tap(function(){
+                $(this).data('order');
+                $('#cancel').data('order',$(this).data('order'));
+                $('#cancel').data('client',$(this).data('client'));
+                $('#qxdd').show();
+            });
+            $('#reject').tap(function () {
+                $('#qxdd').hide();
+                window.location.href = '/wechat/order/cancel/'+$(this).data('order')+'?client='+$(this).data('client');
             });
         })
     </script>
