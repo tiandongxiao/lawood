@@ -183,9 +183,7 @@ class OrderController extends Controller
                     $order->category
                 ]
             ]);
-        }
-
-        Log::info('我拒绝了一个订单');
+        }        
         return redirect('wechat/lawyer/orders');
     }
 

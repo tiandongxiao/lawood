@@ -1,0 +1,132 @@
+@charset "utf-8";
+*				{ margin:0; padding:0; border:none; }
+body			{ font-family:"Microsoft YaHei";	font-size:14px;	color:#333333; min-width:1280px;}
+.clear		{ clear:both; font-size:0; overflow:hidden; line-height:0px; }
+.blank		{ clear:both; font-size:0; overflow:hidden; line-height:0px; }
+ul				{ list-style:none;}
+a				{ text-decoration:none;  color:#000;}
+a:hover			{ text-decoration:none; }
+.box			{ width:100%; height:auto; background:#fdfdfd;}
+.left			{ float:left;}
+.right			{ float:right;}
+.relative		{ position:relative;}
+.top20			{ margin-top:20px;}
+.top40			{ margin-top:40px;}
+a:hover			{ text-decoration:none; }
+.huandong,.nav	.f-right	.itms		{ 	-webkit-transition: all 0.5s ease-in-out;	-moz-transition: all 0.5s ease-in-out;	-o-transition: all 0.5s ease-in-out;	transition: all 0.5s ease-in-out;}
+.w1000			{ width:1000px; margin:0 auto; overflow:hidden;}
+.w990			{ width:990px; margin:0 auto; }
+.m1000			{ width:1000px; margin:0 auto; overflow:hidden;}
+.clearfix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;line-height: 0;font-size: 0;}
+.bg-e7e6e6		{ background:#e7e6e6;}
+.w980			{ width:980px; margin:0 auto;}
+input	{font-family:"Microsoft YaHei";}
+.blank10	{ width:100%; height:10px; clear:both;}
+.blank15	{ width:100%; height:15px; clear:both;}
+.blank20	{ width:100%; height:20px; clear:both;}
+.blank50	{ width:100%; height:50px; clear:both;}
+input,button,textarea{font-family:"Microsoft YaHei";}
+.f-left		{ float:left}
+.f-right		{ float:right}
+
+.chaochu	{ display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
+.chaochu_1	{overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;}
+
+.chaochu_2	{overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;}
+
+.chaochu_3	{overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;}
+
+.fs-12	{ font-size:12px;}
+.fs-13	{ font-size:13px;}
+.fs-14	{ font-size:14px;}
+.fs-15	{ font-size:15px;}
+.fs-16	{ font-size:16px;}
+.fs-17	{ font-size:17px;}
+.fs-18	{ font-size:18px;}
+.fs-19	{ font-size:19px;}
+.fs-20	{ font-size:20px;}
+.fs-21	{ font-size:21px;}
+.fs-22	{ font-size:22px;}
+.fs-23	{ font-size:23px;}
+.fs-24	{ font-size:24px;}
+
+
+/*pad-mar*/
+.pad-5		{ padding:5px;}
+.pad-10		{ padding:10px;}
+.pad-20		{ padding:20px;}
+.pad-30		{ padding:30px;}
+.pad-0-20		{ padding:0 20px;}
+.pad-5-0	{ padding:5px 0;}
+.pad-10-0	{ padding:10px 0;}
+.pad-10-0-10-10	{ padding:10px 0 10px 10px;}
+.pad-0-0-0-10	{ padding:0 0 0 10px;}
+.pad-0-0-10-0	{ padding:0 0 10px 0;}
+.pad-0-10-10-10	{ padding:0 10px 10px 10px;}
+.pad-10-10-0-10	{ padding:10px 10px 0 10px;}
+.pad-0-10	{ padding:0 10px;}
+.mar-0-10	{ margin:0 10px;}
+.pad-15	{ padding:15px;}
+.pad-20-0	{ padding:20px 0;}
+.mar-top-5	{ margin-top:5px !important;}
+.mar-top-10	{ margin-top:10px !important;}
+.mar-top-15	{ margin-top:15px !important;}
+.mar-top-20	{ margin-top:20px !important;}
+.mar-top-25	{ margin-top:25px !important;}
+.mar-top-30	{ margin-top:30px !important;}
+.mar-top-35	{ margin-top:35px !important;}
+.mar-top-40	{ margin-top:40px !important;}
+
+
+.line-15		 { line-height:15px;}
+.line-18		 { line-height:18px;}
+.line-20		 { line-height:20px;}
+.line-25		 { line-height:25px;}
+.line-30		 { line-height:30px;}
+.line-35		 { line-height:35px;}
+.line-40		 { line-height:40px;}
+.line-45		 { line-height:45px;}
+.line-50		 { line-height:50px;}
+
+
+.fw-bold		{ font-weight:bold;}
+.fw-normal		{ font-weight:normal;}
+.dis-none		{ display:none;}
+
+
+.br-5	{
+	/* Gecko browsers */
+-moz-border-radius: 5px;
+/* Webkit browsers */
+-webkit-border-radius: 5px;
+/* W3C syntax */
+border-radius:5px;
+	}
+.br-2	{
+	/* Gecko browsers */
+-moz-border-radius: 2px;
+/* Webkit browsers */
+-webkit-border-radius: 2px;
+/* W3C syntax */
+border-radius:2px;
+	}
+	
+	
+.te-cen		{ text-align:center !important;}
+.te-r		{ text-align:right !important;}
+.te-l		{ text-align:left !important;}
+.bor-none	{ border:none !important;}
+
