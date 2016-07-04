@@ -74,7 +74,7 @@ class OrderController extends Controller
 
         if($this->user->role =='none'){
             Session::put('place_url','/wechat/order/place/'.$consult);
-            return redirect('wechat/bind/client');
+            return redirect('wechat/chose');
         }
 
         if($this->user->role != 'lawyer'){
