@@ -624,15 +624,21 @@
                 window.location.href = '/wechat/client/orders';
             });
             //取消订单
+            var cancel = $('#cancel');
             $('.btn-cancel').tap(function(){
                 $(this).data('order');
-                $('#cancel').data('order',$(this).data('order'));
-                $('#cancel').data('client',$(this).data('client'));
+                cancel.data('order',$(this).data('order'));
+                cancel.data('client',$(this).data('client'));
                 $('#qxdd').show();
             });
-            $('#reject').tap(function () {
+            cancel.tap(function () {
                 $('#qxdd').hide();
                 window.location.href = '/wechat/order/cancel/'+$(this).data('order')+'?client='+$(this).data('client');
+            });
+            $('#nothing').tap(function () {
+                cancel.data('order','');
+                cancel.data('client','');
+                $('#qxdd').hide();
             });
         })
     </script>
