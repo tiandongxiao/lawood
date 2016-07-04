@@ -37,9 +37,11 @@
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="355">
-              <caret line="216" column="61" selection-start-line="216" selection-start-column="61" selection-end-line="216" selection-end-column="61" />
+              <caret line="42" column="94" selection-start-line="42" selection-start-column="94" selection-end-line="42" selection-end-column="94" />
               <folding>
-                <marker date="1467618833090" expanded="true" signature="18117:18131" placeholder="{...}" />
+                <element signature="e#13176#13201#0#HTML" expanded="true" />
+                <element signature="e#13287#13312#0#HTML" expanded="true" />
+                <marker date="1467618970471" expanded="true" signature="18289:18303" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -70,8 +72,8 @@
       <file leaf-file-name="orders.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="633" column="36" selection-start-line="633" selection-start-column="36" selection-end-line="633" selection-end-column="36" />
+            <state relative-caret-position="408">
+              <caret line="459" column="99" selection-start-line="459" selection-start-column="74" selection-end-line="459" selection-end-column="99" />
               <folding>
                 <element signature="e#27738#27763#0#HTML" expanded="true" />
                 <element signature="e#27849#27874#0#HTML" expanded="true" />
@@ -434,7 +436,7 @@
       <workItem from="1467296488291" duration="40400000" />
       <workItem from="1467469571571" duration="7509000" />
       <workItem from="1467529805669" duration="3840000" />
-      <workItem from="1467592632902" duration="10481000" />
+      <workItem from="1467592632902" duration="10618000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -559,7 +561,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1496342000" />
+    <option name="totallyTimeSpent" value="1496479000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -984,8 +986,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/client/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="633" column="36" selection-start-line="633" selection-start-column="36" selection-end-line="633" selection-end-column="36" />
+        <state relative-caret-position="408">
+          <caret line="459" column="99" selection-start-line="459" selection-start-column="74" selection-end-line="459" selection-end-column="99" />
           <folding>
             <element signature="e#27738#27763#0#HTML" expanded="true" />
             <element signature="e#27849#27874#0#HTML" expanded="true" />
@@ -996,9 +998,11 @@
     <entry file="file://$PROJECT_DIR$/resources/views/wechat/lawyer/orders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
-          <caret line="216" column="61" selection-start-line="216" selection-start-column="61" selection-end-line="216" selection-end-column="61" />
+          <caret line="42" column="94" selection-start-line="42" selection-start-column="94" selection-end-line="42" selection-end-column="94" />
           <folding>
-            <marker date="1467618833090" expanded="true" signature="18117:18131" placeholder="{...}" />
+            <element signature="e#13176#13201#0#HTML" expanded="true" />
+            <element signature="e#13287#13312#0#HTML" expanded="true" />
+            <marker date="1467618970471" expanded="true" signature="18289:18303" placeholder="{...}" />
           </folding>
         </state>
       </provider>

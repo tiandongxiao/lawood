@@ -40,7 +40,7 @@
                                     @endif
                                     <div class="btn-main">
                                         <span class="btn lan"><a href="{{url('wechat/order/accept/'.$order->id)}}">确认接单</a></span>
-                                        <span class="btn btn-hv" data-order="{{$order->id}}">忽略</span>
+                                        <span class="btn btn-hv" data-order="{{$order->id}}" data-lawyer="{{$order->seller->id}}">忽略</span>
                                     </div>
                                 </div>
                             </div>
@@ -213,8 +213,8 @@
         <div class="main te-cen"  style="top:40%;">
             <div class="line-30 fc-909090 fs-16 mar-top-20" id="text-area">拒绝此咨询订单</div>
             <div class="btn-main mar-top-10">
-                <div class="btn fc-03aaf0" id="nothing">我再想想</div>
-                <div class="btn" id="reject" data-order="">拒绝预约</div>
+                <div class="btn fc-03aaf0" id="nothing" style="line-height: 36px">我再想想</div>
+                <div class="btn" id="reject" data-order="" data-lawyer="" style="line-height: 36px">拒绝预约</div>
             </div>
         </div>
     </section>
@@ -278,6 +278,7 @@
             $('.btn-hv').tap(function(){
                 $(this).data('order');
                 $('#reject').data('order',$(this).data('order'));
+                $('#reject').data('lawyer',$(this).data('lawyer'));
                 $('#qxdd').show();
             });
             $('#reject').tap(function () {
