@@ -31,11 +31,11 @@
                 @if($editable)
                     <form action="{{url('flow_edit')}}" method="post" style="margin-top: 40px">
                         {!! csrf_field() !!}
-                        <textarea name="desc" style="width: 85%;min-height: 250px;border: dotted 1px chocolate">{!! Auth::user()->description !!}</textarea>
+                        <textarea name="desc" style="width: 85%;min-height: 250px;border: dotted 1px chocolate">{{Auth::user()->description}}</textarea>
                         <input type="submit"  class="btn-bj" value="提交" style="margin-top: 45px">
                     </form>
                 @else
-                    <div class="jj">{{Auth::user()->description}}</div>
+                    <div class="jj">{!! Auth::user()->description !!}</div>
                     <a href="{{url('flow_edit'.'?editable=y')}}" class="btn-bj">编辑资料</a>
                 @endif
             @endif
