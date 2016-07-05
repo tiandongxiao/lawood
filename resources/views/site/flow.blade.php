@@ -87,7 +87,11 @@
         <script>
             $(function(){
                 $('.btn-wx').click(function () {
+                    @if(Auth::check())
+                    window.location.href="/flow_edit";
+                    @else
                     window.location.href="/wx/login";
+                    @endif
                 });
             })
         </script>
