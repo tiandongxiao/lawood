@@ -29,7 +29,7 @@
         <div class="about-img1 te-cen"><img src="/images/30.jpg"></div>
         <div class="about-pp">
             <h3 class="t1">老百姓的律师品牌</h3>
-            <p class="font2">身处互联网时代的今天，并没有一家律师平台深入人心，而打造一个这样的品牌成为了我们公司和平台律师共同的目标。律屋是律师的家。律屋团队更多的就是全方位服务律师和咨询用户。律屋对律师严格筛选，并对非诚信律师零容忍。当您聘请平台律师进行法律咨询服务时，律屋不会让您失望，您将获得一个极致的服务体验。</p>
+            <p class="font2" style="margin-bottom: -50px;">身处互联网时代的今天，并没有一家律师平台深入人心，而打造一个这样的品牌成为了我们公司和平台律师共同的目标。律屋是律师的家。律屋团队更多的就是全方位服务律师和咨询用户。律屋对律师严格筛选，并对非诚信律师零容忍。当您聘请平台律师进行法律咨询服务时，律屋不会让您失望，您将获得一个极致的服务体验。</p>
         </div>
         {{--<div class="about-sp">--}}
             {{--<img src="/images/video.jpg">--}}
@@ -40,7 +40,7 @@
                 <p>律屋由律师，IT精英，新闻媒体人共同发起设立，不同的专业分工和协作将使我们的平台更贴近用户和律师的需求，律师推广的成本也更低。</p>
             </div>
         </div>
-        <div class="about-img"></div>
+        <div class="about-img" style="margin-bottom: -100px"></div>
         <div class="footer">
             <p><span>Tel:123456789</span>　　<span>Emil:123456789@qq.com</span></p>
             <p>北京律屋网络服务有限公司</p>
