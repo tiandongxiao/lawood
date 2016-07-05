@@ -25,7 +25,7 @@
     <div class="list-bj">
         <div class="w1250 relative">
             @if(Auth::check())
-            <div class="tx"><img src="{{Auth::user()->avatar}}" width="211" height="213"></div>
+            <div class="tx"><img style="border-radius: 100%" src="{{Auth::user()->avatar}}" width="211" height="213"></div>
             <div class="name">{{Auth::user()->real_name}}</div>
             <div class="js">{{Auth::user()->office}}</div>
             <div class="jj">{{Auth::user()->description}}</div>
