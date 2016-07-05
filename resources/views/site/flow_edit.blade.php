@@ -48,8 +48,8 @@
         <p>北京律屋网络服务有限公司</p>
     </div>
     @if($editable)
-    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js" type="text/javascript"></script>
+    <script type="text/javascript">tinymce.init({ selector:'textarea',language: 'zh_CN'});</script>
     @endif
     </body>
 </html>
