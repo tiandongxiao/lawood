@@ -25,11 +25,14 @@ class HomeController extends Controller
 
     public function editFlow(Request $request)
     {
-        $editable = false;
-        if($request->get('editable') == 'y'){
-            $editable = true;
+        if(Auth::check() && Auth::user()->role == 'lawyer'){
+            $editable = false;
+            if($request->get('editable') == 'y'){
+                $editable = true;
+            }
+            return view('site.flow_edit',compact('editable'));
         }
-        return view('site.flow_edit',compact('editable'));
+        abort(404);
     }
 
     public function postEditFlow(Request $request)
