@@ -33,10 +33,10 @@ class HomeController extends Controller
     }
 
     public function postEditFlow(Request $request)
-    {        
+    {
         $desc  = $request->get('desc');
         $user = Auth::user();
-        $user->description = $desc;
+        $user->introduction = $desc;
         return redirect('flow_edit');
     }
 
