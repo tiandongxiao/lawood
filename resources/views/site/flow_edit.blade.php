@@ -47,6 +47,9 @@
         <p><span>Tel:123456789</span>　　<span>Emil:123456789@qq.com</span></p>
         <p>北京律屋网络服务有限公司</p>
     </div>
-
+    @if($editable)
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+    @endif
     </body>
 </html>

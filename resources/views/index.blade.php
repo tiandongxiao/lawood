@@ -23,8 +23,8 @@
         <div class="banner-index">
             <div class="w1250">
                 <div class="top">
-                    <p>与律师面对面</p>
-                    <p>体验<span> 高效、便捷、专业 </span>的法律咨询</p>
+                    <p style="font-size: 26px;letter-spacing: 2px">与律师面对面</p>
+                    <p style="font-size: 26px;letter-spacing: 2px">体验<span> 高效、便捷、专业 </span>的法律咨询</p>
                 </div>
                 <a href="#" class="btn-xz huandong">找到您身边的律师</a>
                 <div class="ewm">
