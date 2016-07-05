@@ -53,7 +53,7 @@
         <script type="text/javascript">tinymce.init({ selector:'textarea',language_url : '/js/zh_CN.js'});</script>
         <script>
             $(function(){
-                $('#content').text({{Auth::user()->description}});
+                $('#content').val({{Auth::user()->description}});
             })
         </script>
     @endif
