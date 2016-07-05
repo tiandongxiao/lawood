@@ -69,15 +69,24 @@
         </div>
         <div class="banner-rk">
             <div class="w1250">
-                <div class="top">
-                    <p>与律师面对面</p>
-                    <p>体验<span> 高效、便捷、专业 </span>的法律咨询</p>
-                </div>
-                <a href="#" class="btn-xz huandong">律屋网欢迎您</a>
-                <div class="ewm">
-                    <img src="images/ewm_pc.png" width="321" height="271">
-                    <div class="sys">扫一扫，加入律屋</div>
-                </div>
+                @if(Auth::check())
+                    <div class="ewm">
+                        <img src="{{Auth::user()->avatar}}" width="321" height="271">
+                        <div class="sys">{{Auth::user()->real_name}}律师</div>
+                    </div>
+                    <a href="{{url('flow_edit')}}" class="btn-xz huandong">编辑个人简介</a>
+                @else
+                    <div class="top">
+                        <p>与律师面对面</p>
+                        <p>体验<span> 高效、便捷、专业 </span>的法律咨询</p>
+                    </div>
+                    <a href="#" class="btn-xz huandong">律屋网欢迎您</a>
+                    <div class="ewm">
+                        <img src="images/ewm_pc.png" width="321" height="271">
+                        <div class="sys">扫一扫，加入律屋</div>
+                    </div>
+                @endif
+
             </div>
         </div>
         <div class="list-zc-tie">
