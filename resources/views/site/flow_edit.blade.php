@@ -28,13 +28,13 @@
             <div class="tx"><img style="border-radius: 100%" src="{{Auth::user()->avatar}}" width="211" height="213"></div>
             <div class="name">{{Auth::user()->real_name}}</div>
             <div class="js">{{Auth::user()->office}}</div>
-            <div class="jj">{{Auth::user()->description}}</div>
                 @if($editable)
                     <form action="{{url('flow_edit')}}" method="post">
-                        <textarea href="#" class="btn-bj" name="desc">{{Auth::user()->description}}</textarea>
+                        <textarea name="desc" style="width: 85%;min-height: 250px">{{Auth::user()->description}}</textarea>
                         <input type="submit"  class="btn-bj" value="提交">
                     </form>
                 @else
+                    <div class="jj">{{Auth::user()->description}}</div>
                     <a href="{{url('flow_edit'.'?editable=y')}}" class="btn-bj">编辑资料</a>
                 @endif
             @endif
