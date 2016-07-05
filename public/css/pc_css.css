@@ -18,11 +18,11 @@
 
 .index-ls	{ padding:80px 0; height:240px; }
 .index-ls	.itms	{ width:250px; height:240px; display:block; float:left; text-align:center;}
-.index-ls	.itms	p	{ font-size:26px; color:5E5E5E; height:30px; line-height:30px; padding-top:20px;}
-.index-ls	.itms	p	a	{  color:5E5E5E;}
+.index-ls	.itms	p	{ font-size:26px; color:#5E5E5E; height:30px; line-height:30px; padding-top:20px;}
+.index-ls	.itms	p	a	{  color:#5E5E5E;}
 
 
-.index-lc	{ padding:120px 0; height:240px;  background:#f0f0f0; height: }
+.index-lc	{ padding:120px 0; height:240px;  background:#f0f0f0;}
 .index-lc	.itms	{ width:250px; height:240px; display:block; float:left; text-align:center;}
 .index-lc	.itms	.font	{ padding-top:35px; line-height:23px; color:#273442;}
 
@@ -30,9 +30,9 @@
 .footer		p	{  color:#fff; opacity:0.66;}
 
 /*律师人口*/
-.banner-rk		{ width:100%; height:1006px; background:url(../images/banner-rk.jpg) center center no-repeat;}
-.list-zc-tie	{ padding-top:140px; text-align:center;}
-.list-zc-tie		h3	{ font-size:46px; color:#333; font-weight:normal;}
+.banner-rk		{ width:100%; height:450px; background:url(../images/banner-rk.png) center center no-repeat;}
+.list-zc-tie	{ padding-top:70px; text-align:center;}
+.list-zc-tie		h3	{ font-size:40px; color:rgba(236, 112, 5, 0.67); font-weight:normal;}
 .list-zc-tie		P	{ font-size:20px; color:#7B7B7B; line-height:50px; }
 
 .list-lc			{ text-align:center; width:1150px; margin:0 auto; height:204px;; padding-top:110px;}
