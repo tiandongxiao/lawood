@@ -50,10 +50,10 @@
     @if($editable)
         <script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
         <script src="//cdn.bootcss.com/tinymce/4.4.0/jquery.tinymce.min.js"></script>
-        {{--<script src="//cdn.tinymce.com/4/tinymce.min.js" type="text/javascript"></script>--}}
-        <script type="text/javascript">tinymce.init({ selector:'textarea',language_url : '/js/zh_CN.js'});</script>
+        {{--<script src="//cdn.tinymce.com/4/tinymce.min.js" type="text/javascript"></script>--}}        
         <script>
             $(function(){
+                tinymce.init({ selector:'textarea',language_url : '/js/zh_CN.js'});
                 $('#content').show();
             })
         </script>
