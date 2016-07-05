@@ -9,6 +9,24 @@
         <link href="/css/pc_global.css" rel="stylesheet" type="text/css">
         <link href="/css/pc_css.css" rel="stylesheet" type="text/css">
         <style>
+            .list-lc .itms .unblank {
+                width: 127px;
+                height: 1px;
+                position: absolute;
+                left: 166px;
+                top: 75px;
+                background: rgba(216, 134, 11, 0.81);
+            }
+            .list-zc-tie	h3 {
+                font-size: 46px;
+                color: rgba(5, 108, 236, 0.67);
+                font-weight: normal;
+            }
+            .list-zc-tie	P {
+                font-size: 20px;
+                color: rgba(226, 0, 0, 0.64);
+                line-height: 50px;
+            }
             .banner-rk .top {
                 padding-top: 230px;
                 color: #fff;
@@ -86,31 +104,26 @@
         </div>
         <div class="list-lc">
             <div class="itms">
-                <img src="images/11.png" class="img1">
                 <img src="images/16.png" class="img2">
                 <p>微信扫码</p>
                 <i class="unblank"></i>
             </div>
             <div class="itms">
-                <img src="images/12.png" class="img1">
                 <img src="images/17.png" class="img2">
                 <p>填写基本资料</p>
                 <i class="unblank"></i>
             </div>
             <div class="itms">
-                <img src="images/13.png" class="img1">
                 <img src="images/18.png" class="img2">
                 <p>律屋审核</p>
                 <i class="unblank"></i>
             </div>
             <div class="itms">
-                <img src="images/14.png" class="img1">
                 <img src="images/19.png" class="img2">
                 <p>拍照</p>
                 <i class="unblank"></i>
             </div>
             <div class="itms">
-                <img src="images/15.png" class="img1">
                 <img src="images/200.png" class="img2">
                 <p>上线</p>
             </div>
