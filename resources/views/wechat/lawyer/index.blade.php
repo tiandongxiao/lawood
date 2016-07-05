@@ -46,7 +46,7 @@
                 <div class="te-cen line-40 fc-03aaf0 fs-16">律师简介</div>
                 <div class="jj pad-10 fs-12 fc-909090" id="jj-con">
                     @if($user->profile && $user->profile->description)
-                        {{$user->profile->description}}
+                        {!! $user->profile->description !!}
                     @else
                         <p style="text-align: center">律师尚未完善个人简介</p>
                     @endif
