@@ -29,9 +29,9 @@
             <div class="name">{{Auth::user()->real_name}}</div>
             <div class="js">{{Auth::user()->office}}</div>
                 @if($editable)
-                    <form action="{{url('flow_edit')}}" method="post" style="margin-top: 40px">
+                    <form action="{{url('flow_edit')}}" method="post" style="margin-top: 40px;display: none" id="content">
                         {!! csrf_field() !!}
-                        <textarea name="desc" style="width: 85%;min-height: 250px;border: dotted 1px chocolate" id="content"></textarea>
+                        <textarea name="desc" style="width: 85%;min-height: 250px;border: dotted 1px chocolate" >{{Auth::user()->description}}</textarea>
                         <input type="submit"  class="btn-bj" value="提交" style="margin-top: 45px">
                     </form>
                 @else
@@ -53,7 +53,7 @@
         <script type="text/javascript">tinymce.init({ selector:'textarea',language_url : '/js/zh_CN.js'});</script>
         <script>
             $(function(){
-                $('#content').val({{Auth::user()->description}});
+                $('#content').show();
             })
         </script>
     @endif
