@@ -31,7 +31,7 @@
                 @if($editable)
                     <form action="{{url('flow_edit')}}" method="post" style="margin-top: 40px">
                         {!! csrf_field() !!}
-                        <textarea name="desc" style="width: 85%;min-height: 250px;border: dotted 1px chocolate">{{Auth::user()->description}}</textarea>
+                        <textarea name="desc" style="width: 85%;min-height: 250px;border: dotted 1px chocolate" id="content">{{Auth::user()->description}}</textarea>
                         <input type="submit"  class="btn-bj" value="提交" style="margin-top: 45px">
                     </form>
                 @else
@@ -48,8 +48,14 @@
         <p>北京律屋网络服务有限公司</p>
     </div>
     @if($editable)
-    <script src="//cdn.tinymce.com/4/tinymce.min.js" type="text/javascript"></script>
-    <script type="text/javascript">tinymce.init({ selector:'textarea',language_url : '/js/zh_CN.js'});</script>
+        <script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+        <script src="//cdn.tinymce.com/4/tinymce.min.js" type="text/javascript"></script>
+        <script type="text/javascript">tinymce.init({ selector:'textarea',language_url : '/js/zh_CN.js'});</script>
+        <script>
+            $(function(){
+                $('#content').text({{Auth::user()->description}});
+            })
+        </script>
     @endif
     </body>
 </html>
