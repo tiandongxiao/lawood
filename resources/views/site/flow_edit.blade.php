@@ -6,8 +6,20 @@
         <meta name="keywords" content="律屋">
         <meta name="description" content="律屋">
         <link rel="shortcut fa" href="favfa.png">
-        <LINK href="/css/pc_global.css" rel="stylesheet" type="text/css">
-        <LINK href="/css/pc_css.css" rel="stylesheet" type="text/css">
+        <link href="/css/pc_global.css" rel="stylesheet" type="text/css">
+        <link href="/css/pc_css.css" rel="stylesheet" type="text/css">
+        <style>
+            .list-bj	.btn-exit {
+                width: 208px;
+                height: 47px;
+                margin: 10px auto;
+                background: #00a7d0;
+                display: block;
+                color: #F8F8F8;
+                line-height: 47px;
+                text-align: center;
+            }
+        </style>
     </head>
     <body style="background:#ececec">
     <div class="nav">
@@ -37,6 +49,7 @@
                 @else
                     <div class="jj">{!! Auth::user()->description !!}</div>
                     <a href="{{url('flow_edit'.'?editable=y')}}" class="btn-bj">编辑资料</a>
+                    <a href="{{url('logout')}}" class="btn-exit">退出</a>
                 @endif
             @endif
             <a href="#" class="btn-prev huandong" style="display: none"></a>
