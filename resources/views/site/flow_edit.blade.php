@@ -49,7 +49,7 @@
     </div>
     @if($editable)
     <script src="//cdn.tinymce.com/4/tinymce.min.js" type="text/javascript"></script>
-    <script type="text/javascript">tinymce.init({ selector:'textarea',language: 'zh_CN'});</script>
+    <script type="text/javascript">tinymce.init({ selector:'textarea',language_url : '/js/zh_CN.js'});</script>
     @endif
     </body>
 </html>
