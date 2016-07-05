@@ -83,6 +83,7 @@ Route::group(['prefix' => 'ajax'], function(){
 Route::get('/', 'HomeController@index');
 Route::get('flow', 'HomeController@flow');
 Route::get('flow_edit', 'HomeController@editFlow');
+Route::post('flow_edit', 'HomeController@postEditFlow');
 Route::get('about', 'HomeController@about');
 
 # 用户认证系统自带控制器处理

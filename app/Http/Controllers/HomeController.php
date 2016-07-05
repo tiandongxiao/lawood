@@ -23,9 +23,22 @@ class HomeController extends Controller
         return view('site.flow');
     }
 
-    public function editFlow()
+    public function editFlow(Request $request)
     {
-        return view('site.flow_edit');
+        $editable = false;
+        if($request->get('editable') == 'y'){
+            $editable = true;
+        }
+        return view('site.flow_edit',compact('editable'));
+    }
+
+    public function postEditFlow(Request $request)
+    {
+        dd($request->all());
+        $desc  = $request->get('desc');
+        $user = Auth::user();
+        $user->description = $desc;
+        return redirect('flow_edit');
     }
 
     # about页面

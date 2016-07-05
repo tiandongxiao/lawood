@@ -29,7 +29,14 @@
             <div class="name">{{Auth::user()->real_name}}</div>
             <div class="js">{{Auth::user()->office}}</div>
             <div class="jj">{{Auth::user()->description}}</div>
-            <a href="#" class="btn-bj">编辑资料</a>
+                @if($editable)
+                    <form action="{{url('flow_edit')}}" method="post">
+                        <textarea href="#" class="btn-bj" name="desc">{{Auth::user()->description}}</textarea>
+                        <input type="submit"  class="btn-bj" value="提交">
+                    </form>
+                @else
+                    <a href="{{url('flow_edit'.'?editable=y')}}" class="btn-bj">编辑资料</a>
+                @endif
             @endif
             <a href="#" class="btn-prev huandong" style="display: none"></a>
             <a href="#" class="btn-next huandong" style="display: none"></a>
