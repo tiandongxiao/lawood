@@ -24,15 +24,15 @@
 
     <div class="list-bj">
         <div class="w1250 relative">
-            <div class="tx"><img src="images/41.png" width="211" height="213"></div>
-            <div class="name">王树德</div>
-            <div class="js">王树德王树德王树德王树德王树德</div>
-            <div class="jj">王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德王树德</div>
-
+            @if(Auth::check())
+            <div class="tx"><img src="{{Auth::user()->avatar}}" width="211" height="213"></div>
+            <div class="name">{{Auth::user()->real_name}}</div>
+            <div class="js">{{Auth::user()->office}}</div>
+            <div class="jj">{{Auth::user()->description}}</div>
             <a href="#" class="btn-bj">编辑资料</a>
-
-            <a href="#" class="btn-prev huandong"></a>
-            <a href="#" class="btn-next huandong"></a>
+            @endif
+            <a href="#" class="btn-prev huandong" style="display: none"></a>
+            <a href="#" class="btn-next huandong" style="display: none"></a>
         </div>
     </div>
     <div class="footer">
