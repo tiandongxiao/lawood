@@ -81,6 +81,8 @@ Route::group(['prefix' => 'ajax'], function(){
 
 
 Route::get('/', 'HomeController@index');
+Route::get('flow', 'HomeController@flow');
+Route::get('flow_edit', 'HomeController@editFlow');
 Route::get('about', 'HomeController@about');
 
 # 用户认证系统自带控制器处理
@@ -139,7 +141,8 @@ Route::group(['prefix' => 'wx'], function() {
     # 微信 <开放平台> 服务接口
     Route::get('reg','WeChat\WeChatOpenController@register');
     Route::get('login','WeChat\WeChatOpenController@login');
-    Route::any('callback','WeChat\WeChatOpenController@callback');
+    //Route::any('callback','WeChat\WeChatOpenController@callback');
+    Route::any('callback','HomeController@callback');
 
     Route::get('bind','WeChat\WeChatOpenController@bind');
     Route::get('unbind','WeChat\WeChatOpenController@unBind');

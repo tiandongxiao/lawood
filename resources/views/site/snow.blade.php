@@ -16,7 +16,6 @@
         }
 
         body{
-            /* Workaround for some mobile browsers */
             min-height:100%;
             font:14px/1.3 'Segoe UI',Arial, sans-serif;
         }
