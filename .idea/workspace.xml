@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/base/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/base/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/base/menu.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/base/menu.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/wechat/base/spark.blade.php" afterPath="$PROJECT_DIR$/resources/views/wechat/base/spark.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/pc_css.css" afterPath="$PROJECT_DIR$/public/css/pc_css.css" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pc_css.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pc_css.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/pc_css.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="32" column="71" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
+            <state relative-caret-position="363">
+              <caret line="32" column="78" selection-start-line="32" selection-start-column="78" selection-end-line="32" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -131,7 +130,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spark.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spark.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/wechat/base/spark.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
@@ -211,7 +210,6 @@
         <option value="$PROJECT_DIR$/resources/views/wechat/lawyer/index.blade.php" />
         <option value="$PROJECT_DIR$/public/js/tinymce.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/public/css/pc_css.css" />
         <option value="$PROJECT_DIR$/resources/views/about.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/site/flow_edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/site/flow.blade.php" />
@@ -219,6 +217,7 @@
         <option value="$PROJECT_DIR$/resources/views/wechat/base/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/base/menu.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/wechat/base/spark.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/pc_css.css" />
       </list>
     </option>
   </component>
@@ -870,7 +869,7 @@
       <workItem from="1467641982146" duration="4494000" />
       <workItem from="1467680608963" duration="16419000" />
       <workItem from="1467710483267" duration="1598000" />
-      <workItem from="1467714015787" duration="11575000" />
+      <workItem from="1467714015787" duration="12170000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -995,7 +994,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1538574000" />
+    <option name="totallyTimeSpent" value="1539169000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1325,14 +1324,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/pc_css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="32" column="71" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/site/flow_edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -1407,6 +1398,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/pc_css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="32" column="78" selection-start-line="32" selection-start-column="78" selection-end-line="32" selection-end-column="78" />
           <folding />
         </state>
       </provider>
