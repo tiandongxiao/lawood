@@ -24,7 +24,7 @@
 
 .index-lc	{ padding:120px 0; height:200px;  background:#f0f0f0;}
 .index-lc	.itms	{ width:250px; height:240px; display:block; float:left; text-align:center;}
-.index-lc	.itms	.font	{ padding-top:35px; line-height:23px; color:#273442;font-size: 16px}
+.index-lc	.itms	.font	{ padding-top:35px; line-height:23px; color:#273442;font-size: 15px}
 
 .footer		{ padding:35px 0; background:#273542; text-align:center; line-height:40px;}
 .footer		p	{  color:#fff; opacity:0.66;}
