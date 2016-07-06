@@ -58,7 +58,7 @@ o<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.o
         </div>
     </div>
     <div class="footer">
-        <p><span>Tel:123456789</span>　　<span>Emil:123456789@qq.com</span></p>
+        <p><span>Tel : 123456789</span>　　<span>Emil : kefu@lawood.cn</span></p>
         <p>北京律屋网络服务有限公司</p>
     </div>
     @if($editable)
