@@ -28,7 +28,7 @@ o<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.o
             <div class="logo"><img src="images/logo_pc.png" width="250" height="100"></div>
             <div class="f-right">
                 <a href="/" class="itms">首 页</a>
-                <a href="/flow" class="itms on">律师人口</a>
+                <a href="/flow" class="itms on">律师入口</a>
                 <a href="/about" class="itms">关于律屋</a>
             </div>
         </div>
