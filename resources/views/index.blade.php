@@ -29,7 +29,7 @@
             <div class="w1250">
                 <div class="logo"><img src="/images/logo_pc.png" width="250" height="100"></div>
                 <div class="f-right">
-                    <a href="/" class="itms on">首页</a>
+                    <a href="/" class="itms on">首 页</a>
                     <a href="/flow" class="itms">律师人口</a>
                     <a href="/about" class="itms">关于律屋</a>
                 </div>
