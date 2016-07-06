@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/pc_css.css" afterPath="$PROJECT_DIR$/public/css/pc_css.css" />
-    </list>
+    <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="" />
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -237,8 +235,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="y" value="2" />
+    <option name="x" value="6" />
     <option name="width" value="2311" />
     <option name="height" value="865" />
   </component>
@@ -869,7 +866,7 @@
       <workItem from="1467641982146" duration="4494000" />
       <workItem from="1467680608963" duration="16419000" />
       <workItem from="1467710483267" duration="1598000" />
-      <workItem from="1467714015787" duration="14674000" />
+      <workItem from="1467714015787" duration="14887000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -994,7 +991,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1541673000" />
+    <option name="totallyTimeSpent" value="1541886000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1006,7 +1003,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="2" width="2311" height="865" extended-state="0" />
+    <frame x="6" y="0" width="2311" height="865" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
