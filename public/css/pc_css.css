@@ -44,7 +44,7 @@
 .list-lc	.itms	.unblank	{ width:180px; height:2px; position:absolute; left:140px; top:16px; background:#b4aeae;}
 
 .list-phone		{ width:1100px; margin:0 auto; padding-top:240px; height:668px; padding-bottom:195px; }
-.list-phone	.itms	{ display:block; width:330px; height:668px; margin:0 110px; background:url(../images/iphone-6.png) center center no-repeat; float:left;}
+.list-phone	.itms	{ display:block; width:330px; height:668px; margin:0 105px; background:url(../images/iphone-6.png) center center no-repeat; float:left;}
 .list-phone	.itms	.top	{ color:#424242; font-size:24px; padding-top:190px; text-align:center;}
 .list-phone	.itms	.ewm	{ padding-top:37px; text-align:center; padding-bottom:20px;}
 .list-phone	.itms	.bottom	{ width:168px; height:29px; margin:0 auto; line-height:29px; text-align:center; background:url(../images/bottom.png) center center no-repeat; color:#818181; font-size:12px;}
