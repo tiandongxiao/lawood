@@ -21,7 +21,6 @@
 .index-ls	.itms	p	{ font-size:26px; color:#5E5E5E; height:30px; line-height:30px; padding-top:20px;}
 .index-ls	.itms	p	a	{  color:#5E5E5E;}
 
-
 .index-lc	{ padding:120px 0; height:200px;  background:#f0f0f0;}
 .index-lc	.itms	{ width:250px; height:240px; display:block; float:left; text-align:center;}
 .index-lc	.itms	.font	{ padding-top:35px; line-height:23px; color:#273442;font-size: 15px}
@@ -64,18 +63,18 @@
 .t1		{ color:#0092D1; font-size:26px; }
 .font2		{ color:#7F7F7F; font-size:14px; line-height:25px; }
 .about-gz		{ width:950px; margin:0 auto; padding-top:90px;}
-.about-gz		.font2	{ padding-top:40px; width:850px;}
+.about-gz		.font2	{ padding-top:40px; width:100%;letter-spacing: 1px;text-align: justify}
 
 .about-p1	{ padding-top:130px; width:500px; margin:0 auto; color:#848484;}
 .about-img1	{ padding-top:20px;}
 .about-img1		img	{  border-bottom:1px dashed #dfdfdf;}
 .about-pp		{ width:950px; margin:0 auto; padding-top:140px;}
-.about-pp		.font2	{ padding-top:40px;}
+.about-pp		.font2	{ padding-top:40px;letter-spacing: 1px;text-align: justify}
 .about-pp		.p3	{ padding-top:20px;}
 
 .about-sp		{ text-align:center; padding-top:80px;} 
 .about-td		{ width:950px; margin:0 auto; padding-top:170px; position:relative; z-index:10;}
-.about-td		.font2	{ padding-top:40px;}
+.about-td		.font2	{ padding-top:40px;letter-spacing: 1px;text-align: justify}
 .about-td		.font3	{ font-size:16px; padding-top:24px; color:#0092D1;}
 
 .about-img	{ width:100%; height:880px; background:url(../images/about-bg.jpg) center top no-repeat; text-align:center; position:relative; z-index:9; top:-140px;}
