@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0a29c3ea-39ac-4d3a-965b-aaa86e0fdac2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/pc_css.css" afterPath="$PROJECT_DIR$/public/css/pc_css.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/about.blade.php" afterPath="$PROJECT_DIR$/resources/views/about.blade.php" />
     </list>
     <ignored path="base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,8 +68,8 @@
       <file leaf-file-name="pc_css.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/pc_css.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state relative-caret-position="104">
+              <caret line="62" column="49" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -212,8 +211,8 @@
         <option value="$PROJECT_DIR$/resources/views/site/flow.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/site/flow_edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/pc_css.css" />
         <option value="$PROJECT_DIR$/resources/views/about.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/pc_css.css" />
       </list>
     </option>
   </component>
@@ -866,7 +865,7 @@
       <workItem from="1467680608963" duration="16419000" />
       <workItem from="1467710483267" duration="1598000" />
       <workItem from="1467714015787" duration="15167000" />
-      <workItem from="1467791978977" duration="3331000" />
+      <workItem from="1467791978977" duration="3941000" />
     </task>
     <task id="LOCAL-00001" summary="refactor">
       <created>1460516708143</created>
@@ -991,7 +990,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1545497000" />
+    <option name="totallyTimeSpent" value="1546107000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1389,8 +1388,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/pc_css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="104">
+          <caret line="62" column="49" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
           <folding />
         </state>
       </provider>

@@ -60,7 +60,7 @@
 .list-bj	.btn-next:hover		{ background-color:#e5e5e5;}
 
 /*关于*/
-.t1		{ color:#0092D1; font-size:26px; }
+.t1		{ color:#0092D1; font-size:26px; font-weight: normal}
 .font2		{ color:#7F7F7F; font-size:14px; line-height:25px; }
 .about-gz		{ width:950px; margin:0 auto; padding-top:90px;}
 .about-gz		.font2	{ padding-top:40px; width:100%;letter-spacing: 1px;text-align: justify}
