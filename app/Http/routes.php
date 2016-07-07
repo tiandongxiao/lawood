@@ -87,8 +87,8 @@ Route::post('flow_edit', 'HomeController@postEditFlow');
 Route::get('about', 'HomeController@about');
 
 # 用户认证系统自带控制器处理
-Route::get('login', 'Auth\AuthController@getPhoneLogin');
-Route::post('login', 'Auth\AuthController@postPhoneLogin');
+//Route::get('login', 'Auth\AuthController@getPhoneLogin');
+//Route::post('login', 'Auth\AuthController@postPhoneLogin');
 
 Route::get('login/email', 'Auth\AuthController@getEmailLogin');
 Route::post('login/email', 'Auth\AuthController@postEmailLogin');
@@ -96,11 +96,11 @@ Route::post('login/email', 'Auth\AuthController@postEmailLogin');
 Route::get('logout', 'Auth\AuthController@getLogout');
 
 # 用户注册及密码重置
-Route::get('chose', 'Auth\AuthController@getChoseRegRole');
-Route::post('chose', 'Auth\AuthController@postChoseRegRole');
-
-Route::get('register/{role}', 'Auth\AuthController@getPhoneRegister');
-Route::post('register', 'Auth\AuthController@postPhoneRegister');
+//Route::get('chose', 'Auth\AuthController@getChoseRegRole');
+//Route::post('chose', 'Auth\AuthController@postChoseRegRole');
+//
+//Route::get('register/{role}', 'Auth\AuthController@getPhoneRegister');
+//Route::post('register', 'Auth\AuthController@postPhoneRegister');
 
 //Route::get('reset', 'Auth\PasswordController@getPhoneReset');
 //Route::post('reset', 'Auth\PasswordController@postPhoneReset');
@@ -120,22 +120,22 @@ Route::post('register', 'Auth\AuthController@postPhoneRegister');
 //Route::get('reset/email/{token}', 'Auth\PasswordController@getEmailReset');
 //Route::post('reset/email/confirmed', 'Auth\PasswordController@postEmailReset');
 
-Route::group(['prefix' => 'bind'], function(){
-    Route::get('chose','Auth\BindController@getChoseRole');
-    Route::post('chose','Auth\BindController@postChoseRole');
-
-    Route::get('select','Auth\BindController@getBindUser');
-    Route::post('select','Auth\BindController@postBindUser');
-
-    Route::get('exist','Auth\BindController@getBindExistUser');
-    Route::post('exist','Auth\BindController@postBindExistUser');
-
-    Route::get('new','Auth\BindController@getBindNewUser');
-    Route::post('new','Auth\BindController@postBindNewUser');
-
-    Route::get('email', 'Auth\BindController@getBindEmail');
-    Route::post('email', 'Auth\BindController@postBindEmail');
-});
+//Route::group(['prefix' => 'bind'], function(){
+//    Route::get('chose','Auth\BindController@getChoseRole');
+//    Route::post('chose','Auth\BindController@postChoseRole');
+//
+//    Route::get('select','Auth\BindController@getBindUser');
+//    Route::post('select','Auth\BindController@postBindUser');
+//
+//    Route::get('exist','Auth\BindController@getBindExistUser');
+//    Route::post('exist','Auth\BindController@postBindExistUser');
+//
+//    Route::get('new','Auth\BindController@getBindNewUser');
+//    Route::post('new','Auth\BindController@postBindNewUser');
+//
+//    Route::get('email', 'Auth\BindController@getBindEmail');
+//    Route::post('email', 'Auth\BindController@postBindEmail');
+//});
 
 # 微信相关服务接口
 Route::group(['prefix' => 'wx'], function() {
@@ -281,20 +281,6 @@ Route::resource('bill','BillController');
 
 Route::group(['prefix' => 'test'], function(){
     Route::get('blade','TestController@blade');
-    Route::get('list','TestController@lists');
-    Route::get('like/{id}','TestController@like');
-    Route::get('unlike/{id}','TestController@unlike');
-    Route::get('cate','TestController@getMakeCategories');
-    Route::get('dc','TestController@drawCategory');
-    Route::get('rate','TestController@ratingUser');
-    Route::get('rate_item','TestController@ratingItem');
-    Route::get('code','TestController@scanQrCode');
-    Route::get('faker','TestController@faker');
-    Route::get('put','TestController@putValue');
-    Route::get('get','TestController@cache');
-    Route::get('build','TestController@buildNotifications');
-    Route::get('heal','OrderController@heal');
-    Route::get('call','TestController@call');
 });
 
 

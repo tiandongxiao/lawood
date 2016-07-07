@@ -44,7 +44,7 @@
                 <div href="#" class="btn-xz huandong" style="margin-top:200px;letter-spacing: 1px">找到您身边的律师</div>
                 <div class="ewm">
                     <img src="images/ewm_pc.png" width="321" height="271">
-                    <div class="sys">扫一扫，约律师</div>
+                    <div class="sys">扫微信，约律师</div>
                 </div>
             </div>
         </div>
